@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/michel/mainPrivate/Sources/AndroidStudioProjects/abc/andEngine/res"/><source path="/home/michel/mainPrivate/Sources/AndroidStudioProjects/abc/andEngine/build/generated/res/rs/release"/><source path="/home/michel/mainPrivate/Sources/AndroidStudioProjects/abc/andEngine/build/generated/res/generated/release"/></dataSet><dataSet config="release"><source path="/home/michel/mainPrivate/Sources/AndroidStudioProjects/abc/andEngine/src/release/res"/></dataSet><mergedItems/></merger>

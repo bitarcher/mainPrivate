@@ -1,3 +1,0 @@
-set solib-search-path /home/michel/mainPrivate/Sources/AndroidStudioProjects/abc/andEngine/src/main/obj/local/x86
-source /home/michel/AndroidLibs/android-ndk-r10d/prebuilt/common/gdb/common.setup
-directory /home/michel/AndroidLibs/android-ndk-r10d/platforms/android-19/arch-x86/usr/include /home/michel/AndroidLibs/android-ndk-r10d/sources/cxx-stl/gnu-libstdc++/4.8/include /home/michel/AndroidLibs/android-ndk-r10d/sources/cxx-stl/gnu-libstdc++/4.8/libs/x86/include /home/michel/AndroidLibs/android-ndk-r10d/sources/cxx-stl/gnu-libstdc++/4.8/include/backward /home/michel/mainPrivate/Sources/AndroidStudioProjects/abc/andEngine/src/main/jni
