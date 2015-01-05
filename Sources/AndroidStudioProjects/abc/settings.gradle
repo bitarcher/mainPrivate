@@ -1,1 +1,4 @@
 include ':app'
+//include 'abc', ':libs:AndEngine:AndEngine-GLES2'
+//include 'abc', ':libs:AndEngine:AndEngineSVGTextureRegionExtension-GLES2'
+include ':andEngine'

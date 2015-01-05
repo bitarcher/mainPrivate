@@ -530,4 +530,24 @@
 			/>
 
 	</Idiograms>
+
+	<Ambiences>
+		<Ambience name="beach">
+			<Image
+				name="cartoon sun" 				
+				img="cartoonSun.img"
+				license="publicDomain"
+				author="algerian"
+				reference="https://openclipart.org/detail/176605/happy-cartoon-sun-by-algerian-176605"
+				/>
+			<Image
+				name="wave" 				
+				img="wave.svg"
+				license="publicDomain"
+				author="pianoBrad"
+				reference="https://openclipart.org/detail/182008/tiled-wave-pattern-by-pianoBrad-182008"
+				/>
+		</Ambience>
+	</Ambiences>
+
 </ResList>

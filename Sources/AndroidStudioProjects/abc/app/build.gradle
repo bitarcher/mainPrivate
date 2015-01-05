@@ -6,8 +6,10 @@ android {
 
     defaultConfig {
         applicationId "com.bitarcher.abc"
-        minSdkVersion 9
-        targetSdkVersion 21
+        //minSdkVersion 9
+        //targetSdkVersion 21
+        minSdkVersion 15
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
     }
@@ -20,7 +22,9 @@ android {
 }
 
 dependencies {
+    //compile project(':libs:AndEngine:AndEngine-GLES2')
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.android.support:support-v4:21.0.3'
+    compile project(':andEngine')
 }
