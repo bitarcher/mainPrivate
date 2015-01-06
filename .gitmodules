@@ -7,3 +7,6 @@
 [submodule "Sources/AndroidStudioProjects/Abc/andEngineSVGTextureRegionExtension"]
 	path = Sources/AndroidStudioProjects/Abc/andEngineSVGTextureRegionExtension
 	url = https://github.com/RealMayo/andEngineSVGTextureRegionExtension.git
+[submodule "Sources/AndroidStudioProjects/Abc/andEnginesExamples"]
+	path = Sources/AndroidStudioProjects/Abc/andEnginesExamples
+	url = https://github.com/RealMayo/AndEngineExamples
