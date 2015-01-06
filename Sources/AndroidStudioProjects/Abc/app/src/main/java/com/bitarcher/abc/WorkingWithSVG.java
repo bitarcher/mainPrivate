@@ -7,6 +7,7 @@ import org.andengine.engine.options.EngineOptions;
 import org.andengine.engine.options.ScreenOrientation;
 import org.andengine.engine.options.resolutionpolicy.FillResolutionPolicy;
 import org.andengine.entity.scene.Scene;
+import org.andengine.entity.scene.background.Background;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.extension.svg.SVGParser;
 import org.andengine.extension.svg.adt.SVG;
@@ -93,7 +94,8 @@ public class WorkingWithSVG extends SimpleBaseGameActivity {
 		//SVGBitmapTextureAtlasTextureRegionFactory.setScaleFactor(2);
 		
 		// Create a new buildable bitmap texture atlas to build and contain texture regions
-		BuildableBitmapTextureAtlas bitmapTextureAtlas = new BuildableBitmapTextureAtlas(mEngine.getTextureManager(), 1024, 1024, TextureOptions.BILINEAR);
+		//BuildableBitmapTextureAtlas bitmapTextureAtlas = new BuildableBitmapTextureAtlas(mEngine.getTextureManager(), 1024, 1024, TextureOptions.BILINEAR);
+        BitmapTextureAtlas bitmapTextureAtlas = new BitmapTextureAtlas(mEngine.getTextureManager(), 1024, 1024, TextureOptions.BILINEAR);
 
         //SVG mySVG = SVGParser.parseSVGFromAsset(getAssets(), "svg_image.svg");
         SVG mySVG = SVGParser.parseSVGFromAsset(getAssets(), "gfx/svg_image.svg");
@@ -110,21 +112,21 @@ public class WorkingWithSVG extends SimpleBaseGameActivity {
         */
 
         // Create a low-res (32x32) texture region of svg_image.svg
-        mLowResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromSVG(bitmapTextureAtlas, mySVG, 32,32);
+        mLowResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromSVG(bitmapTextureAtlas, mySVG, 32,32, 0, 0);
 
         // Create a med-res (128x128) texture region of svg_image.svg
-        mMedResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromSVG(bitmapTextureAtlas, mySVG, 128, 128);
+        mMedResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromSVG(bitmapTextureAtlas, mySVG, 128, 128, 33, 0);
 
         // Create a high-res (256x256) texture region of svg_image.svg
-        mHiResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromSVG(bitmapTextureAtlas, mySVG, 256,256);
+        mHiResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromSVG(bitmapTextureAtlas, mySVG, 256, 256, 270, 0);
 
-		try {
+		//try {
 			// Build and load the bitmapTextureAtlas
-			bitmapTextureAtlas.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,1,1));
+			//bitmapTextureAtlas.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,1,1));
 			bitmapTextureAtlas.load();
-		} catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
-			e.printStackTrace();
-		}
+		//} catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
+		//	e.printStackTrace();
+		//}
 		
 	}
 
@@ -132,6 +134,7 @@ public class WorkingWithSVG extends SimpleBaseGameActivity {
 	protected Scene onCreateScene() {
 		mScene = new Scene();
 
+        mScene.setBackground(new Background(0.5f, 0.5f, 1f));
 		// Obtain the initial sprite's position
 		float currentSpritePosition = (WIDTH / ((SPRITE_SIZE) * SPRITE_COUNT)) + SPRITE_SIZE * 0.5f;
 		
