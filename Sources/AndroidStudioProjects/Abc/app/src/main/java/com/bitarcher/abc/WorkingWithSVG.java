@@ -8,6 +8,8 @@ import org.andengine.engine.options.ScreenOrientation;
 import org.andengine.engine.options.resolutionpolicy.FillResolutionPolicy;
 import org.andengine.entity.scene.Scene;
 import org.andengine.entity.sprite.Sprite;
+import org.andengine.extension.svg.SVGParser;
+import org.andengine.extension.svg.adt.SVG;
 import org.andengine.extension.svg.opengl.texture.atlas.bitmap.SVGBitmapTextureAtlasTextureRegionFactory;
 import org.andengine.opengl.texture.TextureOptions;
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlas;
@@ -86,14 +88,18 @@ public class WorkingWithSVG extends SimpleBaseGameActivity {
 	@Override
 	protected void onCreateResources() throws IOException {
 		// Set the base path, where the SVG extension will search for graphics by default
-		SVGBitmapTextureAtlasTextureRegionFactory.setAssetBasePath("gfx/");
+		//SVGBitmapTextureAtlasTextureRegionFactory.setAssetBasePath("gfx/");
 		
 		//SVGBitmapTextureAtlasTextureRegionFactory.setScaleFactor(2);
 		
 		// Create a new buildable bitmap texture atlas to build and contain texture regions
 		BuildableBitmapTextureAtlas bitmapTextureAtlas = new BuildableBitmapTextureAtlas(mEngine.getTextureManager(), 1024, 1024, TextureOptions.BILINEAR);
-		
-		// Create a low-res (32x32) texture region of svg_image.svg
+
+        //SVG mySVG = SVGParser.parseSVGFromAsset(getAssets(), "svg_image.svg");
+        SVG mySVG = SVGParser.parseSVGFromAsset(getAssets(), "gfx/svg_image.svg");
+
+
+		/*// Create a low-res (32x32) texture region of svg_image.svg
 		mLowResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromAsset(bitmapTextureAtlas, this, "svg_image.svg", 32,32);
 
 		// Create a med-res (128x128) texture region of svg_image.svg
@@ -101,6 +107,16 @@ public class WorkingWithSVG extends SimpleBaseGameActivity {
 		
 		// Create a high-res (256x256) texture region of svg_image.svg
 		mHiResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromAsset(bitmapTextureAtlas, this, "svg_image.svg", 256,256);
+        */
+
+        // Create a low-res (32x32) texture region of svg_image.svg
+        mLowResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromSVG(bitmapTextureAtlas, mySVG, 32,32);
+
+        // Create a med-res (128x128) texture region of svg_image.svg
+        mMedResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromSVG(bitmapTextureAtlas, mySVG, 128, 128);
+
+        // Create a high-res (256x256) texture region of svg_image.svg
+        mHiResTextureRegion = SVGBitmapTextureAtlasTextureRegionFactory.createFromSVG(bitmapTextureAtlas, mySVG, 256,256);
 
 		try {
 			// Build and load the bitmapTextureAtlas
