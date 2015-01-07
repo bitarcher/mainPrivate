@@ -26,6 +26,7 @@ dependencies {
     compile project(':andEnginePhysicsBox2DExtension')
     compile project(':andEngineSVGTextureRegionExtension')
     compile project(':scenemanagement')
+    compile project(':DaoCore')
 
 }
 

@@ -10,3 +10,6 @@
 [submodule "Sources/AndroidStudioProjects/Abc/andEnginesExamples"]
 	path = Sources/AndroidStudioProjects/Abc/andEnginesExamples
 	url = https://github.com/RealMayo/AndEngineExamples
+[submodule "Sources/AndroidStudioProjects/Abc/greenDAO"]
+	path = Sources/AndroidStudioProjects/Abc/greenDAO
+	url = https://github.com/greenrobot/greenDAO.git

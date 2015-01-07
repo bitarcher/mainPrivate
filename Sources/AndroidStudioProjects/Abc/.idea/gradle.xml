@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/andEnginePhysicsBox2DExtension" />
             <option value="$PROJECT_DIR$/andEngineSVGTextureRegionExtension" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/greenDAO/DaoCore" />
             <option value="$PROJECT_DIR$/scenemanagement" />
           </set>
         </option>
