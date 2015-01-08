@@ -1,6 +1,8 @@
 package com.bitarcher.interfaces.ressourcemanagement;
 
+import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.IRessourceInfo;
+
 public interface IRessourceTuple {
     ERessourceType getType();
-    String getPath();
+    IRessourceInfo getRessourceInfo();
 }

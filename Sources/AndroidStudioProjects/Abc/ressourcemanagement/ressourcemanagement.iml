@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":interfaces" />
+        <option name="GRADLE_PROJECT_PATH" value=":ressourcemanagement" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -85,6 +85,7 @@
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="andEngine" exported="" />
+    <orderEntry type="module" module-name="interfaces" exported="" />
   </component>
 </module>
 
