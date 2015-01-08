@@ -6,11 +6,11 @@ import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.IBuildableBitm
  * Created by michel on 07/01/15.
  */
 public interface IRessourceManager {
-    void pushRequirement(IRessourceTuple ressourceTuple);
-    void pushRequirement(IRessourceTupleListGotter ressourceTupleListGotter);
+    void pushRequirement(IRessourceTuple ressourceTuple) throws ERessourceCreationError;
+    void pushRequirement(IRessourceTupleListGotter ressourceTupleListGotter) throws ERessourceCreationError;
 
-    void popRequirement(IRessourceTuple ressourceTuple);
-    void popRequirement(IRessourceTupleListGotter ressourceTupleListGotter);
+    void popRequirement(IRessourceTuple ressourceTuple) throws ERessourceTupleNotFound;
+    void popRequirement(IRessourceTupleListGotter ressourceTupleListGotter) throws ERessourceTupleNotFound;
 
-    org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlasRessourceInfo(IBuildableBitmapTextureAtlasRessourceInfo buildableBitmapTextureAtlasRessourceInfo);
+    org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlasRessourceInfo(IBuildableBitmapTextureAtlasRessourceInfo buildableBitmapTextureAtlasRessourceInfo) throws ERessourceTupleNotFound;
 }

@@ -5,4 +5,5 @@ package com.bitarcher.interfaces.ressourcemanagement.RessourceInfo;
  */
 public interface IRessourceInfo {
     boolean isSimilar(IRessourceInfo ressourceInfo);
+    int getHashCode();
 }

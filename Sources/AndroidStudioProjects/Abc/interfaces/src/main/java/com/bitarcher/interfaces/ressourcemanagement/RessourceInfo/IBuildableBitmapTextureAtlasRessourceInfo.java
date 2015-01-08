@@ -7,4 +7,5 @@ public interface IBuildableBitmapTextureAtlasRessourceInfo extends IRessourceInf
     org.andengine.opengl.texture.TextureManager getTextureManager();
     int getPWidth();
     int getPHeight();
+    String getName();
 }
