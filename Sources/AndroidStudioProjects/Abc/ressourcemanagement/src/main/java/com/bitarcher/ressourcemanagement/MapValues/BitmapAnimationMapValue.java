@@ -26,6 +26,26 @@ public class BitmapAnimationMapValue extends MapValue  {
     TiledTextureRegion tiledTextureRegion;
     AnimatedSprite animatedSprite;
 
+    public IResourceManager getResourceManager() {
+        return resourceManager;
+    }
+
+    public IBitmapAnimationResourceInfo getBitmapAnimationResourceInfo() {
+        return bitmapAnimationResourceInfo;
+    }
+
+    public BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlas() {
+        return buildableBitmapTextureAtlas;
+    }
+
+    public TiledTextureRegion getTiledTextureRegion() {
+        return tiledTextureRegion;
+    }
+
+    public AnimatedSprite getAnimatedSprite() {
+        return animatedSprite;
+    }
+
     public BitmapAnimationMapValue(IResourceManager resourceManager, final IBitmapAnimationResourceInfo bitmapAnimationResourceInfo) {
         this.resourceManager = resourceManager;
         this.bitmapAnimationResourceInfo = bitmapAnimationResourceInfo;

@@ -2,11 +2,13 @@ package com.bitarcher.interfaces.ressourcemanagement;
 
 import android.content.Context;
 
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 import org.andengine.engine.Engine;
+import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.opengl.texture.region.ITextureRegion;
 
 /**
@@ -31,6 +33,6 @@ public interface IResourceManager {
     void popRequirement(IResourceInfoListGotter resourceInfoListGotter) throws EResourceNotFound;
 
     org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlas(IBuildableBitmapTextureAtlasResourceInfo buildableBitmapTextureAtlasInfo) throws EResourceNotFound;
-
     ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound;
+    AnimatedSprite getAnimatedSpriteFromBitmapAnimationResourceInfo(IBitmapAnimationResourceInfo bitmapAnimationResourceInfo) throws EResourceNotFound;
 }

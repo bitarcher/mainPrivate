@@ -6,15 +6,18 @@ import com.bitarcher.interfaces.ressourcemanagement.EResourceCreationError;
 import com.bitarcher.interfaces.ressourcemanagement.EResourceNotFound;
 import com.bitarcher.interfaces.ressourcemanagement.IResourceInfoListGotter;
 import com.bitarcher.interfaces.ressourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.ressourcemanagement.MapValues.BitmapAnimationMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.BuildableBitmapTextureAtlasMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValueFactoryByResourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.TextureSetMapValue;
 
 import org.andengine.engine.Engine;
+import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
 import org.andengine.opengl.texture.region.ITextureRegion;
 
@@ -135,6 +138,23 @@ public class ResourceManager implements IResourceManager {
         TextureSetMapValue textureSetMapValue = (TextureSetMapValue) mapValue;
 
         ITextureRegion retval = textureSetMapValue.getTextureRegionByName(textureName);
+
+        return retval;
+    }
+
+    @Override
+    public AnimatedSprite getAnimatedSpriteFromBitmapAnimationResourceInfo(IBitmapAnimationResourceInfo bitmapAnimationResourceInfo) throws EResourceNotFound {
+        boolean exists = this._map.containsKey(bitmapAnimationResourceInfo);
+
+        if(!exists)
+        {
+            throw new EResourceNotFound(bitmapAnimationResourceInfo);
+        }
+
+        MapValue mapValue = this._map.get(bitmapAnimationResourceInfo);
+        BitmapAnimationMapValue bitmapAnimationMapValue = (BitmapAnimationMapValue) mapValue;
+
+        AnimatedSprite retval = bitmapAnimationMapValue.getAnimatedSprite();
 
         return retval;
     }
