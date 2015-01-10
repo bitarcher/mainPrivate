@@ -49,7 +49,8 @@ public class TextureSetMapValue extends MapValue{
         BitmapTextureAtlasTextureRegionFactory.setAssetBasePath(texturesSetRessourceInfo.getAssetsBase());
 
 
-        BuildableBitmapTextureAtlas texture = new BuildableBitmapTextureAtlas(ressourceManager.getEngine().getTextureManager(), 11, 490);
+        BuildableBitmapTextureAtlas texture = new BuildableBitmapTextureAtlas(ressourceManager.getEngine().getTextureManager(),
+                texturesSetRessourceInfo.getAtlasWidth(), texturesSetRessourceInfo.getAtlasHeight());
 
         for(IOneTexture oneTextureRessourceInfo : texturesSetRessourceInfo.getTextureList())
         {

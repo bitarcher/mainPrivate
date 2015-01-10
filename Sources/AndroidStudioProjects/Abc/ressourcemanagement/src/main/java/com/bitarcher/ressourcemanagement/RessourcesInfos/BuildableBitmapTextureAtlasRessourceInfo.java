@@ -15,6 +15,7 @@ public class BuildableBitmapTextureAtlasRessourceInfo extends RessourceInfo impl
     String _name;
 
     public BuildableBitmapTextureAtlasRessourceInfo(TextureManager textureManager, int pWidth, int pHeight, String name) {
+        super(name);
         this._pWidth = pWidth;
         this._pHeight = pHeight;
         this._name = name;

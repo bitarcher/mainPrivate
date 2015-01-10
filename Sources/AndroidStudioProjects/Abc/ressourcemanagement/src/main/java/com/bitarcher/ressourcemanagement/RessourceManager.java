@@ -3,18 +3,21 @@ package com.bitarcher.ressourcemanagement;
 import android.content.Context;
 
 import com.bitarcher.interfaces.ressourcemanagement.ERessourceCreationError;
-import com.bitarcher.interfaces.ressourcemanagement.ERessourceTupleNotFound;
+import com.bitarcher.interfaces.ressourcemanagement.ERessourceNotFound;
 import com.bitarcher.interfaces.ressourcemanagement.ERessourceType;
 import com.bitarcher.interfaces.ressourcemanagement.IRessourceManager;
 import com.bitarcher.interfaces.ressourcemanagement.IRessourceTuple;
 import com.bitarcher.interfaces.ressourcemanagement.IRessourceTupleListGotter;
 import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.IBuildableBitmapTextureAtlasRessourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.ITexturesSetRessourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.BuildableBitmapTextureAtlasMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValueFactoryByRessourceTuple;
+import com.bitarcher.ressourcemanagement.MapValues.TextureSetMapValue;
 
 import org.andengine.engine.Engine;
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
+import org.andengine.opengl.texture.region.ITextureRegion;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,12 +74,12 @@ public class RessourceManager implements IRessourceManager {
     }
 
     @Override
-    public void popRequirement(IRessourceTuple ressourceTuple) throws ERessourceTupleNotFound {
+    public void popRequirement(IRessourceTuple ressourceTuple) throws ERessourceNotFound {
         boolean exists = this._map.containsKey(ressourceTuple);
 
         if(!exists)
         {
-            throw new ERessourceTupleNotFound(ressourceTuple.getType());
+            throw new ERessourceNotFound(ressourceTuple);
         }
 
         MapValue mapValue = this._map.get(ressourceTuple);
@@ -91,7 +94,7 @@ public class RessourceManager implements IRessourceManager {
     }
 
     @Override
-    public void popRequirement(IRessourceTupleListGotter ressourceTupleListGotter) throws ERessourceTupleNotFound{
+    public void popRequirement(IRessourceTupleListGotter ressourceTupleListGotter) throws ERessourceNotFound {
         ArrayList<IRessourceTuple> copy = new ArrayList<>(ressourceTupleListGotter.getRessourceTupleList());
 
         Collections.reverse(copy);
@@ -103,17 +106,36 @@ public class RessourceManager implements IRessourceManager {
     }
 
     @Override
-    public BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlasRessourceInfo(IBuildableBitmapTextureAtlasRessourceInfo buildableBitmapTextureAtlasRessourceInfo) throws ERessourceTupleNotFound{
-        boolean exists = this._map.containsKey(buildableBitmapTextureAtlasRessourceInfo);
+    public BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlasRessourceInfo(IRessourceTuple buildableBitmapTextureAtlasRessourceTuple) throws ERessourceNotFound {
+        boolean exists = this._map.containsKey(buildableBitmapTextureAtlasRessourceTuple);
 
         if(!exists)
         {
-            throw new ERessourceTupleNotFound(ERessourceType.BuildableBitmapTextureAtlas);
+            throw new ERessourceNotFound(buildableBitmapTextureAtlasRessourceTuple);
         }
 
-        MapValue mapValue = this._map.get(buildableBitmapTextureAtlasRessourceInfo);
+        MapValue mapValue = this._map.get(buildableBitmapTextureAtlasRessourceTuple);
 
         BuildableBitmapTextureAtlas retval = ((BuildableBitmapTextureAtlasMapValue) mapValue).getTValue();
+
+        return retval;
+    }
+
+    @Override
+    public ITextureRegion getTextureRegionFromTextureSetByNames(IRessourceTuple textureSetRessourceTuple, String textureName) throws ERessourceNotFound
+    {
+        boolean exists = this._map.containsKey(textureSetRessourceTuple);
+
+        if(!exists)
+        {
+            throw new ERessourceNotFound(textureSetRessourceTuple);
+        }
+
+        MapValue mapValue = this._map.get(textureSetRessourceTuple);
+
+        TextureSetMapValue textureSetMapValue = (TextureSetMapValue) mapValue;
+
+        ITextureRegion retval = textureSetMapValue.getTextureRegionByName(textureName);
 
         return retval;
     }

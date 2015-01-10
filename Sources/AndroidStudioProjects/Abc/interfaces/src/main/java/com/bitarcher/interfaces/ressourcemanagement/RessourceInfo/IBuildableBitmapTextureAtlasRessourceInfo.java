@@ -6,5 +6,5 @@ package com.bitarcher.interfaces.ressourcemanagement.RessourceInfo;
 public interface IBuildableBitmapTextureAtlasRessourceInfo extends IRessourceInfo{
     int getPWidth();
     int getPHeight();
-    String getName();
+
 }

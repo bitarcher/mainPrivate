@@ -10,9 +10,9 @@ import java.util.List;
 /**
  * Created by michel on 10/01/15.
  */
-public class TexturesSetRessourceInfo implements ITexturesSetRessourceInfo {
+public class TexturesSetRessourceInfo extends RessourceInfo implements ITexturesSetRessourceInfo {
 
-    String name;
+
     String assetsBase;
     ArrayList<IOneTexture> textureList;
     int atlasWidth;
@@ -29,11 +29,6 @@ public class TexturesSetRessourceInfo implements ITexturesSetRessourceInfo {
     }
 
     @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
     public String getAssetsBase() {
         return this.assetsBase;
     }
@@ -43,30 +38,10 @@ public class TexturesSetRessourceInfo implements ITexturesSetRessourceInfo {
         return this.textureList;
     }
 
-    @Override
-    public boolean isSimilar(IRessourceInfo ressourceInfo) {
-        boolean retval = true;
-
-        if(ressourceInfo instanceof ITexturesSetRessourceInfo)
-        {
-            retval &= this.name == ((ITexturesSetRessourceInfo) ressourceInfo).getName();
-        }
-        else
-        {
-            retval = false;
-        }
-
-        return retval;
-    }
-
-    @Override
-    public int getHashCode() {
-        return this.name.hashCode();
-    }
 
 
     public TexturesSetRessourceInfo(String name, int atlasWidth, int atlasHeight, String assetsBase) {
-        this.name = name;
+        super(name);
         this.atlasWidth = atlasWidth;
         this.atlasHeight = atlasHeight;
         this.assetsBase = assetsBase;
