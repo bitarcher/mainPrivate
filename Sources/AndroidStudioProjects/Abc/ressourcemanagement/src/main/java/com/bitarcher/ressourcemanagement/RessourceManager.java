@@ -1,5 +1,7 @@
 package com.bitarcher.ressourcemanagement;
 
+import android.content.Context;
+
 import com.bitarcher.interfaces.ressourcemanagement.ERessourceCreationError;
 import com.bitarcher.interfaces.ressourcemanagement.ERessourceTupleNotFound;
 import com.bitarcher.interfaces.ressourcemanagement.ERessourceType;
@@ -11,13 +13,26 @@ import com.bitarcher.ressourcemanagement.MapValues.BuildableBitmapTextureAtlasMa
 import com.bitarcher.ressourcemanagement.MapValues.MapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValueFactoryByRessourceTuple;
 
+import org.andengine.engine.Engine;
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 /**
  * Created by michel on 08/01/15.
  */
 public class RessourceManager implements IRessourceManager {
+    // We include these objects in the resource manager for
+    // easy accessibility across our project.
+    Engine engine;
+    Context context;
+    float cameraWidth;
+    float cameraHeight;
+    float cameraScaleFactorX;
+    float cameraScaleFactorY;
+
     HashMap<IRessourceTuple, MapValue> _map;
 
 
@@ -35,7 +50,7 @@ public class RessourceManager implements IRessourceManager {
             mapValue = this._map.get(ressourceTuple);
         }
         else {
-            MapValueFactoryByRessourceTuple factoryByRessourceTuple = new MapValueFactoryByRessourceTuple();
+            MapValueFactoryByRessourceTuple factoryByRessourceTuple = new MapValueFactoryByRessourceTuple(this);
             mapValue = factoryByRessourceTuple.make(ressourceTuple);
 
 
@@ -77,7 +92,11 @@ public class RessourceManager implements IRessourceManager {
 
     @Override
     public void popRequirement(IRessourceTupleListGotter ressourceTupleListGotter) throws ERessourceTupleNotFound{
-        for(IRessourceTuple ressourceTuple : ressourceTupleListGotter.getRessourceTupleList())
+        ArrayList<IRessourceTuple> copy = new ArrayList<>(ressourceTupleListGotter.getRessourceTupleList());
+
+        Collections.reverse(copy);
+
+        for(IRessourceTuple ressourceTuple : copy)
         {
             this.popRequirement(ressourceTuple);
         }
@@ -97,5 +116,45 @@ public class RessourceManager implements IRessourceManager {
         BuildableBitmapTextureAtlas retval = ((BuildableBitmapTextureAtlasMapValue) mapValue).getTValue();
 
         return retval;
+    }
+
+    @Override
+    public Engine getEngine() {
+        return this.engine;
+    }
+
+    @Override
+    public Context getContext() {
+        return this.context;
+    }
+
+    @Override
+    public float getCameraWidth() {
+        return this.cameraWidth;
+    }
+
+    @Override
+    public float getCameraHeight() {
+        return this.cameraHeight;
+    }
+
+    @Override
+    public float getCameraScaleX() {
+        return 0;
+    }
+
+    @Override
+    public float getCameraScaleY() {
+        return 0;
+    }
+
+    // Setup the ResourceManager
+    public void setup(final Engine pEngine, final Context pContext, final float pCameraWidth, final float pCameraHeight, final float pCameraScaleX, final float pCameraScaleY){
+        this.engine = pEngine;
+        this.context = pContext;
+        this.cameraWidth = pCameraWidth;
+        this.cameraHeight = pCameraHeight;
+        this.cameraScaleFactorX = pCameraScaleX;
+        this.cameraScaleFactorY = pCameraScaleY;
     }
 }

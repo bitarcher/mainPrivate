@@ -10,22 +10,16 @@ import org.andengine.opengl.texture.TextureManager;
  */
 public class BuildableBitmapTextureAtlasRessourceInfo extends RessourceInfo implements IBuildableBitmapTextureAtlasRessourceInfo {
 
-    TextureManager _textureManager;
     int _pWidth;
     int _pHeight;
     String _name;
 
     public BuildableBitmapTextureAtlasRessourceInfo(TextureManager textureManager, int pWidth, int pHeight, String name) {
-        this._textureManager = textureManager;
         this._pWidth = pWidth;
         this._pHeight = pHeight;
         this._name = name;
     }
 
-    @Override
-    public TextureManager getTextureManager() {
-        return this._textureManager;
-    }
 
     @Override
     public int getPWidth() {

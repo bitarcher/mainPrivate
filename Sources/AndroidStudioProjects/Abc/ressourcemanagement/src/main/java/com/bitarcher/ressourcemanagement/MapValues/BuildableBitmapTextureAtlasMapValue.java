@@ -1,6 +1,7 @@
 package com.bitarcher.ressourcemanagement.MapValues;
 
 import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.IBuildableBitmapTextureAtlasRessourceInfo;
+import com.bitarcher.ressourcemanagement.RessourceManager;
 
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
 
@@ -9,8 +10,8 @@ import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
  */
 public class BuildableBitmapTextureAtlasMapValue extends TMapValue<BuildableBitmapTextureAtlas> {
 
-    public BuildableBitmapTextureAtlasMapValue(IBuildableBitmapTextureAtlasRessourceInfo buildableBitmapTextureAtlasRessourceInfo) {
-        this._tObj = new BuildableBitmapTextureAtlas(buildableBitmapTextureAtlasRessourceInfo.getTextureManager(), buildableBitmapTextureAtlasRessourceInfo.getPWidth(), buildableBitmapTextureAtlasRessourceInfo.getPHeight());
+    public BuildableBitmapTextureAtlasMapValue(RessourceManager ressourceManager, IBuildableBitmapTextureAtlasRessourceInfo buildableBitmapTextureAtlasRessourceInfo) {
+        this._tObj = new BuildableBitmapTextureAtlas(ressourceManager.getEngine().getTextureManager(), buildableBitmapTextureAtlasRessourceInfo.getPWidth(), buildableBitmapTextureAtlasRessourceInfo.getPHeight());
     }
 
     @Override

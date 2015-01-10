@@ -5,5 +5,6 @@ public enum ERessourceType
     BuildableBitmapTextureAtlas,
     Mp3Sound,
     Svg,
-    Png
+    Png,
+    TextureSet
 }
