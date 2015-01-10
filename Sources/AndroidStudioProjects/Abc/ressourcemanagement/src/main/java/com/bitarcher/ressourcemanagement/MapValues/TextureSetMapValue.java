@@ -1,9 +1,9 @@
 package com.bitarcher.ressourcemanagement.MapValues;
 
-import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.ITexturesSetRessourceInfo;
-import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.SubInfos.IOneTexture;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneTexture;
 import com.bitarcher.ressourcemanagement.MapValues.SubValues.OneTexture;
-import com.bitarcher.ressourcemanagement.RessourceManager;
+import com.bitarcher.ressourcemanagement.ResourceManager;
 
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlas;
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlasTextureRegionFactory;
@@ -41,7 +41,7 @@ public class TextureSetMapValue extends MapValue{
         this.hashMap.clear();
     }
 
-    public TextureSetMapValue(RessourceManager ressourceManager, ITexturesSetRessourceInfo texturesSetRessourceInfo) {
+    public TextureSetMapValue(ResourceManager ressourceManager, ITexturesSetResourceInfo texturesSetRessourceInfo) {
         this.hashMap = new HashMap<>();
 
         String mPreviousAssetBasePath = BitmapTextureAtlasTextureRegionFactory.getAssetBasePath();

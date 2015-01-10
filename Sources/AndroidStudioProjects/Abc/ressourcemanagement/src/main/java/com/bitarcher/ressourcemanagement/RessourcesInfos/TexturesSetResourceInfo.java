@@ -1,8 +1,7 @@
 package com.bitarcher.ressourcemanagement.RessourcesInfos;
 
-import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.IRessourceInfo;
-import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.ITexturesSetRessourceInfo;
-import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.SubInfos.IOneTexture;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneTexture;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.List;
 /**
  * Created by michel on 10/01/15.
  */
-public class TexturesSetRessourceInfo extends RessourceInfo implements ITexturesSetRessourceInfo {
+public class TexturesSetResourceInfo extends ResourceInfo implements ITexturesSetResourceInfo {
 
 
     String assetsBase;
@@ -40,7 +39,7 @@ public class TexturesSetRessourceInfo extends RessourceInfo implements ITextures
 
 
 
-    public TexturesSetRessourceInfo(String name, int atlasWidth, int atlasHeight, String assetsBase) {
+    public TexturesSetResourceInfo(String name, int atlasWidth, int atlasHeight, String assetsBase) {
         super(name);
         this.atlasWidth = atlasWidth;
         this.atlasHeight = atlasHeight;

@@ -5,8 +5,8 @@ package com.bitarcher.interfaces.ressourcemanagement;
  */
 
 // see http://stackoverflow.com/questions/15607060/java-interface-throw-an-exception-but-interface-implementation-does-not-throw-an
-public class ERessourceCreationError extends RuntimeException {
-    public ERessourceCreationError(String detailMessage) {
+public class EResourceCreationError extends RuntimeException {
+    public EResourceCreationError(String detailMessage) {
         super(detailMessage);
     }
 }

@@ -1,4 +1,4 @@
-package com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.SubInfos;
+package com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos;
 
 /**
  * Created by michel on 10/01/15.

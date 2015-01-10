@@ -2,16 +2,16 @@ package com.bitarcher.ressourcemanagement;
 
 import android.content.Context;
 
-import com.bitarcher.interfaces.ressourcemanagement.ERessourceCreationError;
-import com.bitarcher.interfaces.ressourcemanagement.ERessourceNotFound;
-import com.bitarcher.interfaces.ressourcemanagement.IRessourceInfoListGotter;
-import com.bitarcher.interfaces.ressourcemanagement.IRessourceManager;
-import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.IRessourceInfo;
-import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.IBuildableBitmapTextureAtlasRessourceInfo;
-import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.ITexturesSetRessourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.EResourceCreationError;
+import com.bitarcher.interfaces.ressourcemanagement.EResourceNotFound;
+import com.bitarcher.interfaces.ressourcemanagement.IResourceInfoListGotter;
+import com.bitarcher.interfaces.ressourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.BuildableBitmapTextureAtlasMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValue;
-import com.bitarcher.ressourcemanagement.MapValues.MapValueFactoryByRessourceInfo;
+import com.bitarcher.ressourcemanagement.MapValues.MapValueFactoryByResourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.TextureSetMapValue;
 
 import org.andengine.engine.Engine;
@@ -25,7 +25,7 @@ import java.util.HashMap;
 /**
  * Created by michel on 08/01/15.
  */
-public class RessourceManager implements IRessourceManager {
+public class ResourceManager implements IResourceManager {
     // We include these objects in the resource manager for
     // easy accessibility across our project.
     Engine engine;
@@ -35,15 +35,15 @@ public class RessourceManager implements IRessourceManager {
     float cameraScaleFactorX;
     float cameraScaleFactorY;
 
-    HashMap<IRessourceInfo, MapValue> _map;
+    HashMap<IResourceInfo, MapValue> _map;
 
 
-    public RessourceManager() {
+    public ResourceManager() {
         this._map = new HashMap<>();
     }
 
     @Override
-    public void pushRequirement(IRessourceInfo ressourceTuple) throws ERessourceCreationError{
+    public void pushRequirement(IResourceInfo ressourceTuple) throws EResourceCreationError {
         boolean exists = this._map.containsKey(ressourceTuple);
         MapValue mapValue = null;
 
@@ -52,7 +52,7 @@ public class RessourceManager implements IRessourceManager {
             mapValue = this._map.get(ressourceTuple);
         }
         else {
-            MapValueFactoryByRessourceInfo factoryByRessourceInfo = new MapValueFactoryByRessourceInfo(this);
+            MapValueFactoryByResourceInfo factoryByRessourceInfo = new MapValueFactoryByResourceInfo(this);
             mapValue = factoryByRessourceInfo.make(ressourceTuple);
 
 
@@ -64,8 +64,8 @@ public class RessourceManager implements IRessourceManager {
     }
 
     @Override
-    public void pushRequirement(IRessourceInfoListGotter ressourceTupleListGotter)  throws ERessourceCreationError {
-        for(IRessourceInfo ressourceTuple : ressourceTupleListGotter.getRessourceInfoList())
+    public void pushRequirement(IResourceInfoListGotter ressourceTupleListGotter)  throws EResourceCreationError {
+        for(IResourceInfo ressourceTuple : ressourceTupleListGotter.getRessourceInfoList())
         {
             this.pushRequirement(ressourceTuple);
         }
@@ -73,12 +73,12 @@ public class RessourceManager implements IRessourceManager {
     }
 
     @Override
-    public void popRequirement(IRessourceInfo ressourceTuple) throws ERessourceNotFound {
+    public void popRequirement(IResourceInfo ressourceTuple) throws EResourceNotFound {
         boolean exists = this._map.containsKey(ressourceTuple);
 
         if(!exists)
         {
-            throw new ERessourceNotFound(ressourceTuple);
+            throw new EResourceNotFound(ressourceTuple);
         }
 
         MapValue mapValue = this._map.get(ressourceTuple);
@@ -93,24 +93,24 @@ public class RessourceManager implements IRessourceManager {
     }
 
     @Override
-    public void popRequirement(IRessourceInfoListGotter ressourceTupleListGotter) throws ERessourceNotFound {
-        ArrayList<IRessourceInfo> copy = new ArrayList<>(ressourceTupleListGotter.getRessourceInfoList());
+    public void popRequirement(IResourceInfoListGotter ressourceTupleListGotter) throws EResourceNotFound {
+        ArrayList<IResourceInfo> copy = new ArrayList<>(ressourceTupleListGotter.getRessourceInfoList());
 
         Collections.reverse(copy);
 
-        for(IRessourceInfo ressourceTuple : copy)
+        for(IResourceInfo ressourceTuple : copy)
         {
             this.popRequirement(ressourceTuple);
         }
     }
 
     @Override
-    public BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlas(IBuildableBitmapTextureAtlasRessourceInfo buildableBitmapTextureAtlasRessourceInfo) throws ERessourceNotFound {
+    public BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlas(IBuildableBitmapTextureAtlasResourceInfo buildableBitmapTextureAtlasRessourceInfo) throws EResourceNotFound {
         boolean exists = this._map.containsKey(buildableBitmapTextureAtlasRessourceInfo);
 
         if(!exists)
         {
-            throw new ERessourceNotFound(buildableBitmapTextureAtlasRessourceInfo);
+            throw new EResourceNotFound(buildableBitmapTextureAtlasRessourceInfo);
         }
 
         MapValue mapValue = this._map.get(buildableBitmapTextureAtlasRessourceInfo);
@@ -121,13 +121,13 @@ public class RessourceManager implements IRessourceManager {
     }
 
     @Override
-    public ITextureRegion getTextureRegionFromTextureSetByNames(ITexturesSetRessourceInfo textureSetRessourceInfo, String textureName) throws ERessourceNotFound
+    public ITextureRegion getTextureRegionFromTextureSetByNames(ITexturesSetResourceInfo textureSetRessourceInfo, String textureName) throws EResourceNotFound
     {
         boolean exists = this._map.containsKey(textureSetRessourceInfo);
 
         if(!exists)
         {
-            throw new ERessourceNotFound(textureSetRessourceInfo);
+            throw new EResourceNotFound(textureSetRessourceInfo);
         }
 
         MapValue mapValue = this._map.get(textureSetRessourceInfo);

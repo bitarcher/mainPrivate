@@ -1,8 +1,8 @@
 package com.bitarcher.ressourcemanagement.MapValues.SubValues;
 
-import com.bitarcher.interfaces.ressourcemanagement.RessourceInfo.SubInfos.IOneTexture;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneTexture;
 import com.bitarcher.ressourcemanagement.MapValues.TextureSetMapValue;
-import com.bitarcher.ressourcemanagement.RessourceManager;
+import com.bitarcher.ressourcemanagement.ResourceManager;
 
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlasTextureRegionFactory;
 import org.andengine.opengl.texture.region.ITextureRegion;
@@ -11,12 +11,12 @@ import org.andengine.opengl.texture.region.ITextureRegion;
  * Created by michel on 10/01/15.
  */
 public class OneTexture {
-    RessourceManager ressourceManager;
+    ResourceManager ressourceManager;
     TextureSetMapValue textureSetMapValue;
     IOneTexture oneTextureRessourceInfo;
     ITextureRegion textureRegion;
 
-    public RessourceManager getRessourceManager() {
+    public ResourceManager getRessourceManager() {
         return ressourceManager;
     }
 
@@ -32,7 +32,7 @@ public class OneTexture {
         return textureRegion;
     }
 
-    public OneTexture(RessourceManager ressourceManager, TextureSetMapValue textureSetMapValue, IOneTexture oneTextureRessourceInfo) {
+    public OneTexture(ResourceManager ressourceManager, TextureSetMapValue textureSetMapValue, IOneTexture oneTextureRessourceInfo) {
         this.ressourceManager = ressourceManager;
         this.textureSetMapValue = textureSetMapValue;
         this.oneTextureRessourceInfo = oneTextureRessourceInfo;
