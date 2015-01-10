@@ -11,31 +11,31 @@ import com.bitarcher.ressourcemanagement.ResourceManager;
  * Created by michel on 08/01/15.
  */
 public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResourceInfo>{
-    ResourceManager ressourceManager;
+    ResourceManager resourceManager;
 
-    public MapValueFactoryByResourceInfo(ResourceManager ressourceManager) {
-        this.ressourceManager = ressourceManager;
+    public MapValueFactoryByResourceInfo(ResourceManager resourceManager) {
+        this.resourceManager = resourceManager;
     }
 
     @Override
-    public MapValue make(IResourceInfo ressourceInfo)  throws EResourceCreationError {
+    public MapValue make(IResourceInfo resourceInfo)  throws EResourceCreationError {
         MapValue retval = null;
 
-        if (ressourceInfo instanceof IBuildableBitmapTextureAtlasResourceInfo)
+        if (resourceInfo instanceof IBuildableBitmapTextureAtlasResourceInfo)
         {
-            IBuildableBitmapTextureAtlasResourceInfo buildableBitmapTextureAtlasRessourceInfo = (IBuildableBitmapTextureAtlasResourceInfo) ressourceInfo;
-            BuildableBitmapTextureAtlasMapValue buildableBitmapTextureAtlasMapValue = new BuildableBitmapTextureAtlasMapValue(this.ressourceManager,  buildableBitmapTextureAtlasRessourceInfo);
+            IBuildableBitmapTextureAtlasResourceInfo buildableBitmapTextureAtlasResourceInfo = (IBuildableBitmapTextureAtlasResourceInfo) resourceInfo;
+            BuildableBitmapTextureAtlasMapValue buildableBitmapTextureAtlasMapValue = new BuildableBitmapTextureAtlasMapValue(this.resourceManager,  buildableBitmapTextureAtlasResourceInfo);
             retval = buildableBitmapTextureAtlasMapValue;
         }
-        else if(ressourceInfo instanceof ITexturesSetResourceInfo)
+        else if(resourceInfo instanceof ITexturesSetResourceInfo)
         {
-            TextureSetMapValue textureSetMapValue = new TextureSetMapValue(this.ressourceManager, (ITexturesSetResourceInfo) ressourceInfo);
+            TextureSetMapValue textureSetMapValue = new TextureSetMapValue(this.resourceManager, (ITexturesSetResourceInfo) resourceInfo);
 
             retval = textureSetMapValue;
         }
         else
         {
-            throw new EResourceCreationError(String.format("Unsupported ressource type %s", ressourceInfo.getClass().getName().toString()));
+            throw new EResourceCreationError(String.format("Unsupported ressource type %s", resourceInfo.getClass().getName().toString()));
         }
 
         return retval;

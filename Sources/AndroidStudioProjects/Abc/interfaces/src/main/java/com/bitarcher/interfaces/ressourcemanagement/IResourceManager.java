@@ -22,14 +22,15 @@ public interface IResourceManager {
 
     void setup(final Engine pEngine, final Context pContext, final float pCameraWidth, final float pCameraHeight, final float pCameraScaleX, final float pCameraScaleY);
 
-    void pushRequirement(IResourceInfo ressourceTuple) throws EResourceCreationError;
-    void pushRequirement(IResourceInfoListGotter ressourceTupleListGotter) throws EResourceCreationError;
+    void pushRequirement(IResourceInfo resourceInfo) throws EResourceCreationError;
+    void pushRequirement(IResourceInfoListGotter resourceInfoListGotter) throws EResourceCreationError;
 
-    void popRequirement(IResourceInfo ressourceTuple) throws EResourceNotFound;
+    void popRequirement(IResourceInfo resourceInfo) throws EResourceNotFound;
 
-    // popped in reversed order so you can managed dependances between ressources
-    void popRequirement(IResourceInfoListGotter ressourceTupleListGotter) throws EResourceNotFound;
+    // popped in reversed order so you can managed dependencies between resources
+    void popRequirement(IResourceInfoListGotter resourceInfoListGotter) throws EResourceNotFound;
 
     org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlas(IBuildableBitmapTextureAtlasResourceInfo buildableBitmapTextureAtlasInfo) throws EResourceNotFound;
-    ITextureRegion getTextureRegionFromTextureSetByNames(ITexturesSetResourceInfo textureSetRessourceInfo, String textureName) throws EResourceNotFound;
+
+    ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound;
 }

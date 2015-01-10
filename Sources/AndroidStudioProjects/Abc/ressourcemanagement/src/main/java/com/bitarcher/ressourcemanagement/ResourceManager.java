@@ -43,20 +43,20 @@ public class ResourceManager implements IResourceManager {
     }
 
     @Override
-    public void pushRequirement(IResourceInfo ressourceTuple) throws EResourceCreationError {
-        boolean exists = this._map.containsKey(ressourceTuple);
+    public void pushRequirement(IResourceInfo resourceInfo) throws EResourceCreationError {
+        boolean exists = this._map.containsKey(resourceInfo);
         MapValue mapValue = null;
 
         if(exists)
         {
-            mapValue = this._map.get(ressourceTuple);
+            mapValue = this._map.get(resourceInfo);
         }
         else {
             MapValueFactoryByResourceInfo factoryByRessourceInfo = new MapValueFactoryByResourceInfo(this);
-            mapValue = factoryByRessourceInfo.make(ressourceTuple);
+            mapValue = factoryByRessourceInfo.make(resourceInfo);
 
 
-            this._map.put(ressourceTuple, mapValue);
+            this._map.put(resourceInfo, mapValue);
         }
 
         mapValue.ref();
@@ -64,8 +64,8 @@ public class ResourceManager implements IResourceManager {
     }
 
     @Override
-    public void pushRequirement(IResourceInfoListGotter ressourceTupleListGotter)  throws EResourceCreationError {
-        for(IResourceInfo ressourceTuple : ressourceTupleListGotter.getRessourceInfoList())
+    public void pushRequirement(IResourceInfoListGotter resourceInfoListGotter)  throws EResourceCreationError {
+        for(IResourceInfo ressourceTuple : resourceInfoListGotter.getRessourceInfoList())
         {
             this.pushRequirement(ressourceTuple);
         }
@@ -73,28 +73,28 @@ public class ResourceManager implements IResourceManager {
     }
 
     @Override
-    public void popRequirement(IResourceInfo ressourceTuple) throws EResourceNotFound {
-        boolean exists = this._map.containsKey(ressourceTuple);
+    public void popRequirement(IResourceInfo resourceInfo) throws EResourceNotFound {
+        boolean exists = this._map.containsKey(resourceInfo);
 
         if(!exists)
         {
-            throw new EResourceNotFound(ressourceTuple);
+            throw new EResourceNotFound(resourceInfo);
         }
 
-        MapValue mapValue = this._map.get(ressourceTuple);
+        MapValue mapValue = this._map.get(resourceInfo);
 
         mapValue.unref();
 
         if(!mapValue.isUsed())
         {
             mapValue.clean();
-            this._map.remove(ressourceTuple);
+            this._map.remove(resourceInfo);
         }
     }
 
     @Override
-    public void popRequirement(IResourceInfoListGotter ressourceTupleListGotter) throws EResourceNotFound {
-        ArrayList<IResourceInfo> copy = new ArrayList<>(ressourceTupleListGotter.getRessourceInfoList());
+    public void popRequirement(IResourceInfoListGotter resourceInfoListGotter) throws EResourceNotFound {
+        ArrayList<IResourceInfo> copy = new ArrayList<>(resourceInfoListGotter.getRessourceInfoList());
 
         Collections.reverse(copy);
 
@@ -121,16 +121,16 @@ public class ResourceManager implements IResourceManager {
     }
 
     @Override
-    public ITextureRegion getTextureRegionFromTextureSetByNames(ITexturesSetResourceInfo textureSetRessourceInfo, String textureName) throws EResourceNotFound
+    public ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound
     {
-        boolean exists = this._map.containsKey(textureSetRessourceInfo);
+        boolean exists = this._map.containsKey(textureSetResourceInfo);
 
         if(!exists)
         {
-            throw new EResourceNotFound(textureSetRessourceInfo);
+            throw new EResourceNotFound(textureSetResourceInfo);
         }
 
-        MapValue mapValue = this._map.get(textureSetRessourceInfo);
+        MapValue mapValue = this._map.get(textureSetResourceInfo);
 
         TextureSetMapValue textureSetMapValue = (TextureSetMapValue) mapValue;
 
