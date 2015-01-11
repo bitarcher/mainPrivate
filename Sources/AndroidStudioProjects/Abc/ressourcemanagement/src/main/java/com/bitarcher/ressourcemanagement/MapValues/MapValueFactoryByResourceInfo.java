@@ -2,6 +2,7 @@ package com.bitarcher.ressourcemanagement.MapValues;
 
 import com.bitarcher.interfaces.basicioc.ITFactory;
 import com.bitarcher.interfaces.ressourcemanagement.EResourceCreationError;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
@@ -32,6 +33,12 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
             TextureSetMapValue textureSetMapValue = new TextureSetMapValue(this.resourceManager, (ITexturesSetResourceInfo) resourceInfo);
 
             retval = textureSetMapValue;
+        }
+        else if(resourceInfo instanceof IBitmapAnimationResourceInfo)
+        {
+            BitmapAnimationMapValue bitmapAnimationMapValue = new BitmapAnimationMapValue(this.resourceManager, (IBitmapAnimationResourceInfo) resourceInfo);
+
+            retval = bitmapAnimationMapValue;
         }
         else
         {
