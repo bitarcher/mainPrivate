@@ -6,8 +6,10 @@ import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontResou
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISoundResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
+import org.andengine.audio.sound.Sound;
 import org.andengine.engine.Engine;
 import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.opengl.font.Font;
@@ -38,4 +40,5 @@ public interface IResourceManager {
     ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound;
     AnimatedSprite getAnimatedSpriteFromBitmapAnimationResourceInfo(IBitmapAnimationResourceInfo bitmapAnimationResourceInfo) throws EResourceNotFound;
     Font getFont(IFontResourceInfo fontResourceInfo) throws EResourceNotFound;
+    Sound getSound(ISoundResourceInfo soundResourceInfo) throws EResourceNotFound;
 }

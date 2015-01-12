@@ -10,14 +10,17 @@ import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontResou
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISoundResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.BitmapAnimationMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.BuildableBitmapTextureAtlasMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.Font.BaseFontMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValueFactoryByResourceInfo;
+import com.bitarcher.ressourcemanagement.MapValues.SoundMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.TextureSetMapValue;
 
+import org.andengine.audio.sound.Sound;
 import org.andengine.engine.Engine;
 import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.opengl.font.Font;
@@ -215,6 +218,23 @@ public class ResourceManager implements IResourceManager {
         BaseFontMapValue fontMapValue = (BaseFontMapValue) mapValue;
 
         Font retval = fontMapValue.getTValue();
+
+        return retval;
+    }
+
+    @Override
+    public Sound getSound(ISoundResourceInfo soundResourceInfo) throws EResourceNotFound {
+        boolean exists = this._map.containsKey(soundResourceInfo);
+
+        if(!exists)
+        {
+            throw new EResourceNotFound(soundResourceInfo);
+        }
+
+        MapValue mapValue = this._map.get(soundResourceInfo);
+        SoundMapValue soundMapValue = (SoundMapValue) mapValue;
+
+        Sound retval = soundMapValue.getTValue();
 
         return retval;
     }
