@@ -8,6 +8,7 @@ import com.bitarcher.interfaces.ressourcemanagement.IResourceInfoListGotter;
 import com.bitarcher.interfaces.ressourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IMusicResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISoundResourceInfo;
@@ -17,9 +18,11 @@ import com.bitarcher.ressourcemanagement.MapValues.BuildableBitmapTextureAtlasMa
 import com.bitarcher.ressourcemanagement.MapValues.Font.BaseFontMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValueFactoryByResourceInfo;
+import com.bitarcher.ressourcemanagement.MapValues.MusicMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.SoundMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.TextureSetMapValue;
 
+import org.andengine.audio.music.Music;
 import org.andengine.audio.sound.Sound;
 import org.andengine.engine.Engine;
 import org.andengine.entity.sprite.AnimatedSprite;
@@ -235,6 +238,23 @@ public class ResourceManager implements IResourceManager {
         SoundMapValue soundMapValue = (SoundMapValue) mapValue;
 
         Sound retval = soundMapValue.getTValue();
+
+        return retval;
+    }
+
+    @Override
+    public Music getMusic(IMusicResourceInfo musicResourceInfo) throws EResourceNotFound {
+        boolean exists = this._map.containsKey(musicResourceInfo);
+
+        if(!exists)
+        {
+            throw new EResourceNotFound(musicResourceInfo);
+        }
+
+        MapValue mapValue = this._map.get(musicResourceInfo);
+        MusicMapValue musicMapValue = (MusicMapValue) mapValue;
+
+        Music retval = musicMapValue.getTValue();
 
         return retval;
     }

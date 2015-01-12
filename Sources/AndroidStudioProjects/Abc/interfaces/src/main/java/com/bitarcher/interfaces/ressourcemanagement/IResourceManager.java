@@ -5,10 +5,12 @@ import android.content.Context;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IMusicResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISoundResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
+import org.andengine.audio.music.Music;
 import org.andengine.audio.sound.Sound;
 import org.andengine.engine.Engine;
 import org.andengine.entity.sprite.AnimatedSprite;
@@ -41,4 +43,5 @@ public interface IResourceManager {
     AnimatedSprite getAnimatedSpriteFromBitmapAnimationResourceInfo(IBitmapAnimationResourceInfo bitmapAnimationResourceInfo) throws EResourceNotFound;
     Font getFont(IFontResourceInfo fontResourceInfo) throws EResourceNotFound;
     Sound getSound(ISoundResourceInfo soundResourceInfo) throws EResourceNotFound;
+    Music getMusic(IMusicResourceInfo musicResourceInfo) throws EResourceNotFound;
 }

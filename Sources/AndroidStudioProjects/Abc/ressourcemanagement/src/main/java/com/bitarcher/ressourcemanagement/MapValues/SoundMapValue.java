@@ -31,10 +31,12 @@ public class SoundMapValue extends TMapValue<Sound> {
     @Override
     public void clean() {
         if(this._tObj!=null) {
-            if (this._tObj.isLoaded()) {
+            //if (this._tObj.isLoaded()) {
+            if (this._tObj.isReleased()) {
                 // Unload the clickSound object. Make sure to stop it first.
                 this._tObj.stop();
-                this.resourceManager.getEngine().getSoundManager().remove(this._tObj);
+                //this.resourceManager.getEngine().getSoundManager().remove(this._tObj);
+                this._tObj.release();
                 this._tObj = null;
             }
         }
