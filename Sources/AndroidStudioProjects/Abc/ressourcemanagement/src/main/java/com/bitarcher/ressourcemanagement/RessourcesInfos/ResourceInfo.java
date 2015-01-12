@@ -1,7 +1,7 @@
 package com.bitarcher.ressourcemanagement.RessourcesInfos;
 
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapTexturesSetResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
-import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 /**
  * Created by michel on 08/01/15.
@@ -23,9 +23,9 @@ public abstract class ResourceInfo implements IResourceInfo {
     public boolean isSimilar(IResourceInfo ressourceInfo) {
         boolean retval = true;
 
-        if(ressourceInfo instanceof ITexturesSetResourceInfo)
+        if(ressourceInfo instanceof IBitmapTexturesSetResourceInfo)
         {
-            retval &= this.name == ((ITexturesSetResourceInfo) ressourceInfo).getName();
+            retval &= this.name == ((IBitmapTexturesSetResourceInfo) ressourceInfo).getName();
         }
         else
         {

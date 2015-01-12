@@ -7,11 +7,11 @@ import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontCreat
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontCreateStrokeFromAssetResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontCreateStrokeFromTypeFaceResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapTexturesSetResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IMusicResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISoundResourceInfo;
-import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateFromAssetMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateFromTypeFaceMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateStrokeFromAssetMapValue;
@@ -43,9 +43,9 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
             BuildableBitmapTextureAtlasMapValue buildableBitmapTextureAtlasMapValue = new BuildableBitmapTextureAtlasMapValue(this.resourceManager,  buildableBitmapTextureAtlasResourceInfo);
             retval = buildableBitmapTextureAtlasMapValue;
         }
-        else if(resourceInfo instanceof ITexturesSetResourceInfo)
+        else if(resourceInfo instanceof IBitmapTexturesSetResourceInfo)
         {
-            TextureSetMapValue textureSetMapValue = new TextureSetMapValue(this.resourceManager, (ITexturesSetResourceInfo) resourceInfo);
+            TextureSetMapValue textureSetMapValue = new TextureSetMapValue(this.resourceManager, (IBitmapTexturesSetResourceInfo) resourceInfo);
 
             retval = textureSetMapValue;
         }

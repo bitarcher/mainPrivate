@@ -5,9 +5,9 @@ import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneTe
 import java.util.List;
 
 /**
- * Created by michel on 10/01/15.
+ * Created by michel on 12/01/15.
  */
-public interface ITexturesSetResourceInfo extends IResourceInfo {
+public interface ITexturesSetResourceInfo  extends IResourceInfo{
     String getAssetsBase();
     int getAtlasWidth();
     int getAtlasHeight();

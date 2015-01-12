@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by michel on 10/01/15.
+ * Created by michel on 12/01/15.
  */
-public class TexturesSetResourceInfo extends ResourceInfo implements ITexturesSetResourceInfo {
+public class TexturesSetResourceInfo  extends ResourceInfo implements ITexturesSetResourceInfo {
 
 
     String assetsBase;
