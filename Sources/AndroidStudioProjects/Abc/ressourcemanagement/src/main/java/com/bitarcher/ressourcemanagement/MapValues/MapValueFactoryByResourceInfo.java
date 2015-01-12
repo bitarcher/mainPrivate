@@ -9,6 +9,7 @@ import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontCreat
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISoundResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateFromAssetMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateFromTypeFaceMapValue;
@@ -67,6 +68,10 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
         else if(resourceInfo instanceof IFontCreateStrokeFromTypeFaceResourceInfo)
         {
             retval = new FontCreateStrokeFromTypeFaceMapValue(this.resourceManager, (IFontCreateStrokeFromTypeFaceResourceInfo) resourceInfo);
+        }
+        else if(resourceInfo instanceof ISoundResourceInfo)
+        {
+            retval = new SoundMapValue(this.resourceManager, (ISoundResourceInfo) resourceInfo);
         }
         else
         {
