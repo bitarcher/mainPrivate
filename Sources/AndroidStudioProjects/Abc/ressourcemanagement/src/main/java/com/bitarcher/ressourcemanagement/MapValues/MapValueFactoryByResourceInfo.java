@@ -8,6 +8,9 @@ import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.ressourcemanagement.ResourceManager;
 
+
+
+
 /**
  * Created by michel on 08/01/15.
  */
@@ -16,6 +19,8 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
 
     public MapValueFactoryByResourceInfo(ResourceManager resourceManager) {
         this.resourceManager = resourceManager;
+
+
     }
 
     @Override
