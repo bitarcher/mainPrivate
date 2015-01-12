@@ -13,8 +13,8 @@ public class FontCreateFromTypeFaceResourceInfo extends BaseFontResourceInfo imp
 
     Typeface typeFace;
 
-    public FontCreateFromTypeFaceResourceInfo(String name, int textureWidth, int textureHeight, float fontSize, Color frontColor, boolean antialiased, Typeface typeFace) {
-        super(name, textureWidth, textureHeight, fontSize, frontColor, antialiased);
+    public FontCreateFromTypeFaceResourceInfo(String name, int textureWidth, int textureHeight, float fontSize, int foreColor, boolean antialiased, Typeface typeFace) {
+        super(name, textureWidth, textureHeight, fontSize, foreColor, antialiased);
         this.typeFace = typeFace;
     }
 

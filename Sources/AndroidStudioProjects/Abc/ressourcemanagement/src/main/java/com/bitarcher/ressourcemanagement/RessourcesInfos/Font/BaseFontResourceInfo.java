@@ -12,15 +12,15 @@ public abstract class BaseFontResourceInfo extends ResourceInfo implements IFont
     int textureWidth;
     int textureHeight;
     float fontSize;
-    Color frontColor;
+    int foreColor;
     boolean antialiased;
 
-    protected BaseFontResourceInfo(String name, int textureWidth, int textureHeight, float fontSize, Color frontColor, boolean antialiased) {
+    protected BaseFontResourceInfo(String name, int textureWidth, int textureHeight, float fontSize, int foreColor, boolean antialiased) {
         super(name);
         this.textureWidth = textureWidth;
         this.textureHeight = textureHeight;
         this.fontSize = fontSize;
-        this.frontColor = frontColor;
+        this.foreColor = foreColor;
         this.antialiased = antialiased;
     }
 
@@ -40,8 +40,8 @@ public abstract class BaseFontResourceInfo extends ResourceInfo implements IFont
     }
 
     @Override
-    public Color getFrontColor() {
-        return frontColor;
+    public int getForeColor() {
+        return foreColor;
     }
 
     @Override

@@ -9,15 +9,25 @@ import org.andengine.util.adt.color.Color;
  */
 public class FontCreateStrokeFromAssetResourceInfo extends FontCreateFromAssetResourceInfo implements IFontCreateStrokeFromAssetResourceInfo {
 
-    Color backColor;
+    int backColor;
+    float strokeWidth;
 
-    public FontCreateStrokeFromAssetResourceInfo(String name, int textureWidth, int textureHeight, float fontSize, Color frontColor, boolean antialiased, String assetPath, String filename, Color backColor) {
-        super(name, textureWidth, textureHeight, fontSize, frontColor, antialiased, assetPath, filename);
+
+
+    public FontCreateStrokeFromAssetResourceInfo(String name, int textureWidth, int textureHeight, float fontSize, int foreColor, boolean antialiased, String filename, int backColor, float strokeWith) {
+        super(name, textureWidth, textureHeight, fontSize, foreColor, antialiased, filename);
         this.backColor = backColor;
+        this.strokeWidth = strokeWith;
+
     }
 
     @Override
-    public Color getBackColor() {
+    public int getBackColor() {
         return this.backColor;
+    }
+
+    @Override
+    public float getStrokeWidth() {
+        return strokeWidth;
     }
 }

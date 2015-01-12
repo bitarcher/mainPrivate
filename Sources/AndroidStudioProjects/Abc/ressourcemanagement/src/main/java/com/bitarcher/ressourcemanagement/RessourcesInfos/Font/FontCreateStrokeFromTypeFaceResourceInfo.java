@@ -11,15 +11,22 @@ import org.andengine.util.adt.color.Color;
  */
 public class FontCreateStrokeFromTypeFaceResourceInfo extends FontCreateFromTypeFaceResourceInfo implements IFontCreateStrokeFromTypeFaceResourceInfo {
 
-    Color backColor;
+    int backColor;
+    float strokeWidth;
 
-    public FontCreateStrokeFromTypeFaceResourceInfo(String name, int textureWidth, int textureHeight, float fontSize, Color frontColor, boolean antialiased, Typeface typeFace, Color backColor) {
-        super(name, textureWidth, textureHeight, fontSize, frontColor, antialiased, typeFace);
+    public FontCreateStrokeFromTypeFaceResourceInfo(String name, int textureWidth, int textureHeight, float fontSize, int foreColor, boolean antialiased, Typeface typeFace, int backColor, float strokeWidth) {
+        super(name, textureWidth, textureHeight, fontSize, foreColor, antialiased, typeFace);
         this.backColor = backColor;
+        this.strokeWidth = strokeWidth;
     }
 
     @Override
-    public Color getBackColor() {
+    public float getStrokeWidth() {
+        return strokeWidth;
+    }
+
+    @Override
+    public int getBackColor() {
         return this.backColor;
     }
 }

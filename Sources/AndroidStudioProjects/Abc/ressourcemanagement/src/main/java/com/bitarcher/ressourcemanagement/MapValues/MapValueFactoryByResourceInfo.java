@@ -2,10 +2,18 @@ package com.bitarcher.ressourcemanagement.MapValues;
 
 import com.bitarcher.interfaces.basicioc.ITFactory;
 import com.bitarcher.interfaces.ressourcemanagement.EResourceCreationError;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontCreateFromAssetResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontCreateFromTypeFaceResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontCreateStrokeFromAssetResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontCreateStrokeFromTypeFaceResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateFromAssetMapValue;
+import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateFromTypeFaceMapValue;
+import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateStrokeFromAssetMapValue;
+import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateStrokeFromTypeFaceMapValue;
 import com.bitarcher.ressourcemanagement.ResourceManager;
 
 
@@ -45,9 +53,24 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
 
             retval = bitmapAnimationMapValue;
         }
+        else if(resourceInfo instanceof IFontCreateFromAssetResourceInfo) {
+            retval = new FontCreateFromAssetMapValue(this.resourceManager, (IFontCreateFromAssetResourceInfo) resourceInfo);
+        }
+        else if(resourceInfo instanceof IFontCreateFromTypeFaceResourceInfo)
+        {
+            retval = new FontCreateFromTypeFaceMapValue(this.resourceManager, (IFontCreateFromTypeFaceResourceInfo) resourceInfo);
+        }
+        else if(resourceInfo instanceof IFontCreateStrokeFromAssetResourceInfo)
+        {
+            retval = new FontCreateStrokeFromAssetMapValue(this.resourceManager, (IFontCreateStrokeFromAssetResourceInfo) resourceInfo);
+        }
+        else if(resourceInfo instanceof IFontCreateStrokeFromTypeFaceResourceInfo)
+        {
+            retval = new FontCreateStrokeFromTypeFaceMapValue(this.resourceManager, (IFontCreateStrokeFromTypeFaceResourceInfo) resourceInfo);
+        }
         else
         {
-            throw new EResourceCreationError(String.format("Unsupported ressource type %s", resourceInfo.getClass().getName().toString()));
+            throw new EResourceCreationError(String.format("Unsupported resource type %s", resourceInfo.getClass().getName().toString()));
         }
 
         return retval;
