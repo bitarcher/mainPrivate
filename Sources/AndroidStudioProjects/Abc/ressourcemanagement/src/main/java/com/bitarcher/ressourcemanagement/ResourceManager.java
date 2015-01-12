@@ -6,18 +6,21 @@ import com.bitarcher.interfaces.ressourcemanagement.EResourceCreationError;
 import com.bitarcher.interfaces.ressourcemanagement.EResourceNotFound;
 import com.bitarcher.interfaces.ressourcemanagement.IResourceInfoListGotter;
 import com.bitarcher.interfaces.ressourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.BitmapAnimationMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.BuildableBitmapTextureAtlasMapValue;
+import com.bitarcher.ressourcemanagement.MapValues.Font.BaseFontMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValue;
 import com.bitarcher.ressourcemanagement.MapValues.MapValueFactoryByResourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.TextureSetMapValue;
 
 import org.andengine.engine.Engine;
 import org.andengine.entity.sprite.AnimatedSprite;
+import org.andengine.opengl.font.Font;
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
 import org.andengine.opengl.texture.region.ITextureRegion;
 
@@ -181,12 +184,12 @@ public class ResourceManager implements IResourceManager {
 
     @Override
     public float getCameraScaleX() {
-        return 0;
+        return this.cameraScaleFactorX;
     }
 
     @Override
     public float getCameraScaleY() {
-        return 0;
+        return this.cameraScaleFactorY;
     }
 
     // Setup the ResourceManager
@@ -197,5 +200,22 @@ public class ResourceManager implements IResourceManager {
         this.cameraHeight = pCameraHeight;
         this.cameraScaleFactorX = pCameraScaleX;
         this.cameraScaleFactorY = pCameraScaleY;
+    }
+
+    @Override
+    public Font getFont(IFontResourceInfo fontResourceInfo)  throws EResourceNotFound{
+        boolean exists = this._map.containsKey(fontResourceInfo);
+
+        if(!exists)
+        {
+            throw new EResourceNotFound(fontResourceInfo);
+        }
+
+        MapValue mapValue = this._map.get(fontResourceInfo);
+        BaseFontMapValue fontMapValue = (BaseFontMapValue) mapValue;
+
+        Font retval = fontMapValue.getTValue();
+
+        return retval;
     }
 }
