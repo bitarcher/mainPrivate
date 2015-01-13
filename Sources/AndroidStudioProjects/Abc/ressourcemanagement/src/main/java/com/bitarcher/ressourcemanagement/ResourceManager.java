@@ -7,12 +7,15 @@ import com.bitarcher.interfaces.ressourcemanagement.EResourceNotFound;
 import com.bitarcher.interfaces.ressourcemanagement.IResourceInfoListGotter;
 import com.bitarcher.interfaces.ressourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapTexturesSetResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IMusicResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISoundResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.ressourcemanagement.MapValues.AnimationMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.BitmapAnimationMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.BuildableBitmapTextureAtlasMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.Font.BaseFontMapValue;
@@ -133,7 +136,7 @@ public class ResourceManager implements IResourceManager {
     }
 
     @Override
-    public ITextureRegion getTextureRegionFromTextureSetByName(IBitmapTexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound
+    public ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound
     {
         boolean exists = this._map.containsKey(textureSetResourceInfo);
 
@@ -152,21 +155,23 @@ public class ResourceManager implements IResourceManager {
     }
 
     @Override
-    public AnimatedSprite getAnimatedSpriteFromAnimationResourceInfo(IBitmapAnimationResourceInfo bitmapAnimationResourceInfo) throws EResourceNotFound {
-        boolean exists = this._map.containsKey(bitmapAnimationResourceInfo);
+    public AnimatedSprite getAnimatedSpriteFromAnimationResourceInfo(IAnimationResourceInfo animationResourceInfo) throws EResourceNotFound {
+        boolean exists = this._map.containsKey(animationResourceInfo);
 
         if(!exists)
         {
-            throw new EResourceNotFound(bitmapAnimationResourceInfo);
+            throw new EResourceNotFound(animationResourceInfo);
         }
 
-        MapValue mapValue = this._map.get(bitmapAnimationResourceInfo);
-        BitmapAnimationMapValue bitmapAnimationMapValue = (BitmapAnimationMapValue) mapValue;
+        MapValue mapValue = this._map.get(animationResourceInfo);
+        AnimationMapValue animationMapValue = (AnimationMapValue) mapValue;
 
-        AnimatedSprite retval = bitmapAnimationMapValue.getAnimatedSprite();
+        AnimatedSprite retval = animationMapValue.getAnimatedSprite();
 
         return retval;
     }
+
+
 
     @Override
     public Engine getEngine() {

@@ -4,18 +4,18 @@ import android.content.Context;
 
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IAnimationResourceInfo;
-import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
-import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapTexturesSetResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IMusicResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISoundResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 import org.andengine.audio.music.Music;
 import org.andengine.audio.sound.Sound;
 import org.andengine.engine.Engine;
 import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.opengl.font.Font;
+import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
 import org.andengine.opengl.texture.region.ITextureRegion;
 
 /**
@@ -39,10 +39,11 @@ public interface IResourceManager {
     // popped in reversed order so you can managed dependencies between resources
     void popRequirement(IResourceInfoListGotter resourceInfoListGotter) throws EResourceNotFound;
 
-    org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlas(IBuildableBitmapTextureAtlasResourceInfo buildableBitmapTextureAtlasInfo) throws EResourceNotFound;
-    ITextureRegion getTextureRegionFromTextureSetByName(IBitmapTexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound;
+    BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlas(IBuildableBitmapTextureAtlasResourceInfo buildableBitmapTextureAtlasInfo) throws EResourceNotFound;
+    ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound;
     AnimatedSprite getAnimatedSpriteFromAnimationResourceInfo(IAnimationResourceInfo animationResourceInfo) throws EResourceNotFound;
     Font getFont(IFontResourceInfo fontResourceInfo) throws EResourceNotFound;
     Sound getSound(ISoundResourceInfo soundResourceInfo) throws EResourceNotFound;
     Music getMusic(IMusicResourceInfo musicResourceInfo) throws EResourceNotFound;
 }
+
