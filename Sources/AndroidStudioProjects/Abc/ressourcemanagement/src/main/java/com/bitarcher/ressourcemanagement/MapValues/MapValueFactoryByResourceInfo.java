@@ -12,6 +12,7 @@ import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitma
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IMusicResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISoundResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISvgAnimationResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISvgTexturesSetResourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateFromAssetMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateFromTypeFaceMapValue;
@@ -61,6 +62,12 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
             BitmapAnimationMapValue bitmapAnimationMapValue = new BitmapAnimationMapValue(this.resourceManager, (IBitmapAnimationResourceInfo) resourceInfo);
 
             retval = bitmapAnimationMapValue;
+        }
+        else if(resourceInfo instanceof ISvgAnimationResourceInfo)
+        {
+            SvgAnimationMapValue svgAnimationMapValue = new SvgAnimationMapValue(this.resourceManager, (ISvgAnimationResourceInfo) resourceInfo);
+
+            retval = svgAnimationMapValue;
         }
         else if(resourceInfo instanceof IFontCreateFromAssetResourceInfo) {
             retval = new FontCreateFromAssetMapValue(this.resourceManager, (IFontCreateFromAssetResourceInfo) resourceInfo);

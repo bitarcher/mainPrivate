@@ -152,7 +152,7 @@ public class ResourceManager implements IResourceManager {
     }
 
     @Override
-    public AnimatedSprite getAnimatedSpriteFromBitmapAnimationResourceInfo(IBitmapAnimationResourceInfo bitmapAnimationResourceInfo) throws EResourceNotFound {
+    public AnimatedSprite getAnimatedSpriteFromAnimationResourceInfo(IBitmapAnimationResourceInfo bitmapAnimationResourceInfo) throws EResourceNotFound {
         boolean exists = this._map.containsKey(bitmapAnimationResourceInfo);
 
         if(!exists)

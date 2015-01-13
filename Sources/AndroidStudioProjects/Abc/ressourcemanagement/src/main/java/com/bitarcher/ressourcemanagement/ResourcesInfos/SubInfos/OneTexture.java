@@ -1,4 +1,4 @@
-package com.bitarcher.ressourcemanagement.RessourcesInfos.SubInfos;
+package com.bitarcher.ressourcemanagement.ResourcesInfos.SubInfos;
 
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneTexture;
 

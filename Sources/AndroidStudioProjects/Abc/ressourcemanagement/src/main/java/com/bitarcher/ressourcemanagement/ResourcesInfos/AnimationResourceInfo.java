@@ -1,13 +1,13 @@
-package com.bitarcher.ressourcemanagement.RessourcesInfos;
+package com.bitarcher.ressourcemanagement.ResourcesInfos;
 
-import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IAnimationResourceInfo;
 
 import org.andengine.opengl.texture.TextureOptions;
 
 /**
- * Created by michel on 10/01/15.
+ * Created by michel on 13/01/15.
  */
-public class BitmapAnimationResourceInfo extends ResourceInfo implements IBitmapAnimationResourceInfo {
+public abstract class AnimationResourceInfo extends ResourceInfo implements IAnimationResourceInfo {
     int atlasWidth;
     int atlasHeight;
     TextureOptions textureOptions;
@@ -19,7 +19,7 @@ public class BitmapAnimationResourceInfo extends ResourceInfo implements IBitmap
     float initialY;
     boolean enableDithering;
 
-    public BitmapAnimationResourceInfo(String name, int atlasWidth, int atlasHeight, TextureOptions textureOptions, String assetsBase, String filename, int numOfColumns, int numOfRows, float initialX, float initialY, boolean enableDithering) {
+    public AnimationResourceInfo(String name, int atlasWidth, int atlasHeight, TextureOptions textureOptions, String assetsBase, String filename, int numOfColumns, int numOfRows, float initialX, float initialY, boolean enableDithering) {
         super(name);
         this.atlasWidth = atlasWidth;
         this.atlasHeight = atlasHeight;

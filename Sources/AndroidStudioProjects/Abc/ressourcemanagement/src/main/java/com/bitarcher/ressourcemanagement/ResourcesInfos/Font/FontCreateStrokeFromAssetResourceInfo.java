@@ -1,8 +1,6 @@
-package com.bitarcher.ressourcemanagement.RessourcesInfos.Font;
+package com.bitarcher.ressourcemanagement.ResourcesInfos.Font;
 
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontCreateStrokeFromAssetResourceInfo;
-
-import org.andengine.util.adt.color.Color;
 
 /**
  * Created by michel on 12/01/15.
@@ -12,13 +10,10 @@ public class FontCreateStrokeFromAssetResourceInfo extends FontCreateFromAssetRe
     int backColor;
     float strokeWidth;
 
-
-
     public FontCreateStrokeFromAssetResourceInfo(String name, int textureWidth, int textureHeight, float fontSize, int foreColor, boolean antialiased, String filename, int backColor, float strokeWith) {
         super(name, textureWidth, textureHeight, fontSize, foreColor, antialiased, filename);
         this.backColor = backColor;
         this.strokeWidth = strokeWith;
-
     }
 
     @Override

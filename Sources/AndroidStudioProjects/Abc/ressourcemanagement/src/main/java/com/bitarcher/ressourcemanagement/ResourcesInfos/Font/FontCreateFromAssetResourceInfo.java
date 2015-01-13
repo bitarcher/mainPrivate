@@ -1,8 +1,6 @@
-package com.bitarcher.ressourcemanagement.RessourcesInfos.Font;
+package com.bitarcher.ressourcemanagement.ResourcesInfos.Font;
 
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.Font.IFontCreateFromAssetResourceInfo;
-
-import org.andengine.util.adt.color.Color;
 
 /**
  * Created by michel on 12/01/15.

@@ -1,11 +1,7 @@
-package com.bitarcher.ressourcemanagement.RessourcesInfos;
+package com.bitarcher.ressourcemanagement.ResourcesInfos;
 
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapTexturesSetResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneBitmapTexture;
-import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneTexture;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by michel on 10/01/15.

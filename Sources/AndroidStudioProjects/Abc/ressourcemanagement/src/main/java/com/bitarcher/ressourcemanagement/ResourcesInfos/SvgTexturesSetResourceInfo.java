@@ -1,4 +1,4 @@
-package com.bitarcher.ressourcemanagement.RessourcesInfos;
+package com.bitarcher.ressourcemanagement.ResourcesInfos;
 
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISvgTexturesSetResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneSvgTexture;
