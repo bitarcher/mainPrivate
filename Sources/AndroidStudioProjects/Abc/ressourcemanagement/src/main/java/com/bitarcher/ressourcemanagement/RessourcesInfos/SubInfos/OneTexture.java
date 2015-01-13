@@ -5,7 +5,7 @@ import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneTe
 /**
  * Created by michel on 10/01/15.
  */
-public class OneTexture implements IOneTexture {
+public abstract class OneTexture implements IOneTexture {
     String name;
     String filename;
 

@@ -10,34 +10,37 @@ import org.andengine.opengl.texture.region.ITextureRegion;
 /**
  * Created by michel on 10/01/15.
  */
-public class OneTexture {
-    ResourceManager ressourceManager;
+public abstract class OneTexture {
+    ResourceManager resourceManager;
     TextureSetMapValue textureSetMapValue;
-    IOneTexture oneTextureRessourceInfo;
-    ITextureRegion textureRegion;
+    IOneTexture oneTextureResourceInfo;
+    protected ITextureRegion textureRegion;
 
-    public ResourceManager getRessourceManager() {
-        return ressourceManager;
+    public ResourceManager getResourceManager() {
+        return resourceManager;
     }
 
     public TextureSetMapValue getTextureSetMapValue() {
         return textureSetMapValue;
     }
 
-    public IOneTexture getOneTextureRessourceInfo() {
-        return oneTextureRessourceInfo;
+    public IOneTexture getOneTextureResourceInfo() {
+        return oneTextureResourceInfo;
     }
 
     public ITextureRegion getTextureRegion() {
         return textureRegion;
     }
 
-    public OneTexture(ResourceManager ressourceManager, TextureSetMapValue textureSetMapValue, IOneTexture oneTextureRessourceInfo) {
-        this.ressourceManager = ressourceManager;
+    public OneTexture(ResourceManager resourceManager, TextureSetMapValue textureSetMapValue, IOneTexture oneTextureResourceInfo) {
+        this.resourceManager = resourceManager;
         this.textureSetMapValue = textureSetMapValue;
-        this.oneTextureRessourceInfo = oneTextureRessourceInfo;
+        this.oneTextureResourceInfo = oneTextureResourceInfo;
 
-        this.textureRegion = BitmapTextureAtlasTextureRegionFactory.createFromAsset(textureSetMapValue.getTexture(),
-                ressourceManager.getContext(), oneTextureRessourceInfo.getFilename());
+
+
+        this.textureRegion = this.createTextureRegionFromAsset(resourceManager, textureSetMapValue, oneTextureResourceInfo);
     }
+
+    protected abstract ITextureRegion createTextureRegionFromAsset(ResourceManager resourceManager, TextureSetMapValue textureSetMapValue, IOneTexture oneTextureResourceInfo);
 }

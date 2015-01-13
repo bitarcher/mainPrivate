@@ -9,11 +9,11 @@ import java.util.List;
 /**
  * Created by michel on 12/01/15.
  */
-public class TexturesSetResourceInfo  extends ResourceInfo implements ITexturesSetResourceInfo {
+public class TexturesSetResourceInfo<TOneTexture extends IOneTexture>  extends ResourceInfo implements ITexturesSetResourceInfo<TOneTexture> {
 
 
     String assetsBase;
-    ArrayList<IOneTexture> textureList;
+    ArrayList<TOneTexture> textureList;
     int atlasWidth;
     int atlasHeight;
 
@@ -33,7 +33,7 @@ public class TexturesSetResourceInfo  extends ResourceInfo implements ITexturesS
     }
 
     @Override
-    public List<IOneTexture> getTextureList() {
+    public List<TOneTexture> getTextureList() {
         return this.textureList;
     }
 
@@ -47,7 +47,7 @@ public class TexturesSetResourceInfo  extends ResourceInfo implements ITexturesS
         this.textureList = new ArrayList<>();
     }
 
-    public void addOneTexture(IOneTexture oneTexture)
+    public void addOneTexture(TOneTexture oneTexture)
     {
         this.textureList.add(oneTexture);
     }

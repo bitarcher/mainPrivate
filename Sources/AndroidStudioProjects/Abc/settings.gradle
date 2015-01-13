@@ -1,4 +1,4 @@
-include ':app', ':andEngine', ':andEnginePhysicsBox2DExtension', ':andEngineSVGTextureRegionExtension', ':scenemanagement', ':DaoCore', ':interfaces', ':ressourcemanagement'
+include ':app', ':andEngine', ':andEnginePhysicsBox2DExtension', ':andEngineSVGTextureRegionExtension', ':scenemanagement', ':DaoCore', ':interfaces', ':ressourcemanagement', ':annotations'
 //include ':DaoTest', ':DaoGenerator', ':DaoExampleGenerator'
 //project(':DaoTest').projectDir = new File('greenDAO/DaoTest')
 //project(':DaoGenerator').projectDir = new File('greenDAO/DaoGenerator')

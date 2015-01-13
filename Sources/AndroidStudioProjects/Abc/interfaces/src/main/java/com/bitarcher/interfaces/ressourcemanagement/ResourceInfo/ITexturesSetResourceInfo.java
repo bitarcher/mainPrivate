@@ -7,10 +7,10 @@ import java.util.List;
 /**
  * Created by michel on 12/01/15.
  */
-public interface ITexturesSetResourceInfo  extends IResourceInfo{
+public interface ITexturesSetResourceInfo<TOneTexture extends IOneTexture>  extends IResourceInfo{
     String getAssetsBase();
     int getAtlasWidth();
     int getAtlasHeight();
 
-    List<IOneTexture> getTextureList();
+    List<TOneTexture> getTextureList();
 }

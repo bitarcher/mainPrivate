@@ -1,6 +1,7 @@
 package com.bitarcher.ressourcemanagement.MapValues;
 
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapTexturesSetResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneTexture;
 import com.bitarcher.ressourcemanagement.MapValues.SubValues.OneTexture;
 import com.bitarcher.ressourcemanagement.ResourceManager;
@@ -19,10 +20,10 @@ import java.util.HashMap;
 /**
  * Created by michel on 10/01/15.
  */
-public class TextureSetMapValue extends MapValue{
+public abstract class TextureSetMapValue<TexturesSetResourceInfo extends ITexturesSetResourceInfo, TOneTexture extends OneTexture> extends MapValue{
 
     BuildableBitmapTextureAtlas texture;
-    HashMap<String, OneTexture> hashMap;
+    HashMap<String, TOneTexture> hashMap;
 
     public BuildableBitmapTextureAtlas getTexture()
     {
@@ -41,22 +42,22 @@ public class TextureSetMapValue extends MapValue{
         this.hashMap.clear();
     }
 
-    public TextureSetMapValue(ResourceManager ressourceManager, IBitmapTexturesSetResourceInfo texturesSetRessourceInfo) {
+    public TextureSetMapValue(ResourceManager resourceManager, IBitmapTexturesSetResourceInfo texturesSetResourceInfo) {
         this.hashMap = new HashMap<>();
 
         String mPreviousAssetBasePath = BitmapTextureAtlasTextureRegionFactory.getAssetBasePath();
         // Set our game assets folder to "assets/gfx/game/"
-        BitmapTextureAtlasTextureRegionFactory.setAssetBasePath(texturesSetRessourceInfo.getAssetsBase());
+        BitmapTextureAtlasTextureRegionFactory.setAssetBasePath(texturesSetResourceInfo.getAssetsBase());
 
 
-        BuildableBitmapTextureAtlas texture = new BuildableBitmapTextureAtlas(ressourceManager.getEngine().getTextureManager(),
-                texturesSetRessourceInfo.getAtlasWidth(), texturesSetRessourceInfo.getAtlasHeight());
+        BuildableBitmapTextureAtlas texture = new BuildableBitmapTextureAtlas(resourceManager.getEngine().getTextureManager(),
+                texturesSetResourceInfo.getAtlasWidth(), texturesSetResourceInfo.getAtlasHeight());
 
-        for(IOneTexture oneTextureRessourceInfo : texturesSetRessourceInfo.getTextureList())
+        for(IOneTexture oneTextureResourceInfo : texturesSetResourceInfo.getTextureList())
         {
-            OneTexture oneTextureMapValue = new OneTexture(ressourceManager, this, oneTextureRessourceInfo);
+            OneTexture oneTextureMapValue = new OneTexture(resourceManager, this, oneTextureResourceInfo);
 
-            this.hashMap.put(oneTextureRessourceInfo.getName(), oneTextureMapValue);
+            this.hashMap.put(oneTextureResourceInfo.getName(), oneTextureMapValue);
         }
 
 
@@ -71,6 +72,8 @@ public class TextureSetMapValue extends MapValue{
         // Revert the Asset Path.
         BitmapTextureAtlasTextureRegionFactory.setAssetBasePath(mPreviousAssetBasePath);
     }
+
+    protected abstract TOneTexture getOneTexture()
 
     public ITextureRegion getTextureRegionByName(String name) {
         return this.hashMap.get(name).getTextureRegion();
