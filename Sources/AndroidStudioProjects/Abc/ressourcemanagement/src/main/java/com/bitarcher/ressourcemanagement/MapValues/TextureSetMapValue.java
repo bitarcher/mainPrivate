@@ -1,9 +1,10 @@
 package com.bitarcher.ressourcemanagement.MapValues;
 
-import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBitmapTexturesSetResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.SubInfos.IOneTexture;
-import com.bitarcher.ressourcemanagement.MapValues.SubValues.OneTexture;
+import com.bitarcher.ressourcemanagement.MapValues.SubValues.ITextureSetMapValue;
+import com.bitarcher.ressourcemanagement.MapValues.SubValues.OneTextureSV;
 import com.bitarcher.ressourcemanagement.ResourceManager;
 
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlas;
@@ -14,16 +15,22 @@ import org.andengine.opengl.texture.atlas.buildable.builder.BlackPawnTextureAtla
 import org.andengine.opengl.texture.atlas.buildable.builder.ITextureAtlasBuilder;
 import org.andengine.opengl.texture.region.ITextureRegion;
 import org.andengine.util.debug.Debug;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 
 /**
  * Created by michel on 10/01/15.
  */
-public abstract class TextureSetMapValue<TexturesSetResourceInfo extends ITexturesSetResourceInfo, TOneTexture extends OneTexture> extends MapValue{
+public abstract class TextureSetMapValue<TTexturesSetResourceInfo extends ITexturesSetResourceInfo<TOneTextureResourceInfo>,
+        TOneTextureResourceInfo extends IOneTexture,
+        TOneTextureSV extends OneTextureSV<TOneTextureResourceInfo>
+        >
+        extends MapValue
+        implements ITextureSetMapValue{
 
     BuildableBitmapTextureAtlas texture;
-    HashMap<String, TOneTexture> hashMap;
+    HashMap<String, TOneTextureSV> hashMap;
 
     public BuildableBitmapTextureAtlas getTexture()
     {
@@ -42,20 +49,20 @@ public abstract class TextureSetMapValue<TexturesSetResourceInfo extends ITextur
         this.hashMap.clear();
     }
 
-    public TextureSetMapValue(ResourceManager resourceManager, IBitmapTexturesSetResourceInfo texturesSetResourceInfo) {
+    public TextureSetMapValue(ResourceManager resourceManager, TTexturesSetResourceInfo texturesSetResourceInfo) {
         this.hashMap = new HashMap<>();
 
-        String mPreviousAssetBasePath = BitmapTextureAtlasTextureRegionFactory.getAssetBasePath();
+        String mPreviousAssetBasePath = this.getAssetBase();
         // Set our game assets folder to "assets/gfx/game/"
-        BitmapTextureAtlasTextureRegionFactory.setAssetBasePath(texturesSetResourceInfo.getAssetsBase());
+        this.setAssetBase(texturesSetResourceInfo.getAssetsBase());
 
 
         BuildableBitmapTextureAtlas texture = new BuildableBitmapTextureAtlas(resourceManager.getEngine().getTextureManager(),
                 texturesSetResourceInfo.getAtlasWidth(), texturesSetResourceInfo.getAtlasHeight());
 
-        for(IOneTexture oneTextureResourceInfo : texturesSetResourceInfo.getTextureList())
+        for(TOneTextureResourceInfo oneTextureResourceInfo : texturesSetResourceInfo.getTextureList())
         {
-            OneTexture oneTextureMapValue = new OneTexture(resourceManager, this, oneTextureResourceInfo);
+            TOneTextureSV oneTextureMapValue = this.createOneTexture(resourceManager, this, oneTextureResourceInfo);
 
             this.hashMap.put(oneTextureResourceInfo.getName(), oneTextureMapValue);
         }
@@ -68,12 +75,18 @@ public abstract class TextureSetMapValue<TexturesSetResourceInfo extends ITextur
             Debug.e(e);
         }
 
-
-        // Revert the Asset Path.
-        BitmapTextureAtlasTextureRegionFactory.setAssetBasePath(mPreviousAssetBasePath);
+        if(mPreviousAssetBasePath != null) {
+            // Revert the Asset Path.
+            this.setAssetBase(mPreviousAssetBasePath);
+        }
     }
 
-    protected abstract TOneTexture getOneTexture()
+    protected abstract void setAssetBase(String assetBase);
+
+    @Nullable
+    protected abstract String getAssetBase();
+
+    protected abstract TOneTextureSV createOneTexture(IResourceManager resourceManager, TextureSetMapValue textureSetMapValue, TOneTextureResourceInfo oneTextureResourceInfo);
 
     public ITextureRegion getTextureRegionByName(String name) {
         return this.hashMap.get(name).getTextureRegion();

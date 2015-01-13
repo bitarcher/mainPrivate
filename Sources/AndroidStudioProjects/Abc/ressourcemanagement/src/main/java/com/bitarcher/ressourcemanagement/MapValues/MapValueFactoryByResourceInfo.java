@@ -12,6 +12,7 @@ import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IBuildableBitma
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IMusicResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISoundResourceInfo;
+import com.bitarcher.interfaces.ressourcemanagement.ResourceInfo.ISvgTexturesSetResourceInfo;
 import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateFromAssetMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateFromTypeFaceMapValue;
 import com.bitarcher.ressourcemanagement.MapValues.Font.FontCreateStrokeFromAssetMapValue;
@@ -45,7 +46,13 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
         }
         else if(resourceInfo instanceof IBitmapTexturesSetResourceInfo)
         {
-            TextureSetMapValue textureSetMapValue = new TextureSetMapValue(this.resourceManager, (IBitmapTexturesSetResourceInfo) resourceInfo);
+            BitmapTextureSetMapValue textureSetMapValue = new BitmapTextureSetMapValue(this.resourceManager, (IBitmapTexturesSetResourceInfo) resourceInfo);
+
+            retval = textureSetMapValue;
+        }
+        else if(resourceInfo instanceof ISvgTexturesSetResourceInfo)
+        {
+            SvgTextureSetMapValue textureSetMapValue = new SvgTextureSetMapValue(this.resourceManager, (ISvgTexturesSetResourceInfo) resourceInfo);
 
             retval = textureSetMapValue;
         }
@@ -86,3 +93,4 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
         return retval;
     }
 }
+
