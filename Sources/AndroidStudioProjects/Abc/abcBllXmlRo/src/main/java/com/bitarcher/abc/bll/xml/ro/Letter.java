@@ -1,9 +1,8 @@
-package com.bitarcher.abc.bll;
+package com.bitarcher.abc.bll.xml.ro;
 
-import com.bitarcher.interfaces.basicioc.IXmlReader;
-import com.bitarcher.abc.interfaces.bll.IAnimal;
-import com.bitarcher.abc.interfaces.bll.IDinosaur;
-import com.bitarcher.abc.interfaces.bll.ILetter;
+import com.bitarcher.interfaces.bll.xml.abc.ro.IAnimal;
+import com.bitarcher.interfaces.bll.xml.abc.ro.IDinosaur;
+import com.bitarcher.interfaces.bll.xml.abc.ro.ILetter;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -18,8 +17,8 @@ public class Letter implements ILetter {
 
     int _position;
     char _char;
-    java.util.List<com.bitarcher.abc.interfaces.bll.IAnimal> _animalList;
-    List<com.bitarcher.abc.interfaces.bll.IDinosaur> _dinosaurList;
+    java.util.List<IAnimal> _animalList;
+    List<IDinosaur> _dinosaurList;
 
     public Letter(int position) {
         this._position = position;
@@ -41,7 +40,6 @@ public class Letter implements ILetter {
                 String name = childElement.getNodeName();
 
                 if(name == "Animal") {
-
                     Animal animal = new Animal();
 
                     animal.fromXml(childElement);
@@ -49,11 +47,11 @@ public class Letter implements ILetter {
                     this._animalList.add(animal);
                 }
                 else if (name == "Dinosaur") {
-                        Dinosaur dinosaur = new Dinosaur();
+                    Dinosaur dinosaur = new Dinosaur();
 
-                        dinosaur.fromXml(childElement);
+                    dinosaur.fromXml(childElement);
 
-                        this._dinosaurList.add(dinosaur);
+                    this._dinosaurList.add(dinosaur);
                 }
             }
 
@@ -72,12 +70,12 @@ public class Letter implements ILetter {
     }
 
     @Override
-    public java.util.List<com.bitarcher.abc.interfaces.bll.IAnimal> getAnimalList() {
+    public java.util.List<IAnimal> getAnimalList() {
         return this._animalList;
     }
 
     @Override
-    public List<com.bitarcher.abc.interfaces.bll.IDinosaur> getDinosaurList() {
+    public List<IDinosaur> getDinosaurList() {
         return this._dinosaurList;
     }
 

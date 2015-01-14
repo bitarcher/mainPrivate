@@ -1,8 +1,8 @@
-package com.bitarcher.abc.bll;
+package com.bitarcher.abc.bll.xml.ro;
 
-import com.bitarcher.abc.interfaces.bll.IIdiograms;
-import com.bitarcher.abc.interfaces.bll.ILetters;
-import com.bitarcher.abc.interfaces.bll.IResList;
+import com.bitarcher.interfaces.bll.xml.abc.ro.IIdiograms;
+import com.bitarcher.interfaces.bll.xml.abc.ro.ILetters;
+import com.bitarcher.interfaces.bll.xml.abc.ro.IResList;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;

@@ -1,6 +1,6 @@
-package com.bitarcher.abc.bll;
+package com.bitarcher.abc.bll.xml.ro;
 
-import com.bitarcher.abc.interfaces.bll.IDinosaur;
+import com.bitarcher.interfaces.bll.xml.abc.ro.IDinosaur;
 
 /**
  * Created by michel on 19/12/14.

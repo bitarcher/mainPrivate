@@ -1,4 +1,4 @@
-package com.bitarcher.abc.interfaces.bll;
+package com.bitarcher.interfaces.bll.xml.abc.ro;
 
 /**
  * Created by michel on 19/12/14.
