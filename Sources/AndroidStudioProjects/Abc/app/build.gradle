@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'java'
+apply plugin: 'maven'
+
 
 android {
     compileSdkVersion 19
@@ -19,6 +22,12 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
+
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //compile 'com.android.support:appcompat-v7:21.0.3'
@@ -26,10 +35,8 @@ dependencies {
     compile project(':andEnginePhysicsBox2DExtension')
     compile project(':andEngineSVGTextureRegionExtension')
     compile project(':scenemanagement')
-    compile project(':DaoCore')
     compile project(':interfaces')
     compile project(':abcBllXmlRo')
-
 }
 
 

@@ -79,6 +79,8 @@ public class SVGTextureRegionExample extends SimpleBaseGameActivity {
         this.mBuildableBitmapTextureAtlas = new BuildableBitmapTextureAtlas(this.getTextureManager(), 1024, 1024, TextureOptions.NEAREST);
         SVGBitmapTextureAtlasTextureRegionFactory.setAssetBasePath("gfx/");
 
+        //AbstractDAO d;
+
         this.mSVGTestTextureRegions = new BaseTextureRegion[SVGTextureRegionExample.COUNT];
         int i = 0;
         this.mSVGTestTextureRegions[i++] = SVGBitmapTextureAtlasTextureRegionFactory.createFromAsset(this.mBuildableBitmapTextureAtlas, this, "chick.svg", 16, 16);
