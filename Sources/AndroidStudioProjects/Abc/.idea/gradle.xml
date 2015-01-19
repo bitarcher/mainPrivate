@@ -9,7 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/abcBllXmlRo" />
+            <option value="$PROJECT_DIR$/abcBllXmlRoResources" />
             <option value="$PROJECT_DIR$/andEngine" />
             <option value="$PROJECT_DIR$/andEnginePhysicsBox2DExtension" />
             <option value="$PROJECT_DIR$/andEngineSVGTextureRegionExtension" />

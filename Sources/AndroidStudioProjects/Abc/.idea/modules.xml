@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Abc.iml" filepath="$PROJECT_DIR$/Abc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/abcBllXmlRo/abcBllXmlRo.iml" filepath="$PROJECT_DIR$/abcBllXmlRo/abcBllXmlRo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/abcBllXmlRoResources/abcBllXmlRoResources.iml" filepath="$PROJECT_DIR$/abcBllXmlRoResources/abcBllXmlRoResources.iml" />
       <module fileurl="file://$PROJECT_DIR$/andEngine/andEngine.iml" filepath="$PROJECT_DIR$/andEngine/andEngine.iml" />
       <module fileurl="file://$PROJECT_DIR$/andEnginePhysicsBox2DExtension/andEnginePhysicsBox2DExtension.iml" filepath="$PROJECT_DIR$/andEnginePhysicsBox2DExtension/andEnginePhysicsBox2DExtension.iml" />
       <module fileurl="file://$PROJECT_DIR$/andEngineSVGTextureRegionExtension/andEngineSVGTextureRegionExtension.iml" filepath="$PROJECT_DIR$/andEngineSVGTextureRegionExtension/andEngineSVGTextureRegionExtension.iml" />

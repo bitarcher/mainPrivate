@@ -1,7 +1,7 @@
-package com.bitarcher.abc.bll.xml.ro;
+package com.bitarcher.abc.bll.xml.ro.resources;
 
-import com.bitarcher.interfaces.bll.xml.abc.ro.ILetter;
-import com.bitarcher.interfaces.bll.xml.abc.ro.ILetters;
+import com.bitarcher.interfaces.bll.xml.abc.ro.resources.ILetter;
+import com.bitarcher.interfaces.bll.xml.abc.ro.resources.ILetters;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

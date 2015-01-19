@@ -1,8 +1,8 @@
-package com.bitarcher.abc.bll.xml.ro;
+package com.bitarcher.abc.bll.xml.ro.resources;
 
-import com.bitarcher.interfaces.bll.xml.abc.ro.IPicture;
+import com.bitarcher.interfaces.bll.xml.abc.ro.resources.EResourceLicense;
+import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IPicture;
 import com.bitarcher.interfaces.basicioc.IXmlReader;
-import com.bitarcher.interfaces.bll.xml.abc.ro.ERessourceLicense;
 
 import org.w3c.dom.Element;
 
@@ -12,7 +12,7 @@ import org.w3c.dom.Element;
 public abstract class APictureBase implements IXmlReader, IPicture {
     String _name;
     String _img;
-    ERessourceLicense _license;
+    EResourceLicense _license;
     String _author;
     String _reference;
 
@@ -28,7 +28,7 @@ public abstract class APictureBase implements IXmlReader, IPicture {
     }
 
     @Override
-    public ERessourceLicense getLicense() {
+    public EResourceLicense getLicense() {
         return this._license;
     }
 
@@ -46,7 +46,7 @@ public abstract class APictureBase implements IXmlReader, IPicture {
     public void fromXml(Element element) {
         this._name = element.getAttribute("name");
         this._img = element.getAttribute("img");
-        this._license = ERessourceLicense.valueOf(element.getAttribute("license"));
+        this._license = EResourceLicense.valueOf(element.getAttribute("license"));
         this._author = element.getAttribute("author");
         this._reference = element.getAttribute("reference");
     }

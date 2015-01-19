@@ -1,4 +1,4 @@
-package com.bitarcher.interfaces.bll.xml.abc.ro;
+package com.bitarcher.interfaces.bll.xml.abc.ro.resources;
 
 /**
  * Created by michel on 19/12/14.
@@ -8,7 +8,7 @@ public interface IPicture {
 
     String getImg();
 
-    ERessourceLicense getLicense();
+    EResourceLicense getLicense();
 
     String getAuthor();
 

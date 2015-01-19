@@ -1,4 +1,4 @@
-package com.bitarcher.interfaces.bll.xml.abc.ro;
+package com.bitarcher.interfaces.bll.xml.abc.ro.resources;
 
 import com.bitarcher.interfaces.basicioc.IXmlReader;
 

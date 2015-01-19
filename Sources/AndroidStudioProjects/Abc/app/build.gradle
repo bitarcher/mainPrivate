@@ -36,7 +36,7 @@ dependencies {
     compile project(':andEngineSVGTextureRegionExtension')
     compile project(':scenemanagement')
     compile project(':interfaces')
-    compile project(':abcBllXmlRo')
+    compile project(':abcBllXmlRoResources')
     compile 'com.j256.ormlite:ormlite-core:4.48'
     compile 'com.j256.ormlite:ormlite-android:4.48'
 }
