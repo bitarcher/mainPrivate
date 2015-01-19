@@ -1,0 +1,161 @@
+<Levels>
+	<Node
+		name=""
+		label="Abc"
+			>
+
+		<Node
+			name="letters"
+			label="Les lettres"
+				>
+			<!-- Replicate once it is stabilised with upper/lower case, and computer/manuscript font -->
+			<Node
+				name="whereIsTheLetter"
+				label="Où se trouve la lettre ?"
+				>
+			</Node>
+
+			<Node
+				name="doesWordContainLetter"
+				label="Le mot contient-il la lettre ?"
+				>
+			</Node>
+			<Node
+				name="whichLetterTheWordBeginsWith"
+				label="Avec quel lettre commence le mot ?"
+				>
+			</Node>
+
+			<Node
+				name="whichAnimalBeginsWith"
+				label="Quel animal commence par la lettre ?"
+				>
+			</Node>
+
+			<Node
+				name="howManyLettersInTheWord"
+				label="Combien de lettres contient le mot ?"
+				>
+			</Node>
+
+			<Node
+				name="howManyTimesTheWordContainsTheLetter"
+				label="Combien de fois le mot contient-il la lettre ?"
+				>
+			</Node>
+			<Node
+				name="letterOrder"
+				label="L'ordre des lettres dans l'alphabet"
+				>
+			</Node>
+
+
+		</Node>
+		<Node
+			name="consonantAndVowel"
+			label="Consonnes et voyelles"
+				>
+			<Node
+				name="whichLetterIsAVowel"
+				label="Quelle lettre est une voyelle ?"
+				>
+			</Node>
+
+			<Node
+				name="whichLetterIsAVowelWithoutHelp"
+				label="Quelle lettre est une voyelle (sans aide) ?"
+				>
+			</Node>
+			<Node
+				name="howManyWovelsInTheWord"
+				label="Combien de voyelles contient le mot ?"
+				>
+			</Node>
+			<Node
+				name="howManyConsonantsInTheWord"
+				label="Combien de consonnes contient le mot ?"
+				>
+			</Node>
+			<Node
+				name="whichWordContainsMoreVowels"
+				label="Quel mot contient le plus de voyelles ?"
+				>
+			</Node>
+
+		</Node>
+		<Node
+			name="syllables"
+			label="Les syllabes"
+				>
+			<Node
+				name="whichSyllableGivesTheSound"
+				label="Quelle syllabe donne le son ?"
+				>
+			</Node>
+			<Node
+				name="whichWordContainsTheSyllable"
+				label="Quel mot contient la syllabe ?"
+				>
+			</Node>
+
+			<Node
+				name="whichWordContainsTheSyllableWithoutHelp"
+				label="Quel mot contient la syllabe ? (Sans aide)"
+				>
+			</Node>
+			<Node
+				name="whichSyllableIsMissingInTheWord"
+				label="Quelle syllabe manque-t-il pour formaer le mot ?"
+				>
+			</Node>
+		</Node>
+		<Node
+			name="words"
+			label="Les mots"
+				>
+			<Node
+				name="findWordByImage"
+				label="Quel est le mot qui est illustré ?"
+				>
+			</Node>
+			<Node
+				name="whichWordEndsWithLetter"
+				label="Quel mot finit par la lettre ?"
+				>
+			</Node>	
+			<Node
+				name="whichLetterIsMissing"
+				label="Quelle lettre est manquante ?"
+				>
+			</Node>
+			<Node
+				name="moveTheLettersToWriteTheWord"
+				label="Déplace les lettres pour écrire le mot"
+				>
+			</Node>
+			<Node
+				name="moveTheLettersToWriteTheWordBeware"
+				label="Déplace les lettres pour écrire le mot mais évite les pièges"
+				>
+			</Node>
+			<Node
+				name="whereIsTheWord"
+				label="Où se trouve le mot ?"
+				>
+			</Node>
+
+		</Node>
+		<Node
+			name="sentence"
+			label="La phrase"
+				>
+			<Node
+				name="moveTheWordsToWriteTheSentence"
+				label="Déplace les mots pour écrire la phrase"
+				>
+			</Node>
+
+		</Node>
+	</Node>
+</Levels>
+
