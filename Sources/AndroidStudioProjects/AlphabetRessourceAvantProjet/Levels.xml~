@@ -81,6 +81,11 @@
 				label="Quel mot contient le plus de voyelles ?"
 				>
 			</Node>
+			<Node
+				name="writeTheWordOfAnAnimalByMovingTheLetters"
+				label="Ecris le nom d'un animal en déplaçant les lettres"
+				>
+			</Node>
 
 		</Node>
 		<Node
@@ -143,6 +148,16 @@
 				label="Où se trouve le mot ?"
 				>
 			</Node>
+			<Node
+				name="whereIsYourFirstName"
+				label="Où se trouve ton prénom ?"
+				>
+			</Node>
+			<Node
+				name="moveTheLettersToWriteYourFirtName"
+				label="Déplace les lettres pour écrire ton prénom"
+				>
+			</Node>
 
 		</Node>
 		<Node
@@ -152,6 +167,16 @@
 			<Node
 				name="moveTheWordsToWriteTheSentence"
 				label="Déplace les mots pour écrire la phrase"
+				>
+			</Node>
+			<Node
+				name="findTheSubject"
+				label="Trouve le sujet"
+				>
+			</Node>
+			<Node
+				name="findTheVerb"
+				label="Trouve le verbe"
 				>
 			</Node>
 

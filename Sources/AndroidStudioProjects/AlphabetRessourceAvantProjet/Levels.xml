@@ -1,51 +1,51 @@
 <Levels>
 	<Node
 		name=""
-		label="Abc"
+		notTranslatedLabel="Abc"
 			>
 
 		<Node
 			name="letters"
-			label="Les lettres"
+			notTranslatedLabel="Les lettres"
 				>
 			<!-- Replicate once it is stabilised with upper/lower case, and computer/manuscript font -->
 			<Node
 				name="whereIsTheLetter"
-				label="Où se trouve la lettre ?"
+				notTranslatedLabel="Où se trouve la lettre ?"
 				>
 			</Node>
 
 			<Node
 				name="doesWordContainLetter"
-				label="Le mot contient-il la lettre ?"
+				notTranslatedLabel="Le mot contient-il la lettre ?"
 				>
 			</Node>
 			<Node
 				name="whichLetterTheWordBeginsWith"
-				label="Avec quel lettre commence le mot ?"
+				notTranslatedLabel="Avec quel lettre commence le mot ?"
 				>
 			</Node>
 
 			<Node
 				name="whichAnimalBeginsWith"
-				label="Quel animal commence par la lettre ?"
+				notTranslatedLabel="Quel animal commence par la lettre ?"
 				>
 			</Node>
 
 			<Node
 				name="howManyLettersInTheWord"
-				label="Combien de lettres contient le mot ?"
+				notTranslatedLabel="Combien de lettres contient le mot ?"
 				>
 			</Node>
 
 			<Node
 				name="howManyTimesTheWordContainsTheLetter"
-				label="Combien de fois le mot contient-il la lettre ?"
+				notTranslatedLabel="Combien de fois le mot contient-il la lettre ?"
 				>
 			</Node>
 			<Node
 				name="letterOrder"
-				label="L'ordre des lettres dans l'alphabet"
+				notTranslatedLabel="L'ordre des lettres dans l'alphabet"
 				>
 			</Node>
 
@@ -53,130 +53,130 @@
 		</Node>
 		<Node
 			name="consonantAndVowel"
-			label="Consonnes et voyelles"
+			notTranslatedLabel="Consonnes et voyelles"
 				>
 			<Node
 				name="whichLetterIsAVowel"
-				label="Quelle lettre est une voyelle ?"
+				notTranslatedLabel="Quelle lettre est une voyelle ?"
 				>
 			</Node>
 
 			<Node
 				name="whichLetterIsAVowelWithoutHelp"
-				label="Quelle lettre est une voyelle (sans aide) ?"
+				notTranslatedLabel="Quelle lettre est une voyelle (sans aide) ?"
 				>
 			</Node>
 			<Node
 				name="howManyWovelsInTheWord"
-				label="Combien de voyelles contient le mot ?"
+				notTranslatedLabel="Combien de voyelles contient le mot ?"
 				>
 			</Node>
 			<Node
 				name="howManyConsonantsInTheWord"
-				label="Combien de consonnes contient le mot ?"
+				notTranslatedLabel="Combien de consonnes contient le mot ?"
 				>
 			</Node>
 			<Node
 				name="whichWordContainsMoreVowels"
-				label="Quel mot contient le plus de voyelles ?"
+				notTranslatedLabel="Quel mot contient le plus de voyelles ?"
 				>
 			</Node>
 			<Node
 				name="writeTheWordOfAnAnimalByMovingTheLetters"
-				label="Ecris le nom d'un animal en déplaçant les lettres"
+				notTranslatedLabel="Ecris le nom d'un animal en déplaçant les lettres"
 				>
 			</Node>
 
 		</Node>
 		<Node
 			name="syllables"
-			label="Les syllabes"
+			notTranslatedLabel="Les syllabes"
 				>
 			<Node
 				name="whichSyllableGivesTheSound"
-				label="Quelle syllabe donne le son ?"
+				notTranslatedLabel="Quelle syllabe donne le son ?"
 				>
 			</Node>
 			<Node
 				name="whichWordContainsTheSyllable"
-				label="Quel mot contient la syllabe ?"
+				notTranslatedLabel="Quel mot contient la syllabe ?"
 				>
 			</Node>
 
 			<Node
 				name="whichWordContainsTheSyllableWithoutHelp"
-				label="Quel mot contient la syllabe ? (Sans aide)"
+				notTranslatedLabel="Quel mot contient la syllabe ? (Sans aide)"
 				>
 			</Node>
 			<Node
 				name="whichSyllableIsMissingInTheWord"
-				label="Quelle syllabe manque-t-il pour formaer le mot ?"
+				notTranslatedLabel="Quelle syllabe manque-t-il pour formaer le mot ?"
 				>
 			</Node>
 		</Node>
 		<Node
 			name="words"
-			label="Les mots"
+			notTranslatedLabel="Les mots"
 				>
 			<Node
 				name="findWordByImage"
-				label="Quel est le mot qui est illustré ?"
+				notTranslatedLabel="Quel est le mot qui est illustré ?"
 				>
 			</Node>
 			<Node
 				name="whichWordEndsWithLetter"
-				label="Quel mot finit par la lettre ?"
+				notTranslatedLabel="Quel mot finit par la lettre ?"
 				>
 			</Node>	
 			<Node
 				name="whichLetterIsMissing"
-				label="Quelle lettre est manquante ?"
+				notTranslatedLabel="Quelle lettre est manquante ?"
 				>
 			</Node>
 			<Node
 				name="moveTheLettersToWriteTheWord"
-				label="Déplace les lettres pour écrire le mot"
+				notTranslatedLabel="Déplace les lettres pour écrire le mot"
 				>
 			</Node>
 			<Node
 				name="moveTheLettersToWriteTheWordBeware"
-				label="Déplace les lettres pour écrire le mot mais évite les pièges"
+				notTranslatedLabel="Déplace les lettres pour écrire le mot mais évite les pièges"
 				>
 			</Node>
 			<Node
 				name="whereIsTheWord"
-				label="Où se trouve le mot ?"
+				notTranslatedLabel="Où se trouve le mot ?"
 				>
 			</Node>
 			<Node
 				name="whereIsYourFirstName"
-				label="Où se trouve ton prénom ?"
+				notTranslatedLabel="Où se trouve ton prénom ?"
 				>
 			</Node>
 			<Node
 				name="moveTheLettersToWriteYourFirtName"
-				label="Déplace les lettres pour écrire ton prénom"
+				notTranslatedLabel="Déplace les lettres pour écrire ton prénom"
 				>
 			</Node>
 
 		</Node>
 		<Node
 			name="sentence"
-			label="La phrase"
+			notTranslatedLabel="La phrase"
 				>
 			<Node
 				name="moveTheWordsToWriteTheSentence"
-				label="Déplace les mots pour écrire la phrase"
+				notTranslatedLabel="Déplace les mots pour écrire la phrase"
 				>
 			</Node>
 			<Node
 				name="findTheSubject"
-				label="Trouve le sujet"
+				notTranslatedLabel="Trouve le sujet"
 				>
 			</Node>
 			<Node
 				name="findTheVerb"
-				label="Trouve le verbe"
+				notTranslatedLabel="Trouve le verbe"
 				>
 			</Node>
 

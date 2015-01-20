@@ -6,6 +6,6 @@ package com.bitarcher.interfaces.mvc;
 public interface ILabeled {
     String getTranslatedLabel();
 
-    void addLabeledListened(ILabeled labeled);
-    void removeLabeledListened(ILabeled labeled);
+    void addLabeledListener(ILabeledListener labeled);
+    void removeLabeledListener(ILabeledListener labeled);
 }
