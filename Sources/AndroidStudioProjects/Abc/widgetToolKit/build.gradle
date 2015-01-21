@@ -1,16 +1,12 @@
-apply plugin: 'com.android.application'
-//apply plugin: 'java'
-apply plugin: 'maven'
-
+apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 19
+    compileSdkVersion 21
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.bitarcher.abc"
         minSdkVersion 10
-        targetSdkVersion 19
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
@@ -20,22 +16,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    /*
-    sourceSets {
-
-        androidTest {
-            java.srcDirs = ['androidTest/java']
-        }
-    }
-    */
 }
-
-repositories {
-    mavenCentral()
-}
-
-
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -46,10 +27,4 @@ dependencies {
     compile project(':resourceManagement')
     compile project(':sceneManagement')
     compile project(':interfaces')
-    compile project(':abcBllXmlRoResources')
-    compile project(':abcBllXmlRoLevels')
-    compile 'com.j256.ormlite:ormlite-core:4.48'
-    compile 'com.j256.ormlite:ormlite-android:4.48'
 }
-
-
