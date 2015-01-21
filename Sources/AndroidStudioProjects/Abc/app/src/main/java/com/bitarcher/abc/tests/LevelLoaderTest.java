@@ -32,38 +32,5 @@ import javax.xml.parsers.ParserConfigurationException;
  */
 public class LevelLoaderTest extends InstrumentationTestCase {
 
-    private Application m_app;
 
-
-    public void testFailed() throws Exception{
-        final int expected = 1;
-        final int reality = 5;
-        assertEquals(expected, reality);
-    }
-
-
-    public void testLoading() throws Exception
-    {
-        m_app = new Application();
-        //call to system under test to load m_app using
-        //a sample xml file
-
-
-
-        Node rootNode =null;
-        try {
-            DocumentBuilderFactory DOMfactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder DOMbuilder = DOMfactory.newDocumentBuilder();
-
-            Document doc = DOMbuilder.parse(this.getInstrumentation().getContext().getResources().getAssets().open("Levels.xml"));
-
-            Node node = new Node(null);
-            node.fromXml(doc.getDocumentElement());
-
-
-        } catch (ParserConfigurationException e) {
-
-            e.printStackTrace();
-        }
-    }
 }

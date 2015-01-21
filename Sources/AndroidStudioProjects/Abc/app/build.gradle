@@ -21,12 +21,14 @@ android {
         }
     }
 
+    /*
     sourceSets {
 
         androidTest {
             java.srcDirs = ['androidTest/java']
         }
     }
+    */
 }
 
 repositories {
