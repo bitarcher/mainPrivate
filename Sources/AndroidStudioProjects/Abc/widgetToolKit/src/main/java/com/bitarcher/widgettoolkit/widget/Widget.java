@@ -17,8 +17,31 @@ public abstract class Widget extends Entity implements IWidget {
     ITheme theme;
     boolean areResourcesLoaded = false;
     protected ArrayList<IWidgetListener> widgetListenerArrayList = new ArrayList<>();
+    boolean enabled;
 
-    protected Widget(float pX, float pY, float pWidth, float pHeight, ITheme theme) {
+    @Override
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    @Override
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+
+        for(IWidgetListener widgetListener : this.widgetListenerArrayList)
+        {
+            widgetListener.onEnabledChanged(enabled);
+        }
+
+        this.onEnabledChanged(enabled);
+    }
+
+    protected void onEnabledChanged(boolean enabled)
+    {
+
+    }
+
+    protected Widget(ITheme theme, float pX, float pY, float pWidth, float pHeight) {
         super(pX, pY, pWidth, pHeight);
         this.theme = theme;
     }

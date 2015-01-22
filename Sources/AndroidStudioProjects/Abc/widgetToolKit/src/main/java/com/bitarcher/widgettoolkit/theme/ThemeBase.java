@@ -1,9 +1,12 @@
 package com.bitarcher.widgettoolkit.theme;
 
 import com.bitarcher.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.interfaces.gui.theme.IFontThemeSection;
+import com.bitarcher.interfaces.gui.theme.ITextButtonSection;
 import com.bitarcher.interfaces.gui.theme.ITheme;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 import org.andengine.opengl.font.Font;
 
@@ -17,6 +20,37 @@ public abstract class ThemeBase implements ITheme {
     IThemeManager themeManager;
     String name;
 
+    @Override
+    public IFontThemeSection getFontThemeSection() {
+        final ThemeBase themeBase = this;
+
+        return new IFontThemeSection() {
+            @Override
+            public Font getFont(EnumFontSize eFontSize) throws EResourceNotFound {
+                return themeBase.getTheFont(eFontSize);
+            }
+        };
+    }
+
+    @Override
+    public ITextButtonSection getTextButtonSection() {
+        final ThemeBase themeBase = this;
+
+        return new ITextButtonSection() {
+            @Override
+            public ITexturesSetResourceInfo getTexturesSetResourceInfo() {
+                ITexturesSetResourceInfo retval = null;
+
+                try {
+                    retval = themeBase.getTextButtonTexturesSetResourceInfo();
+                } catch (EResourceNotFound eResourceNotFound) {
+                    eResourceNotFound.printStackTrace();
+                }
+
+                return retval;
+            }
+        };
+    }
 
     @Override
     public IThemeManager getThemeManager() {
@@ -31,10 +65,10 @@ public abstract class ThemeBase implements ITheme {
     protected abstract Font getBigFont() throws EResourceNotFound;
     protected abstract Font getMediumFont() throws EResourceNotFound;
     protected abstract Font getSmallFont() throws EResourceNotFound;
+    protected abstract ITexturesSetResourceInfo getTextButtonTexturesSetResourceInfo() throws EResourceNotFound;
 
 
-    @Override
-    public Font getFont(EnumFontSize eFontSize) throws EResourceNotFound {
+    private Font getTheFont(EnumFontSize eFontSize) throws EResourceNotFound {
 
         Font retval = null;
 

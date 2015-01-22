@@ -13,8 +13,8 @@ public abstract class Button extends Widget implements IButton{
 
     protected ArrayList<IButtonListener> buttonListenerArrayList=new ArrayList<>();
 
-    protected Button(float pX, float pY, float pWidth, float pHeight, ITheme theme) {
-        super(pX, pY, pWidth, pHeight, theme);
+    protected Button(ITheme theme, float pX, float pY, float pWidth, float pHeight) {
+        super(theme, pX, pY, pWidth, pHeight);
     }
 
     @Override

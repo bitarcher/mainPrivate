@@ -10,4 +10,7 @@ public interface IWidget {
 
     void addWidgetListener(IWidgetListener widgetListener);
     void removeWidgetListener(IWidgetListener widgetListener);
+
+    boolean isEnabled();
+    void setEnabled(boolean enabled);
 }
