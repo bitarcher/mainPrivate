@@ -1,4 +1,4 @@
-package com.bitarcher.interfaces.gui;
+package com.bitarcher.interfaces.gui.theme;
 
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 

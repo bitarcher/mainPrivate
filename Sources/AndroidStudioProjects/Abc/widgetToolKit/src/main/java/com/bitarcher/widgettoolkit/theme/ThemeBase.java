@@ -1,8 +1,8 @@
 package com.bitarcher.widgettoolkit.theme;
 
-import com.bitarcher.interfaces.gui.EnumFontSize;
-import com.bitarcher.interfaces.gui.ITheme;
-import com.bitarcher.interfaces.gui.IThemeManager;
+import com.bitarcher.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.interfaces.gui.theme.ITheme;
+import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
 
 import org.andengine.opengl.font.Font;

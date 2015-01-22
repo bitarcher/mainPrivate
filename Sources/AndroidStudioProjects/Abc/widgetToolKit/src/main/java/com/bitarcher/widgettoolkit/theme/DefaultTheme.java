@@ -2,7 +2,7 @@ package com.bitarcher.widgettoolkit.theme;
 
 import android.graphics.Typeface;
 
-import com.bitarcher.interfaces.gui.IThemeManager;
+import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
 import com.bitarcher.resourcemanagement.ResourcesInfos.Font.FontCreateFromTypeFaceResourceInfo;
 

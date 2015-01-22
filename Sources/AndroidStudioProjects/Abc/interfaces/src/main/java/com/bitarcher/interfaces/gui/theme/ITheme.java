@@ -1,4 +1,4 @@
-package com.bitarcher.interfaces.gui;
+package com.bitarcher.interfaces.gui.theme;
 
 import com.bitarcher.interfaces.basicioc.INamed;
 import com.bitarcher.interfaces.basicioc.IService;
@@ -12,6 +12,7 @@ import org.andengine.opengl.font.Font;
 public interface ITheme extends INamed, IService{
     IThemeManager getThemeManager();
 
-    Font getFont(EnumFontSize eFontSize) throws EResourceNotFound;
+    IFontThemeSection getFontThemeSection();
+    ITextButtonSection getTextButtonSection();
 
 }

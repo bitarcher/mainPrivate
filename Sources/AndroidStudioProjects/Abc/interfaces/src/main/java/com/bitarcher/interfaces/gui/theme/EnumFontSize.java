@@ -1,4 +1,4 @@
-package com.bitarcher.interfaces.gui;
+package com.bitarcher.interfaces.gui.theme;
 
 /**
  * Created by michel on 21/01/15.
