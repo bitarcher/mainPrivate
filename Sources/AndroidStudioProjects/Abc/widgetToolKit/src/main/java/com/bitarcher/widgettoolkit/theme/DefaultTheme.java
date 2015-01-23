@@ -51,7 +51,7 @@ public class DefaultTheme extends ThemeBase {
         int c = 256;
 
         // remember the resourceInfo is pushed on and popped from the resource manager by the widget itself
-        this.textButtonSvgTexturesSetResourceInfo = new SvgTexturesSetResourceInfo("@default/textButtonSvgTextureSet", c, c, "theme/default/textbutton");
+        this.textButtonSvgTexturesSetResourceInfo = new SvgTexturesSetResourceInfo("@default/textButtonSvgTextureSet", c, c, "theme/default/textbutton/");
 
         int c3 = c / 3;
 
@@ -59,9 +59,13 @@ public class DefaultTheme extends ThemeBase {
 
         if(colorMapper != null) {
             this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("normal", "textButton_normal.svg", c, c3, colorMapper));
+            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("pressed", "textButton_pressed.svg", c, c3, colorMapper));
+            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("disabled", "textButton_disabled.svg", c, c3, colorMapper));
         }
         else {
             this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("normal", "textButton_normal.svg", c, c3));
+            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("pressed", "textButton_pressed.svg", c, c3));
+            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("disabled", "textButton_disabled.svg", c, c3));
         }
     }
 

@@ -30,7 +30,7 @@ public abstract class Widget extends Entity implements IWidget {
 
         for(IWidgetListener widgetListener : this.widgetListenerArrayList)
         {
-            widgetListener.onEnabledChanged(enabled);
+            widgetListener.onEnabledChanged(this, enabled);
         }
 
         this.onEnabledChanged(enabled);

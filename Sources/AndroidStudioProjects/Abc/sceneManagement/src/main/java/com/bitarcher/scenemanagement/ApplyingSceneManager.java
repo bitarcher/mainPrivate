@@ -48,7 +48,7 @@ public class ApplyingSceneManager extends BaseGameActivity {
 	public boolean onKeyDown(final int keyCode, final KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK
 				&& event.getAction() == KeyEvent.ACTION_DOWN) {
-			if(ResourceManager.getInstance().engine!=null){
+			if(OriginalOldResourceManager.getInstance().engine!=null){
 				if(SceneManager.getInstance().isLayerShown)
 					SceneManager.getInstance().currentLayer.onHideLayer();
 				else if(SceneManager.getInstance().mCurrentScene.getClass().getGenericSuperclass().equals(ManagedGameScene.class) || 
@@ -96,7 +96,7 @@ public class ApplyingSceneManager extends BaseGameActivity {
 	@Override
 	public void onCreateResources(OnCreateResourcesCallback pOnCreateResourcesCallback) {
 		// Setup the ResourceManager.
-		ResourceManager.getInstance().setup(this.getEngine(), this.getApplicationContext(), cameraWidth, cameraHeight, cameraWidth/DESIGN_SCREEN_WIDTH_PIXELS, cameraHeight/DESIGN_SCREEN_HEIGHT_PIXELS);
+		OriginalOldResourceManager.getInstance().setup(this.getEngine(), this.getApplicationContext(), cameraWidth, cameraHeight, cameraWidth/DESIGN_SCREEN_WIDTH_PIXELS, cameraHeight/DESIGN_SCREEN_HEIGHT_PIXELS);
 		pOnCreateResourcesCallback.onCreateResourcesFinished();
 	}
 

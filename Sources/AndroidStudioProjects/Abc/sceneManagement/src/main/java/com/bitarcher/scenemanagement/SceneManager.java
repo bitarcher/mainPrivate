@@ -27,7 +27,7 @@ public class SceneManager extends Object
 	public ManagedScene mCurrentScene;
 	private ManagedScene mNextScene;
 	// Keep a reference to the engine.
-	private Engine mEngine = ResourceManager.getInstance().engine;
+	private Engine mEngine = OriginalOldResourceManager.getInstance().engine;
 	// Used by the mLoadingScreenHandler, this variable ensures that the loading screen is shown for one frame prior to loading resources.
 	private int mNumFramesPassed = -1;
 	// Keeps the mLoadingScreenHandler from being registered with the engine if it has already been registered.
@@ -84,7 +84,7 @@ public class SceneManager extends Object
 	// Initiates the process of switching the current managed scene for a new managed scene.
 	public void showScene(final ManagedScene pManagedScene) {
 		// Reset the camera. This is automatically overridden by any calls to alter the camera from within a managed scene's onShowScene() method.
-		mEngine.getCamera().set(0f, 0f, ResourceManager.getInstance().cameraWidth, ResourceManager.getInstance().cameraHeight);
+		mEngine.getCamera().set(0f, 0f, OriginalOldResourceManager.getInstance().cameraWidth, OriginalOldResourceManager.getInstance().cameraHeight);
 		// If the new managed scene has a loading screen.
 		if(pManagedScene.hasLoadingScreen) {
 			// Set the loading screen as a modal child to the new managed scene.
@@ -160,7 +160,7 @@ public class SceneManager extends Object
 		// Set the camera for the managed layer so that it binds to the camera if the camera is moved/scaled/rotated.
 		pLayer.setCamera(mEngine.getCamera());
 		// Scale the layer according to screen size.
-		pLayer.setScale(ResourceManager.getInstance().cameraScaleFactorX, ResourceManager.getInstance().cameraScaleFactorY);
+		pLayer.setScale(OriginalOldResourceManager.getInstance().cameraScaleFactorX, OriginalOldResourceManager.getInstance().cameraScaleFactorY);
 		// Let the layer know that it is being shown.
 		pLayer.onShowManagedLayer();
 		// Reflect that a layer is shown.

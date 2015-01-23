@@ -90,6 +90,7 @@
     <orderEntry type="module" module-name="resourceManagement" exported="" />
     <orderEntry type="module" module-name="andEngineSVGTextureRegionExtension" exported="" />
     <orderEntry type="module" module-name="abcBllXmlRoResources" exported="" />
+    <orderEntry type="module" module-name="widgetToolKit" exported="" />
     <orderEntry type="module" module-name="andEnginePhysicsBox2DExtension" exported="" />
     <orderEntry type="module" module-name="andEngine" exported="" />
     <orderEntry type="module" module-name="interfaces" exported="" />

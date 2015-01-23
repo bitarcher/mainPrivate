@@ -40,12 +40,12 @@ public class MainMenu extends ManagedMenuScene {
 	@Override
 	public void onLoadScene() {
 		// Load the menu resources
-		ResourceManager.loadMenuResources();
+		OriginalOldResourceManager.loadMenuResources();
 		
 		// Create the background
-		BackgroundSprite = new Sprite(ResourceManager.getInstance().cameraWidth/2f,ResourceManager.getInstance().cameraHeight/2f,ResourceManager.menuBackgroundTextureRegion,ResourceManager.getInstance().engine.getVertexBufferObjectManager());
-		BackgroundSprite.setScaleX(ResourceManager.getInstance().cameraWidth);
-		BackgroundSprite.setScaleY(ResourceManager.getInstance().cameraHeight/480f);
+		BackgroundSprite = new Sprite(OriginalOldResourceManager.getInstance().cameraWidth/2f, OriginalOldResourceManager.getInstance().cameraHeight/2f, OriginalOldResourceManager.menuBackgroundTextureRegion, OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		BackgroundSprite.setScaleX(OriginalOldResourceManager.getInstance().cameraWidth);
+		BackgroundSprite.setScaleY(OriginalOldResourceManager.getInstance().cameraHeight/480f);
 		BackgroundSprite.setZIndex(-5000);
 		this.attachChild(BackgroundSprite);
 		
@@ -53,10 +53,10 @@ public class MainMenu extends ManagedMenuScene {
 		CloudSprites = new Sprite[20];
 		for(Sprite curCloudSprite: CloudSprites){
 			curCloudSprite = new Sprite(
-					MathUtils.random(-(this.getWidth() * this.getScaleX()) / 2, ResourceManager.getInstance().cameraWidth + (this.getWidth() * this.getScaleX()) / 2),
-					MathUtils.random(-(this.getHeight()*this.getScaleY())/2,ResourceManager.getInstance().cameraHeight + (this.getHeight()*this.getScaleY())/2),
-					ResourceManager.cloudTextureRegion,
-					ResourceManager.getInstance().engine.getVertexBufferObjectManager()) {
+					MathUtils.random(-(this.getWidth() * this.getScaleX()) / 2, OriginalOldResourceManager.getInstance().cameraWidth + (this.getWidth() * this.getScaleX()) / 2),
+					MathUtils.random(-(this.getHeight()*this.getScaleY())/2, OriginalOldResourceManager.getInstance().cameraHeight + (this.getHeight()*this.getScaleY())/2),
+					OriginalOldResourceManager.cloudTextureRegion,
+					OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager()) {
 				private float XSpeed = MathUtils.random(0.2f, 2f);
 				private boolean initialized = false;
 				@Override
@@ -71,7 +71,7 @@ public class MainMenu extends ManagedMenuScene {
 					if(this.getX()<-(this.getWidth()*this.getScaleX())/2) {
 						XSpeed = MathUtils.random(0.2f, 2f);
 						this.setScale(XSpeed/2);
-						this.setPosition(ResourceManager.getInstance().cameraWidth+(this.getWidth()*this.getScaleX())/2, MathUtils.random(-(this.getHeight()*this.getScaleY())/2,ResourceManager.getInstance().cameraHeight + (this.getHeight()*this.getScaleY())/2));
+						this.setPosition(OriginalOldResourceManager.getInstance().cameraWidth+(this.getWidth()*this.getScaleX())/2, MathUtils.random(-(this.getHeight()*this.getScaleY())/2, OriginalOldResourceManager.getInstance().cameraHeight + (this.getHeight()*this.getScaleY())/2));
 						
 						this.setZIndex(-4000+Math.round(XSpeed*1000f));
 						MainMenu.getInstance().sortChildren();
@@ -84,12 +84,12 @@ public class MainMenu extends ManagedMenuScene {
 		
 		// Create a Play button. Notice that the Game scenes, unlike menus, are not referred to in a static way.
 		PlayButton = new ButtonSprite(
-				(ResourceManager.getInstance().cameraWidth-ResourceManager.buttonTiledTextureRegion.getTextureRegion(0).getWidth())/2f,
-				(ResourceManager.getInstance().cameraHeight-ResourceManager.buttonTiledTextureRegion.getTextureRegion(0).getHeight())*(1f/3f), 
-				ResourceManager.buttonTiledTextureRegion.getTextureRegion(0), 
-				ResourceManager.buttonTiledTextureRegion.getTextureRegion(1), 
-				ResourceManager.getInstance().engine.getVertexBufferObjectManager());
-		PlayButtonText = new Text(0, 0, ResourceManager.fontDefault32Bold, "PLAY", ResourceManager.getInstance().engine.getVertexBufferObjectManager());
+				(OriginalOldResourceManager.getInstance().cameraWidth- OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0).getWidth())/2f,
+				(OriginalOldResourceManager.getInstance().cameraHeight- OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0).getHeight())*(1f/3f),
+				OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0),
+				OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(1),
+				OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		PlayButtonText = new Text(0, 0, OriginalOldResourceManager.fontDefault32Bold, "PLAY", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
 		PlayButtonText.setPosition((PlayButton.getWidth())/2, (PlayButton.getHeight())/2);
 		PlayButton.attachChild(PlayButtonText);
 		this.attachChild(PlayButton);
@@ -99,7 +99,7 @@ public class MainMenu extends ManagedMenuScene {
 					float pTouchAreaLocalX, float pTouchAreaLocalY) {
 				// Create a new GameLevel and show it using the SceneManager. And play a click.
 				SceneManager.getInstance().showScene(new GameLevel());
-				ResourceManager.clickSound.play();
+				OriginalOldResourceManager.clickSound.play();
 			}});
 		this.registerTouchArea(PlayButton);
 		
@@ -107,10 +107,10 @@ public class MainMenu extends ManagedMenuScene {
 		OptionsButton = new ButtonSprite(
 				PlayButton.getX()+PlayButton.getWidth(), 
 				PlayButton.getY(),
-				ResourceManager.buttonTiledTextureRegion.getTextureRegion(0), 
-				ResourceManager.buttonTiledTextureRegion.getTextureRegion(1), 
-				ResourceManager.getInstance().engine.getVertexBufferObjectManager());
-		OptionsButtonText = new Text(0,0,ResourceManager.fontDefault32Bold,"OPTIONS",ResourceManager.getInstance().engine.getVertexBufferObjectManager());
+				OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0),
+				OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(1),
+				OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		OptionsButtonText = new Text(0,0, OriginalOldResourceManager.fontDefault32Bold,"OPTIONS", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
 		OptionsButtonText.setPosition((OptionsButton.getWidth())/2, (OptionsButton.getHeight())/2);
 		OptionsButton.attachChild(OptionsButtonText);
 		this.attachChild(OptionsButton);
@@ -120,13 +120,13 @@ public class MainMenu extends ManagedMenuScene {
 					float pTouchAreaLocalX, float pTouchAreaLocalY) {
 				// Show the OptionsLayer and play a click.
 				SceneManager.getInstance().showOptionsLayer(false);
-				ResourceManager.clickSound.play();
+				OriginalOldResourceManager.clickSound.play();
 			}});
 		this.registerTouchArea(OptionsButton);
 		
 		// Create a title
-		TitleText = new Text(0, 0, ResourceManager.fontDefault72Bold, "HAPPY BIRDS", ResourceManager.getInstance().engine.getVertexBufferObjectManager());
-		TitleText.setPosition((ResourceManager.getInstance().cameraWidth)/2, (ResourceManager.getInstance().cameraHeight*2)/3f);
+		TitleText = new Text(0, 0, OriginalOldResourceManager.fontDefault72Bold, "HAPPY BIRDS", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		TitleText.setPosition((OriginalOldResourceManager.getInstance().cameraWidth)/2, (OriginalOldResourceManager.getInstance().cameraHeight*2)/3f);
 		TitleText.setColor(0.153f, 0.290f, 0.455f);
 		this.attachChild(TitleText);
 		

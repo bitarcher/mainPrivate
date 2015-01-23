@@ -1,10 +1,18 @@
 package com.bitarcher.widgettoolkit.widget;
 
+import com.bitarcher.interfaces.gui.theme.EnumFontSize;
 import com.bitarcher.interfaces.gui.theme.ITheme;
+import com.bitarcher.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.interfaces.gui.widgets.ITextButton;
 import com.bitarcher.interfaces.gui.widgets.ITextButtonListener;
 import com.bitarcher.interfaces.mvc.ILabeledListener;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
+import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+
+import org.andengine.engine.Engine;
+import org.andengine.entity.sprite.ButtonSprite;
+import org.andengine.entity.text.Text;
 
 import java.util.ArrayList;
 
@@ -15,10 +23,73 @@ public class TextButton extends  Button implements ITextButton {
     protected String translatedLabel;
     ArrayList<ITextButtonListener> textButtonListenerArrayList = new ArrayList<>();
     ArrayList<ILabeledListener> labeledListenerArrayList = new ArrayList<>();
+    ButtonSprite buttonSprite;
+    Text text;
 
     public TextButton(ITheme theme, float pX, float pY, float pWidth, float pHeight, String translatedLabel) {
         super(theme, pX, pY, pWidth, pHeight);
         this.translatedLabel = translatedLabel;
+
+        IResourceManager resourceManager =this.getTheme().getThemeManager().getResourceManager();
+        ITexturesSetResourceInfo texturesSetResourceInfo = this.getTheme().getTextButtonSection().getTexturesSetResourceInfo();
+        resourceManager.pushRequirement(texturesSetResourceInfo);
+
+        Engine engine = resourceManager.getEngine();
+
+        float centerX = pWidth / 2;
+        float centerY = pHeight / 2;
+
+        final TextButton textButton = this;
+
+        this.buttonSprite = new ButtonSprite(centerX, centerY,
+                resourceManager.getTextureRegionFromTextureSetByName(texturesSetResourceInfo, "normal"),
+                resourceManager.getTextureRegionFromTextureSetByName(texturesSetResourceInfo, "pressed"),
+                resourceManager.getTextureRegionFromTextureSetByName(texturesSetResourceInfo, "disabled"),
+                engine.getVertexBufferObjectManager(), new ButtonSprite.OnClickListener() {
+            @Override
+            public void onClick(ButtonSprite pButtonSprite, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+                textButton.onButtonClicked();
+            }
+        }
+                );
+        this.buttonSprite.setWidth(pWidth);
+        this.buttonSprite.setHeight(pHeight);
+        this.attachChild(this.buttonSprite);
+
+
+        this.text = new Text(centerX, centerY, this.getTheme().getFontThemeSection().getFont(EnumFontSize.Medium),  translatedLabel, engine.getVertexBufferObjectManager());
+        this.text.setWidth(pWidth);
+        this.text.setHeight(pWidth);
+        this.attachChild(this.text);
+
+    }
+
+    private void onButtonClicked()
+    {
+        if(this.isEnabled())
+        {
+            for(IButtonListener buttonListener : this.buttonListenerArrayList)
+            {
+                buttonListener.onClicked(this);
+            }
+
+            this.onClicked();
+        }
+    }
+
+    protected void onClicked()
+    {
+
+    }
+
+
+    @Override
+    public void dispose() {
+        if(!this.isDisposed()) {
+            this.getTheme().getThemeManager().getResourceManager().popRequirement(this.getTheme().getTextButtonSection().getTexturesSetResourceInfo());
+        }
+
+        super.dispose();
     }
 
     @Override
@@ -55,7 +126,6 @@ public class TextButton extends  Button implements ITextButton {
 
     protected void onTranslatedLabelChanged(String translatedLabel)
     {
-
     }
 
     @Override
@@ -64,16 +134,9 @@ public class TextButton extends  Button implements ITextButton {
     }
 
     @Override
-    protected void pushResourceRequirements() {
-        super.pushResourceRequirements();
+    protected void onEnabledChanged(boolean enabled) {
+        super.onEnabledChanged(enabled);
 
-        this.getTheme().getThemeManager().getResourceManager().pushRequirement(this.getTheme().getTextButtonSection().getTexturesSetResourceInfo());
-    }
-
-    @Override
-    protected void popResourceRequirements() throws EResourceNotFound {
-        super.popResourceRequirements();
-
-        this.getTheme().getThemeManager().getResourceManager().popRequirement(this.getTheme().getTextButtonSection().getTexturesSetResourceInfo());
+        this.buttonSprite.setEnabled(enabled);
     }
 }
