@@ -35,9 +35,6 @@ public class OneAssetSvgTexture extends OneAssetTexture implements IOneAssetSvgT
     }
 
     public OneAssetSvgTexture(String name, String filename, int width, int height) {
-        super(name, filename);
-        this.width = width;
-        this.height = height;
-        this.svgColorMapper = null;
+        this(name, filename, width, height, null);
     }
 }

@@ -4,11 +4,10 @@ import android.graphics.Typeface;
 
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
+
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.Font.FontCreateFromTypeFaceResourceInfo;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
+import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneResSvgTexture;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.widgettoolkit.R;
 
@@ -58,18 +57,13 @@ public class DefaultTheme extends ThemeBase {
 
         int c3 = c / 3;
 
+        // may be null
         ISVGColorMapper colorMapper = this.getTextButtonSvgTexturesSetColorMapper();
 
-        if(colorMapper != null) {
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("normal", R., c, c3, colorMapper));
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("pressed", "textButton_pressed.svg", c, c3, colorMapper));
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("disabled", "textButton_disabled.svg", c, c3, colorMapper));
-        }
-        else {
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("normal", "textButton_normal.svg", c, c3));
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("pressed", "textButton_pressed.svg", c, c3));
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("disabled", "textButton_disabled.svg", c, c3));
-        }
+        this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("normal", R.raw.d_text_button_normal, c, c3, colorMapper));
+        this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("pressed", R.raw.d_text_button_pressed, c, c3, colorMapper));
+        this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("disabled", R.raw.d_text_button_disabled, c, c3, colorMapper));
+
     }
 
     protected  ISVGColorMapper getTextButtonSvgTexturesSetColorMapper()
