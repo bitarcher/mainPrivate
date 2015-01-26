@@ -6,7 +6,7 @@ import com.bitarcher.interfaces.gui.theme.ITextButtonSection;
 import com.bitarcher.interfaces.gui.theme.ITheme;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
 
 import org.andengine.opengl.font.Font;
 
@@ -38,8 +38,8 @@ public abstract class ThemeBase implements ITheme {
 
         return new ITextButtonSection() {
             @Override
-            public ITexturesSetResourceInfo getTexturesSetResourceInfo() {
-                ITexturesSetResourceInfo retval = null;
+            public ITexturesSetFromAssetResourceInfo getTexturesSetResourceInfo() {
+                ITexturesSetFromAssetResourceInfo retval = null;
 
                 try {
                     retval = themeBase.getTextButtonTexturesSetResourceInfo();
@@ -65,7 +65,7 @@ public abstract class ThemeBase implements ITheme {
     protected abstract Font getBigFont() throws EResourceNotFound;
     protected abstract Font getMediumFont() throws EResourceNotFound;
     protected abstract Font getSmallFont() throws EResourceNotFound;
-    protected abstract ITexturesSetResourceInfo getTextButtonTexturesSetResourceInfo() throws EResourceNotFound;
+    protected abstract ITexturesSetFromAssetResourceInfo getTextButtonTexturesSetResourceInfo() throws EResourceNotFound;
 
 
     private Font getTheFont(EnumFontSize eFontSize) throws EResourceNotFound {

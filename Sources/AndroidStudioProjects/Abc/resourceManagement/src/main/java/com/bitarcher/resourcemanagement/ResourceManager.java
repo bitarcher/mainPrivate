@@ -12,7 +12,7 @@ import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IMusicResourceIn
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ISoundResourceInfo;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
 import com.bitarcher.resourcemanagement.MapValues.AnimationMapValue;
 import com.bitarcher.resourcemanagement.MapValues.BuildableBitmapTextureAtlasMapValue;
 import com.bitarcher.resourcemanagement.MapValues.Font.BaseFontMapValue;
@@ -20,7 +20,7 @@ import com.bitarcher.resourcemanagement.MapValues.MapValue;
 import com.bitarcher.resourcemanagement.MapValues.MapValueFactoryByResourceInfo;
 import com.bitarcher.resourcemanagement.MapValues.MusicMapValue;
 import com.bitarcher.resourcemanagement.MapValues.SoundMapValue;
-import com.bitarcher.resourcemanagement.MapValues.TextureSetMapValue;
+import com.bitarcher.resourcemanagement.MapValues.TextureSetFromAssetMapValue;
 
 import org.andengine.audio.music.Music;
 import org.andengine.audio.sound.Sound;
@@ -133,7 +133,7 @@ public class ResourceManager implements IResourceManager {
     }
 
     @Override
-    public ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound
+    public ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetFromAssetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound
     {
         boolean exists = this._map.containsKey(textureSetResourceInfo);
 
@@ -144,7 +144,7 @@ public class ResourceManager implements IResourceManager {
 
         MapValue mapValue = this._map.get(textureSetResourceInfo);
 
-        TextureSetMapValue textureSetMapValue = (TextureSetMapValue) mapValue;
+        TextureSetFromAssetMapValue textureSetMapValue = (TextureSetFromAssetMapValue) mapValue;
 
         ITextureRegion retval = textureSetMapValue.getTextureRegionByName(textureName);
 

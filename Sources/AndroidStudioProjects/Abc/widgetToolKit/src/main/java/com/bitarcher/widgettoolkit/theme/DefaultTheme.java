@@ -4,10 +4,13 @@ import android.graphics.Typeface;
 
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.Font.FontCreateFromTypeFaceResourceInfo;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneSvgTexture;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetResourceInfo;
+import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
+import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
+import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
+import com.bitarcher.widgettoolkit.R;
 
 import org.andengine.extension.svg.adt.ISVGColorMapper;
 import org.andengine.opengl.font.Font;
@@ -20,7 +23,7 @@ public class DefaultTheme extends ThemeBase {
     protected FontCreateFromTypeFaceResourceInfo bigFontResourceInfo;
     protected FontCreateFromTypeFaceResourceInfo mediumFontResourceInfo;
     protected FontCreateFromTypeFaceResourceInfo smallFontResourceInfo;
-    protected SvgTexturesSetResourceInfo textButtonSvgTexturesSetResourceInfo;
+    protected SvgTexturesSetFromResIdsResourceInfo textButtonSvgTexturesSetResourceInfo;
 
     public FontCreateFromTypeFaceResourceInfo getBigFontResourceInfo()
     {
@@ -51,21 +54,21 @@ public class DefaultTheme extends ThemeBase {
         int c = 256;
 
         // remember the resourceInfo is pushed on and popped from the resource manager by the widget itself
-        this.textButtonSvgTexturesSetResourceInfo = new SvgTexturesSetResourceInfo("@default/textButtonSvgTextureSet", c, c, "theme/default/textbutton/");
+        this.textButtonSvgTexturesSetResourceInfo = new SvgTexturesSetFromResIdsResourceInfo("@default/textButtonSvgTextureSet", c, c);
 
         int c3 = c / 3;
 
         ISVGColorMapper colorMapper = this.getTextButtonSvgTexturesSetColorMapper();
 
         if(colorMapper != null) {
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("normal", "textButton_normal.svg", c, c3, colorMapper));
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("pressed", "textButton_pressed.svg", c, c3, colorMapper));
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("disabled", "textButton_disabled.svg", c, c3, colorMapper));
+            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("normal", R., c, c3, colorMapper));
+            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("pressed", "textButton_pressed.svg", c, c3, colorMapper));
+            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("disabled", "textButton_disabled.svg", c, c3, colorMapper));
         }
         else {
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("normal", "textButton_normal.svg", c, c3));
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("pressed", "textButton_pressed.svg", c, c3));
-            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneSvgTexture("disabled", "textButton_disabled.svg", c, c3));
+            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("normal", "textButton_normal.svg", c, c3));
+            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("pressed", "textButton_pressed.svg", c, c3));
+            this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneAssetSvgTexture("disabled", "textButton_disabled.svg", c, c3));
         }
     }
 

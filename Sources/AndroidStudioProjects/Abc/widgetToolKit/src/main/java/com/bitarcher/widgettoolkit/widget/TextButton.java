@@ -6,9 +6,8 @@ import com.bitarcher.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.interfaces.gui.widgets.ITextButton;
 import com.bitarcher.interfaces.gui.widgets.ITextButtonListener;
 import com.bitarcher.interfaces.mvc.ILabeledListener;
-import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
 
 import org.andengine.engine.Engine;
 import org.andengine.entity.sprite.ButtonSprite;
@@ -31,7 +30,7 @@ public class TextButton extends  Button implements ITextButton {
         this.translatedLabel = translatedLabel;
 
         IResourceManager resourceManager =this.getTheme().getThemeManager().getResourceManager();
-        ITexturesSetResourceInfo texturesSetResourceInfo = this.getTheme().getTextButtonSection().getTexturesSetResourceInfo();
+        ITexturesSetFromAssetResourceInfo texturesSetResourceInfo = this.getTheme().getTextButtonSection().getTexturesSetResourceInfo();
         resourceManager.pushRequirement(texturesSetResourceInfo);
 
         Engine engine = resourceManager.getEngine();

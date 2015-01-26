@@ -35,8 +35,8 @@ public abstract class OneTextureSV<TOneTextureResourceInfo extends IOneTexture> 
         this.textureSetMapValue = textureSetMapValue;
         this.oneTextureResourceInfo = oneTextureResourceInfo;
 
-        this.textureRegion = this.createTextureRegionFromAsset(resourceManager, textureSetMapValue, oneTextureResourceInfo);
+        this.textureRegion = this.createTextureRegionFromResourceInfo(resourceManager, textureSetMapValue, oneTextureResourceInfo);
     }
 
-    protected abstract ITextureRegion createTextureRegionFromAsset(IResourceManager resourceManager, ITextureSetMapValue textureSetMapValue, TOneTextureResourceInfo oneTextureResourceInfo);
+    protected abstract ITextureRegion createTextureRegionFromResourceInfo(IResourceManager resourceManager, ITextureSetMapValue textureSetMapValue, TOneTextureResourceInfo oneTextureResourceInfo);
 }

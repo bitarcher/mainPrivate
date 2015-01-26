@@ -1,5 +1,6 @@
 package com.bitarcher.interfaces.gui.theme;
 
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 /**

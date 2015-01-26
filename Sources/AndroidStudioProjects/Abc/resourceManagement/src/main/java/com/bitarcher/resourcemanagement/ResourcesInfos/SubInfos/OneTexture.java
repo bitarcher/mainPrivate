@@ -1,26 +1,26 @@
+/*
+ * Copyright (c) 2015.
+ * Michel Strasser
+ * bitarcher.com
+ */
+
 package com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos;
 
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneTexture;
 
 /**
- * Created by michel on 10/01/15.
+ * Created by michel on 26/01/15.
  */
-public abstract class OneTexture implements IOneTexture {
+public abstract class OneTexture  implements IOneTexture{
     String name;
-    String filename;
+
 
     @Override
     public String getName() {
         return this.name;
     }
 
-    @Override
-    public String getFilename() {
-        return this.filename;
-    }
-
-    public OneTexture(String name, String filename) {
+    protected OneTexture(String name) {
         this.name = name;
-        this.filename = filename;
     }
 }

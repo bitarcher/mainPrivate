@@ -6,10 +6,10 @@
 
 package com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos;
 
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ISvgSpecific;
+import com.bitarcher.interfaces.resourcemanagement.Access.IRawRes;
 
 /**
  * Created by michel on 26/01/15.
  */
-public interface IOneSvgTexture extends IOneTexture, ISvgSpecific {
+public interface IOneResTexture extends IRawRes, IOneTexture {
 }

@@ -8,7 +8,7 @@ import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBuildableBitmap
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IMusicResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ISoundResourceInfo;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
 
 import org.andengine.audio.music.Music;
 import org.andengine.audio.sound.Sound;
@@ -40,7 +40,7 @@ public interface IResourceManager {
     void popRequirement(IResourceInfoListGotter resourceInfoListGotter) throws EResourceNotFound;
 
     BuildableBitmapTextureAtlas getBuildableBitmapTextureAtlas(IBuildableBitmapTextureAtlasResourceInfo buildableBitmapTextureAtlasInfo) throws EResourceNotFound;
-    ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound;
+    ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetFromAssetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound;
     AnimatedSprite getAnimatedSpriteFromAnimationResourceInfo(IAnimationResourceInfo animationResourceInfo) throws EResourceNotFound;
     Font getFont(IFontResourceInfo fontResourceInfo) throws EResourceNotFound;
     Sound getSound(ISoundResourceInfo soundResourceInfo) throws EResourceNotFound;

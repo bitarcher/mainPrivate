@@ -5,5 +5,5 @@ package com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos;
  */
 public interface IOneTexture {
     String getName();
-    String getFilename();
+
 }

@@ -7,13 +7,15 @@ import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.Font.IFontCreate
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.Font.IFontCreateStrokeFromAssetResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.Font.IFontCreateStrokeFromTypeFaceResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBitmapTexturesSetResourceInfo;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromAssetResourceInfo;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IMusicResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ISoundResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ISvgAnimationResourceInfo;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ISvgTexturesSetResourceInfo;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ISvgTexturesSetFromAssetResourceInfo;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ISvgTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.resourcemanagement.MapValues.Font.FontCreateFromAssetMapValue;
 import com.bitarcher.resourcemanagement.MapValues.Font.FontCreateFromTypeFaceMapValue;
 import com.bitarcher.resourcemanagement.MapValues.Font.FontCreateStrokeFromAssetMapValue;
@@ -45,15 +47,27 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
             BuildableBitmapTextureAtlasMapValue buildableBitmapTextureAtlasMapValue = new BuildableBitmapTextureAtlasMapValue(this.resourceManager,  buildableBitmapTextureAtlasResourceInfo);
             retval = buildableBitmapTextureAtlasMapValue;
         }
-        else if(resourceInfo instanceof IBitmapTexturesSetResourceInfo)
+        else if(resourceInfo instanceof IBitmapTexturesSetFromAssetResourceInfo)
         {
-            BitmapTextureSetMapValue textureSetMapValue = new BitmapTextureSetMapValue(this.resourceManager, (IBitmapTexturesSetResourceInfo) resourceInfo);
+            BitmapTextureSetFromAssetMapValue textureSetMapValue = new BitmapTextureSetFromAssetMapValue(this.resourceManager, (IBitmapTexturesSetFromAssetResourceInfo) resourceInfo);
 
             retval = textureSetMapValue;
         }
-        else if(resourceInfo instanceof ISvgTexturesSetResourceInfo)
+        else if(resourceInfo instanceof ISvgTexturesSetFromAssetResourceInfo)
         {
-            SvgTextureSetMapValue textureSetMapValue = new SvgTextureSetMapValue(this.resourceManager, (ISvgTexturesSetResourceInfo) resourceInfo);
+            SvgTextureSetFromAssetMapValue textureSetMapValue = new SvgTextureSetFromAssetMapValue(this.resourceManager, (ISvgTexturesSetFromAssetResourceInfo) resourceInfo);
+
+            retval = textureSetMapValue;
+        }
+        else if(resourceInfo instanceof IBitmapTexturesSetFromResIdsResourceInfo)
+        {
+            BitmapTextureSetFromResMapValue textureSetMapValue = new BitmapTextureSetFromResMapValue(this.resourceManager, (IBitmapTexturesSetFromResIdsResourceInfo) resourceInfo);
+
+            retval = textureSetMapValue;
+        }
+        else if(resourceInfo instanceof ISvgTexturesSetFromResIdsResourceInfo)
+        {
+            SvgTextureSetFromResMapValue textureSetMapValue = new SvgTextureSetFromResMapValue(this.resourceManager, (ISvgTexturesSetFromResIdsResourceInfo) resourceInfo);
 
             retval = textureSetMapValue;
         }

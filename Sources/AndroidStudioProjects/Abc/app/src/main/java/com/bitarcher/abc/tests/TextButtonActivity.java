@@ -48,7 +48,7 @@ public class TextButtonActivity extends SimpleBaseGameActivity {
 
         ThemeManager themeManager = new ThemeManager(resourceManager);
 
-        this.theme = new DefaultTheme(themeManager, "theme/default");
+        this.theme = new DefaultTheme(themeManager, "raw/theme/default");
         themeManager.setCurrentTheme(theme);
     }
 
