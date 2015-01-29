@@ -9,20 +9,19 @@ package com.bitarcher.resourcemanagement.MapValues.SubValues;
 import android.content.Context;
 
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromResIdsResourceInfo;
+
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
 
 import com.bitarcher.resourcemanagement.MapValues.TextureSetFromResMapValue;
-import com.bitarcher.ressourcemanagement.R;
+
 
 import org.andengine.extension.svg.SVGParser;
 import org.andengine.extension.svg.adt.ISVGColorMapper;
 import org.andengine.extension.svg.adt.SVG;
 import org.andengine.extension.svg.opengl.texture.atlas.bitmap.SVGBitmapTextureAtlasTextureRegionFactory;
-import org.andengine.extension.svg.opengl.texture.atlas.bitmap.source.SVGResourceBitmapTextureAtlasSource;
+
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
-import org.andengine.opengl.texture.atlas.bitmap.source.IBitmapTextureAtlasSource;
-import org.andengine.opengl.texture.atlas.buildable.BuildableTextureAtlasTextureRegionFactory;
+
 import org.andengine.opengl.texture.region.ITextureRegion;
 
 import java.io.InputStream;

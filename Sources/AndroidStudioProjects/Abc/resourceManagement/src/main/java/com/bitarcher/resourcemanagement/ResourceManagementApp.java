@@ -4,7 +4,7 @@
  * bitarcher.com
  */
 
-package com.bitarcher.widgettoolkit;
+package com.bitarcher.resourcemanagement;
 
 import android.app.Application;
 import android.content.Context;
@@ -12,14 +12,14 @@ import android.content.Context;
 /**
  * Created by michel on 29/01/15.
  */
-public class WidgetToolkitApp extends Application {
+public class ResourceManagementApp extends Application {
 
     private static Context mContext;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        mContext = this.getApplicationContext();
+        mContext = this;
     }
 
     public static Context getContext(){
