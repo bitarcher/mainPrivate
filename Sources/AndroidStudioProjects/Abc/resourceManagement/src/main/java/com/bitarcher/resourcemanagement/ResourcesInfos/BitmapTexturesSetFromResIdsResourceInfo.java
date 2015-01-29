@@ -6,6 +6,8 @@
 
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
+import android.content.Context;
+
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResBitmapTexture;
 
@@ -13,7 +15,7 @@ import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneRes
  * Created by michel on 26/01/15.
  */
 public class BitmapTexturesSetFromResIdsResourceInfo extends TexturesSetFromResIdsResourceInfo<IOneResBitmapTexture> implements IBitmapTexturesSetFromResIdsResourceInfo {
-    public BitmapTexturesSetFromResIdsResourceInfo(String name, int atlasWidth, int atlasHeight) {
-        super(name, atlasWidth, atlasHeight);
+    public BitmapTexturesSetFromResIdsResourceInfo(String name, Context context, int atlasWidth, int atlasHeight) {
+        super(name, context, atlasWidth, atlasHeight);
     }
 }

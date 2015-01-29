@@ -6,6 +6,8 @@
 
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
+import android.content.Context;
+
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ISvgTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
 
@@ -13,7 +15,7 @@ import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneRes
  * Created by michel on 26/01/15.
  */
 public class SvgTexturesSetFromResIdsResourceInfo extends TexturesSetFromResIdsResourceInfo<IOneResSvgTexture> implements ISvgTexturesSetFromResIdsResourceInfo {
-    public SvgTexturesSetFromResIdsResourceInfo(String name, int atlasWidth, int atlasHeight) {
-        super(name, atlasWidth, atlasHeight);
+    public SvgTexturesSetFromResIdsResourceInfo(String name, Context context, int atlasWidth, int atlasHeight) {
+        super(name, context, atlasWidth, atlasHeight);
     }
 }

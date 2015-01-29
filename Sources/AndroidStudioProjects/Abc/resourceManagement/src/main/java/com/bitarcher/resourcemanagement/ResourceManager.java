@@ -65,8 +65,8 @@ public class ResourceManager implements IResourceManager {
             mapValue = this._map.get(resourceInfo);
         }
         else {
-            MapValueFactoryByResourceInfo factoryByRessourceInfo = new MapValueFactoryByResourceInfo(this);
-            mapValue = factoryByRessourceInfo.make(resourceInfo);
+            MapValueFactoryByResourceInfo factoryByResourceInfo = new MapValueFactoryByResourceInfo(this);
+            mapValue = factoryByResourceInfo.make(resourceInfo);
 
 
             this._map.put(resourceInfo, mapValue);
@@ -78,9 +78,9 @@ public class ResourceManager implements IResourceManager {
 
     @Override
     public void pushRequirement(IResourceInfoListGotter resourceInfoListGotter)  throws EResourceCreationError {
-        for(IResourceInfo ressourceTuple : resourceInfoListGotter.getRessourceInfoList())
+        for(IResourceInfo resourceTuple : resourceInfoListGotter.getRessourceInfoList())
         {
-            this.pushRequirement(ressourceTuple);
+            this.pushRequirement(resourceTuple);
         }
 
     }

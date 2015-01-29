@@ -33,11 +33,16 @@ public abstract class TextureSetMapValue
             TOneTextureSV extends OneTextureSV<TOneTextureResourceInfo>
             >
     extends MapValue
-    implements ITextureSetMapValue
+    implements ITextureSetMapValue {
 
+    BuildableBitmapTextureAtlas texture;
+    HashMap<String, TOneTextureSV> hashMap;
+    TTexturesSetResourceInfo texturesSetResourceInfo;
+
+    public TTexturesSetResourceInfo getTexturesSetResourceInfo()
     {
-        BuildableBitmapTextureAtlas texture;
-        HashMap<String, TOneTextureSV> hashMap;
+        return this.texturesSetResourceInfo;
+    }
 
     public BuildableBitmapTextureAtlas getTexture()
     {
@@ -46,22 +51,23 @@ public abstract class TextureSetMapValue
 
     @Override
     public void clean() {
-        if(texture != null)
+        if(this.texture != null)
         {
-            if(texture.isLoadedToHardware())
+            if(this.texture.isLoadedToHardware())
             {
-                texture.unload();
+                this.texture.unload();
             }
         }
         this.hashMap.clear();
     }
 
     public TextureSetMapValue(ResourceManager resourceManager, TTexturesSetResourceInfo texturesSetResourceInfo) {
+        this.texturesSetResourceInfo = texturesSetResourceInfo;
         this.hashMap = new HashMap<>();
 
         this.beforeLoadingTextures(resourceManager, texturesSetResourceInfo);
 
-        BuildableBitmapTextureAtlas texture = new BuildableBitmapTextureAtlas(resourceManager.getEngine().getTextureManager(),
+        this.texture = new BuildableBitmapTextureAtlas(resourceManager.getEngine().getTextureManager(),
                 texturesSetResourceInfo.getAtlasWidth(), texturesSetResourceInfo.getAtlasHeight());
 
         for(TOneTextureResourceInfo oneTextureResourceInfo : texturesSetResourceInfo.getTextureList())
@@ -73,8 +79,8 @@ public abstract class TextureSetMapValue
 
 
         try {
-            texture.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0, 1, 4));
-            texture.load();
+            this.texture.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0, 1, 4));
+            this.texture.load();
         } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
             Debug.e(e);
         }

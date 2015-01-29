@@ -7,11 +7,15 @@
 package com.bitarcher.resourcemanagement.MapValues;
 
 
+import android.content.Context;
+
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromResIdsResourceInfo;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResTexture;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.ITextureSetMapValue;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.OneTextureSV;
 import com.bitarcher.resourcemanagement.ResourceManager;
+
+import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
 
 /**
  * Created by michel on 26/01/15.
@@ -27,5 +31,14 @@ public abstract class TextureSetFromResMapValue <TTexturesSetFromResResourceInfo
     public TextureSetFromResMapValue(ResourceManager resourceManager, TTexturesSetFromResResourceInfo texturesSetResourceInfo) {
         super(resourceManager, texturesSetResourceInfo);
 
+    }
+
+    public Context getContext()
+    {
+
+        ITexturesSetFromResIdsResourceInfo texturesSetFromResIdsResourceInfo = (ITexturesSetFromResIdsResourceInfo) this.getTexturesSetResourceInfo();
+        Context retval = texturesSetFromResIdsResourceInfo.getContext();
+
+        return retval;
     }
 }

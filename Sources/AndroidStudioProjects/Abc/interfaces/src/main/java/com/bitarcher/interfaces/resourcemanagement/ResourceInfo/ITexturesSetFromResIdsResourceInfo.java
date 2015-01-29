@@ -6,10 +6,13 @@
 
 package com.bitarcher.interfaces.resourcemanagement.ResourceInfo;
 
+import android.content.Context;
+
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResTexture;
 
 /**
  * Created by michel on 26/01/15.
  */
 public interface ITexturesSetFromResIdsResourceInfo<TOneRawResTexture extends IOneResTexture>  extends ITexturesSetResourceInfo<TOneRawResTexture> {
+    Context getContext();
 }

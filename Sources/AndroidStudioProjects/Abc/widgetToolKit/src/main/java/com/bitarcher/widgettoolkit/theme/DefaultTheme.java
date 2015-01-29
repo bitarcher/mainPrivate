@@ -1,5 +1,6 @@
 package com.bitarcher.widgettoolkit.theme;
 
+import android.content.Context;
 import android.graphics.Typeface;
 
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
@@ -9,6 +10,7 @@ import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetReso
 import com.bitarcher.resourcemanagement.ResourcesInfos.Font.FontCreateFromTypeFaceResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneResSvgTexture;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
+import com.bitarcher.widgettoolkit.WidgetToolkitApp;
 import com.bitarcher.widgettoolkit.R;
 
 import org.andengine.extension.svg.adt.ISVGColorMapper;
@@ -53,12 +55,14 @@ public class DefaultTheme extends ThemeBase {
         int c = 256;
 
         // remember the resourceInfo is pushed on and popped from the resource manager by the widget itself
-        this.textButtonSvgTexturesSetResourceInfo = new SvgTexturesSetFromResIdsResourceInfo("@default/textButtonSvgTextureSet", c, c);
+        Context context = WidgetToolkitApp.getContext();
+        this.textButtonSvgTexturesSetResourceInfo = new SvgTexturesSetFromResIdsResourceInfo("@default/textButtonSvgTextureSet", context, c, c);
 
         int c3 = c / 3;
 
         // may be null
         ISVGColorMapper colorMapper = this.getTextButtonSvgTexturesSetColorMapper();
+
 
         this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("normal", R.raw.d_text_button_normal, c, c3, colorMapper));
         this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("pressed", R.raw.d_text_button_pressed, c, c3, colorMapper));
