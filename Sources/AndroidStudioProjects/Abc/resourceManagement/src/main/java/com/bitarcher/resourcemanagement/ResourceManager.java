@@ -22,6 +22,7 @@ import com.bitarcher.resourcemanagement.MapValues.MapValueFactoryByResourceInfo;
 import com.bitarcher.resourcemanagement.MapValues.MusicMapValue;
 import com.bitarcher.resourcemanagement.MapValues.SoundMapValue;
 import com.bitarcher.resourcemanagement.MapValues.TextureSetFromAssetMapValue;
+import com.bitarcher.resourcemanagement.MapValues.TextureSetMapValue;
 
 import org.andengine.audio.music.Music;
 import org.andengine.audio.sound.Sound;
@@ -145,7 +146,7 @@ public class ResourceManager implements IResourceManager {
 
         MapValue mapValue = this._map.get(textureSetResourceInfo);
 
-        TextureSetFromAssetMapValue textureSetMapValue = (TextureSetFromAssetMapValue) mapValue;
+        TextureSetMapValue textureSetMapValue = (TextureSetMapValue) mapValue;
 
         ITextureRegion retval = textureSetMapValue.getTextureRegionByName(textureName);
 

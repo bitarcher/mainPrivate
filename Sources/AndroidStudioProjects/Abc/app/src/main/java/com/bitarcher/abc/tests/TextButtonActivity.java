@@ -57,10 +57,15 @@ public class TextButtonActivity extends SimpleBaseGameActivity {
         this.mEngine.registerUpdateHandler(new FPSLogger());
 
         final Scene scene = new Scene();
-        scene.setBackground(new Background(0.5f, 0.5f, 0.5f));
+        scene.setBackground(new Background(0.5f, 0.5f, 1f));
 
-        TextButton textButton = new TextButton(this.theme, 40, 40, 650, 40, "Salut");
+        TextButton textButton = new TextButton(this.theme, 200, 40, 350, 80, "Salut");
+
         scene.attachChild(textButton);
+
+        TextButton textButton2 = new TextButton(this.theme, 200, 130, 350, 80, "Salut 2");
+
+        scene.attachChild(textButton2);
 
         return scene;
     }

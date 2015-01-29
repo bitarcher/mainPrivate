@@ -21,5 +21,8 @@ public class FontCreateFromTypeFaceMapValue extends BaseFontMapValue {
                 fontCreateFromTypeFaceResourceInfo.isAntialiased(),
                 fontCreateFromTypeFaceResourceInfo.getForeColor()
         );
+
+
+        this._tObj.load();
     }
 }

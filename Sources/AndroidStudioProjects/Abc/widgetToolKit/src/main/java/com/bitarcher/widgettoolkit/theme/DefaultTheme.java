@@ -41,12 +41,12 @@ public class DefaultTheme extends ThemeBase {
 
     protected void setFontResourceInfos()
     {
-        int c = 256;
-        this.bigFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/bigFont", c, c, 20, Color.BLACK_ARGB_PACKED_INT, true,
+        int c = 1024;
+        this.bigFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/bigFont", c, c, 36, Color.BLACK_ARGB_PACKED_INT, true,
                 Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        this.mediumFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/mediumFont", c, c, 15, Color.BLACK_ARGB_PACKED_INT, true,
+        this.mediumFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/mediumFont", c, c, 32, Color.BLACK_ARGB_PACKED_INT, true,
                 Typeface.create(Typeface.DEFAULT, Typeface.ITALIC));
-        this.smallFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/smallFont", c, c, 12, Color.BLACK_ARGB_PACKED_INT, true,
+        this.smallFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/smallFont", c, c, 28, Color.BLACK_ARGB_PACKED_INT, true,
                 Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
     }
 
@@ -55,18 +55,21 @@ public class DefaultTheme extends ThemeBase {
         int c = 256;
 
         // remember the resourceInfo is pushed on and popped from the resource manager by the widget itself
-        Context context = WidgetToolkitApp.getContext();
+        //Context context = WidgetToolkitApp.getContext();
+        Context context = this.getThemeManager().getResourceManager().getContext();
         this.textButtonSvgTexturesSetResourceInfo = new SvgTexturesSetFromResIdsResourceInfo("@default/textButtonSvgTextureSet", context, c, c);
 
-        int c3 = c / 3;
+        int securityPadding = 30;
+        int c2 = c - securityPadding;
+        int c3 = c2 / 3;
 
         // may be null
         ISVGColorMapper colorMapper = this.getTextButtonSvgTexturesSetColorMapper();
 
 
-        this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("normal", R.raw.d_text_button_normal, c, c3, colorMapper));
-        this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("pressed", R.raw.d_text_button_pressed, c, c3, colorMapper));
-        this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("disabled", R.raw.d_text_button_disabled, c, c3, colorMapper));
+        this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("normal", R.raw.d_text_button_normal, c2, c3, colorMapper));
+        this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("pressed", R.raw.d_text_button_pressed, c2, c3, colorMapper));
+        this.textButtonSvgTexturesSetResourceInfo.addOneTexture(new OneResSvgTexture("disabled", R.raw.d_text_button_disabled, c2, c3, colorMapper));
 
     }
 

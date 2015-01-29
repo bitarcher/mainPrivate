@@ -32,6 +32,10 @@ public class FontCreateStrokeFromAssetMapValue extends BaseFontMapValue {
                 fontCreateStrokeFromAssetResourceInfo.getForeColor(),
                 fontCreateStrokeFromAssetResourceInfo.getStrokeWidth(),
                 fontCreateStrokeFromAssetResourceInfo.getBackColor());
+
+
+        this._tObj.load();
+        this.fontTexture.load();
     }
 
     @Override

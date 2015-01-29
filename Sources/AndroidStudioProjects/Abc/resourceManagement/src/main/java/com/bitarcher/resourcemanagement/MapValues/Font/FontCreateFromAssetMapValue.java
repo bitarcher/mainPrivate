@@ -19,5 +19,7 @@ public class FontCreateFromAssetMapValue extends BaseFontMapValue{
                 fontCreateFromAssetResourceInfo.getFontSize(),
                 fontCreateFromAssetResourceInfo.isAntialiased(),
                 fontCreateFromAssetResourceInfo.getForeColor());
+
+        this._tObj.load();
     }
 }

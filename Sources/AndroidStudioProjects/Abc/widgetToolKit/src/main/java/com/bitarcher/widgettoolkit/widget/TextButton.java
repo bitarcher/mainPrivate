@@ -13,6 +13,9 @@ import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetReso
 import org.andengine.engine.Engine;
 import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.text.Text;
+import org.andengine.input.touch.TouchEvent;
+import org.andengine.opengl.font.Font;
+import org.andengine.opengl.vbo.DrawType;
 
 import java.util.ArrayList;
 
@@ -54,14 +57,32 @@ public class TextButton extends  Button implements ITextButton {
                 );
         this.buttonSprite.setWidth(pWidth);
         this.buttonSprite.setHeight(pHeight);
+
+
+        Font font = this.getTheme().getFontThemeSection().getFont(EnumFontSize.Medium);
+        this.text = new Text(centerX, centerY, font,  translatedLabel, engine.getVertexBufferObjectManager(), DrawType.DYNAMIC);
+        //this.text.setWidth(pWidth);
+        //this.text.setHeight(pWidth);
+
         this.attachChild(this.buttonSprite);
+        //this.attachChild(this.text);
 
 
-        this.text = new Text(centerX, centerY, this.getTheme().getFontThemeSection().getFont(EnumFontSize.Medium),  translatedLabel, engine.getVertexBufferObjectManager());
-        this.text.setWidth(pWidth);
-        this.text.setHeight(pWidth);
-        this.attachChild(this.text);
+    }
 
+    @Override
+    public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+        if(pSceneTouchEvent.getAction()  == TouchEvent.ACTION_DOWN)
+        {
+            this.onButtonClicked();
+            this.buttonSprite.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+        }
+        else if(pSceneTouchEvent.getAction()  == TouchEvent.ACTION_UP)
+        {
+            this.buttonSprite.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+        }
+
+        return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
     }
 
     private void onButtonClicked()

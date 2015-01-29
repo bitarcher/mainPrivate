@@ -30,6 +30,10 @@ public class FontCreateStrokeFromTypeFaceMapValue extends BaseFontMapValue {
                 fontCreateStrokeFromTypeFaceResourceInfo.getForeColor(),
                 fontCreateStrokeFromTypeFaceResourceInfo.getStrokeWidth(),
                 fontCreateStrokeFromTypeFaceResourceInfo.getBackColor());
+
+
+        this._tObj.load();
+        this.fontTexture.load();
     }
 
     @Override
