@@ -37,12 +37,62 @@ public class MainMenu extends ManagedMenuScene {
 	private Text OptionsButtonText;
 	private Sprite[] CloudSprites;
 	private Text TitleText;
+
 	@Override
-	public void onLoadScene() {
+/*
+		// Create a Play button. Notice that the Game scenes, unlike menus, are not referred to in a static way.
+		PlayButton = new ButtonSprite(
+				(OriginalOldResourceManager.getInstance().cameraWidth- OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0).getWidth())/2f,
+				(OriginalOldResourceManager.getInstance().cameraHeight- OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0).getHeight())*(1f/3f),
+				OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0),
+				OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(1),
+				OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		PlayButtonText = new Text(0, 0, OriginalOldResourceManager.fontDefault32Bold, "PLAY", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		PlayButtonText.setPosition((PlayButton.getWidth())/2, (PlayButton.getHeight())/2);
+		PlayButton.attachChild(PlayButtonText);
+		this.attachChild(PlayButton);
+		PlayButton.setOnClickListener(new ButtonSprite.OnClickListener() {
+			@Override
+			public void onClick(ButtonSprite pButtonSprite,
+					float pTouchAreaLocalX, float pTouchAreaLocalY) {
+				// Create a new GameLevel and show it using the SceneManager. And play a click.
+				SceneManager.getInstance().showScene(new GameLevel());
+				OriginalOldResourceManager.clickSound.play();
+			}});
+		this.registerTouchArea(PlayButton);
+
+		// Create an Option button. Notice that the SceneManager is being told to not pause the scene while the OptionsLayer is open.
+		OptionsButton = new ButtonSprite(
+				PlayButton.getX()+PlayButton.getWidth(),
+				PlayButton.getY(),
+				OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0),
+				OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(1),
+				OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		OptionsButtonText = new Text(0,0, OriginalOldResourceManager.fontDefault32Bold,"OPTIONS", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		OptionsButtonText.setPosition((OptionsButton.getWidth())/2, (OptionsButton.getHeight())/2);
+		OptionsButton.attachChild(OptionsButtonText);
+		this.attachChild(OptionsButton);
+		OptionsButton.setOnClickListener(new ButtonSprite.OnClickListener() {
+			@Override
+			public void onClick(ButtonSprite pButtonSprite,
+					float pTouchAreaLocalX, float pTouchAreaLocalY) {
+				// Show the OptionsLayer and play a click.
+				SceneManager.getInstance().showOptionsLayer(false);
+				OriginalOldResourceManager.clickSound.play();
+			}});
+		this.registerTouchArea(OptionsButton);
+
+		// Create a title
+		TitleText = new Text(0, 0, OriginalOldResourceManager.fontDefault72Bold, "HAPPY BIRDS", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		TitleText.setPosition((OriginalOldResourceManager.getInstance().cameraWidth)/2, (OriginalOldResourceManager.getInstance().cameraHeight*2)/3f);
+		TitleText.setColor(0.153f, 0.290f, 0.455f);
+		this.attachChild(TitleText);
+		*/	public void onLoadScene() {
 		// Load the menu resources
-		OriginalOldResourceManager.loadMenuResources();
+		//this.resourceManager.loadMenuResources();
 		
 		// Create the background
+		/*
 		BackgroundSprite = new Sprite(OriginalOldResourceManager.getInstance().cameraWidth/2f, OriginalOldResourceManager.getInstance().cameraHeight/2f, OriginalOldResourceManager.menuBackgroundTextureRegion, OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
 		BackgroundSprite.setScaleX(OriginalOldResourceManager.getInstance().cameraWidth);
 		BackgroundSprite.setScaleY(OriginalOldResourceManager.getInstance().cameraHeight/480f);
@@ -81,8 +131,10 @@ public class MainMenu extends ManagedMenuScene {
 			};
 			this.attachChild(curCloudSprite);
 		}
-		
+
+
 		// Create a Play button. Notice that the Game scenes, unlike menus, are not referred to in a static way.
+
 		PlayButton = new ButtonSprite(
 				(OriginalOldResourceManager.getInstance().cameraWidth- OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0).getWidth())/2f,
 				(OriginalOldResourceManager.getInstance().cameraHeight- OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0).getHeight())*(1f/3f),
@@ -129,7 +181,7 @@ public class MainMenu extends ManagedMenuScene {
 		TitleText.setPosition((OriginalOldResourceManager.getInstance().cameraWidth)/2, (OriginalOldResourceManager.getInstance().cameraHeight*2)/3f);
 		TitleText.setColor(0.153f, 0.290f, 0.455f);
 		this.attachChild(TitleText);
-		
+		*/
 	}
 	
 	@Override

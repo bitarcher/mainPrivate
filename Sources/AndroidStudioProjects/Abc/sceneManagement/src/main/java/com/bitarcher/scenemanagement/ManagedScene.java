@@ -1,8 +1,13 @@
 package com.bitarcher.scenemanagement;
 
+import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+
 import org.andengine.entity.scene.Scene;
 
 public abstract class ManagedScene extends Scene {
+
+    IResourceManager resourceManager;
+
 	// Tells the Scene Manager that the managed scene either has or doesn't have a loading screen.
 	public final boolean hasLoadingScreen;
 	// The minimum length of time (in seconds) that the loading screen should be displayed.
@@ -12,11 +17,12 @@ public abstract class ManagedScene extends Scene {
 	// Is set TRUE if the scene is loaded.
 	public boolean isLoaded = false;
 	// Convenience constructor that disables the loading screen.
-	public ManagedScene() {
-		this(0f);
+	public ManagedScene(IResourceManager resourceManager) {
+		this(resourceManager, 0f);
 	}
 	// Constructor that sets the minimum length of the loading screen and sets hasLoadingScreen accordingly.
-	public ManagedScene(final float pLoadingScreenMinimumSecondsShown) {
+	public ManagedScene(IResourceManager resourceManager, final float pLoadingScreenMinimumSecondsShown) {
+        this.resourceManager = resourceManager;
 		minLoadingScreenTime = pLoadingScreenMinimumSecondsShown;
 		hasLoadingScreen = (minLoadingScreenTime > 0f);
 	}

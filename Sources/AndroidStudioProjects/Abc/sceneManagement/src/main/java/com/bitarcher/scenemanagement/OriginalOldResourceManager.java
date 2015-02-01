@@ -1,3 +1,4 @@
+/*
 package com.bitarcher.scenemanagement;
 
 
@@ -291,4 +292,4 @@ public class OriginalOldResourceManager extends Object {
 			fontDefault72Bold = null;
 		}
 	}
-}
+}*/

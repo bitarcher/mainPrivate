@@ -1,5 +1,8 @@
 package com.bitarcher.scenemanagement;
 
+import com.bitarcher.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.entity.scene.Scene;
 import org.andengine.entity.sprite.ButtonSprite;
@@ -11,22 +14,22 @@ public abstract class ManagedGameScene extends ManagedScene {
 	public HUD GameHud = new HUD();
 	public ManagedGameScene thisManagedGameScene = this;
 	
-	public ManagedGameScene() {
+	public ManagedGameScene(IResourceManager resourceManager) {
 		// Let the Scene Manager know that we want to show a Loading Scene for at least 2 seconds.
-		this(2f);
+		this(resourceManager, 2f);
 	};
 	
-	public ManagedGameScene(float pLoadingScreenMinimumSecondsShown) {
-		super(pLoadingScreenMinimumSecondsShown);
+	public ManagedGameScene(IResourceManager resourceManager, float pLoadingScreenMinimumSecondsShown) {
+		super(resourceManager, pLoadingScreenMinimumSecondsShown);
 		// Setup the touch attributes for the Game Scenes.
 		this.setOnSceneTouchListenerBindingOnActionDownEnabled(true);
 		this.setTouchAreaBindingOnActionDownEnabled(true);
 		this.setTouchAreaBindingOnActionMoveEnabled(true);
 		// Scale the Game Scenes according to the Camera's scale factor.
-		this.setScale(OriginalOldResourceManager.getInstance().cameraScaleFactorX, OriginalOldResourceManager.getInstance().cameraScaleFactorY);
-		this.setPosition(0, OriginalOldResourceManager.getInstance().cameraHeight/2f);
+		this.setScale(this.resourceManager.getCameraScaleX(), this.resourceManager.getCameraScaleY());
+		this.setPosition(0, this.resourceManager.getCameraHeight()/2f);
 		GameHud.setScaleCenter(0f, 0f);
-		GameHud.setScale(OriginalOldResourceManager.getInstance().cameraScaleFactorX, OriginalOldResourceManager.getInstance().cameraScaleFactorY);
+		GameHud.setScale(this.resourceManager.getCameraScaleX(), this.resourceManager.getCameraScaleY());
 	}
 	
 	// These objects will make up our loading scene.
@@ -37,8 +40,8 @@ public abstract class ManagedGameScene extends ManagedScene {
 		// Setup and return the loading screen.
 		LoadingScene = new Scene();
 		LoadingScene.setBackgroundEnabled(true);
-		LoadingText = new Text(0,0, OriginalOldResourceManager.fontDefault32Bold,"Loading...", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
-		LoadingText.setPosition(LoadingText.getWidth()/2f, OriginalOldResourceManager.getInstance().cameraHeight-LoadingText.getHeight()/2f);
+		LoadingText = new Text(0,0, this.resourceManager.getThemeManager().getCurrentTheme().getFontThemeSection().getFont(EnumFontSize.Big),"Loading...", this.resourceManager.getEngine().getVertexBufferObjectManager());
+		LoadingText.setPosition(LoadingText.getWidth()/2f, this.resourceManager.getCameraHeight()-LoadingText.getHeight()/2f);
 		LoadingScene.attachChild(LoadingText);
 		return LoadingScene;
 	}
@@ -54,17 +57,17 @@ public abstract class ManagedGameScene extends ManagedScene {
 	@Override
 	public void onLoadScene() {
 		// Load the resources to be used in the Game Scenes.
-		OriginalOldResourceManager.loadGameResources();
+		//OriginalOldResourceManager.loadGameResources();
 		
 		// Create a Sprite to use as the background.
-		this.attachChild(new Sprite(0,0, OriginalOldResourceManager.gameBackgroundTextureRegion, OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager()));
+		//this.attachChild(new Sprite(0,0, OriginalOldResourceManager.gameBackgroundTextureRegion, OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager()));
 		this.getLastChild().setScaleCenter(0f,0f);
 		this.getLastChild().setScaleX(800f);
 		
 		// Setup the HUD Buttons and Button Texts.
 		// Take note of what happens when the buttons are clicked.
-		ButtonSprite MainMenuButton = new ButtonSprite(0f,0f, 
-				OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(0),
+		/*ButtonSprite MainMenuButton = new ButtonSprite(0f,0f,
+				this.resourceManager..buttonTiledTextureRegion.getTextureRegion(0),
 				OriginalOldResourceManager.buttonTiledTextureRegion.getTextureRegion(1),
 				OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
 		MainMenuButton.setScale(1/ OriginalOldResourceManager.getInstance().cameraScaleFactorX, 1/ OriginalOldResourceManager.getInstance().cameraScaleFactorY);
@@ -76,9 +79,9 @@ public abstract class ManagedGameScene extends ManagedScene {
 				// Play the click sound and show the Main Menu.
 				OriginalOldResourceManager.clickSound.play();
 				SceneManager.getInstance().showMainMenu();
-			}});
+			}});*/
 		
-		Text MainMenuButtonText = new Text(MainMenuButton.getWidth()/2,MainMenuButton.getHeight()/2, OriginalOldResourceManager.fontDefault32Bold,"MENU", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		/*Text MainMenuButtonText = new Text(MainMenuButton.getWidth()/2,MainMenuButton.getHeight()/2, OriginalOldResourceManager.fontDefault32Bold,"MENU", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
 		MainMenuButton.attachChild(MainMenuButtonText);
 		GameHud.attachChild(MainMenuButton);
 		GameHud.registerTouchArea(MainMenuButton);
@@ -102,24 +105,24 @@ public abstract class ManagedGameScene extends ManagedScene {
 		OptionsButtonText.setPosition((OptionsButton.getWidth())/2, (OptionsButton.getHeight())/2);
 		OptionsButton.attachChild(OptionsButtonText);
 		GameHud.attachChild(OptionsButton);
-		GameHud.registerTouchArea(OptionsButton);
+		GameHud.registerTouchArea(OptionsButton);*/
 	}
 	
 	@Override
 	public void onShowScene() {
 		// We want to wait to set the HUD until the scene is shown because otherwise it will appear on top of the loading screen.
-		OriginalOldResourceManager.getInstance().engine.getCamera().setHUD(GameHud);
+		this.resourceManager.getEngine().getCamera().setHUD(GameHud);
 	}
 	
 	@Override
 	public void onHideScene() {
-		OriginalOldResourceManager.getInstance().engine.getCamera().setHUD(null);
+        this.resourceManager.getEngine().getCamera().setHUD(null);
 	}
 	
 	@Override
 	public void onUnloadScene() {
 		// detach and unload the scene.
-		OriginalOldResourceManager.getInstance().engine.runOnUpdateThread(new Runnable() {
+        this.resourceManager.getEngine().runOnUpdateThread(new Runnable() {
 			@Override
 			public void run() {
 				thisManagedGameScene.detachChildren();

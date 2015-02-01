@@ -2,6 +2,7 @@ package com.bitarcher.resourcemanagement;
 
 import android.content.Context;
 
+import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.EResourceCreationError;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
 import com.bitarcher.interfaces.resourcemanagement.IResourceInfoListGotter;
@@ -48,13 +49,19 @@ public class ResourceManager implements IResourceManager {
     float cameraHeight;
     float cameraScaleFactorX;
     float cameraScaleFactorY;
+    IThemeManager themeManager;
 
     HashMap<IResourceInfo, MapValue> _map;
-
 
     public ResourceManager() {
         this._map = new HashMap<>();
     }
+
+    public IThemeManager getThemeManager() {
+        return this.themeManager;
+    }
+
+
 
     @Override
     public void pushRequirement(IResourceInfo resourceInfo) throws EResourceCreationError {
@@ -203,13 +210,14 @@ public class ResourceManager implements IResourceManager {
     }
 
     // Setup the ResourceManager
-    public void setup(final Engine pEngine, final Context pContext, final float pCameraWidth, final float pCameraHeight, final float pCameraScaleX, final float pCameraScaleY){
+    public void setup(final Engine pEngine, final Context pContext, final float pCameraWidth, final float pCameraHeight, final float pCameraScaleX, final float pCameraScaleY, IThemeManager themeManager){
         this.engine = pEngine;
         this.context = pContext;
         this.cameraWidth = pCameraWidth;
         this.cameraHeight = pCameraHeight;
         this.cameraScaleFactorX = pCameraScaleX;
         this.cameraScaleFactorY = pCameraScaleY;
+        this.themeManager = themeManager;
     }
 
     @Override

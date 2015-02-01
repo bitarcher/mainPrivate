@@ -11,6 +11,7 @@ import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFrom
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 import org.andengine.engine.Engine;
+import org.andengine.entity.scene.Scene;
 import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.text.Text;
 import org.andengine.input.touch.TouchEvent;
@@ -28,6 +29,7 @@ public class TextButton extends  Button implements ITextButton {
     ArrayList<ILabeledListener> labeledListenerArrayList = new ArrayList<>();
     ButtonSprite buttonSprite;
     Text text;
+    boolean isTouchAreaRegistered = false;
 
     public TextButton(ITheme theme, float pX, float pY, float pWidth, float pHeight, String translatedLabel) {
         super(theme, pX, pY, pWidth, pHeight);
@@ -38,6 +40,7 @@ public class TextButton extends  Button implements ITextButton {
         resourceManager.pushRequirement(texturesSetResourceInfo);
 
         Engine engine = resourceManager.getEngine();
+
 
         float centerX = pWidth / 2;
         float centerY = pHeight / 2;
@@ -65,12 +68,12 @@ public class TextButton extends  Button implements ITextButton {
         //this.text.setHeight(pWidth);
 
         this.attachChild(this.buttonSprite);
-        //this.attachChild(this.text);
+        this.attachChild(this.text);
 
 
     }
 
-    @Override
+    /*@Override
     public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
         if(pSceneTouchEvent.getAction()  == TouchEvent.ACTION_DOWN)
         {
@@ -84,7 +87,7 @@ public class TextButton extends  Button implements ITextButton {
 
         return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
     }
-
+*/
     private void onButtonClicked()
     {
         if(this.isEnabled())
@@ -93,6 +96,7 @@ public class TextButton extends  Button implements ITextButton {
             {
                 buttonListener.onClicked(this);
             }
+
 
             this.onClicked();
         }
@@ -103,6 +107,32 @@ public class TextButton extends  Button implements ITextButton {
 
     }
 
+    @Override
+    public void onAttached() {
+        super.onAttached();
+
+        if(!this.isTouchAreaRegistered)
+        {
+            Scene scene = this.getTheme().getThemeManager().getResourceManager().getEngine().getScene();
+
+            scene.registerTouchArea(this.buttonSprite);
+            this.isTouchAreaRegistered = true;
+        }
+    }
+
+    @Override
+    public void onDetached() {
+        super.onDetached();
+
+        if(this.isTouchAreaRegistered)
+        {
+            Scene scene = this.getTheme().getThemeManager().getResourceManager().getEngine().getScene();
+
+            scene.unregisterTouchArea(this.buttonSprite);
+
+            this.isTouchAreaRegistered = false;
+        }
+    }
 
     @Override
     public void dispose() {

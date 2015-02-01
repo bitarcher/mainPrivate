@@ -1,6 +1,8 @@
 package com.bitarcher.scenemanagement;
 
 
+import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+
 import org.andengine.engine.Engine;
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.engine.handler.IUpdateHandler;
@@ -27,7 +29,13 @@ public class SceneManager extends Object
 	public ManagedScene mCurrentScene;
 	private ManagedScene mNextScene;
 	// Keep a reference to the engine.
-	private Engine mEngine = OriginalOldResourceManager.getInstance().engine;
+
+    IResourceManager resourceManager;
+
+    public void setup(IResourceManager resourceManager)
+    {
+        this.resourceManager = resourceManager;
+    }
 	// Used by the mLoadingScreenHandler, this variable ensures that the loading screen is shown for one frame prior to loading resources.
 	private int mNumFramesPassed = -1;
 	// Keeps the mLoadingScreenHandler from being registered with the engine if it has already been registered.
@@ -63,7 +71,7 @@ public class SceneManager extends Object
 				// Reset the handler & loading screen variables to be ready for another use.
 				mNextScene.elapsedLoadingScreenTime = 0f;
 				mNumFramesPassed = -1;
-				mEngine.unregisterUpdateHandler(this);
+                this.resourceManager.getEngine().unregisterUpdateHandler(this);
 				mLoadingScreenHandlerRegistered = false;
 			}
 		}
@@ -84,7 +92,7 @@ public class SceneManager extends Object
 	// Initiates the process of switching the current managed scene for a new managed scene.
 	public void showScene(final ManagedScene pManagedScene) {
 		// Reset the camera. This is automatically overridden by any calls to alter the camera from within a managed scene's onShowScene() method.
-		mEngine.getCamera().set(0f, 0f, OriginalOldResourceManager.getInstance().cameraWidth, OriginalOldResourceManager.getInstance().cameraHeight);
+        this.resourceManager.getEngine().getCamera().set(0f, 0f, this.resourceManager.getCameraWidth(), this.resourceManager.getCameraHeight());
 		// If the new managed scene has a loading screen.
 		if(pManagedScene.hasLoadingScreen) {
 			// Set the loading screen as a modal child to the new managed scene.
@@ -95,20 +103,20 @@ public class SceneManager extends Object
 				mNextScene.clearChildScene();
 				mNextScene.onLoadingScreenUnloadAndHidden();
 			} else {
-				mEngine.registerUpdateHandler(mLoadingScreenHandler);
+                this.resourceManager.getEngine().registerUpdateHandler(mLoadingScreenHandler);
 				mLoadingScreenHandlerRegistered = true;
 			}
 			// Set pManagedScene to mNextScene which is used by the loading screen update handler.
 			mNextScene = pManagedScene;
 			// Set the new scene as the engine's scene.
-			mEngine.setScene(pManagedScene);
+            this.resourceManager.getEngine().setScene(pManagedScene);
 			// Exit the method and let the LoadingScreen Update Handler finish the switching.
 			return;
 		}
 		// If the new managed scene does not have a loading screen.
 		// Set pManagedScene to mNextScene and apply the new scene to the engine.
 		mNextScene = pManagedScene;
-		mEngine.setScene(mNextScene);
+        this.resourceManager.getEngine().setScene(mNextScene);
 		// If a previous managed scene exists, hide and unload it.
 		if(mCurrentScene!=null)
 		{
@@ -134,18 +142,18 @@ public class SceneManager extends Object
 	// Shows a layer by placing it as a child to the Camera's HUD.
 	public void showLayer(final ManagedLayer pLayer, final boolean pSuspendSceneDrawing, final boolean pSuspendSceneUpdates, final boolean pSuspendSceneTouchEvents) {
 		// If the camera already has a HUD, we will use it.
-		if(mEngine.getCamera().hasHUD()){
+		if(this.resourceManager.getEngine().getCamera().hasHUD()){
 			mCameraHadHud = true;
 		} else {
 			// Otherwise, we will create one to use.
 			mCameraHadHud = false;
 			HUD placeholderHud = new HUD();
-			mEngine.getCamera().setHUD(placeholderHud);
+            this.resourceManager.getEngine().getCamera().setHUD(placeholderHud);
 		}
 		// If the managed layer needs modal properties, set them.
 		if(pSuspendSceneDrawing || pSuspendSceneUpdates || pSuspendSceneTouchEvents) {
 			// Apply the managed layer directly to the Camera's HUD
-			mEngine.getCamera().getHUD().setChildScene(pLayer, pSuspendSceneDrawing, pSuspendSceneUpdates, pSuspendSceneTouchEvents);
+            this.resourceManager.getEngine().getCamera().getHUD().setChildScene(pLayer, pSuspendSceneDrawing, pSuspendSceneUpdates, pSuspendSceneTouchEvents);
 			// Create the place-holder scene if it needs to be created.
 			if(mPlaceholderModalScene==null) {
 				mPlaceholderModalScene = new Scene();
@@ -155,12 +163,12 @@ public class SceneManager extends Object
 			mCurrentScene.setChildScene(mPlaceholderModalScene, pSuspendSceneDrawing, pSuspendSceneUpdates, pSuspendSceneTouchEvents);
 		} else {
 			// If the managed layer does not need to be modal, simply set it to the HUD.
-			mEngine.getCamera().getHUD().setChildScene(pLayer);
+            this.resourceManager.getEngine().getCamera().getHUD().setChildScene(pLayer);
 		}
 		// Set the camera for the managed layer so that it binds to the camera if the camera is moved/scaled/rotated.
-		pLayer.setCamera(mEngine.getCamera());
+		pLayer.setCamera(this.resourceManager.getEngine().getCamera());
 		// Scale the layer according to screen size.
-		pLayer.setScale(OriginalOldResourceManager.getInstance().cameraScaleFactorX, OriginalOldResourceManager.getInstance().cameraScaleFactorY);
+		pLayer.setScale(this.resourceManager.getCameraScaleX(), this.resourceManager.getCameraScaleY());
 		// Let the layer know that it is being shown.
 		pLayer.onShowManagedLayer();
 		// Reflect that a layer is shown.
@@ -173,14 +181,14 @@ public class SceneManager extends Object
 	public void hideLayer() {
 		if(isLayerShown) {
 			// Clear the HUD's child scene to remove modal properties.
-			mEngine.getCamera().getHUD().clearChildScene();
+            this.resourceManager.getEngine().getCamera().getHUD().clearChildScene();
 			// If we had to use a place-holder scene, clear it.
 			if(mCurrentScene.hasChildScene())
 				if(mCurrentScene.getChildScene()==mPlaceholderModalScene)
 					mCurrentScene.clearChildScene();
 			// If the camera did not have a HUD before we showed the layer, remove the place-holder HUD.
 			if(!mCameraHadHud)
-				mEngine.getCamera().setHUD(null);
+                this.resourceManager.getEngine().getCamera().setHUD(null);
 			// Reflect that a layer is no longer shown.
 			isLayerShown = false;
 			// Remove the reference to the layer.

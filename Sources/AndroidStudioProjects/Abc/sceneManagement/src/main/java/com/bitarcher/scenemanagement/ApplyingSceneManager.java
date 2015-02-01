@@ -48,7 +48,7 @@ public class ApplyingSceneManager extends BaseGameActivity {
 	public boolean onKeyDown(final int keyCode, final KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK
 				&& event.getAction() == KeyEvent.ACTION_DOWN) {
-			if(OriginalOldResourceManager.getInstance().engine!=null){
+			if(SceneManager.getInstance().resourceManager.getEngine()!=null){
 				if(SceneManager.getInstance().isLayerShown)
 					SceneManager.getInstance().currentLayer.onHideLayer();
 				else if(SceneManager.getInstance().mCurrentScene.getClass().getGenericSuperclass().equals(ManagedGameScene.class) || 
