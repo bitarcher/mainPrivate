@@ -4,17 +4,15 @@ package com.bitarcher.scenemanagement;
 import com.bitarcher.interfaces.gui.theme.ITheme;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.sceneManagement.ISceneManager;
+import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
-import com.bitarcher.resourcemanagement.ResourceManager;
 import com.bitarcher.widgettoolkit.theme.ThemeManager;
 
-import org.andengine.engine.Engine;
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.scene.Scene;
 
-public class SceneManager<TResourceManager extends IResourceManager, TTheme extends ITheme> implements ISceneManager<TResourceManager, TTheme>
+public class SceneManager<TResourceManager extends IResourceManager, TTheme extends ITheme> implements ITSceneManager<TResourceManager, TTheme>
 {
     TResourceManager resourceManager;
     TTheme theme;
@@ -28,7 +26,46 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
                 sceneManagerConfigurator.getCameraHeight(), sceneManagerConfigurator.getCameraScaleFactorX(), sceneManagerConfigurator.getCameraScaleFactorY(), this.themeManager);
 
         this.theme = sceneManagerConfigurator.getNewTheme(this.themeManager);
-        themeManager.setCurrentTheme(theme);
+        this.themeManager.setCurrentTheme(theme);
+
+
+
+        this.mLoadingScreenHandler = new IUpdateHandler() {
+            @Override
+            public void onUpdate(float pSecondsElapsed) {
+                // Increment the mNumFamesPassed
+                mNumFramesPassed++;
+                // And increment the amount of time that the loading screen has been visible.
+                mNextScene.elapsedLoadingScreenTime += pSecondsElapsed;
+                // On the first frame AFTER the loading screen has been shown.
+                if(mNumFramesPassed==1) {
+                    // Hide and unload the previous scene if it exists.
+                    if(mCurrentScene!=null) {
+                        mCurrentScene.onHideManagedScene();
+                        mCurrentScene.onUnloadManagedScene();
+                    }
+                    // Load the new scene.
+                    mNextScene.onLoadManagedScene();
+                }
+                // On the first frame AFTER the scene has been completely loaded and the loading screen has been shown for its minimum limit.
+                if(mNumFramesPassed>1 && mNextScene.elapsedLoadingScreenTime>=mNextScene.minLoadingScreenTime) {
+                    // Remove the loading screen that was set as a child in the showScene() method.
+                    mNextScene.clearChildScene();
+                    // Tell the new scene to unload its loading screen.
+                    mNextScene.onLoadingScreenUnloadAndHidden();
+                    // Tell the new scene that it is shown.
+                    mNextScene.onShowManagedScene();
+                    // Set the new scene to the current scene.
+                    mCurrentScene = mNextScene;
+                    // Reset the handler & loading screen variables to be ready for another use.
+                    mNextScene.elapsedLoadingScreenTime = 0f;
+                    mNumFramesPassed = -1;
+                    resourceManager.getEngine().unregisterUpdateHandler(this);
+                    mLoadingScreenHandlerRegistered = false;
+                }
+            }
+            @Override public void reset() {}
+        };
     }
 
     public TResourceManager getResourceManager()
@@ -62,42 +99,7 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
 	// Keeps the mLoadingScreenHandler from being registered with the engine if it has already been registered.
 	private boolean mLoadingScreenHandlerRegistered = false;
 	// An update handler that shows the loading screen of mNextScene before calling it to load.
-	private IUpdateHandler mLoadingScreenHandler = new IUpdateHandler() {
-		@Override
-		public void onUpdate(float pSecondsElapsed) {
-			// Increment the mNumFamesPassed
-			mNumFramesPassed++;
-			// And increment the amount of time that the loading screen has been visible.
-			mNextScene.elapsedLoadingScreenTime += pSecondsElapsed;
-			// On the first frame AFTER the loading screen has been shown.
-			if(mNumFramesPassed==1) {
-				// Hide and unload the previous scene if it exists.
-				if(mCurrentScene!=null) {
-					mCurrentScene.onHideManagedScene();
-					mCurrentScene.onUnloadManagedScene();
-				}
-				// Load the new scene.
-				mNextScene.onLoadManagedScene();
-			}
-			// On the first frame AFTER the scene has been completely loaded and the loading screen has been shown for its minimum limit.
-			if(mNumFramesPassed>1 && mNextScene.elapsedLoadingScreenTime>=mNextScene.minLoadingScreenTime) {
-				// Remove the loading screen that was set as a child in the showScene() method.
-				mNextScene.clearChildScene();
-				// Tell the new scene to unload its loading screen.
-				mNextScene.onLoadingScreenUnloadAndHidden();
-				// Tell the new scene that it is shown.
-				mNextScene.onShowManagedScene();
-				// Set the new scene to the current scene.
-				mCurrentScene = mNextScene;
-				// Reset the handler & loading screen variables to be ready for another use.
-				mNextScene.elapsedLoadingScreenTime = 0f;
-				mNumFramesPassed = -1;
-                this.resourceManager.getEngine().unregisterUpdateHandler(this);
-				mLoadingScreenHandlerRegistered = false;
-			}
-		}
-		@Override public void reset() {}
-	};
+	private IUpdateHandler mLoadingScreenHandler;
 	// Set to TRUE in the showLayer() method if the camera had a HUD before the layer was shown.
 	private boolean mCameraHadHud = false;
 	// Boolean to reflect whether there is a layer currently shown on the screen.
@@ -152,12 +154,14 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
 	
 	// Convenience method to quickly show the Main Menu.
 	public void showMainMenu() {
-		showScene(MainMenu.getInstance());
+        // TODO
+		//showScene(MainMenu.getInstance());
 	}
 
 	// Convenience method to quickly show the Options Layer.
 	public void showOptionsLayer(final boolean pSuspendCurrentSceneUpdates) {
-		showLayer(OptionsLayer.getInstance(),false,pSuspendCurrentSceneUpdates,true);
+        // TODO
+		//showLayer(OptionsLayer.getInstance(),false,pSuspendCurrentSceneUpdates,true);
 	}
 
 	// Shows a layer by placing it as a child to the Camera's HUD.

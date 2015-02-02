@@ -3,6 +3,10 @@ package com.bitarcher.scenemanagement;
 
 import android.view.KeyEvent;
 
+import com.bitarcher.interfaces.gui.theme.ITheme;
+import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.options.EngineOptions;
 import org.andengine.engine.options.ScreenOrientation;
@@ -12,10 +16,28 @@ import org.andengine.entity.scene.Scene;
 import org.andengine.entity.util.FPSLogger;
 import org.andengine.ui.activity.BaseGameActivity;
 
-public class ApplyingSceneManager extends BaseGameActivity {
+public abstract class SceneManagedActivity<TResourceManager extends IResourceManager, TTheme extends ITheme> extends BaseGameActivity {
+
+    SceneManager<TResourceManager, TTheme> sceneManager;
+
+
+
+    public SceneManager<TResourceManager, TTheme> getSceneManager()
+    {
+        return this.sceneManager;
+    }
 
 	// ====================================================
-	// CONSTANTS
+
+    public SceneManagedActivity() {
+        ISceneManagerConfigurator<TResourceManager, TTheme> sceneManagerConfigurator = this.getSceneManagerConfigurator();
+        this.sceneManager = new SceneManager<>(sceneManagerConfigurator);
+    }
+
+    protected abstract ISceneManagerConfigurator<TResourceManager, TTheme> getSceneManagerConfigurator();
+
+
+    // CONSTANTS
 	// ====================================================
 	// We define these constants to setup the game to use an
 	// appropriate camera resolution independent of the actual
@@ -48,13 +70,13 @@ public class ApplyingSceneManager extends BaseGameActivity {
 	public boolean onKeyDown(final int keyCode, final KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK
 				&& event.getAction() == KeyEvent.ACTION_DOWN) {
-			if(SceneManager.getInstance().resourceManager.getEngine()!=null){
-				if(SceneManager.getInstance().isLayerShown)
-					SceneManager.getInstance().currentLayer.onHideLayer();
-				else if(SceneManager.getInstance().mCurrentScene.getClass().getGenericSuperclass().equals(ManagedGameScene.class) || 
-						(SceneManager.getInstance().mCurrentScene.getClass().getGenericSuperclass().equals(ManagedMenuScene.class) &!
-							SceneManager.getInstance().mCurrentScene.getClass().equals(MainMenu.class)))
-					SceneManager.getInstance().showMainMenu();
+			if(this.sceneManager.resourceManager.getEngine()!=null){
+				if(this.sceneManager.isLayerShown)
+                    this.sceneManager.currentLayer.onHideLayer();
+				else if(this.sceneManager.mCurrentScene.getClass().getGenericSuperclass().equals(ManagedGameScene.class) ||
+						(this.sceneManager.mCurrentScene.getClass().getGenericSuperclass().equals(ManagedMenuScene.class) &!
+                                this.sceneManager.mCurrentScene.getClass().equals(MainMenu.class)))
+                    this.sceneManager.showMainMenu();
 				else
 					System.exit(0);
 			}
@@ -96,7 +118,7 @@ public class ApplyingSceneManager extends BaseGameActivity {
 	@Override
 	public void onCreateResources(OnCreateResourcesCallback pOnCreateResourcesCallback) {
 		// Setup the ResourceManager.
-		OriginalOldResourceManager.getInstance().setup(this.getEngine(), this.getApplicationContext(), cameraWidth, cameraHeight, cameraWidth/DESIGN_SCREEN_WIDTH_PIXELS, cameraHeight/DESIGN_SCREEN_HEIGHT_PIXELS);
+		//OriginalOldResourceManager.getInstance().setup(this.getEngine(), this.getApplicationContext(), cameraWidth, cameraHeight, cameraWidth/DESIGN_SCREEN_WIDTH_PIXELS, cameraHeight/DESIGN_SCREEN_HEIGHT_PIXELS);
 		pOnCreateResourcesCallback.onCreateResourcesFinished();
 	}
 
@@ -108,9 +130,13 @@ public class ApplyingSceneManager extends BaseGameActivity {
 		// Register an FPSLogger to output the game's FPS during development.
 		mEngine.registerUpdateHandler(new FPSLogger());
 		// Tell the SceneManager to show the MainMenu.
-		SceneManager.getInstance().showMainMenu();
+		//SceneManager.getInstance().showMainMenu();
+        this.sceneManager.showMainMenu();
 		// Set the MainMenu to the Engine's scene.
-		pOnCreateSceneCallback.onCreateSceneFinished(MainMenu.getInstance());
+
+
+        // TODO
+        //pOnCreateSceneCallback.onCreateSceneFinished(MainMenu.getInstance());
 	}
 
 	// ====================================================

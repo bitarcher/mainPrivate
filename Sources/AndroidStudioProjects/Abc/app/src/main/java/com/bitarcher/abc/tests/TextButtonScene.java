@@ -7,6 +7,7 @@
 package com.bitarcher.abc.tests;
 
 import com.bitarcher.interfaces.gui.theme.ITheme;
+import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.scenemanagement.ManagedGameScene;
 import com.bitarcher.scenemanagement.ManagedScene;
 import com.bitarcher.widgettoolkit.widget.TextButton;
@@ -22,6 +23,7 @@ public class TextButtonScene extends ManagedGameScene {
     ITheme theme;
 
     public TextButtonScene(ITheme theme) {
+        super(theme.getThemeManager().getResourceManager());
         this.theme = theme;
     }
 

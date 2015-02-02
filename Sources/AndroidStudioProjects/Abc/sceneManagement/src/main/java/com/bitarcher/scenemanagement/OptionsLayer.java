@@ -1,5 +1,7 @@
 package com.bitarcher.scenemanagement;
 
+import com.bitarcher.interfaces.gui.theme.EnumFontSize;
+
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.text.Text;
@@ -7,48 +9,55 @@ import org.andengine.input.touch.TouchEvent;
 
 public class OptionsLayer extends ManagedLayer
 {
-	private static final OptionsLayer INSTANCE = new OptionsLayer();
-	public static OptionsLayer getInstance(){
-		return INSTANCE;
-	}
-	
-	// Animates the layer to slide in from the top.
-	IUpdateHandler SlideIn = new IUpdateHandler() {
-		@Override
-		public void onUpdate(float pSecondsElapsed) {
-			if(OptionsLayer.getInstance().getY()> OriginalOldResourceManager.getInstance().cameraHeight/2f) {
-				OptionsLayer.getInstance().setPosition(OptionsLayer.getInstance().getX(), Math.max(OptionsLayer.getInstance().getY()-(3600*(pSecondsElapsed)), OriginalOldResourceManager.getInstance().cameraHeight/2f));
-			} else {
-				OptionsLayer.getInstance().unregisterUpdateHandler(this);
-			}
-		}
-		@Override public void reset() {}
-	};
+    SceneManager sceneManager;
+
+    public OptionsLayer(final SceneManager sceneManager) {
+        this.sceneManager = sceneManager;
+        final OptionsLayer optionsLayer = this;
+
+        this.SlideIn = new IUpdateHandler() {
+            @Override
+            public void onUpdate(float pSecondsElapsed) {
+                if(optionsLayer.getY()> sceneManager.getResourceManager().getCameraHeight() / 2f) {
+                    optionsLayer.setPosition(optionsLayer.getX(), Math.max(optionsLayer.getY() - (3600 * (pSecondsElapsed)), sceneManager.getResourceManager().getCameraHeight() / 2f));
+                } else {
+                    optionsLayer.unregisterUpdateHandler(this);
+                }
+            }
+            @Override public void reset() {}
+        };
+
+        this.SlideOut = new IUpdateHandler() {
+            @Override
+            public void onUpdate(float pSecondsElapsed) {
+                if(optionsLayer.getY()< sceneManager.getResourceManager().getCameraHeight() / 2f+480f) {
+                    optionsLayer.setPosition(optionsLayer.getX(), Math.min(optionsLayer.getY() + (3600 * (pSecondsElapsed)), sceneManager.getResourceManager().getCameraHeight() / 2f + 480f));
+                } else {
+                    optionsLayer.unregisterUpdateHandler(this);
+                    sceneManager.hideLayer();
+                }
+            }
+            @Override public void reset() {}
+        };
+    }
+
+    // Animates the layer to slide in from the top.
+	IUpdateHandler SlideIn;
 	
 	// Animates the layer to slide out through the top and tell the SceneManager to hide it when it is off-screen;
-	IUpdateHandler SlideOut = new IUpdateHandler() {
-		@Override
-		public void onUpdate(float pSecondsElapsed) {
-			if(OptionsLayer.getInstance().getY()< OriginalOldResourceManager.getInstance().cameraHeight/2f+480f) {
-				OptionsLayer.getInstance().setPosition(OptionsLayer.getInstance().getX(), Math.min(OptionsLayer.getInstance().getY()+(3600*(pSecondsElapsed)), OriginalOldResourceManager.getInstance().cameraHeight/2f+480f));
-			} else {
-				OptionsLayer.getInstance().unregisterUpdateHandler(this);
-				SceneManager.getInstance().hideLayer();
-			}
-		}
-		@Override public void reset() {}
-	};
+	IUpdateHandler SlideOut;
 	
 	@Override
 	public void onLoadLayer() {
 		// Create and attach a background that hides the Layer when touched.
 		final float BackgroundX = 0f, BackgroundY = 0f;
 		final float BackgroundWidth = 760f, BackgroundHeight = 440f;
-		Rectangle smth = new Rectangle(BackgroundX,BackgroundY,BackgroundWidth,BackgroundHeight, OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager()) {
+		Rectangle smth = new Rectangle(BackgroundX,BackgroundY,BackgroundWidth,BackgroundHeight, sceneManager.getResourceManager().getEngine().getVertexBufferObjectManager()) {
 			@Override
 			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX, final float pTouchAreaLocalY) {
 				if(pSceneTouchEvent.isActionUp() && pTouchAreaLocalX < this.getWidth() && pTouchAreaLocalX > 0 && pTouchAreaLocalY < this.getHeight() && pTouchAreaLocalY > 0) {
-					OriginalOldResourceManager.clickSound.play();
+                    // TODO
+                    //sceneManager.getResourceManager().clickSound.play();
 					onHideLayer();
 				}
 				return true;
@@ -59,17 +68,17 @@ public class OptionsLayer extends ManagedLayer
 		this.registerTouchArea(smth);
 		
 		// Create the OptionsLayerTitle text for the Layer.
-		Text OptionsLayerTitle = new Text(0,0, OriginalOldResourceManager.fontDefault32Bold,"OPTIONS", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		Text OptionsLayerTitle = new Text(0,0, sceneManager.getTheme().getFontThemeSection().getFont(EnumFontSize.Big),"OPTIONS", sceneManager.getResourceManager().getEngine().getVertexBufferObjectManager());
 		OptionsLayerTitle.setPosition(0f,BackgroundHeight/2f-OptionsLayerTitle.getHeight());
 		this.attachChild(OptionsLayerTitle);
 		
 		// Let the player know how to get out of the blank Options Layer
-		Text OptionsLayerSubTitle = new Text(0,0, OriginalOldResourceManager.fontDefault32Bold,"Tap to return", OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager());
+		Text OptionsLayerSubTitle = new Text(0,0, sceneManager.getTheme().getFontThemeSection().getFont(EnumFontSize.Medium),"Tap to return", sceneManager.getResourceManager().getEngine().getVertexBufferObjectManager());
 		OptionsLayerSubTitle.setScale(0.75f);
 		OptionsLayerSubTitle.setPosition(0f,-BackgroundHeight/2f+OptionsLayerSubTitle.getHeight());
 		this.attachChild(OptionsLayerSubTitle);
 		
-		this.setPosition(OriginalOldResourceManager.getInstance().cameraWidth/2f, OriginalOldResourceManager.getInstance().cameraHeight/2f+480f);
+		this.setPosition(sceneManager.getResourceManager().getCameraWidth()/2f, sceneManager.getResourceManager().getCameraHeight()/2f+480f);
 	}
 
 	@Override

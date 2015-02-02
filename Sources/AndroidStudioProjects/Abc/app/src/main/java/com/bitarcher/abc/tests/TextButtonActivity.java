@@ -6,33 +6,70 @@
 
 package com.bitarcher.abc.tests;
 
-import com.bitarcher.abc.ResourceManagerSingleton;
-import com.bitarcher.interfaces.gui.theme.ITheme;
+
+import android.content.Context;
+
+import com.bitarcher.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
 import com.bitarcher.resourcemanagement.ResourceManager;
-import com.bitarcher.scenemanagement.ApplyingSceneManager;
+import com.bitarcher.scenemanagement.SceneManagedActivity;
 import com.bitarcher.scenemanagement.SceneManager;
 import com.bitarcher.widgettoolkit.theme.DefaultTheme;
-import com.bitarcher.widgettoolkit.theme.ThemeManager;
-import com.bitarcher.widgettoolkit.widget.TextButton;
 
-import org.andengine.engine.camera.Camera;
-import org.andengine.engine.options.EngineOptions;
-import org.andengine.engine.options.ScreenOrientation;
-import org.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
-import org.andengine.entity.scene.Scene;
-import org.andengine.entity.scene.background.Background;
-import org.andengine.entity.util.FPSLogger;
-import org.andengine.ui.IGameInterface;
-import org.andengine.ui.activity.SimpleBaseGameActivity;
+import org.andengine.engine.Engine;
 
 
-public class TextButtonActivity extends ApplyingSceneManager {
+public class TextButtonActivity extends SceneManagedActivity<ResourceManager, DefaultTheme> {
+
     // ===========================================================
     // Constants
     // ===========================================================
 
 
+    @Override
+    protected ISceneManagerConfigurator<ResourceManager, DefaultTheme> getSceneManagerConfigurator() {
+        return new ISceneManagerConfigurator<ResourceManager, DefaultTheme>() {
+            @Override
+            public ResourceManager getNewResourceManager() {
+                return new ResourceManager();
+            }
 
+            @Override
+            public Engine getEngine() {
+                return mEngine;
+            }
+
+            @Override
+            public Context getContext() {
+                return getApplicationContext();
+            }
+
+            @Override
+            public int getCameraWidth() {
+                return 800;
+            }
+
+            @Override
+            public int getCameraHeight() {
+                return 480;
+            }
+
+            @Override
+            public float getCameraScaleFactorX() {
+                return 1.0f;
+            }
+
+            @Override
+            public float getCameraScaleFactorY() {
+                return 1.0f;
+            }
+
+            @Override
+            public DefaultTheme getNewTheme(IThemeManager themeManager) {
+                return new DefaultTheme(themeManager, "@Default");
+            }
+        };
+    }
 
 
     // ===========================================================
@@ -57,8 +94,8 @@ public class TextButtonActivity extends ApplyingSceneManager {
     public void onCreateScene(OnCreateSceneCallback pOnCreateSceneCallback) {
         super.onCreateScene(pOnCreateSceneCallback);
 
-        TextButtonScene textButtonScene = new TextButtonScene(this.theme);
-        SceneManager.getInstance().showScene(textButtonScene);
+        TextButtonScene textButtonScene = new TextButtonScene(this.getSceneManager().getTheme());
+        this.getSceneManager().showScene(textButtonScene);
     }
 
 }
