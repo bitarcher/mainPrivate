@@ -1,28 +1,52 @@
 package com.bitarcher.scenemanagement;
 
 
+import com.bitarcher.interfaces.gui.theme.ITheme;
+import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.sceneManagement.ISceneManager;
+import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.resourcemanagement.ResourceManager;
+import com.bitarcher.widgettoolkit.theme.ThemeManager;
 
 import org.andengine.engine.Engine;
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.scene.Scene;
 
-public class SceneManager extends Object
+public class SceneManager<TResourceManager extends IResourceManager, TTheme extends ITheme> implements ISceneManager<TResourceManager, TTheme>
 {
-	// Holds the global SceneManager instance.
-	private static final SceneManager INSTANCE = new SceneManager();
-	// ====================================================
-	// CONSTRUCTOR AND INSTANCE GETTER
-	// ====================================================
-	private SceneManager() {
-	}
-	// Singleton reference to the global SceneManager.
-	public static SceneManager getInstance(){
-		return INSTANCE;
-	}
+    TResourceManager resourceManager;
+    TTheme theme;
+    IThemeManager themeManager;
 
-	// ====================================================
+    public SceneManager(ISceneManagerConfigurator<TResourceManager, TTheme> sceneManagerConfigurator) {
+        this.resourceManager = sceneManagerConfigurator.getNewResourceManager();
+
+        this.themeManager = new ThemeManager(this.resourceManager);
+        this.resourceManager.setup(sceneManagerConfigurator.getEngine(), sceneManagerConfigurator.getContext(), sceneManagerConfigurator.getCameraWidth(),
+                sceneManagerConfigurator.getCameraHeight(), sceneManagerConfigurator.getCameraScaleFactorX(), sceneManagerConfigurator.getCameraScaleFactorY(), this.themeManager);
+
+        this.theme = sceneManagerConfigurator.getNewTheme(this.themeManager);
+        themeManager.setCurrentTheme(theme);
+    }
+
+    public TResourceManager getResourceManager()
+    {
+        return this.resourceManager;
+    }
+
+    public TTheme getTheme()
+    {
+        return this.theme;
+    }
+
+    public IThemeManager getThemeManager()
+    {
+        return this.themeManager;
+    }
+
+    // ====================================================
 	// VARIABLES
 	// ====================================================
 	// These variables reference the current scene and next scene when switching scenes.
@@ -30,12 +54,9 @@ public class SceneManager extends Object
 	private ManagedScene mNextScene;
 	// Keep a reference to the engine.
 
-    IResourceManager resourceManager;
 
-    public void setup(IResourceManager resourceManager)
-    {
-        this.resourceManager = resourceManager;
-    }
+
+
 	// Used by the mLoadingScreenHandler, this variable ensures that the loading screen is shown for one frame prior to loading resources.
 	private int mNumFramesPassed = -1;
 	// Keeps the mLoadingScreenHandler from being registered with the engine if it has already been registered.

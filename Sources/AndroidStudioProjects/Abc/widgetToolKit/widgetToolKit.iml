@@ -90,7 +90,6 @@
     <orderEntry type="module" module-name="andEnginePhysicsBox2DExtension" exported="" />
     <orderEntry type="module" module-name="andEngine" exported="" />
     <orderEntry type="module" module-name="interfaces" exported="" />
-    <orderEntry type="module" module-name="sceneManagement" exported="" />
   </component>
 </module>
 

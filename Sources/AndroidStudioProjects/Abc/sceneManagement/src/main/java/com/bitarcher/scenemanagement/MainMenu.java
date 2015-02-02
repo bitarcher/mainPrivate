@@ -1,6 +1,8 @@
 package com.bitarcher.scenemanagement;
 
 
+import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+
 import org.andengine.entity.scene.Scene;
 import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.sprite.Sprite;
@@ -9,18 +11,20 @@ import org.andengine.util.math.MathUtils;
 
 public class MainMenu extends ManagedMenuScene {
 	
-	private static final MainMenu INSTANCE = new MainMenu();
+	/*private static final MainMenu INSTANCE = new MainMenu();
 	public static MainMenu getInstance(){
 		return INSTANCE;
 	}
-	
-	public MainMenu() {
+	*/
+	public MainMenu(IResourceManager resourceManager) {
+        super(resourceManager);
 		this.setOnSceneTouchListenerBindingOnActionDownEnabled(true);
 		this.setTouchAreaBindingOnActionDownEnabled(true);
 		this.setTouchAreaBindingOnActionMoveEnabled(true);
 	}
-	
-	// No loading screen means no reason to use the following methods.
+
+
+    // No loading screen means no reason to use the following methods.
 	@Override
 	public Scene onLoadingScreenLoadAndShown() {
 		return null;

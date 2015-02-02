@@ -32,8 +32,7 @@ public class TextButtonActivity extends ApplyingSceneManager {
     // ===========================================================
 
 
-    ITheme theme;
-    ThemeManager themeManager;
+
 
 
     // ===========================================================
@@ -41,15 +40,15 @@ public class TextButtonActivity extends ApplyingSceneManager {
 
     @Override
     public void onCreateResources(OnCreateResourcesCallback pOnCreateResourcesCallback) {
-        ResourceManager resourceManager = ResourceManagerSingleton.getInstance();
 
-        this.themeManager = new ThemeManager(resourceManager);
-        resourceManager.setup(this.mEngine, this.getApplicationContext(), CAMERA_WIDTH, CAMERA_HEIGHT, 1f, 1f, this.themeManager);
 
-        SceneManager.getInstance().setup(resourceManager);
+        //this.themeManager = new ThemeManager(resourceManager);
+        //resourceManager.setup(this.mEngine, this.getApplicationContext(), CAMERA_WIDTH, CAMERA_HEIGHT, 1f, 1f, this.themeManager);
 
-        this.theme = new DefaultTheme(themeManager, "raw/theme/default");
-        themeManager.setCurrentTheme(theme);
+        //SceneManager.getInstance().setup(resourceManager);
+
+        //this.theme = new DefaultTheme(themeManager, "raw/theme/default");
+        //themeManager.setCurrentTheme(theme);
 
         super.onCreateResources(pOnCreateResourcesCallback);
     }
