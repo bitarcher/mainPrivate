@@ -17,7 +17,7 @@ import org.andengine.engine.Engine;
 /**
  * Created by michel on 02/02/15.
  */
-public interface ISceneManagerConfigurator<TResourceManager extends IResourceManager, TTheme extends ITheme> {
+public interface ISceneManagerConfigurator<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu> {
     TResourceManager getNewResourceManager();
     Engine getEngine();
     Context getContext();
@@ -26,5 +26,5 @@ public interface ISceneManagerConfigurator<TResourceManager extends IResourceMan
     float getCameraScaleFactorX();
     float  getCameraScaleFactorY();
     TTheme getNewTheme(IThemeManager themeManager);
-
+    TMainMenu getNewMainMenu(TTheme theme, TResourceManager resourceManager);
 }

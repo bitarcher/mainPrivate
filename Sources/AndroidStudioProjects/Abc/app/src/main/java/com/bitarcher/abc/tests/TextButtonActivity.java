@@ -9,6 +9,7 @@ package com.bitarcher.abc.tests;
 
 import android.content.Context;
 
+import com.bitarcher.abc.MainMenu;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
 import com.bitarcher.resourcemanagement.ResourceManager;
@@ -19,7 +20,7 @@ import com.bitarcher.widgettoolkit.theme.DefaultTheme;
 import org.andengine.engine.Engine;
 
 
-public class TextButtonActivity extends SceneManagedActivity<ResourceManager, DefaultTheme> {
+public class TextButtonActivity extends SceneManagedActivity<ResourceManager, DefaultTheme, MainMenu> {
 
     // ===========================================================
     // Constants
@@ -27,8 +28,8 @@ public class TextButtonActivity extends SceneManagedActivity<ResourceManager, De
 
 
     @Override
-    protected ISceneManagerConfigurator<ResourceManager, DefaultTheme> getSceneManagerConfigurator() {
-        return new ISceneManagerConfigurator<ResourceManager, DefaultTheme>() {
+    protected ISceneManagerConfigurator<ResourceManager, DefaultTheme, MainMenu> getSceneManagerConfigurator() {
+        return new ISceneManagerConfigurator<ResourceManager, DefaultTheme, MainMenu>() {
             @Override
             public ResourceManager getNewResourceManager() {
                 return new ResourceManager();
@@ -67,6 +68,11 @@ public class TextButtonActivity extends SceneManagedActivity<ResourceManager, De
             @Override
             public DefaultTheme getNewTheme(IThemeManager themeManager) {
                 return new DefaultTheme(themeManager, "@Default");
+            }
+
+            @Override
+            public MainMenu getNewMainMenu(DefaultTheme theme, ResourceManager resourceManager) {
+                return new MainMenu(resourceManager);
             }
         };
     }

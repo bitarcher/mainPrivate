@@ -5,6 +5,7 @@ import android.view.KeyEvent;
 
 import com.bitarcher.interfaces.gui.theme.ITheme;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
 
 import org.andengine.engine.camera.Camera;
@@ -16,13 +17,13 @@ import org.andengine.entity.scene.Scene;
 import org.andengine.entity.util.FPSLogger;
 import org.andengine.ui.activity.BaseGameActivity;
 
-public abstract class SceneManagedActivity<TResourceManager extends IResourceManager, TTheme extends ITheme> extends BaseGameActivity {
+public abstract class SceneManagedActivity<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu> extends BaseGameActivity {
 
-    SceneManager<TResourceManager, TTheme> sceneManager;
+    SceneManager<TResourceManager, TTheme, TMainMenu> sceneManager;
 
 
 
-    public SceneManager<TResourceManager, TTheme> getSceneManager()
+    public SceneManager<TResourceManager, TTheme, TMainMenu> getSceneManager()
     {
         return this.sceneManager;
     }
@@ -30,11 +31,11 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
 	// ====================================================
 
     public SceneManagedActivity() {
-        ISceneManagerConfigurator<TResourceManager, TTheme> sceneManagerConfigurator = this.getSceneManagerConfigurator();
+        ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu> sceneManagerConfigurator = this.getSceneManagerConfigurator();
         this.sceneManager = new SceneManager<>(sceneManagerConfigurator);
     }
 
-    protected abstract ISceneManagerConfigurator<TResourceManager, TTheme> getSceneManagerConfigurator();
+    protected abstract ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu> getSceneManagerConfigurator();
 
 
     // CONSTANTS
@@ -75,7 +76,7 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
                     this.sceneManager.currentLayer.onHideLayer();
 				else if(this.sceneManager.mCurrentScene.getClass().getGenericSuperclass().equals(ManagedGameScene.class) ||
 						(this.sceneManager.mCurrentScene.getClass().getGenericSuperclass().equals(ManagedMenuScene.class) &!
-                                this.sceneManager.mCurrentScene.getClass().equals(MainMenu.class)))
+                                (this.sceneManager.mCurrentScene instanceof IMainMenu)))
                     this.sceneManager.showMainMenu();
 				else
 					System.exit(0);

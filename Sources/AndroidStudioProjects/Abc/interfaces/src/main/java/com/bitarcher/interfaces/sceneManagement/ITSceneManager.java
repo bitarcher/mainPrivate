@@ -13,10 +13,11 @@ import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 /**
  * Created by michel on 02/02/15.
  */
-public interface ITSceneManager<TResourceManager extends IResourceManager, TTheme extends ITheme> {
+public interface ITSceneManager<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu> {
 
     TResourceManager getResourceManager();
     TTheme getTheme();
     IThemeManager getThemeManager();
-
+    TMainMenu getMainMenu();
 }
+

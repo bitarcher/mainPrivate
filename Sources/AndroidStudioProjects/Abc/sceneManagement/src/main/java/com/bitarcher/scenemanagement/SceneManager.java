@@ -4,6 +4,7 @@ package com.bitarcher.scenemanagement;
 import com.bitarcher.interfaces.gui.theme.ITheme;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
 import com.bitarcher.widgettoolkit.theme.ThemeManager;
@@ -12,13 +13,14 @@ import org.andengine.engine.camera.hud.HUD;
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.scene.Scene;
 
-public class SceneManager<TResourceManager extends IResourceManager, TTheme extends ITheme> implements ITSceneManager<TResourceManager, TTheme>
+public class SceneManager<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu> implements ITSceneManager<TResourceManager, TTheme, TMainMenu>
 {
     TResourceManager resourceManager;
     TTheme theme;
     IThemeManager themeManager;
+    TMainMenu mainMenu;
 
-    public SceneManager(ISceneManagerConfigurator<TResourceManager, TTheme> sceneManagerConfigurator) {
+    public SceneManager(ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu> sceneManagerConfigurator) {
         this.resourceManager = sceneManagerConfigurator.getNewResourceManager();
 
         this.themeManager = new ThemeManager(this.resourceManager);
@@ -29,6 +31,7 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
         this.themeManager.setCurrentTheme(theme);
 
 
+        this.mainMenu = sceneManagerConfigurator.getNewMainMenu(this.theme, this.resourceManager);
 
         this.mLoadingScreenHandler = new IUpdateHandler() {
             @Override
@@ -66,6 +69,11 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
             }
             @Override public void reset() {}
         };
+    }
+
+    @Override
+    public TMainMenu getMainMenu() {
+        return this.mainMenu;
     }
 
     public TResourceManager getResourceManager()
