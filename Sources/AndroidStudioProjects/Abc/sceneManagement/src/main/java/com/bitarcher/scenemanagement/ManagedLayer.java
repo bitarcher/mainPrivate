@@ -1,25 +1,27 @@
 package com.bitarcher.scenemanagement;
 
+import com.bitarcher.interfaces.sceneManagement.IManagedLayer;
+
 import org.andengine.engine.camera.hud.HUD;
 
-public abstract class ManagedLayer extends HUD {
+public abstract class ManagedLayer extends HUD  implements IManagedLayer{
 	// Is set TRUE if the layer is loaded.
-	public boolean hasLoaded = false;
+    private boolean hasLoaded = false;
 	// Set by the constructor, if true, the layer will be unloaded after being hidden.
-	public boolean unloadOnHidden;
+    private boolean unloadOnHidden;
 	// Convenience constructor. Creates a layer that does not unload when hidden.
 	public ManagedLayer() {
 		this(false);
 	}
 	// Constructor. Sets whether the layer will unload when hidden and ensures that there is no background on the layer.
 	public ManagedLayer(boolean pUnloadOnHidden) {
-		unloadOnHidden = pUnloadOnHidden;
+		setUnloadOnHidden(pUnloadOnHidden);
 		this.setBackgroundEnabled(false);
 	}
 	// If the layer is not loaded, load it. Ensure that the layer is not paused.
 	public void onShowManagedLayer() {
-		if(!hasLoaded) {
-			hasLoaded = true;
+		if(!getHasLoaded()) {
+			setHasLoaded(true);
 			onLoadLayer();
 		}
 		this.setIgnoreUpdate(false);
@@ -29,7 +31,7 @@ public abstract class ManagedLayer extends HUD {
 	public void onHideManagedLayer() {
 		this.setIgnoreUpdate(true);
 		onHideLayer();
-		if(unloadOnHidden) {
+		if(isUnloadOnHidden()) {
 			onUnloadLayer();
 		}
 	}
@@ -38,4 +40,20 @@ public abstract class ManagedLayer extends HUD {
 	public abstract void onShowLayer();
 	public abstract void onHideLayer();
 	public abstract void onUnloadLayer();
+
+    public boolean getHasLoaded() {
+        return hasLoaded;
+    }
+
+    public void setHasLoaded(boolean hasLoaded) {
+        this.hasLoaded = hasLoaded;
+    }
+
+    public boolean isUnloadOnHidden() {
+        return unloadOnHidden;
+    }
+
+    public void setUnloadOnHidden(boolean unloadOnHidden) {
+        this.unloadOnHidden = unloadOnHidden;
+    }
 }

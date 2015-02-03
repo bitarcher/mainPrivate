@@ -36,7 +36,7 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
                 // Increment the mNumFamesPassed
                 mNumFramesPassed++;
                 // And increment the amount of time that the loading screen has been visible.
-                mNextScene.elapsedLoadingScreenTime += pSecondsElapsed;
+                mNextScene.setElapsedLoadingScreenTime(mNextScene.getElapsedLoadingScreenTime() + pSecondsElapsed);
                 // On the first frame AFTER the loading screen has been shown.
                 if(mNumFramesPassed==1) {
                     // Hide and unload the previous scene if it exists.
@@ -48,7 +48,7 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
                     mNextScene.onLoadManagedScene();
                 }
                 // On the first frame AFTER the scene has been completely loaded and the loading screen has been shown for its minimum limit.
-                if(mNumFramesPassed>1 && mNextScene.elapsedLoadingScreenTime>=mNextScene.minLoadingScreenTime) {
+                if(mNumFramesPassed>1 && mNextScene.getElapsedLoadingScreenTime() >= mNextScene.getMinLoadingScreenTime()) {
                     // Remove the loading screen that was set as a child in the showScene() method.
                     mNextScene.clearChildScene();
                     // Tell the new scene to unload its loading screen.
@@ -58,7 +58,7 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
                     // Set the new scene to the current scene.
                     mCurrentScene = mNextScene;
                     // Reset the handler & loading screen variables to be ready for another use.
-                    mNextScene.elapsedLoadingScreenTime = 0f;
+                    mNextScene.setElapsedLoadingScreenTime(0f);
                     mNumFramesPassed = -1;
                     resourceManager.getEngine().unregisterUpdateHandler(this);
                     mLoadingScreenHandlerRegistered = false;
@@ -117,7 +117,7 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
 		// Reset the camera. This is automatically overridden by any calls to alter the camera from within a managed scene's onShowScene() method.
         this.resourceManager.getEngine().getCamera().set(0f, 0f, this.resourceManager.getCameraWidth(), this.resourceManager.getCameraHeight());
 		// If the new managed scene has a loading screen.
-		if(pManagedScene.hasLoadingScreen) {
+		if(pManagedScene.getHasLoadingScreen()) {
 			// Set the loading screen as a modal child to the new managed scene.
 			pManagedScene.setChildScene(pManagedScene.onLoadingScreenLoadAndShown(),true,true,true);
 			// This if/else block assures that the LoadingScreen Update Handler is only registered if necessary.

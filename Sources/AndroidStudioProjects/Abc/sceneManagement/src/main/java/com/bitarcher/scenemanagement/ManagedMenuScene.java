@@ -13,7 +13,7 @@ public abstract class ManagedMenuScene extends ManagedScene {
 
 	@Override
 	public void onUnloadManagedScene() {
-		if(isLoaded) {
+		if(isLoaded()) {
 			// For menus, we are disabling the reloading of resources.
 			// isLoaded = false;
 			onUnloadScene();

@@ -1,21 +1,22 @@
 package com.bitarcher.scenemanagement;
 
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.sceneManagement.IManagedScene;
 
 import org.andengine.entity.scene.Scene;
 
-public abstract class ManagedScene extends Scene {
+public abstract class ManagedScene extends Scene implements IManagedScene {
 
     IResourceManager resourceManager;
 
 	// Tells the Scene Manager that the managed scene either has or doesn't have a loading screen.
-	public final boolean hasLoadingScreen;
+	private final boolean hasLoadingScreen;
 	// The minimum length of time (in seconds) that the loading screen should be displayed.
-	public final float minLoadingScreenTime;
+	private final float minLoadingScreenTime;
 	// Keeps track of how long the loading screen has been visible. Set by the SceneManager.
-	public float elapsedLoadingScreenTime = 0f;
+    private float elapsedLoadingScreenTime = 0f;
 	// Is set TRUE if the scene is loaded.
-	public boolean isLoaded = false;
+    private boolean isLoaded = false;
 	// Convenience constructor that disables the loading screen.
 	public ManagedScene(IResourceManager resourceManager) {
 		this(resourceManager, 0f);
@@ -24,20 +25,20 @@ public abstract class ManagedScene extends Scene {
 	public ManagedScene(IResourceManager resourceManager, final float pLoadingScreenMinimumSecondsShown) {
         this.resourceManager = resourceManager;
 		minLoadingScreenTime = pLoadingScreenMinimumSecondsShown;
-		hasLoadingScreen = (minLoadingScreenTime > 0f);
+		hasLoadingScreen = (getMinLoadingScreenTime() > 0f);
 	}
 	// Called by the Scene Manager. It calls onLoadScene if loading is needed, sets the isLoaded status, and pauses the scene while it's not shown.
 	public void onLoadManagedScene() {
-		if(!isLoaded) {
+		if(!isLoaded()) {
 			onLoadScene();
-			isLoaded = true;
+			setLoaded(true);
 			this.setIgnoreUpdate(true);
 		}
 	}
 	// Called by the Scene Manager. It calls onUnloadScene if the scene has been previously loaded and sets the isLoaded status.
 	public void onUnloadManagedScene() {
-		if(isLoaded) {
-			isLoaded = false;
+		if(isLoaded()) {
+			setLoaded(false);
 			onUnloadScene();
 		}
 	}
@@ -58,4 +59,28 @@ public abstract class ManagedScene extends Scene {
 	public abstract void onShowScene();
 	public abstract void onHideScene();
 	public abstract void onUnloadScene();
+
+    public boolean getHasLoadingScreen() {
+        return hasLoadingScreen;
+    }
+
+    public float getMinLoadingScreenTime() {
+        return minLoadingScreenTime;
+    }
+
+    public float getElapsedLoadingScreenTime() {
+        return elapsedLoadingScreenTime;
+    }
+
+    public void setElapsedLoadingScreenTime(float elapsedLoadingScreenTime) {
+        this.elapsedLoadingScreenTime = elapsedLoadingScreenTime;
+    }
+
+    public boolean isLoaded() {
+        return isLoaded;
+    }
+
+    public void setLoaded(boolean isLoaded) {
+        this.isLoaded = isLoaded;
+    }
 }
