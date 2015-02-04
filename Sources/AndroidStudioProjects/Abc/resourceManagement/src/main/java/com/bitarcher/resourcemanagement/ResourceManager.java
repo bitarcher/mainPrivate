@@ -5,6 +5,7 @@ import android.content.Context;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.EResourceCreationError;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
+import com.bitarcher.interfaces.resourcemanagement.IContextProvider;
 import com.bitarcher.interfaces.resourcemanagement.IResourceInfoListGotter;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.Font.IFontResourceInfo;
@@ -44,7 +45,7 @@ public class ResourceManager implements IResourceManager {
     // We include these objects in the resource manager for
     // easy accessibility across our project.
     Engine engine;
-    Context context;
+    IContextProvider contextProvider;
     float cameraWidth;
     float cameraHeight;
     float cameraScaleFactorX;
@@ -186,7 +187,7 @@ public class ResourceManager implements IResourceManager {
 
     @Override
     public Context getContext() {
-        return this.context;
+        return this.contextProvider.getContext();
     }
 
     @Override
@@ -210,9 +211,9 @@ public class ResourceManager implements IResourceManager {
     }
 
     // Setup the ResourceManager
-    public void setup(final Engine pEngine, final Context pContext, final float pCameraWidth, final float pCameraHeight, final float pCameraScaleX, final float pCameraScaleY, IThemeManager themeManager){
+    public void setup(final Engine pEngine, final IContextProvider contextProvider, final float pCameraWidth, final float pCameraHeight, final float pCameraScaleX, final float pCameraScaleY, IThemeManager themeManager){
         this.engine = pEngine;
-        this.context = pContext;
+        this.contextProvider = contextProvider;
         this.cameraWidth = pCameraWidth;
         this.cameraHeight = pCameraHeight;
         this.cameraScaleFactorX = pCameraScaleX;

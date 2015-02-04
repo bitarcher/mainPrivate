@@ -3,6 +3,7 @@ package com.bitarcher.scenemanagement;
 import com.bitarcher.interfaces.gui.andEngine.IScene;
 import com.bitarcher.interfaces.gui.theme.EnumFontSize;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
 
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.entity.text.Text;
@@ -12,22 +13,22 @@ public abstract class ManagedGameScene extends ManagedScene {
 	public HUD GameHud = new HUD();
 	public ManagedGameScene thisManagedGameScene = this;
 	
-	public ManagedGameScene(IResourceManager resourceManager) {
+	public ManagedGameScene(ITSceneManager sceneManager) {
 		// Let the Scene Manager know that we want to show a Loading Scene for at least 2 seconds.
-		this(resourceManager, 2f);
+		this(sceneManager, 2f);
 	};
 	
-	public ManagedGameScene(IResourceManager resourceManager, float pLoadingScreenMinimumSecondsShown) {
-		super(resourceManager, pLoadingScreenMinimumSecondsShown);
+	public ManagedGameScene(ITSceneManager sceneManager, float pLoadingScreenMinimumSecondsShown) {
+		super(sceneManager, pLoadingScreenMinimumSecondsShown);
 		// Setup the touch attributes for the Game Scenes.
 		this.setOnSceneTouchListenerBindingOnActionDownEnabled(true);
 		this.setTouchAreaBindingOnActionDownEnabled(true);
 		this.setTouchAreaBindingOnActionMoveEnabled(true);
 		// Scale the Game Scenes according to the Camera's scale factor.
-		this.setScale(this.resourceManager.getCameraScaleX(), this.resourceManager.getCameraScaleY());
-		this.setPosition(0, this.resourceManager.getCameraHeight()/2f);
+		this.setScale(this.sceneManager.getResourceManager().getCameraScaleX(), this.sceneManager.getResourceManager().getCameraScaleY());
+		this.setPosition(0, this.sceneManager.getResourceManager().getCameraHeight()/2f);
 		GameHud.setScaleCenter(0f, 0f);
-		GameHud.setScale(this.resourceManager.getCameraScaleX(), this.resourceManager.getCameraScaleY());
+		GameHud.setScale(this.sceneManager.getResourceManager().getCameraScaleX(), this.sceneManager.getResourceManager().getCameraScaleY());
 	}
 	
 	// These objects will make up our loading scene.
@@ -38,8 +39,8 @@ public abstract class ManagedGameScene extends ManagedScene {
 		// Setup and return the loading screen.
 		loadingScene = new LoadingScene();
 		loadingScene.setBackgroundEnabled(true);
-		loadingText = new Text(0,0, this.resourceManager.getThemeManager().getCurrentTheme().getFontThemeSection().getFont(EnumFontSize.Big),"Loading...", this.resourceManager.getEngine().getVertexBufferObjectManager());
-		loadingText.setPosition(loadingText.getWidth()/2f, this.resourceManager.getCameraHeight()- loadingText.getHeight()/2f);
+		loadingText = new Text(0,0, this.sceneManager.getResourceManager().getThemeManager().getCurrentTheme().getFontThemeSection().getFont(EnumFontSize.Big),"Loading...", this.sceneManager.getResourceManager().getEngine().getVertexBufferObjectManager());
+		loadingText.setPosition(loadingText.getWidth()/2f, this.sceneManager.getResourceManager().getCameraHeight()- loadingText.getHeight()/2f);
 		loadingScene.attachChild(loadingText);
 		return loadingScene;
 	}
@@ -109,18 +110,18 @@ public abstract class ManagedGameScene extends ManagedScene {
 	@Override
 	public void onShowScene() {
 		// We want to wait to set the HUD until the scene is shown because otherwise it will appear on top of the loading screen.
-		this.resourceManager.getEngine().getCamera().setHUD(GameHud);
+		this.sceneManager.getResourceManager().getEngine().getCamera().setHUD(GameHud);
 	}
 	
 	@Override
 	public void onHideScene() {
-        this.resourceManager.getEngine().getCamera().setHUD(null);
+        this.sceneManager.getResourceManager().getEngine().getCamera().setHUD(null);
 	}
 	
 	@Override
 	public void onUnloadScene() {
 		// detach and unload the scene.
-        this.resourceManager.getEngine().runOnUpdateThread(new Runnable() {
+        this.sceneManager.getResourceManager().getEngine().runOnUpdateThread(new Runnable() {
 			@Override
 			public void run() {
 				thisManagedGameScene.detachChildren();

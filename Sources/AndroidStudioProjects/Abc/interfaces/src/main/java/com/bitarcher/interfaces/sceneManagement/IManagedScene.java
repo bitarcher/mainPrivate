@@ -14,6 +14,8 @@ import org.andengine.entity.scene.Scene;
  * Created by michel on 03/02/15.
  */
 public interface IManagedScene extends IScene {
+    ITSceneManager getSceneManager();
+
     boolean getHasLoadingScreen();
 
     float getMinLoadingScreenTime();

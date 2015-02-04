@@ -3,10 +3,14 @@ package com.bitarcher.scenemanagement;
 import com.bitarcher.interfaces.gui.andEngine.IScene;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.sceneManagement.IManagedScene;
+import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
 
 public abstract class ManagedScene extends Scene implements IManagedScene {
 
-    IResourceManager resourceManager;
+
+    ITSceneManager sceneManager;
+
+
 
 	// Tells the Scene Manager that the managed scene either has or doesn't have a loading screen.
 	private final boolean hasLoadingScreen;
@@ -17,12 +21,12 @@ public abstract class ManagedScene extends Scene implements IManagedScene {
 	// Is set TRUE if the scene is loaded.
     private boolean isLoaded = false;
 	// Convenience constructor that disables the loading screen.
-	public ManagedScene(IResourceManager resourceManager) {
-		this(resourceManager, 0f);
+	public ManagedScene(ITSceneManager sceneManager) {
+		this(sceneManager, 0f);
 	}
 	// Constructor that sets the minimum length of the loading screen and sets hasLoadingScreen accordingly.
-	public ManagedScene(IResourceManager resourceManager, final float pLoadingScreenMinimumSecondsShown) {
-        this.resourceManager = resourceManager;
+	public ManagedScene(ITSceneManager sceneManager, final float pLoadingScreenMinimumSecondsShown) {
+        this.sceneManager = sceneManager;
 		minLoadingScreenTime = pLoadingScreenMinimumSecondsShown;
 		hasLoadingScreen = (getMinLoadingScreenTime() > 0f);
 	}
@@ -58,6 +62,13 @@ public abstract class ManagedScene extends Scene implements IManagedScene {
 	public abstract void onShowScene();
 	public abstract void onHideScene();
 	public abstract void onUnloadScene();
+
+    @Override
+    public ITSceneManager getSceneManager()
+    {
+        return this.sceneManager;
+    }
+
 
     public boolean getHasLoadingScreen() {
         return hasLoadingScreen;

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.KeyEvent;
 
 import com.bitarcher.interfaces.gui.theme.ITheme;
+import com.bitarcher.interfaces.resourcemanagement.IContextProvider;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.interfaces.sceneManagement.IOptionsLayer;
@@ -20,7 +21,7 @@ import org.andengine.entity.scene.Scene;
 import org.andengine.entity.util.FPSLogger;
 import org.andengine.ui.activity.BaseGameActivity;
 
-public abstract class SceneManagedActivity<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu, TOptionsLayer extends IOptionsLayer> extends BaseGameActivity {
+public abstract class SceneManagedActivity<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu, TOptionsLayer extends IOptionsLayer> extends BaseGameActivity implements IContextProvider{
 
     SceneManager<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManager;
 
@@ -34,10 +35,9 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
 	// ====================================================
 
     public SceneManagedActivity() {
-        ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManagerConfigurator = this.getSceneManagerConfigurator();
-        Context context = this.getApplicationContext();
-        Engine engine = this.getEngine();
-        this.sceneManager = new SceneManager<>(sceneManagerConfigurator, engine, context);
+
+
+
     }
 
     protected abstract ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu, TOptionsLayer> getSceneManagerConfigurator();
@@ -125,6 +125,11 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
 	public void onCreateResources(OnCreateResourcesCallback pOnCreateResourcesCallback) {
 		// Setup the ResourceManager.
 		//OriginalOldResourceManager.getInstance().setup(this.getEngine(), this.getApplicationContext(), cameraWidth, cameraHeight, cameraWidth/DESIGN_SCREEN_WIDTH_PIXELS, cameraHeight/DESIGN_SCREEN_HEIGHT_PIXELS);
+
+        ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManagerConfigurator = this.getSceneManagerConfigurator();
+        Engine engine = this.getEngine();
+        this.sceneManager = new SceneManager<>(sceneManagerConfigurator, engine, this);
+
 		pOnCreateResourcesCallback.onCreateResourcesFinished();
 	}
 
@@ -154,4 +159,9 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
 		// Our SceneManager will handle the population of the scenes, so we do nothing here.
 		pOnPopulateSceneCallback.onPopulateSceneFinished();
 	}
+
+    @Override
+    public Context getContext() {
+        return this.getApplicationContext();
+    }
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.bitarcher.interfaces.gui.theme.ITheme;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.interfaces.resourcemanagement.IContextProvider;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.interfaces.sceneManagement.IManagedLayer;
@@ -59,11 +60,11 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
 
 
 
-    public SceneManager(ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManagerConfigurator, Engine engine, Context context) {
+    public SceneManager(ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManagerConfigurator, Engine engine, IContextProvider contextProvider) {
         this.resourceManager = sceneManagerConfigurator.getNewResourceManager();
 
         this.themeManager = new ThemeManager(this.resourceManager);
-        this.resourceManager.setup(engine, context, sceneManagerConfigurator.getCameraWidth(),
+        this.resourceManager.setup(engine, contextProvider, sceneManagerConfigurator.getCameraWidth(),
                 sceneManagerConfigurator.getCameraHeight(), sceneManagerConfigurator.getCameraScaleFactorX(), sceneManagerConfigurator.getCameraScaleFactorY(), this.themeManager);
 
         this.theme = sceneManagerConfigurator.getNewTheme(this.themeManager);
