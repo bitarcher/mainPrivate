@@ -37,15 +37,6 @@ public class TextButtonActivity extends SceneManagedActivity<ResourceManager, De
                 return new ResourceManager();
             }
 
-            @Override
-            public Engine getEngine() {
-                return mEngine;
-            }
-
-            @Override
-            public Context getContext() {
-                return getApplicationContext();
-            }
 
             @Override
             public int getCameraWidth() {

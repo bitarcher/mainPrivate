@@ -1,6 +1,7 @@
 package com.bitarcher.scenemanagement;
 
 
+import android.content.Context;
 import android.view.KeyEvent;
 
 import com.bitarcher.interfaces.gui.theme.ITheme;
@@ -9,6 +10,7 @@ import com.bitarcher.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.interfaces.sceneManagement.IOptionsLayer;
 import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
 
+import org.andengine.engine.Engine;
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.options.EngineOptions;
 import org.andengine.engine.options.ScreenOrientation;
@@ -33,7 +35,9 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
 
     public SceneManagedActivity() {
         ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManagerConfigurator = this.getSceneManagerConfigurator();
-        this.sceneManager = new SceneManager<>(sceneManagerConfigurator);
+        Context context = this.getApplicationContext();
+        Engine engine = this.getEngine();
+        this.sceneManager = new SceneManager<>(sceneManagerConfigurator, engine, context);
     }
 
     protected abstract ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu, TOptionsLayer> getSceneManagerConfigurator();

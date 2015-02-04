@@ -20,8 +20,6 @@ import org.andengine.engine.Engine;
 public interface ISceneManagerConfigurator<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu,
         TOptionsLayer extends IOptionsLayer> {
     TResourceManager getNewResourceManager();
-    Engine getEngine();
-    Context getContext();
     int getCameraWidth();
     int getCameraHeight();
     float getCameraScaleFactorX();
