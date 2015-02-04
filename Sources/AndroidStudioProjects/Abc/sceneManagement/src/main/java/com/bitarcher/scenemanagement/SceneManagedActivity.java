@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import com.bitarcher.interfaces.gui.theme.ITheme;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.sceneManagement.IMainMenu;
+import com.bitarcher.interfaces.sceneManagement.IOptionsLayer;
 import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
 
 import org.andengine.engine.camera.Camera;
@@ -17,13 +18,13 @@ import org.andengine.entity.scene.Scene;
 import org.andengine.entity.util.FPSLogger;
 import org.andengine.ui.activity.BaseGameActivity;
 
-public abstract class SceneManagedActivity<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu> extends BaseGameActivity {
+public abstract class SceneManagedActivity<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu, TOptionsLayer extends IOptionsLayer> extends BaseGameActivity {
 
-    SceneManager<TResourceManager, TTheme, TMainMenu> sceneManager;
+    SceneManager<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManager;
 
 
 
-    public SceneManager<TResourceManager, TTheme, TMainMenu> getSceneManager()
+    public SceneManager<TResourceManager, TTheme, TMainMenu, TOptionsLayer> getSceneManager()
     {
         return this.sceneManager;
     }
@@ -31,11 +32,11 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
 	// ====================================================
 
     public SceneManagedActivity() {
-        ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu> sceneManagerConfigurator = this.getSceneManagerConfigurator();
+        ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManagerConfigurator = this.getSceneManagerConfigurator();
         this.sceneManager = new SceneManager<>(sceneManagerConfigurator);
     }
 
-    protected abstract ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu> getSceneManagerConfigurator();
+    protected abstract ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu, TOptionsLayer> getSceneManagerConfigurator();
 
 
     // CONSTANTS
@@ -74,9 +75,9 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
 			if(this.sceneManager.resourceManager.getEngine()!=null){
 				if(this.sceneManager.isLayerShown())
                     this.sceneManager.getCurrentLayer().onHideLayer();
-				else if(this.sceneManager.getmCurrentScene().getClass().getGenericSuperclass().equals(ManagedGameScene.class) ||
-						(this.sceneManager.getmCurrentScene().getClass().getGenericSuperclass().equals(ManagedMenuScene.class) &!
-                                (this.sceneManager.getmCurrentScene() instanceof IMainMenu)))
+				else if(this.sceneManager.getCurrentScene().getClass().getGenericSuperclass().equals(ManagedGameScene.class) ||
+						(this.sceneManager.getCurrentScene().getClass().getGenericSuperclass().equals(ManagedMenuScene.class) &!
+                                (this.sceneManager.getCurrentScene() instanceof IMainMenu)))
                     this.sceneManager.showMainMenu();
 				else
 					System.exit(0);

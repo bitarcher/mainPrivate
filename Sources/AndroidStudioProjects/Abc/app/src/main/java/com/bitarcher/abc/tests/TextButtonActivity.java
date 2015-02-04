@@ -10,8 +10,10 @@ package com.bitarcher.abc.tests;
 import android.content.Context;
 
 import com.bitarcher.abc.MainMenu;
+import com.bitarcher.abc.OptionsLayer;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourceManager;
 import com.bitarcher.scenemanagement.SceneManagedActivity;
 import com.bitarcher.scenemanagement.SceneManager;
@@ -20,7 +22,7 @@ import com.bitarcher.widgettoolkit.theme.DefaultTheme;
 import org.andengine.engine.Engine;
 
 
-public class TextButtonActivity extends SceneManagedActivity<ResourceManager, DefaultTheme, MainMenu> {
+public class TextButtonActivity extends SceneManagedActivity<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> {
 
     // ===========================================================
     // Constants
@@ -28,8 +30,8 @@ public class TextButtonActivity extends SceneManagedActivity<ResourceManager, De
 
 
     @Override
-    protected ISceneManagerConfigurator<ResourceManager, DefaultTheme, MainMenu> getSceneManagerConfigurator() {
-        return new ISceneManagerConfigurator<ResourceManager, DefaultTheme, MainMenu>() {
+    protected ISceneManagerConfigurator<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> getSceneManagerConfigurator() {
+        return new ISceneManagerConfigurator<ResourceManager, DefaultTheme, MainMenu, OptionsLayer>() {
             @Override
             public ResourceManager getNewResourceManager() {
                 return new ResourceManager();
@@ -71,8 +73,13 @@ public class TextButtonActivity extends SceneManagedActivity<ResourceManager, De
             }
 
             @Override
-            public MainMenu getNewMainMenu(DefaultTheme theme, ResourceManager resourceManager) {
+            public MainMenu getNewMainMenu(ITSceneManager<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> sceneManager, DefaultTheme theme, ResourceManager resourceManager) {
                 return new MainMenu(resourceManager);
+            }
+
+            @Override
+            public OptionsLayer getNewOptionsLayer(ITSceneManager<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> sceneManager, DefaultTheme theme, ResourceManager resourceManager, MainMenu mainMenu) {
+                return new OptionsLayer(sceneManager);
             }
         };
     }

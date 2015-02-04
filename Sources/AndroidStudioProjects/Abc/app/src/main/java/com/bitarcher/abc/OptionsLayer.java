@@ -1,17 +1,23 @@
-package com.bitarcher.scenemanagement;
+package com.bitarcher.abc;
 
 import com.bitarcher.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.interfaces.sceneManagement.IOptionsLayer;
+import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.resourcemanagement.ResourceManager;
+import com.bitarcher.scenemanagement.ManagedLayer;
+import com.bitarcher.scenemanagement.SceneManager;
+import com.bitarcher.widgettoolkit.theme.DefaultTheme;
 
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.text.Text;
 import org.andengine.input.touch.TouchEvent;
 
-public class OptionsLayer extends ManagedLayer
+public class OptionsLayer extends ManagedLayer implements IOptionsLayer
 {
-    SceneManager sceneManager;
+    ITSceneManager<ResourceManager, DefaultTheme, MainMenu, OptionsLayer>  sceneManager;
 
-    public OptionsLayer(final SceneManager sceneManager) {
+    public OptionsLayer(final ITSceneManager<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> sceneManager) {
         this.sceneManager = sceneManager;
         final OptionsLayer optionsLayer = this;
 

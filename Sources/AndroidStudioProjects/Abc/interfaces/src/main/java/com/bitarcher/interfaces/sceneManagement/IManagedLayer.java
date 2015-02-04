@@ -13,6 +13,8 @@ import com.bitarcher.interfaces.gui.andEngine.IHUD;
  */
 public interface IManagedLayer extends IHUD{
 
+    void onShowManagedLayer();
+    void onHideManagedLayer();
     void onLoadLayer();
     void onShowLayer();
     void onHideLayer();

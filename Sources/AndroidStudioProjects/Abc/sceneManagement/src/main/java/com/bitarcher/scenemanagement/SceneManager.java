@@ -5,7 +5,9 @@ import com.bitarcher.interfaces.gui.theme.ITheme;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.sceneManagement.IMainMenu;
+import com.bitarcher.interfaces.sceneManagement.IManagedLayer;
 import com.bitarcher.interfaces.sceneManagement.IManagedScene;
+import com.bitarcher.interfaces.sceneManagement.IOptionsLayer;
 import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
 import com.bitarcher.widgettoolkit.theme.ThemeManager;
@@ -15,12 +17,17 @@ import org.andengine.engine.camera.hud.HUD;
 import org.andengine.engine.handler.IUpdateHandler;
 
 
-public class SceneManager<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu> implements ITSceneManager<TResourceManager, TTheme, TMainMenu>
+public class SceneManager<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu,
+        TOptionsLayer extends IOptionsLayer> implements ITSceneManager<TResourceManager, TTheme, TMainMenu, TOptionsLayer>
 {
     TResourceManager resourceManager;
+
+
     TTheme theme;
     IThemeManager themeManager;
     TMainMenu mainMenu;
+    TOptionsLayer optionsLayer;
+
     // ====================================================
     // VARIABLES
     // ====================================================
@@ -45,11 +52,11 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
     // An empty place-holder scene that we use to apply the modal properties of the layer to the currently shown scene.
     private Scene mPlaceholderModalScene;
     // Hold a reference to the current managed layer (if one exists).
-    private ManagedLayer currentLayer;
+    private IManagedLayer currentLayer;
 
 
 
-    public SceneManager(ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu> sceneManagerConfigurator) {
+    public SceneManager(ISceneManagerConfigurator<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManagerConfigurator) {
         this.resourceManager = sceneManagerConfigurator.getNewResourceManager();
 
         this.themeManager = new ThemeManager(this.resourceManager);
@@ -60,7 +67,8 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
         this.themeManager.setCurrentTheme(theme);
 
 
-        this.mainMenu = sceneManagerConfigurator.getNewMainMenu(this.theme, this.resourceManager);
+        this.mainMenu = sceneManagerConfigurator.getNewMainMenu(this, this.theme, this.resourceManager);
+        this.optionsLayer = sceneManagerConfigurator.getNewOptionsLayer(this, this.theme, this.resourceManager, this.mainMenu);
 
         this.mLoadingScreenHandler = new IUpdateHandler() {
             @Override
@@ -72,9 +80,9 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
                 // On the first frame AFTER the loading screen has been shown.
                 if(mNumFramesPassed==1) {
                     // Hide and unload the previous scene if it exists.
-                    if(getmCurrentScene() !=null) {
-                        getmCurrentScene().onHideManagedScene();
-                        getmCurrentScene().onUnloadManagedScene();
+                    if(getCurrentScene() !=null) {
+                        getCurrentScene().onHideManagedScene();
+                        getCurrentScene().onUnloadManagedScene();
                     }
                     // Load the new scene.
                     mNextScene.onLoadManagedScene();
@@ -88,7 +96,7 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
                     // Tell the new scene that it is shown.
                     mNextScene.onShowManagedScene();
                     // Set the new scene to the current scene.
-                    setmCurrentScene(mNextScene);
+                    setCurrentScene(mNextScene);
                     // Reset the handler & loading screen variables to be ready for another use.
                     mNextScene.setElapsedLoadingScreenTime(0f);
                     mNumFramesPassed = -1;
@@ -105,16 +113,24 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
         return this.mainMenu;
     }
 
+    @Override
+    public TOptionsLayer getOptionsLayer() {
+        return this.optionsLayer;
+    }
+
+    @Override
     public TResourceManager getResourceManager()
     {
         return this.resourceManager;
     }
 
+    @Override
     public TTheme getTheme()
     {
         return this.theme;
     }
 
+    @Override
     public IThemeManager getThemeManager()
     {
         return this.themeManager;
@@ -152,31 +168,38 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
 		mNextScene = pManagedScene;
         this.resourceManager.getEngine().setScene((org.andengine.entity.scene.Scene)mNextScene);
 		// If a previous managed scene exists, hide and unload it.
-		if(getmCurrentScene() !=null)
+		if(getCurrentScene() !=null)
 		{
-			getmCurrentScene().onHideManagedScene();
-			getmCurrentScene().onUnloadManagedScene();
+			getCurrentScene().onHideManagedScene();
+			getCurrentScene().onUnloadManagedScene();
 		}
 		// Load and show the new managed scene, and set it as the current scene.
 		mNextScene.onLoadManagedScene();
 		mNextScene.onShowManagedScene();
-		setmCurrentScene(mNextScene);
+		setCurrentScene(mNextScene);
 	}
 	
 	// Convenience method to quickly show the Main Menu.
+    @Override
 	public void showMainMenu() {
 
 		showScene(this.mainMenu);
 	}
 
 	// Convenience method to quickly show the Options Layer.
+    @Override
 	public void showOptionsLayer(final boolean pSuspendCurrentSceneUpdates) {
-        // TODO
-		//showLayer(OptionsLayer.getInstance(),false,pSuspendCurrentSceneUpdates,true);
+
+		showLayer(this.optionsLayer,false,pSuspendCurrentSceneUpdates,true);
 	}
 
 	// Shows a layer by placing it as a child to the Camera's HUD.
-	public void showLayer(final ManagedLayer pLayer, final boolean pSuspendSceneDrawing, final boolean pSuspendSceneUpdates, final boolean pSuspendSceneTouchEvents) {
+    @Override
+	public void showLayer(final IManagedLayer pLayer, final boolean pSuspendSceneDrawing, final boolean pSuspendSceneUpdates, final boolean pSuspendSceneTouchEvents) {
+
+        if(!(pLayer instanceof ManagedLayer))
+            throw new IncompatibleClassChangeError();
+
 		// If the camera already has a HUD, we will use it.
 		if(this.resourceManager.getEngine().getCamera().hasHUD()){
 			mCameraHadHud = true;
@@ -189,17 +212,17 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
 		// If the managed layer needs modal properties, set them.
 		if(pSuspendSceneDrawing || pSuspendSceneUpdates || pSuspendSceneTouchEvents) {
 			// Apply the managed layer directly to the Camera's HUD
-            this.resourceManager.getEngine().getCamera().getHUD().setChildScene(pLayer, pSuspendSceneDrawing, pSuspendSceneUpdates, pSuspendSceneTouchEvents);
+            this.resourceManager.getEngine().getCamera().getHUD().setChildScene((ManagedLayer)pLayer, pSuspendSceneDrawing, pSuspendSceneUpdates, pSuspendSceneTouchEvents);
 			// Create the place-holder scene if it needs to be created.
 			if(mPlaceholderModalScene==null) {
 				mPlaceholderModalScene = new Scene();
 				mPlaceholderModalScene.setBackgroundEnabled(false);
 			}
 			// Apply the place-holder to the current scene.
-			getmCurrentScene().setChildScene(mPlaceholderModalScene, pSuspendSceneDrawing, pSuspendSceneUpdates, pSuspendSceneTouchEvents);
+			getCurrentScene().setChildScene(mPlaceholderModalScene, pSuspendSceneDrawing, pSuspendSceneUpdates, pSuspendSceneTouchEvents);
 		} else {
 			// If the managed layer does not need to be modal, simply set it to the HUD.
-            this.resourceManager.getEngine().getCamera().getHUD().setChildScene(pLayer);
+            this.resourceManager.getEngine().getCamera().getHUD().setChildScene((ManagedLayer)pLayer);
 		}
 		// Set the camera for the managed layer so that it binds to the camera if the camera is moved/scaled/rotated.
 		pLayer.setCamera(this.resourceManager.getEngine().getCamera());
@@ -214,13 +237,14 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
 	}
 
 	// Hides the open layer if one is open.
+    @Override
 	public void hideLayer() {
 		if(isLayerShown()) {
 			// Clear the HUD's child scene to remove modal properties.
             this.resourceManager.getEngine().getCamera().getHUD().clearChildScene();
 			// If we had to use a place-holder scene, clear it.
 
-            IManagedScene currentScene = getmCurrentScene();
+            IManagedScene currentScene = getCurrentScene();
 			if(currentScene.hasChildScene())
 				if(currentScene.getIChildScene()==mPlaceholderModalScene)
                     currentScene.clearChildScene();
@@ -234,27 +258,33 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
 		}
 	}
 
-    public IManagedScene getmCurrentScene() {
+    @Override
+    public IManagedScene getCurrentScene() {
         return mCurrentScene;
     }
 
-    public void setmCurrentScene(IManagedScene mCurrentScene) {
+    @Override
+    public void setCurrentScene(IManagedScene mCurrentScene) {
         this.mCurrentScene = mCurrentScene;
     }
 
+    @Override
     public boolean isLayerShown() {
         return isLayerShown;
     }
 
+    @Override
     public void setLayerShown(boolean isLayerShown) {
         this.isLayerShown = isLayerShown;
     }
 
-    public ManagedLayer getCurrentLayer() {
+    @Override
+    public IManagedLayer getCurrentLayer() {
         return currentLayer;
     }
 
-    public void setCurrentLayer(ManagedLayer currentLayer) {
+    @Override
+    public void setCurrentLayer(IManagedLayer currentLayer) {
         this.currentLayer = currentLayer;
     }
 }
