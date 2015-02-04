@@ -72,11 +72,11 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
 		if (keyCode == KeyEvent.KEYCODE_BACK
 				&& event.getAction() == KeyEvent.ACTION_DOWN) {
 			if(this.sceneManager.resourceManager.getEngine()!=null){
-				if(this.sceneManager.isLayerShown)
-                    this.sceneManager.currentLayer.onHideLayer();
-				else if(this.sceneManager.mCurrentScene.getClass().getGenericSuperclass().equals(ManagedGameScene.class) ||
-						(this.sceneManager.mCurrentScene.getClass().getGenericSuperclass().equals(ManagedMenuScene.class) &!
-                                (this.sceneManager.mCurrentScene instanceof IMainMenu)))
+				if(this.sceneManager.isLayerShown())
+                    this.sceneManager.getCurrentLayer().onHideLayer();
+				else if(this.sceneManager.getmCurrentScene().getClass().getGenericSuperclass().equals(ManagedGameScene.class) ||
+						(this.sceneManager.getmCurrentScene().getClass().getGenericSuperclass().equals(ManagedMenuScene.class) &!
+                                (this.sceneManager.getmCurrentScene() instanceof IMainMenu)))
                     this.sceneManager.showMainMenu();
 				else
 					System.exit(0);

@@ -1,12 +1,10 @@
 package com.bitarcher.scenemanagement;
 
+import com.bitarcher.interfaces.gui.andEngine.IScene;
 import com.bitarcher.interfaces.gui.theme.EnumFontSize;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 
 import org.andengine.engine.camera.hud.HUD;
-import org.andengine.entity.scene.Scene;
-import org.andengine.entity.sprite.ButtonSprite;
-import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.text.Text;
 
 public abstract class ManagedGameScene extends ManagedScene {
@@ -33,25 +31,25 @@ public abstract class ManagedGameScene extends ManagedScene {
 	}
 	
 	// These objects will make up our loading scene.
-	private Text LoadingText;
-	private Scene LoadingScene;
+	private Text loadingText;
+	private LoadingScene loadingScene;
 	@Override
-	public Scene onLoadingScreenLoadAndShown() {
+	public IScene onLoadingScreenLoadAndShown() {
 		// Setup and return the loading screen.
-		LoadingScene = new Scene();
-		LoadingScene.setBackgroundEnabled(true);
-		LoadingText = new Text(0,0, this.resourceManager.getThemeManager().getCurrentTheme().getFontThemeSection().getFont(EnumFontSize.Big),"Loading...", this.resourceManager.getEngine().getVertexBufferObjectManager());
-		LoadingText.setPosition(LoadingText.getWidth()/2f, this.resourceManager.getCameraHeight()-LoadingText.getHeight()/2f);
-		LoadingScene.attachChild(LoadingText);
-		return LoadingScene;
+		loadingScene = new LoadingScene();
+		loadingScene.setBackgroundEnabled(true);
+		loadingText = new Text(0,0, this.resourceManager.getThemeManager().getCurrentTheme().getFontThemeSection().getFont(EnumFontSize.Big),"Loading...", this.resourceManager.getEngine().getVertexBufferObjectManager());
+		loadingText.setPosition(loadingText.getWidth()/2f, this.resourceManager.getCameraHeight()- loadingText.getHeight()/2f);
+		loadingScene.attachChild(loadingText);
+		return loadingScene;
 	}
 
 	@Override
 	public void onLoadingScreenUnloadAndHidden() {
 		// detach the loading screen resources.
-		LoadingText.detachSelf();
-		LoadingText = null;
-		LoadingScene = null;
+		loadingText.detachSelf();
+		loadingText = null;
+		loadingScene = null;
 	}
 	
 	@Override

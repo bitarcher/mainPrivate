@@ -1,9 +1,8 @@
 package com.bitarcher.scenemanagement;
 
+import com.bitarcher.interfaces.gui.andEngine.IScene;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.sceneManagement.IManagedScene;
-
-import org.andengine.entity.scene.Scene;
 
 public abstract class ManagedScene extends Scene implements IManagedScene {
 
@@ -53,7 +52,7 @@ public abstract class ManagedScene extends Scene implements IManagedScene {
 		onHideScene();
 	}
 	// Methods to Override in the subclasses.
-	public abstract Scene onLoadingScreenLoadAndShown();
+	public abstract IScene onLoadingScreenLoadAndShown();
 	public abstract void onLoadingScreenUnloadAndHidden();
 	public abstract void onLoadScene();
 	public abstract void onShowScene();

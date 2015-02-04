@@ -51,13 +51,13 @@ public interface IScene extends IEntity{
 
     boolean hasChildScene();
 
-    Scene getChildScene();
+    IScene getIChildScene();
 
-    void setChildSceneModal(final Scene pChildScene);
+    void setChildSceneModal(final IScene pChildScene);
 
-    void setChildScene(final Scene pChildScene);
+    void setChildScene(final IScene pChildScene);
 
-    void setChildScene(final Scene pChildScene, final boolean pModalDraw, final boolean pModalUpdate, final boolean pModalTouch);
+    void setChildScene(final IScene pChildScene, final boolean pModalDraw, final boolean pModalUpdate, final boolean pModalTouch);
 
     void clearChildScene();
 

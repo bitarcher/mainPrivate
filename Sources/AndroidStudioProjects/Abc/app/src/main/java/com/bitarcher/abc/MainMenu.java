@@ -1,6 +1,7 @@
 package com.bitarcher.abc;
 
 
+import com.bitarcher.interfaces.gui.andEngine.IScene;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.scenemanagement.ManagedMenuScene;
@@ -28,7 +29,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
     // No loading screen means no reason to use the following methods.
 	@Override
-	public Scene onLoadingScreenLoadAndShown() {
+	public IScene onLoadingScreenLoadAndShown() {
 		return null;
 	}
 	@Override

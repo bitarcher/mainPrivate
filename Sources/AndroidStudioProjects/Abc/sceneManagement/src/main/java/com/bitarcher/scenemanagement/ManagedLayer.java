@@ -1,8 +1,9 @@
 package com.bitarcher.scenemanagement;
 
+import com.bitarcher.interfaces.gui.andEngine.IScene;
 import com.bitarcher.interfaces.sceneManagement.IManagedLayer;
 
-import org.andengine.engine.camera.hud.HUD;
+
 
 public abstract class ManagedLayer extends HUD  implements IManagedLayer{
 	// Is set TRUE if the layer is loaded.
@@ -56,4 +57,6 @@ public abstract class ManagedLayer extends HUD  implements IManagedLayer{
     public void setUnloadOnHidden(boolean unloadOnHidden) {
         this.unloadOnHidden = unloadOnHidden;
     }
+
+
 }
