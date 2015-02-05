@@ -7,11 +7,18 @@ import com.bitarcher.interfaces.gui.widgets.IButton;
 import com.bitarcher.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.resourcemanagement.MapValues.BitmapTextureSetFromAssetMapValue;
+import com.bitarcher.resourcemanagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
+import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
+import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneResSvgTexture;
+import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.scenemanagement.ManagedMenuScene;
 import com.bitarcher.widgettoolkit.widget.TextButton;
 
+import org.andengine.entity.scene.background.Background;
+import org.andengine.entity.scene.background.IBackground;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.text.Text;
 import org.andengine.opengl.texture.region.ITextureRegion;
@@ -20,6 +27,8 @@ import org.andengine.util.math.MathUtils;
 public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
     SvgTexturesSetFromResIdsResourceInfo texturesSetResourceInfo;
+    SvgTexturesSetFromAssetResourceInfo svgTexturesSetFromAssetResourceInfo;
+    BitmapTexturesSetFromAssetResourceInfo bitmapTexturesSetFromAssetResourceInfo;
 
 
 	public MainMenu(ITSceneManager sceneManager) {
@@ -34,6 +43,19 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         this.texturesSetResourceInfo.addOneTexture(new OneResSvgTexture("cloud", R.raw.cloud, 150, 150));
 
         this.getSceneManager().getResourceManager().pushRequirement(this.texturesSetResourceInfo);
+
+        this.svgTexturesSetFromAssetResourceInfo = new SvgTexturesSetFromAssetResourceInfo("mainMenu2", 1024, 512, "gfx/MainMenu/");
+
+        this.svgTexturesSetFromAssetResourceInfo.addOneTexture(new OneAssetSvgTexture("sunset", "sunset.svg", 780, 480));
+        this.svgTexturesSetFromAssetResourceInfo.addOneTexture(new OneAssetSvgTexture("cloud", "cloud.svg", 150, 150));
+
+        this.getSceneManager().getResourceManager().pushRequirement(this.svgTexturesSetFromAssetResourceInfo);
+
+        this.bitmapTexturesSetFromAssetResourceInfo = new BitmapTexturesSetFromAssetResourceInfo("mainMenu3", 1024, 512, "gfx/MainMenu/");
+
+        this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture((new OneAssetBitmapTexture("sunset", "sunset.png")));
+        this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture((new OneAssetBitmapTexture("cloud", "cloud.png")));
+        this.getSceneManager().getResourceManager().pushRequirement(this.bitmapTexturesSetFromAssetResourceInfo);
 	}
 
 
@@ -50,7 +72,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 	private Sprite backgroundSprite;
 
     /*
-	private ButtonSprite playButton;
+ 	private ButtonSprite playButton;
 	private Text playButtonText;
 	private ButtonSprite optionsButton;
 	private Text optionsButtonText;
@@ -71,19 +93,28 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 		
 		// Create the background
 
+        IBackground background = new Background(0.7f, 0.7f, 1.0f);
 
-        ITextureRegion cloudTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.texturesSetResourceInfo, "cloud");
-        ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.texturesSetResourceInfo, "sunset");
+        this.setBackground(background);
+        this.setBackgroundEnabled(true);
 
-        backgroundSprite = new Sprite(this.getSceneManager().getResourceManager().getCameraWidth()/2f, this.getSceneManager().getResourceManager().getCameraHeight()/2f, backgroundTextureRegion, this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());
-		backgroundSprite.setScaleX(this.getSceneManager().getResourceManager().getCameraScaleX());
-		backgroundSprite.setScaleY(this.getSceneManager().getResourceManager().getCameraHeight() / 480f);
+        this.getSceneManager().getResourceManager().pushRequirement(this.getSceneManager().getTheme().getTextButtonSection().getTexturesSetResourceInfo());
+        //ITextureRegion cloudTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.texturesSetResourceInfo, "cloud");
+        ITextureRegion cloudTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.bitmapTexturesSetFromAssetResourceInfo, "cloud");
+        //ITextureRegion cloudTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.svgTexturesSetFromAssetResourceInfo, "cloud");
+        //ITextureRegion cloudTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.getSceneManager().getTheme().getTextButtonSection().getTexturesSetResourceInfo(), "pressed");
+        //ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.texturesSetResourceInfo, "sunset");
+        ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.bitmapTexturesSetFromAssetResourceInfo, "sunset");
+        //ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.svgTexturesSetFromAssetResourceInfo, "sunset");
+        //ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.getSceneManager().getTheme().getTextButtonSection().getTexturesSetResourceInfo(), "pressed");
+
+        backgroundSprite = new Sprite(this.getSceneManager().getResourceManager().getCameraWidth() / 2, this.getSceneManager().getResourceManager().getCameraHeight() / 2, this.getSceneManager().getResourceManager().getCameraWidth(), this.getSceneManager().getResourceManager().getCameraHeight(), backgroundTextureRegion, this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());
 		backgroundSprite.setZIndex(-5000);
 		this.attachChild(backgroundSprite);
 
 		
 		// Create clouds that move from one side of the screen to the other, and repeat.
-		cloudSprites = new Sprite[20];
+		cloudSprites = new Sprite[5];
         final MainMenu mainMenu = this;
 
 		for(Sprite curCloudSprite: cloudSprites){

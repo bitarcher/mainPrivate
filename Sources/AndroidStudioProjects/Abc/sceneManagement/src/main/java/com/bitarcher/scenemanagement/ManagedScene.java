@@ -35,7 +35,7 @@ public abstract class ManagedScene extends Scene implements IManagedScene {
 		if(!isLoaded()) {
 			onLoadScene();
 			setLoaded(true);
-			this.setIgnoreUpdate(true);
+			//this.setIgnoreUpdate(true);
 		}
 	}
 	// Called by the Scene Manager. It calls onUnloadScene if the scene has been previously loaded and sets the isLoaded status.
