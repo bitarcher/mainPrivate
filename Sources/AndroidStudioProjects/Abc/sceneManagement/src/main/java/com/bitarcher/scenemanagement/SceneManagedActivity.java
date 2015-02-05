@@ -145,9 +145,7 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
         this.sceneManager.showMainMenu();
 		// Set the MainMenu to the Engine's scene.
 
-
-        // TODO
-        //pOnCreateSceneCallback.onCreateSceneFinished(MainMenu.getInstance());
+        pOnCreateSceneCallback.onCreateSceneFinished((Scene)this.getSceneManager().getMainMenu());
 	}
 
 	// ====================================================

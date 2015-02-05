@@ -81,7 +81,8 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
     TextButton playButton;
     TextButton optionsButton;
 
-	private Sprite[] cloudSprites;
+	//private Sprite[] cloudSprites;
+    private CloudSprite[] cloudSprites;
 	private Text titleText;
 
 
@@ -114,38 +115,12 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
 		
 		// Create clouds that move from one side of the screen to the other, and repeat.
-		cloudSprites = new Sprite[5];
+		cloudSprites = new CloudSprite[5];
         final MainMenu mainMenu = this;
 
 		for(Sprite curCloudSprite: cloudSprites){
-			curCloudSprite = new Sprite(
-					MathUtils.random(-(this.getWidth() * this.getScaleX()) / 2, this.getSceneManager().getResourceManager().getCameraWidth() + (this.getWidth() * this.getScaleX()) / 2),
-					MathUtils.random(-(this.getHeight()*this.getScaleY())/2, this.getSceneManager().getResourceManager().getCameraHeight() + (this.getHeight()*this.getScaleY())/2),
-                    cloudTextureRegion,
-                    this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager()) {
-				private float XSpeed = MathUtils.random(0.2f, 2f);
-				private boolean initialized = false;
-				@Override
-				protected void onManagedUpdate(final float pSecondsElapsed) {
-					super.onManagedUpdate(pSecondsElapsed);
-					if(!initialized) {
-						initialized = true;
-						this.setScale(XSpeed/2);
-						this.setZIndex(-4000+Math.round(XSpeed*1000f));
-						mainMenu.sortChildren();
-					}
-					if(this.getX()<-(this.getWidth()*this.getScaleX())/2) {
-						XSpeed = MathUtils.random(0.2f, 2f);
-						this.setScale(XSpeed/2);
-						this.setPosition(mainMenu.getSceneManager().getResourceManager().getCameraWidth()+(this.getWidth()*this.getScaleX())/2,
-                                MathUtils.random(-(this.getHeight()*this.getScaleY())/2, mainMenu.getSceneManager().getResourceManager().getCameraHeight() + (this.getHeight()*this.getScaleY())/2));
-						
-						this.setZIndex(-4000+Math.round(XSpeed*1000f));
-						mainMenu.sortChildren();
-					}
-					this.setPosition(this.getX()-(XSpeed*(pSecondsElapsed/0.016666f)), this.getY());
-				}
-			};
+			curCloudSprite = new CloudSprite(this, cloudTextureRegion);
+
 			this.attachChild(curCloudSprite);
 		}
 
@@ -234,6 +209,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 		titleText.setColor(0.153f, 0.290f, 0.455f);
 		this.attachChild(titleText);
 
+        //this.set
 	}
 	
 	@Override

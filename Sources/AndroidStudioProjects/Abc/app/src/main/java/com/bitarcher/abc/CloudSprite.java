@@ -24,13 +24,10 @@ public class CloudSprite extends Sprite {
     {
         super(
                 MathUtils.random(-(mainMenu.getWidth() * mainMenu.getScaleX()) / 2, mainMenu.getSceneManager().getResourceManager().getCameraWidth() + (mainMenu.getWidth() * mainMenu.getScaleX()) / 2),
-                MathUtils.random(-(mainMenu.getHeight()*mainMenu.getScaleY())/2, mainMenu.getSceneManager().getResourceManager().getCameraHeight() + (mainMenu.getHeight()*mainMenu.getScaleY())/2),,
+                MathUtils.random(-(mainMenu.getHeight()*mainMenu.getScaleY())/2, mainMenu.getSceneManager().getResourceManager().getCameraHeight() + (mainMenu.getHeight()*mainMenu.getScaleY())/2),
                 cloudTextureRegion, mainMenu.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());
 
         this.mainMenu = mainMenu;
-
-
-
     }
 
     @Override
