@@ -21,6 +21,7 @@ public interface ITSceneManager<TResourceManager extends IResourceManager, TThem
     TMainMenu getMainMenu();
     TOptionsLayer getOptionsLayer();
 
+    void showScene(final IManagedScene pManagedScene);
     void showMainMenu();
     void showOptionsLayer(final boolean pSuspendCurrentSceneUpdates);
     void showLayer(final IManagedLayer pLayer, final boolean pSuspendSceneDrawing, final boolean pSuspendSceneUpdates, final boolean pSuspendSceneTouchEvents);

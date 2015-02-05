@@ -65,7 +65,7 @@ public class TextButtonActivity extends SceneManagedActivity<ResourceManager, De
 
             @Override
             public MainMenu getNewMainMenu(ITSceneManager<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> sceneManager, DefaultTheme theme, ResourceManager resourceManager) {
-                return new MainMenu(resourceManager);
+                return new MainMenu(sceneManager);
             }
 
             @Override
@@ -98,8 +98,8 @@ public class TextButtonActivity extends SceneManagedActivity<ResourceManager, De
     public void onCreateScene(OnCreateSceneCallback pOnCreateSceneCallback) {
         super.onCreateScene(pOnCreateSceneCallback);
 
-        TextButtonScene textButtonScene = new TextButtonScene(this.getSceneManager().getTheme());
-        this.getSceneManager().showScene(textButtonScene);
+        /*TextButtonScene textButtonScene = new TextButtonScene(this.getSceneManager());
+        this.getSceneManager().showScene(textButtonScene);*/
     }
 
 }
