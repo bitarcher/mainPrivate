@@ -53,7 +53,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
         this.bitmapTexturesSetFromAssetResourceInfo = new BitmapTexturesSetFromAssetResourceInfo("mainMenu3", 1024, 512, "gfx/MainMenu/");
 
-        this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture((new OneAssetBitmapTexture("sunset", "sunset.png")));
+        this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture((new OneAssetBitmapTexture("prairie", "prairie.gif")));
         this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture((new OneAssetBitmapTexture("cloud", "cloud.png")));
         this.getSceneManager().getResourceManager().pushRequirement(this.bitmapTexturesSetFromAssetResourceInfo);
 	}
@@ -105,7 +105,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         //ITextureRegion cloudTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.svgTexturesSetFromAssetResourceInfo, "cloud");
         //ITextureRegion cloudTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.getSceneManager().getTheme().getTextButtonSection().getTexturesSetResourceInfo(), "pressed");
         //ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.texturesSetResourceInfo, "sunset");
-        ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.bitmapTexturesSetFromAssetResourceInfo, "sunset");
+        ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.bitmapTexturesSetFromAssetResourceInfo, "prairie");
         //ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.svgTexturesSetFromAssetResourceInfo, "sunset");
         //ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.getSceneManager().getTheme().getTextButtonSection().getTexturesSetResourceInfo(), "pressed");
 
@@ -115,7 +115,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
 		
 		// Create clouds that move from one side of the screen to the other, and repeat.
-		cloudSprites = new CloudSprite[5];
+		cloudSprites = new CloudSprite[35];
         final MainMenu mainMenu = this;
 
 		for(Sprite curCloudSprite: cloudSprites){
