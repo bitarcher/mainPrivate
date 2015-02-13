@@ -12,4 +12,5 @@ public interface ITreeNode extends IImagedAndLabeled, INamed {
     List<ITreeNode> getChildNodes();
     void addTreeNodeListener(ITreeNodeListener listener);
     void removeTreeNodeListener(ITreeNodeListener listener);
+    String getPath();
 }

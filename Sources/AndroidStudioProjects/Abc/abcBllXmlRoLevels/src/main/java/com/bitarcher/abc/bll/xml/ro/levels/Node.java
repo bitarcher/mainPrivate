@@ -57,6 +57,30 @@ public class Node implements INode {
         this.treeNodeListeners.remove(listener);
     }
 
+    @Override
+    public String getPath() {
+        String retval = "";
+
+        if(this.parent != null)
+        {
+            if(this.parent.getParent() != null)
+            {
+                retval = this.parent.getPath() + "/" + this.name;
+            }
+            else
+            {
+                retval = "/" + this.name;
+            }
+        }
+        else
+        {
+            retval = "/";
+        }
+
+
+        return retval;
+    }
+
     protected String translate(String fmt, Object... args)
     {
         return BabelModuleAgglomeratorSingleton.getInstance().translate(this, fmt, args);

@@ -4,11 +4,13 @@
 			<Animal 
 				name="abeille"
 				img="abeille.svg" license="publicDomain"
+                sound="abeille.ogg"
 				author="artbejo"
 				reference="https://openclipart.org/detail/174840/bee-by-artbejo-174840"
 				/>
 			<Animal 
 				name="autruche"
+                sound="autruche.ogg"
 				img="autruche.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/22289/cartoon-ostrich-by-studiofibonacci"
@@ -20,12 +22,14 @@
 		<Letter char="b">
 			<Animal 
 				name="baleine"
+                sound="baleine.ogg"
 				img="baleine.svg" license="publicDomain"
 				author="frankes"
 				reference="https://openclipart.org/detail/170170/whale-by-frankes-170170"
 				/>
 			<Animal 
 				name="belette"
+                sound="belette.ogg"
 				img="belette.svg" license="publicDomain"
 				author="Schplook"
 				reference="https://openclipart.org/detail/190755/cartoon-weasel-fixed-by-schplook-190755"
@@ -57,6 +61,7 @@
 				/>
 			<Animal 
 				name="chèvre"
+                sound="chevre.ogg"
 				img="chevre.svg" license="publicDomain"
 				author="lemmling"
 				reference="https://openclipart.org/detail/17824/cartoon-goat-by-lemmling"
@@ -78,7 +83,9 @@
 
 			<Animal 
 				name="crocodile"
-				img="crocodile.svg" license="publicDomain"
+				img="crocodile.svg"
+                license="publicDomain"
+                sound="crocodile.ogg"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/22340/cartoon-alligator-by-studiofibonacci"
 				/>
@@ -93,6 +100,7 @@
 			<Animal 
 				name="chauve-souris"
 				img="chauve_souris.svg" license="publicDomain"
+                sound="chauve_souris.ogg"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/28663/cartoon-bat-by-studiofibonacci"
 				/>
@@ -100,6 +108,7 @@
 			<Animal 
 				name="cheval"
 				img="cheval.svg" license="publicDomain"
+                sound="cheval.ogg"
 				author="paweo111"
 				reference="https://openclipart.org/detail/170851/cartoon-horse-by-paweo111-170851"
 				/>
@@ -107,6 +116,7 @@
 			<Animal 
 				name="cochon"
 				img="cochon.svg" license="publicDomain"
+                sound="cochon.ogg"
 				author="Mat86"
 				reference="https://openclipart.org/detail/166836/pig2-by-mat86"
 				/>
@@ -119,12 +129,14 @@
 				img="dauphin.svg" license="publicDomain"
 				author="artfloid"
 				reference="https://openclipart.org/detail/17719/dauphin-by-artfloid"
+                sound="dauphin.ogg"
 				/>
 			<Animal 
 				name="dromadaire"
 				img="dromadaire.svg" license="notMentioned"
 				author="notMentioned"
 				reference="http://www.wildlife-animals.com/camel/camel-clipart.php"
+                sound="dromadaire.ogg"
 				/>
 
 		</Letter>
@@ -135,25 +147,34 @@
 				img="ecureuil.svg" license="publicDomain"
 				author="lemmling"
 				reference="https://openclipart.org/detail/17595/cartoon-squirrel-by-lemmling"
+                sound="ecureuil.ogg"
 				/>
 			<Animal 
 				name="élan"
 				img="elan.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/169960/cartoon-moose-by-studiofibonacci"
+                sound="elan.ogg"
 				/>
 			<Animal 
 				name="escargot"
 				img="escargot.svg" license="publicDomain"
 				author="vectorsme"
 				reference="https://openclipart.org/detail/181969/cartoon-snail-art-by-vectorsme-181969"
+                sound="escargot.ogg"
 				/>
+            <Animal
+                name="éléphant"
+                img="elephant.svg" license="publicDomain"
+                sound="elephant.ogg"
+                />
 		</Letter>
 
 		<Letter char="f">
 			<Animal 
 				name="fourmi"
 				img="fourmi.svg" license="publicDomain"
+                sound="fourmi_qui_pique.ogg"
 				author="vectorsme"
 				reference="https://openclipart.org/detail/181965/cartoon-ant-art-by-vectorsme-181965"
 				/>
@@ -167,18 +188,21 @@
 				img="girafe.svg" license="publicDomain"
 				author="lemmling"
 				reference="https://openclipart.org/detail/17628/cartoon-giraffe-by-lemmling"
+                sound="girafe.ogg"
 				/>
 			<Animal 
 				name="grenouille"
 				img="grenouille.svg" license="publicDomain"
 				author="roland81"
 				reference="https://openclipart.org/detail/69823/cartoon-frog-by-roland81"
+                sound="grenouille.ogg"
 				/>
 			<Animal 
 				name="gnu"
 				img="gnu.svg" license="publicDomain"
 				author="ephemeralwaves"
 				reference="https://openclipart.org/detail/174708/cartoon-gnu-wrath-by-ephemeralwaves-174708"
+                sound="gnu.ogg"
 				/>
 		</Letter>
 
@@ -189,12 +213,14 @@
 				img="hibou.svg" license="publicDomain"
 				author="lemmling"
 				reference="https://openclipart.org/detail/17566/cartoon-owl-by-lemmling"
+                sound="hibou.ogg"
 				/>
 			<Animal 
 				name="hippopotame"
 				img="hippopotame.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/22337/cartoon-hippo-by-studiofibonacci"
+                sound="hippopotame.ogg"
 				/>
 
 			<Animal 
@@ -202,6 +228,7 @@
 				img="homard.svg" license="publicDomain"
 				author="hatso1"
 				reference="https://openclipart.org/detail/172473/cartoon-lobster-by-hatso1-172473"
+                sound="homard.ogg"
 				/>
 
 		</Letter>
@@ -212,6 +239,7 @@
 				img="ibis.svg" license="publicDomain"
 				author="molumen"
 				reference="https://openclipart.org/detail/2187/wood-ibis-2-by-molumen"
+                sound="ibis.ogg"
 				/>
 		</Letter>
 
@@ -221,12 +249,14 @@
 				img="jaguar.svg" license="publicDomain"
 				author="frankes"
 				reference="https://openclipart.org/detail/167328/jaguar-by-frankes"
+                sound="jaguar.ogg"
 				/>
 			<Animal 
 				name="jaseur"
 				img="jaseur.svg" license="publicDomain"
 				author="pesasa"
 				reference="https://openclipart.org/detail/124309/bohemian-waxwing-by-pesasa"
+                sound="jaseur.ogg"
 				/>
 
 		</Letter>
@@ -238,12 +268,14 @@
 				img="kangourou.svg" license="publicDomain"
 				author="lemmling"
 				reference="https://openclipart.org/detail/17575/cartoon-kangaroo-by-lemmling"
+                sound="kangourou.ogg"
 				/>
 			<Animal 
 				name="koala"
 				img="koala.svg" license="publicDomain"
 				author="aPAULcalypse"
 				reference="https://openclipart.org/detail/177288/cartoon-koala-by-apaulcalypse-177288"
+                sound="koala.ogg"
 				/>
 
 			<Animal 
@@ -251,6 +283,7 @@
 				img="koudou.svg" license="publicDomain"
 				author="Martouf"
 				reference="https://openclipart.org/detail/28708/cartoon-kudu-by-martouf"
+                sound="koudou.ogg"
 				/>
 
 		</Letter>
@@ -262,18 +295,21 @@
 				img="lapin.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/23052/cartoon-bunny-by-studiofibonacci"
+                sound="lapin.ogg"
 				/>
 			<Animal 
 				name="lama"
 				img="lama.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/23065/cartoon-llama-by-studiofibonacci"
+                sound="lama.ogg"
 				/>
 			<Animal 
 				name="léopard"
 				img="leopard.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/22343/cartoon-leopard-by-studiofibonacci"
+                sound="leopard.ogg"
 				/>
 
 			<Animal 
@@ -288,6 +324,7 @@
 				img="loup.svg" license="publicDomain"
 				author="dkdlv"
 				reference="https://openclipart.org/detail/177421/cartoon-wolf-by-dkdlv-177421"
+                sound="loup.ogg"
 				/>
 		</Letter>
 
@@ -297,18 +334,21 @@
 				img="mouton.svg" license="publicDomain"
 				author="lemmling"
 				reference="https://openclipart.org/detail/17637/cartoon-sheep-by-lemmling"
+                sound="mouton"
 				/>
 			<Animal 
 				name="mouche"
 				img="mouche.svg" license="publicDomain"
 				author="PrinterKiller"
 				reference="https://openclipart.org/detail/145735/cartoon-fly-by-printerkiller"
+                sound="mouche.ogg"
 				/>
 			<Animal 
 				name="morse"
 				img="morse.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/169963/cartoon-walrus-by-studiofibonacci"
+                sound="morse.ogg"
 				/>
 		</Letter>
 
@@ -318,6 +358,7 @@
 				img="narval.svg" license="publicDomain"
 				author="Squiggle"
 				reference="http://openclipart.org/detail/122227/large-narwhal-by-squiggle#sthash.KnXHaFQQ.dpuf"
+                sound="narval.ogg"
 				/>
 		</Letter>
 
@@ -328,6 +369,7 @@
 				img="ours.svg" license="publicDomain"
 				author="lemmling"
 				reference="https://openclipart.org/detail/17702/cartoon-bear-by-lemmling"
+                sound="ours.ogg"
 				/>
 		</Letter>
 
@@ -344,6 +386,7 @@
 				img="paon.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/22637/cartoon-peacock-by-studiofibonacci"
+                sound="paon.ogg"
 				/>
 
 			<Animal 
@@ -351,6 +394,7 @@
 				img="pieuvre.svg" license="publicDomain"
 				author="laobc"
 				reference="https://openclipart.org/detail/64159/cartoon-octopus-by-laobc"
+                sound="pieuvre.ogg"
 				/>
 
 			<Animal 
@@ -358,6 +402,7 @@
 				img="poule.svg" license="publicDomain"
 				author="paweo111"
 				reference="https://openclipart.org/detail/170849/cartoon-chicken-by-paweo111-170849"
+                sound="poule.ogg"
 				/>
 
 			<Animal 
@@ -365,6 +410,7 @@
 				img="papillon.svg" license="publicDomain"
 				author="vectorsme"
 				reference="https://openclipart.org/detail/181966/cartoon-butterfly-art-by-vectorsme-181966"
+                sound="papillon.ogg"
 				/>
 
 
@@ -385,6 +431,7 @@
 				img="quetzal.svg" license="notMentionned"
 				author="D3-shadow-wolf"
 				reference="http://d3-shadow-wolf.deviantart.com/art/Quetzal-Fast-256907176"
+                sound="quetzal.ogg"
 				/>
 			
 		</Letter>
@@ -396,12 +443,14 @@
 				img="requin.svg" license="publicDomain"
 				author="mi_brami"
 				reference="https://openclipart.org/detail/172430/shark-pure-by-mi_brami-172430#sthash.TJQif97o.dpuf"
+                sound="requin.ogg"
 				/>
 			<Animal 
 				name="rhinocéros"
 				img="rhinoceros.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/22293/cartoon-rhino-by-studiofibonacci"
+                sound="rhinoceros.ogg"
 				/>
 
 		</Letter>
@@ -412,6 +461,7 @@
 				img="souris.svg" license="publicDomain"
 				author="lemmling"
 				reference="https://openclipart.org/detail/17622/-by--17622"
+                sound="souris.ogg"
 				/>
 
 			<Animal 
@@ -419,6 +469,7 @@
 				img="singe.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/22291/cartoon-monkey-by-studiofibonacci"
+                sound="singe.ogg"
 				/>
 
 			<Animal 
@@ -426,6 +477,7 @@
 				img="serpent.svg" license="publicDomain"
 				author="Sirrob01"
 				reference="https://openclipart.org/detail/170138/cartoon-rattlesnake-by-sirrob01"
+                sound="serpent.ogg"
 				/>
 
 		</Letter>
@@ -444,12 +496,14 @@
 				img="taupe.svg" license="publicDomain"
 				author="Magnesus"
 				reference="https://openclipart.org/detail/168496/cartoon-mole-by-magnesus"
+                sound="taupe.ogg"
 				/>
 			<Animal 
 				name="tigre"
 				img="tigre.svg" license="publicDomain"
 				author="mmathieu"
 				reference="https://openclipart.org/detail/163681/cartoon-tiger-by-mmathieu"
+                sound="tigre.ogg"
 				/>
 			<Dinosaur 
 				name="tyrannosaure"
@@ -473,6 +527,7 @@
 				img="unau.svg" license="notMentionned"
 				author="Afsaneh Tajvidi"
 				reference="http://www.joojoo.me/2014/03/u-comme-unau-s-is-for-sloth.html"
+                sound="unau.ogg"
 				/>
 		</Letter>
 
@@ -482,6 +537,7 @@
 				img="vache.svg" license="publicDomain"
 				author="lemmling"
 				reference="https://openclipart.org/detail/17676/cartoon-cow-by-lemmling"
+                sound="vache.ogg"
 				/>
 		</Letter>
 		<Letter char="w">
@@ -490,6 +546,7 @@
 				img="wapiti.svg" license="publicDomain"
 				author="lemmling"
 				reference="https://openclipart.org/detail/17635/cartoon-elk-by-lemmling"
+                sound="wapiti.ogg"
 				/>
 		</Letter>
 		<Letter char="x">
@@ -498,6 +555,7 @@
 				img="xerus.svg" license="notMentionned"
 				author="notMentionned"
 				reference="http://www.churchhouseclipart.com/animal-clipart-page-2.php"
+                sound="xerus.ogg"
 				/>
 		</Letter>
 		<Letter char="y">
@@ -506,6 +564,7 @@
 				img="yak.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/169962/cartoon-yak-by-studiofibonacci"
+                sound="yak.ogg"
 				/>
 		</Letter>
 
@@ -516,6 +575,7 @@
 				img="zebre.svg" license="publicDomain"
 				author="StudioFibonacci"
 				reference="https://openclipart.org/detail/22287/cartoon-zebra-by-studiofibonacci"
+                sound="zebre.ogg"
 				/>
 		</Letter>
 

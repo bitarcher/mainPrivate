@@ -5,5 +5,5 @@ import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IAnimal;
 /**
  * Created by michel on 19/12/14.
  */
-public class Animal extends APictureBase implements IAnimal {
+public class Animal extends ASoundablePictureBase implements IAnimal {
 }
