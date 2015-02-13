@@ -4,7 +4,7 @@
  * bitarcher.com
  */
 
-package com.bitarcher.interfaces.bll.xml.abc.orm;
+package com.bitarcher.interfaces.bll.orm;
 
 import com.bitarcher.interfaces.basicioc.orm.IIdGotter;
 import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IAnimal;
@@ -23,4 +23,6 @@ public interface IPlayer extends IIdGotter {
     // Other
 
     IAnimal getAvatar();
+
+    IScorePlayerLevel getScoreByLevel(String levelPath);
 }

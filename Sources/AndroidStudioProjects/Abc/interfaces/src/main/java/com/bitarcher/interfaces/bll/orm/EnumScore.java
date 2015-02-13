@@ -4,12 +4,13 @@
  * bitarcher.com
  */
 
-package com.bitarcher.interfaces.bll.xml.abc.orm;
+package com.bitarcher.interfaces.bll.orm;
 
 /**
  * Created by michel on 13/02/15.
  */
 public enum EnumScore {
+    ZeroStar(0),
     OneStar(1),
     TwoStars(2),
     TreeStars(3);

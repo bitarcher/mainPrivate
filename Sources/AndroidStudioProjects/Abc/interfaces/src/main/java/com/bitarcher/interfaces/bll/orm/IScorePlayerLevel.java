@@ -4,7 +4,7 @@
  * bitarcher.com
  */
 
-package com.bitarcher.interfaces.bll.xml.abc.orm;
+package com.bitarcher.interfaces.bll.orm;
 
 import com.bitarcher.interfaces.basicioc.orm.IIdGotter;
 import com.bitarcher.interfaces.bll.xml.abc.ro.levels.INode;
@@ -14,9 +14,9 @@ import com.bitarcher.interfaces.bll.xml.abc.ro.levels.INode;
  */
 public interface IScorePlayerLevel extends IIdGotter {
     // scalar
-    int getPlayerId();
     String getLevelPath();
     int getScoreIntValue();
+    void setScoreIntValue(int scoreIntValue);
 
     // orm links
     IPlayer getPlayer();
