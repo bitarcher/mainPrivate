@@ -6,7 +6,7 @@
 
 package com.bitarcher.abc;
 
-import com.bitarcher.interfaces.basicioc.orm.IConfigurator;
+import com.bitarcher.interfaces.bll.orm.abc.IConfigurator;
 import com.bitarcher.interfaces.bll.xml.abc.ro.levels.INode;
 import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IAnimal;
 

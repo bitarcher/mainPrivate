@@ -4,7 +4,7 @@
  * bitarcher.com
  */
 
-package com.bitarcher.interfaces.bll.orm;
+package com.bitarcher.interfaces.bll.orm.abc;
 
 /**
  * Created by michel on 13/02/15.

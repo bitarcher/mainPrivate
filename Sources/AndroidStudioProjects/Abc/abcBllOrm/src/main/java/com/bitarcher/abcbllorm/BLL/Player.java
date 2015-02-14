@@ -7,23 +7,25 @@
 package com.bitarcher.abcbllorm.BLL;
 
 import com.bitarcher.abcbllorm.ConfigurationSingleton;
-import com.bitarcher.interfaces.bll.orm.IPlayer;
-import com.bitarcher.interfaces.bll.orm.IScorePlayerLevel;
+import com.bitarcher.interfaces.bll.orm.abc.IPlayer;
+import com.bitarcher.interfaces.bll.orm.abc.IScorePlayerLevel;
 import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IAnimal;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.misc.BaseDaoEnabled;
+import com.j256.ormlite.stmt.PreparedQuery;
+import com.j256.ormlite.stmt.QueryBuilder;
+import com.j256.ormlite.stmt.Where;
 import com.j256.ormlite.table.DatabaseTable;
+
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by michel on 13/02/15.
  */
 
 @DatabaseTable(tableName = "tPlayer")
-public class Player extends BaseDaoEnabled implements IPlayer{
-
-    @DatabaseField(generatedId = true)
-    int id;
-
+public class Player extends OrmBasic implements IPlayer{
 
     @DatabaseField(canBeNull = false)
     String animalAvatarName;
@@ -54,8 +56,32 @@ public class Player extends BaseDaoEnabled implements IPlayer{
 
     @Override
     public IScorePlayerLevel getScoreByLevel(String levelPath) {
-        return null;
-    }
 
+        IScorePlayerLevel retval = null;
+        QueryBuilder<ScorePlayerLevel, Integer> qb = ConfigurationSingleton.getInstance().getDaos().getScorePlayerLevelDao().queryBuilder();
+
+        Where where = qb.where();
+        PreparedQuery<ScorePlayerLevel> preparedQuery = null;
+
+        try {
+            where.eq("levelPath", levelPath);
+            where.and();
+            where.eq("player_id", this.id);
+
+            preparedQuery = qb.prepare();
+
+            List<ScorePlayerLevel> list = ConfigurationSingleton.getInstance().getDaos().getScorePlayerLevelDao().query(preparedQuery);
+
+            if(!list.isEmpty())
+            {
+                retval = list.get(0);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return retval;
+    }
 }
 

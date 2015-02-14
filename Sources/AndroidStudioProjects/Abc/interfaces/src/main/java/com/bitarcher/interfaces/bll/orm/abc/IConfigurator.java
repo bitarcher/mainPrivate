@@ -4,7 +4,7 @@
  * bitarcher.com
  */
 
-package com.bitarcher.interfaces.basicioc.orm;
+package com.bitarcher.interfaces.bll.orm.abc;
 
 import com.bitarcher.interfaces.bll.xml.abc.ro.levels.INode;
 import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IAnimal;

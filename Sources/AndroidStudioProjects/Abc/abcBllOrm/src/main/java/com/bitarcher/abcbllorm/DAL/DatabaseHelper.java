@@ -22,9 +22,16 @@ import java.sql.SQLException;
  * Created by michel on 13/02/15.
  */
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
-    public DatabaseHelper(Context context, String databaseName, SQLiteDatabase.CursorFactory factory, int databaseVersion) {
-        super(context, databaseName, factory, databaseVersion);
+
+    public DatabaseHelper(Context context)
+    {
+        super(context, "bitarcherAbc", null, 1);
     }
+
+    /*public DatabaseHelper(Context context, String databaseName, SQLiteDatabase.CursorFactory factory, int databaseVersion) {
+        super(context, databaseName, factory, databaseVersion);
+    }*/
+
 
     @Override
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {

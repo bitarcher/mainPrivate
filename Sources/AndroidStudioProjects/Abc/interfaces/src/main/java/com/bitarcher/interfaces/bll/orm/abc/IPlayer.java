@@ -4,15 +4,16 @@
  * bitarcher.com
  */
 
-package com.bitarcher.interfaces.bll.orm;
+package com.bitarcher.interfaces.bll.orm.abc;
 
 import com.bitarcher.interfaces.basicioc.orm.IIdGotter;
+import com.bitarcher.interfaces.basicioc.orm.IOrmBasic;
 import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IAnimal;
 
 /**
  * Created by michel on 13/02/15.
  */
-public interface IPlayer extends IIdGotter {
+public interface IPlayer extends IOrmBasic {
 
     // scalar
 

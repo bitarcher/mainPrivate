@@ -7,9 +7,9 @@
 package com.bitarcher.abcbllorm.BLL;
 
 import com.bitarcher.abcbllorm.ConfigurationSingleton;
-import com.bitarcher.interfaces.bll.orm.EnumScore;
-import com.bitarcher.interfaces.bll.orm.IPlayer;
-import com.bitarcher.interfaces.bll.orm.IScorePlayerLevel;
+import com.bitarcher.interfaces.bll.orm.abc.EnumScore;
+import com.bitarcher.interfaces.bll.orm.abc.IPlayer;
+import com.bitarcher.interfaces.bll.orm.abc.IScorePlayerLevel;
 import com.bitarcher.interfaces.bll.xml.abc.ro.levels.INode;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.misc.BaseDaoEnabled;
@@ -20,20 +20,15 @@ import com.j256.ormlite.table.DatabaseTable;
  */
 
 @DatabaseTable(tableName = "tScorePlayerLevel")
-public class ScorePlayerLevel  extends BaseDaoEnabled implements IScorePlayerLevel {
+public class ScorePlayerLevel  extends OrmBasic implements IScorePlayerLevel {
 
-    @DatabaseField(generatedId = true)
-    int id;
-
-
-
-    @DatabaseField(canBeNull = false)
+    @DatabaseField(canBeNull = false, indexName = "levelPath_player")
     String levelPath;
 
     @DatabaseField(canBeNull = false)
     int scoreIntValue;
 
-    @DatabaseField(canBeNull = false, foreign = true)
+    @DatabaseField(canBeNull = false, foreign = true, indexName = "levelPath_player")
     Player player;
 
 

@@ -7,7 +7,7 @@
 package com.bitarcher.abcbllorm;
 
 import com.bitarcher.abcbllorm.DAL.Daos;
-import com.bitarcher.interfaces.basicioc.orm.IConfigurator;
+import com.bitarcher.interfaces.bll.orm.abc.IConfigurator;
 import com.j256.ormlite.support.ConnectionSource;
 
 import java.sql.SQLException;

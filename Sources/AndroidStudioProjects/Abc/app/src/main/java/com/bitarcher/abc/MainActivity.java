@@ -7,6 +7,7 @@
 package com.bitarcher.abc;
 
 
+import com.bitarcher.abcbllorm.BLL.Player;
 import com.bitarcher.abcbllorm.ConfigurationSingleton;
 import com.bitarcher.abcbllorm.DAL.DatabaseHelper;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
@@ -16,6 +17,9 @@ import com.bitarcher.resourcemanagement.ResourceManager;
 import com.bitarcher.scenemanagement.SceneManagedActivity;
 import com.bitarcher.widgettoolkit.theme.DefaultTheme;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.j256.ormlite.dao.Dao;
+
+import java.sql.SQLException;
 
 
 public class MainActivity extends SceneManagedActivity<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> {
@@ -102,6 +106,21 @@ public class MainActivity extends SceneManagedActivity<ResourceManager, DefaultT
 
         /*TextButtonScene textButtonScene = new TextButtonScene(this.getSceneManager());
         this.getSceneManager().showScene(textButtonScene);*/
+
+        /*// test
+        DatabaseHelper dh = this.getDatabaseHelper();
+
+        try {
+            Dao<Player, Integer> dao = dh.getDao(Player.class);
+
+            Player p = new Player("singe");
+
+            p.setDao(dao);
+            p.update();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
     }
 
 
