@@ -6,6 +6,7 @@ import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
 
 import org.andengine.engine.camera.hud.HUD;
+import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.text.Text;
 
 public abstract class ManagedGameScene extends ManagedScene {
@@ -60,8 +61,8 @@ public abstract class ManagedGameScene extends ManagedScene {
 		
 		// Create a Sprite to use as the background.
 		//this.attachChild(new Sprite(0,0, OriginalOldResourceManager.gameBackgroundTextureRegion, OriginalOldResourceManager.getInstance().engine.getVertexBufferObjectManager()));
-		this.getLastChild().setScaleCenter(0f,0f);
-		this.getLastChild().setScaleX(800f);
+		//this.getLastChild().setScaleCenter(0f,0f);
+		//this.getLastChild().setScaleX(800f);
 		
 		// Setup the HUD Buttons and Button Texts.
 		// Take note of what happens when the buttons are clicked.

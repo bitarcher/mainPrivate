@@ -88,9 +88,14 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 	private Text titleText;
 
 
+    @Override
+    public void onLoadScene() {
+        this.onLoadManagedScene();
+    }
 
 	@Override
-    public void onLoadScene() {
+    public void onLoadManagedScene() {
+    //public void onLoadScene() {
 
         this.pushRequirements();
 
@@ -127,12 +132,15 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
                 (this.getSceneManager().getResourceManager().getCameraWidth()- buttonWidth)*(1f/3f), buttonWidth, buttonHeight, "Jouer");
 
         this.attachChild(playButton);
+
+
         this.playButton.addButtonListener(new IButtonListener() {
             @Override
             public void onClicked(IButton button) {
                 getSceneManager().showScene(new GameLevel(getSceneManager()));
             }
         });
+
 
         this.optionsButton = new TextButton(this.getSceneManager().getTheme(),
                 playButton.getX()+ playButton.getWidth(),
@@ -163,9 +171,16 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 	public void onHideScene() {
         this.getSceneManager().getResourceManager().getMusic(this.musicResourceInfo).stop();
 	}
+
 	@Override
-	public void onUnloadScene() {
+    public void onUnloadManagedScene() {
+	//public void onUnloadScene() {
         this.mChildren.clear();
         this.popRequirements();
 	}
+
+    @Override
+    public void onUnloadScene() {
+        this.onUnloadManagedScene();
+    }
 }

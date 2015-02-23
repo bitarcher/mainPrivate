@@ -17,7 +17,7 @@ public abstract class Widget extends Entity implements IWidget {
     ITheme theme;
     boolean areResourcesLoaded = false;
     protected ArrayList<IWidgetListener> widgetListenerArrayList = new ArrayList<>();
-    boolean enabled;
+    boolean enabled = true;
 
     @Override
     public boolean isEnabled() {
