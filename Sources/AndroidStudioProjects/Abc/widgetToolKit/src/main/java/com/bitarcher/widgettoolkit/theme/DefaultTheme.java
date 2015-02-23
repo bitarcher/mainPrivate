@@ -3,6 +3,7 @@ package com.bitarcher.widgettoolkit.theme;
 import android.content.Context;
 import android.graphics.Typeface;
 
+import com.bitarcher.interfaces.gui.theme.IArrows;
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
 
@@ -115,5 +116,26 @@ public class DefaultTheme extends ThemeBase {
     @Override
     protected ITexturesSetResourceInfo getTextButtonTexturesSetResourceInfo() throws EResourceNotFound {
         return this.textButtonSvgTexturesSetResourceInfo;
+    }
+
+    @Override
+    public IArrows getArrows() {
+        return new IArrows() {
+            @Override
+            public ITexturesSetResourceInfo getArrowsTexturesSetResourceInfo() {
+                Context context = getThemeManager().getResourceManager().getContext();
+                SvgTexturesSetFromResIdsResourceInfo retval = new SvgTexturesSetFromResIdsResourceInfo("@default_arrows", context, 1024, 256);
+
+                int sizeX = 220;
+                int sizeY = sizeX;
+
+                retval.addOneTexture(new OneResSvgTexture("left", R.raw.d_arrow_left, sizeX, sizeY));
+                retval.addOneTexture(new OneResSvgTexture("right", R.raw.d_arrow_right, sizeX, sizeY));
+                retval.addOneTexture(new OneResSvgTexture("up", R.raw.d_arrow_up, sizeX, sizeY));
+                retval.addOneTexture(new OneResSvgTexture("down", R.raw.d_arrow_down, sizeX, sizeY));
+
+                return null;
+            }
+        };
     }
 }

@@ -14,5 +14,5 @@ public interface ITheme extends INamed, IService{
 
     IFontThemeSection getFontThemeSection();
     ITextButtonSection getTextButtonSection();
-
+    IArrows getArrows();
 }
