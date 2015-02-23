@@ -18,6 +18,7 @@ import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromResIdsR
 import com.bitarcher.scenemanagement.ManagedMenuScene;
 import com.bitarcher.widgettoolkit.widget.TextButton;
 
+import org.andengine.audio.music.Music;
 import org.andengine.entity.IEntity;
 import org.andengine.entity.scene.background.Background;
 import org.andengine.entity.scene.background.IBackground;
@@ -73,12 +74,6 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 	// The objects that will make up our Main Menu
 	private Sprite backgroundSprite;
 
-    /*
- 	private ButtonSprite playButton;
-	private Text playButtonText;
-	private ButtonSprite optionsButton;
-	private Text optionsButtonText;
-    */
 
     TextButton playButton;
     TextButton optionsButton;
@@ -88,14 +83,9 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 	private Text titleText;
 
 
-    @Override
-    public void onLoadScene() {
-        this.onLoadManagedScene();
-    }
 
 	@Override
-    public void onLoadManagedScene() {
-    //public void onLoadScene() {
+    public void onLoadScene() {
 
         this.pushRequirements();
 
@@ -164,23 +154,23 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 	
 	@Override
 	public void onShowScene() {
-        this.getSceneManager().getResourceManager().getMusic(this.musicResourceInfo).play();
+        Music music =this.getSceneManager().getResourceManager().getMusic(this.musicResourceInfo);
+
+        music.play();
 	}
 
 	@Override
 	public void onHideScene() {
-        this.getSceneManager().getResourceManager().getMusic(this.musicResourceInfo).stop();
+
+        Music music =this.getSceneManager().getResourceManager().getMusic(this.musicResourceInfo);
+        music.pause();
+        music.seekTo(0);
 	}
 
-	@Override
-    public void onUnloadManagedScene() {
-	//public void onUnloadScene() {
-        this.mChildren.clear();
-        this.popRequirements();
-	}
 
     @Override
     public void onUnloadScene() {
-        this.onUnloadManagedScene();
+        this.mChildren.clear();
+        this.popRequirements();
     }
 }

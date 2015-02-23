@@ -1,6 +1,7 @@
 package com.bitarcher.resourcemanagement;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.bitarcher.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.interfaces.resourcemanagement.EResourceCreationError;
@@ -79,6 +80,8 @@ public class ResourceManager implements IResourceManager {
 
 
             this._map.put(resourceInfo, mapValue);
+
+            Log.d("Resource manager", "ADDED " + resourceInfo.getName());
         }
 
         mapValue.ref();
@@ -111,6 +114,7 @@ public class ResourceManager implements IResourceManager {
         {
             mapValue.clean();
             this._map.remove(resourceInfo);
+            Log.d("Resource manager", "REMOVED " + resourceInfo.getName());
         }
     }
 

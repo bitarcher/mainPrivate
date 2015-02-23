@@ -2,6 +2,7 @@ package com.bitarcher.scenemanagement;
 
 import com.bitarcher.interfaces.gui.andEngine.IScene;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.interfaces.sceneManagement.IManagedScene;
 import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
 

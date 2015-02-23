@@ -16,9 +16,7 @@ public abstract class ManagedMenuScene extends ManagedScene implements IManagedM
 	@Override
 	public void onUnloadManagedScene() {
 		if(isLoaded()) {
-			// For menus, we are disabling the reloading of resources.
-			// isLoaded = false;
-			onUnloadScene();
+			// For menus, we are disabling the reloading of resources. not isLoaded = false; nor  onUnloadScene();
 		}
 	}
 
