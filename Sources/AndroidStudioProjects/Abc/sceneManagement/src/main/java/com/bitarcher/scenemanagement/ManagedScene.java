@@ -30,7 +30,13 @@ public abstract class ManagedScene extends Scene implements IManagedScene {
         this.sceneManager = sceneManager;
 		minLoadingScreenTime = pLoadingScreenMinimumSecondsShown;
 		hasLoadingScreen = (getMinLoadingScreenTime() > 0f);
+
+        // introduce originally for scroll menu, asking widget their needs may be an overhead
+        this.setTouchAreaBindingOnActionDownEnabled(true);
+        this.setTouchAreaBindingOnActionMoveEnabled(true);
+        this.setOnSceneTouchListenerBindingOnActionDownEnabled(true);
 	}
+
 	// Called by the Scene Manager. It calls onLoadScene if loading is needed, sets the isLoaded status, and pauses the scene while it's not shown.
 	public void onLoadManagedScene() {
 		if(!isLoaded()) {
