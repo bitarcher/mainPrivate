@@ -107,6 +107,10 @@ public abstract class SceneManagedActivity<TResourceManager extends IResourceMan
 		EngineOptions engineOptions = new EngineOptions(true, ScreenOrientation.LANDSCAPE_SENSOR, new FillResolutionPolicy(), new Camera(0, 0, cameraWidth, cameraHeight));
 		// Enable sounds.
 		engineOptions.getAudioOptions().setNeedsSound(true);
+
+        // added 20150226, seems to be required for scrolling menu
+        engineOptions.getTouchOptions().setNeedsMultiTouch(true);
+
 		// Enable music.
 		engineOptions.getAudioOptions().setNeedsMusic(true);
 		// Turn on Dithering to smooth texture gradients.

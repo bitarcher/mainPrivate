@@ -118,24 +118,18 @@ public class DefaultTheme extends ThemeBase {
         return this.textButtonSvgTexturesSetResourceInfo;
     }
 
+    IArrows arrows;
+
     @Override
     public IArrows getArrows() {
-        return new IArrows() {
-            @Override
-            public ITexturesSetResourceInfo getArrowsTexturesSetResourceInfo() {
-                Context context = getThemeManager().getResourceManager().getContext();
-                SvgTexturesSetFromResIdsResourceInfo retval = new SvgTexturesSetFromResIdsResourceInfo("@default_arrows", context, 1024, 256);
 
-                int sizeX = 220;
-                int sizeY = sizeX;
+        if(this.arrows == null)
+        {
+            Context context = getThemeManager().getResourceManager().getContext();
 
-                retval.addOneTexture(new OneResSvgTexture("left", R.raw.d_arrow_left, sizeX, sizeY));
-                retval.addOneTexture(new OneResSvgTexture("right", R.raw.d_arrow_right, sizeX, sizeY));
-                retval.addOneTexture(new OneResSvgTexture("up", R.raw.d_arrow_up, sizeX, sizeY));
-                retval.addOneTexture(new OneResSvgTexture("down", R.raw.d_arrow_down, sizeX, sizeY));
+            this.arrows = new DefaultArrows(context);
+        }
 
-                return null;
-            }
-        };
+        return this.arrows;
     }
 }

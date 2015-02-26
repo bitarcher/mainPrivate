@@ -41,6 +41,11 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
     public MapValue make(IResourceInfo resourceInfo)  throws EResourceCreationError {
         MapValue retval = null;
 
+        if(resourceInfo == null)
+        {
+            throw new NullPointerException("resourceInfo is null");
+        }
+
         if (resourceInfo instanceof IBuildableBitmapTextureAtlasResourceInfo)
         {
             IBuildableBitmapTextureAtlasResourceInfo buildableBitmapTextureAtlasResourceInfo = (IBuildableBitmapTextureAtlasResourceInfo) resourceInfo;

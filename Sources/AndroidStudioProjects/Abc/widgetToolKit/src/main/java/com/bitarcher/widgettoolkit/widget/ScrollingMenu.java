@@ -6,12 +6,15 @@
 
 package com.bitarcher.widgettoolkit.widget;
 
+import android.util.Log;
+
 import com.bitarcher.interfaces.gui.theme.ITheme;
 import com.bitarcher.interfaces.gui.widgets.IScrollingMenu;
 import com.bitarcher.interfaces.gui.widgets.IScrollingMenuListener;
 import com.bitarcher.interfaces.mvc.IImagedAndLabeled;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 
 import org.andengine.engine.camera.Camera;
@@ -94,7 +97,14 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
 
         final Camera camera = resourceManager.getEngine().getCamera();
 
-        for (int x = 0; x < this.getImagedAndLabeledList().size(); x++) {
+        int listSize = this.getImagedAndLabeledList().size();
+
+        if(listSize == 0)
+        {
+            Log.w("Widget:ScrollingMenu", "Image and labeled list size was null on box creation");
+        }
+
+        for (int x = 0; x < listSize; x++) {
             // On Touch, save the clicked item in case it's a click and not a
             // scroll.
             final int itemToLoad = iItem;
@@ -158,11 +168,13 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
 
         super.pushResourceRequirements();
 
-        this.getTheme().getThemeManager().getResourceManager().pushRequirement(this.getTheme().getArrows().getArrowsTexturesSetResourceInfo());
+        IResourceManager resourceManager = this.getTheme().getThemeManager().getResourceManager();
+        ITexturesSetResourceInfo arrowsTexturesSetResourceInfo = this.getTheme().getArrows().getArrowsTexturesSetResourceInfo();
+        resourceManager.pushRequirement(arrowsTexturesSetResourceInfo);
 
         for(IImagedAndLabeled imagedAndLabeled : this.getImagedAndLabeledList())
         {
-            this.getTheme().getThemeManager().getResourceManager().pushRequirement(imagedAndLabeled.getTextureSetResourceInfo());
+            resourceManager.pushRequirement(imagedAndLabeled.getTextureSetResourceInfo());
         }
     }
 
@@ -205,6 +217,8 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
     @Override
     public void onScroll(ScrollDetector scrollDetector, int pPointerID, float pDistanceX, float pDistanceY) {
 
+
+
         Camera camera = this.getTheme().getThemeManager().getResourceManager().getEngine().getCamera();
         // Disable the menu arrows left and right (15px padding)
         if (camera.getXMin() <= 15)
@@ -215,27 +229,27 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
             menuRight.setVisible(false);
         else
             menuRight.setVisible(true);
-// Return if ends are reached
+        // Return if ends are reached
         if (((mCurrentX - pDistanceX) < mMinX)) {
             return;
         } else if ((mCurrentX - pDistanceX) > mMaxX) {
             return;
         }
-// Center camera to the current point
+        // Center camera to the current point
         camera.offsetCenter(-pDistanceX, 0);
         mCurrentX -= pDistanceX;
-// Set the scrollbar with the camera
+        // Set the scrollbar with the camera
         float tempX = camera.getCenterX() - camera.getWidth() / 2;
-// add the % part to the position
+        // add the % part to the position
         tempX += (tempX / (mMaxX + camera.getWidth())) * camera.getWidth();
-// set the position
+        // set the position
         scrollBar.setPosition(tempX + scrollBar.getWidth()/2, 10);
-// set the arrows for left and right
+        // set the arrows for left and right
         menuRight.setPosition(camera.getCenterX() + camera.getWidth() / 2 - 32,
                 camera.getHeight() / 2);
         menuLeft.setPosition(camera.getCenterX() - camera.getWidth() / 2 + 32,
                 camera.getHeight() / 2);
-// Because Camera can have negativ X values, so set to 0
+        // Because Camera can have negativ X values, so set to 0
         if (camera.getXMin() < 0) {
             camera.offsetCenter(0, 0);
             mCurrentX = 0;
@@ -257,6 +271,7 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
     public void onAttached() {
         super.onAttached();
 
+        this.mScene = this.getTheme().getThemeManager().getResourceManager().getEngine().getScene();
         this.createMenuBoxes();
     }
 

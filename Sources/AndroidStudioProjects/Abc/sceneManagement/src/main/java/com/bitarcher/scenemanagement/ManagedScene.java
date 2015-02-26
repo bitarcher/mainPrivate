@@ -31,7 +31,7 @@ public abstract class ManagedScene extends Scene implements IManagedScene {
 		minLoadingScreenTime = pLoadingScreenMinimumSecondsShown;
 		hasLoadingScreen = (getMinLoadingScreenTime() > 0f);
 
-        // introduce originally for scroll menu, asking widget their needs may be an overhead
+        // MS : introduce originally for scroll menu, asking widget their needs may be an overhead
         this.setTouchAreaBindingOnActionDownEnabled(true);
         this.setTouchAreaBindingOnActionMoveEnabled(true);
         this.setOnSceneTouchListenerBindingOnActionDownEnabled(true);

@@ -38,6 +38,7 @@ import org.andengine.opengl.texture.region.ITextureRegion;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by michel on 08/01/15.
@@ -78,10 +79,14 @@ public class ResourceManager implements IResourceManager {
             MapValueFactoryByResourceInfo factoryByResourceInfo = new MapValueFactoryByResourceInfo(this);
             mapValue = factoryByResourceInfo.make(resourceInfo);
 
+            if(mapValue == null)
+            {
+                throw  new NullPointerException("MapValueFactory has returned a null value");
+            }
 
             this._map.put(resourceInfo, mapValue);
 
-            Log.d("Resource manager", "ADDED " + resourceInfo.getName());
+            Log.d("Resource manager", "ADDED " + resourceInfo.getName()+ String.format("(%x)", resourceInfo.hashCode()));
         }
 
         mapValue.ref();
@@ -103,7 +108,7 @@ public class ResourceManager implements IResourceManager {
 
         if(!exists)
         {
-            throw new EResourceNotFound(resourceInfo);
+            throw new EResourceNotFound(resourceInfo, this.getContent());
         }
 
         MapValue mapValue = this._map.get(resourceInfo);
@@ -114,7 +119,7 @@ public class ResourceManager implements IResourceManager {
         {
             mapValue.clean();
             this._map.remove(resourceInfo);
-            Log.d("Resource manager", "REMOVED " + resourceInfo.getName());
+            Log.d("Resource manager", "REMOVED " + resourceInfo.getName()+ String.format("(%x)", resourceInfo.hashCode()));
         }
     }
 
@@ -124,9 +129,9 @@ public class ResourceManager implements IResourceManager {
 
         Collections.reverse(copy);
 
-        for(IResourceInfo ressourceTuple : copy)
+        for(IResourceInfo resourceTuple : copy)
         {
-            this.popRequirement(ressourceTuple);
+            this.popRequirement(resourceTuple);
         }
     }
 
@@ -136,7 +141,7 @@ public class ResourceManager implements IResourceManager {
 
         if(!exists)
         {
-            throw new EResourceNotFound(buildableBitmapTextureAtlasRessourceInfo);
+            throw new EResourceNotFound(buildableBitmapTextureAtlasRessourceInfo, this.getContent());
         }
 
         MapValue mapValue = this._map.get(buildableBitmapTextureAtlasRessourceInfo);
@@ -146,6 +151,28 @@ public class ResourceManager implements IResourceManager {
         return retval;
     }
 
+    String getContent()
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append(String.format("ResourceManager(%d) content : ", this.hashCode()));
+
+        for(Map.Entry<IResourceInfo, MapValue> entry : this._map.entrySet())
+        {
+            stringBuilder.append(entry.getKey().getName()+ String.format("(%x)", entry.getKey().hashCode()) + " ; ");
+        }
+        stringBuilder.append(String.format("%n"));
+
+        String retval = stringBuilder.toString();
+
+        return retval;
+    }
+
+    @Override
+    public String toString() {
+        return this.getContent();
+    }
+
     @Override
     public ITextureRegion getTextureRegionFromTextureSetByName(ITexturesSetResourceInfo textureSetResourceInfo, String textureName) throws EResourceNotFound
     {
@@ -153,7 +180,7 @@ public class ResourceManager implements IResourceManager {
 
         if(!exists)
         {
-            throw new EResourceNotFound(textureSetResourceInfo);
+            throw new EResourceNotFound(textureSetResourceInfo, this.getContent());
         }
 
         MapValue mapValue = this._map.get(textureSetResourceInfo);
@@ -171,7 +198,7 @@ public class ResourceManager implements IResourceManager {
 
         if(!exists)
         {
-            throw new EResourceNotFound(animationResourceInfo);
+            throw new EResourceNotFound(animationResourceInfo, this.getContent());
         }
 
         MapValue mapValue = this._map.get(animationResourceInfo);
@@ -231,7 +258,7 @@ public class ResourceManager implements IResourceManager {
 
         if(!exists)
         {
-            throw new EResourceNotFound(fontResourceInfo);
+            throw new EResourceNotFound(fontResourceInfo, this.getContent());
         }
 
         MapValue mapValue = this._map.get(fontResourceInfo);
@@ -248,7 +275,7 @@ public class ResourceManager implements IResourceManager {
 
         if(!exists)
         {
-            throw new EResourceNotFound(soundResourceInfo);
+            throw new EResourceNotFound(soundResourceInfo, this.getContent());
         }
 
         MapValue mapValue = this._map.get(soundResourceInfo);
@@ -265,7 +292,7 @@ public class ResourceManager implements IResourceManager {
 
         if(!exists)
         {
-            throw new EResourceNotFound(musicResourceInfo);
+            throw new EResourceNotFound(musicResourceInfo, this.getContent());
         }
 
         MapValue mapValue = this._map.get(musicResourceInfo);
