@@ -29,10 +29,8 @@ public interface IResourceManager {
     IThemeManager getThemeManager();
     float getCameraWidth();
     float getCameraHeight();
-    float getCameraScaleX();
-    float getCameraScaleY();
 
-    void setup(final Engine pEngine, final IContextProvider pContextProvider, final float pCameraWidth, final float pCameraHeight, final float pCameraScaleX, final float pCameraScaleY, IThemeManager themeManager);
+    void setup(final Engine pEngine, final IContextProvider pContextProvider, IThemeManager themeManager);
 
     void pushRequirement(IResourceInfo resourceInfo) throws EResourceCreationError;
     void pushRequirement(IResourceInfoListGotter resourceInfoListGotter) throws EResourceCreationError;

@@ -15,6 +15,7 @@ import com.bitarcher.interfaces.mvc.IImagedAndLabeled;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu.SCButton;
 
 
 import org.andengine.engine.camera.Camera;
@@ -112,7 +113,9 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
 
             ITextureRegion textureRegion = resourceManager.getTextureRegionFromTextureSetByName(imagedAndLabeled.getTextureSetResourceInfo(), imagedAndLabeled.getTextureName());
 
-            Sprite sprite = new Sprite(128 + spriteX, camera.getHeight() / 2, textureRegion,
+
+
+            Sprite sprite = new Sprite(128 + spriteX, this.getHeight() / 2, textureRegion,
                      resourceManager.getEngine().getVertexBufferObjectManager()) {
                 public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX,
                                              final float pTouchAreaLocalY) {
@@ -120,32 +123,36 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
                     return false;
                 }
             };
+
+            SCButton scButton = new SCButton(128 + spriteX, this.getHeight() / 2, imagedAndLabeled, theme);
+
+
             iItem++;
             this.mScene.attachChild(sprite);
             this.mScene.registerTouchArea(sprite);
             spriteX += 20 + PADDING + sprite.getWidth();
         }
-        mMaxX = spriteX - camera.getWidth();
+        mMaxX = spriteX - this.getWidth();
         // set the size of the scrollbar
-        float scrollbarSize = camera.getWidth() / ((mMaxX + camera.getWidth()) / camera.getWidth());
+        float scrollbarSize = this.getWidth() / ((mMaxX + this.getWidth()) / this.getWidth());
         scrollBar = new Rectangle(scrollbarSize / 2, 10, scrollbarSize, 20, resourceManager.getEngine().getVertexBufferObjectManager());
         scrollBar.setColor(1, 0, 0);
         this.mScene.attachChild(scrollBar);
         final ScrollingMenu scrollingMenu = this;
-        menuLeft = new Sprite(32, camera.getWidth() / 2,
+        menuLeft = new Sprite(32, this.getWidth() / 2,
                 menuLeftTextureRegion, resourceManager.getEngine().getVertexBufferObjectManager()) {
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX,
                                          float pTouchAreaLocalY) {
                 if (pSceneTouchEvent.isActionDown()) {
-                    scrollingMenu.onScroll(mScrollDetector, 0, camera.getWidth()/2, 0);
+                    scrollingMenu.onScroll(mScrollDetector, 0, this.getWidth()/2, 0);
                     return true;
                 }
                 return false;
             }
         };
         this.mScene.registerTouchArea(menuLeft);
-        menuRight = new Sprite(camera.getWidth() - 32, camera.getHeight() / 2,
+        menuRight = new Sprite(this.getWidth() - 32,this.getHeight() / 2,
                 menuRightTextureRegion, resourceManager.getEngine().getVertexBufferObjectManager()) {
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX,

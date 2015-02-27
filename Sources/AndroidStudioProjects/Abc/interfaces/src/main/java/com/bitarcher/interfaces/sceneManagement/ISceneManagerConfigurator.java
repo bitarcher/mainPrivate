@@ -20,10 +20,6 @@ import org.andengine.engine.Engine;
 public interface ISceneManagerConfigurator<TResourceManager extends IResourceManager, TTheme extends ITheme, TMainMenu extends IMainMenu,
         TOptionsLayer extends IOptionsLayer> {
     TResourceManager getNewResourceManager();
-    int getCameraWidth();
-    int getCameraHeight();
-    float getCameraScaleFactorX();
-    float  getCameraScaleFactorY();
     TTheme getNewTheme(IThemeManager themeManager);
     TMainMenu getNewMainMenu(ITSceneManager<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManager, TTheme theme, TResourceManager resourceManager);
     TOptionsLayer getNewOptionsLayer(ITSceneManager<TResourceManager, TTheme, TMainMenu, TOptionsLayer> sceneManager, TTheme theme, TResourceManager resourceManager, TMainMenu  mainMenu);

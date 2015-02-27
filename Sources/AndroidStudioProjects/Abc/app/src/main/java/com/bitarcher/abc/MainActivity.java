@@ -39,27 +39,6 @@ public class MainActivity extends SceneManagedActivity<ResourceManager, DefaultT
                 return new ResourceManager();
             }
 
-
-            @Override
-            public int getCameraWidth() {
-                return 800;
-            }
-
-            @Override
-            public int getCameraHeight() {
-                return 480;
-            }
-
-            @Override
-            public float getCameraScaleFactorX() {
-                return 1.0f;
-            }
-
-            @Override
-            public float getCameraScaleFactorY() {
-                return 1.0f;
-            }
-
             @Override
             public DefaultTheme getNewTheme(IThemeManager themeManager) {
                 return new DefaultTheme(themeManager, "@Default");
@@ -77,9 +56,7 @@ public class MainActivity extends SceneManagedActivity<ResourceManager, DefaultT
         };
     }
 
-
     // ===========================================================
-
 
     @Override
     public void onCreateResources(OnCreateResourcesCallback pOnCreateResourcesCallback) {

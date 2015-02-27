@@ -26,10 +26,10 @@ public abstract class ManagedGameScene extends ManagedScene {
 		this.setTouchAreaBindingOnActionDownEnabled(true);
 		this.setTouchAreaBindingOnActionMoveEnabled(true);
 		// Scale the Game Scenes according to the Camera's scale factor.
-		this.setScale(this.sceneManager.getResourceManager().getCameraScaleX(), this.sceneManager.getResourceManager().getCameraScaleY());
+		//this.setScale(this.sceneManager.getResourceManager().getCameraScaleX(), this.sceneManager.getResourceManager().getCameraScaleY());
 		this.setPosition(0, this.sceneManager.getResourceManager().getCameraHeight()/2f);
 		GameHud.setScaleCenter(0f, 0f);
-		GameHud.setScale(this.sceneManager.getResourceManager().getCameraScaleX(), this.sceneManager.getResourceManager().getCameraScaleY());
+		//GameHud.setScale(this.sceneManager.getResourceManager().getCameraScaleX(), this.sceneManager.getResourceManager().getCameraScaleY());
 	}
 	
 	// These objects will make up our loading scene.
@@ -107,6 +107,8 @@ public abstract class ManagedGameScene extends ManagedScene {
 		GameHud.attachChild(OptionsButton);
 		GameHud.registerTouchArea(OptionsButton);*/
 	}
+
+
 	
 	@Override
 	public void onShowScene() {

@@ -48,10 +48,7 @@ public class ResourceManager implements IResourceManager {
     // easy accessibility across our project.
     Engine engine;
     IContextProvider contextProvider;
-    float cameraWidth;
-    float cameraHeight;
-    float cameraScaleFactorX;
-    float cameraScaleFactorY;
+
     IThemeManager themeManager;
 
     HashMap<IResourceInfo, MapValue> _map;
@@ -223,32 +220,18 @@ public class ResourceManager implements IResourceManager {
 
     @Override
     public float getCameraWidth() {
-        return this.cameraWidth;
+        return this.engine.getCamera().getWidth();
     }
 
     @Override
     public float getCameraHeight() {
-        return this.cameraHeight;
-    }
-
-    @Override
-    public float getCameraScaleX() {
-        return this.cameraScaleFactorX;
-    }
-
-    @Override
-    public float getCameraScaleY() {
-        return this.cameraScaleFactorY;
+        return this.engine.getCamera().getHeight();
     }
 
     // Setup the ResourceManager
-    public void setup(final Engine pEngine, final IContextProvider contextProvider, final float pCameraWidth, final float pCameraHeight, final float pCameraScaleX, final float pCameraScaleY, IThemeManager themeManager){
+    public void setup(final Engine pEngine, final IContextProvider contextProvider, IThemeManager themeManager){
         this.engine = pEngine;
         this.contextProvider = contextProvider;
-        this.cameraWidth = pCameraWidth;
-        this.cameraHeight = pCameraHeight;
-        this.cameraScaleFactorX = pCameraScaleX;
-        this.cameraScaleFactorY = pCameraScaleY;
         this.themeManager = themeManager;
     }
 

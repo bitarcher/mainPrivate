@@ -64,8 +64,7 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
         this.resourceManager = sceneManagerConfigurator.getNewResourceManager();
 
         this.themeManager = new ThemeManager(this.resourceManager);
-        this.resourceManager.setup(engine, contextProvider, sceneManagerConfigurator.getCameraWidth(),
-                sceneManagerConfigurator.getCameraHeight(), sceneManagerConfigurator.getCameraScaleFactorX(), sceneManagerConfigurator.getCameraScaleFactorY(), this.themeManager);
+        this.resourceManager.setup(engine, contextProvider, this.themeManager);
 
         this.theme = sceneManagerConfigurator.getNewTheme(this.themeManager);
         this.themeManager.setCurrentTheme(theme);
@@ -231,7 +230,7 @@ public class SceneManager<TResourceManager extends IResourceManager, TTheme exte
 		// Set the camera for the managed layer so that it binds to the camera if the camera is moved/scaled/rotated.
 		pLayer.setCamera(this.resourceManager.getEngine().getCamera());
 		// Scale the layer according to screen size.
-		pLayer.setScale(this.resourceManager.getCameraScaleX(), this.resourceManager.getCameraScaleY());
+		// pLayer.setScale(this.resourceManager.getCameraScaleX(), this.resourceManager.getCameraScaleY());
 		// Let the layer know that it is being shown.
 		pLayer.onShowManagedLayer();
 		// Reflect that a layer is shown.
