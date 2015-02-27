@@ -22,14 +22,36 @@ import java.util.ArrayList;
  */
 public class OverClippedContainer extends ClippingEntity {
 
+    ArrayList<IButtonListener> buttonListenerArrayList = new ArrayList<>();
     InnerContainer innerContainer;
 
     public OverClippedContainer(ITheme theme, Scene scene, float pX, float pY, float pWidth, float pHeight, ArrayList<IImagedAndLabeled> imagedAndLabeledList) {
         super(theme, scene, pX, pY, pWidth, pHeight);
 
-        this.innerContainer = new InnerContainer(pX, pY, pHeight, imagedAndLabeledList);
+        this.innerContainer = new InnerContainer(theme, scene, pX, pY, pHeight, imagedAndLabeledList);
+
+        this.innerContainer.addButtonListener(new IButtonListener() {
+            @Override
+            public void onClicked(IImagedAndLabeled imagedAndLabeled) {
+                for(IButtonListener buttonListener : buttonListenerArrayList)
+                {
+                    buttonListener.onClicked(imagedAndLabeled);
+                }
+            }
+        });
+
 
         this.attachChild(this.innerContainer);
     }
+
+    public void addButtonListener(IButtonListener buttonListener) {
+        this.buttonListenerArrayList.add(buttonListener);
+
+    }
+
+    public void removeButtonListener(IButtonListener buttonListener) {
+        this.buttonListenerArrayList.remove(buttonListener);
+    }
+
 }
 

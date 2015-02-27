@@ -15,6 +15,7 @@ import com.bitarcher.interfaces.mvc.IImagedAndLabeled;
 import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
 import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu.OverClippedContainer;
 import com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu.SCButton;
 
 
@@ -41,6 +42,7 @@ import java.util.List;
 public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetector.IScrollDetectorListener, IOnSceneTouchListener,
         ClickDetector.IClickDetectorListener {
 
+    OverClippedContainer overClippedContainer;
     ArrayList<IImagedAndLabeled> imagedAndLabeledList = new ArrayList<>();
     ArrayList<IScrollingMenuListener> scrollingMenuListenersList = new ArrayList<>();
     private ITextureRegion menuLeftTextureRegion;
@@ -88,9 +90,6 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
         int iItem = 1;
 
 
-
-
-
         IResourceManager resourceManager = this.getTheme().getThemeManager().getResourceManager();
 
         this.menuLeftTextureRegion = resourceManager.getTextureRegionFromTextureSetByName(this.getTheme().getArrows().getArrowsTexturesSetResourceInfo(), "left");
@@ -105,33 +104,13 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
             Log.w("Widget:ScrollingMenu", "Image and labeled list size was null on box creation");
         }
 
-        for (int x = 0; x < listSize; x++) {
-            // On Touch, save the clicked item in case it's a click and not a
-            // scroll.
-            final int itemToLoad = iItem;
-            IImagedAndLabeled imagedAndLabeled = this.getImagedAndLabeledList().get(x);
-
-            ITextureRegion textureRegion = resourceManager.getTextureRegionFromTextureSetByName(imagedAndLabeled.getTextureSetResourceInfo(), imagedAndLabeled.getTextureName());
-
-
-
-            Sprite sprite = new Sprite(128 + spriteX, this.getHeight() / 2, textureRegion,
-                     resourceManager.getEngine().getVertexBufferObjectManager()) {
-                public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX,
-                                             final float pTouchAreaLocalY) {
-                    iItemClicked = itemToLoad;
-                    return false;
-                }
-            };
-
-            SCButton scButton = new SCButton(128 + spriteX, this.getHeight() / 2, imagedAndLabeled, theme);
-
-
-            iItem++;
-            this.mScene.attachChild(sprite);
-            this.mScene.registerTouchArea(sprite);
-            spriteX += 20 + PADDING + sprite.getWidth();
+        if(true) {
+            throw new RuntimeException();
         }
+
+        this.overClippedContainer = new OverClippedContainer(theme, resourceManager.getEngine().getScene(), 0, 0, this.getWidth(), this.getHeight() / 2, imagedAndLabeledList);
+        this.attachChild(this.overClippedContainer);
+
         mMaxX = spriteX - this.getWidth();
         // set the size of the scrollbar
         float scrollbarSize = this.getWidth() / ((mMaxX + this.getWidth()) / this.getWidth());
