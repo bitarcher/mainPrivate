@@ -104,10 +104,6 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
             Log.w("Widget:ScrollingMenu", "Image and labeled list size was null on box creation");
         }
 
-        if(true) {
-            throw new RuntimeException();
-        }
-
         this.overClippedContainer = new OverClippedContainer(theme, resourceManager.getEngine().getScene(), 0, 0, this.getWidth(), this.getHeight() / 2, imagedAndLabeledList);
         this.attachChild(this.overClippedContainer);
 
