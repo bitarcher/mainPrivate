@@ -7,19 +7,15 @@
 package com.bitarcher.abc;
 
 
-import com.bitarcher.abcbllorm.BLL.Player;
 import com.bitarcher.abcbllorm.ConfigurationSingleton;
 import com.bitarcher.abcbllorm.DAL.DatabaseHelper;
-import com.bitarcher.interfaces.gui.theme.IThemeManager;
-import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
-import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesProtected.gui.theme.IThemeManager;
+import com.bitarcher.interfacesProtected.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourceManager;
 import com.bitarcher.scenemanagement.SceneManagedActivity;
 import com.bitarcher.widgettoolkit.theme.DefaultTheme;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
-import com.j256.ormlite.dao.Dao;
-
-import java.sql.SQLException;
 
 
 public class MainActivity extends SceneManagedActivity<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> {

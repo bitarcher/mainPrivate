@@ -6,8 +6,8 @@
 
 package com.bitarcher.scenemanagement;
 
-import com.bitarcher.interfaces.gui.andEngine.IHUD;
-import com.bitarcher.interfaces.gui.andEngine.IScene;
+import com.bitarcher.interfacesProtected.gui.andEngine.IHUD;
+import com.bitarcher.interfacesProtected.gui.andEngine.IScene;
 
 /**
  * Created by michel on 04/02/15.

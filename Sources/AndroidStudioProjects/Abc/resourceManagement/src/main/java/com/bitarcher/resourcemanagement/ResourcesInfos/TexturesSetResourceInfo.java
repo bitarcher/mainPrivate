@@ -6,10 +6,8 @@
 
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneAssetTexture;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneTexture;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneTexture;
 
 import java.util.ArrayList;
 import java.util.List;

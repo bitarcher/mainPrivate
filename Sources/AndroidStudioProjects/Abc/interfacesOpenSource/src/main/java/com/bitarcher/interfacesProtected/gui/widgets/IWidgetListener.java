@@ -1,0 +1,10 @@
+package com.bitarcher.interfacesProtected.gui.widgets;
+
+/**
+ * Created by michel on 22/01/15.
+ */
+public interface IWidgetListener {
+    void onEnabledChanged(IWidget widget, boolean enabled);
+    void onSizeChanged(IWidget widget);
+    void onPositionChanged(IWidget widget);
+}

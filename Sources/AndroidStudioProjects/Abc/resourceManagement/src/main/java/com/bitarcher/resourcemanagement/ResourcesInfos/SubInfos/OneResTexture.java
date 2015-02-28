@@ -7,7 +7,7 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos;
 
 
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResTexture;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneResTexture;
 
 /**
  * Created by michel on 26/01/15.

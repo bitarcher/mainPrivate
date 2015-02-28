@@ -6,7 +6,7 @@
 
 package com.bitarcher.interfacesProtected.bll.orm.abc;
 
-import com.bitarcher.interfaces.basicioc.orm.IOrmBasic;
+import com.bitarcher.interfacesProtected.basicioc.orm.IOrmBasic;
 import com.bitarcher.interfacesProtected.bll.xml.abc.ro.resources.IAnimal;
 
 /**

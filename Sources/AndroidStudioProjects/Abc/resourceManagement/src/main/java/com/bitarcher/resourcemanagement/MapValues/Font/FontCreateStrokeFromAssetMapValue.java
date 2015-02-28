@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement.MapValues.Font;
 
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.Font.IFontCreateStrokeFromAssetResourceInfo;
+import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.Font.IFontCreateStrokeFromAssetResourceInfo;
 
 import org.andengine.opengl.font.FontFactory;
 import org.andengine.opengl.texture.TextureOptions;

@@ -1,20 +1,18 @@
 package com.bitarcher.widgettoolkit.widget;
 
-import com.bitarcher.interfaces.gui.theme.EnumFontSize;
-import com.bitarcher.interfaces.gui.theme.ITheme;
-import com.bitarcher.interfaces.gui.widgets.IButtonListener;
-import com.bitarcher.interfaces.gui.widgets.ITextButton;
-import com.bitarcher.interfaces.gui.widgets.ITextButtonListener;
-import com.bitarcher.interfaces.mvc.ILabeledListener;
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfacesProtected.gui.theme.EnumFontSize;
+import com.bitarcher.interfacesProtected.gui.theme.ITheme;
+import com.bitarcher.interfacesProtected.gui.widgets.IButtonListener;
+import com.bitarcher.interfacesProtected.gui.widgets.ITextButton;
+import com.bitarcher.interfacesProtected.gui.widgets.ITextButtonListener;
+import com.bitarcher.interfacesProtected.mvc.ILabeledListener;
+import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 import org.andengine.engine.Engine;
 import org.andengine.entity.scene.Scene;
 import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.text.Text;
-import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.font.Font;
 import org.andengine.opengl.vbo.DrawType;
 
@@ -47,7 +45,12 @@ public class TextButton extends  Button implements ITextButton {
 
         final TextButton textButton = this;
 
-        this.buttonSprite = new ButtonSprite(centerX, centerY,
+        float childX = 0;
+        float childY = 0;
+
+
+        //this.buttonSprite = new ButtonSprite(centerX, centerY,
+        this.buttonSprite = new ButtonSprite(childX, childY,
                 resourceManager.getTextureRegionFromTextureSetByName(texturesSetResourceInfo, "normal"),
                 resourceManager.getTextureRegionFromTextureSetByName(texturesSetResourceInfo, "pressed"),
                 resourceManager.getTextureRegionFromTextureSetByName(texturesSetResourceInfo, "disabled"),
@@ -63,7 +66,7 @@ public class TextButton extends  Button implements ITextButton {
 
 
         Font font = this.getTheme().getFontThemeSection().getFont(EnumFontSize.Medium);
-        this.text = new Text(centerX, centerY, font,  translatedLabel, engine.getVertexBufferObjectManager(), DrawType.DYNAMIC);
+        this.text = new Text(childX, childY, font,  translatedLabel, engine.getVertexBufferObjectManager(), DrawType.DYNAMIC);
         //this.text.setWidth(pWidth);
         //this.text.setHeight(pWidth);
 

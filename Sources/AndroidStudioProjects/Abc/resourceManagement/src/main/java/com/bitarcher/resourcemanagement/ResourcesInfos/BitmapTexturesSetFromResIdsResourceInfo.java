@@ -8,8 +8,8 @@ package com.bitarcher.resourcemanagement.ResourcesInfos;
 
 import android.content.Context;
 
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResBitmapTexture;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromResIdsResourceInfo;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneResBitmapTexture;
 
 /**
  * Created by michel on 26/01/15.

@@ -1,6 +1,6 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos.Font;
 
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.Font.IFontCreateFromAssetResourceInfo;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.Font.IFontCreateFromAssetResourceInfo;
 
 /**
  * Created by michel on 12/01/15.

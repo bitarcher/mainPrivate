@@ -4,19 +4,18 @@ package com.bitarcher.scenemanagement;
 import android.content.Context;
 import android.view.KeyEvent;
 
-import com.bitarcher.interfaces.gui.theme.ITheme;
-import com.bitarcher.interfaces.resourcemanagement.IContextProvider;
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.sceneManagement.IMainMenu;
-import com.bitarcher.interfaces.sceneManagement.IOptionsLayer;
-import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.interfacesProtected.gui.theme.ITheme;
+import com.bitarcher.interfacesProtected.resourcemanagement.IContextProvider;
+import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesProtected.sceneManagement.IMainMenu;
+import com.bitarcher.interfacesProtected.sceneManagement.IOptionsLayer;
+import com.bitarcher.interfacesProtected.sceneManagement.ISceneManagerConfigurator;
 
 import org.andengine.engine.Engine;
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.options.EngineOptions;
 import org.andengine.engine.options.ScreenOrientation;
 import org.andengine.engine.options.WakeLockOptions;
-import org.andengine.engine.options.resolutionpolicy.FillResolutionPolicy;
 import org.andengine.engine.options.resolutionpolicy.IResolutionPolicy;
 import org.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
 import org.andengine.entity.scene.Scene;

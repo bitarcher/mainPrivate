@@ -1,9 +1,8 @@
 package com.bitarcher.scenemanagement;
 
 
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.sceneManagement.IManagedMenuScene;
-import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesProtected.sceneManagement.IManagedMenuScene;
+import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
 
 public abstract class ManagedMenuScene extends ManagedScene implements IManagedMenuScene {
 	public ManagedMenuScene(ITSceneManager sceneManager, float pLoadingScreenMinimumSecondsShown) {

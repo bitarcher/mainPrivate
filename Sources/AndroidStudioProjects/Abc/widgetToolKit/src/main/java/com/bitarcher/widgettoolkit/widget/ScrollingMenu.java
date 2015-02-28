@@ -8,15 +8,14 @@ package com.bitarcher.widgettoolkit.widget;
 
 import android.util.Log;
 
-import com.bitarcher.interfaces.gui.theme.ITheme;
-import com.bitarcher.interfaces.gui.widgets.IScrollingMenu;
-import com.bitarcher.interfaces.gui.widgets.IScrollingMenuListener;
-import com.bitarcher.interfaces.mvc.IImagedAndLabeled;
-import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfacesProtected.gui.theme.ITheme;
+import com.bitarcher.interfacesProtected.gui.widgets.IScrollingMenu;
+import com.bitarcher.interfacesProtected.gui.widgets.IScrollingMenuListener;
+import com.bitarcher.interfacesProtected.mvc.IImagedAndLabeled;
+import com.bitarcher.interfacesProtected.resourcemanagement.EResourceNotFound;
+import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu.OverClippedContainer;
-import com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu.SCButton;
 
 
 import org.andengine.engine.camera.Camera;

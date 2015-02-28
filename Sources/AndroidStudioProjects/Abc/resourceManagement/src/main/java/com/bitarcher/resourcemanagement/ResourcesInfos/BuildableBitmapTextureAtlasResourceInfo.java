@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IResourceInfo;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IResourceInfo;
 
 import org.andengine.opengl.texture.TextureManager;
 

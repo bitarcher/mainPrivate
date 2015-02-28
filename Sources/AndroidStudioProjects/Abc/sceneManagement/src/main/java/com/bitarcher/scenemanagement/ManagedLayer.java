@@ -1,7 +1,6 @@
 package com.bitarcher.scenemanagement;
 
-import com.bitarcher.interfaces.gui.andEngine.IScene;
-import com.bitarcher.interfaces.sceneManagement.IManagedLayer;
+import com.bitarcher.interfacesProtected.sceneManagement.IManagedLayer;
 
 
 

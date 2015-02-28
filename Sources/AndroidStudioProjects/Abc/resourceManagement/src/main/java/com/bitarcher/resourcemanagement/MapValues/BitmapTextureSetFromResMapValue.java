@@ -6,13 +6,11 @@
 
 package com.bitarcher.resourcemanagement.MapValues;
 
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResBitmapTexture;
+import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromResIdsResourceInfo;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneResBitmapTexture;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.OneResBitmapTextureSV;
 import com.bitarcher.resourcemanagement.ResourceManager;
-
-import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlasTextureRegionFactory;
 
 /**
  * Created by michel on 26/01/15.

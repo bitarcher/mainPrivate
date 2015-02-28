@@ -7,19 +7,14 @@
 package com.bitarcher.abc.tests;
 
 
-import android.content.Context;
-
 import com.bitarcher.abc.MainMenu;
 import com.bitarcher.abc.OptionsLayer;
-import com.bitarcher.interfaces.gui.theme.IThemeManager;
-import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
-import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesProtected.gui.theme.IThemeManager;
+import com.bitarcher.interfacesProtected.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourceManager;
 import com.bitarcher.scenemanagement.SceneManagedActivity;
-import com.bitarcher.scenemanagement.SceneManager;
 import com.bitarcher.widgettoolkit.theme.DefaultTheme;
-
-import org.andengine.engine.Engine;
 
 
 public class TextButtonActivity extends SceneManagedActivity<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> {

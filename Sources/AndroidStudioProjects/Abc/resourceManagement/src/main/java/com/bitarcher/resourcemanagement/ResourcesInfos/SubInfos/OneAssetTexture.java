@@ -1,7 +1,6 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos;
 
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneAssetTexture;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneTexture;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneAssetTexture;
 
 /**
  * Created by michel on 10/01/15.

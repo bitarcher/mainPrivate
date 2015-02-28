@@ -1,17 +1,13 @@
 package com.bitarcher.abc;
 
-import com.bitarcher.interfaces.mvc.IImagedAndLabeled;
-import com.bitarcher.interfaces.mvc.ILabeledListener;
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
-import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesProtected.mvc.IImagedAndLabeled;
+import com.bitarcher.interfacesProtected.mvc.ILabeledListener;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
 import com.bitarcher.scenemanagement.ManagedGameScene;
 import com.bitarcher.widgettoolkit.widget.ScrollingMenu;
-
-import org.andengine.entity.primitive.Rectangle;
-import org.andengine.util.math.MathUtils;
 
 public class GameLevel extends ManagedGameScene {
 

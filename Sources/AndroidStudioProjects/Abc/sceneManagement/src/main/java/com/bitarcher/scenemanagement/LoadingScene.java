@@ -6,7 +6,7 @@
 
 package com.bitarcher.scenemanagement;
 
-import com.bitarcher.interfaces.sceneManagement.ILoadingScene;
+import com.bitarcher.interfacesProtected.sceneManagement.ILoadingScene;
 
 /**
  * Created by michel on 04/02/15.

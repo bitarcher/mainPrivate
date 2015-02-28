@@ -1,12 +1,10 @@
 package com.bitarcher.scenemanagement;
 
-import com.bitarcher.interfaces.gui.andEngine.IScene;
-import com.bitarcher.interfaces.gui.theme.EnumFontSize;
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesProtected.gui.andEngine.IScene;
+import com.bitarcher.interfacesProtected.gui.theme.EnumFontSize;
+import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
 
 import org.andengine.engine.camera.hud.HUD;
-import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.text.Text;
 
 public abstract class ManagedGameScene extends ManagedScene {

@@ -1,16 +1,22 @@
 package com.bitarcher.widgettoolkit.widget;
 
-import com.bitarcher.interfaces.gui.theme.ITheme;
-import com.bitarcher.interfaces.gui.widgets.IWidget;
-import com.bitarcher.interfaces.gui.widgets.IWidgetListener;
-import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
+import com.bitarcher.interfacesProtected.gui.theme.ITheme;
+import com.bitarcher.interfacesProtected.gui.widgets.IWidget;
+import com.bitarcher.interfacesProtected.gui.widgets.IWidgetListener;
+import com.bitarcher.interfacesProtected.resourcemanagement.EResourceNotFound;
+import com.bitarcher.widgettoolkit.widget.Tools.WidgetManagerSingleton;
 
 import org.andengine.entity.Entity;
+import org.andengine.entity.IEntity;
+import org.andengine.entity.primitive.Rectangle;
+import org.andengine.util.adt.color.Color;
 
 import java.util.ArrayList;
 
-/**
- * Created by michel on 22/01/15.
+/*
+ * Copyright (c) 2015.
+ * Michel Strasser
+ * bitarcher.com
  */
 public abstract class Widget extends Entity implements IWidget {
 
@@ -18,6 +24,11 @@ public abstract class Widget extends Entity implements IWidget {
     boolean areResourcesLoaded = false;
     protected ArrayList<IWidgetListener> widgetListenerArrayList = new ArrayList<>();
     boolean enabled = true;
+
+    Rectangle debugRectangle;
+
+
+
 
     @Override
     public boolean isEnabled() {
@@ -44,6 +55,42 @@ public abstract class Widget extends Entity implements IWidget {
     protected Widget(ITheme theme, float pX, float pY, float pWidth, float pHeight) {
         super(pX, pY, pWidth, pHeight);
         this.theme = theme;
+
+        this.setAnchorCenter(0, 0);
+        this.debugRectangle = new Rectangle(0, 0, pWidth, pHeight, this.theme.getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+
+        this.debugRectangle.setColor(this.getDebugColor());
+        this.debugRectangle.setAlpha(0.5f);
+        this.debugRectangle.setZIndex(3000);
+        this.sortChildren();
+
+        this.attachChild(this.debugRectangle);
+    }
+
+    Color getDebugColor()
+    {
+        Color retval;
+
+        int hashCode = this.hashCode();
+
+        int[] somePrimeNumbers = new int[]{97, 317, 829};
+        int[] modulos = new int[somePrimeNumbers.length];
+
+        for(int i =0; i < somePrimeNumbers.length ; i++)
+        {
+            modulos[i] = hashCode % somePrimeNumbers[i];
+        }
+
+        float[] fVars = new float[3];
+
+        for(int i =0; i < somePrimeNumbers.length ; i++)
+        {
+            fVars[i] = (float) modulos[i] / (float) somePrimeNumbers[i];
+        }
+
+        retval = new Color(fVars[0], fVars[1], fVars[2]);
+
+        return retval;
     }
 
     @Override
@@ -76,6 +123,20 @@ public abstract class Widget extends Entity implements IWidget {
                 this.areResourcesLoaded = true;
             }
         }
+
+        WidgetManagerSingleton.getInstance().refWidget(this);
+        this.configureDebugMode(WidgetManagerSingleton.getInstance().isDebugModeEnabled());
+
+    }
+
+    private void configureDebugMode(boolean debugModeEnabled)
+    {
+        this.debugRectangle.setVisible(debugModeEnabled);
+    }
+
+    @Override
+    public void onDebugModeChanged(boolean debugModeEnabled) {
+        this.configureDebugMode(debugModeEnabled);
     }
 
     @Override
@@ -96,6 +157,8 @@ public abstract class Widget extends Entity implements IWidget {
                 this.areResourcesLoaded = false;
             }
         }
+
+        WidgetManagerSingleton.getInstance().unRefWidget(this);
     }
 
     protected void pushResourceRequirements()
@@ -106,5 +169,94 @@ public abstract class Widget extends Entity implements IWidget {
     {
     }
 
+    @Override
+    public void setWidth(float pWidth) {
+        super.setWidth(pWidth);
 
+        this.raiseSizeChanged();
+    }
+
+    @Override
+    public void setHeight(float pHeight) {
+        super.setHeight(pHeight);
+
+        this.raiseSizeChanged();
+    }
+
+    @Override
+    public void setSize(float pWidth, float pHeight) {
+        super.setSize(pWidth, pHeight);
+
+        this.raiseSizeChanged();
+    }
+
+    private void raiseSizeChanged()
+    {
+        this.debugRectangle.setWidth(this.getWidth());
+        this.debugRectangle.setHeight(this.getHeight());
+        this.onSizeChanged();
+
+        for(IWidgetListener widgetListener : this.widgetListenerArrayList)
+        {
+            widgetListener.onSizeChanged(this);
+        }
+    }
+
+    protected void onSizeChanged()
+    {
+
+    }
+
+
+    @Override
+    public void setX(float pX) {
+        super.setX(pX);
+
+        this.raisePositionChanged();
+    }
+
+    @Override
+    public void setY(float pY) {
+        super.setY(pY);
+
+        this.raisePositionChanged();
+    }
+
+    @Override
+    public void setPosition(IEntity pOtherEntity) {
+        super.setPosition(pOtherEntity);
+
+        this.raisePositionChanged();
+    }
+
+    @Override
+    public void setPosition(float pX, float pY) {
+        super.setPosition(pX, pY);
+
+        this.raisePositionChanged();
+    }
+
+    private void raisePositionChanged()
+    {
+        this.onPositionChanged();
+
+        for(IWidgetListener widgetListener : this.widgetListenerArrayList)
+        {
+            widgetListener.onPositionChanged(this);
+        }
+    }
+
+    protected void onPositionChanged()
+    {
+    }
+
+    @Override
+    protected void onManagedUpdate(float pSecondsElapsed) {
+        super.onManagedUpdate(pSecondsElapsed);
+
+        if(WidgetManagerSingleton.getInstance().isDebugModeEnabled())
+        {
+            this.sortChildren();
+        }
+    }
 }

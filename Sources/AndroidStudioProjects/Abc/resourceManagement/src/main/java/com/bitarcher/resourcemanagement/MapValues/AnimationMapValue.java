@@ -2,8 +2,8 @@ package com.bitarcher.resourcemanagement.MapValues;
 
 import android.util.Log;
 
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.IAnimationResourceInfo;
+import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IAnimationResourceInfo;
 
 
 import org.andengine.engine.camera.Camera;

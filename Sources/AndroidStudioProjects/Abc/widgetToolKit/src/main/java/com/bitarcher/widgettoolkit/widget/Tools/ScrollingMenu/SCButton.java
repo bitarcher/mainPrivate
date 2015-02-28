@@ -6,9 +6,9 @@
 
 package com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu;
 
-import com.bitarcher.interfaces.gui.theme.ITheme;
+import com.bitarcher.interfacesProtected.gui.theme.ITheme;
 
-import com.bitarcher.interfaces.mvc.IImagedAndLabeled;
+import com.bitarcher.interfacesProtected.mvc.IImagedAndLabeled;
 
 import org.andengine.entity.scene.Scene;
 import org.andengine.entity.sprite.Sprite;
@@ -17,9 +17,8 @@ import org.andengine.input.touch.TouchEvent;
 
 import java.util.ArrayList;
 
-/**
- * Created by michel on 27/02/15.
- */
+
+
 public class SCButton extends Sprite {
 
 

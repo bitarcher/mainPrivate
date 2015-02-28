@@ -10,6 +10,7 @@ import com.bitarcher.abcbllorm.ConfigurationSingleton;
 import com.bitarcher.interfacesProtected.bll.orm.abc.IPlayer;
 import com.bitarcher.interfacesProtected.bll.orm.abc.IScorePlayerLevel;
 import com.bitarcher.interfacesProtected.bll.xml.abc.ro.resources.IAnimal;
+
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;

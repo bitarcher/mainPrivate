@@ -3,15 +3,14 @@ package com.bitarcher.widgettoolkit.theme;
 import android.content.Context;
 import android.graphics.Typeface;
 
-import com.bitarcher.interfaces.gui.theme.IArrows;
-import com.bitarcher.interfaces.gui.theme.IThemeManager;
-import com.bitarcher.interfaces.resourcemanagement.EResourceNotFound;
+import com.bitarcher.interfacesProtected.gui.theme.IArrows;
+import com.bitarcher.interfacesProtected.gui.theme.IThemeManager;
+import com.bitarcher.interfacesProtected.resourcemanagement.EResourceNotFound;
 
-import com.bitarcher.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.Font.FontCreateFromTypeFaceResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneResSvgTexture;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.widgettoolkit.WidgetToolkitApp;
 import com.bitarcher.widgettoolkit.R;
 
 import org.andengine.extension.svg.adt.ISVGColorMapper;

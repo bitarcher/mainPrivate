@@ -1,18 +1,16 @@
 package com.bitarcher.scenemanagement;
 
 
-import android.content.Context;
-
-import com.bitarcher.interfaces.gui.theme.ITheme;
-import com.bitarcher.interfaces.gui.theme.IThemeManager;
-import com.bitarcher.interfaces.resourcemanagement.IContextProvider;
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.sceneManagement.IMainMenu;
-import com.bitarcher.interfaces.sceneManagement.IManagedLayer;
-import com.bitarcher.interfaces.sceneManagement.IManagedScene;
-import com.bitarcher.interfaces.sceneManagement.IOptionsLayer;
-import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.interfaces.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.interfacesProtected.gui.theme.ITheme;
+import com.bitarcher.interfacesProtected.gui.theme.IThemeManager;
+import com.bitarcher.interfacesProtected.resourcemanagement.IContextProvider;
+import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesProtected.sceneManagement.IMainMenu;
+import com.bitarcher.interfacesProtected.sceneManagement.IManagedLayer;
+import com.bitarcher.interfacesProtected.sceneManagement.IManagedScene;
+import com.bitarcher.interfacesProtected.sceneManagement.IOptionsLayer;
+import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesProtected.sceneManagement.ISceneManagerConfigurator;
 import com.bitarcher.widgettoolkit.theme.ThemeManager;
 
 

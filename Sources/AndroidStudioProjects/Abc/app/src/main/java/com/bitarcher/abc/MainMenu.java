@@ -1,31 +1,22 @@
 package com.bitarcher.abc;
 
 
-import com.bitarcher.interfaces.gui.andEngine.IScene;
-import com.bitarcher.interfaces.gui.theme.EnumFontSize;
-import com.bitarcher.interfaces.gui.widgets.IButton;
-import com.bitarcher.interfaces.gui.widgets.IButtonListener;
-import com.bitarcher.interfaces.sceneManagement.IMainMenu;
-import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.resourcemanagement.MapValues.BitmapTextureSetFromAssetMapValue;
+import com.bitarcher.interfacesProtected.gui.andEngine.IScene;
+import com.bitarcher.interfacesProtected.gui.theme.EnumFontSize;
+import com.bitarcher.interfacesProtected.gui.widgets.IButton;
+import com.bitarcher.interfacesProtected.gui.widgets.IButtonListener;
+import com.bitarcher.interfacesProtected.sceneManagement.IMainMenu;
+import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.MusicResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneResSvgTexture;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.scenemanagement.ManagedMenuScene;
 import com.bitarcher.widgettoolkit.widget.TextButton;
 
 import org.andengine.audio.music.Music;
-import org.andengine.entity.IEntity;
-import org.andengine.entity.scene.background.Background;
-import org.andengine.entity.scene.background.IBackground;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.text.Text;
 import org.andengine.opengl.texture.region.ITextureRegion;
-import org.andengine.util.math.MathUtils;
 
 public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
@@ -95,11 +86,9 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
         ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.bitmapTexturesSetFromAssetResourceInfo, "prairie");
 
-
         backgroundSprite = new Sprite(this.getSceneManager().getResourceManager().getCameraWidth() / 2, this.getSceneManager().getResourceManager().getCameraHeight() / 2, this.getSceneManager().getResourceManager().getCameraWidth(), this.getSceneManager().getResourceManager().getCameraHeight(), backgroundTextureRegion, this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());
 		backgroundSprite.setZIndex(-5000);
 		this.attachChild(backgroundSprite);
-
 		
 		// Create clouds that move from one side of the screen to the other, and repeat.
 		cloudSprites = new CloudSprite[35];
@@ -110,7 +99,6 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
 			this.attachChild(curCloudSprite);
 		}
-
 
 		// Create a Play button. Notice that the Game scenes, unlike menus, are not referred to in a static way.
 
@@ -131,7 +119,6 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
             }
         });
 
-
         this.optionsButton = new TextButton(this.getSceneManager().getTheme(),
                 playButton.getX()+ playButton.getWidth(),
                 playButton.getY(), buttonWidth, buttonHeight, "Options");
@@ -143,7 +130,6 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
                 getSceneManager().showOptionsLayer(false);
             }
         });
-
 
         // Create a title
 		titleText = new Text(0, 0, this.getSceneManager().getTheme().getFontThemeSection().getFont(EnumFontSize.Big), "ABC ", this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());

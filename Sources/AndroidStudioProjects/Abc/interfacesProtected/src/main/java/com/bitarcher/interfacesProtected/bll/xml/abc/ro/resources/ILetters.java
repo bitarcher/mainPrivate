@@ -1,6 +1,6 @@
 package com.bitarcher.interfacesProtected.bll.xml.abc.ro.resources;
 
-import com.bitarcher.interfaces.basicioc.IXmlReader;
+import com.bitarcher.interfacesProtected.basicioc.IXmlReader;
 
 import java.util.Map;
 import java.util.List;

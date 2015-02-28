@@ -6,14 +6,11 @@
 
 package com.bitarcher.abc.tests;
 
-import com.bitarcher.interfaces.gui.theme.ITheme;
-import com.bitarcher.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesProtected.gui.theme.ITheme;
+import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
 import com.bitarcher.scenemanagement.ManagedGameScene;
-import com.bitarcher.scenemanagement.ManagedScene;
 import com.bitarcher.widgettoolkit.widget.TextButton;
 
-import org.andengine.entity.scene.Scene;
 import org.andengine.entity.scene.background.Background;
 
 /**
