@@ -84,6 +84,11 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
 
     }
 
+    @Override
+    public void setWidth(float pWidth) {
+        super.setWidth(pWidth);
+    }
+
     private void createMenuBoxes() {
         int spriteX = PADDING;
         // current item counter

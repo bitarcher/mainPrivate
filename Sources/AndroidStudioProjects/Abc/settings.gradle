@@ -1,1 +1,1 @@
-include ':app', ':andEngine', ':andEnginePhysicsBox2DExtension', ':andEngineSVGTextureRegionExtension', ':sceneManagement', ':interfaces', ':resourceManagement', ':annotations', ':abcBllXmlRoResources', ':abcBllXmlRoLevels', ':widgetToolKit', ':abcBllOrm'
+include ':app', ':andEngine', ':andEnginePhysicsBox2DExtension', ':andEngineSVGTextureRegionExtension', ':sceneManagement', ':interfacesOpenSource', ':interfacesProtected',':resourceManagement', ':annotations', ':abcBllXmlRoResources', ':abcBllXmlRoLevels', ':widgetToolKit', ':abcBllOrm', ':interfacesprotected'

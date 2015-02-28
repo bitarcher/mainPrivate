@@ -1,6 +1,6 @@
 package com.bitarcher.abc.bll.xml.ro.resources;
 
-import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IIdiogram;
+import com.bitarcher.interfacesProtected.bll.xml.abc.ro.resources.IIdiogram;
 
 /**
  * Created by michel on 19/12/14.

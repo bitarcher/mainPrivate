@@ -6,7 +6,7 @@
 
 package com.bitarcher.abc.bll.xml.ro.resources;
 
-import com.bitarcher.interfaces.bll.xml.abc.ro.resources.ISoundable;
+import com.bitarcher.interfacesProtected.bll.xml.abc.ro.resources.ISoundable;
 
 import org.jetbrains.annotations.Nullable;
 import org.w3c.dom.Element;

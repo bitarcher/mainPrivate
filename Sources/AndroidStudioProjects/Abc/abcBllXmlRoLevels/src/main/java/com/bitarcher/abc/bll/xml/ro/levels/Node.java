@@ -1,7 +1,6 @@
 package com.bitarcher.abc.bll.xml.ro.levels;
 
-import com.bitarcher.interfaces.bll.xml.abc.ro.levels.INode;
-import com.bitarcher.interfaces.mvc.ILabeled;
+import com.bitarcher.interfacesProtected.bll.xml.abc.ro.levels.INode;
 import com.bitarcher.interfaces.mvc.ILabeledListener;
 import com.bitarcher.interfaces.mvc.ITreeNode;
 import com.bitarcher.interfaces.mvc.ITreeNodeListener;

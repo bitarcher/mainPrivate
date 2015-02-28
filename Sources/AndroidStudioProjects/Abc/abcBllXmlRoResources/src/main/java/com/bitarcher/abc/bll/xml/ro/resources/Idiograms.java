@@ -1,7 +1,7 @@
 package com.bitarcher.abc.bll.xml.ro.resources;
 
-import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IIdiogram;
-import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IIdiograms;
+import com.bitarcher.interfacesProtected.bll.xml.abc.ro.resources.IIdiogram;
+import com.bitarcher.interfacesProtected.bll.xml.abc.ro.resources.IIdiograms;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
