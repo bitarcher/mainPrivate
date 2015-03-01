@@ -6,9 +6,9 @@
 
 package com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu;
 
-import com.bitarcher.interfacesProtected.gui.theme.ITheme;
+import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
 
-import com.bitarcher.interfacesProtected.mvc.IImagedAndLabeled;
+import com.bitarcher.interfacesOpenSource.mvc.IImagedAndLabeled;
 
 import org.andengine.entity.scene.Scene;
 import org.andengine.entity.sprite.Sprite;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 
 
-public class SCButton extends Sprite {
+class SCButton extends Sprite {
 
 
     private IImagedAndLabeled imagedAndLabeled;

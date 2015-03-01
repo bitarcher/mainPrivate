@@ -6,9 +6,9 @@
 
 package com.bitarcher.resourcemanagement.MapValues;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ISvgTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ISvgTexturesSetFromResIdsResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.OneResSvgTextureSV;
 import com.bitarcher.resourcemanagement.ResourceManager;
 

@@ -6,8 +6,8 @@
 
 package com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu;
 
-import com.bitarcher.interfacesProtected.gui.theme.ITheme;
-import com.bitarcher.interfacesProtected.mvc.IImagedAndLabeled;
+import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
+import com.bitarcher.interfacesOpenSource.mvc.IImagedAndLabeled;
 
 
 import org.andengine.entity.clip.ClipEntity;

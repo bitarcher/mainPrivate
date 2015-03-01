@@ -1,13 +1,13 @@
 package com.bitarcher.widgettoolkit.widget;
 
-import com.bitarcher.interfacesProtected.gui.theme.EnumFontSize;
-import com.bitarcher.interfacesProtected.gui.theme.ITheme;
-import com.bitarcher.interfacesProtected.gui.widgets.IButtonListener;
-import com.bitarcher.interfacesProtected.gui.widgets.ITextButton;
-import com.bitarcher.interfacesProtected.gui.widgets.ITextButtonListener;
-import com.bitarcher.interfacesProtected.mvc.ILabeledListener;
-import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfacesOpenSource.gui.theme.EnumFontSize;
+import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
+import com.bitarcher.interfacesOpenSource.gui.widgets.IButtonListener;
+import com.bitarcher.interfacesOpenSource.gui.widgets.ITextButton;
+import com.bitarcher.interfacesOpenSource.gui.widgets.ITextButtonListener;
+import com.bitarcher.interfacesOpenSource.mvc.ILabeledListener;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 import org.andengine.engine.Engine;
 import org.andengine.entity.scene.Scene;
@@ -40,57 +40,60 @@ public class TextButton extends  Button implements ITextButton {
         Engine engine = resourceManager.getEngine();
 
 
-        float centerX = pWidth / 2;
-        float centerY = pHeight / 2;
+
 
         final TextButton textButton = this;
 
-        float childX = 0;
-        float childY = 0;
+        //float childX = 0;
+        //float childY = 0;
+        float childX = pWidth / 2;
+        float childY = pHeight / 2;
 
 
-        //this.buttonSprite = new ButtonSprite(centerX, centerY,
         this.buttonSprite = new ButtonSprite(childX, childY,
                 resourceManager.getTextureRegionFromTextureSetByName(texturesSetResourceInfo, "normal"),
                 resourceManager.getTextureRegionFromTextureSetByName(texturesSetResourceInfo, "pressed"),
                 resourceManager.getTextureRegionFromTextureSetByName(texturesSetResourceInfo, "disabled"),
                 engine.getVertexBufferObjectManager(), new ButtonSprite.OnClickListener() {
-            @Override
-            public void onClick(ButtonSprite pButtonSprite, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                textButton.onButtonClicked();
-            }
-        }
+                        @Override
+                        public void onClick(ButtonSprite pButtonSprite, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+                            textButton.onButtonClicked();
+                        }
+                    }
                 );
-        this.buttonSprite.setWidth(pWidth);
-        this.buttonSprite.setHeight(pHeight);
 
 
-        Font font = this.getTheme().getFontThemeSection().getFont(EnumFontSize.Medium);
+        Font font = this.getTheme().getFontThemeSection().getTextButtonFont();
         this.text = new Text(childX, childY, font,  translatedLabel, engine.getVertexBufferObjectManager(), DrawType.DYNAMIC);
         //this.text.setWidth(pWidth);
         //this.text.setHeight(pWidth);
 
         this.attachChild(this.buttonSprite);
         this.attachChild(this.text);
-
-
     }
 
-    /*@Override
-    public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-        if(pSceneTouchEvent.getAction()  == TouchEvent.ACTION_DOWN)
-        {
-            this.onButtonClicked();
-            this.buttonSprite.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-        }
-        else if(pSceneTouchEvent.getAction()  == TouchEvent.ACTION_UP)
-        {
-            this.buttonSprite.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-        }
-
-        return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+    void setButtonSpriteWidthAndHeight()
+    {
+        this.buttonSprite.setWidth(this.getWidth() - 2 * this.getPadding());
+        this.buttonSprite.setHeight(this.getHeight() - 2 * this.getPadding());
     }
-*/
+
+    @Override
+    protected void onPaddingChanged() {
+        super.onPaddingChanged();
+
+        this.setButtonSpriteWidthAndHeight();
+    }
+
+    @Override
+    protected void onSizeChanged() {
+        super.onSizeChanged();
+
+
+        this.setButtonSpriteWidthAndHeight();
+    }
+
+
     private void onButtonClicked()
     {
         if(this.isEnabled())
@@ -193,4 +196,6 @@ public class TextButton extends  Button implements ITextButton {
 
         this.buttonSprite.setEnabled(enabled);
     }
+
+
 }

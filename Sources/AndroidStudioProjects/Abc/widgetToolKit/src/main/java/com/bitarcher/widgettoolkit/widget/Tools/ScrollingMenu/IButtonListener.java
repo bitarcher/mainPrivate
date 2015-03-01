@@ -6,7 +6,7 @@
 
 package com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu;
 
-import com.bitarcher.interfacesProtected.mvc.IImagedAndLabeled;
+import com.bitarcher.interfacesOpenSource.mvc.IImagedAndLabeled;
 
 public interface IButtonListener {
     void onClicked(IImagedAndLabeled imagedAndLabeled);

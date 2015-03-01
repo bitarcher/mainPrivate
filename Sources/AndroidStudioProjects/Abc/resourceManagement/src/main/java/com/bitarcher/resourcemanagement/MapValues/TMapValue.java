@@ -1,6 +1,6 @@
 package com.bitarcher.resourcemanagement.MapValues;
 
-import com.bitarcher.interfacesProtected.basicioc.ITValue;
+import com.bitarcher.interfacesOpenSource.basicioc.ITValue;
 
 /**
  * Created by michel on 08/01/15.

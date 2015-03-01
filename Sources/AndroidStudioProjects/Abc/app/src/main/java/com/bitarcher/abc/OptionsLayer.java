@@ -1,8 +1,8 @@
 package com.bitarcher.abc;
 
-import com.bitarcher.interfacesProtected.gui.theme.EnumFontSize;
-import com.bitarcher.interfacesProtected.sceneManagement.IOptionsLayer;
-import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesOpenSource.gui.theme.EnumFontSize;
+import com.bitarcher.interfacesOpenSource.sceneManagement.IOptionsLayer;
+import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourceManager;
 import com.bitarcher.scenemanagement.ManagedLayer;
 import com.bitarcher.widgettoolkit.theme.DefaultTheme;

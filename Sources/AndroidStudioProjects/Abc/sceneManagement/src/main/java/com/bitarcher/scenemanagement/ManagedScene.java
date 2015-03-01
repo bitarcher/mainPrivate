@@ -1,8 +1,8 @@
 package com.bitarcher.scenemanagement;
 
-import com.bitarcher.interfacesProtected.gui.andEngine.IScene;
-import com.bitarcher.interfacesProtected.sceneManagement.IManagedScene;
-import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesOpenSource.gui.andEngine.IScene;
+import com.bitarcher.interfacesOpenSource.sceneManagement.IManagedScene;
+import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
 
 public abstract class ManagedScene extends Scene implements IManagedScene {
 

@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.IResourceInfoListGotter;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceInfoListGotter;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IResourceInfo;
 
 import java.util.ArrayList;
 import java.util.List;

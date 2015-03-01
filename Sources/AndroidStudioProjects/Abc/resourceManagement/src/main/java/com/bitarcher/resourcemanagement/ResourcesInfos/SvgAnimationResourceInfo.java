@@ -1,6 +1,6 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ISvgAnimationResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ISvgAnimationResourceInfo;
 
 import org.andengine.extension.svg.adt.ISVGColorMapper;
 import org.andengine.opengl.texture.TextureOptions;

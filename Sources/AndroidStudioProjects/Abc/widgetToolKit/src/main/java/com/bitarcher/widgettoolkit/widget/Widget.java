@@ -1,9 +1,9 @@
 package com.bitarcher.widgettoolkit.widget;
 
-import com.bitarcher.interfacesProtected.gui.theme.ITheme;
-import com.bitarcher.interfacesProtected.gui.widgets.IWidget;
-import com.bitarcher.interfacesProtected.gui.widgets.IWidgetListener;
-import com.bitarcher.interfacesProtected.resourcemanagement.EResourceNotFound;
+import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
+import com.bitarcher.interfacesOpenSource.gui.widgets.IWidget;
+import com.bitarcher.interfacesOpenSource.gui.widgets.IWidgetListener;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.EResourceNotFound;
 import com.bitarcher.widgettoolkit.widget.Tools.WidgetManagerSingleton;
 
 import org.andengine.entity.Entity;
@@ -20,15 +20,45 @@ import java.util.ArrayList;
  */
 public abstract class Widget extends Entity implements IWidget {
 
-    ITheme theme;
-    boolean areResourcesLoaded = false;
+    private ITheme theme;
+    private boolean areResourcesLoaded = false;
     protected ArrayList<IWidgetListener> widgetListenerArrayList = new ArrayList<>();
-    boolean enabled = true;
+    private boolean enabled = true;
+    private float padding = 0f;
+    private float originalWidth;
+    private float originalHeight;
 
     Rectangle debugRectangle;
 
+    protected float getOriginalWidth() {
+        return originalWidth;
+    }
 
+    protected float getOriginalHeight() {
+        return originalHeight;
+    }
 
+    @Override
+    public float getPadding() {
+        return this.padding;
+    }
+
+    @Override
+    public void setPadding(float padding) {
+        this.padding = padding;
+
+        this.onPaddingChanged();
+
+        for(IWidgetListener widgetListener : this.widgetListenerArrayList)
+        {
+            widgetListener.onPaddingChanged(this);
+        }
+    }
+
+    protected void onPaddingChanged()
+    {
+
+    }
 
     @Override
     public boolean isEnabled() {
@@ -39,12 +69,12 @@ public abstract class Widget extends Entity implements IWidget {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
 
+        this.onEnabledChanged(enabled);
+
         for(IWidgetListener widgetListener : this.widgetListenerArrayList)
         {
             widgetListener.onEnabledChanged(this, enabled);
         }
-
-        this.onEnabledChanged(enabled);
     }
 
     protected void onEnabledChanged(boolean enabled)
@@ -56,8 +86,9 @@ public abstract class Widget extends Entity implements IWidget {
         super(pX, pY, pWidth, pHeight);
         this.theme = theme;
 
-        this.setAnchorCenter(0, 0);
-        this.debugRectangle = new Rectangle(0, 0, pWidth, pHeight, this.theme.getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+        this.originalWidth = pWidth;
+        this.originalHeight = pHeight;
+        this.debugRectangle = new Rectangle(pWidth/2, pHeight/2, pWidth, pHeight, this.theme.getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
 
         this.debugRectangle.setColor(this.getDebugColor());
         this.debugRectangle.setAlpha(0.5f);
@@ -65,6 +96,12 @@ public abstract class Widget extends Entity implements IWidget {
         this.sortChildren();
 
         this.attachChild(this.debugRectangle);
+    }
+
+    void recomputeDebugRectangleSizeAndPosition()
+    {
+        this.debugRectangle.setPosition(this.getWidth() / 2, this.getHeight() / 2);
+        this.debugRectangle.setSize(this.getWidth(), this.getHeight());
     }
 
     Color getDebugColor()
@@ -192,8 +229,7 @@ public abstract class Widget extends Entity implements IWidget {
 
     private void raiseSizeChanged()
     {
-        this.debugRectangle.setWidth(this.getWidth());
-        this.debugRectangle.setHeight(this.getHeight());
+        this.recomputeDebugRectangleSizeAndPosition();
         this.onSizeChanged();
 
         for(IWidgetListener widgetListener : this.widgetListenerArrayList)
@@ -206,7 +242,6 @@ public abstract class Widget extends Entity implements IWidget {
     {
 
     }
-
 
     @Override
     public void setX(float pX) {

@@ -4,12 +4,12 @@ package com.bitarcher.scenemanagement;
 import android.content.Context;
 import android.view.KeyEvent;
 
-import com.bitarcher.interfacesProtected.gui.theme.ITheme;
-import com.bitarcher.interfacesProtected.resourcemanagement.IContextProvider;
-import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesProtected.sceneManagement.IMainMenu;
-import com.bitarcher.interfacesProtected.sceneManagement.IOptionsLayer;
-import com.bitarcher.interfacesProtected.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IContextProvider;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesOpenSource.sceneManagement.IMainMenu;
+import com.bitarcher.interfacesOpenSource.sceneManagement.IOptionsLayer;
+import com.bitarcher.interfacesOpenSource.sceneManagement.ISceneManagerConfigurator;
 
 import org.andengine.engine.Engine;
 import org.andengine.engine.camera.Camera;

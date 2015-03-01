@@ -6,9 +6,9 @@
 
 package com.bitarcher.abc;
 
-import com.bitarcher.interfacesProtected.bll.orm.abc.IConfigurator;
-import com.bitarcher.interfacesProtected.bll.xml.abc.ro.levels.INode;
-import com.bitarcher.interfacesProtected.bll.xml.abc.ro.resources.IAnimal;
+import com.bitarcher.interfacesOpenSource.bll.orm.abc.IConfigurator;
+import com.bitarcher.interfacesOpenSource.bll.xml.abc.ro.levels.INode;
+import com.bitarcher.interfacesOpenSource.bll.xml.abc.ro.resources.IAnimal;
 
 /**
  * Created by michel on 13/02/15.

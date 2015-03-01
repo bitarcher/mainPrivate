@@ -1,12 +1,12 @@
 package com.bitarcher.abc;
 
 
-import com.bitarcher.interfacesProtected.gui.andEngine.IScene;
-import com.bitarcher.interfacesProtected.gui.theme.EnumFontSize;
-import com.bitarcher.interfacesProtected.gui.widgets.IButton;
-import com.bitarcher.interfacesProtected.gui.widgets.IButtonListener;
-import com.bitarcher.interfacesProtected.sceneManagement.IMainMenu;
-import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesOpenSource.gui.andEngine.IScene;
+import com.bitarcher.interfacesOpenSource.gui.theme.EnumFontSize;
+import com.bitarcher.interfacesOpenSource.gui.widgets.IButton;
+import com.bitarcher.interfacesOpenSource.gui.widgets.IButtonListener;
+import com.bitarcher.interfacesOpenSource.sceneManagement.IMainMenu;
+import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.MusicResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
@@ -86,7 +86,12 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
         ITextureRegion backgroundTextureRegion = this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.bitmapTexturesSetFromAssetResourceInfo, "prairie");
 
-        backgroundSprite = new Sprite(this.getSceneManager().getResourceManager().getCameraWidth() / 2, this.getSceneManager().getResourceManager().getCameraHeight() / 2, this.getSceneManager().getResourceManager().getCameraWidth(), this.getSceneManager().getResourceManager().getCameraHeight(), backgroundTextureRegion, this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+        backgroundSprite = new Sprite(
+                this.getSceneManager().getResourceManager().getCameraWidth() / 2,
+                this.getSceneManager().getResourceManager().getCameraHeight() / 2,
+                this.getSceneManager().getResourceManager().getCameraWidth(),
+                this.getSceneManager().getResourceManager().getCameraHeight(),
+                backgroundTextureRegion, this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());
 		backgroundSprite.setZIndex(-5000);
 		this.attachChild(backgroundSprite);
 		
@@ -111,6 +116,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
         this.attachChild(playButton);
 
+        int buttonPadding = 5;
 
         this.playButton.addButtonListener(new IButtonListener() {
             @Override
@@ -118,6 +124,8 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
                 getSceneManager().showScene(new GameLevel(getSceneManager()));
             }
         });
+
+        this.playButton.setPadding(buttonPadding);
 
         this.optionsButton = new TextButton(this.getSceneManager().getTheme(),
                 playButton.getX()+ playButton.getWidth(),
@@ -130,6 +138,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
                 getSceneManager().showOptionsLayer(false);
             }
         });
+        this.optionsButton.setPadding(buttonPadding);
 
         // Create a title
 		titleText = new Text(0, 0, this.getSceneManager().getTheme().getFontThemeSection().getFont(EnumFontSize.Big), "ABC ", this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());

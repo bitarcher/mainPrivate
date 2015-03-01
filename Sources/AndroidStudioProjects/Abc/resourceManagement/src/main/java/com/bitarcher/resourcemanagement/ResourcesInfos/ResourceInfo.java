@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromAssetResourceInfo;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromAssetResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IResourceInfo;
 
 /**
  * Created by michel on 08/01/15.

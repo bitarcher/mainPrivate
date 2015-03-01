@@ -6,10 +6,10 @@
 
 package com.bitarcher.resourcemanagement.MapValues;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneTexture;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneTexture;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.ITextureSetMapValue;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.OneTextureSV;
 import com.bitarcher.resourcemanagement.ResourceManager;

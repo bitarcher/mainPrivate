@@ -1,8 +1,8 @@
 package com.bitarcher.resourcemanagement.MapValues;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromAssetResourceInfo;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneAssetBitmapTexture;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromAssetResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneAssetBitmapTexture;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.OneAssetBitmapTextureSV;
 import com.bitarcher.resourcemanagement.ResourceManager;
 

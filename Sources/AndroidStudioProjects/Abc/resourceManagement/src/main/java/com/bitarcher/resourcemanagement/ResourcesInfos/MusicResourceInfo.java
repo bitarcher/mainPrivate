@@ -1,6 +1,6 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IMusicResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IMusicResourceInfo;
 
 /**
  * Created by michel on 12/01/15.

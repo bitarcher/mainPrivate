@@ -6,7 +6,7 @@ package com.bitarcher.widgettoolkit.widget.Tools;
  * bitarcher.com
  */
 
-import com.bitarcher.interfacesProtected.gui.widgets.IWidget;
+import com.bitarcher.interfacesOpenSource.gui.widgets.IWidget;
 
 import java.util.ArrayList;
 

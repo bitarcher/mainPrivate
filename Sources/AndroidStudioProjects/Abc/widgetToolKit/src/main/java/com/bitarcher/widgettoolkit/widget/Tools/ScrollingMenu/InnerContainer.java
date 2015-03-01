@@ -6,8 +6,8 @@
 
 package com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu;
 
-import com.bitarcher.interfacesProtected.gui.theme.ITheme;
-import com.bitarcher.interfacesProtected.mvc.IImagedAndLabeled;
+import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
+import com.bitarcher.interfacesOpenSource.mvc.IImagedAndLabeled;
 
 import org.andengine.entity.Entity;
 import org.andengine.entity.scene.Scene;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 /**
  * Created by michel on 27/02/15.
  */
-public class InnerContainer extends Entity {
+class InnerContainer extends Entity {
 
     ArrayList<IButtonListener> buttonListenerArrayList = new ArrayList<>();
     static final int INITIAL_LEFT_MARGIN = 128;

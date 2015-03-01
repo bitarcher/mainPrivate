@@ -6,8 +6,8 @@
 
 package com.bitarcher.abcbllorm.BLL;
 
-import com.bitarcher.interfacesProtected.basicioc.orm.IOrmBasic;
-import com.bitarcher.interfacesProtected.basicioc.orm.SqlRuntimeException;
+import com.bitarcher.interfacesOpenSource.basicioc.orm.IOrmBasic;
+import com.bitarcher.interfacesOpenSource.basicioc.orm.SqlRuntimeException;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.misc.BaseDaoEnabled;
 

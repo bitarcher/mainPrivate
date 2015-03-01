@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement.MapValues.SubValues;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneSvgTexture;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneSvgTexture;
 import com.bitarcher.resourcemanagement.MapValues.TextureSetMapValue;
 
 /**

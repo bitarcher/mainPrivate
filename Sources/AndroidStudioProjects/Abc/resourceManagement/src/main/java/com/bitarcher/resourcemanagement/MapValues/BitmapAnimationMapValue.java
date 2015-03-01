@@ -1,8 +1,8 @@
 package com.bitarcher.resourcemanagement.MapValues;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IAnimationResourceInfo;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IAnimationResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IBitmapAnimationResourceInfo;
 
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlasTextureRegionFactory;
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;

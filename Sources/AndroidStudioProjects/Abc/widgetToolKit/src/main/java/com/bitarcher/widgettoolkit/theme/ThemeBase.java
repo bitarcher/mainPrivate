@@ -1,12 +1,12 @@
 package com.bitarcher.widgettoolkit.theme;
 
-import com.bitarcher.interfacesProtected.gui.theme.EnumFontSize;
-import com.bitarcher.interfacesProtected.gui.theme.IFontThemeSection;
-import com.bitarcher.interfacesProtected.gui.theme.ITextButtonSection;
-import com.bitarcher.interfacesProtected.gui.theme.ITheme;
-import com.bitarcher.interfacesProtected.gui.theme.IThemeManager;
-import com.bitarcher.interfacesProtected.resourcemanagement.EResourceNotFound;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfacesOpenSource.gui.theme.EnumFontSize;
+import com.bitarcher.interfacesOpenSource.gui.theme.IFontThemeSection;
+import com.bitarcher.interfacesOpenSource.gui.theme.ITextButtonSection;
+import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
+import com.bitarcher.interfacesOpenSource.gui.theme.IThemeManager;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.EResourceNotFound;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 import org.andengine.opengl.font.Font;
 
@@ -29,7 +29,14 @@ public abstract class ThemeBase implements ITheme {
             public Font getFont(EnumFontSize eFontSize) throws EResourceNotFound {
                 return themeBase.getTheFont(eFontSize);
             }
+
+            @Override
+            public Font getTextButtonFont() {
+                return this.getFont(EnumFontSize.Medium);
+            }
         };
+
+
     }
 
     @Override
@@ -65,7 +72,7 @@ public abstract class ThemeBase implements ITheme {
     protected abstract Font getBigFont() throws EResourceNotFound;
     protected abstract Font getMediumFont() throws EResourceNotFound;
     protected abstract Font getSmallFont() throws EResourceNotFound;
-    protected abstract com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo getTextButtonTexturesSetResourceInfo() throws EResourceNotFound;
+    protected abstract com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo getTextButtonTexturesSetResourceInfo() throws EResourceNotFound;
 
 
     private Font getTheFont(EnumFontSize eFontSize) throws EResourceNotFound {

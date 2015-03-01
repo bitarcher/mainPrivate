@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement.MapValues;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneAssetTexture;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetFromAssetResourceInfo;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneAssetTexture;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.ITextureSetMapValue;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.OneTextureSV;
 import com.bitarcher.resourcemanagement.ResourceManager;

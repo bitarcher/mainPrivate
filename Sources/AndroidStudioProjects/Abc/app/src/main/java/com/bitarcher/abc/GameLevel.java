@@ -1,9 +1,9 @@
 package com.bitarcher.abc;
 
-import com.bitarcher.interfacesProtected.mvc.IImagedAndLabeled;
-import com.bitarcher.interfacesProtected.mvc.ILabeledListener;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
-import com.bitarcher.interfacesProtected.sceneManagement.ITSceneManager;
+import com.bitarcher.interfacesOpenSource.mvc.IImagedAndLabeled;
+import com.bitarcher.interfacesOpenSource.mvc.ILabeledListener;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
 import com.bitarcher.scenemanagement.ManagedGameScene;
@@ -48,12 +48,19 @@ public class GameLevel extends ManagedGameScene {
 		rectangle.setPosition(MathUtils.random(0f + rectangle.getWidth(), (800f - rectangle.getWidth())), MathUtils.random((-240f+rectangle.getHeight()),(240f-rectangle.getHeight())));
 		this.attachChild(rectangle);*/
 
+        int padding = 40;
+        //float cw = this.getSceneManager().getResourceManager().getCameraWidth() - padding;
+        //float ch = this.getSceneManager().getResourceManager().getCameraHeight() - padding;
 
-        int padding = 20;
+        float cw = this.getSceneManager().getResourceManager().getCameraWidth() - padding;
+        float ch = this.getSceneManager().getResourceManager().getCameraHeight() - padding;
+
+
+
         ScrollingMenu scrollingMenu = new ScrollingMenu(this.getSceneManager().getTheme(),
-                padding, padding,
-                this.getSceneManager().getResourceManager().getCameraWidth() - 2 * padding,
-                this.getSceneManager().getResourceManager().getCameraHeight());
+                cw / 2 + (padding / 2),
+                0,
+                cw, ch);
 
         for(final String name : new String[]{"abeille", "chat", "dauphin", "éléphant"}) {
 

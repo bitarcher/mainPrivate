@@ -8,9 +8,9 @@ package com.bitarcher.resourcemanagement.MapValues.SubValues;
 
 import android.content.Context;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
 
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
 
 import com.bitarcher.resourcemanagement.MapValues.TextureSetFromResMapValue;
 

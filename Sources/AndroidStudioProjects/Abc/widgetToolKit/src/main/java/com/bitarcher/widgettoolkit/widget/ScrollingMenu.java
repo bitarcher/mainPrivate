@@ -8,13 +8,13 @@ package com.bitarcher.widgettoolkit.widget;
 
 import android.util.Log;
 
-import com.bitarcher.interfacesProtected.gui.theme.ITheme;
-import com.bitarcher.interfacesProtected.gui.widgets.IScrollingMenu;
-import com.bitarcher.interfacesProtected.gui.widgets.IScrollingMenuListener;
-import com.bitarcher.interfacesProtected.mvc.IImagedAndLabeled;
-import com.bitarcher.interfacesProtected.resourcemanagement.EResourceNotFound;
-import com.bitarcher.interfacesProtected.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesProtected.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
+import com.bitarcher.interfacesOpenSource.gui.widgets.IScrollingMenu;
+import com.bitarcher.interfacesOpenSource.gui.widgets.IScrollingMenuListener;
+import com.bitarcher.interfacesOpenSource.mvc.IImagedAndLabeled;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.EResourceNotFound;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
+import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu.OverClippedContainer;
 
 
@@ -88,6 +88,11 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
         super.setWidth(pWidth);
     }
 
+    protected int getGoLeftOrRightWidthOrHeight()
+    {
+        return 120;
+    }
+
     private void createMenuBoxes() {
         int spriteX = PADDING;
         // current item counter
@@ -108,7 +113,7 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
             Log.w("Widget:ScrollingMenu", "Image and labeled list size was null on box creation");
         }
 
-        this.overClippedContainer = new OverClippedContainer(theme, resourceManager.getEngine().getScene(), 0, 0, this.getWidth(), this.getHeight() / 2, imagedAndLabeledList);
+        this.overClippedContainer = new OverClippedContainer(this.getTheme(), resourceManager.getEngine().getScene(), 0, 0, this.getWidth(), this.getHeight() / 2, imagedAndLabeledList);
         this.attachChild(this.overClippedContainer);
 
         mMaxX = spriteX - this.getWidth();
@@ -116,9 +121,9 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
         float scrollbarSize = this.getWidth() / ((mMaxX + this.getWidth()) / this.getWidth());
         scrollBar = new Rectangle(scrollbarSize / 2, 10, scrollbarSize, 20, resourceManager.getEngine().getVertexBufferObjectManager());
         scrollBar.setColor(1, 0, 0);
-        this.mScene.attachChild(scrollBar);
+        //this.mScene.attachChild(scrollBar);
         final ScrollingMenu scrollingMenu = this;
-        menuLeft = new Sprite(32, this.getWidth() / 2,
+        menuLeft = new Sprite(32, this.getWidth() / 2, this.getGoLeftOrRightWidthOrHeight(), this.getGoLeftOrRightWidthOrHeight(),
                 menuLeftTextureRegion, resourceManager.getEngine().getVertexBufferObjectManager()) {
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX,
@@ -131,7 +136,7 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
             }
         };
         this.mScene.registerTouchArea(menuLeft);
-        menuRight = new Sprite(this.getWidth() - 32,this.getHeight() / 2,
+        menuRight = new Sprite(this.getWidth() - 32,this.getHeight() / 2, this.getGoLeftOrRightWidthOrHeight(), this.getGoLeftOrRightWidthOrHeight(),
                 menuRightTextureRegion, resourceManager.getEngine().getVertexBufferObjectManager()) {
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX,
@@ -147,6 +152,7 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
         this.mScene.attachChild(menuRight);
         menuLeft.setVisible(false);
         this.mScene.attachChild(menuLeft);
+
     }
 
     @Override
@@ -202,9 +208,6 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
 
     @Override
     public void onScroll(ScrollDetector scrollDetector, int pPointerID, float pDistanceX, float pDistanceY) {
-
-
-
         Camera camera = this.getTheme().getThemeManager().getResourceManager().getEngine().getCamera();
         // Disable the menu arrows left and right (15px padding)
         if (camera.getXMin() <= 15)
@@ -258,7 +261,7 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
         super.onAttached();
 
         this.mScene = this.getTheme().getThemeManager().getResourceManager().getEngine().getScene();
-        this.createMenuBoxes();
+        //this.createMenuBoxes();
     }
 
     @Override
