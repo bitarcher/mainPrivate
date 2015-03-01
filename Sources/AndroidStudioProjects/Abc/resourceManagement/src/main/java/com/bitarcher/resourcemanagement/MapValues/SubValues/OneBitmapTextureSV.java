@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement.MapValues.SubValues;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneBitmapTexture;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneBitmapTexture;
 
 /**
  * Created by michel on 13/01/15.

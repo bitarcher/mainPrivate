@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromAssetResourceInfo;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneAssetBitmapTexture;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromAssetResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneAssetBitmapTexture;
 
 /**
  * Created by michel on 10/01/15.

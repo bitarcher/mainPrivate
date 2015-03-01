@@ -1,12 +1,12 @@
 package com.bitarcher.widgettoolkit.theme;
 
-import com.bitarcher.interfacesOpenSource.gui.theme.EnumFontSize;
-import com.bitarcher.interfacesOpenSource.gui.theme.IFontThemeSection;
-import com.bitarcher.interfacesOpenSource.gui.theme.ITextButtonSection;
-import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
-import com.bitarcher.interfacesOpenSource.gui.theme.IThemeManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.EResourceNotFound;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.aeFun.interfaces.gui.theme.IFontThemeSection;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITextButtonSection;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 import org.andengine.opengl.font.Font;
 
@@ -72,7 +72,7 @@ public abstract class ThemeBase implements ITheme {
     protected abstract Font getBigFont() throws EResourceNotFound;
     protected abstract Font getMediumFont() throws EResourceNotFound;
     protected abstract Font getSmallFont() throws EResourceNotFound;
-    protected abstract com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo getTextButtonTexturesSetResourceInfo() throws EResourceNotFound;
+    protected abstract com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo getTextButtonTexturesSetResourceInfo() throws EResourceNotFound;
 
 
     private Font getTheFont(EnumFontSize eFontSize) throws EResourceNotFound {

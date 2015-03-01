@@ -9,9 +9,9 @@ package com.bitarcher.abc.tests;
 
 import com.bitarcher.abc.MainMenu;
 import com.bitarcher.abc.OptionsLayer;
-import com.bitarcher.interfacesOpenSource.gui.theme.IThemeManager;
-import com.bitarcher.interfacesOpenSource.sceneManagement.ISceneManagerConfigurator;
-import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourceManager;
 import com.bitarcher.scenemanagement.SceneManagedActivity;
 import com.bitarcher.widgettoolkit.theme.DefaultTheme;

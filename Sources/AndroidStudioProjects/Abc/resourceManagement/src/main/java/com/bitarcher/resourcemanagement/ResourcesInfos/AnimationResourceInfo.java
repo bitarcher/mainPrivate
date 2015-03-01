@@ -1,6 +1,6 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IAnimationResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IAnimationResourceInfo;
 
 import org.andengine.opengl.texture.TextureOptions;
 

@@ -2,7 +2,7 @@ package com.bitarcher.resourcemanagement.ResourcesInfos.Font;
 
 import android.graphics.Typeface;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.Font.IFontCreateFromTypeFaceResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.Font.IFontCreateFromTypeFaceResourceInfo;
 
 /**
  * Created by michel on 12/01/15.

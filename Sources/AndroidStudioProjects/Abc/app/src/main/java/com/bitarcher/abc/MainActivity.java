@@ -9,9 +9,9 @@ package com.bitarcher.abc;
 
 import com.bitarcher.abcbllorm.ConfigurationSingleton;
 import com.bitarcher.abcbllorm.DAL.DatabaseHelper;
-import com.bitarcher.interfacesOpenSource.gui.theme.IThemeManager;
-import com.bitarcher.interfacesOpenSource.sceneManagement.ISceneManagerConfigurator;
-import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourceManager;
 import com.bitarcher.scenemanagement.SceneManagedActivity;
 import com.bitarcher.widgettoolkit.theme.DefaultTheme;

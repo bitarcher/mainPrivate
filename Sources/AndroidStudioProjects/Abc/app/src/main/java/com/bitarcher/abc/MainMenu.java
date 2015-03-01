@@ -1,12 +1,12 @@
 package com.bitarcher.abc;
 
 
-import com.bitarcher.interfacesOpenSource.gui.andEngine.IScene;
-import com.bitarcher.interfacesOpenSource.gui.theme.EnumFontSize;
-import com.bitarcher.interfacesOpenSource.gui.widgets.IButton;
-import com.bitarcher.interfacesOpenSource.gui.widgets.IButtonListener;
-import com.bitarcher.interfacesOpenSource.sceneManagement.IMainMenu;
-import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
+import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IMainMenu;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.MusicResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;

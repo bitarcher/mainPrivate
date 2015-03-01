@@ -6,9 +6,9 @@
 
 package com.bitarcher.resourcemanagement.MapValues;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneResBitmapTexture;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IBitmapTexturesSetFromResIdsResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResBitmapTexture;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.OneResBitmapTextureSV;
 import com.bitarcher.resourcemanagement.ResourceManager;
 

@@ -6,8 +6,8 @@
 
 package com.bitarcher.resourcemanagement.MapValues.SubValues;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneAssetSvgTexture;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneAssetSvgTexture;
 import com.bitarcher.resourcemanagement.MapValues.TextureSetFromAssetMapValue;
 
 import org.andengine.extension.svg.opengl.texture.atlas.bitmap.SVGBitmapTextureAtlasTextureRegionFactory;

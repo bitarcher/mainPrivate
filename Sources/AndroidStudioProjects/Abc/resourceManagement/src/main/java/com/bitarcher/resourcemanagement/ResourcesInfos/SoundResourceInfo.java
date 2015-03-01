@@ -1,6 +1,6 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ISoundResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ISoundResourceInfo;
 
 /**
  * Created by michel on 12/01/15.

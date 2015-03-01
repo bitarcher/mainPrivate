@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement.MapValues.SubValues;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneTexture;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneTexture;
 
 import org.andengine.opengl.texture.region.ITextureRegion;
 

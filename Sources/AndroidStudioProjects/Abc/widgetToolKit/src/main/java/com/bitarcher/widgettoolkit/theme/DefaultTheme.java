@@ -3,11 +3,11 @@ package com.bitarcher.widgettoolkit.theme;
 import android.content.Context;
 import android.graphics.Typeface;
 
-import com.bitarcher.interfacesOpenSource.gui.theme.IArrows;
-import com.bitarcher.interfacesOpenSource.gui.theme.IThemeManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.EResourceNotFound;
+import com.bitarcher.aeFun.interfaces.gui.theme.IArrows;
+import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.Font.FontCreateFromTypeFaceResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneResSvgTexture;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;

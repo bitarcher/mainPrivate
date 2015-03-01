@@ -8,8 +8,8 @@ package com.bitarcher.resourcemanagement.ResourcesInfos;
 
 import android.content.Context;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ISvgTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ISvgTexturesSetFromResIdsResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
 
 /**
  * Created by michel on 26/01/15.

@@ -1,8 +1,8 @@
 package com.bitarcher.widgettoolkit.theme;
 
-import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
-import com.bitarcher.interfacesOpenSource.gui.theme.IThemeManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

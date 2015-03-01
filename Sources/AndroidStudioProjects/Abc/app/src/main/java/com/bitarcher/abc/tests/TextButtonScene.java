@@ -6,8 +6,8 @@
 
 package com.bitarcher.abc.tests;
 
-import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
-import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.scenemanagement.ManagedGameScene;
 import com.bitarcher.widgettoolkit.widget.TextButton;
 

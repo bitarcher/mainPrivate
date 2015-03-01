@@ -1,9 +1,9 @@
 package com.bitarcher.abc.bll.xml.ro.levels;
 
-import com.bitarcher.interfacesOpenSource.bll.xml.abc.ro.levels.INode;
-import com.bitarcher.interfacesOpenSource.mvc.ILabeledListener;
-import com.bitarcher.interfacesOpenSource.mvc.ITreeNode;
-import com.bitarcher.interfacesOpenSource.mvc.ITreeNodeListener;
+import com.bitarcher.aeFun.bll.xml.abc.ro.levels.INode;
+import com.bitarcher.aeFun.interfaces.mvc.ILabeledListener;
+import com.bitarcher.aeFun.interfaces.mvc.ITreeNode;
+import com.bitarcher.aeFun.interfaces.mvc.ITreeNodeListener;
 
 import org.w3c.dom.Element;
 

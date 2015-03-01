@@ -1,8 +1,8 @@
 package com.bitarcher.abc.bll.xml.ro.resources;
 
-import com.bitarcher.interfacesOpenSource.bll.xml.abc.ro.resources.IIdiograms;
-import com.bitarcher.interfacesOpenSource.bll.xml.abc.ro.resources.ILetters;
-import com.bitarcher.interfacesOpenSource.bll.xml.abc.ro.resources.IResList;
+import com.bitarcher.aeFun.bll.xml.abc.ro.resources.IIdiograms;
+import com.bitarcher.aeFun.bll.xml.abc.ro.resources.ILetters;
+import com.bitarcher.aeFun.bll.xml.abc.ro.resources.IResList;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;

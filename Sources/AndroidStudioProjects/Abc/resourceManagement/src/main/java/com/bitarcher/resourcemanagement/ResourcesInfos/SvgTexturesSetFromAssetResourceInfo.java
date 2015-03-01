@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ISvgTexturesSetFromAssetResourceInfo;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneAssetSvgTexture;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ISvgTexturesSetFromAssetResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneAssetSvgTexture;
 
 /**
  * Created by michel on 13/01/15.

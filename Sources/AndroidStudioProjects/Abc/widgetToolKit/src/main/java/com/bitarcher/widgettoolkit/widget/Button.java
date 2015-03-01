@@ -1,8 +1,8 @@
 package com.bitarcher.widgettoolkit.widget;
 
-import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
-import com.bitarcher.interfacesOpenSource.gui.widgets.IButton;
-import com.bitarcher.interfacesOpenSource.gui.widgets.IButtonListener;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
 
 import java.util.ArrayList;
 

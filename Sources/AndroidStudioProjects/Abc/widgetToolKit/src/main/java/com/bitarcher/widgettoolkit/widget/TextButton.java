@@ -1,13 +1,12 @@
 package com.bitarcher.widgettoolkit.widget;
 
-import com.bitarcher.interfacesOpenSource.gui.theme.EnumFontSize;
-import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
-import com.bitarcher.interfacesOpenSource.gui.widgets.IButtonListener;
-import com.bitarcher.interfacesOpenSource.gui.widgets.ITextButton;
-import com.bitarcher.interfacesOpenSource.gui.widgets.ITextButtonListener;
-import com.bitarcher.interfacesOpenSource.mvc.ILabeledListener;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
+import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
+import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButtonListener;
+import com.bitarcher.aeFun.interfaces.mvc.ILabeledListener;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 
 import org.andengine.engine.Engine;
 import org.andengine.entity.scene.Scene;

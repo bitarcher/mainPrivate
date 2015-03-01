@@ -1,16 +1,16 @@
 package com.bitarcher.scenemanagement;
 
 
-import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
-import com.bitarcher.interfacesOpenSource.gui.theme.IThemeManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IContextProvider;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesOpenSource.sceneManagement.IMainMenu;
-import com.bitarcher.interfacesOpenSource.sceneManagement.IManagedLayer;
-import com.bitarcher.interfacesOpenSource.sceneManagement.IManagedScene;
-import com.bitarcher.interfacesOpenSource.sceneManagement.IOptionsLayer;
-import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
-import com.bitarcher.interfacesOpenSource.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IContextProvider;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IMainMenu;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedLayer;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedScene;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IOptionsLayer;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ISceneManagerConfigurator;
 import com.bitarcher.widgettoolkit.theme.ThemeManager;
 
 

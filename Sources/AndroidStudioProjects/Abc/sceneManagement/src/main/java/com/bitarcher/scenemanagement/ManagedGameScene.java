@@ -1,8 +1,8 @@
 package com.bitarcher.scenemanagement;
 
-import com.bitarcher.interfacesOpenSource.gui.andEngine.IScene;
-import com.bitarcher.interfacesOpenSource.gui.theme.EnumFontSize;
-import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
+import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.entity.text.Text;

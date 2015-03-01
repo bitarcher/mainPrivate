@@ -1,6 +1,6 @@
 package com.bitarcher.scenemanagement;
 
-import com.bitarcher.interfacesOpenSource.sceneManagement.IManagedLayer;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedLayer;
 
 
 

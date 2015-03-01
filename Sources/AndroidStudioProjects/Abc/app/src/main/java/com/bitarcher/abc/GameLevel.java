@@ -1,9 +1,9 @@
 package com.bitarcher.abc;
 
-import com.bitarcher.interfacesOpenSource.mvc.IImagedAndLabeled;
-import com.bitarcher.interfacesOpenSource.mvc.ILabeledListener;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
-import com.bitarcher.interfacesOpenSource.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.interfaces.mvc.IImagedAndLabeled;
+import com.bitarcher.aeFun.interfaces.mvc.ILabeledListener;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
 import com.bitarcher.scenemanagement.ManagedGameScene;

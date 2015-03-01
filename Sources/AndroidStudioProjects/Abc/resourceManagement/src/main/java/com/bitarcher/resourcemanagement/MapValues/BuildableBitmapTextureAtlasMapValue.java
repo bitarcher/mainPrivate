@@ -1,6 +1,6 @@
 package com.bitarcher.resourcemanagement.MapValues;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IBuildableBitmapTextureAtlasResourceInfo;
 import com.bitarcher.resourcemanagement.ResourceManager;
 
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;

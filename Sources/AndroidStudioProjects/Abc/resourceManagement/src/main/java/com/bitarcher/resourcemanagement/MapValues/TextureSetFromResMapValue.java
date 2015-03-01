@@ -9,8 +9,8 @@ package com.bitarcher.resourcemanagement.MapValues;
 
 import android.content.Context;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetFromResIdsResourceInfo;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneResTexture;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromResIdsResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResTexture;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.ITextureSetMapValue;
 import com.bitarcher.resourcemanagement.MapValues.SubValues.OneTextureSV;
 import com.bitarcher.resourcemanagement.ResourceManager;

@@ -2,8 +2,8 @@ package com.bitarcher.resourcemanagement.MapValues;
 
 import android.util.Log;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.IMusicResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IMusicResourceInfo;
 
 import org.andengine.audio.music.Music;
 import org.andengine.audio.music.MusicFactory;

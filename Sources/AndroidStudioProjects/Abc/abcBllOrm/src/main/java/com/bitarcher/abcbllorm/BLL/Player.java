@@ -7,9 +7,9 @@
 package com.bitarcher.abcbllorm.BLL;
 
 import com.bitarcher.abcbllorm.ConfigurationSingleton;
-import com.bitarcher.interfacesOpenSource.bll.orm.abc.IPlayer;
-import com.bitarcher.interfacesOpenSource.bll.orm.abc.IScorePlayerLevel;
-import com.bitarcher.interfacesOpenSource.bll.xml.abc.ro.resources.IAnimal;
+import com.bitarcher.aeFun.bll.orm.abc.IPlayer;
+import com.bitarcher.aeFun.bll.orm.abc.IScorePlayerLevel;
+import com.bitarcher.aeFun.bll.xml.abc.ro.resources.IAnimal;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.stmt.PreparedQuery;

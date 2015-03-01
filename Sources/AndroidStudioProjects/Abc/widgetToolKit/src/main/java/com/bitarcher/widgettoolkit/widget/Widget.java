@@ -1,9 +1,9 @@
 package com.bitarcher.widgettoolkit.widget;
 
-import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
-import com.bitarcher.interfacesOpenSource.gui.widgets.IWidget;
-import com.bitarcher.interfacesOpenSource.gui.widgets.IWidgetListener;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.EResourceNotFound;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IWidgetListener;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
 import com.bitarcher.widgettoolkit.widget.Tools.WidgetManagerSingleton;
 
 import org.andengine.entity.Entity;

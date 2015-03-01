@@ -8,8 +8,8 @@ package com.bitarcher.widgettoolkit.theme;
 
 import android.content.Context;
 
-import com.bitarcher.interfacesOpenSource.gui.theme.IArrows;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.aeFun.interfaces.gui.theme.IArrows;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneResSvgTexture;
 import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.widgettoolkit.R;

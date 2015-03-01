@@ -1,6 +1,6 @@
 package com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.SubInfos.IOneAssetSvgTexture;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneAssetSvgTexture;
 
 import org.andengine.extension.svg.adt.ISVGColorMapper;
 

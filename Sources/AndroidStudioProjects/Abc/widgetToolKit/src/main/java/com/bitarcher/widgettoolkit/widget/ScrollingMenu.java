@@ -8,13 +8,13 @@ package com.bitarcher.widgettoolkit.widget;
 
 import android.util.Log;
 
-import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
-import com.bitarcher.interfacesOpenSource.gui.widgets.IScrollingMenu;
-import com.bitarcher.interfacesOpenSource.gui.widgets.IScrollingMenuListener;
-import com.bitarcher.interfacesOpenSource.mvc.IImagedAndLabeled;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.EResourceNotFound;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IScrollingMenu;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IScrollingMenuListener;
+import com.bitarcher.aeFun.interfaces.mvc.IImagedAndLabeled;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.widgettoolkit.widget.Tools.ScrollingMenu.OverClippedContainer;
 
 

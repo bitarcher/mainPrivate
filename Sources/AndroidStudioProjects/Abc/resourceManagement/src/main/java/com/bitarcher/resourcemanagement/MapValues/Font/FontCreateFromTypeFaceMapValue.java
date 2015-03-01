@@ -1,7 +1,7 @@
 package com.bitarcher.resourcemanagement.MapValues.Font;
 
-import com.bitarcher.interfacesOpenSource.resourcemanagement.IResourceManager;
-import com.bitarcher.interfacesOpenSource.resourcemanagement.ResourceInfo.Font.IFontCreateFromTypeFaceResourceInfo;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.Font.IFontCreateFromTypeFaceResourceInfo;
 
 import org.andengine.opengl.font.FontFactory;
 

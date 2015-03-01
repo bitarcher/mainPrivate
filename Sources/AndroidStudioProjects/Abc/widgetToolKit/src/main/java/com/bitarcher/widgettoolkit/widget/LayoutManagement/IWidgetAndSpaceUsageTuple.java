@@ -6,8 +6,8 @@ package com.bitarcher.widgettoolkit.widget.LayoutManagement;
  * bitarcher.com
  */
 
-import com.bitarcher.interfacesOpenSource.gui.widgets.IWidget;
-import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.ISpaceUsage;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.ISpaceUsage;
 
 public interface IWidgetAndSpaceUsageTuple {
     IWidget getWidget();

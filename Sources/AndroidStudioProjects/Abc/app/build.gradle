@@ -46,7 +46,7 @@ dependencies {
     compile project(':resourceManagement')
     compile project(':sceneManagement')
     compile project(':widgetToolKit')
-    compile project(':interfacesOpenSource')
+    compile project(':aeFunInterfaces')
     compile project(':interfacesProtected')
     compile project(':abcBllXmlRoResources')
     compile project(':abcBllXmlRoLevels')

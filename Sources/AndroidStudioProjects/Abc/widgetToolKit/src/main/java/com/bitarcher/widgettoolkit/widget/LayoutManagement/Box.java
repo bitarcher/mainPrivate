@@ -6,15 +6,15 @@ package com.bitarcher.widgettoolkit.widget.LayoutManagement;
  * bitarcher.com
  */
 
-import com.bitarcher.interfacesOpenSource.gui.theme.ITheme;
-import com.bitarcher.interfacesOpenSource.gui.widgets.IWidget;
-import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.EnumOrientation;
-import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.IBox;
-import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.IBoxListener;
-import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.IFixedSpaceUsage;
-import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.IPercentSpaceUsage;
-import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.ISpaceUsage;
-import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.IVBox;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.EnumOrientation;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IBox;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IBoxListener;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IFixedSpaceUsage;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IPercentSpaceUsage;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.ISpaceUsage;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IVBox;
 import com.bitarcher.widgettoolkit.widget.Widget;
 
 import org.andengine.util.IMatcher;

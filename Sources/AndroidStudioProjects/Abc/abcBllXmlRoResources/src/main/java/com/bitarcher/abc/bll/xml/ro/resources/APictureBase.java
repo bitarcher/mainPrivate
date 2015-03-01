@@ -1,8 +1,8 @@
 package com.bitarcher.abc.bll.xml.ro.resources;
 
-import com.bitarcher.interfacesOpenSource.bll.xml.abc.ro.resources.EResourceLicense;
-import com.bitarcher.interfacesOpenSource.bll.xml.abc.ro.resources.IPicture;
-import com.bitarcher.interfacesOpenSource.basicioc.IXmlReader;
+import com.bitarcher.aeFun.bll.xml.abc.ro.resources.EResourceLicense;
+import com.bitarcher.aeFun.bll.xml.abc.ro.resources.IPicture;
+import com.bitarcher.aeFun.interfaces.basicioc.IXmlReader;
 
 import org.w3c.dom.Element;
 
