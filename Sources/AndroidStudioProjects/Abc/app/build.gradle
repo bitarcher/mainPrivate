@@ -43,16 +43,19 @@ dependencies {
     compile project(':andEngine')
     compile project(':andEnginePhysicsBox2DExtension')
     compile project(':andEngineSVGTextureRegionExtension')
-    compile project(':resourceManagement')
+    compile 'com.j256.ormlite:ormlite-core:4.48'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+
     compile project(':sceneManagement')
     compile project(':widgetToolKit')
     compile project(':aeFunInterfaces')
+    compile project(':aeFunResourceManagement')
+
     compile project(':interfacesProtected')
     compile project(':abcBllXmlRoResources')
     compile project(':abcBllXmlRoLevels')
     compile project(':abcBllOrm')
-    compile 'com.j256.ormlite:ormlite-core:4.48'
-    compile 'com.j256.ormlite:ormlite-android:4.48'
+
 }
 
 

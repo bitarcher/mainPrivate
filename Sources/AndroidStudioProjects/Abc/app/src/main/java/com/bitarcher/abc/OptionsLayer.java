@@ -3,9 +3,9 @@ package com.bitarcher.abc;
 import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
 import com.bitarcher.aeFun.interfaces.sceneManagement.IOptionsLayer;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.resourcemanagement.ResourceManager;
+import com.bitarcher.aeFun.resourceManagement.ResourceManager;
 import com.bitarcher.scenemanagement.ManagedLayer;
-import com.bitarcher.widgettoolkit.theme.DefaultTheme;
+import com.bitarcher.aeFun.widgetToolkit.theme.DefaultTheme;
 
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.primitive.Rectangle;

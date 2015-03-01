@@ -23,7 +23,7 @@ dependencies {
     compile project(':andEngine')
     compile project(':aeFunInterfaces')
     compile project(':widgetToolKit')
-    compile project(':resourceManagement')
+    compile project(':aeFunResourceManagement')
     //compile 'com.android.support:appcompat-v7:21.0.3'
 }
 

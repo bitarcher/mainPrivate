@@ -12,9 +12,9 @@ import com.bitarcher.abc.OptionsLayer;
 import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ISceneManagerConfigurator;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.resourcemanagement.ResourceManager;
+import com.bitarcher.aeFun.resourceManagement.ResourceManager;
 import com.bitarcher.scenemanagement.SceneManagedActivity;
-import com.bitarcher.widgettoolkit.theme.DefaultTheme;
+import com.bitarcher.aeFun.widgetToolkit.theme.DefaultTheme;
 
 
 public class TextButtonActivity extends SceneManagedActivity<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> {

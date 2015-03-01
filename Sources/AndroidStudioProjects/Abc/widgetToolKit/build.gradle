@@ -26,5 +26,5 @@ dependencies {
     compile project(':andEnginePhysicsBox2DExtension')
     compile project(':andEngineSVGTextureRegionExtension')
     compile project(':aeFunInterfaces')
-    compile project(':resourceManagement')
+    compile project(':aeFunResourceManagement')
 }

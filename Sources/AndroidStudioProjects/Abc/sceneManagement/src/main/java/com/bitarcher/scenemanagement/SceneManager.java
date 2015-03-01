@@ -11,7 +11,7 @@ import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedScene;
 import com.bitarcher.aeFun.interfaces.sceneManagement.IOptionsLayer;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ISceneManagerConfigurator;
-import com.bitarcher.widgettoolkit.theme.ThemeManager;
+import com.bitarcher.aeFun.widgetToolkit.theme.ThemeManager;
 
 
 import org.andengine.engine.Engine;

@@ -9,10 +9,10 @@ package com.bitarcher.abc.tests;
 
 import com.bitarcher.abc.ResourceManagerSingleton;
 import com.bitarcher.interfaces.gui.theme.ITheme;
-import com.bitarcher.resourcemanagement.ResourceManager;
+import ResourceManager;
 import com.bitarcher.scenemanagement.ApplyingSceneManager;
-import com.bitarcher.widgettoolkit.theme.DefaultTheme;
-import com.bitarcher.widgettoolkit.theme.ThemeManager;
+import DefaultTheme;
+import ThemeManager;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.options.EngineOptions;

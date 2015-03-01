@@ -90,7 +90,7 @@
     <orderEntry type="library" exported="" name="ormlite-core-4.48" level="project" />
     <orderEntry type="module" module-name="abcBllOrm" exported="" />
     <orderEntry type="module" module-name="abcBllXmlRoLevels" exported="" />
-    <orderEntry type="module" module-name="resourceManagement" exported="" />
+    <orderEntry type="module" module-name="aeFunResourceManagement" exported="" />
     <orderEntry type="module" module-name="andEngineSVGTextureRegionExtension" exported="" />
     <orderEntry type="module" module-name="abcBllXmlRoResources" exported="" />
     <orderEntry type="module" module-name="widgetToolKit" exported="" />

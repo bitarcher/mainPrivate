@@ -7,11 +7,11 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.aeFun.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.resourcemanagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
-import com.bitarcher.resourcemanagement.ResourcesInfos.MusicResourceInfo;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.MusicResourceInfo;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
 import com.bitarcher.scenemanagement.ManagedMenuScene;
-import com.bitarcher.widgettoolkit.widget.TextButton;
+import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 import org.andengine.audio.music.Music;
 import org.andengine.entity.sprite.Sprite;

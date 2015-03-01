@@ -4,10 +4,10 @@ import com.bitarcher.aeFun.interfaces.mvc.IImagedAndLabeled;
 import com.bitarcher.aeFun.interfaces.mvc.ILabeledListener;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
-import com.bitarcher.resourcemanagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
 import com.bitarcher.scenemanagement.ManagedGameScene;
-import com.bitarcher.widgettoolkit.widget.ScrollingMenu;
+import com.bitarcher.aeFun.widgetToolkit.widget.ScrollingMenu;
 
 public class GameLevel extends ManagedGameScene {
 
