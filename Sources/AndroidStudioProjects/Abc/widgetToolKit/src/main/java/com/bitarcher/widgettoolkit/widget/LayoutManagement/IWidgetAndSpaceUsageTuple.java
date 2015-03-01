@@ -1,4 +1,4 @@
-package com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement;
+package com.bitarcher.widgettoolkit.widget.LayoutManagement;
 
 /*
  * Copyright (c) 2015.
@@ -7,6 +7,7 @@ package com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement;
  */
 
 import com.bitarcher.interfacesOpenSource.gui.widgets.IWidget;
+import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.ISpaceUsage;
 
 public interface IWidgetAndSpaceUsageTuple {
     IWidget getWidget();

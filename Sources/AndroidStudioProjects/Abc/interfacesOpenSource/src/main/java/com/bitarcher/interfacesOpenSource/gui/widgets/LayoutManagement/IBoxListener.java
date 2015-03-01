@@ -10,5 +10,5 @@ package com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement;
  * Created by michel on 28/02/15.
  */
 public interface IBoxListener {
-    void onSpaceChanged(IBox box, int space);
+    void onBoxChildrenPositionRecomputed(IBox box);
 }

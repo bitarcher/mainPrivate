@@ -25,6 +25,7 @@ public abstract class Widget extends Entity implements IWidget {
     protected ArrayList<IWidgetListener> widgetListenerArrayList = new ArrayList<>();
     private boolean enabled = true;
     private float padding = 0f;
+
     private float originalWidth;
     private float originalHeight;
 
@@ -37,6 +38,16 @@ public abstract class Widget extends Entity implements IWidget {
     protected float getOriginalHeight() {
         return originalHeight;
     }
+
+
+    protected void setOriginalWidth(float originalWidth) {
+        this.originalWidth = originalWidth;
+    }
+
+    protected void setOriginalHeight(float originalHeight) {
+        this.originalHeight = originalHeight;
+    }
+
 
     @Override
     public float getPadding() {

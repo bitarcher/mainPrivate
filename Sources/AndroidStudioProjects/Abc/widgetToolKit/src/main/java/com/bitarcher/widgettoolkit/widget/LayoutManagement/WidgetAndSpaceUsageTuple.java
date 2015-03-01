@@ -8,7 +8,6 @@ package com.bitarcher.widgettoolkit.widget.LayoutManagement;
 
 import com.bitarcher.interfacesOpenSource.gui.widgets.IWidget;
 import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.ISpaceUsage;
-import com.bitarcher.interfacesOpenSource.gui.widgets.LayoutManagement.IWidgetAndSpaceUsageTuple;
 
 /**
  * Created by michel on 01/03/15.
