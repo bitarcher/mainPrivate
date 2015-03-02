@@ -4,7 +4,7 @@
  * bitarcher.com
  */
 
-package com.bitarcher.scenemanagement;
+package com.bitarcher.aeFun.sceneManagement;
 
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IHUD;
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;

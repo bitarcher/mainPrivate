@@ -13,7 +13,8 @@ import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ISceneManagerConfigurator;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourceManager;
-import com.bitarcher.scenemanagement.SceneManagedActivity;
+
+import com.bitarcher.aeFun.sceneManagement.SceneManagedActivity;
 import com.bitarcher.aeFun.widgetToolkit.theme.DefaultTheme;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 

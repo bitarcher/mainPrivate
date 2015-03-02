@@ -1,4 +1,4 @@
-package com.bitarcher.scenemanagement;
+package com.bitarcher.aeFun.sceneManagement;
 
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
@@ -25,8 +25,8 @@ public abstract class ManagedGameScene extends ManagedScene {
 		this.setTouchAreaBindingOnActionMoveEnabled(true);
 		// Scale the Game Scenes according to the Camera's scale factor.
 		//this.setScale(this.sceneManager.getResourceManager().getCameraScaleX(), this.sceneManager.getResourceManager().getCameraScaleY());
-		this.setPosition(0, this.sceneManager.getResourceManager().getCameraHeight()/2f);
-		GameHud.setScaleCenter(0f, 0f);
+		//this.setPosition(0, this.sceneManager.getResourceManager().getCameraHeight()/2f);
+		//GameHud.setScaleCenter(0f, 0f);
 		//GameHud.setScale(this.sceneManager.getResourceManager().getCameraScaleX(), this.sceneManager.getResourceManager().getCameraScaleY());
 	}
 	

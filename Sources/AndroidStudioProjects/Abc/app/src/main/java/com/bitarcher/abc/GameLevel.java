@@ -1,13 +1,15 @@
 package com.bitarcher.abc;
 
-import com.bitarcher.aeFun.interfaces.mvc.IImagedAndLabeled;
-import com.bitarcher.aeFun.interfaces.mvc.ILabeledListener;
-import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
-import com.bitarcher.scenemanagement.ManagedGameScene;
-import com.bitarcher.aeFun.widgetToolkit.widget.ScrollingMenu;
+import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
+import com.bitarcher.aeFun.sceneManagement.ManagedScene;
+import com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement.HBox;
+import com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement.PercentSpaceUsage;
+import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
+
 
 public class GameLevel extends ManagedGameScene {
 
@@ -15,7 +17,7 @@ public class GameLevel extends ManagedGameScene {
 
     public GameLevel(ITSceneManager sceneManager) {
 
-        super(sceneManager);
+        super(sceneManager, 0);
 
         int width = 240,height = 240;
         animalsTexturesSet.addOneTexture(new OneAssetSvgTexture("abeille", "abeille.svg", width, height));
@@ -24,8 +26,35 @@ public class GameLevel extends ManagedGameScene {
         animalsTexturesSet.addOneTexture(new OneAssetSvgTexture("éléphant", "elephant.svg", width, height));
     }
 
+    // BEGIN since Managed scene
+/*
+    @Override
+    public IScene onLoadingScreenLoadAndShown() {
+        return null;
+    }
+
+    @Override
+    public void onLoadingScreenUnloadAndHidden() {
+
+    }
+
+    @Override
+    public void onUnloadScene() {
+
+    }
+
+    @Override
+    public void onShowScene() {
+
+    }
 
 
+    @Override
+    public void onHideScene() {
+
+    }
+*/
+    // END since Managed scene
 
     @Override
     public void onLoadManagedScene() {
@@ -43,22 +72,27 @@ public class GameLevel extends ManagedGameScene {
 
     @Override
 	public void onLoadScene() {
+
 		super.onLoadScene();
+
+
 		/*Rectangle rectangle = new Rectangle(0f,0f,120f,120f, this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());
 		rectangle.setPosition(MathUtils.random(0f + rectangle.getWidth(), (800f - rectangle.getWidth())), MathUtils.random((-240f+rectangle.getHeight()),(240f-rectangle.getHeight())));
 		this.attachChild(rectangle);*/
 
-        int padding = 40;
-        //float cw = this.getSceneManager().getResourceManager().getCameraWidth() - padding;
-        //float ch = this.getSceneManager().getResourceManager().getCameraHeight() - padding;
+        int margin = 10;
+        //float cw = this.getSceneManager().getResourceManager().getCameraWidth() - margin;
+        //float ch = this.getSceneManager().getResourceManager().getCameraHeight() - margin;
 
-        float cw = this.getSceneManager().getResourceManager().getCameraWidth() - padding;
-        float ch = this.getSceneManager().getResourceManager().getCameraHeight() - padding;
+        float w = this.getSceneManager().getResourceManager().getCameraWidth();
+        float h = this.getSceneManager().getResourceManager().getCameraHeight();
+        float cw = w - 2* margin;
+        float ch = h - 2*margin;
 
-
+        /*
 
         ScrollingMenu scrollingMenu = new ScrollingMenu(this.getSceneManager().getTheme(),
-                cw / 2 + (padding / 2),
+                cw / 2 + (margin / 2),
                 0,
                 cw, ch);
 
@@ -93,5 +127,21 @@ public class GameLevel extends ManagedGameScene {
         }
 
         this.attachChild(scrollingMenu);
+        */
+
+        HBox hbox = new HBox(this.getSceneManager().getTheme(),
+                w / 2,
+                h / 2,
+                cw, ch);
+        /*
+        HBox hbox = new HBox(this.getSceneManager().getTheme(),
+                cw / 2 + (margin / 2),
+                0,
+                cw, ch);
+        */
+        //hbox.packStart(new TextButton(this.getSceneManager().getTheme(), 0, 0, 100, 100, "hello"), new PercentSpaceUsage(0, 100f));
+        //hbox.packStart(new TextButton(this.getSceneManager().getTheme(), 0, 0, 100, 100, "hello 2"), new PercentSpaceUsage(0, 100f));
+
+        this.attachChild(hbox);
 	}
 }

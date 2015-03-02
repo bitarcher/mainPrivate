@@ -10,7 +10,8 @@ import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.MusicResourceInfo;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
-import com.bitarcher.scenemanagement.ManagedMenuScene;
+
+import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 import org.andengine.audio.music.Music;

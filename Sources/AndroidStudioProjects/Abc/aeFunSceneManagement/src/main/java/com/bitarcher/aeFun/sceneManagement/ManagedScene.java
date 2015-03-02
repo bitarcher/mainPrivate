@@ -1,4 +1,4 @@
-package com.bitarcher.scenemanagement;
+package com.bitarcher.aeFun.sceneManagement;
 
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedScene;
