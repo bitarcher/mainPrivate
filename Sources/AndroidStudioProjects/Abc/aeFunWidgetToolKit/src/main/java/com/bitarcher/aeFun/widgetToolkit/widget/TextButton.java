@@ -88,8 +88,8 @@ public class TextButton extends  Button implements ITextButton {
     protected void onSizeChanged() {
         super.onSizeChanged();
 
-
         this.setButtonSpriteWidthAndHeight();
+        this.text.setScale(this.getOriginalWidth() / this.getWidth(), this.getOriginalHeight() / this.getHeight());
     }
 
 

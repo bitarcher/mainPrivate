@@ -27,6 +27,7 @@ import java.util.ArrayList;
  */
 public class Box extends Widget implements IBox {
 
+    boolean shouldFixedSpaceUsageBeResizedOnResize;
     ArrayList<IBoxListener> boxListenerArrayList = new ArrayList<>();
     SmartList<WidgetAndSpaceUsageTupleForBox> widgetAndSpaceUsageTupleForBoxes = new SmartList<>();
 
@@ -45,6 +46,16 @@ public class Box extends Widget implements IBox {
         }
 
         return retval;
+    }
+
+    @Override
+    public boolean isShouldFixedSpaceUsageBeResizedOnResize() {
+        return shouldFixedSpaceUsageBeResizedOnResize;
+    }
+
+    @Override
+    public void setShouldFixedSpaceUsageBeResizedOnResize(boolean shouldFixedSpaceUsageBeResizedOnResize) {
+        this.shouldFixedSpaceUsageBeResizedOnResize = shouldFixedSpaceUsageBeResizedOnResize;
     }
 
     @Override
@@ -89,7 +100,7 @@ public class Box extends Widget implements IBox {
     void recomputeWidgetsSizeAndPositions()
     {
         ArrayList< WidgetAndSpaceUsageTupleForBox> fixedList = new ArrayList<>();
-        ArrayList<WidgetAndSpaceUsageTuple> percentList = new ArrayList<>();
+        ArrayList<WidgetAndSpaceUsageTupleForBox> percentList = new ArrayList<>();
         float percentListTotal = 0;
         float fixedListTotal = 0;
 
@@ -119,12 +130,11 @@ public class Box extends Widget implements IBox {
         float variableScalar = 0;
 
 
-        boolean needsPercentWidgetToBeConsidered = true;
+
 
         if(this.getOrientation() == EnumOrientation.Horizontal)
         {
             variableScalar = this.getOriginalWidth();
-
         }
         else
         {
@@ -132,18 +142,39 @@ public class Box extends Widget implements IBox {
         }
 
         variableScalarMinusTwoPadding = variableScalar - 2 * this.getPadding();
+        float scalarThatCanBeSharedByPercents = variableScalarMinusTwoPadding - fixedListTotal;
+
+        if(scalarThatCanBeSharedByPercents < 0)
+            scalarThatCanBeSharedByPercents = 0;
+
+        boolean needsPercentWidgetToBeConsidered = true;
         needsPercentWidgetToBeConsidered = fixedListTotal < variableScalarMinusTwoPadding;
 
-        if(needsPercentWidgetToBeConsidered)
+
+
+        for(WidgetAndSpaceUsageTupleForBox tuple : percentList)
+        {
+            IPercentSpaceUsage percentSpaceUsage = (IPercentSpaceUsage) tuple.getSpaceUsage();
+            float scalar = scalarThatCanBeSharedByPercents * (percentSpaceUsage.getPercentSpaceUsage() / percentListTotal);
+
+            tuple.setScalar(scalar);
+        }
+
+        if(this.isShouldFixedSpaceUsageBeResizedOnResize())
         {
 
         }
-        else
-        {
-            // !needsPercentWidgetToBeConsidered
+        else {
+            float consumedScalar = 0;
 
+            for (WidgetAndSpaceUsageTupleForBox tuple : fixedList) {
+                IPercentSpaceUsage percentSpaceUsage = (IPercentSpaceUsage) tuple.getSpaceUsage();
+                float scalar = scalarThatCanBeSharedByPercents * (percentSpaceUsage.getPercentSpaceUsage() / percentListTotal);
 
+                tuple.setScalar(scalar);
+            }
         }
+
 
         for(IBoxListener boxListener : this.boxListenerArrayList)
         {

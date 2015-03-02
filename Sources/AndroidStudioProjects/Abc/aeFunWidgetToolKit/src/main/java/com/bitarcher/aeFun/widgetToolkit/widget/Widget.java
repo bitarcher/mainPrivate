@@ -8,6 +8,7 @@ import com.bitarcher.aeFun.widgetToolkit.widget.Tools.WidgetManagerSingleton;
 
 import org.andengine.entity.Entity;
 import org.andengine.entity.IEntity;
+import org.andengine.entity.clip.ClipEntity;
 import org.andengine.entity.primitive.Rectangle;
 import org.andengine.util.adt.color.Color;
 
@@ -18,7 +19,7 @@ import java.util.ArrayList;
  * Michel Strasser
  * bitarcher.com
  */
-public abstract class Widget extends Entity implements IWidget {
+public abstract class Widget extends ClipEntity implements IWidget {
 
     private ITheme theme;
     private boolean areResourcesLoaded = false;
@@ -28,6 +29,7 @@ public abstract class Widget extends Entity implements IWidget {
 
     private float originalWidth;
     private float originalHeight;
+
 
     Rectangle debugRectangle;
 
@@ -48,6 +50,22 @@ public abstract class Widget extends Entity implements IWidget {
         this.originalHeight = originalHeight;
     }
 
+
+    protected boolean isRecursivelyEnabled()
+    {
+        boolean retval = this.enabled;
+
+        IEntity parent =this.getParent();
+        if(parent != null)
+        {
+            if(parent instanceof Widget)
+            {
+                retval &= ((Widget)parent).isRecursivelyEnabled();
+            }
+        }
+
+        return retval;
+    }
 
     @Override
     public float getPadding() {
@@ -174,12 +192,12 @@ public abstract class Widget extends Entity implements IWidget {
 
         WidgetManagerSingleton.getInstance().refWidget(this);
         this.configureDebugMode(WidgetManagerSingleton.getInstance().isDebugModeEnabled());
-
     }
 
     private void configureDebugMode(boolean debugModeEnabled)
     {
         this.debugRectangle.setVisible(debugModeEnabled);
+        this.setClippingEnabled(!debugModeEnabled);
     }
 
     @Override

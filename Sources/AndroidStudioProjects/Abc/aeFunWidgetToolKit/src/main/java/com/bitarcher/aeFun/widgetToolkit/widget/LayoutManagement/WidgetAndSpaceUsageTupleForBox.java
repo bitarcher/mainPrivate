@@ -12,8 +12,18 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.ISpaceUsage;
 /**
  * Created by michel on 01/03/15.
  */
-public class WidgetAndSpaceUsageTupleForBox extends WidgetAndSpaceUsageTuple {
+class WidgetAndSpaceUsageTupleForBox extends WidgetAndSpaceUsageTuple {
+    float scalar;
+
     public WidgetAndSpaceUsageTupleForBox(IWidget widget, ISpaceUsage spaceUsage) {
         super(widget, spaceUsage);
+    }
+
+    public float getScalar() {
+        return scalar;
+    }
+
+    public void setScalar(float scalar) {
+        this.scalar = scalar;
     }
 }

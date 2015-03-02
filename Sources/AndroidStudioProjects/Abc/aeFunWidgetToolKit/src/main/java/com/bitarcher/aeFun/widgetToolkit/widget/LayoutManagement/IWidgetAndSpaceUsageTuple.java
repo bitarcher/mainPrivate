@@ -9,7 +9,7 @@ package com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.ISpaceUsage;
 
-public interface IWidgetAndSpaceUsageTuple {
+interface IWidgetAndSpaceUsageTuple {
     IWidget getWidget();
     ISpaceUsage getSpaceUsage();
 }
