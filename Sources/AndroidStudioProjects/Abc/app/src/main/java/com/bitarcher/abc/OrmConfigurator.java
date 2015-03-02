@@ -6,9 +6,9 @@
 
 package com.bitarcher.abc;
 
-import com.bitarcher.aeFun.bll.orm.abc.IConfigurator;
-import com.bitarcher.aeFun.bll.xml.abc.ro.levels.INode;
-import com.bitarcher.aeFun.bll.xml.abc.ro.resources.IAnimal;
+import com.bitarcher.interfaces.bll.orm.abc.IConfigurator;
+import com.bitarcher.interfaces.bll.xml.abc.ro.levels.INode;
+import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IAnimal;
 
 /**
  * Created by michel on 13/02/15.

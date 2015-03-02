@@ -1,8 +1,8 @@
 package com.bitarcher.abc.bll.xml.ro.resources;
 
-import com.bitarcher.aeFun.bll.xml.abc.ro.resources.IAnimal;
-import com.bitarcher.aeFun.bll.xml.abc.ro.resources.IDinosaur;
-import com.bitarcher.aeFun.bll.xml.abc.ro.resources.ILetter;
+import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IAnimal;
+import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IDinosaur;
+import com.bitarcher.interfaces.bll.xml.abc.ro.resources.ILetter;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

@@ -9,12 +9,12 @@ package com.bitarcher.abc;
 
 import com.bitarcher.abcbllorm.ConfigurationSingleton;
 import com.bitarcher.abcbllorm.DAL.DatabaseHelper;
-import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
-import com.bitarcher.aeFun.interfaces.sceneManagement.ISceneManagerConfigurator;
-import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.aeFun.resourceManagement.ResourceManager;
+import com.bitarcher.interfaces.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.interfaces.interfaces.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.interfaces.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.interfaces.resourceManagement.ResourceManager;
 import com.bitarcher.scenemanagement.SceneManagedActivity;
-import com.bitarcher.aeFun.widgetToolkit.theme.DefaultTheme;
+import com.bitarcher.interfaces.widgetToolkit.theme.DefaultTheme;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 
 
