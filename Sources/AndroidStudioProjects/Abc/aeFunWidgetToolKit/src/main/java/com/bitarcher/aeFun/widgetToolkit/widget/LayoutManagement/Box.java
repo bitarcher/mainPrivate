@@ -151,6 +151,7 @@ public class Box extends Widget implements IBox {
         needsPercentWidgetToBeConsidered = fixedListTotal < variableScalarMinusTwoPadding;
 
 
+        // set scalar (with margin)
 
         for(WidgetAndSpaceUsageTupleForBox tuple : percentList)
         {
@@ -160,21 +161,95 @@ public class Box extends Widget implements IBox {
             tuple.setScalar(scalar);
         }
 
-        if(this.isShouldFixedSpaceUsageBeResizedOnResize())
-        {
 
+        float consumedScalar = 0;
+
+        for (WidgetAndSpaceUsageTupleForBox tuple : fixedList) {
+            IFixedSpaceUsage fixedSpaceUsage = (IFixedSpaceUsage) tuple.getSpaceUsage();
+            float scalar = 0;
+            boolean shouldScalarBeSetToZero = false;
+
+            if(this.isShouldFixedSpaceUsageBeResizedOnResize())
+            {
+                if(needsPercentWidgetToBeConsidered)
+                {
+                    // we have enough space for fixed AND percent, so we use the fixed size
+
+                    scalar = fixedSpaceUsage.getFixedSpaceUsage();
+                }
+                else
+                {
+                    // we don't have enough space for fixed AND percent, so percent's scalars will be zero
+                    scalar = scalarThatCanBeSharedByPercents * (fixedSpaceUsage.getFixedSpaceUsage() / fixedListTotal);
+                }
+            }
+            else {
+                if(shouldScalarBeSetToZero)
+                {
+                    scalar = 0;
+                }
+                else {
+                    scalar = scalarThatCanBeSharedByPercents * (fixedSpaceUsage.getFixedSpaceUsage() / percentListTotal);
+
+                    if ((consumedScalar + scalar) > variableScalarMinusTwoPadding) {
+                        // this one will be reduced and consecutive will be set to zero
+                        scalar = consumedScalar + scalar - variableScalarMinusTwoPadding;
+                        shouldScalarBeSetToZero = true;
+                    }
+                }
+            }
+
+            consumedScalar += scalar;
+            tuple.setScalar(scalar);
         }
-        else {
-            float consumedScalar = 0;
 
-            for (WidgetAndSpaceUsageTupleForBox tuple : fixedList) {
-                IPercentSpaceUsage percentSpaceUsage = (IPercentSpaceUsage) tuple.getSpaceUsage();
-                float scalar = scalarThatCanBeSharedByPercents * (percentSpaceUsage.getPercentSpaceUsage() / percentListTotal);
+        // set position and size
 
-                tuple.setScalar(scalar);
+        float startX = (this.getWidth() / 2) - this.getPadding();
+        float startY = (this.getHeight() / 2) - this.getPadding();
+
+        float currentX = startX;
+        float currentY = startY;
+
+
+        if(this.getOrientation() == EnumOrientation.Horizontal)
+        {
+            float cy = this.getPadding();
+            float ch = this.getHeight() - 2 * this.getPadding();
+
+
+            for (WidgetAndSpaceUsageTupleForBox tuple:this.widgetAndSpaceUsageTupleForBoxes) {
+                float cx = currentX + tuple.getSpaceUsage().getMargin();
+                float cw = tuple.getScalarWithoutTwoMargin();
+
+                tuple.getWidget().setPosition(cx, cy);
+                tuple.getWidget().setSize(cw, ch);
+
+                currentX += tuple.getScalar();
             }
         }
+        else
+        {
+            // vertical
 
+            float cx = this.getPadding();
+            float cw = this.getWidth() - 2 * this.getPadding();
+
+
+            for (WidgetAndSpaceUsageTupleForBox tuple:this.widgetAndSpaceUsageTupleForBoxes) {
+                float cy = currentY + tuple.getSpaceUsage().getMargin();
+                float ch = tuple.getScalarWithoutTwoMargin();
+
+                tuple.getWidget().setPosition(cx, cy);
+                tuple.getWidget().setSize(cw, ch);
+
+                currentY += tuple.getScalar();
+            }
+
+        }
+
+
+        // raise recomputed
 
         for(IBoxListener boxListener : this.boxListenerArrayList)
         {

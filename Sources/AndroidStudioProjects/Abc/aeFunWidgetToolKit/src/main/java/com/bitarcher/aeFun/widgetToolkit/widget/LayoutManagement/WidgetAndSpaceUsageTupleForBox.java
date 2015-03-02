@@ -26,4 +26,16 @@ class WidgetAndSpaceUsageTupleForBox extends WidgetAndSpaceUsageTuple {
     public void setScalar(float scalar) {
         this.scalar = scalar;
     }
+
+    public float getScalarWithoutTwoMargin()
+    {
+        float retval = this.scalar - this.getSpaceUsage().getMargin();
+
+        if(retval < 0)
+        {
+            retval = 0;
+        }
+
+        return retval;
+    }
 }
