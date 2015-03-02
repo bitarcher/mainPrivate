@@ -14,14 +14,14 @@
             <option value="$PROJECT_DIR$/abcBllXmlRoResources" />
             <option value="$PROJECT_DIR$/aeFunInterfaces" />
             <option value="$PROJECT_DIR$/aeFunResourceManagement" />
+            <option value="$PROJECT_DIR$/aeFunSceneManagement" />
+            <option value="$PROJECT_DIR$/aeFunWidgetToolKit" />
             <option value="$PROJECT_DIR$/andEngine" />
             <option value="$PROJECT_DIR$/andEnginePhysicsBox2DExtension" />
             <option value="$PROJECT_DIR$/andEngineSVGTextureRegionExtension" />
             <option value="$PROJECT_DIR$/annotations" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/interfacesProtected" />
-            <option value="$PROJECT_DIR$/sceneManagement" />
-            <option value="$PROJECT_DIR$/widgetToolKit" />
           </set>
         </option>
       </GradleProjectSettings>

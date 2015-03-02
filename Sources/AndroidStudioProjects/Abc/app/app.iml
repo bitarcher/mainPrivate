@@ -90,15 +90,15 @@
     <orderEntry type="library" exported="" name="ormlite-core-4.48" level="project" />
     <orderEntry type="module" module-name="abcBllOrm" exported="" />
     <orderEntry type="module" module-name="abcBllXmlRoLevels" exported="" />
+    <orderEntry type="module" module-name="aeFunWidgetToolKit" exported="" />
     <orderEntry type="module" module-name="aeFunResourceManagement" exported="" />
     <orderEntry type="module" module-name="andEngineSVGTextureRegionExtension" exported="" />
     <orderEntry type="module" module-name="abcBllXmlRoResources" exported="" />
-    <orderEntry type="module" module-name="widgetToolKit" exported="" />
     <orderEntry type="module" module-name="andEnginePhysicsBox2DExtension" exported="" />
     <orderEntry type="module" module-name="andEngine" exported="" />
     <orderEntry type="module" module-name="aeFunInterfaces" exported="" />
-    <orderEntry type="module" module-name="sceneManagement" exported="" />
     <orderEntry type="module" module-name="interfacesProtected" exported="" />
+    <orderEntry type="module" module-name="aeFunSceneManagement" exported="" />
   </component>
 </module>
 

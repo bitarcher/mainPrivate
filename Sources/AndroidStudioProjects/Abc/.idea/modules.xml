@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/abcBllXmlRoResources/abcBllXmlRoResources.iml" filepath="$PROJECT_DIR$/abcBllXmlRoResources/abcBllXmlRoResources.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFunInterfaces/aeFunInterfaces.iml" filepath="$PROJECT_DIR$/aeFunInterfaces/aeFunInterfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFunResourceManagement/aeFunResourceManagement.iml" filepath="$PROJECT_DIR$/aeFunResourceManagement/aeFunResourceManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aeFunSceneManagement/aeFunSceneManagement.iml" filepath="$PROJECT_DIR$/aeFunSceneManagement/aeFunSceneManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aeFunWidgetToolKit/aeFunWidgetToolKit.iml" filepath="$PROJECT_DIR$/aeFunWidgetToolKit/aeFunWidgetToolKit.iml" />
       <module fileurl="file://$PROJECT_DIR$/andEngine/andEngine.iml" filepath="$PROJECT_DIR$/andEngine/andEngine.iml" />
       <module fileurl="file://$PROJECT_DIR$/andEnginePhysicsBox2DExtension/andEnginePhysicsBox2DExtension.iml" filepath="$PROJECT_DIR$/andEnginePhysicsBox2DExtension/andEnginePhysicsBox2DExtension.iml" />
       <module fileurl="file://$PROJECT_DIR$/andEngineSVGTextureRegionExtension/andEngineSVGTextureRegionExtension.iml" filepath="$PROJECT_DIR$/andEngineSVGTextureRegionExtension/andEngineSVGTextureRegionExtension.iml" />
@@ -15,7 +17,6 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/interfacesProtected/interfacesProtected.iml" filepath="$PROJECT_DIR$/interfacesProtected/interfacesProtected.iml" />
       <module fileurl="file://$PROJECT_DIR$/sceneManagement/sceneManagement.iml" filepath="$PROJECT_DIR$/sceneManagement/sceneManagement.iml" />
-      <module fileurl="file://$PROJECT_DIR$/widgetToolKit/widgetToolKit.iml" filepath="$PROJECT_DIR$/widgetToolKit/widgetToolKit.iml" />
     </modules>
   </component>
 </project>
