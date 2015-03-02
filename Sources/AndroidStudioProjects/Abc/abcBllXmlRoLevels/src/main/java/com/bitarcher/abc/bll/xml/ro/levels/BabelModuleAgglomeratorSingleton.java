@@ -1,7 +1,7 @@
 package com.bitarcher.abc.bll.xml.ro.levels;
 
-import com.bitarcher.interfaces.interfaces.globalization.babel.IBabelModuleAgglomeratorListener;
-import com.bitarcher.interfaces.interfaces.globalization.babel.IModuleAgglomerator;
+import com.bitarcher.aeFun.interfaces.globalization.babel.IBabelModuleAgglomeratorListener;
+import com.bitarcher.aeFun.interfaces.globalization.babel.IModuleAgglomerator;
 
 import java.util.ArrayList;
 import java.util.List;

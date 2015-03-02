@@ -8,7 +8,7 @@
 package com.bitarcher.abc.tests;
 
 import com.bitarcher.abc.ResourceManagerSingleton;
-import com.bitarcher.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.gui.theme.ITheme;
 import ResourceManager;
 import com.bitarcher.scenemanagement.ApplyingSceneManager;
 import DefaultTheme;

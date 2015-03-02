@@ -6,10 +6,10 @@
 
 package com.bitarcher.abc.tests;
 
-import com.bitarcher.interfaces.interfaces.gui.theme.ITheme;
-import com.bitarcher.interfaces.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.scenemanagement.ManagedGameScene;
-import com.bitarcher.interfaces.widgetToolkit.widget.TextButton;
+import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 import org.andengine.entity.scene.background.Background;
 

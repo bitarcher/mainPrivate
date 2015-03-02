@@ -9,12 +9,12 @@ package com.bitarcher.abc.tests;
 
 import com.bitarcher.abc.MainMenu;
 import com.bitarcher.abc.OptionsLayer;
-import com.bitarcher.interfaces.interfaces.gui.theme.IThemeManager;
-import com.bitarcher.interfaces.interfaces.sceneManagement.ISceneManagerConfigurator;
-import com.bitarcher.interfaces.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.interfaces.resourceManagement.ResourceManager;
+import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.resourceManagement.ResourceManager;
 import com.bitarcher.scenemanagement.SceneManagedActivity;
-import com.bitarcher.interfaces.widgetToolkit.theme.DefaultTheme;
+import com.bitarcher.aeFun.widgetToolkit.theme.DefaultTheme;
 
 
 public class TextButtonActivity extends SceneManagedActivity<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> {
