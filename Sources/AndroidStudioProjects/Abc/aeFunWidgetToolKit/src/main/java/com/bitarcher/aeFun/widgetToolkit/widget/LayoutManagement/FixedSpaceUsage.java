@@ -6,7 +6,7 @@ package com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IFixedSpaceUsage;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.IFixedSpaceUsage;
 
 /**
  * Created by michel on 02/03/15.

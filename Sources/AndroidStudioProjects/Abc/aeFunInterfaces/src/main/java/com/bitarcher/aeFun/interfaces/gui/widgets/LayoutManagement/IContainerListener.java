@@ -7,8 +7,8 @@ package com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement;
  */
 
 /**
- * Created by michel on 01/03/15.
+ * Created by michel on 03/03/15.
  */
-public interface IPercentSpaceUsage {
-    float getPercentSpaceUsage();
+public interface IContainerListener {
+    void onChildrenPositionRecomputed(IContainer container);
 }

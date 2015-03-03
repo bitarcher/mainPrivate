@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement;
+package com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other;
 
 /*
  * Copyright (c) 2015.

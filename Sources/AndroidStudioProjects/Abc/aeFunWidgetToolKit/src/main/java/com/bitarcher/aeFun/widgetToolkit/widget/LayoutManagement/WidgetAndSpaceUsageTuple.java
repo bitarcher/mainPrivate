@@ -7,7 +7,7 @@ package com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement;
  */
 
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.ISpaceUsage;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ISpaceUsage;
 
 /**
  * Created by michel on 01/03/15.

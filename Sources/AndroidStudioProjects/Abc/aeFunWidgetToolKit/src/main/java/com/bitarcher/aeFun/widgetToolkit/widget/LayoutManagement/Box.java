@@ -8,14 +8,14 @@ package com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.EnumOrientation;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.EnumOrientation;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IBox;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IBoxListener;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IFixedSpaceUsage;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IPercentSpaceUsage;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.ISpaceUsage;
+
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.IFixedSpaceUsage;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.IPercentSpaceUsage;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ISpaceUsage;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IVBox;
-import com.bitarcher.aeFun.widgetToolkit.widget.Widget;
+
 
 import org.andengine.util.IMatcher;
 import org.andengine.util.adt.list.SmartList;
@@ -25,16 +25,20 @@ import java.util.ArrayList;
 /**
  * Created by michel on 28/02/15.
  */
-public class Box extends Widget implements IBox {
+public class Box extends Container implements IBox {
 
     boolean shouldFixedSpaceUsageBeResizedOnResize;
-    ArrayList<IBoxListener> boxListenerArrayList = new ArrayList<>();
+
     SmartList<WidgetAndSpaceUsageTupleForBox> widgetAndSpaceUsageTupleForBoxes = new SmartList<>();
 
     protected Box(ITheme theme, float pX, float pY, float pWidth, float pHeight) {
         super(theme, pX, pY, pWidth, pHeight);
     }
 
+    @Override
+    protected void doAddWidget(IWidget widget) {
+        this.packStart(widget, new PercentSpaceUsage(0, 100f));
+    }
 
     @Override
     public EnumOrientation getOrientation() {
@@ -263,10 +267,7 @@ public class Box extends Widget implements IBox {
 
         // raise recomputed
 
-        for(IBoxListener boxListener : this.boxListenerArrayList)
-        {
-            boxListener.onBoxChildrenPositionRecomputed(this);
-        }
+        this.raiseChildrenPositionRecomputed();
     }
 
     @Override
@@ -284,16 +285,6 @@ public class Box extends Widget implements IBox {
     }
 
 
-    @Override
-    public void addBoxListener(IBoxListener boxListener) {
-        this.boxListenerArrayList.add(boxListener);
-    }
 
-    @Override
-    public void removeBoxListener(IBoxListener boxListener) {
-        this.boxListenerArrayList.remove(boxListener);
-
-        this.recomputeWidgetsSizeAndPositions();
-    }
 }
 
