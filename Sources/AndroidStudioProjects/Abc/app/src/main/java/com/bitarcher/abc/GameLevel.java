@@ -8,6 +8,7 @@ import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
 import com.bitarcher.aeFun.sceneManagement.ManagedScene;
 import com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement.HBox;
 import com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement.PercentSpaceUsage;
+import com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement.VBox;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 
@@ -129,19 +130,29 @@ public class GameLevel extends ManagedGameScene {
         this.attachChild(scrollingMenu);
         */
 
-        HBox hbox = new HBox(this.getSceneManager().getTheme(),
+
+        VBox hbox = new VBox(this.getSceneManager().getTheme(),
                 w / 2,
                 h / 2,
-                cw, ch);
-        /*
-        HBox hbox = new HBox(this.getSceneManager().getTheme(),
-                cw / 2 + (margin / 2),
-                0,
-                cw, ch);
-        */
-        //hbox.packStart(new TextButton(this.getSceneManager().getTheme(), 0, 0, 100, 100, "hello"), new PercentSpaceUsage(0, 100f));
-        //hbox.packStart(new TextButton(this.getSceneManager().getTheme(), 0, 0, 100, 100, "hello 2"), new PercentSpaceUsage(0, 100f));
+                800, 400);
+
+        TextButton tb1 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb1");
+        TextButton tb2 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb2");
+
+        hbox.packStart(tb1, new PercentSpaceUsage(40, 100f));
+
+        hbox.packStart(tb2, new PercentSpaceUsage(0, 100f));
+
 
         this.attachChild(hbox);
+        /*
+        TextButton tb1 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "hello");
+        //TextButton tb1 = new TextButton(this.getSceneManager().getTheme(), w/2, h/2, cw, ch, "hello");
+        tb1.setPosition(w / 2, h / 2);
+        tb1.setSize(cw, ch);
+        this.attachChild(tb1);
+        */
+
+
 	}
 }

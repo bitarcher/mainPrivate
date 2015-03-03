@@ -60,14 +60,27 @@ public class Box extends Widget implements IBox {
 
     @Override
     public void packStart(IWidget widget, ISpaceUsage spaceUsage) {
-        this.widgetAndSpaceUsageTupleForBoxes.addFirst(new WidgetAndSpaceUsageTupleForBox(widget, spaceUsage));
+        if(this.getOrientation() == EnumOrientation.Horizontal) {
+            this.widgetAndSpaceUsageTupleForBoxes.addLast(new WidgetAndSpaceUsageTupleForBox(widget, spaceUsage));
+        }
+        else
+        {
+            this.widgetAndSpaceUsageTupleForBoxes.addFirst(new WidgetAndSpaceUsageTupleForBox(widget, spaceUsage));
+        }
+        this.attachChild(widget);
 
         this.recomputeWidgetsSizeAndPositions();
     }
 
     @Override
     public void packEnd(IWidget widget, ISpaceUsage spaceUsage) {
-        this.widgetAndSpaceUsageTupleForBoxes.addLast(new WidgetAndSpaceUsageTupleForBox(widget, spaceUsage));
+        if(this.getOrientation() == EnumOrientation.Horizontal) {
+            this.widgetAndSpaceUsageTupleForBoxes.addFirst(new WidgetAndSpaceUsageTupleForBox(widget, spaceUsage));
+        }
+        else {
+            this.widgetAndSpaceUsageTupleForBoxes.addLast(new WidgetAndSpaceUsageTupleForBox(widget, spaceUsage));
+        }
+        this.attachChild(widget);
 
         this.recomputeWidgetsSizeAndPositions();
     }
@@ -87,6 +100,7 @@ public class Box extends Widget implements IBox {
         if(foundTuple != null)
         {
             this.widgetAndSpaceUsageTupleForBoxes.remove(foundTuple);
+            this.detachChild(foundTuple.getWidget());
             this.recomputeWidgetsSizeAndPositions();
         }
     }
@@ -205,25 +219,25 @@ public class Box extends Widget implements IBox {
 
         // set position and size
 
-        float startX = (this.getWidth() / 2) - this.getPadding();
-        float startY = (this.getHeight() / 2) - this.getPadding();
+        float startX = this.getPadding();
+        float startY = this.getPadding();
 
         float currentX = startX;
         float currentY = startY;
 
-
         if(this.getOrientation() == EnumOrientation.Horizontal)
         {
-            float cy = this.getPadding();
             float ch = this.getHeight() - 2 * this.getPadding();
-
+            float cy = this.getHeight() / 2;
 
             for (WidgetAndSpaceUsageTupleForBox tuple:this.widgetAndSpaceUsageTupleForBoxes) {
-                float cx = currentX + tuple.getSpaceUsage().getMargin();
                 float cw = tuple.getScalarWithoutTwoMargin();
+                float cx = currentX + tuple.getScalar()/2;
+
 
                 tuple.getWidget().setPosition(cx, cy);
                 tuple.getWidget().setSize(cw, ch);
+
 
                 currentX += tuple.getScalar();
             }
@@ -232,22 +246,20 @@ public class Box extends Widget implements IBox {
         {
             // vertical
 
-            float cx = this.getPadding();
             float cw = this.getWidth() - 2 * this.getPadding();
-
+            float cx = this.getWidth() / 2;
 
             for (WidgetAndSpaceUsageTupleForBox tuple:this.widgetAndSpaceUsageTupleForBoxes) {
-                float cy = currentY + tuple.getSpaceUsage().getMargin();
                 float ch = tuple.getScalarWithoutTwoMargin();
+                float cy = currentY + tuple.getScalar() /2;
+
 
                 tuple.getWidget().setPosition(cx, cy);
                 tuple.getWidget().setSize(cw, ch);
 
                 currentY += tuple.getScalar();
             }
-
         }
-
 
         // raise recomputed
 

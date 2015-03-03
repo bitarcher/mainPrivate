@@ -71,25 +71,27 @@ public class TextButton extends  Button implements ITextButton {
         this.attachChild(this.text);
     }
 
-    void setButtonSpriteWidthAndHeight()
+    void setTextAndButtonSpriteSizeAndPosition()
     {
         this.buttonSprite.setWidth(this.getWidth() - 2 * this.getPadding());
         this.buttonSprite.setHeight(this.getHeight() - 2 * this.getPadding());
+        this.buttonSprite.setPosition(this.getWidth() / 2, this.getHeight() / 2);
+        this.text.setPosition(this.getWidth() / 2, this.getHeight() / 2);
     }
 
     @Override
     protected void onPaddingChanged() {
         super.onPaddingChanged();
 
-        this.setButtonSpriteWidthAndHeight();
+        this.setTextAndButtonSpriteSizeAndPosition();
     }
 
     @Override
     protected void onSizeChanged() {
         super.onSizeChanged();
 
-        this.setButtonSpriteWidthAndHeight();
-        this.text.setScale(this.getOriginalWidth() / this.getWidth(), this.getOriginalHeight() / this.getHeight());
+        this.setTextAndButtonSpriteSizeAndPosition();
+        //this.text.setScale(this.getOriginalWidth() / this.getWidth(), this.getOriginalHeight() / this.getHeight());
     }
 
 

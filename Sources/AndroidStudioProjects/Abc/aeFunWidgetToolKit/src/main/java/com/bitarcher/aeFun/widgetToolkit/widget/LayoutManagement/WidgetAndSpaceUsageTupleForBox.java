@@ -29,7 +29,7 @@ class WidgetAndSpaceUsageTupleForBox extends WidgetAndSpaceUsageTuple {
 
     public float getScalarWithoutTwoMargin()
     {
-        float retval = this.scalar - this.getSpaceUsage().getMargin();
+        float retval = this.scalar - (this.getSpaceUsage().getMargin() * 2);
 
         if(retval < 0)
         {
