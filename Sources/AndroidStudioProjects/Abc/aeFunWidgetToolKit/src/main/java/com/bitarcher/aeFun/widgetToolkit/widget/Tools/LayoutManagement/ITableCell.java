@@ -10,8 +10,10 @@ package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
  * Created by michel on 04/03/15.
  */
 public interface ITableCell extends IPosition, ISize{
-    int getColumn();
-    int getRow();
+    int getColumnNum();
+    int getRowNum();
+    ITableColumn getColumn();
+    ITableRow getRow();
 
     // returns null if there is none actually
     IWidgetTableCellsConsumption getWidgetTableCellsConsumption();

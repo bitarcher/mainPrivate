@@ -10,10 +10,12 @@ package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
  * Created by michel on 04/03/15.
  */
 public class TableCell implements ITableCell{
-    int row;
-    int column;
+    int rowNum;
+    int columnNum;
     float x, y, width, height;
     IWidgetTableCellsConsumption widgetTableCellsConsumption = null;
+    ITableColumn column;
+    ITableRow row;
 
     @Override
     public IWidgetTableCellsConsumption getWidgetTableCellsConsumption() {
@@ -26,13 +28,13 @@ public class TableCell implements ITableCell{
     }
 
     @Override
-    public int getRow() {
-        return row;
+    public int getRowNum() {
+        return rowNum;
     }
 
     @Override
-    public int getColumn() {
-        return column;
+    public int getColumnNum() {
+        return columnNum;
     }
 
 
@@ -87,8 +89,20 @@ public class TableCell implements ITableCell{
         this.height = height;
     }
 
-    public TableCell(int row, int column) {
-        this.row = row;
+    public TableCell(int columnNum, int rowNum, ITableColumn column, ITableRow row) {
+        this.rowNum = rowNum;
+        this.columnNum = columnNum;
         this.column = column;
+        this.row = row;
+    }
+
+    @Override
+    public ITableColumn getColumn() {
+        return column;
+    }
+
+    @Override
+    public ITableRow getRow() {
+        return row;
     }
 }

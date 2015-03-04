@@ -52,7 +52,32 @@ public class Table extends Container implements ITable {
 
     @Override
     protected void doAddWidget(IWidget widget) {
-        // TODO
+        TableCell foundEmptyTableCell = null;
+
+        for(SmartList<TableCell> rowTableCell : tableCells)
+        {
+            for(TableCell tc : rowTableCell)
+            {
+                if(tc.getWidgetTableCellsConsumption() == null)
+                {
+                    foundEmptyTableCell = tc;
+                    break;
+                }
+            }
+
+            if(foundEmptyTableCell != null)
+            {
+                break;
+            }
+        }
+
+        if(foundEmptyTableCell != null)
+        {
+            WidgetTableCellConsumption widgetTableCellConsumption= new WidgetTableCellConsumption(widget, foundEmptyTableCell.getColumnNum(), foundEmptyTableCell.getRowNum(), 1, 1);
+            foundEmptyTableCell.setWidgetTableCellsConsumption(widgetTableCellConsumption);
+            this.widgetTableCellConsumptions.add(widgetTableCellConsumption);
+            this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellConsumption);
+        }
     }
 
     void _addColumn(ISpaceUsage spaceUsage) {
@@ -114,6 +139,8 @@ public class Table extends Container implements ITable {
         this.widgetTableCellConsumptions.add(widgetTableCellConsumption);
 
         this.entityAttachChild(widget);
+
+        this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellConsumption);
     }
 
     @Override
@@ -168,9 +195,11 @@ public class Table extends Container implements ITable {
 
             for(TableColumn tableColumn:this.tableColumns) {
 
-                TableCell tableCell = new TableCell(indexTableRow, indexTableColumn);
+                TableCell tableCell = new TableCell(indexTableColumn, indexTableRow, tableColumn, tableRow);
 
-                // TODO
+                currentRowTableCells.add(tableCell);
+
+                // TODO position and size
 
 
                 indexTableColumn++;
@@ -225,9 +254,17 @@ public class Table extends Container implements ITable {
 
     private void recomputeChildrenWidgetsSizeAndPosition()
     {
-        // TODO
+        for(WidgetTableCellConsumption widgetTableCellConsumption : this.widgetTableCellConsumptions)
+        {
+            this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellConsumption);
+        }
 
         this.raiseChildrenPositionRecomputed();
+    }
+
+    private void recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(WidgetTableCellConsumption widgetTableCellConsumption)
+    {
+        // TODO
     }
 
     @Override
