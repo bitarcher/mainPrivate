@@ -12,6 +12,8 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IContainer;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IContainerListener;
 import com.bitarcher.aeFun.widgetToolkit.widget.Widget;
 
+import org.andengine.entity.IEntity;
+
 import java.util.ArrayList;
 
 /**
@@ -28,6 +30,16 @@ public abstract class Container extends Widget implements IContainer {
     @Override
     public void attachChild(IWidget widget) {
         this.doAddWidget(widget);
+    }
+
+    protected void entityAttachChild(IEntity entity)
+    {
+        super.attachChild(entity);
+    }
+
+    protected void entityDetachChild(IEntity entity)
+    {
+        super.detachChild(entity);
     }
 
     abstract protected void doAddWidget(IWidget widget);

@@ -113,7 +113,7 @@ public class Table extends Container implements ITable {
         WidgetTableCellConsumption widgetTableCellConsumption = new WidgetTableCellConsumption(widget, left, right, columnsSpan, rowSpan);
         this.widgetTableCellConsumptions.add(widgetTableCellConsumption);
 
-        super.attachChild(widget);
+        this.entityAttachChild(widget);
     }
 
     @Override
@@ -131,7 +131,7 @@ public class Table extends Container implements ITable {
             }
         });
 
-        super.detachChild(widget);
+        this.entityDetachChild(widget);
     }
 
     @Override
@@ -182,23 +182,24 @@ public class Table extends Container implements ITable {
         this.setTableCellsWidgetReference();
     }
 
+    // precondition : all widget pointers of cells are set to empty
     void setTableCellsWidgetReference()
     {
         for(WidgetTableCellConsumption widgetTableCellConsumption:this.widgetTableCellConsumptions)
         {
+            for(int i = 0 ; i < widgetTableCellConsumption.getColumnSpan() ; i++)
+            {
+                int column = widgetTableCellConsumption.getLeft() + i;
 
+                for(int j = 0 ; j < widgetTableCellConsumption.getRowSpan(); j++)
+                {
+                    int row = widgetTableCellConsumption.getTop() + j;
+
+                    TableCell tableCell = this.getTableCell(column, row);
+                    tableCell.setWidgetTableCellsConsumption((widgetTableCellConsumption));
+                }
+            }
         }
-    }
-
-    @Override
-    public void attachChild(IEntity pEntity) {
-
-        super.attachChild(pEntity);
-    }
-
-    @Override
-    public boolean detachChild(IEntity pEntity) {
-        return super.detachChild(pEntity);
     }
 
     @Override

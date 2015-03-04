@@ -71,7 +71,7 @@ public class Box extends Container implements IBox {
         {
             this.widgetAndSpaceUsageTupleForBoxes.addFirst(new WidgetAndSpaceUsageTupleForBox(widget, spaceUsage));
         }
-        this.attachChild(widget);
+        this.entityAttachChild(widget);
 
         this.recomputeWidgetsSizeAndPositions();
     }
@@ -84,7 +84,7 @@ public class Box extends Container implements IBox {
         else {
             this.widgetAndSpaceUsageTupleForBoxes.addLast(new WidgetAndSpaceUsageTupleForBox(widget, spaceUsage));
         }
-        this.attachChild(widget);
+        this.entityAttachChild(widget);
 
         this.recomputeWidgetsSizeAndPositions();
     }
