@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement;
+package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
 
 /*
  * Copyright (c) 2015.
@@ -26,20 +26,20 @@ public abstract class Container extends Widget implements IContainer {
     }
 
     @Override
-    public void addWidget(IWidget widget) {
-
+    public void attachChild(IWidget widget) {
+        this.doAddWidget(widget);
     }
 
     abstract protected void doAddWidget(IWidget widget);
 
     @Override
     public void addContainerListener(IContainerListener containerListener) {
-
+        this.containerListenerArrayList.add(containerListener);
     }
 
     @Override
     public void removeContainerListener(IContainerListener containerListener) {
-
+        this.containerListenerArrayList.remove(containerListener);
     }
 
     protected void raiseChildrenPositionRecomputed()
@@ -50,3 +50,4 @@ public abstract class Container extends Widget implements IContainer {
         }
     }
 }
+

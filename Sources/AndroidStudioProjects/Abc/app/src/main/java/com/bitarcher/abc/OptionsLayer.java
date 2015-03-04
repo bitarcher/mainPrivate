@@ -55,7 +55,7 @@ public class OptionsLayer extends ManagedLayer implements IOptionsLayer
 	
 	@Override
 	public void onLoadLayer() {
-		// Create and attach a background that hides the Layer when touched.
+		// Create and attachChild a background that hides the Layer when touched.
 		final float BackgroundX = 0f, BackgroundY = 0f;
 		final float BackgroundWidth = 760f, BackgroundHeight = 440f;
 		Rectangle smth = new Rectangle(BackgroundX,BackgroundY,BackgroundWidth,BackgroundHeight, sceneManager.getResourceManager().getEngine().getVertexBufferObjectManager()) {

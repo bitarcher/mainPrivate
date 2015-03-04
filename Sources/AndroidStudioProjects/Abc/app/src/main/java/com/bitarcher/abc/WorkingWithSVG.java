@@ -138,17 +138,17 @@ public class WorkingWithSVG extends SimpleBaseGameActivity {
 		// Obtain the initial sprite's position
 		float currentSpritePosition = (WIDTH / ((SPRITE_SIZE) * SPRITE_COUNT)) + SPRITE_SIZE * 0.5f;
 		
-		// Create & attach the low-res sprite to the scene (left side)
+		// Create & attachChild the low-res sprite to the scene (left side)
 		Sprite lowResSprite = new Sprite(currentSpritePosition, HEIGHT / 2, SPRITE_SIZE, SPRITE_SIZE, mLowResTextureRegion, mEngine.getVertexBufferObjectManager());
 		mScene.attachChild(lowResSprite);
 
 		currentSpritePosition += SPRITE_SIZE;
-		// Create & attach the med-res sprite to the scene (mid)
+		// Create & attachChild the med-res sprite to the scene (mid)
 		Sprite medResSprite = new Sprite(currentSpritePosition, HEIGHT / 2, SPRITE_SIZE, SPRITE_SIZE, mMedResTextureRegion, mEngine.getVertexBufferObjectManager());
 		mScene.attachChild(medResSprite);
 		
 		currentSpritePosition += SPRITE_SIZE;
-		// Create & attach the high-res sprite to the scene (right side)
+		// Create & attachChild the high-res sprite to the scene (right side)
 		Sprite hiResSprite = new Sprite(currentSpritePosition, HEIGHT / 2, SPRITE_SIZE, SPRITE_SIZE, mHiResTextureRegion, mEngine.getVertexBufferObjectManager()){
 
 			// For added affect to show a true HD sprite, we'll enable dithering

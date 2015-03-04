@@ -8,7 +8,7 @@ import org.andengine.engine.camera.hud.HUD;
 import org.andengine.entity.text.Text;
 
 public abstract class ManagedGameScene extends ManagedScene {
-	// Create an easy to manage HUD that we can attach/detach when the game scene is shown or hidden.
+	// Create an easy to manage HUD that we can attachChild/detachChild when the game scene is shown or hidden.
 	public HUD GameHud = new HUD();
 	public ManagedGameScene thisManagedGameScene = this;
 	
@@ -46,7 +46,7 @@ public abstract class ManagedGameScene extends ManagedScene {
 
 	@Override
 	public void onLoadingScreenUnloadAndHidden() {
-		// detach the loading screen resources.
+		// detachChild the loading screen resources.
 		loadingText.detachSelf();
 		loadingText = null;
 		loadingScene = null;
@@ -121,7 +121,7 @@ public abstract class ManagedGameScene extends ManagedScene {
 	
 	@Override
 	public void onUnloadScene() {
-		// detach and unload the scene.
+		// detachChild and unload the scene.
         this.sceneManager.getResourceManager().getEngine().runOnUpdateThread(new Runnable() {
 			@Override
 			public void run() {

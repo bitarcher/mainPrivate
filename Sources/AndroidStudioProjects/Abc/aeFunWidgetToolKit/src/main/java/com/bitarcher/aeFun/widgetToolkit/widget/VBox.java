@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement;
+package com.bitarcher.aeFun.widgetToolkit.widget;
 
 /*
  * Copyright (c) 2015.
@@ -8,6 +8,7 @@ package com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IVBox;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.Box;
 
 /**
  * Created by michel on 01/03/15.

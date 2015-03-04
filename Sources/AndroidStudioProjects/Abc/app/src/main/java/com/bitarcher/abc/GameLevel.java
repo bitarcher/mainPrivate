@@ -1,14 +1,11 @@
 package com.bitarcher.abc;
 
-import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
 import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
-import com.bitarcher.aeFun.sceneManagement.ManagedScene;
-import com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement.HBox;
-import com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement.PercentSpaceUsage;
-import com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement.VBox;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.PercentSpaceUsage;
+import com.bitarcher.aeFun.widgetToolkit.widget.VBox;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 

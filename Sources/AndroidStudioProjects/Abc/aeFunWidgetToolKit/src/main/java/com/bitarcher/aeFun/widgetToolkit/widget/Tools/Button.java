@@ -1,8 +1,9 @@
-package com.bitarcher.aeFun.widgetToolkit.widget;
+package com.bitarcher.aeFun.widgetToolkit.widget.Tools;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
+import com.bitarcher.aeFun.widgetToolkit.widget.Widget;
 
 import java.util.ArrayList;
 

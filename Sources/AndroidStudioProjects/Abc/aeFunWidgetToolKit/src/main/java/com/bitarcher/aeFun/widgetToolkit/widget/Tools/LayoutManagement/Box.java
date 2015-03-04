@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement;
+package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
 
 /*
  * Copyright (c) 2015.
@@ -27,7 +27,7 @@ import java.util.ArrayList;
  */
 public class Box extends Container implements IBox {
 
-    boolean shouldFixedSpaceUsageBeResizedOnResize;
+    boolean shouldFixedSpaceUsageBeResizedOnResize = false;
 
     SmartList<WidgetAndSpaceUsageTupleForBox> widgetAndSpaceUsageTupleForBoxes = new SmartList<>();
 
@@ -117,109 +117,21 @@ public class Box extends Container implements IBox {
 
     void recomputeWidgetsSizeAndPositions()
     {
-        ArrayList< WidgetAndSpaceUsageTupleForBox> fixedList = new ArrayList<>();
-        ArrayList<WidgetAndSpaceUsageTupleForBox> percentList = new ArrayList<>();
-        float percentListTotal = 0;
-        float fixedListTotal = 0;
-
-        for(WidgetAndSpaceUsageTupleForBox widgetAndSpaceUsageTupleForBox: this.widgetAndSpaceUsageTupleForBoxes)
-        {
-            ISpaceUsage spaceUsage = widgetAndSpaceUsageTupleForBox.getSpaceUsage();
-
-            if(spaceUsage instanceof IPercentSpaceUsage)
-            {
-                IPercentSpaceUsage percentSpaceUsage = (IPercentSpaceUsage) spaceUsage;
-                percentList.add(widgetAndSpaceUsageTupleForBox);
-                percentListTotal+= percentSpaceUsage.getPercentSpaceUsage();
-            }
-            else if(spaceUsage instanceof IFixedSpaceUsage)
-            {
-                IFixedSpaceUsage fixedSpaceUsage = (IFixedSpaceUsage)spaceUsage;
-                fixedList.add(widgetAndSpaceUsageTupleForBox);
-                fixedListTotal+=fixedSpaceUsage.getFixedSpaceUsage();
-            }
-            else
-            {
-                throw new RuntimeException("unsupported spaceUsage");
-            }
-        }
-
-        float variableScalarMinusTwoPadding = 0;
-        float variableScalar = 0;
-
-
-
+        float availableSpace = 0;
 
         if(this.getOrientation() == EnumOrientation.Horizontal)
         {
-            variableScalar = this.getOriginalWidth();
+            availableSpace = this.getOriginalWidth();
         }
         else
         {
-            variableScalar =  this.getOriginalHeight();
+            availableSpace =  this.getOriginalHeight();
         }
 
-        variableScalarMinusTwoPadding = variableScalar - 2 * this.getPadding();
-        float scalarThatCanBeSharedByPercents = variableScalarMinusTwoPadding - fixedListTotal;
+        ScalarComputer scalarComputer = new ScalarComputer();
 
-        if(scalarThatCanBeSharedByPercents < 0)
-            scalarThatCanBeSharedByPercents = 0;
+        scalarComputer.compute(this.widgetAndSpaceUsageTupleForBoxes, availableSpace, this.getPadding(), this.isShouldFixedSpaceUsageBeResizedOnResize());
 
-        boolean needsPercentWidgetToBeConsidered = true;
-        needsPercentWidgetToBeConsidered = fixedListTotal < variableScalarMinusTwoPadding;
-
-
-        // set scalar (with margin)
-
-        for(WidgetAndSpaceUsageTupleForBox tuple : percentList)
-        {
-            IPercentSpaceUsage percentSpaceUsage = (IPercentSpaceUsage) tuple.getSpaceUsage();
-            float scalar = scalarThatCanBeSharedByPercents * (percentSpaceUsage.getPercentSpaceUsage() / percentListTotal);
-
-            tuple.setScalar(scalar);
-        }
-
-
-        float consumedScalar = 0;
-
-        for (WidgetAndSpaceUsageTupleForBox tuple : fixedList) {
-            IFixedSpaceUsage fixedSpaceUsage = (IFixedSpaceUsage) tuple.getSpaceUsage();
-            float scalar = 0;
-            boolean shouldScalarBeSetToZero = false;
-
-            if(this.isShouldFixedSpaceUsageBeResizedOnResize())
-            {
-                if(needsPercentWidgetToBeConsidered)
-                {
-                    // we have enough space for fixed AND percent, so we use the fixed size
-
-                    scalar = fixedSpaceUsage.getFixedSpaceUsage();
-                }
-                else
-                {
-                    // we don't have enough space for fixed AND percent, so percent's scalars will be zero
-                    scalar = scalarThatCanBeSharedByPercents * (fixedSpaceUsage.getFixedSpaceUsage() / fixedListTotal);
-                }
-            }
-            else {
-                if(shouldScalarBeSetToZero)
-                {
-                    scalar = 0;
-                }
-                else {
-                    scalar = scalarThatCanBeSharedByPercents * (fixedSpaceUsage.getFixedSpaceUsage() / percentListTotal);
-
-                    if ((consumedScalar + scalar) > variableScalarMinusTwoPadding) {
-                        // this one will be reduced and consecutive will be set to zero
-                        scalar = consumedScalar + scalar - variableScalarMinusTwoPadding;
-                        shouldScalarBeSetToZero = true;
-                    }
-                }
-            }
-
-            consumedScalar += scalar;
-            tuple.setScalar(scalar);
-        }
 
         // set position and size
 

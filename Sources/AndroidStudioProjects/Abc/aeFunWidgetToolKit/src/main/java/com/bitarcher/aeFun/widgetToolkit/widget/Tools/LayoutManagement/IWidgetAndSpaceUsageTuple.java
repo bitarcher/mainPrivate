@@ -1,0 +1,15 @@
+package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
+
+/*
+ * Copyright (c) 2015.
+ * Michel Strasser
+ * bitarcher.com
+ */
+
+import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ISpaceUsage;
+
+interface IWidgetAndSpaceUsageTuple {
+    IWidget getWidget();
+    ISpaceUsage getSpaceUsage();
+}

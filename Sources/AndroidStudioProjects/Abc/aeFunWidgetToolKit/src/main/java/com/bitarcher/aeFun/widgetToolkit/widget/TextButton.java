@@ -7,6 +7,7 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButtonListener;
 import com.bitarcher.aeFun.interfaces.mvc.ILabeledListener;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Button;
 
 import org.andengine.engine.Engine;
 import org.andengine.entity.scene.Scene;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 /**
  * Created by michel on 22/01/15.
  */
-public class TextButton extends  Button implements ITextButton {
+public class TextButton extends Button implements ITextButton {
     protected String translatedLabel;
     ArrayList<ITextButtonListener> textButtonListenerArrayList = new ArrayList<>();
     ArrayList<ILabeledListener> labeledListenerArrayList = new ArrayList<>();
@@ -91,7 +92,6 @@ public class TextButton extends  Button implements ITextButton {
         super.onSizeChanged();
 
         this.setTextAndButtonSpriteSizeAndPosition();
-        //this.text.setScale(this.getOriginalWidth() / this.getWidth(), this.getOriginalHeight() / this.getHeight());
     }
 
 
@@ -103,7 +103,6 @@ public class TextButton extends  Button implements ITextButton {
             {
                 buttonListener.onClicked(this);
             }
-
 
             this.onClicked();
         }
@@ -197,6 +196,4 @@ public class TextButton extends  Button implements ITextButton {
 
         this.buttonSprite.setEnabled(enabled);
     }
-
-
 }

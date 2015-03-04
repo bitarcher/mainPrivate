@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.widgetToolkit.widget.LayoutManagement;
+package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
 
 /*
  * Copyright (c) 2015.
@@ -12,21 +12,24 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ISpaceU
 /**
  * Created by michel on 01/03/15.
  */
-class WidgetAndSpaceUsageTupleForBox extends WidgetAndSpaceUsageTuple {
+class WidgetAndSpaceUsageTupleForBox extends WidgetAndSpaceUsageTuple  implements ISpaceUsageOwnerAndScalar {
     float scalar;
 
     public WidgetAndSpaceUsageTupleForBox(IWidget widget, ISpaceUsage spaceUsage) {
         super(widget, spaceUsage);
     }
 
+    @Override
     public float getScalar() {
         return scalar;
     }
 
+    @Override
     public void setScalar(float scalar) {
         this.scalar = scalar;
     }
 
+    @Override
     public float getScalarWithoutTwoMargin()
     {
         float retval = this.scalar - (this.getSpaceUsage().getMargin() * 2);
