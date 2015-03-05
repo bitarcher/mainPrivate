@@ -252,7 +252,7 @@ public class Table extends Container implements ITable {
 
         int indexTableRow = 0;
         float startX = this.getPadding();
-        float startY = this.getPadding();
+        float startY = this.getHeight() - this.getPadding();
 
 
         float currentY = startY;
@@ -266,7 +266,7 @@ public class Table extends Container implements ITable {
             SmartList<TableCell> currentRowTableCells = new SmartList<>();
             this.tableCells.add(currentRowTableCells);
             float ch = tableRow.getScalarWithoutTwoMargin();
-            float cy = currentY;
+            float cy = currentY + tableRow.getSpaceUsage().getMargin();
 
             for(TableColumn tableColumn:this.tableColumns) {
 
@@ -275,7 +275,7 @@ public class Table extends Container implements ITable {
                 currentRowTableCells.add(tableCell);
 
                 float cw = tableColumn.getScalarWithoutTwoMargin();
-                float cx = currentX;
+                float cx = currentX + tableColumn.getSpaceUsage().getMargin();
 
                 tableCell.setPosition(cx, cy);
                 tableCell.setSize(cw, ch);
@@ -284,7 +284,7 @@ public class Table extends Container implements ITable {
                 indexTableColumn++;
             }
 
-            currentY += tableRow.getScalar();
+            currentY -= tableRow.getScalar();
             indexTableRow++;
         }
 
@@ -327,7 +327,7 @@ public class Table extends Container implements ITable {
     {
         TableCell retval = null;
 
-        retval = this.tableCells.get(this.getNumOfRows() - row - 1).get(column);
+        retval = this.tableCells.get(row).get(column);
 
         return retval;
     }
@@ -350,7 +350,7 @@ public class Table extends Container implements ITable {
         float startX = leftTopCell.getX();
         float startY = leftTopCell.getY();
         float endX = rightBottomCell.getX() + rightBottomCell.getWidth();
-        float endY = rightBottomCell.getY() + rightBottomCell.getHeight();
+        float endY = rightBottomCell.getY() - rightBottomCell.getHeight();
         float width = endX - startX;
         float height = endY - startY;
 

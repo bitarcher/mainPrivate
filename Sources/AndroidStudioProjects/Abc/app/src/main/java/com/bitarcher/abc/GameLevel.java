@@ -168,9 +168,9 @@ public class GameLevel extends ManagedGameScene {
 
         //container.addHomogeneousColumnsAndRows(3, 3, 5);
 
-        container.addColumn(new PercentSpaceUsage(0, 100));
-        container.addColumn(new PercentSpaceUsage(0, 200));
-        container.addColumn(new PercentSpaceUsage(0, 300));
+        container.addColumn(new PercentSpaceUsage(10, 100));
+        container.addColumn(new PercentSpaceUsage(10, 200));
+        container.addColumn(new PercentSpaceUsage(10, 300));
 
         container.addRow(new PercentSpaceUsage(0, 100));
         container.addRow(new PercentSpaceUsage(0, 200));
