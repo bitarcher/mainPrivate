@@ -25,8 +25,8 @@ public interface ITable extends IContainer, IOriginalWidthAndHeightResetable, IS
     int getNumOfRows();
 
     // https://developer.gnome.org/gtk3/stable/GtkGrid.html#gtk-grid-attachChild
-    void attachChild(IWidget widget, int left, int right, int columnsSpan, int rowSpan);
-    void attachChild(IWidget widget, int left, int right);
+    void attachChild(IWidget widget, int left, int top, int columnsSpan, int rowSpan);
+    void attachChild(IWidget widget, int left, int top);
 
     void detachChild(IWidget widget);
 

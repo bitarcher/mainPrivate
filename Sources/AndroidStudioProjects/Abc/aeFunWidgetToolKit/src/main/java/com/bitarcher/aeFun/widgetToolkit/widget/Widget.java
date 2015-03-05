@@ -137,14 +137,14 @@ public abstract class Widget extends ClipEntity implements IWidget {
     {
         Color retval;
 
-        int hashCode = this.hashCode();
+        int hashC = this.hashCode();
 
         int[] somePrimeNumbers = new int[]{97, 317, 829};
         int[] modulos = new int[somePrimeNumbers.length];
 
         for(int i =0; i < somePrimeNumbers.length ; i++)
         {
-            modulos[i] = hashCode % somePrimeNumbers[i];
+            modulos[i] = hashC % somePrimeNumbers[i];
         }
 
         float[] fVars = new float[3];
@@ -323,4 +323,6 @@ public abstract class Widget extends ClipEntity implements IWidget {
             this.sortChildren();
         }
     }
+
+
 }

@@ -61,5 +61,13 @@ public abstract class Container extends Widget implements IContainer {
             containerListener.onChildrenPositionRecomputed(this);
         }
     }
+
+    abstract protected void doDetachChild(IWidget widget);
+
+    @Override
+    public void detachChild(IWidget widget)
+    {
+        this.doDetachChild(widget);
+    }
 }
 

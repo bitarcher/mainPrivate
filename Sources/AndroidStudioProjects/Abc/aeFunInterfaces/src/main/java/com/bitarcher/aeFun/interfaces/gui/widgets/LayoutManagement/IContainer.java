@@ -13,6 +13,7 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
  */
 public interface IContainer extends IWidget {
     void attachChild(IWidget widget);
+    void detachChild(IWidget widget);
 
     void addContainerListener(IContainerListener containerListener);
     void removeContainerListener(IContainerListener containerListener);

@@ -20,9 +20,10 @@ public interface IBox extends IContainer, IOriginalWidthAndHeightResetable, ISho
 
     EnumOrientation getOrientation();
 
+
     void packStart(IWidget widget, ISpaceUsage spaceUsage);
     void packEnd(IWidget widget, ISpaceUsage spaceUsage);
-    void removeWidget(IWidget widget);
+    void detachChild(IWidget widget);
 
 }
 

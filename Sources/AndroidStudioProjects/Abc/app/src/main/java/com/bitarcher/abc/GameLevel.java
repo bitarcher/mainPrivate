@@ -1,5 +1,7 @@
 package com.bitarcher.abc;
 
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
@@ -127,19 +129,31 @@ public class GameLevel extends ManagedGameScene {
         this.attachChild(scrollingMenu);
         */
 
-
-        VBox hbox = new VBox(this.getSceneManager().getTheme(),
+        final VBox hbox = new VBox(this.getSceneManager().getTheme(),
                 w / 2,
                 h / 2,
                 800, 400);
 
-        TextButton tb1 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb1");
-        TextButton tb2 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb2");
+        final TextButton tb1 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb1");
+        final TextButton tb2 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb2");
+
+        tb1.addButtonListener(new IButtonListener() {
+            @Override
+            public void onClicked(IButton button) {
+                hbox.detachChild(tb1);
+            }
+        });
+
+        tb2.addButtonListener(new IButtonListener() {
+            @Override
+            public void onClicked(IButton button) {
+                hbox.detachChild(tb2);
+            }
+        });
 
         hbox.packStart(tb1, new PercentSpaceUsage(40, 100f));
 
         hbox.packStart(tb2, new PercentSpaceUsage(0, 100f));
-
 
         this.attachChild(hbox);
         /*
@@ -149,7 +163,6 @@ public class GameLevel extends ManagedGameScene {
         tb1.setSize(cw, ch);
         this.attachChild(tb1);
         */
-
-
 	}
 }
+

@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by michel on 04/03/15.
  */
-public class ScalarComputer {
+public class ScalarComputerBySpaceUsage {
     public void compute(List<? extends ISpaceUsageOwnerAndScalar> spaceUsageOwnerAndScalarList, float availableSpace, float padding, boolean isShouldFixedSpaceUsageBeResizedOnResize)
     {
         ArrayList<ISpaceUsageOwnerAndScalar> fixedList = new ArrayList<>();
@@ -114,7 +114,6 @@ public class ScalarComputer {
             consumedScalar += scalar;
             spaceUsageOwnerAndScalar.setScalar(scalar);
         }
-
-
     }
 }
+

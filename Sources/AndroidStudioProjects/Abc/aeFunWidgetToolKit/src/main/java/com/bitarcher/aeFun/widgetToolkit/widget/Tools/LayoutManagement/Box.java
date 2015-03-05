@@ -11,16 +11,12 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.EnumOrientation;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IBox;
 
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.IFixedSpaceUsage;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.IPercentSpaceUsage;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ISpaceUsage;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IVBox;
 
 
 import org.andengine.util.IMatcher;
 import org.andengine.util.adt.list.SmartList;
-
-import java.util.ArrayList;
 
 /**
  * Created by michel on 28/02/15.
@@ -90,7 +86,7 @@ public class Box extends Container implements IBox {
     }
 
     @Override
-    public void removeWidget(IWidget widget) {
+    public void doDetachChild(IWidget widget) {
         WidgetAndSpaceUsageTupleForBox foundTuple = null;
         final IWidget widget2 = widget;
         foundTuple = this.widgetAndSpaceUsageTupleForBoxes.get(new IMatcher<WidgetAndSpaceUsageTupleForBox>() {
@@ -104,7 +100,7 @@ public class Box extends Container implements IBox {
         if(foundTuple != null)
         {
             this.widgetAndSpaceUsageTupleForBoxes.remove(foundTuple);
-            this.detachChild(foundTuple.getWidget());
+            this.entityDetachChild(widget);
             this.recomputeWidgetsSizeAndPositions();
         }
     }
@@ -128,9 +124,9 @@ public class Box extends Container implements IBox {
             availableSpace =  this.getOriginalHeight();
         }
 
-        ScalarComputer scalarComputer = new ScalarComputer();
+        ScalarComputerBySpaceUsage scalarComputerBySpaceUsage = new ScalarComputerBySpaceUsage();
 
-        scalarComputer.compute(this.widgetAndSpaceUsageTupleForBoxes, availableSpace, this.getPadding(), this.isShouldFixedSpaceUsageBeResizedOnResize());
+        scalarComputerBySpaceUsage.compute(this.widgetAndSpaceUsageTupleForBoxes, availableSpace, this.getPadding(), this.isShouldFixedSpaceUsageBeResizedOnResize());
 
 
         // set position and size

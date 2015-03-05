@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
+package com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other;
 
 /*
  * Copyright (c) 2015.
@@ -9,7 +9,7 @@ package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
 /**
  * Created by michel on 04/03/15.
  */
-public interface IPosition {
+public interface IPositionable {
     void setPosition(float x, float y);
 
     void setX(float x);
