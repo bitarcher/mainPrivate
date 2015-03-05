@@ -29,7 +29,7 @@ public abstract class Container extends Widget implements IContainer {
 
     @Override
     public void attachChild(IWidget widget) {
-        this.doAddWidget(widget);
+        this.doAttachWidget(widget);
     }
 
     protected void entityAttachChild(IEntity entity)
@@ -42,7 +42,7 @@ public abstract class Container extends Widget implements IContainer {
         super.detachChild(entity);
     }
 
-    abstract protected void doAddWidget(IWidget widget);
+    abstract protected void doAttachWidget(IWidget widget);
 
     @Override
     public void addContainerListener(IContainerListener containerListener) {

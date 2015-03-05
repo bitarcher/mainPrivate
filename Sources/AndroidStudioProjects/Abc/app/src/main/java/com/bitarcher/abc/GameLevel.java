@@ -166,9 +166,18 @@ public class GameLevel extends ManagedGameScene {
                 h / 2,
                 800, 400);
 
-        container.addHomogeneousColumnsAndRows(1, 1);
+        //container.addHomogeneousColumnsAndRows(3, 3, 5);
+
+        container.addColumn(new PercentSpaceUsage(0, 100));
+        container.addColumn(new PercentSpaceUsage(0, 200));
+        container.addColumn(new PercentSpaceUsage(0, 300));
+
+        container.addRow(new PercentSpaceUsage(0, 100));
+        container.addRow(new PercentSpaceUsage(0, 200));
+        container.addRow(new PercentSpaceUsage(0, 300));
+
         container.attachChild(tb1, 0, 0);
-        /*container.attachChild(tb2);
+        container.attachChild(tb2);
         container.attachChild(tb3);
         container.attachChild(tb4);
         container.attachChild(tb5);
@@ -176,7 +185,7 @@ public class GameLevel extends ManagedGameScene {
         container.attachChild(tb7);
         container.attachChild(tb8);
         container.attachChild(tb9);
-*/
+
         tb1.addButtonListener(new IButtonListener() {
             @Override
             public void onClicked(IButton button) {

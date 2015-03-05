@@ -9,6 +9,7 @@ package com.bitarcher.aeFun.widgetToolkit.widget;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.ITable;
+import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ENoFreeTableCellFound;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ETableCellNotEmpty;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ISpaceUsage;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.Container;
@@ -52,7 +53,7 @@ public class Table extends Container implements ITable {
 
 
     @Override
-    protected void doAddWidget(IWidget widget) {
+    protected void doAttachWidget(IWidget widget) {
         TableCell foundEmptyTableCell = null;
 
         for(SmartList<TableCell> rowTableCell : tableCells)
@@ -74,15 +75,20 @@ public class Table extends Container implements ITable {
 
         if(foundEmptyTableCell != null)
         {
-            WidgetTableCellsConsumption widgetTableCellsConsumption = new WidgetTableCellsConsumption(widget, foundEmptyTableCell.getColumnNum(), foundEmptyTableCell.getRowNum(), 1, 1);
+            this.attachChild(widget, foundEmptyTableCell.getColumnNum(), foundEmptyTableCell.getRowNum());
+            /*WidgetTableCellsConsumption widgetTableCellsConsumption = new WidgetTableCellsConsumption(widget, foundEmptyTableCell.getColumnNum(), foundEmptyTableCell.getRowNum(), 1, 1);
             foundEmptyTableCell.setWidgetTableCellsConsumption(widgetTableCellsConsumption);
             this.widgetTableCellsConsumptions.add(widgetTableCellsConsumption);
-            this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellsConsumption);
+            this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellsConsumption);*/
+        }
+        else
+        {
+            throw new ENoFreeTableCellFound(this, widget);
         }
     }
 
     void _addColumn(ISpaceUsage spaceUsage) {
-        this.tableColumns.addFirst(new TableColumn(spaceUsage));
+        this.tableColumns.addLast(new TableColumn(spaceUsage));
     }
 
     @Override
@@ -94,8 +100,9 @@ public class Table extends Container implements ITable {
         this.recomputeChildrenWidgetsSizeAndPosition();
     }
 
-    void _addRow(ISpaceUsage spaceUsage) {
-        this.tableRows.addLast(new TableRow(spaceUsage));
+    void _addRow(ISpaceUsage spaceUsage)
+    {
+        this.tableRows.addFirst(new TableRow(spaceUsage));
     }
 
     @Override

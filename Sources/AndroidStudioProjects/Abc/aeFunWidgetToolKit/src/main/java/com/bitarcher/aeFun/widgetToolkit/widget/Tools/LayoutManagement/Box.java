@@ -32,7 +32,7 @@ public class Box extends Container implements IBox {
     }
 
     @Override
-    protected void doAddWidget(IWidget widget) {
+    protected void doAttachWidget(IWidget widget) {
         this.packStart(widget, new PercentSpaceUsage(0, 100f));
     }
 
