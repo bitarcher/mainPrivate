@@ -13,6 +13,7 @@ import org.andengine.entity.primitive.Rectangle;
 import org.andengine.util.adt.color.Color;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /*
  * Copyright (c) 2015.
@@ -137,21 +138,13 @@ public abstract class Widget extends ClipEntity implements IWidget {
     {
         Color retval;
 
-        int hashC = this.hashCode();
 
-        int[] somePrimeNumbers = new int[]{97, 317, 829};
-        int[] modulos = new int[somePrimeNumbers.length];
-
-        for(int i =0; i < somePrimeNumbers.length ; i++)
-        {
-            modulos[i] = hashC % somePrimeNumbers[i];
-        }
 
         float[] fVars = new float[3];
 
-        for(int i =0; i < somePrimeNumbers.length ; i++)
+        for(int i =0; i < fVars.length ; i++)
         {
-            fVars[i] = (float) modulos[i] / (float) somePrimeNumbers[i];
+            fVars[i] = (float)Math.random();
         }
 
         retval = new Color(fVars[0], fVars[1], fVars[2]);

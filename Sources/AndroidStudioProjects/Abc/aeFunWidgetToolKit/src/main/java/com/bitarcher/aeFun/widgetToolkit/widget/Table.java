@@ -12,12 +12,13 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.ITable;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ETableCellNotEmpty;
 import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ISpaceUsage;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.Container;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.IWidgetTableCellsConsumption;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.PercentSpaceUsage;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.ScalarComputerBySpaceUsage;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.TableColumn;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.TableRow;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.TableCell;
-import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.WidgetTableCellConsumption;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.WidgetTableCellsConsumption;
 
 import org.andengine.util.IMatcher;
 import org.andengine.util.adt.list.SmartList;
@@ -33,7 +34,7 @@ public class Table extends Container implements ITable {
 
     // outer list contains rows, inner list contains cell for current row
     SmartList<SmartList<TableCell>> tableCells = new SmartList<>();
-    SmartList<WidgetTableCellConsumption> widgetTableCellConsumptions = new SmartList<>();
+    SmartList<WidgetTableCellsConsumption> widgetTableCellsConsumptions = new SmartList<>();
 
     public Table(ITheme theme, float pX, float pY, float pWidth, float pHeight) {
         super(theme, pX, pY, pWidth, pHeight);
@@ -73,10 +74,10 @@ public class Table extends Container implements ITable {
 
         if(foundEmptyTableCell != null)
         {
-            WidgetTableCellConsumption widgetTableCellConsumption= new WidgetTableCellConsumption(widget, foundEmptyTableCell.getColumnNum(), foundEmptyTableCell.getRowNum(), 1, 1);
-            foundEmptyTableCell.setWidgetTableCellsConsumption(widgetTableCellConsumption);
-            this.widgetTableCellConsumptions.add(widgetTableCellConsumption);
-            this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellConsumption);
+            WidgetTableCellsConsumption widgetTableCellsConsumption = new WidgetTableCellsConsumption(widget, foundEmptyTableCell.getColumnNum(), foundEmptyTableCell.getRowNum(), 1, 1);
+            foundEmptyTableCell.setWidgetTableCellsConsumption(widgetTableCellsConsumption);
+            this.widgetTableCellsConsumptions.add(widgetTableCellsConsumption);
+            this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellsConsumption);
         }
     }
 
@@ -115,14 +116,14 @@ public class Table extends Container implements ITable {
     public void addHomogeneousColumnsAndRows(int numOfColumns, int numOfRows, float margin) {
         for(int i= 0 ; i < numOfColumns ; i++)
         {
-            this.addColumn(new PercentSpaceUsage(0, margin));
+            this.addColumn(new PercentSpaceUsage(margin, 100));
         }
 
         this.recomputeColumnsSizeAndPosition();
 
         for(int i= 0 ; i < numOfRows ; i++)
         {
-            this.addRow(new PercentSpaceUsage(0, margin));
+            this.addRow(new PercentSpaceUsage(margin, 100));
         }
 
         this.recomputeRowsSizeAndPosition();
@@ -131,29 +132,51 @@ public class Table extends Container implements ITable {
         this.recomputeChildrenWidgetsSizeAndPosition();
     }
 
-    TableCell findFirstCoveringTableCellByExistingWidget(int left, int top, int columnsSpan, int rowSpan)
+    void setAllCoveringTableCellWithWidget(int left, int top, int columnsSpan, int rowSpan, IWidgetTableCellsConsumption widgetTableCellsConsumption)
     {
-        TableCell retval = null;
+        for(int i = left ; i < left + columnsSpan  ; i++) {
 
-        for(int i = left ; i < left + columnsSpan - 1 ; i++)
+
+            for (int j = top; j < top + rowSpan ; j++) {
+
+                TableCell tableCell = this.getTableCell(i, j);
+
+                tableCell.setWidgetTableCellsConsumption(widgetTableCellsConsumption);
+            }
+        }
+    }
+
+    SmartList<TableCell> findAllCoveringTableCellByExistingWidget(int left, int top, int columnsSpan, int rowSpan)
+    {
+        SmartList<TableCell> retval = new SmartList<>();
+
+        for(int i = left ; i < left + columnsSpan  ; i++)
         {
 
 
-            for(int j = top ; j < top + rowSpan - 1; j++)
+            for(int j = top ; j < top + rowSpan ; j++)
             {
 
                 TableCell tableCell = this.getTableCell(i, j);
                 if(tableCell.getWidgetTableCellsConsumption() != null)
                 {
-                    retval = tableCell;
-                    break;
+                    retval.add(tableCell);
                 }
             }
+        }
 
-            if(retval != null)
-            {
-                break;
-            }
+        return retval;
+    }
+
+    TableCell findFirstCoveringTableCellByExistingWidget(int left, int top, int columnsSpan, int rowSpan)
+    {
+        TableCell retval = null;
+
+        SmartList<TableCell> list = this.findAllCoveringTableCellByExistingWidget(left, top, columnsSpan, rowSpan);
+
+        if(!list.isEmpty())
+        {
+            retval = list.getFirst();
         }
 
         return retval;
@@ -169,12 +192,13 @@ public class Table extends Container implements ITable {
             throw new ETableCellNotEmpty(this, widget, left, top, columnsSpan, rowSpan, foundCoveredTableCell.getColumnNum(), foundCoveredTableCell.getRowNum());
         }
 
-        WidgetTableCellConsumption widgetTableCellConsumption = new WidgetTableCellConsumption(widget, left, top, columnsSpan, rowSpan);
-        this.widgetTableCellConsumptions.add(widgetTableCellConsumption);
+        WidgetTableCellsConsumption widgetTableCellsConsumption = new WidgetTableCellsConsumption(widget, left, top, columnsSpan, rowSpan);
+        this.widgetTableCellsConsumptions.add(widgetTableCellsConsumption);
 
         this.entityAttachChild(widget);
+        this.setAllCoveringTableCellWithWidget(left, top, columnsSpan, rowSpan, widgetTableCellsConsumption);
 
-        this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellConsumption);
+        this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellsConsumption);
     }
 
     @Override
@@ -185,9 +209,9 @@ public class Table extends Container implements ITable {
     @Override
     public void doDetachChild(final IWidget widget)
     {
-        this.widgetTableCellConsumptions.remove(new IMatcher<WidgetTableCellConsumption>() {
+        this.widgetTableCellsConsumptions.remove(new IMatcher<WidgetTableCellsConsumption>() {
             @Override
-            public boolean matches(WidgetTableCellConsumption pObject) {
+            public boolean matches(WidgetTableCellsConsumption pObject) {
                 return pObject.getWidget() == widget;
             }
         });
@@ -212,7 +236,7 @@ public class Table extends Container implements ITable {
     {
         ScalarComputerBySpaceUsage scalarComputerBySpaceUsage = new ScalarComputerBySpaceUsage();
 
-        scalarComputerBySpaceUsage.compute(this.tableColumns, this.getOriginalHeight(), this.getPadding(), this.isShouldFixedSpaceUsageBeResizedOnResize());
+        scalarComputerBySpaceUsage.compute(this.tableRows, this.getOriginalHeight(), this.getPadding(), this.isShouldFixedSpaceUsageBeResizedOnResize());
     }
 
     private void recomputeCells()
@@ -227,6 +251,7 @@ public class Table extends Container implements ITable {
         float currentY = startY;
 
 
+        // table cell anchor center is up left corner, so it defers from box on this point
         for(TableRow tableRow: this.tableRows)
         {
             float currentX = startX;
@@ -234,7 +259,7 @@ public class Table extends Container implements ITable {
             SmartList<TableCell> currentRowTableCells = new SmartList<>();
             this.tableCells.add(currentRowTableCells);
             float ch = tableRow.getScalarWithoutTwoMargin();
-            float cy = currentY + tableRow.getScalar() / 2;
+            float cy = currentY;
 
             for(TableColumn tableColumn:this.tableColumns) {
 
@@ -243,7 +268,7 @@ public class Table extends Container implements ITable {
                 currentRowTableCells.add(tableCell);
 
                 float cw = tableColumn.getScalarWithoutTwoMargin();
-                float cx = currentX + tableColumn.getScalar() / 2;
+                float cx = currentX;
 
                 tableCell.setPosition(cx, cy);
                 tableCell.setSize(cw, ch);
@@ -262,18 +287,18 @@ public class Table extends Container implements ITable {
     // precondition : all widget pointers of cells are set to empty
     void setTableCellsWidgetReference()
     {
-        for(WidgetTableCellConsumption widgetTableCellConsumption:this.widgetTableCellConsumptions)
+        for(WidgetTableCellsConsumption widgetTableCellsConsumption :this.widgetTableCellsConsumptions)
         {
-            for(int i = 0 ; i < widgetTableCellConsumption.getColumnSpan() ; i++)
+            for(int i = 0 ; i < widgetTableCellsConsumption.getColumnSpan() ; i++)
             {
-                int column = widgetTableCellConsumption.getLeft() + i;
+                int column = widgetTableCellsConsumption.getLeft() + i;
 
-                for(int j = 0 ; j < widgetTableCellConsumption.getRowSpan(); j++)
+                for(int j = 0 ; j < widgetTableCellsConsumption.getRowSpan(); j++)
                 {
-                    int row = widgetTableCellConsumption.getTop() + j;
+                    int row = widgetTableCellsConsumption.getTop() + j;
 
                     TableCell tableCell = this.getTableCell(column, row);
-                    tableCell.setWidgetTableCellsConsumption((widgetTableCellConsumption));
+                    tableCell.setWidgetTableCellsConsumption((widgetTableCellsConsumption));
                 }
             }
         }
@@ -302,18 +327,18 @@ public class Table extends Container implements ITable {
 
     private void recomputeChildrenWidgetsSizeAndPosition()
     {
-        for(WidgetTableCellConsumption widgetTableCellConsumption : this.widgetTableCellConsumptions)
+        for(WidgetTableCellsConsumption widgetTableCellsConsumption : this.widgetTableCellsConsumptions)
         {
-            this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellConsumption);
+            this.recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(widgetTableCellsConsumption);
         }
 
         this.raiseChildrenPositionRecomputed();
     }
 
-    private void recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(WidgetTableCellConsumption widgetTableCellConsumption)
+    private void recomputeWidgetSizeAndPositionByWidgetTableCellConsumption(WidgetTableCellsConsumption widgetTableCellsConsumption)
     {
-        TableCell leftTopCell = this.getTableCell(widgetTableCellConsumption.getLeft(), widgetTableCellConsumption.getTop());
-        TableCell rightBottomCell = this.getTableCell(widgetTableCellConsumption.getLeft() + widgetTableCellConsumption.getColumnSpan() - 1, widgetTableCellConsumption.getTop() + widgetTableCellConsumption.getRowSpan() - 1);
+        TableCell leftTopCell = this.getTableCell(widgetTableCellsConsumption.getLeft(), widgetTableCellsConsumption.getTop());
+        TableCell rightBottomCell = this.getTableCell(widgetTableCellsConsumption.getLeft() + widgetTableCellsConsumption.getColumnSpan() - 1, widgetTableCellsConsumption.getTop() + widgetTableCellsConsumption.getRowSpan() - 1);
 
         float startX = leftTopCell.getX();
         float startY = leftTopCell.getY();
@@ -322,9 +347,12 @@ public class Table extends Container implements ITable {
         float width = endX - startX;
         float height = endY - startY;
 
-        widgetTableCellConsumption.getWidget().setPosition(startX, startY);
-        widgetTableCellConsumption.getWidget().setSize(width, height);
+        // anchor center, remember !
+        float widgetX = (startX + endX)/ 2;
+        float widgetY = (startY + endY) / 2;
 
+        widgetTableCellsConsumption.getWidget().setPosition(widgetX, widgetY);
+        widgetTableCellsConsumption.getWidget().setSize(width, height);
     }
 
     @Override

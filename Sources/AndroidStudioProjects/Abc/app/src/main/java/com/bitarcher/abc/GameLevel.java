@@ -6,6 +6,9 @@ import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
 import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
+import com.bitarcher.aeFun.widgetToolkit.widget.HBox;
+import com.bitarcher.aeFun.widgetToolkit.widget.Table;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.FixedSpaceUsage;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.PercentSpaceUsage;
 import com.bitarcher.aeFun.widgetToolkit.widget.VBox;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
@@ -129,40 +132,66 @@ public class GameLevel extends ManagedGameScene {
         this.attachChild(scrollingMenu);
         */
 
-        final VBox hbox = new VBox(this.getSceneManager().getTheme(),
+        final TextButton tb1 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb1");
+        final TextButton tb2 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb2");
+        final TextButton tb3 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb3");
+        final TextButton tb4 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb4");
+        final TextButton tb5 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb5");
+        final TextButton tb6 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb6");
+        final TextButton tb7 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb7");
+        final TextButton tb8 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb8");
+        final TextButton tb9 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb9");
+
+
+        /*
+
+        final HBox hbox = new HBox(this.getSceneManager().getTheme(),
                 w / 2,
                 h / 2,
                 800, 400);
 
-        final TextButton tb1 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb1");
-        final TextButton tb2 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb2");
 
+
+        hbox.packStart(tb1, new FixedSpaceUsage(0, 50f));
+
+        hbox.packStart(tb2, new PercentSpaceUsage(0, 100f));
+        hbox.packStart(tb3, new PercentSpaceUsage(0, 200f));
+
+        this.attachChild(hbox);
+
+        */
+
+        final Table container = new Table(this.getSceneManager().getTheme(),
+                w / 2,
+                h / 2,
+                800, 400);
+
+        container.addHomogeneousColumnsAndRows(1, 1);
+        container.attachChild(tb1, 0, 0);
+        /*container.attachChild(tb2);
+        container.attachChild(tb3);
+        container.attachChild(tb4);
+        container.attachChild(tb5);
+        container.attachChild(tb6);
+        container.attachChild(tb7);
+        container.attachChild(tb8);
+        container.attachChild(tb9);
+*/
         tb1.addButtonListener(new IButtonListener() {
             @Override
             public void onClicked(IButton button) {
-                hbox.detachChild(tb1);
+                container.detachChild(tb1);
             }
         });
 
         tb2.addButtonListener(new IButtonListener() {
             @Override
             public void onClicked(IButton button) {
-                hbox.detachChild(tb2);
+                container.detachChild(tb2);
             }
         });
 
-        hbox.packStart(tb1, new PercentSpaceUsage(40, 100f));
-
-        hbox.packStart(tb2, new PercentSpaceUsage(0, 100f));
-
-        this.attachChild(hbox);
-        /*
-        TextButton tb1 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "hello");
-        //TextButton tb1 = new TextButton(this.getSceneManager().getTheme(), w/2, h/2, cw, ch, "hello");
-        tb1.setPosition(w / 2, h / 2);
-        tb1.setSize(cw, ch);
-        this.attachChild(tb1);
-        */
-	}
+        this.attachChild(container);
+    }
 }
 

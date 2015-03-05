@@ -101,13 +101,17 @@ public class ScalarComputerBySpaceUsage {
                     scalar = 0;
                 }
                 else {
-                    scalar = scalarThatCanBeSharedByPercents * (fixedSpaceUsage.getFixedSpaceUsage() / percentListTotal);
+                    scalar = fixedSpaceUsage.getFixedSpaceUsage();
+
+                    /*
+                    Note : we don't use the following code, we prefer using clipping
 
                     if ((consumedScalar + scalar) > variableScalarMinusTwoPadding) {
                         // this one will be reduced and consecutive will be set to zero
                         scalar = consumedScalar + scalar - variableScalarMinusTwoPadding;
                         shouldScalarBeSetToZero = true;
                     }
+                    */
                 }
             }
 

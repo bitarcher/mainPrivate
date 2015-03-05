@@ -11,7 +11,7 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 /**
  * Created by michel on 04/03/15.
  */
-public class WidgetTableCellConsumption  implements IWidgetTableCellsConsumption{
+public class WidgetTableCellsConsumption implements IWidgetTableCellsConsumption{
 
     private IWidget widget;
     private int left;
@@ -44,7 +44,7 @@ public class WidgetTableCellConsumption  implements IWidgetTableCellsConsumption
         return rowSpan;
     }
 
-    public WidgetTableCellConsumption(IWidget widget, int left, int top, int columnSpan, int rowSpan) {
+    public WidgetTableCellsConsumption(IWidget widget, int left, int top, int columnSpan, int rowSpan) {
 
         this.widget = widget;
         this.left = left;

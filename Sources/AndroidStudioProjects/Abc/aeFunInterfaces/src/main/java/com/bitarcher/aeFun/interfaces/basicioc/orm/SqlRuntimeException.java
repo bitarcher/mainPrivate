@@ -20,3 +20,4 @@ public class SqlRuntimeException extends RuntimeException {
         this.exception = e;
     }
 }
+
