@@ -102,7 +102,7 @@ public class Table extends Container implements ITable {
 
     void _addRow(ISpaceUsage spaceUsage)
     {
-        this.tableRows.addFirst(new TableRow(spaceUsage));
+        this.tableRows.addLast(new TableRow(spaceUsage));
     }
 
     @Override
@@ -327,7 +327,7 @@ public class Table extends Container implements ITable {
     {
         TableCell retval = null;
 
-        retval = this.tableCells.get(row).get(column);
+        retval = this.tableCells.get(this.getNumOfRows() - row - 1).get(column);
 
         return retval;
     }
