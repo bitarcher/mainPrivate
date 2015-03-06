@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
+package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.ForTable;
 
 /*
  * Copyright (c) 2015.
@@ -7,11 +7,12 @@ package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
  */
 
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.IWidgetTableCellsConsumption;
 
 /**
  * Created by michel on 04/03/15.
  */
-public class WidgetTableCellsConsumption implements IWidgetTableCellsConsumption{
+public class WidgetTableCellsConsumption implements IWidgetTableCellsConsumption {
 
     private IWidget widget;
     private int left;

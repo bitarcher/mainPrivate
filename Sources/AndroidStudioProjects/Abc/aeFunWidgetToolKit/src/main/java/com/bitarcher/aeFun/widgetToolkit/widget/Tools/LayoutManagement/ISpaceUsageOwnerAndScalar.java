@@ -11,6 +11,6 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ISpaceU
 /**
  * Created by michel on 04/03/15.
  */
-interface ISpaceUsageOwnerAndScalar extends IScalar {
+public interface ISpaceUsageOwnerAndScalar extends IScalar {
     ISpaceUsage getSpaceUsage();
 }

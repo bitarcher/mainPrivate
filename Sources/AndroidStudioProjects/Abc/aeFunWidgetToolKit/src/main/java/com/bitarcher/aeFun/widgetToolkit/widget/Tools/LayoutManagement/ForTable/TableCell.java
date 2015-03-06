@@ -1,10 +1,12 @@
-package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
+package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.ForTable;
 
 /*
  * Copyright (c) 2015.
  * Michel Strasser
  * bitarcher.com
  */
+
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.IWidgetTableCellsConsumption;
 
 /**
  * Created by michel on 04/03/15.

@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
+package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.ForTable;
 
 /*
  * Copyright (c) 2015.

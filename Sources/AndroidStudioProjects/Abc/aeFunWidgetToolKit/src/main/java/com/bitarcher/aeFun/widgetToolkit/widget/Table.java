@@ -16,10 +16,10 @@ import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.Container
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.IWidgetTableCellsConsumption;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.PercentSpaceUsage;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.ScalarComputerBySpaceUsage;
-import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.TableColumn;
-import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.TableRow;
-import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.TableCell;
-import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.WidgetTableCellsConsumption;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.ForTable.TableColumn;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.ForTable.TableRow;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.ForTable.TableCell;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.ForTable.WidgetTableCellsConsumption;
 
 import org.andengine.util.IMatcher;
 import org.andengine.util.adt.list.SmartList;

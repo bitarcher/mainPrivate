@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement;
+package com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.ForTable;
 
 /*
  * Copyright (c) 2015.
@@ -11,8 +11,10 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ISpaceU
 /**
  * Created by michel on 04/03/15.
  */
-public class TableRow extends TableColumnOrRow implements ITableRow {
-    public TableRow(ISpaceUsage spaceUsage) {
+public class TableColumn extends TableColumnOrRow implements ITableColumn {
+    public TableColumn(ISpaceUsage spaceUsage) {
         super(spaceUsage);
     }
+
+
 }
