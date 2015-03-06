@@ -7,8 +7,8 @@ package com.bitarcher.aeFun.widgetToolkit.widget;
  */
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.IVBox;
-import com.bitarcher.aeFun.widgetToolkit.widget.Tools.LayoutManagement.Box;
+import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.IVBox;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.Box;
 
 /**
  * Created by michel on 01/03/15.

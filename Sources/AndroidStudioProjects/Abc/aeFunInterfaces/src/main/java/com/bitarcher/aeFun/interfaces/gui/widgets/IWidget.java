@@ -2,9 +2,9 @@ package com.bitarcher.aeFun.interfaces.gui.widgets;
 
 import com.bitarcher.aeFun.interfaces.basicioc.IEnabled;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.IPaddable;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.IPositionable;
-import com.bitarcher.aeFun.interfaces.gui.widgets.LayoutManagement.Other.ISizable;
+import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.IPaddable;
+import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.IPositionable;
+import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.ISizable;
 
 import org.andengine.entity.IEntity;
 
