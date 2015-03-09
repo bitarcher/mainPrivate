@@ -28,8 +28,9 @@ import org.andengine.opengl.vbo.DrawType;
 public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
     ITextButton textButton;
     Rectangle backRectangle;
-    Gradient gradient;
+    //Gradient gradient;
     Entity textLayer;
+    Entity gradientLayer;
 
 
 
@@ -44,19 +45,20 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
         this.backRectangle.setColor(0.7f, 0.9f, 0.9f);
         this.textButton.attachChild(this.backRectangle);
 
-        this.gradient = new Gradient(0, 0, 10, 10, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
-        this.gradient.setFromColor(0, 0.7f, 0.9f);
-        this.gradient.setToColor(0.9f, 0.7f, 0.9f);
-        this.textButton.attachChild(this.gradient);
 
         //this.text.setWidth(pWidth);
         //this.text.setHeight(pWidth);
 
         //this.attachChild(this.buttonSprite);
 
+        this.gradientLayer = new Entity();
+        this.textButton.attachChild(this.gradientLayer);
+
+
         // I have to do so since Text.setText has problem
         this.textLayer = new Entity();
         this.textButton.attachChild(this.textLayer);
+
     }
 
     @Override
@@ -123,11 +125,16 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
 
     void doSizeAndPadding()
     {
-        float border = 2;
-        float midWidth = this.textButton.getWidth() / 2;
-        float midHeight = this.textButton.getHeight() / 2;
-        float wmp = this.textButton.getWidth() - this.textButton.getPadding();
-        float hmp = this.textButton.getHeight() - this.textButton.getPadding();
+        float tw = this.textButton.getWidth();
+        float th = this.textButton.getHeight();
+
+        float midWidth = tw / 2;
+        float midHeight = th / 2;
+
+        float wmp = tw - 2 * this.textButton.getPadding();
+        float hmp = th - 2 * this.textButton.getPadding();
+
+        float border = 10;
         float wb = wmp - 2 * border;
         float hb = hmp - 2 * border;
 
@@ -135,8 +142,16 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
         this.backRectangle.setSize(wmp, hmp);
         this.backRectangle.setPosition(midWidth, midHeight);
 
-        this.gradient.setSize(wb, hb);
-        this.gradient.setPosition(midWidth, midHeight);
+        this.gradientLayer.setSize(wb, hb);
+        this.gradientLayer.setPosition(midWidth, midHeight);
+
+        this.gradientLayer.detachChildren();
+
+        Gradient gradient = new Gradient(wb / 2, hb / 2, wb, hb, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+        gradient.setFromColor(0, 0.7f, 0.9f);
+        gradient.setToColor(0.9f, 0.7f, 0.9f);
+        this.gradientLayer.attachChild(gradient);
+
 
         this.setText(this.textButton.getTranslatedLabel());
     }

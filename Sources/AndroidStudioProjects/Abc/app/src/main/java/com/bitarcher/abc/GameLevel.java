@@ -6,7 +6,9 @@ import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetSvgTexture;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SvgTexturesSetFromAssetResourceInfo;
 import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
+import com.bitarcher.aeFun.widgetToolkit.widget.HBox;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.FixedSpaceUsage;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.PercentSpaceUsage;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
@@ -139,24 +141,26 @@ public class GameLevel extends ManagedGameScene {
         final TextButton tb8 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb8");
         final TextButton tb9 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb9");
 
+        tb1.setPadding(2);
+        tb3.setPadding(4);
 
-        /*
+        
 
-        final HBox hbox = new HBox(this.getSceneManager().getTheme(),
+        final HBox container = new HBox(this.getSceneManager().getTheme(),
                 w / 2,
                 h / 2,
                 800, 400);
 
 
 
-        hbox.packStart(tb1, new FixedSpaceUsage(0, 50f));
+        container.packStart(tb1, new FixedSpaceUsage(0, 50f));
 
-        hbox.packStart(tb2, new PercentSpaceUsage(0, 100f));
-        hbox.packStart(tb3, new PercentSpaceUsage(0, 200f));
+        container.packStart(tb2, new PercentSpaceUsage(0, 100f));
+        container.packStart(tb3, new PercentSpaceUsage(0, 200f));
 
-        this.attachChild(hbox);
+        this.attachChild(container);
 
-        */
+        /*
 
         final Table container = new Table(this.getSceneManager().getTheme(),
                 w / 2,
@@ -165,9 +169,9 @@ public class GameLevel extends ManagedGameScene {
 
         //container.addHomogeneousColumnsAndRows(3, 3, 5);
 
-        container.addColumn(new PercentSpaceUsage(10, 100));
-        container.addColumn(new PercentSpaceUsage(10, 200));
-        container.addColumn(new PercentSpaceUsage(10, 300));
+        container.addColumn(new PercentSpaceUsage(0, 100));
+        container.addColumn(new PercentSpaceUsage(0, 200));
+        container.addColumn(new PercentSpaceUsage(0, 300));
 
         container.addRow(new PercentSpaceUsage(0, 100));
         container.addRow(new PercentSpaceUsage(0, 200));
@@ -182,7 +186,10 @@ public class GameLevel extends ManagedGameScene {
         //container.attachChild(tb7);
         //container.attachChild(tb8);
         //container.attachChild(tb9);
+        this.attachChild(container);
 
+        */
+        
         tb1.addButtonListener(new IButtonListener() {
             @Override
             public void onClicked(IButton button) {
@@ -197,7 +204,7 @@ public class GameLevel extends ManagedGameScene {
             }
         });
 
-        this.attachChild(container);
+
     }
 }
 
