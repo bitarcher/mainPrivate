@@ -16,6 +16,7 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 
 import org.andengine.entity.Entity;
 import org.andengine.entity.IEntity;
+import org.andengine.entity.primitive.Gradient;
 import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.text.Text;
 import org.andengine.opengl.font.Font;
@@ -27,6 +28,7 @@ import org.andengine.opengl.vbo.DrawType;
 public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
     ITextButton textButton;
     Rectangle backRectangle;
+    Gradient gradient;
     Entity textLayer;
 
 
@@ -41,6 +43,11 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
         this.backRectangle = new Rectangle(0, 0, 10, 10, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
         this.backRectangle.setColor(0.7f, 0.9f, 0.9f);
         this.textButton.attachChild(this.backRectangle);
+
+        this.gradient = new Gradient(0, 0, 10, 10, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+        this.gradient.setFromColor(0, 0.7f, 0.9f);
+        this.gradient.setToColor(0.9f, 0.7f, 0.9f);
+        this.textButton.attachChild(this.gradient);
 
         //this.text.setWidth(pWidth);
         //this.text.setHeight(pWidth);
@@ -127,6 +134,9 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
 
         this.backRectangle.setSize(wmp, hmp);
         this.backRectangle.setPosition(midWidth, midHeight);
+
+        this.gradient.setSize(wb, hb);
+        this.gradient.setPosition(midWidth, midHeight);
 
         this.setText(this.textButton.getTranslatedLabel());
     }
