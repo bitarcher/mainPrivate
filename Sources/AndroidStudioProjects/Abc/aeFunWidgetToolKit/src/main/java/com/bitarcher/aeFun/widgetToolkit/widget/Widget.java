@@ -1,6 +1,9 @@
 package com.bitarcher.aeFun.widgetToolkit.widget;
 
+import com.bitarcher.aeFun.interfaces.geometry.ISize;
+import com.bitarcher.aeFun.interfaces.gui.theme.ILayout;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.IContext;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidgetListener;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
@@ -21,7 +24,7 @@ import java.util.Random;
  * Michel Strasser
  * bitarcher.com
  */
-public abstract class Widget extends ClipEntity implements IWidget {
+public abstract class Widget<TContext extends IContext> extends ClipEntity implements IWidget, ISize {
 
     private ITheme theme;
     private boolean areResourcesLoaded = false;
@@ -32,6 +35,12 @@ public abstract class Widget extends ClipEntity implements IWidget {
     private float originalWidth;
     private float originalHeight;
 
+    ILayout<TContext> layout = null;
+
+    @Override
+    public ILayout<TContext> getLayout() {
+        return this.layout;
+    }
 
     Rectangle debugRectangle;
 

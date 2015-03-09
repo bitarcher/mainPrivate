@@ -6,15 +6,15 @@ package com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.geometry.ISize;
+
 /**
  * Created by michel on 04/03/15.
  */
-public interface ISizable {
+public interface ISizable extends ISize{
     void setSize(float width, float height);
 
     void setWidth(float width);
-    float getWidth();
-
     void setHeight(float height);
-    float getHeight();
+
 }

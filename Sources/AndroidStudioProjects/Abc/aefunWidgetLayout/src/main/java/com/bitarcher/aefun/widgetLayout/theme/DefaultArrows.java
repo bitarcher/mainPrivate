@@ -4,7 +4,7 @@
  * bitarcher.com
  */
 
-package com.bitarcher.aeFun.widgetToolkit.theme;
+package com.bitarcher.aefun.widgetLayout.theme;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.widgetToolkit.theme;
+package com.bitarcher.aefun.widgetLayout.theme;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
 import com.bitarcher.aeFun.interfaces.gui.theme.IFontThemeSection;
@@ -81,13 +81,13 @@ public abstract class ThemeBase implements ITheme {
 
         switch(eFontSize)
         {
-            case Big:
+            case EnumFontSize.Big:
                 retval = this.getBigFont();
                 break;
-            case Medium:
+            case EnumFontSize.Medium:
                 retval = this.getMediumFont();
                 break;
-            case Small:
+            case EnumFontSize.Small:
                 retval = this.getSmallFont();
                 break;
 
