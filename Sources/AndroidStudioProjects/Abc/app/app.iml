@@ -91,6 +91,7 @@
     <orderEntry type="module" module-name="abcBllOrm" exported="" />
     <orderEntry type="module" module-name="abcBllXmlRoLevels" exported="" />
     <orderEntry type="module" module-name="aeFunWidgetToolKit" exported="" />
+    <orderEntry type="module" module-name="aeFunWidgetLayout" exported="" />
     <orderEntry type="module" module-name="aeFunResourceManagement" exported="" />
     <orderEntry type="module" module-name="andEngineSVGTextureRegionExtension" exported="" />
     <orderEntry type="module" module-name="abcBllXmlRoResources" exported="" />

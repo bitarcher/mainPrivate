@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other;
+package com.bitarcher.aeFun.interfaces.geometry;
 
 /*
  * Copyright (c) 2015.
@@ -6,15 +6,14 @@ package com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.geometry.IPosition;
+
 /**
  * Created by michel on 04/03/15.
  */
-public interface IPositionable {
+public interface IPositionable extends IPosition{
     void setPosition(float x, float y);
 
     void setX(float x);
     void setY(float y);
-
-    float getX();
-    float getY();
 }

@@ -1,6 +1,7 @@
 package com.bitarcher.aeFun.widgetToolkit.widget;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.ITextButtonContext;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButtonListener;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 /**
  * Created by michel on 22/01/15.
  */
-public class TextButton extends Button implements ITextButton {
+public class TextButton extends Button<ITextButtonContext> implements ITextButton {
     protected String translatedLabel;
     ArrayList<ITextButtonListener> textButtonListenerArrayList = new ArrayList<>();
     ArrayList<ILabeledListener> labeledListenerArrayList = new ArrayList<>();

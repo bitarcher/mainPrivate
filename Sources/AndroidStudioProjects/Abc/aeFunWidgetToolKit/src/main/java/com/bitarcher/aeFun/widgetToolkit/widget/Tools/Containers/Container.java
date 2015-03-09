@@ -7,6 +7,7 @@ package com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers;
  */
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.IContext;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.IContainer;
 import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.IContainerListener;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 /**
  * Created by michel on 03/03/15.
  */
-public abstract class Container extends Widget implements IContainer {
+public abstract class Container<TContext extends IContext> extends Widget<TContext> implements IContainer<TContext> {
 
     ArrayList<IContainerListener> containerListenerArrayList = new ArrayList<>();
 

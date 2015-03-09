@@ -9,5 +9,6 @@ package com.bitarcher.aeFun.interfaces.gui.theme.context;
 /**
  * Created by michel on 09/03/15.
  */
-public interface INoneContext {
+public interface INoneContext extends IContext {
+    // used by widget which wont' permit external layout management (i.e. containers)
 }

@@ -5,6 +5,7 @@ package com.bitarcher.aeFun.interfaces.gui.widgets.Containers;
  * Michel Strasser
  * bitarcher.com
  */
+import com.bitarcher.aeFun.interfaces.gui.theme.context.INoneContext;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.IOriginalWidthAndHeightResetable;
 import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.IShouldFixedSpaceUsageBeResizedOnResize;
@@ -13,7 +14,7 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.ISpaceUsage;
 /**
  * Created by michel on 03/03/15.
  */
-public interface ITable extends IContainer, IOriginalWidthAndHeightResetable, IShouldFixedSpaceUsageBeResizedOnResize {
+public interface ITable extends IContainer<INoneContext>, IOriginalWidthAndHeightResetable, IShouldFixedSpaceUsageBeResizedOnResize {
 
     void addHomogeneousColumnsAndRows(int numOfColumns, int numOfRows);
     void addHomogeneousColumnsAndRows(int numOfColumns, int numOfRows, float margin);

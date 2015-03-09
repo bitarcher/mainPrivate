@@ -24,7 +24,7 @@ import java.util.Random;
  * Michel Strasser
  * bitarcher.com
  */
-public abstract class Widget<TContext extends IContext> extends ClipEntity implements IWidget, ISize {
+public abstract class Widget<TContext extends IContext> extends ClipEntity implements IWidget<TContext>, ISize {
 
     private ITheme theme;
     private boolean areResourcesLoaded = false;

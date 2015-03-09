@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.IArrows;
+import com.bitarcher.aeFun.interfaces.gui.theme.ILayoutFactory;
 import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
 
@@ -11,7 +12,9 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesS
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.Font.FontCreateFromTypeFaceResourceInfo;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResSvgTexture;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.widgettoolkit.R;
+import com.bitarcher.aefun.widgetLayout.DefaultLayoutFactory;
+import com.bitarcher.aefun.widgetLayout.R;
+//import com.bitarcher.widgettoolkit.R;
 
 import org.andengine.extension.svg.adt.ISVGColorMapper;
 import org.andengine.opengl.font.Font;
@@ -25,18 +28,29 @@ public class DefaultTheme extends ThemeBase {
     protected FontCreateFromTypeFaceResourceInfo mediumFontResourceInfo;
     protected FontCreateFromTypeFaceResourceInfo smallFontResourceInfo;
     protected SvgTexturesSetFromResIdsResourceInfo textButtonSvgTexturesSetResourceInfo;
+    ILayoutFactory layoutFactory;
 
     public FontCreateFromTypeFaceResourceInfo getBigFontResourceInfo()
     {
         return this.bigFontResourceInfo;
     }
 
+    protected ILayoutFactory getNewLayoutFactory()
+    {
+        return new DefaultLayoutFactory();
+    }
 
     public DefaultTheme(IThemeManager themeManager, String name) {
         super(themeManager, name);
 
         this.setFontResourceInfos();
         this.setTextButtonSvgTexturesSetResourceInfo();
+        this.layoutFactory = this.getNewLayoutFactory();
+    }
+
+    @Override
+    public ILayoutFactory getLayoutFactory() {
+        return layoutFactory;
     }
 
     protected void setFontResourceInfos()
@@ -126,7 +140,8 @@ public class DefaultTheme extends ThemeBase {
         {
             Context context = getThemeManager().getResourceManager().getContext();
 
-            this.arrows = new DefaultArrows(context);
+            //this.arrows = new DefaultArrows(context);
+            this.arrows = null;
         }
 
         return this.arrows;

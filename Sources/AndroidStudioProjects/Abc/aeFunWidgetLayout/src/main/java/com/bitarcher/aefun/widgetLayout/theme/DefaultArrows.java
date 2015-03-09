@@ -2,7 +2,8 @@
  * Copyright (c) 2015.
  * Michel Strasser
  * bitarcher.com
- */
+ *//*
+
 
 package com.bitarcher.aefun.widgetLayout.theme;
 
@@ -12,11 +13,13 @@ import com.bitarcher.aeFun.interfaces.gui.theme.IArrows;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResSvgTexture;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.widgettoolkit.R;
+//import com.bitarcher.widgettoolkit.R;
 
+*/
 /**
  * Created by michel on 26/02/15.
- */
+ *//*
+
 public class DefaultArrows implements IArrows {
     Context context;
 
@@ -44,3 +47,4 @@ public class DefaultArrows implements IArrows {
         return this.resourceInfo;
     }
 }
+*/

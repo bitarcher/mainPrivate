@@ -81,13 +81,13 @@ public abstract class ThemeBase implements ITheme {
 
         switch(eFontSize)
         {
-            case EnumFontSize.Big:
+            case Big:
                 retval = this.getBigFont();
                 break;
-            case EnumFontSize.Medium:
+            case Medium:
                 retval = this.getMediumFont();
                 break;
-            case EnumFontSize.Small:
+            case Small:
                 retval = this.getSmallFont();
                 break;
 

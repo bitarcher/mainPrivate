@@ -48,6 +48,7 @@ dependencies {
 
     compile project(':aeFunInterfaces')
     compile project(':aeFunResourceManagement')
+    compile project(':aeFunWidgetLayout')
     compile project(':aeFunWidgetToolKit')
     compile project(':aeFunSceneManagement')
 

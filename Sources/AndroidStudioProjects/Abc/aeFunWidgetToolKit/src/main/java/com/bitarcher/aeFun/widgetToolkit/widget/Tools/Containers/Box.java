@@ -7,6 +7,7 @@ package com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers;
  */
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.INoneContext;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.EnumOrientation;
 import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.IBox;
@@ -21,7 +22,7 @@ import org.andengine.util.adt.list.SmartList;
 /**
  * Created by michel on 28/02/15.
  */
-public class Box extends Container implements IBox {
+public class Box extends Container<INoneContext> implements IBox {
 
     boolean shouldFixedSpaceUsageBeResizedOnResize = false;
 

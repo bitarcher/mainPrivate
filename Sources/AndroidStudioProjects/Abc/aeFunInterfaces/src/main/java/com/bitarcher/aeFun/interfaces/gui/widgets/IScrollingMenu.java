@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by michel on 23/02/15.
  */
-public interface IScrollingMenu extends IWidget {
+public interface IScrollingMenu extends IWidget /* TODO parameters */{
 
     List<IImagedAndLabeled> getImagedAndLabeledList();
 

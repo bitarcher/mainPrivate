@@ -7,6 +7,7 @@ package com.bitarcher.aeFun.widgetToolkit.widget;
  */
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.INoneContext;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.ITable;
 import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.ENoFreeTableCellFound;
@@ -27,7 +28,7 @@ import org.andengine.util.adt.list.SmartList;
 /**
  * Created by michel on 04/03/15.
  */
-public class Table extends Container implements ITable {
+public class Table extends Container<INoneContext> implements ITable {
 
     boolean shouldFixedSpaceUsageBeResizedOnResize = false;
     SmartList<TableColumn> tableColumns = new SmartList<>();

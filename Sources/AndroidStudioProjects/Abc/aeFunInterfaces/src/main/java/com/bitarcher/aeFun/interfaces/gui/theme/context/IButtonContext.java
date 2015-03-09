@@ -13,5 +13,5 @@ import com.bitarcher.aeFun.interfaces.gui.theme.context.owner.IMouseEffectOwner;
 /**
  * Created by michel on 09/03/15.
  */
-public interface IButtonContext extends IMouseEffectOwner, IEnabled, ISizeOwner {
+public interface IButtonContext extends IContext, IMouseEffectOwner, IEnabled, ISizeOwner {
 }

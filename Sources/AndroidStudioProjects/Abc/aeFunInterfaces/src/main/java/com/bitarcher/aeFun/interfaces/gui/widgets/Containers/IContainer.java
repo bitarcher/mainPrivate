@@ -6,12 +6,13 @@ package com.bitarcher.aeFun.interfaces.gui.widgets.Containers;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.gui.theme.context.IContext;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 
 /**
  * Created by michel on 03/03/15.
  */
-public interface IContainer extends IWidget {
+public interface IContainer<TContext extends IContext> extends IWidget<TContext> {
     void attachChild(IWidget widget);
     void detachChild(IWidget widget);
 

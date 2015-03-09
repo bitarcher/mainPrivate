@@ -13,6 +13,6 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 /**
  * Created by michel on 09/03/15.
  */
-public interface ILayoutFactory extends ITFactory<ILayout, IWidget>{
+public interface ILayoutFactory {
     <TContext  extends IContext> ILayout<TContext> make(IWidget<TContext> key);
 }

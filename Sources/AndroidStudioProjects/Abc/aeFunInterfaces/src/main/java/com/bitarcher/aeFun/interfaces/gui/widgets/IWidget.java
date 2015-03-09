@@ -5,8 +5,8 @@ import com.bitarcher.aeFun.interfaces.gui.theme.ILayoutOwner;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.IContext;
 import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.IPaddable;
-import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.IPositionable;
-import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.ISizable;
+import com.bitarcher.aeFun.interfaces.geometry.IPositionable;
+import com.bitarcher.aeFun.interfaces.geometry.ISizable;
 
 import org.andengine.entity.IEntity;
 

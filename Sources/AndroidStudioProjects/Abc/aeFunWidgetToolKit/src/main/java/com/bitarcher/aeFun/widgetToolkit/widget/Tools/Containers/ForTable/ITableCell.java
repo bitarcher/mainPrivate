@@ -6,8 +6,8 @@ package com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.ForTable;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.IPositionable;
-import com.bitarcher.aeFun.interfaces.gui.widgets.Containers.Other.ISizable;
+import com.bitarcher.aeFun.interfaces.geometry.IPositionable;
+import com.bitarcher.aeFun.interfaces.geometry.ISizable;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.IWidgetTableCellsConsumption;
 
 /**
