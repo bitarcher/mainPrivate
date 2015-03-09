@@ -4,6 +4,9 @@ import com.bitarcher.aeFun.interfaces.geometry.ISize;
 import com.bitarcher.aeFun.interfaces.gui.theme.ILayout;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.IContext;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.IEnabledSetter;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.IPaddingSetter;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.ISizeSetter;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidgetListener;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
@@ -97,7 +100,14 @@ public abstract class Widget<TContext extends IContext> extends ClipEntity imple
 
     protected void onPaddingChanged()
     {
-
+        if(this.layout != null)
+        {
+            if(this.layout.getContext() instanceof IPaddingSetter)
+            {
+                IPaddingSetter setter = (IPaddingSetter)this.layout.getContext();
+                setter.setPadding(this.padding);
+            }
+        }
     }
 
     @Override
@@ -119,7 +129,14 @@ public abstract class Widget<TContext extends IContext> extends ClipEntity imple
 
     protected void onEnabledChanged(boolean enabled)
     {
-
+        if(this.layout != null)
+        {
+            if(this.layout.getContext() instanceof IEnabledSetter)
+            {
+                IEnabledSetter setter = (IEnabledSetter)this.layout.getContext();
+                setter.setEnabled(enabled);
+            }
+        }
     }
 
     protected Widget(ITheme theme, float pX, float pY, float pWidth, float pHeight) {
@@ -138,6 +155,9 @@ public abstract class Widget<TContext extends IContext> extends ClipEntity imple
         this.attachChild(this.debugRectangle);
 
         this.layout = this.theme.getLayoutFactory().make(this);
+        if(this.layout != null) {
+            this.layout.onPopulate();
+        }
     }
 
     void recomputeDebugRectangleSizeAndPosition()
@@ -276,7 +296,14 @@ public abstract class Widget<TContext extends IContext> extends ClipEntity imple
 
     protected void onSizeChanged()
     {
-
+        if(this.layout != null)
+        {
+            if(this.layout.getContext() instanceof ISizeSetter)
+            {
+                ISizeSetter setter = (ISizeSetter)this.layout.getContext();
+                setter.setSize(this);
+            }
+        }
     }
 
     @Override

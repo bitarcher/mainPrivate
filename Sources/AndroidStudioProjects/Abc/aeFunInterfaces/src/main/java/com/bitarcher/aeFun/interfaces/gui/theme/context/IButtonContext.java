@@ -7,12 +7,10 @@ package com.bitarcher.aeFun.interfaces.gui.theme.context;
  */
 
 
-import com.bitarcher.aeFun.interfaces.geometry.ISizeOwner;
-import com.bitarcher.aeFun.interfaces.gui.theme.context.owner.IEnabledOwner;
-import com.bitarcher.aeFun.interfaces.gui.theme.context.owner.IMouseEffectOwner;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.IMouseEffectSetter;
 
 /**
  * Created by michel on 09/03/15.
  */
-public interface IButtonContext extends ICommonContext, IMouseEffectOwner {
+public interface IButtonContext extends ICommonContext, IMouseEffectSetter {
 }

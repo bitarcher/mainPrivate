@@ -6,13 +6,14 @@ package com.bitarcher.aeFun.interfaces.gui.theme.context;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.geometry.ISizeOwner;
-import com.bitarcher.aeFun.interfaces.gui.theme.context.owner.IEnabledOwner;
 
-import com.bitarcher.aeFun.interfaces.gui.theme.context.owner.IPaddingOwner;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.IEnabledSetter;
+
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.IPaddingSetter;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.ISizeSetter;
 
 /**
  * Created by michel on 09/03/15.
  */
-public interface ICommonContext  extends IContext, IEnabledOwner, ISizeOwner, IPaddingOwner {
+public interface ICommonContext  extends IContext, IEnabledSetter, ISizeSetter, IPaddingSetter {
 }

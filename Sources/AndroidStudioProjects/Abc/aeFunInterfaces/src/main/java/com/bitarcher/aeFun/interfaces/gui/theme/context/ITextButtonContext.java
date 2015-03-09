@@ -6,10 +6,10 @@ package com.bitarcher.aeFun.interfaces.gui.theme.context;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.gui.theme.context.owner.ITranslatedLabelOwner;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.ITranslatedLabelSetter;
 
 /**
  * Created by michel on 09/03/15.
  */
-public interface ITextButtonContext extends IButtonContext, ITranslatedLabelOwner {
+public interface ITextButtonContext extends IButtonContext, ITranslatedLabelSetter {
 }

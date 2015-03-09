@@ -7,19 +7,28 @@ package com.bitarcher.aefun.widgetLayout.layouts;
  */
 
 
+import com.bitarcher.aeFun.interfaces.geometry.ISize;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ITextButtonContext;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.EnumMouseEffect;
 import com.bitarcher.aeFun.interfaces.gui.theme.layout.ITextButtonLayout;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 
+import org.andengine.entity.Entity;
+import org.andengine.entity.IEntity;
 import org.andengine.entity.primitive.Rectangle;
+import org.andengine.entity.text.Text;
+import org.andengine.opengl.font.Font;
+import org.andengine.opengl.vbo.DrawType;
 
 /**
  * Created by michel on 09/03/15.
  */
-public class TextButtonLayout implements ITextButtonLayout {
+public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
     ITextButton textButton;
     Rectangle backRectangle;
+    Entity textLayer;
+
 
 
     @Override
@@ -32,30 +41,39 @@ public class TextButtonLayout implements ITextButtonLayout {
         this.backRectangle = new Rectangle(0, 0, 10, 10, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
         this.backRectangle.setColor(0.7f, 0.9f, 0.9f);
         this.textButton.attachChild(this.backRectangle);
+
+        //this.text.setWidth(pWidth);
+        //this.text.setHeight(pWidth);
+
+        //this.attachChild(this.buttonSprite);
+
+        // I have to do so since Text.setText has problem
+        this.textLayer = new Entity();
+        this.textButton.attachChild(this.textLayer);
     }
 
     @Override
-    public void onInit(ITextButtonContext context) {
-        this.backRectangle.setSize(context.getSize().getWidth() - context.getPadding(), context.getSize().getHeight() - context.getPadding());
+    public void onInit() {
+        this.setText(this.textButton.getTranslatedLabel());
+        this.doSizeAndPadding();
+
 
     }
 
-    @Override
-    public void onContextChanged(ITextButtonContext context) {
-        if(context.getPadding() != null || context.getSize() != null)
-        {
-            this.backRectangle.setSize(this.textButton.getWidth() - this.textButton.getPadding(), this.textButton.getHeight() - this.textButton.getPadding());
-            // TODO
-        }
-        if(context.isEnabled() != null || context.getMouseEffect() != null)
-        {
 
-            // TODO
-        }
+    void setText(String label) {
 
-        if(context.getTranslatedLabel() != null)
+        this.textLayer.detachChildren();
+
+        if (!(label.isEmpty()))
         {
-            // TODO
+            float midWidth = this.textButton.getWidth() / 2;
+            float midHeight = this.textButton.getHeight() / 2;
+
+            Font font = this.textButton.getTheme().getFontThemeSection().getTextButtonFont();
+            Text text = new Text(midWidth, midHeight, font, label, this.textButton.getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager(), DrawType.DYNAMIC);
+
+            this.textLayer.attachChild(text);
         }
     }
 
@@ -70,5 +88,51 @@ public class TextButtonLayout implements ITextButtonLayout {
 
     public TextButtonLayout(ITextButton textButton) {
         this.textButton = textButton;
+    }
+
+    @Override
+    public void setEnabled(boolean enabled) {
+
+    }
+
+    @Override
+    public ITextButtonContext getContext() {
+        return this;
+    }
+
+    @Override
+    public void setMouseEffect(EnumMouseEffect mouseEffect) {
+    }
+
+    @Override
+    public void setPadding(float padding) {
+        this.doSizeAndPadding();
+    }
+
+    @Override
+    public void setSize(ISize size) {
+        this.doSizeAndPadding();
+    }
+
+    void doSizeAndPadding()
+    {
+        float border = 2;
+        float midWidth = this.textButton.getWidth() / 2;
+        float midHeight = this.textButton.getHeight() / 2;
+        float wmp = this.textButton.getWidth() - this.textButton.getPadding();
+        float hmp = this.textButton.getHeight() - this.textButton.getPadding();
+        float wb = wmp - 2 * border;
+        float hb = hmp - 2 * border;
+
+
+        this.backRectangle.setSize(wmp, hmp);
+        this.backRectangle.setPosition(midWidth, midHeight);
+
+        this.setText(this.textButton.getTranslatedLabel());
+    }
+
+    @Override
+    public void setTranslatedLabel(String translatedLabel) {
+        this.setText(translatedLabel);
     }
 }

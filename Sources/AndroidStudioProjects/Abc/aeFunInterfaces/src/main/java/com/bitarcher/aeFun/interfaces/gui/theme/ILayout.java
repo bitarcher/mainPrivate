@@ -17,12 +17,11 @@ public interface ILayout<TContext extends IContext> extends IResourceRequirement
 
     IWidget<TContext> getWidget();
 
-    // create the sub entity and attach the to the widget
+    // create the sub entity and attach the to the widget, called by Widget ctor
     void onPopulate();
 
-    // all the field of the context are not null
-    void onInit(TContext context);
+    // should be called by widget sub class ctor
+    void onInit();
 
-    // only the field that have changed are not null
-    void onContextChanged(TContext context);
+    TContext getContext();
 }

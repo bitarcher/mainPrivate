@@ -14,6 +14,13 @@ import java.util.ArrayList;
  */
 public abstract class Button<TContext extends IButtonContext> extends Widget<TContext> implements IButton<TContext>{
 
+    protected boolean isMousePressedPred;
+
+    @Override
+    public boolean isMousePressed() {
+        return this.isMousePressedPred;
+    }
+
     protected ArrayList<IButtonListener> buttonListenerArrayList=new ArrayList<>();
 
     protected Button(ITheme theme, float pX, float pY, float pWidth, float pHeight) {
