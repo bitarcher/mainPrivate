@@ -136,6 +136,8 @@ public abstract class Widget<TContext extends IContext> extends ClipEntity imple
         this.sortChildren();
 
         this.attachChild(this.debugRectangle);
+
+        this.layout = this.theme.getLayoutFactory().make(this);
     }
 
     void recomputeDebugRectangleSizeAndPosition()
@@ -230,10 +232,14 @@ public abstract class Widget<TContext extends IContext> extends ClipEntity imple
 
     protected void pushResourceRequirements()
     {
+        if(this.layout != null)
+            this.layout.pushResourceRequirements();
     }
 
     protected void popResourceRequirements()
     {
+        if(this.layout != null)
+            this.layout.popResourceRequirements();
     }
 
     @Override

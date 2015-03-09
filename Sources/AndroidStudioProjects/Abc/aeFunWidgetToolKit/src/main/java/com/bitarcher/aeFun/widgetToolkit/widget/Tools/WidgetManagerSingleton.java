@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * Created by michel on 28/02/15.
  */
 public class WidgetManagerSingleton {
-    boolean debugModeEnabled = true;
+    boolean debugModeEnabled = false;
 
     ArrayList<IWidget> widgetArrayList = new ArrayList<>();
     private static WidgetManagerSingleton ourInstance = new WidgetManagerSingleton();

@@ -1,7 +1,9 @@
 package com.bitarcher.aeFun.widgetToolkit.widget;
 
+import com.bitarcher.aeFun.interfaces.geometry.ISize;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ITextButtonContext;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.owner.EnumMouseEffect;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButtonListener;
@@ -85,7 +87,37 @@ public class TextButton extends Button<ITextButtonContext> implements ITextButto
     protected void onPaddingChanged() {
         super.onPaddingChanged();
 
-        this.setTextAndButtonSpriteSizeAndPosition();
+        if(this.getLayout() != null) {
+            final float mPadding = this.getPadding();
+            this.getLayout().onContextChanged(new ITextButtonContext() {
+                @Override
+                public Boolean isEnabled() {
+                    return null;
+                }
+
+                @Override
+                public EnumMouseEffect getMouseEffect() {
+                    return null;
+                }
+
+                @Override
+                public Float getPadding() {
+                    return mPadding;
+                }
+
+                @Override
+                public ISize getSize() {
+                    return null;
+                }
+
+                @Override
+                public String getTranslatedLabel() {
+                    return null;
+                }
+            });
+        }
+
+        //this.setTextAndButtonSpriteSizeAndPosition();
     }
 
     @Override
@@ -184,6 +216,37 @@ public class TextButton extends Button<ITextButtonContext> implements ITextButto
 
     protected void onTranslatedLabelChanged(String translatedLabel)
     {
+        if(this.getLayout() != null)
+        {
+            final boolean mEnabled = this.isEnabled();
+            this.getLayout().onContextChanged(new ITextButtonContext() {
+                @Override
+                public Boolean isEnabled() {
+                    return mEnabled;
+                }
+
+                @Override
+                public EnumMouseEffect getMouseEffect() {
+                    return null;
+                }
+
+                @Override
+                public Float getPadding() {
+                    return null;
+                }
+
+                @Override
+                public ISize getSize() {
+                    return null;
+                }
+
+                @Override
+                public String getTranslatedLabel() {
+                    return null;
+                }
+            });
+        }
+
     }
 
     @Override
@@ -195,6 +258,36 @@ public class TextButton extends Button<ITextButtonContext> implements ITextButto
     protected void onEnabledChanged(boolean enabled) {
         super.onEnabledChanged(enabled);
 
-        this.buttonSprite.setEnabled(enabled);
+        if(this.getLayout() != null)
+        {
+            final boolean mEnabled = this.isEnabled();
+            this.getLayout().onContextChanged(new ITextButtonContext() {
+                @Override
+                public Boolean isEnabled() {
+                    return mEnabled;
+                }
+
+                @Override
+                public EnumMouseEffect getMouseEffect() {
+                    return null;
+                }
+
+                @Override
+                public Float getPadding() {
+                    return null;
+                }
+
+                @Override
+                public ISize getSize() {
+                    return null;
+                }
+
+                @Override
+                public String getTranslatedLabel() {
+                    return null;
+                }
+            });
+        }
+        //this.buttonSprite.setEnabled(enabled);
     }
 }

@@ -13,28 +13,18 @@ import com.bitarcher.aeFun.interfaces.gui.theme.context.owner.EnumMouseEffect;
 /**
  * Created by michel on 09/03/15.
  */
-public class ButtonContext implements IButtonContext {
-    boolean enabled;
+public class ButtonContext extends CommonContext implements IButtonContext {
+
     EnumMouseEffect mouseEffect;
-    ISize size;
 
-    @Override
-    public boolean isEnabled() {
-        return this.enabled;
-    }
-
-    @Override
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
 
     @Override
     public EnumMouseEffect getMouseEffect() {
         return this.mouseEffect;
     }
 
-    @Override
-    public ISize getSize() {
-        return null;
+    public ButtonContext(Boolean enabled, ISize size, Float padding, EnumMouseEffect mouseEffect) {
+        super(enabled, size, padding);
+        this.mouseEffect = mouseEffect;
     }
 }
