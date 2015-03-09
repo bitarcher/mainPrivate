@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/aeFunResourceManagement/aeFunResourceManagement.iml" filepath="$PROJECT_DIR$/aeFunResourceManagement/aeFunResourceManagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFunSceneManagement/aeFunSceneManagement.iml" filepath="$PROJECT_DIR$/aeFunSceneManagement/aeFunSceneManagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFunWidgetToolKit/aeFunWidgetToolKit.iml" filepath="$PROJECT_DIR$/aeFunWidgetToolKit/aeFunWidgetToolKit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aefunWidgetLayout/aefunWidgetLayout.iml" filepath="$PROJECT_DIR$/aefunWidgetLayout/aefunWidgetLayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/andEngine/andEngine.iml" filepath="$PROJECT_DIR$/andEngine/andEngine.iml" />
       <module fileurl="file://$PROJECT_DIR$/andEnginePhysicsBox2DExtension/andEnginePhysicsBox2DExtension.iml" filepath="$PROJECT_DIR$/andEnginePhysicsBox2DExtension/andEnginePhysicsBox2DExtension.iml" />
       <module fileurl="file://$PROJECT_DIR$/andEngineSVGTextureRegionExtension/andEngineSVGTextureRegionExtension.iml" filepath="$PROJECT_DIR$/andEngineSVGTextureRegionExtension/andEngineSVGTextureRegionExtension.iml" />

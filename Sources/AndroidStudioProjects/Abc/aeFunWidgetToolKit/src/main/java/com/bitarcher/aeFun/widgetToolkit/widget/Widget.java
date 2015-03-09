@@ -4,6 +4,7 @@ import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidgetListener;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceRequirementsStackUser;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.WidgetManagerSingleton;
 
 import org.andengine.entity.Entity;
@@ -138,8 +139,6 @@ public abstract class Widget extends ClipEntity implements IWidget {
     {
         Color retval;
 
-
-
         float[] fVars = new float[3];
 
         for(int i =0; i < fVars.length ; i++)
@@ -224,7 +223,7 @@ public abstract class Widget extends ClipEntity implements IWidget {
     {
     }
 
-    protected void popResourceRequirements() throws EResourceNotFound
+    protected void popResourceRequirements()
     {
     }
 
