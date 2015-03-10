@@ -146,6 +146,7 @@ public class GameLevel extends ManagedGameScene {
 
         
 
+        /*
         final HBox container = new HBox(this.getSceneManager().getTheme(),
                 w / 2,
                 h / 2,
@@ -159,13 +160,13 @@ public class GameLevel extends ManagedGameScene {
         container.packStart(tb3, new PercentSpaceUsage(0, 200f));
 
         this.attachChild(container);
+        */
 
-        /*
 
         final Table container = new Table(this.getSceneManager().getTheme(),
                 w / 2,
                 h / 2,
-                800, 400);
+                400, 400);
 
         //container.addHomogeneousColumnsAndRows(3, 3, 5);
 
@@ -188,7 +189,7 @@ public class GameLevel extends ManagedGameScene {
         //container.attachChild(tb9);
         this.attachChild(container);
 
-        */
+
         
         tb1.addButtonListener(new IButtonListener() {
             @Override

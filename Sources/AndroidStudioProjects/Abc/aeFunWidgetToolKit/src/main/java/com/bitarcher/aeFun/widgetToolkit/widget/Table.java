@@ -353,7 +353,7 @@ public class Table extends Container<INoneContext> implements ITable {
         float endX = rightBottomCell.getX() + rightBottomCell.getWidth();
         float endY = rightBottomCell.getY() - rightBottomCell.getHeight();
         float width = endX - startX;
-        float height = endY - startY;
+        float height =   startY - endY;
 
         // anchor center, remember !
         float widgetX = (startX + endX)/ 2;
