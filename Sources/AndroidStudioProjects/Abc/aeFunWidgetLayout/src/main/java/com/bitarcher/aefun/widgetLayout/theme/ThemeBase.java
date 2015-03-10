@@ -2,11 +2,14 @@ package com.bitarcher.aefun.widgetLayout.theme;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
 import com.bitarcher.aeFun.interfaces.gui.theme.IFontThemeSection;
+import com.bitarcher.aeFun.interfaces.gui.theme.ILayoutFactory;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITextButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IWidgetSections;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+import com.bitarcher.aefun.widgetLayout.DefaultLayoutFactory;
 
 import org.andengine.opengl.font.Font;
 
@@ -20,43 +23,48 @@ public abstract class ThemeBase implements ITheme {
     IThemeManager themeManager;
     String name;
 
+    ILayoutFactory layoutFactory;
+    IFontThemeSection fontThemeSection;
+    IWidgetSections widgetSections;
+
+
+    protected abstract ILayoutFactory getNewLayoutFactory();
+    protected abstract IWidgetSections getNewWidgetSections();
+    protected abstract IFontThemeSection getNewFontThemeSection();
+
+
     @Override
-    public IFontThemeSection getFontThemeSection() {
-        final ThemeBase themeBase = this;
+    public  IFontThemeSection getFontThemeSection()
+    {
+        if(this.fontThemeSection == null)
+        {
+            this.fontThemeSection = this.getNewFontThemeSection();
+        }
 
-        return new IFontThemeSection() {
-            @Override
-            public Font getFont(EnumFontSize eFontSize) throws EResourceNotFound {
-                return themeBase.getTheFont(eFontSize);
-            }
-
-            @Override
-            public Font getTextButtonFont() {
-                return this.getFont(EnumFontSize.Medium);
-            }
-        };
-
-
+        return this.fontThemeSection;
     }
 
     @Override
-    public ITextButtonSection getTextButtonSection() {
-        final ThemeBase themeBase = this;
+    public IWidgetSections getWidgetSections()
+    {
+        if(this.widgetSections != null)
+        {
+            this.widgetSections = this.getNewWidgetSections();
+        }
 
-        return new ITextButtonSection() {
-            @Override
-            public ITexturesSetResourceInfo getTexturesSetResourceInfo() {
-                ITexturesSetResourceInfo retval = null;
+        return this.widgetSections;
+    }
 
-                try {
-                    retval = themeBase.getTextButtonTexturesSetResourceInfo();
-                } catch (EResourceNotFound eResourceNotFound) {
-                    eResourceNotFound.printStackTrace();
-                }
 
-                return retval;
-            }
-        };
+    @Override
+    public  ILayoutFactory getLayoutFactory()
+    {
+        if(this.layoutFactory == null)
+        {
+            this.layoutFactory = this.getNewLayoutFactory();
+        }
+
+        return this.layoutFactory;
     }
 
     @Override
@@ -69,34 +77,6 @@ public abstract class ThemeBase implements ITheme {
         this.name = name;
     }
 
-    protected abstract Font getBigFont() throws EResourceNotFound;
-    protected abstract Font getMediumFont() throws EResourceNotFound;
-    protected abstract Font getSmallFont() throws EResourceNotFound;
-    protected abstract com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo getTextButtonTexturesSetResourceInfo() throws EResourceNotFound;
-
-
-    private Font getTheFont(EnumFontSize eFontSize) throws EResourceNotFound {
-
-        Font retval = null;
-
-        switch(eFontSize)
-        {
-            case Big:
-                retval = this.getBigFont();
-                break;
-            case Medium:
-                retval = this.getMediumFont();
-                break;
-            case Small:
-                retval = this.getSmallFont();
-                break;
-
-            default:
-                throw new NoSuchElementException(eFontSize.toString());
-        }
-        return retval;
-    }
-
     @Override
     public String getName() {
         return this.name;
@@ -105,11 +85,12 @@ public abstract class ThemeBase implements ITheme {
 
     protected void onPushFontRequirements()
     {
-
+        this.getFontThemeSection().pushResourceRequirements();
     }
 
-    protected void onPopFontRequirements() throws EResourceNotFound {
-
+    protected void onPopFontRequirements()
+    {
+        this.getFontThemeSection().popResourceRequirements();
     }
 
     protected void onLoadOtherResources()

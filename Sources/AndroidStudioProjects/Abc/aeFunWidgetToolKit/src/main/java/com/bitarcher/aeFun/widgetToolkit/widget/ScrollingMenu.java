@@ -2,7 +2,8 @@
  * Copyright (c) 2015.
  * Michel Strasser
  * bitarcher.com
- */
+ *//*
+
 
 package com.bitarcher.aeFun.widgetToolkit.widget;
 
@@ -32,12 +33,14 @@ import org.andengine.opengl.texture.region.ITextureRegion;
 import java.util.ArrayList;
 import java.util.List;
 
+*/
 /**
  * Created by michel on 23/02/15.
  * adapted from https://github.com/gorlok/AndEngineMenuScrollDemo/blob/master/src/com/example/menuscrolldemo/MenuScrollDemo.java
  * which is also adapted from
  * @see <a href="http://www.andengine.org/forums/tutorials/menu-scroll-example-t5740.html">original source</a>
- */
+ *//*
+
 public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetector.IScrollDetectorListener, IOnSceneTouchListener,
         ClickDetector.IClickDetectorListener {
 
@@ -269,3 +272,4 @@ public class ScrollingMenu extends Widget implements IScrollingMenu, ScrollDetec
         super.onDetached();
     }
 }
+*/

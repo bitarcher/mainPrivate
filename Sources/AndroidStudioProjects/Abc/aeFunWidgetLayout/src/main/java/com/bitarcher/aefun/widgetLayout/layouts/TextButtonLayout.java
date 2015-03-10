@@ -54,19 +54,15 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
         this.gradientLayer = new Entity();
         this.textButton.attachChild(this.gradientLayer);
 
-
         // I have to do so since Text.setText has problem
         this.textLayer = new Entity();
         this.textButton.attachChild(this.textLayer);
-
     }
 
     @Override
     public void onInit() {
         this.setText(this.textButton.getTranslatedLabel());
         this.doSizeAndPadding();
-
-
     }
 
 
@@ -79,7 +75,7 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
             float midWidth = this.textButton.getWidth() / 2;
             float midHeight = this.textButton.getHeight() / 2;
 
-            Font font = this.textButton.getTheme().getFontThemeSection().getTextButtonFont();
+            Font font = this.textButton.getTheme().getWidgetSections().getTextButtonSection().getTextButtonFont();
             Text text = new Text(midWidth, midHeight, font, label, this.textButton.getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager(), DrawType.DYNAMIC);
 
             this.textLayer.attachChild(text);
@@ -134,7 +130,7 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
         float wmp = tw - 2 * this.textButton.getPadding();
         float hmp = th - 2 * this.textButton.getPadding();
 
-        float border = 10;
+        float border = 4;
         float wb = wmp - 2 * border;
         float hb = hmp - 2 * border;
 
