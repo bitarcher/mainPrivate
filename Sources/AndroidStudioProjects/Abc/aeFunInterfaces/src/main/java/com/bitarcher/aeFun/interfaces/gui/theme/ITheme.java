@@ -12,6 +12,7 @@ public interface ITheme extends INamed, IService{
 
     // porcelain API
     IFontThemeSection getFontThemeSection();
+    IColorsSection getColorsSection();
 
 
     // mid level API

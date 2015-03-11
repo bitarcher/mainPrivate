@@ -1,6 +1,7 @@
 package com.bitarcher.aefun.widgetLayout.theme;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.aeFun.interfaces.gui.theme.IColorsSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.IFontThemeSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.ILayoutFactory;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITextButtonSection;
@@ -26,12 +27,13 @@ public abstract class ThemeBase implements ITheme {
     ILayoutFactory layoutFactory;
     IFontThemeSection fontThemeSection;
     IWidgetSections widgetSections;
+    IColorsSection colorsSection;
 
 
     protected abstract ILayoutFactory getNewLayoutFactory();
     protected abstract IWidgetSections getNewWidgetSections();
     protected abstract IFontThemeSection getNewFontThemeSection();
-
+    protected abstract IColorsSection getNewColorsSection();
 
     @Override
     public  IFontThemeSection getFontThemeSection()
@@ -47,7 +49,7 @@ public abstract class ThemeBase implements ITheme {
     @Override
     public IWidgetSections getWidgetSections()
     {
-        if(this.widgetSections != null)
+        if(this.widgetSections == null)
         {
             this.widgetSections = this.getNewWidgetSections();
         }
@@ -66,6 +68,17 @@ public abstract class ThemeBase implements ITheme {
 
         return this.layoutFactory;
     }
+
+    @Override
+    public IColorsSection getColorsSection() {
+        if(this.colorsSection == null)
+        {
+            this.colorsSection = this.getNewColorsSection();
+        }
+
+        return this.colorsSection;
+    }
+
 
     @Override
     public IThemeManager getThemeManager() {

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.IArrows;
+import com.bitarcher.aeFun.interfaces.gui.theme.IColorsSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.IFontThemeSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.ILayoutFactory;
 import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
@@ -16,6 +17,7 @@ import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResSvgT
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.aefun.widgetLayout.DefaultLayoutFactory;
 import com.bitarcher.aefun.widgetLayout.R;
+import com.bitarcher.aefun.widgetLayout.porcelain.DefaultColorsSection;
 import com.bitarcher.aefun.widgetLayout.porcelain.DefaultFontThemeSection;
 import com.bitarcher.aefun.widgetLayout.porcelain.DefaultWidgetSections;
 //import com.bitarcher.widgettoolkit.R;
@@ -51,4 +53,10 @@ public class DefaultTheme extends ThemeBase {
     protected IFontThemeSection getNewFontThemeSection() {
         return new DefaultFontThemeSection(this);
     }
+
+    @Override
+    protected IColorsSection getNewColorsSection() {
+        return new DefaultColorsSection(this);
+    }
 }
+

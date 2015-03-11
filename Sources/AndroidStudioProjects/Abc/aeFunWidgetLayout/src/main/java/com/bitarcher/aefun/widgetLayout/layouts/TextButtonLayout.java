@@ -42,7 +42,7 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
     @Override
     public void onPopulate() {
         this.backRectangle = new Rectangle(0, 0, 10, 10, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
-        this.backRectangle.setColor(0.7f, 0.9f, 0.9f);
+        this.backRectangle.setColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getBorderColor());
         this.textButton.attachChild(this.backRectangle);
 
 
@@ -144,8 +144,8 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
         this.gradientLayer.detachChildren();
 
         Gradient gradient = new Gradient(wb / 2, hb / 2, wb, hb, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
-        gradient.setFromColor(0, 0.7f, 0.9f);
-        gradient.setToColor(0.9f, 0.7f, 0.9f);
+        gradient.setFromColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getNormalColor1());
+        gradient.setToColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getNormalColor2());
         this.gradientLayer.attachChild(gradient);
 
 

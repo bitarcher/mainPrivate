@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.interfaces.gui.theme.widgetSections;
+package com.bitarcher.aeFun.interfaces.gui.theme;
 
 /*
  * Copyright (c) 2015.
@@ -6,15 +6,13 @@ package com.bitarcher.aeFun.interfaces.gui.theme.widgetSections;
  * bitarcher.com
  */
 
-import org.andengine.opengl.font.Font;
 import org.andengine.util.adt.color.Color;
 
 /**
- * Created by michel on 10/03/15.
+ * Created by michel on 11/03/15.
  */
-public interface ITextButtonSection extends IButtonSection {
-    Font getTextButtonFont();
-    float getBorderSize();
+public interface IColorsSection {
+    Color getFontColor();
     Color getBorderColor();
     Color getNormalColor1();
     Color getNormalColor2();

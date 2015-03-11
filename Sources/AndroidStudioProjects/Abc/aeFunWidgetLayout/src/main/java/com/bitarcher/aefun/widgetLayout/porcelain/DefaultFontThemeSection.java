@@ -27,19 +27,25 @@ public class DefaultFontThemeSection implements IFontThemeSection {
     protected FontCreateFromTypeFaceResourceInfo mediumFontResourceInfo;
     protected FontCreateFromTypeFaceResourceInfo smallFontResourceInfo;
 
-    public DefaultFontThemeSection(ITheme theme) {
+    public DefaultFontThemeSection(ITheme theme)
+    {
         this.theme = theme;
+
+        int c = 1024;
+        this.bigFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/bigFont", c, c, 36, this.getFontColor(EnumFontSize.Big).getARGBPackedInt(), true,
+                Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        this.mediumFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/mediumFont", c, c, 32, this.getFontColor(EnumFontSize.Medium).getARGBPackedInt(), true,
+                Typeface.create(Typeface.DEFAULT, Typeface.ITALIC));
+        this.smallFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/smallFont", c, c, 28, this.getFontColor(EnumFontSize.Small).getARGBPackedInt(), true,
+                Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
     }
 
-    protected void setFontResourceInfos()
-    {
-        int c = 1024;
-        this.bigFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/bigFont", c, c, 36, Color.BLACK_ARGB_PACKED_INT, true,
-                Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        this.mediumFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/mediumFont", c, c, 32, Color.BLACK_ARGB_PACKED_INT, true,
-                Typeface.create(Typeface.DEFAULT, Typeface.ITALIC));
-        this.smallFontResourceInfo =new FontCreateFromTypeFaceResourceInfo("@default/smallFont", c, c, 28, Color.BLACK_ARGB_PACKED_INT, true,
-                Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+    @Override
+    public Color getFontColor(EnumFontSize eFontSize) {
+
+        Color retval = this.theme.getColorsSection().getFontColor();
+
+        return retval;
     }
 
     protected FontCreateFromTypeFaceResourceInfo getBigFontResourceInfo()
