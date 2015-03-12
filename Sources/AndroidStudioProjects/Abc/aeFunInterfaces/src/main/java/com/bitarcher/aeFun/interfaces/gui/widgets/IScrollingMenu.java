@@ -6,7 +6,7 @@
 
 package com.bitarcher.aeFun.interfaces.gui.widgets;
 
-import com.bitarcher.aeFun.interfaces.mvc.IImagedAndLabeled;
+import com.bitarcher.aeFun.interfaces.mvc.IImageAndLabeled;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface IScrollingMenu extends IWidget /* TODO parameters */{
 
-    List<IImagedAndLabeled> getImagedAndLabeledList();
+    List<IImageAndLabeled> getImagedAndLabeledList();
 
     void addScrollingMenuListener(IScrollingMenuListener scrollingMenuListener);
     void removeScrollingMenuListener(IScrollingMenuListener scrollingMenuListener);

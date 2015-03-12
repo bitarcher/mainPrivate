@@ -6,11 +6,11 @@
 
 package com.bitarcher.aeFun.interfaces.gui.widgets;
 
-import com.bitarcher.aeFun.interfaces.mvc.IImagedAndLabeled;
+import com.bitarcher.aeFun.interfaces.mvc.IImageAndLabeled;
 
 /**
  * Created by michel on 23/02/15.
  */
 public interface IScrollingMenuListener {
-    void onItemClicked(IScrollingMenu scrollingMenu, IImagedAndLabeled imagedAndLabeled);
+    void onItemClicked(IScrollingMenu scrollingMenu, IImageAndLabeled imagedAndLabeled);
 }

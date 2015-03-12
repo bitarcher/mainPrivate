@@ -5,4 +5,7 @@ package com.bitarcher.aeFun.interfaces.mvc;
  */
 public interface ILabeled_Edit extends ILabeled {
     void setTranslatedLabel(String translatedLabel);
+
+    void addLabeledListener(ILabeledListener labeledListener);
+    void removeLabeledListener(ILabeledListener labeledListener);
 }

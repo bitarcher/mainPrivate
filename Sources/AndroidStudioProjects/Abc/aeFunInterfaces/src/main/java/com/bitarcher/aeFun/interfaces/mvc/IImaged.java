@@ -1,12 +1,14 @@
 package com.bitarcher.aeFun.interfaces.mvc;
 
-import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
+/*
+ * Copyright (c) 2015.
+ * Michel Strasser
+ * bitarcher.com
+ */
 
 /**
- * Created by michel on 20/01/15.
+ * Created by michel on 12/03/15.
  */
 public interface IImaged {
-    ITexturesSetResourceInfo getTextureSetResourceInfo();
-    String getTextureName();
+    IImage getImage();
 }
-

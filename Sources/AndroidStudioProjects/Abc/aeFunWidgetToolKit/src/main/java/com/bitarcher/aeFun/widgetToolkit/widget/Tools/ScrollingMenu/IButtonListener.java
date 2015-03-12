@@ -6,8 +6,8 @@
 
 package com.bitarcher.aeFun.widgetToolkit.widget.Tools.ScrollingMenu;
 
-import com.bitarcher.aeFun.interfaces.mvc.IImagedAndLabeled;
+import com.bitarcher.aeFun.interfaces.mvc.IImageAndLabeled;
 
 public interface IButtonListener {
-    void onClicked(IImagedAndLabeled imagedAndLabeled);
+    void onClicked(IImageAndLabeled imagedAndLabeled);
 }

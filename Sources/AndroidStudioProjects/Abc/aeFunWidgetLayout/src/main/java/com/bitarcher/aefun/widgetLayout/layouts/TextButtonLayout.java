@@ -30,7 +30,7 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
     Rectangle backRectangle;
     //Gradient gradient;
     Entity textLayer;
-    Entity gradientLayer;
+    Gradient gradient;
 
 
 
@@ -51,8 +51,8 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
 
         //this.attachChild(this.buttonSprite);
 
-        this.gradientLayer = new Entity();
-        this.textButton.attachChild(this.gradientLayer);
+        this.gradient = new Gradient(0, 0, 10, 10, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+        this.textButton.attachChild(this.gradient);
 
         // I have to do so since Text.setText has problem
         this.textLayer = new Entity();
@@ -63,6 +63,7 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
     public void onInit() {
         this.setText(this.textButton.getTranslatedLabel());
         this.doSizeAndPadding();
+        this.doGradientColor();
     }
 
 
@@ -97,7 +98,7 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
 
     @Override
     public void setEnabled(boolean enabled) {
-
+        this.doGradientColor();
     }
 
     @Override
@@ -107,6 +108,7 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
 
     @Override
     public void setMouseEffect(EnumMouseEffect mouseEffect) {
+        this.doGradientColor();
     }
 
     @Override
@@ -138,18 +140,31 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
         this.backRectangle.setSize(wmp, hmp);
         this.backRectangle.setPosition(midWidth, midHeight);
 
-        this.gradientLayer.setSize(wb, hb);
-        this.gradientLayer.setPosition(midWidth, midHeight);
-
-        this.gradientLayer.detachChildren();
-
-        Gradient gradient = new Gradient(wb / 2, hb / 2, wb, hb, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
-        gradient.setFromColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getNormalColor1());
-        gradient.setToColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getNormalColor2());
-        this.gradientLayer.attachChild(gradient);
-
-
         this.setText(this.textButton.getTranslatedLabel());
+
+        this.gradient.setSize(wb, hb);
+        this.gradient.setPosition(midWidth, midHeight);
+
+    }
+
+    void doGradientColor()
+    {
+        if(this.textButton.isEnabled()) {
+            if(this.textButton.isMousePressed())
+            {
+                gradient.setFromColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getActivatedColor1());
+                gradient.setToColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getActivatedColor2());
+            }
+            else {
+                gradient.setFromColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getNormalColor1());
+                gradient.setToColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getNormalColor2());
+            }
+        }
+        else
+        {
+            gradient.setFromColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getDisabledColor1());
+            gradient.setToColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getDisabledColor2());
+        }
     }
 
     @Override

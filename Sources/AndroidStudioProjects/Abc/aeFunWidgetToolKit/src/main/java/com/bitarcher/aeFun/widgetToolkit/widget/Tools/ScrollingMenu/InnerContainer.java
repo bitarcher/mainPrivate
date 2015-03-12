@@ -7,7 +7,7 @@
 package com.bitarcher.aeFun.widgetToolkit.widget.Tools.ScrollingMenu;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFun.interfaces.mvc.IImagedAndLabeled;
+import com.bitarcher.aeFun.interfaces.mvc.IImageAndLabeled;
 
 import org.andengine.entity.Entity;
 import org.andengine.entity.scene.Scene;
@@ -23,7 +23,7 @@ class InnerContainer extends Entity {
     static final int INITIAL_LEFT_MARGIN = 128;
     static final int PADDING = 10;
 
-    public InnerContainer(ITheme theme, Scene scene, float pX, float pY, float pHeight, ArrayList<IImagedAndLabeled> imagedAndLabeledList) {
+    public InnerContainer(ITheme theme, Scene scene, float pX, float pY, float pHeight, ArrayList<IImageAndLabeled> imagedAndLabeledList) {
         super(pX, pY, imagedAndLabeledList.size() * (pHeight + PADDING), pHeight);
 
         int listSize = imagedAndLabeledList.size();
@@ -34,7 +34,7 @@ class InnerContainer extends Entity {
             // On Touch, save the clicked item in case it's a click and not a
             // scroll.
             final int itemToLoad = iItem;
-            IImagedAndLabeled imagedAndLabeled = imagedAndLabeledList.get(x);
+            IImageAndLabeled imagedAndLabeled = imagedAndLabeledList.get(x);
 
 
 
@@ -42,7 +42,7 @@ class InnerContainer extends Entity {
 
             scButton.addButtonListener(new IButtonListener() {
                 @Override
-                public void onClicked(IImagedAndLabeled imagedAndLabeled) {
+                public void onClicked(IImageAndLabeled imagedAndLabeled) {
                     for(IButtonListener buttonListener : buttonListenerArrayList)
                     {
                         buttonListener.onClicked(imagedAndLabeled);
