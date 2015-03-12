@@ -5,6 +5,8 @@ import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
+import com.bitarcher.aeFun.interfaces.mvc.IImage;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.aeFun.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
@@ -12,6 +14,8 @@ import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.MusicResourceInfo;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
 
 import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
+import com.bitarcher.aeFun.widgetToolkit.WImage;
+import com.bitarcher.aeFun.widgetToolkit.widget.ImageButton;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 import org.andengine.audio.music.Music;
@@ -69,6 +73,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
     TextButton playButton;
     TextButton optionsButton;
+    ImageButton cloudImageButton;
 
 	//private Sprite[] cloudSprites;
     private CloudSprite[] cloudSprites;
@@ -146,7 +151,12 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 		titleText.setPosition((this.getSceneManager().getResourceManager().getCameraWidth()) / 2, (this.getSceneManager().getResourceManager().getCameraHeight() * 2) / 3f);
 		titleText.setColor(0.153f, 0.290f, 0.455f);
 		this.attachChild(titleText);
-	}
+
+        this.cloudImageButton = new ImageButton(this.getSceneManager().getTheme(), 120, 120, 200, 200, new WImage(this.bitmapTexturesSetFromAssetResourceInfo, "cloud"));
+        this.attachChild(this.cloudImageButton);
+    }
+
+
 	
 	@Override
 	public void onShowScene() {

@@ -6,6 +6,10 @@ import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IImageButton;
 import com.bitarcher.aeFun.interfaces.mvc.IImage;
 
+import org.andengine.entity.Entity;
+import org.andengine.entity.sprite.Sprite;
+import org.andengine.opengl.texture.region.ITextureRegion;
+
 
 /*
  * Copyright (c) 2015. 
@@ -18,7 +22,7 @@ import com.bitarcher.aeFun.interfaces.mvc.IImage;
  */
 public class ImageButtonLayout extends ButtonLayout<IImageButtonContext> implements IImageButtonLayout, IImageButtonContext {
     IImageButton imageButton;
-
+    Entity imageLayer;
 
 
     @Override
@@ -31,6 +35,8 @@ public class ImageButtonLayout extends ButtonLayout<IImageButtonContext> impleme
         super.onPopulate();
 
 
+        this.imageLayer = new Entity();
+        this.imageButton.attachChild(this.imageLayer);
     }
 
     @Override
@@ -43,18 +49,21 @@ public class ImageButtonLayout extends ButtonLayout<IImageButtonContext> impleme
 
     void _setImage(IImage image) {
 
-        /*this.imageLayer.detachChildren();
+        this.imageLayer.detachChildren();
 
-        if (!(label.isEmpty()))
+        if (image != null)
         {
-            float midWidth = this.imageButton.getWidth() / 2;
-            float midHeight = this.imageButton.getHeight() / 2;
+            float pictureWidth = this.getWidget().getWidth();
+            float pictureHeight = this.getWidget().getHeight();
 
-            Font font = this.imageButton.getTheme().getWidgetSections().getImageButtonSection().getImageButtonFont();
-            Image image = new Image(midWidth, midHeight, font, label, this.imageButton.getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager(), DrawType.DYNAMIC);
+            ITextureRegion textureRegion = this.getWidget().getTheme().getThemeManager().getResourceManager().getTextureRegionFromTextureSetByName(image.getTextureSetResourceInfo(), image.getTextureName());
 
-            this.imageLayer.attachChild(image);
-        }*/
+            Sprite sprite = new Sprite(this.getWidget().getWidth() / 2, this.getWidget().getHeight() / 2,
+                    pictureWidth, pictureHeight, textureRegion,
+                    this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+
+            this.imageLayer.attachChild(sprite);
+        }
     }
 
 
@@ -75,6 +84,9 @@ public class ImageButtonLayout extends ButtonLayout<IImageButtonContext> impleme
     protected void doSizeAndPadding()
     {
         super.doSizeAndPadding();
+
+        //this.imageLayer.setSize(this.getWidget().getWidth(), this.getWidget().getHeight());
+        //this.imageLayer.setPosition(this.getWidget().getWidth() / 2.0f, this.getWidget().getHeight() / 2.0f);
 
         this._setImage(this.imageButton.getImage());
     }

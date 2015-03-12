@@ -9,8 +9,10 @@ package com.bitarcher.aefun.widgetLayout;
 import com.bitarcher.aeFun.interfaces.gui.theme.ILayout;
 import com.bitarcher.aeFun.interfaces.gui.theme.ILayoutFactory;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.IContext;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IImageButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
+import com.bitarcher.aefun.widgetLayout.layouts.ImageButtonLayout;
 import com.bitarcher.aefun.widgetLayout.layouts.TextButtonLayout;
 
 /**
@@ -25,6 +27,12 @@ public class DefaultLayoutFactory implements ILayoutFactory {
         {
             ITextButton keyS = (ITextButton)key;
             TextButtonLayout retS = new TextButtonLayout(keyS);
+            retval = (ILayout<TContext>)retS;
+        }
+        else if (key instanceof IImageButton)
+        {
+            IImageButton keyS = (IImageButton)key;
+            ImageButtonLayout retS = new ImageButtonLayout(keyS);
             retval = (ILayout<TContext>)retS;
         }
 
