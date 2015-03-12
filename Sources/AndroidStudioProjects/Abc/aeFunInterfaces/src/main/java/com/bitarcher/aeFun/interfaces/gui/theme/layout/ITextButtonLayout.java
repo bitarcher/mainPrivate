@@ -12,5 +12,5 @@ import com.bitarcher.aeFun.interfaces.gui.theme.context.ITextButtonContext;
 /**
  * Created by michel on 09/03/15.
  */
-public interface ITextButtonLayout extends ILayout<ITextButtonContext> {
+public interface ITextButtonLayout extends IButtonLayout<ITextButtonContext> {
 }

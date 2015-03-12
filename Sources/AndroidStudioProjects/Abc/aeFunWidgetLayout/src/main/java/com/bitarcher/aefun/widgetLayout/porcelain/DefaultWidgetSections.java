@@ -7,8 +7,10 @@ package com.bitarcher.aefun.widgetLayout.porcelain;
  */
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IImageButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.ITextButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IWidgetSections;
+import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultImageButtonSections;
 import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultTextButtonSections;
 
 /**
@@ -17,6 +19,7 @@ import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultTextButt
 public class DefaultWidgetSections implements IWidgetSections {
     ITheme theme;
     ITextButtonSection textButtonSection;
+    IImageButtonSection imageButtonSection;
 
 
     public DefaultWidgetSections(ITheme theme) {
@@ -32,4 +35,15 @@ public class DefaultWidgetSections implements IWidgetSections {
 
         return this.textButtonSection;
     }
+
+    @Override
+    public IImageButtonSection getImageButtonSection() {
+        if(this.imageButtonSection == null)
+        {
+            this.imageButtonSection = new DefaultImageButtonSections(this.theme);
+        }
+
+        return this.imageButtonSection;
+    }
 }
+

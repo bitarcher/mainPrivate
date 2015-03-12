@@ -11,6 +11,7 @@ import com.bitarcher.aeFun.interfaces.geometry.ISize;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ITextButtonContext;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.EnumMouseEffect;
 import com.bitarcher.aeFun.interfaces.gui.theme.layout.ITextButtonLayout;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 
@@ -25,13 +26,9 @@ import org.andengine.opengl.vbo.DrawType;
 /**
  * Created by michel on 09/03/15.
  */
-public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
+public class TextButtonLayout extends ButtonLayout<ITextButtonContext> implements ITextButtonLayout, ITextButtonContext {
     ITextButton textButton;
-    Rectangle backRectangle;
-    //Gradient gradient;
     Entity textLayer;
-    Gradient gradient;
-
 
 
     @Override
@@ -41,18 +38,7 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
 
     @Override
     public void onPopulate() {
-        this.backRectangle = new Rectangle(0, 0, 10, 10, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
-        this.backRectangle.setColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getBorderColor());
-        this.textButton.attachChild(this.backRectangle);
-
-
-        //this.text.setWidth(pWidth);
-        //this.text.setHeight(pWidth);
-
-        //this.attachChild(this.buttonSprite);
-
-        this.gradient = new Gradient(0, 0, 10, 10, this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
-        this.textButton.attachChild(this.gradient);
+        super.onPopulate();
 
         // I have to do so since Text.setText has problem
         this.textLayer = new Entity();
@@ -62,8 +48,8 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
     @Override
     public void onInit() {
         this.setText(this.textButton.getTranslatedLabel());
-        this.doSizeAndPadding();
-        this.doGradientColor();
+
+        super.onInit();
     }
 
 
@@ -83,23 +69,14 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
         }
     }
 
-    @Override
-    public void pushResourceRequirements() {
-    }
 
-    @Override
-    public void popResourceRequirements() {
 
-    }
-
-    public TextButtonLayout(ITextButton textButton) {
+    public TextButtonLayout(ITextButton textButton)
+    {
+        super(textButton);
         this.textButton = textButton;
     }
 
-    @Override
-    public void setEnabled(boolean enabled) {
-        this.doGradientColor();
-    }
 
     @Override
     public ITextButtonContext getContext() {
@@ -107,65 +84,18 @@ public class TextButtonLayout implements ITextButtonLayout, ITextButtonContext {
     }
 
     @Override
-    public void setMouseEffect(EnumMouseEffect mouseEffect) {
-        this.doGradientColor();
-    }
-
-    @Override
-    public void setPadding(float padding) {
-        this.doSizeAndPadding();
-    }
-
-    @Override
-    public void setSize(ISize size) {
-        this.doSizeAndPadding();
-    }
-
-    void doSizeAndPadding()
+    protected void doSizeAndPadding()
     {
-        float tw = this.textButton.getWidth();
-        float th = this.textButton.getHeight();
-
-        float midWidth = tw / 2;
-        float midHeight = th / 2;
-
-        float wmp = tw - 2 * this.textButton.getPadding();
-        float hmp = th - 2 * this.textButton.getPadding();
-
-        float border = 4;
-        float wb = wmp - 2 * border;
-        float hb = hmp - 2 * border;
-
-
-        this.backRectangle.setSize(wmp, hmp);
-        this.backRectangle.setPosition(midWidth, midHeight);
+        super.doSizeAndPadding();
 
         this.setText(this.textButton.getTranslatedLabel());
-
-        this.gradient.setSize(wb, hb);
-        this.gradient.setPosition(midWidth, midHeight);
-
     }
 
-    void doGradientColor()
-    {
-        if(this.textButton.isEnabled()) {
-            if(this.textButton.isMousePressed())
-            {
-                gradient.setFromColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getActivatedColor1());
-                gradient.setToColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getActivatedColor2());
-            }
-            else {
-                gradient.setFromColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getNormalColor1());
-                gradient.setToColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getNormalColor2());
-            }
-        }
-        else
-        {
-            gradient.setFromColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getDisabledColor1());
-            gradient.setToColor(this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getDisabledColor2());
-        }
+    @Override
+    protected IButtonSection getButtonSection() {
+        return this.getWidget().getTheme().getWidgetSections().getTextButtonSection();
     }
+
 
     @Override
     public void setTranslatedLabel(String translatedLabel) {
