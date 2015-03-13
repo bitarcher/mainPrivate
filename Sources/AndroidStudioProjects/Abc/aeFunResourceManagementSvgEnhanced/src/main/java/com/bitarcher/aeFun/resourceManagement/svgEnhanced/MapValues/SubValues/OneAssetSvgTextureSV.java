@@ -1,4 +1,4 @@
-package com.bitarcher.aeFun.resourceManagement.MapValues.SubValues;
+package com.bitarcher.aeFun.resourceManagement.svgEnhanced.MapValues.SubValues;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneAssetSvgTexture;
 
 /* Copyright (c) 2015.
@@ -12,6 +12,7 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.I
 
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 
+import com.bitarcher.aeFun.resourceManagement.MapValues.SubValues.ITextureSetMapValue;
 import com.bitarcher.aeFun.resourceManagement.MapValues.TextureSetFromAssetMapValue;
 
 import org.andengine.extension.svg.SVGParser;

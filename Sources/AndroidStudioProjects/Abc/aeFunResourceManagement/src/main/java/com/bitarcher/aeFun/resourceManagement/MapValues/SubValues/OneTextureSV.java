@@ -9,9 +9,9 @@ import org.andengine.opengl.texture.region.ITextureRegion;
  * Created by michel on 10/01/15.
  */
 public abstract class OneTextureSV<TOneTextureResourceInfo extends IOneTexture> {
-    IResourceManager resourceManager;
-    ITextureSetMapValue textureSetMapValue;
-    TOneTextureResourceInfo oneTextureResourceInfo;
+    protected IResourceManager resourceManager;
+    protected ITextureSetMapValue textureSetMapValue;
+    protected TOneTextureResourceInfo oneTextureResourceInfo;
     protected ITextureRegion textureRegion;
 
     public IResourceManager getResourceManager() {

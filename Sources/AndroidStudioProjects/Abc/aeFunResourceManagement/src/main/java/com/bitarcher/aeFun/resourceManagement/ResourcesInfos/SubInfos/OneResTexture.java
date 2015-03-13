@@ -14,7 +14,7 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.I
  */
 public abstract class OneResTexture extends OneTexture implements IOneResTexture {
 
-    int rawResId;
+    protected int rawResId;
 
     @Override
     public int getRawResId() {

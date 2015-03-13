@@ -1,8 +1,9 @@
 
-package com.bitarcher.aeFun.resourceManagement.ResourcesInfos;
+package com.bitarcher.aeFun.resourceManagement.svgEnhanced.ResourcesInfos;
 
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ISvgTexturesSetFromAssetResourceInfo;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneAssetSvgTexture;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.TexturesSetFromAssetResourceInfo;
 
 
 /**

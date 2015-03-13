@@ -29,7 +29,7 @@ import com.bitarcher.aeFun.resourceManagement.ResourceManager;
  * Created by michel on 08/01/15.
  */
 public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResourceInfo>{
-    ResourceManager resourceManager;
+    protected ResourceManager resourceManager;
 
     public MapValueFactoryByResourceInfo(ResourceManager resourceManager) {
         this.resourceManager = resourceManager;

@@ -4,12 +4,13 @@
 */
 
 
-package com.bitarcher.aeFun.resourceManagement.MapValues;
+package com.bitarcher.aeFun.resourceManagement.svgEnhanced.MapValues;
 
-import com.bitarcher.aeFun.resourceManagement.MapValues.SubValues.OneResSvgTextureSV;
+import com.bitarcher.aeFun.resourceManagement.svgEnhanced.MapValues.SubValues.OneResSvgTextureSV;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ISvgTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
+import com.bitarcher.aeFun.resourceManagement.MapValues.TextureSetFromResMapValue;
 import com.bitarcher.aeFun.resourceManagement.ResourceManager;
 
 /*

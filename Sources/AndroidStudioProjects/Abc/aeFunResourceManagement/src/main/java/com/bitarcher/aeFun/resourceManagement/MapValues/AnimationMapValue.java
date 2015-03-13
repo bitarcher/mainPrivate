@@ -21,11 +21,11 @@ import org.andengine.opengl.util.GLState;
  * Created by michel on 13/01/15.
  */
 public abstract class AnimationMapValue<TAnimationResourceInfo extends IAnimationResourceInfo>  extends MapValue {
-    IResourceManager resourceManager;
-    TAnimationResourceInfo animationResourceInfo;
-    BuildableBitmapTextureAtlas buildableBitmapTextureAtlas;
-    ITiledTextureRegion tiledTextureRegion;
-    AnimatedSprite animatedSprite;
+    protected IResourceManager resourceManager;
+    protected TAnimationResourceInfo animationResourceInfo;
+    protected BuildableBitmapTextureAtlas buildableBitmapTextureAtlas;
+    protected ITiledTextureRegion tiledTextureRegion;
+    protected AnimatedSprite animatedSprite;
 
     public IResourceManager getResourceManager() {
         return resourceManager;

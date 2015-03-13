@@ -8,6 +8,7 @@ package com.bitarcher.aeFun.resourceManagement.svgEnhanced;
 
 import com.bitarcher.aeFun.resourceManagement.MapValues.MapValueFactoryByResourceInfo;
 import com.bitarcher.aeFun.resourceManagement.ResourceManager;
+import com.bitarcher.aeFun.resourceManagement.svgEnhanced.MapValues.MapValueFactoryByResourceInfoWithSvg;
 
 /**
  * Created by michel on 13/03/15.
@@ -15,7 +16,7 @@ import com.bitarcher.aeFun.resourceManagement.ResourceManager;
 public class ResourceManagerWithSvg extends ResourceManager {
     @Override
     protected MapValueFactoryByResourceInfo getNewMapValueFactoryByResourceInfo() {
-        // TODO
-        return super.getNewMapValueFactoryByResourceInfo();
+
+        return new MapValueFactoryByResourceInfoWithSvg(this);
     }
 }

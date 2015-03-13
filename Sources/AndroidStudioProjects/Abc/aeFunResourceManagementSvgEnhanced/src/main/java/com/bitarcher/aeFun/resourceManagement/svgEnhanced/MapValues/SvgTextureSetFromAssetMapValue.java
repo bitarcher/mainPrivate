@@ -1,6 +1,7 @@
-package com.bitarcher.aeFun.resourceManagement.MapValues;
+package com.bitarcher.aeFun.resourceManagement.svgEnhanced.MapValues;
 
-import com.bitarcher.aeFun.resourceManagement.MapValues.SubValues.OneAssetSvgTextureSV;
+import com.bitarcher.aeFun.resourceManagement.svgEnhanced.MapValues.SubValues.OneAssetSvgTextureSV;
+import com.bitarcher.aeFun.resourceManagement.MapValues.TextureSetFromAssetMapValue;
 import com.bitarcher.aeFun.resourceManagement.ResourceManager;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ISvgTexturesSetFromAssetResourceInfo;

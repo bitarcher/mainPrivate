@@ -17,9 +17,9 @@ import java.util.List;
  */
 public class TexturesSetResourceInfo <TOneTexture extends IOneTexture>  extends ResourceInfo implements ITexturesSetResourceInfo<TOneTexture> {
 
-    ArrayList<TOneTexture> textureList;
-    int atlasWidth;
-    int atlasHeight;
+    protected ArrayList<TOneTexture> textureList;
+    protected int atlasWidth;
+    protected int atlasHeight;
 
     @Override
     public int getAtlasWidth() {

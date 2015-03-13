@@ -5,9 +5,10 @@
  */
 
 
-package com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos;
+package com.bitarcher.aeFun.resourceManagement.svgEnhanced.ResourcesInfos.SubInfos;
 
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResTexture;
 
 import org.andengine.extension.svg.adt.ISVGColorMapper;
 

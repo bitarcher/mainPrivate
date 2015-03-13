@@ -8,16 +8,16 @@ import org.andengine.opengl.texture.TextureOptions;
  * Created by michel on 13/01/15.
  */
 public abstract class AnimationResourceInfo extends ResourceInfo implements IAnimationResourceInfo {
-    int atlasWidth;
-    int atlasHeight;
-    TextureOptions textureOptions;
-    String assetsBase;
-    String filename;
-    int numOfColumns;
-    int numOfRows;
-    float initialX;
-    float initialY;
-    boolean enableDithering;
+    protected int atlasWidth;
+    protected int atlasHeight;
+    protected TextureOptions textureOptions;
+    protected String assetsBase;
+    protected String filename;
+    protected int numOfColumns;
+    protected int numOfRows;
+    protected float initialX;
+    protected float initialY;
+    protected boolean enableDithering;
 
     public AnimationResourceInfo(String name, int atlasWidth, int atlasHeight, TextureOptions textureOptions, String assetsBase, String filename, int numOfColumns, int numOfRows, float initialX, float initialY, boolean enableDithering) {
         super(name);

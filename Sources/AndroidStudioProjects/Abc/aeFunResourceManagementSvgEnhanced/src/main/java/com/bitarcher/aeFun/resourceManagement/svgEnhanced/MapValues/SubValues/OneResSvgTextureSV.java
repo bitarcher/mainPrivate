@@ -5,7 +5,7 @@
  */
 
 
-package com.bitarcher.aeFun.resourceManagement.MapValues.SubValues;
+package com.bitarcher.aeFun.resourceManagement.svgEnhanced.MapValues.SubValues;
 
 import android.content.Context;
 
@@ -13,6 +13,7 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
 
+import com.bitarcher.aeFun.resourceManagement.MapValues.SubValues.ITextureSetMapValue;
 import com.bitarcher.aeFun.resourceManagement.MapValues.TextureSetFromResMapValue;
 
 

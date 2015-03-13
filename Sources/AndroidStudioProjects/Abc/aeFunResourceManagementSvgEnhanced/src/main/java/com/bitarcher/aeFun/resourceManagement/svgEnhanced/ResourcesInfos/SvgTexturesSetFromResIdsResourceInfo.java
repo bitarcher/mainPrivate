@@ -5,12 +5,13 @@
  */
 
 
-package com.bitarcher.aeFun.resourceManagement.ResourcesInfos;
+package com.bitarcher.aeFun.resourceManagement.svgEnhanced.ResourcesInfos;
 
 import android.content.Context;
 
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ISvgTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.TexturesSetFromResIdsResourceInfo;
 
 
 /**

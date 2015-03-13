@@ -8,7 +8,7 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.I
  */
 public class TexturesSetFromAssetResourceInfo<TOneAssetTexture extends IOneAssetTexture>  extends TexturesSetResourceInfo<TOneAssetTexture> implements ITexturesSetFromAssetResourceInfo<TOneAssetTexture> {
 
-    String assetsBase;
+    protected String assetsBase;
 
     @Override
     public String getAssetsBase() {

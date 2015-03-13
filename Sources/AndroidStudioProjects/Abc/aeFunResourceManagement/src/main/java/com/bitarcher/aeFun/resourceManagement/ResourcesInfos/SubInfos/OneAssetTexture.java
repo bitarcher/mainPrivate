@@ -7,7 +7,7 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.I
  */
 public abstract class OneAssetTexture extends OneTexture implements IOneAssetTexture {
 
-    String filename;
+    protected String filename;
 
 
     @Override
