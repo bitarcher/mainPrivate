@@ -9,22 +9,13 @@ import com.bitarcher.aeFun.interfaces.gui.theme.IFontThemeSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.ILayoutFactory;
 import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IWidgetSections;
-import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
 
-import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
-import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.Font.FontCreateFromTypeFaceResourceInfo;
-import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResSvgTexture;
-import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SvgTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.aefun.widgetLayout.DefaultLayoutFactory;
-import com.bitarcher.aefun.widgetLayout.R;
+
 import com.bitarcher.aefun.widgetLayout.porcelain.DefaultColorsSection;
 import com.bitarcher.aefun.widgetLayout.porcelain.DefaultFontThemeSection;
 import com.bitarcher.aefun.widgetLayout.porcelain.DefaultWidgetSections;
-//import com.bitarcher.widgettoolkit.R;
 
-import org.andengine.extension.svg.adt.ISVGColorMapper;
-import org.andengine.opengl.font.Font;
-import org.andengine.util.adt.color.Color;
 
 /**
  * Created by michel on 21/01/15.

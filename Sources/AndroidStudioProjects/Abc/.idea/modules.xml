@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/abcBllXmlRoResources/abcBllXmlRoResources.iml" filepath="$PROJECT_DIR$/abcBllXmlRoResources/abcBllXmlRoResources.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFunInterfaces/aeFunInterfaces.iml" filepath="$PROJECT_DIR$/aeFunInterfaces/aeFunInterfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFunResourceManagement/aeFunResourceManagement.iml" filepath="$PROJECT_DIR$/aeFunResourceManagement/aeFunResourceManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aeFunResourceManagementSvgEnhanced/aeFunResourceManagementSvgEnhanced.iml" filepath="$PROJECT_DIR$/aeFunResourceManagementSvgEnhanced/aeFunResourceManagementSvgEnhanced.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFunSceneManagement/aeFunSceneManagement.iml" filepath="$PROJECT_DIR$/aeFunSceneManagement/aeFunSceneManagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFunWidgetLayout/aeFunWidgetLayout.iml" filepath="$PROJECT_DIR$/aeFunWidgetLayout/aeFunWidgetLayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFunWidgetToolKit/aeFunWidgetToolKit.iml" filepath="$PROJECT_DIR$/aeFunWidgetToolKit/aeFunWidgetToolKit.iml" />

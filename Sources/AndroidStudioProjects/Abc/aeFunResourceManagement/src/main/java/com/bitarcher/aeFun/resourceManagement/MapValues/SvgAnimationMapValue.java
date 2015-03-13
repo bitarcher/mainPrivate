@@ -7,9 +7,11 @@ import org.andengine.extension.svg.opengl.texture.atlas.bitmap.SVGBitmapTextureA
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
 import org.andengine.opengl.texture.region.ITiledTextureRegion;
 
+
 /**
  * Created by michel on 13/01/15.
  */
+
 public class SvgAnimationMapValue  extends  AnimationMapValue<ISvgAnimationResourceInfo>  {
     @Override
     protected ITiledTextureRegion createTiledTexture(IResourceManager resourceManager, BuildableBitmapTextureAtlas buildableBitmapTextureAtlas, ISvgAnimationResourceInfo animationResourceInfo) {
@@ -37,3 +39,4 @@ public class SvgAnimationMapValue  extends  AnimationMapValue<ISvgAnimationResou
         super(resourceManager, animationResourceInfo);
     }
 }
+

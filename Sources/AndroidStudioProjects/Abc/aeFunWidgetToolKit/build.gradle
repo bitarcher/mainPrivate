@@ -24,7 +24,7 @@ dependencies {
     //compile 'com.android.support:appcompat-v7:21.0.3'
     compile project(':andEngine')
     compile project(':andEnginePhysicsBox2DExtension')
-    compile project(':andEngineSVGTextureRegionExtension')
+
     compile project(':aeFunInterfaces')
     compile project(':aeFunResourceManagement')
 }

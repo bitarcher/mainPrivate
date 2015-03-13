@@ -1,12 +1,15 @@
+
 package com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos;
 
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneAssetSvgTexture;
 
 import org.andengine.extension.svg.adt.ISVGColorMapper;
 
+
 /**
  * Created by michel on 13/01/15.
  */
+
 public class OneAssetSvgTexture extends OneAssetTexture implements IOneAssetSvgTexture {
     int width;
     int height;
@@ -38,3 +41,4 @@ public class OneAssetSvgTexture extends OneAssetTexture implements IOneAssetSvgT
         this(name, filename, width, height, null);
     }
 }
+

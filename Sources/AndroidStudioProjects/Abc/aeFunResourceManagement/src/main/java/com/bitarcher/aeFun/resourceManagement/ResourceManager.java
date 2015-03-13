@@ -60,6 +60,10 @@ public class ResourceManager implements IResourceManager {
     }
 
 
+    protected MapValueFactoryByResourceInfo getNewMapValueFactoryByResourceInfo()
+    {
+        return new MapValueFactoryByResourceInfo(this);
+    }
 
     @Override
     public void pushRequirement(IResourceInfo resourceInfo) throws EResourceCreationError {
@@ -71,7 +75,7 @@ public class ResourceManager implements IResourceManager {
             mapValue = this._map.get(resourceInfo);
         }
         else {
-            MapValueFactoryByResourceInfo factoryByResourceInfo = new MapValueFactoryByResourceInfo(this);
+            MapValueFactoryByResourceInfo factoryByResourceInfo = this.getNewMapValueFactoryByResourceInfo();
             mapValue = factoryByResourceInfo.make(resourceInfo);
 
             if(mapValue == null)

@@ -8,16 +8,23 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.I
 
 import org.andengine.extension.svg.opengl.texture.atlas.bitmap.SVGBitmapTextureAtlasTextureRegionFactory;
 
+
 /**
  * Created by michel on 13/01/15.
  */
+
 public class SvgTextureSetFromAssetMapValue extends TextureSetFromAssetMapValue<ISvgTexturesSetFromAssetResourceInfo,
         IOneAssetSvgTexture,
         OneAssetSvgTextureSV
         > {
     @Override
     protected void setAssetBase(String assetBase) {
-        SVGBitmapTextureAtlasTextureRegionFactory.setAssetBasePath(assetBase);
+        //SVGBitmapTextureAtlasTextureRegionFactory.setAssetBasePath(assetBase);
+        // FIXME
+        if(assetBase.length() != 0) {
+            throw new IllegalArgumentException("assetsBase length != 0 not supported, please FIX ME or use asset at the root or use res");
+        }
+        SVGBitmapTextureAtlasTextureRegionFactory.setAssetBasePath("");
     }
 
     @Override
@@ -34,3 +41,4 @@ public class SvgTextureSetFromAssetMapValue extends TextureSetFromAssetMapValue<
         super(resourceManager, texturesSetResourceInfo);
     }
 }
+

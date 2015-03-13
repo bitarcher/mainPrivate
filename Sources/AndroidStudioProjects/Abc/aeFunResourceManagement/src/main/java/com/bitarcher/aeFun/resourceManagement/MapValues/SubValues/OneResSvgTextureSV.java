@@ -4,6 +4,7 @@
  * bitarcher.com
  */
 
+
 package com.bitarcher.aeFun.resourceManagement.MapValues.SubValues;
 
 import android.content.Context;
@@ -27,9 +28,11 @@ import org.andengine.opengl.texture.region.ITextureRegion;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+
 /**
  * Created by michel on 26/01/15.
  */
+
 public class OneResSvgTextureSV extends OneSvgTextureSV<IOneResSvgTexture>{
 
         public OneResSvgTextureSV(IResourceManager resourceManager,TextureSetFromResMapValue textureSetMapValue,IOneResSvgTexture oneTextureResourceInfo){
@@ -56,14 +59,7 @@ public class OneResSvgTextureSV extends OneSvgTextureSV<IOneResSvgTexture>{
             assert width > 0;
             assert height > 0;
 
-/*
-            if(isvgColorMapper != null) {
-                retval = SVGBitmapTextureAtlasTextureRegionFactory.createFromResource(texture, context, rawResId, width, height, isvgColorMapper);
-            }
-            else {
-                retval = SVGBitmapTextureAtlasTextureRegionFactory.createFromResource(texture, context, rawResId, width, height);
-            }
-*/
+
 
             InputStream is = context.getResources().openRawResource(((IOneResSvgTexture) oneTextureResourceInfo).getRawResId());
             InputStreamReader isr = new InputStreamReader(is);
@@ -76,3 +72,4 @@ public class OneResSvgTextureSV extends OneSvgTextureSV<IOneResSvgTexture>{
             return retval;
         }
 }
+

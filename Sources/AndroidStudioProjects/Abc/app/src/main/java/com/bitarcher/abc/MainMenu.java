@@ -73,9 +73,9 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
     TextButton playButton;
     TextButton optionsButton;
-    ImageButton cloudImageButton;
 
-	//private Sprite[] cloudSprites;
+
+    //private Sprite[] cloudSprites;
     private CloudSprite[] cloudSprites;
 	private Text titleText;
 
@@ -152,8 +152,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 		titleText.setColor(0.153f, 0.290f, 0.455f);
 		this.attachChild(titleText);
 
-        this.cloudImageButton = new ImageButton(this.getSceneManager().getTheme(), 120, 120, 200, 200, new WImage(this.bitmapTexturesSetFromAssetResourceInfo, "cloud"));
-        this.attachChild(this.cloudImageButton);
+
     }
 
 

@@ -58,36 +58,42 @@ public class MapValueFactoryByResourceInfo implements ITFactory<MapValue, IResou
 
             retval = textureSetMapValue;
         }
+        /*
         else if(resourceInfo instanceof ISvgTexturesSetFromAssetResourceInfo)
         {
             SvgTextureSetFromAssetMapValue textureSetMapValue = new SvgTextureSetFromAssetMapValue(this.resourceManager, (ISvgTexturesSetFromAssetResourceInfo) resourceInfo);
 
             retval = textureSetMapValue;
         }
+        */
         else if(resourceInfo instanceof IBitmapTexturesSetFromResIdsResourceInfo)
         {
             BitmapTextureSetFromResMapValue textureSetMapValue = new BitmapTextureSetFromResMapValue(this.resourceManager, (IBitmapTexturesSetFromResIdsResourceInfo) resourceInfo);
 
             retval = textureSetMapValue;
         }
+        /*
         else if(resourceInfo instanceof ISvgTexturesSetFromResIdsResourceInfo)
         {
             SvgTextureSetFromResMapValue textureSetMapValue = new SvgTextureSetFromResMapValue(this.resourceManager, (ISvgTexturesSetFromResIdsResourceInfo) resourceInfo);
 
             retval = textureSetMapValue;
         }
+        */
         else if(resourceInfo instanceof IBitmapAnimationResourceInfo)
         {
             BitmapAnimationMapValue bitmapAnimationMapValue = new BitmapAnimationMapValue(this.resourceManager, (IBitmapAnimationResourceInfo) resourceInfo);
 
             retval = bitmapAnimationMapValue;
         }
+        /*
         else if(resourceInfo instanceof ISvgAnimationResourceInfo)
         {
             SvgAnimationMapValue svgAnimationMapValue = new SvgAnimationMapValue(this.resourceManager, (ISvgAnimationResourceInfo) resourceInfo);
 
             retval = svgAnimationMapValue;
         }
+        */
         else if(resourceInfo instanceof IFontCreateFromAssetResourceInfo) {
             retval = new FontCreateFromAssetMapValue(this.resourceManager, (IFontCreateFromAssetResourceInfo) resourceInfo);
         }

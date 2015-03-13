@@ -22,6 +22,11 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //compile 'com.android.support:appcompat-v7:21.0.3'
     compile project(':andEngine')
+
+    // TODO jump all SVG related files out of this project into another one, in order to minimize
+    // dependencies for those who don't use SVG
+    // SVG resource management doesn't work not with res nor with assets, so we remove dependency
     compile project(':andEngineSVGTextureRegionExtension')
+
     compile project(':aeFunInterfaces')
 }

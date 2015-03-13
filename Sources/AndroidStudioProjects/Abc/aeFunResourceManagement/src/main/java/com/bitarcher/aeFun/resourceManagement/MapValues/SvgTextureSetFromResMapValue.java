@@ -1,8 +1,8 @@
-/*
- * Copyright (c) 2015. 
+ /* Copyright (c) 2015.
  * Michel Strasser
  * bitarcher.com
- */
+*/
+
 
 package com.bitarcher.aeFun.resourceManagement.MapValues;
 
@@ -12,9 +12,10 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ISvgTextur
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
 import com.bitarcher.aeFun.resourceManagement.ResourceManager;
 
-/**
+/*
  * Created by michel on 26/01/15.
- */
+*/
+
 public class SvgTextureSetFromResMapValue extends TextureSetFromResMapValue<ISvgTexturesSetFromResIdsResourceInfo,
         IOneResSvgTexture,
         OneResSvgTextureSV

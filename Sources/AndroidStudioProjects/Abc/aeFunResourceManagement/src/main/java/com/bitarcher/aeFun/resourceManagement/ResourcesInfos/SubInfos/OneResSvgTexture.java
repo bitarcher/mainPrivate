@@ -4,15 +4,18 @@
  * bitarcher.com
  */
 
+
 package com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos;
 
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
 
 import org.andengine.extension.svg.adt.ISVGColorMapper;
 
+
 /**
  * Created by michel on 26/01/15.
  */
+
 public class OneResSvgTexture extends OneResTexture implements IOneResSvgTexture {
 
     int width;

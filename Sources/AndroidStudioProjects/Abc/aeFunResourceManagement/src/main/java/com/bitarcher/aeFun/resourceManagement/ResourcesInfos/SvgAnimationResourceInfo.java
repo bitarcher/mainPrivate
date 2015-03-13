@@ -1,3 +1,4 @@
+
 package com.bitarcher.aeFun.resourceManagement.ResourcesInfos;
 
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ISvgAnimationResourceInfo;
@@ -6,9 +7,11 @@ import org.andengine.extension.svg.adt.ISVGColorMapper;
 import org.andengine.opengl.texture.TextureOptions;
 import org.jetbrains.annotations.Nullable;
 
+
 /**
  * Created by michel on 13/01/15.
  */
+
 public class SvgAnimationResourceInfo extends AnimationResourceInfo implements ISvgAnimationResourceInfo {
     int width;
     int height;
@@ -37,3 +40,4 @@ public class SvgAnimationResourceInfo extends AnimationResourceInfo implements I
         this.svgColorMapper = svgColorMapper;
     }
 }
+
