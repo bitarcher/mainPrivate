@@ -5,8 +5,10 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.aeFun.interfaces.mvc.IImage;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
 
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResBitmapTexture;
 import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
 import com.bitarcher.aeFun.widgetToolkit.WImage;
 import com.bitarcher.aeFun.widgetToolkit.widget.ImageButton;
@@ -22,6 +24,7 @@ public class GameLevel extends ManagedGameScene {
     BitmapTexturesSetFromAssetResourceInfo bitmapTexturesSetFromAssetResourceInfo;
     //SvgTexturesSetFromResIdsResourceInfo animalsTexturesSet = new SvgTexturesSetFromResIdsResourceInfo("animals", this.getSceneManager().getResourceManager().getContext(), 1024, 256);
     //SvgTexturesSetFromAssetResourceInfo animalsTexturesSet = new SvgTexturesSetFromAssetResourceInfo("animals", 1024, 256, "");
+    BitmapTexturesSetFromResIdsResourceInfo animalsTexturesSet = new BitmapTexturesSetFromResIdsResourceInfo("animals", this.getSceneManager().getResourceManager().getContext(), 1024, 256);
     IImage cat;
 
     public GameLevel(ITSceneManager sceneManager) {
@@ -29,6 +32,11 @@ public class GameLevel extends ManagedGameScene {
         super(sceneManager, 0);
 
         int width = 240,height = 240;
+
+        //animalsTexturesSet.addOneTexture(new OneResBitmapTexture("abeille", R.drawable.svg_animal_abeille));
+        animalsTexturesSet.addOneTexture(new OneResBitmapTexture("chat", R.drawable.svg_animal_chat));
+        //animalsTexturesSet.addOneTexture(new OneResBitmapTexture("dauphin", R.drawable.svg_animal_dauphin));
+        //animalsTexturesSet.addOneTexture(new OneResBitmapTexture("éléphant", R.drawable.svg_animal_elephant));
         /*animalsTexturesSet.addOneTexture(new OneResSvgTexture("abeille", R.raw.svg_animal_abeille, width, height));
         animalsTexturesSet.addOneTexture(new OneResSvgTexture("chat", R.raw.svg_animal_chat, width, height));
         animalsTexturesSet.addOneTexture(new OneResSvgTexture("dauphin", R.raw.svg_animal_dauphin, width, height));
@@ -42,11 +50,12 @@ public class GameLevel extends ManagedGameScene {
         this.bitmapTexturesSetFromAssetResourceInfo = new BitmapTexturesSetFromAssetResourceInfo("gameLevel", 1024, 512, "gfx/MainMenu/");
         this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture((new OneAssetBitmapTexture("cloud", "cloud.png")));
 
-  /*      this.cat = new WImage(this.animalsTexturesSet,  "chat");
+        this.getSceneManager().getResourceManager().pushRequirement(this.animalsTexturesSet);
+        this.cat = new WImage(this.animalsTexturesSet,  "chat");
         //this.cat = new WImage(this.bitmapTexturesSetFromAssetResourceInfo,  "cloud");
 
-        this.getSceneManager().getResourceManager().pushRequirement(this.animalsTexturesSet);
-*/
+
+
 
     }
 
@@ -154,7 +163,7 @@ public class GameLevel extends ManagedGameScene {
         */
 
         final TextButton tb1 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb1");
-        //final ImageButton tb2 = new ImageButton(this.getSceneManager().getTheme(), 0,0,100, 100, this.cat);
+        final ImageButton tb2 = new ImageButton(this.getSceneManager().getTheme(), 0,0,100, 100, this.cat);
         final TextButton tb3 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb3");
         final TextButton tb4 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb4");
         final TextButton tb5 = new TextButton(this.getSceneManager().getTheme(), 0,0,100, 100, "tb5");
@@ -201,7 +210,7 @@ public class GameLevel extends ManagedGameScene {
         container.addRow(new PercentSpaceUsage(0, 300));
 
         container.attachChild(tb1, 0, 0);
-        //container.attachChild(tb2, 1, 0, 2, 2);
+        container.attachChild(tb2, 1, 0, 2, 2);
         container.attachChild(tb3);
         container.attachChild(tb4);
         container.attachChild(tb5);
@@ -220,18 +229,18 @@ public class GameLevel extends ManagedGameScene {
             }
         });
 
-        /*tb2.addButtonListener(new IButtonListener() {
+        tb2.addButtonListener(new IButtonListener() {
             @Override
             public void onClicked(IButton button) {
                 container.detachChild(tb2);
             }
         });
-*/
-/*
 
-        Sprite catSprite = new Sprite(30, 30, 60, 60, this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.animalsTexturesSet, "dauphin"), this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+
+
+        Sprite catSprite = new Sprite(30, 30, 60, 60, this.getSceneManager().getResourceManager().getTextureRegionFromTextureSetByName(this.animalsTexturesSet, "chat"), this.getSceneManager().getResourceManager().getEngine().getVertexBufferObjectManager());
         this.attachChild(catSprite);
-*/
+
 
     }
 }
