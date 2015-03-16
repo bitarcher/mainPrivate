@@ -69,8 +69,16 @@ public abstract class TextureSetMapValue
 
         this.beforeLoadingTextures(resourceManager, texturesSetResourceInfo);
 
+        TextureOptions textureOptions = texturesSetResourceInfo.getTextureOptions();
+
+        if(textureOptions == null)
+        {
+            textureOptions = TextureOptions.DEFAULT;
+        }
+
         this.texture = new BuildableBitmapTextureAtlas(resourceManager.getEngine().getTextureManager(),
-                texturesSetResourceInfo.getAtlasWidth(), texturesSetResourceInfo.getAtlasHeight(), texturesSetResourceInfo.getBitmapTextureFormat());
+                texturesSetResourceInfo.getAtlasWidth(), texturesSetResourceInfo.getAtlasHeight(),
+                texturesSetResourceInfo.getBitmapTextureFormat(), textureOptions);
 
         for(TOneTextureResourceInfo oneTextureResourceInfo : texturesSetResourceInfo.getTextureList())
         {

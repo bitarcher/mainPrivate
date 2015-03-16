@@ -30,4 +30,5 @@ dependencies {
     compile project(':aeFunInterfaces')
     compile project(':interfacesProtected')
     compile project(':andEngine')
+    compile project(':aeFunResourceManagement')
 }

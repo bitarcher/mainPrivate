@@ -8,6 +8,7 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IAnimation
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.sprite.AnimatedSprite;
+import org.andengine.opengl.texture.TextureOptions;
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlas;
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlasTextureRegionFactory;
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
@@ -55,8 +56,15 @@ public abstract class AnimationMapValue<TAnimationResourceInfo extends IAnimatio
         BitmapTextureAtlasTextureRegionFactory.setAssetBasePath(animationResourceInfo.getAssetsBase());
 
 
+        TextureOptions textureOptions = animationResourceInfo.getTextureOptions();
+
+        if(textureOptions == null)
+        {
+            textureOptions = TextureOptions.DEFAULT;
+        }
+
         this.buildableBitmapTextureAtlas = new BuildableBitmapTextureAtlas(resourceManager.getEngine().getTextureManager(),
-                animationResourceInfo.getAtlasWidth(), animationResourceInfo.getAtlasHeight(), animationResourceInfo.getTextureOptions());
+                animationResourceInfo.getAtlasWidth(), animationResourceInfo.getAtlasHeight(), animationResourceInfo.getBitmapTextureFormat(), textureOptions);
 
         this.tiledTextureRegion = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(this.buildableBitmapTextureAtlas, this.resourceManager.getContext(), this.animationResourceInfo.getFilename(), this.animationResourceInfo.getNumOfColumns(), this.animationResourceInfo.getNumOfRows());
 

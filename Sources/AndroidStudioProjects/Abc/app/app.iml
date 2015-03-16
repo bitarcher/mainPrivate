@@ -97,6 +97,7 @@
     <orderEntry type="module" module-name="abcBllXmlRoResources" exported="" />
     <orderEntry type="module" module-name="andEnginePhysicsBox2DExtension" exported="" />
     <orderEntry type="module" module-name="andEngine" exported="" />
+    <orderEntry type="module" module-name="dog" exported="" />
     <orderEntry type="module" module-name="aeFunInterfaces" exported="" />
     <orderEntry type="module" module-name="interfacesProtected" exported="" />
     <orderEntry type="module" module-name="aeFunSceneManagement" exported="" />
