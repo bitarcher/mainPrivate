@@ -30,20 +30,20 @@ public class RunResourceInfos extends RIBase{
 
         if(side == EnumSide.Left)
         {
-            this.runs[0] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("run1", R.drawable.dog_left_run1);
-            this.runs[1] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("run2", R.drawable.dog_left_run2);
-            this.runs[2] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("run3", R.drawable.dog_left_run3);
-            this.runs[3] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("run4", R.drawable.dog_left_run4);
-            this.runs[4] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("run5", R.drawable.dog_left_run5);
+            this.runs[0] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "run1", R.drawable.dog_left_run1);
+            this.runs[1] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "run2", R.drawable.dog_left_run2);
+            this.runs[2] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "run3", R.drawable.dog_left_run3);
+            this.runs[3] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "run4", R.drawable.dog_left_run4);
+            this.runs[4] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "run5", R.drawable.dog_left_run5);
 
         }
         else
         {
-            this.runs[0] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("run1", R.drawable.dog_right_run1);
-            this.runs[1] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("run2", R.drawable.dog_right_run2);
-            this.runs[2] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("run3", R.drawable.dog_right_run3);
-            this.runs[3] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("run4", R.drawable.dog_right_run4);
-            this.runs[4] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("run5", R.drawable.dog_right_run5);
+            this.runs[0] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "run1", R.drawable.dog_right_run1);
+            this.runs[1] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "run2", R.drawable.dog_right_run2);
+            this.runs[2] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "run3", R.drawable.dog_right_run3);
+            this.runs[3] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "run4", R.drawable.dog_right_run4);
+            this.runs[4] = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "run5", R.drawable.dog_right_run5);
         }
     }
 
