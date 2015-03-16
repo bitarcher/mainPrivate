@@ -27,6 +27,8 @@ public class ResourceInfos {
     SideResourceInfos leftSide;
     SideResourceInfos rightSide;
 
+
+
     public IResourceManager getResourceManager() {
         return resourceManager;
     }
@@ -44,6 +46,8 @@ public class ResourceInfos {
 
         this.leftSide = new SideResourceInfos(resourceManager, EnumSide.Left);
         this.rightSide = new SideResourceInfos(resourceManager,EnumSide.Right);
+        
+
     }
 
     public ITexturesSetFromResIdsResourceInfo getTextureResourceInfo(EnumSide side, EnumPosition position)
@@ -65,6 +69,7 @@ public class ResourceInfos {
         switch (position)
         {
             case  LookPlayer:
+                retval = sideResourceInfos.getLookPlayer();
                 break;
             case  Run1:
                 retval = sideResourceInfos.getRun().getRuns()[0];
@@ -84,22 +89,31 @@ public class ResourceInfos {
             case  Sit:
                 break;
             case  StraightBackMouthOpened:
+                retval = sideResourceInfos.getStraightResourceInfos().getStraightBackMouthOpened();
                 break;
             case  StraightFrontClosedEyes:
+                retval = sideResourceInfos.getStraightResourceInfos().getStraightFrontClosedEyes();
                 break;
             case  StraightFrontClosedEyesSmileTailLifted:
+                retval = sideResourceInfos.getStraightResourceInfos().getStraightFrontClosedEyesSmileTailLifted();
                 break;
             case  StraightFrontMouthWideOpened:
+                retval = sideResourceInfos.getStraightResourceInfos().getStraightFrontMouthWideOpened();
                 break;
             case  StraightMiddleMouthOpened:
+                retval = sideResourceInfos.getStraightResourceInfos().getStraightMiddleMouthOpened();
                 break;
             case  Straight:
+                retval = sideResourceInfos.getStraightResourceInfos().getStraight();
                 break;
             case  UTurn:
+                retval = sideResourceInfos.getUTurn();
                 break;
             case  Walk1:
+                retval = sideResourceInfos.getWalk1();
                 break;
             case  Walk2:
+                retval = sideResourceInfos.getWalk2();
                 break;
         }
 
