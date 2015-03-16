@@ -13,14 +13,17 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ISvgTextur
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResSvgTexture;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.TexturesSetFromResIdsResourceInfo;
 
+import org.andengine.opengl.texture.TextureOptions;
+import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
+
 
 /**
  * Created by michel on 26/01/15.
  */
 
 public class SvgTexturesSetFromResIdsResourceInfo extends TexturesSetFromResIdsResourceInfo<IOneResSvgTexture> implements ISvgTexturesSetFromResIdsResourceInfo {
-    public SvgTexturesSetFromResIdsResourceInfo(String name, Context context, int atlasWidth, int atlasHeight) {
-        super(name, context, atlasWidth, atlasHeight);
+    public SvgTexturesSetFromResIdsResourceInfo(String name, int atlasWidth, int atlasHeight, BitmapTextureFormat bitmapTextureFormat, TextureOptions textureOptions, Context context) {
+        super(name, atlasWidth, atlasHeight, bitmapTextureFormat, textureOptions, context);
     }
 }
 

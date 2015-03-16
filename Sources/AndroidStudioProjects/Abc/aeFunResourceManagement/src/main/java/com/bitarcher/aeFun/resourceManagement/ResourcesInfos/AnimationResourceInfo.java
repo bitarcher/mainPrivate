@@ -3,6 +3,7 @@ package com.bitarcher.aeFun.resourceManagement.ResourcesInfos;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IAnimationResourceInfo;
 
 import org.andengine.opengl.texture.TextureOptions;
+import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 
 /**
  * Created by michel on 13/01/15.
@@ -12,6 +13,13 @@ public abstract class AnimationResourceInfo extends ResourceInfo implements IAni
     protected int atlasHeight;
     protected TextureOptions textureOptions;
     protected String assetsBase;
+    BitmapTextureFormat bitmapTextureFormat;
+
+    @Override
+    public BitmapTextureFormat getBitmapTextureFormat() {
+        return this.bitmapTextureFormat;
+    }
+
     protected String filename;
     protected int numOfColumns;
     protected int numOfRows;
@@ -19,10 +27,11 @@ public abstract class AnimationResourceInfo extends ResourceInfo implements IAni
     protected float initialY;
     protected boolean enableDithering;
 
-    public AnimationResourceInfo(String name, int atlasWidth, int atlasHeight, TextureOptions textureOptions, String assetsBase, String filename, int numOfColumns, int numOfRows, float initialX, float initialY, boolean enableDithering) {
+    public AnimationResourceInfo(String name, int atlasWidth, int atlasHeight, BitmapTextureFormat bitmapTextureFormat, TextureOptions textureOptions, String assetsBase, String filename, int numOfColumns, int numOfRows, float initialX, float initialY, boolean enableDithering) {
         super(name);
         this.atlasWidth = atlasWidth;
         this.atlasHeight = atlasHeight;
+        this.bitmapTextureFormat = bitmapTextureFormat;
         this.textureOptions = textureOptions;
         this.assetsBase = assetsBase;
         this.filename = filename;

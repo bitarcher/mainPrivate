@@ -21,6 +21,7 @@ import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 import org.andengine.audio.music.Music;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.text.Text;
+import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 import org.andengine.opengl.texture.region.ITextureRegion;
 
 public class MainMenu extends ManagedMenuScene implements IMainMenu{
@@ -36,7 +37,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 		this.setTouchAreaBindingOnActionMoveEnabled(true);
 
 
-        this.bitmapTexturesSetFromAssetResourceInfo = new BitmapTexturesSetFromAssetResourceInfo("mainMenu3", 1024, 512, "gfx/MainMenu/");
+        this.bitmapTexturesSetFromAssetResourceInfo = new BitmapTexturesSetFromAssetResourceInfo("mainMenu3", 1024, 512, BitmapTextureFormat.RGBA_4444, null, "gfx/MainMenu/");
 
         this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture((new OneAssetBitmapTexture("prairie", "prairie.gif")));
         this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture((new OneAssetBitmapTexture("cloud", "cloud.png")));

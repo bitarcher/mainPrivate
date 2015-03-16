@@ -9,6 +9,10 @@ package com.bitarcher.aeFun.resourceManagement.ResourcesInfos;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneTexture;
 
+import org.andengine.opengl.texture.TextureOptions;
+import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +24,19 @@ public class TexturesSetResourceInfo <TOneTexture extends IOneTexture>  extends 
     protected ArrayList<TOneTexture> textureList;
     protected int atlasWidth;
     protected int atlasHeight;
+    BitmapTextureFormat bitmapTextureFormat;
+    TextureOptions textureOptions;
+
+    @Nullable
+    @Override
+    public TextureOptions getTextureOptions() {
+        return this.textureOptions;
+    }
+
+    @Override
+    public BitmapTextureFormat getBitmapTextureFormat() {
+        return this.bitmapTextureFormat;
+    }
 
     @Override
     public int getAtlasWidth() {
@@ -37,13 +54,13 @@ public class TexturesSetResourceInfo <TOneTexture extends IOneTexture>  extends 
         return this.textureList;
     }
 
-
-
-    public TexturesSetResourceInfo(String name, int atlasWidth, int atlasHeight) {
+    public TexturesSetResourceInfo(String name, int atlasWidth, int atlasHeight, BitmapTextureFormat bitmapTextureFormat, TextureOptions textureOptions) {
         super(name);
         this.atlasWidth = atlasWidth;
         this.atlasHeight = atlasHeight;
         this.textureList = new ArrayList<>();
+        this.bitmapTextureFormat = bitmapTextureFormat;
+        this.textureOptions = textureOptions;
     }
 
     public void addOneTexture(TOneTexture oneTexture)
@@ -51,3 +68,4 @@ public class TexturesSetResourceInfo <TOneTexture extends IOneTexture>  extends 
         this.textureList.add(oneTexture);
     }
 }
+

@@ -6,6 +6,7 @@ import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.AnimationResourceIn
 
 import org.andengine.extension.svg.adt.ISVGColorMapper;
 import org.andengine.opengl.texture.TextureOptions;
+import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 import org.jetbrains.annotations.Nullable;
 
 
@@ -34,8 +35,8 @@ public class SvgAnimationResourceInfo extends AnimationResourceInfo implements I
         return svgColorMapper;
     }
 
-    public SvgAnimationResourceInfo(String name, int atlasWidth, int atlasHeight, TextureOptions textureOptions, String assetsBase, String filename, int numOfColumns, int numOfRows, float initialX, float initialY, boolean enableDithering, int width, int height, ISVGColorMapper svgColorMapper) {
-        super(name, atlasWidth, atlasHeight, textureOptions, assetsBase, filename, numOfColumns, numOfRows, initialX, initialY, enableDithering);
+    public SvgAnimationResourceInfo(String name, int atlasWidth, int atlasHeight, BitmapTextureFormat bitmapTextureFormat, TextureOptions textureOptions, String assetsBase, String filename, int numOfColumns, int numOfRows, float initialX, float initialY, boolean enableDithering, int width, int height, ISVGColorMapper svgColorMapper) {
+        super(name, atlasWidth, atlasHeight, bitmapTextureFormat, textureOptions, assetsBase, filename, numOfColumns, numOfRows, initialX, initialY, enableDithering);
         this.width = width;
         this.height = height;
         this.svgColorMapper = svgColorMapper;

@@ -11,6 +11,9 @@ import android.content.Context;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromResIdsResourceInfo;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.IOneResTexture;
 
+import org.andengine.opengl.texture.TextureOptions;
+import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
+
 /**
  * Created by michel on 26/01/15.
  */
@@ -18,8 +21,8 @@ public class TexturesSetFromResIdsResourceInfo<TOneResTexture extends IOneResTex
 
     Context context;
 
-    public TexturesSetFromResIdsResourceInfo(String name, Context context, int atlasWidth, int atlasHeight) {
-        super(name, atlasWidth, atlasHeight);
+    public TexturesSetFromResIdsResourceInfo(String name, int atlasWidth, int atlasHeight, BitmapTextureFormat bitmapTextureFormat, TextureOptions textureOptions, Context context) {
+        super(name, atlasWidth, atlasHeight, bitmapTextureFormat, textureOptions);
         this.context = context;
     }
 

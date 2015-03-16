@@ -14,11 +14,13 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.I
 import com.bitarcher.aeFun.resourceManagement.MapValues.SubValues.OneTextureSV;
 import com.bitarcher.aeFun.resourceManagement.ResourceManager;
 
+import org.andengine.opengl.texture.TextureOptions;
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlas;
 import org.andengine.opengl.texture.atlas.bitmap.BuildableBitmapTextureAtlas;
 import org.andengine.opengl.texture.atlas.bitmap.source.IBitmapTextureAtlasSource;
 import org.andengine.opengl.texture.atlas.buildable.builder.BlackPawnTextureAtlasBuilder;
 import org.andengine.opengl.texture.atlas.buildable.builder.ITextureAtlasBuilder;
+import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 import org.andengine.opengl.texture.region.ITextureRegion;
 import org.andengine.util.debug.Debug;
 
@@ -68,7 +70,7 @@ public abstract class TextureSetMapValue
         this.beforeLoadingTextures(resourceManager, texturesSetResourceInfo);
 
         this.texture = new BuildableBitmapTextureAtlas(resourceManager.getEngine().getTextureManager(),
-                texturesSetResourceInfo.getAtlasWidth(), texturesSetResourceInfo.getAtlasHeight());
+                texturesSetResourceInfo.getAtlasWidth(), texturesSetResourceInfo.getAtlasHeight(), texturesSetResourceInfo.getBitmapTextureFormat());
 
         for(TOneTextureResourceInfo oneTextureResourceInfo : texturesSetResourceInfo.getTextureList())
         {
@@ -79,7 +81,7 @@ public abstract class TextureSetMapValue
 
 
         try {
-            this.texture.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0, 1, 4));
+            this.texture.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0, 0, 0));
             this.texture.load();
         } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
             Debug.e(e);

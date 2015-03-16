@@ -17,6 +17,7 @@ import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.PercentSpaceUsa
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 import org.andengine.entity.sprite.Sprite;
+import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 
 
 public class GameLevel extends ManagedGameScene {
@@ -24,7 +25,7 @@ public class GameLevel extends ManagedGameScene {
     BitmapTexturesSetFromAssetResourceInfo bitmapTexturesSetFromAssetResourceInfo;
     //SvgTexturesSetFromResIdsResourceInfo animalsTexturesSet = new SvgTexturesSetFromResIdsResourceInfo("animals", this.getSceneManager().getResourceManager().getContext(), 1024, 256);
     //SvgTexturesSetFromAssetResourceInfo animalsTexturesSet = new SvgTexturesSetFromAssetResourceInfo("animals", 1024, 256, "");
-    BitmapTexturesSetFromResIdsResourceInfo animalsTexturesSet = new BitmapTexturesSetFromResIdsResourceInfo("animals", this.getSceneManager().getResourceManager().getContext(), 1024, 256);
+    BitmapTexturesSetFromResIdsResourceInfo animalsTexturesSet = new BitmapTexturesSetFromResIdsResourceInfo("animals", 1024, 1024, BitmapTextureFormat.RGBA_4444, null, this.getSceneManager().getResourceManager().getContext());
     IImage cat;
 
     public GameLevel(ITSceneManager sceneManager) {
@@ -47,7 +48,7 @@ public class GameLevel extends ManagedGameScene {
         animalsTexturesSet.addOneTexture(new OneAssetSvgTexture("dauphin", "svg_animal_dauphin.svg", width, height));
         animalsTexturesSet.addOneTexture(new OneAssetSvgTexture("éléphant", "svg_animal_elephant.svg", width, height));
 */
-        this.bitmapTexturesSetFromAssetResourceInfo = new BitmapTexturesSetFromAssetResourceInfo("gameLevel", 1024, 512, "gfx/MainMenu/");
+        this.bitmapTexturesSetFromAssetResourceInfo = new BitmapTexturesSetFromAssetResourceInfo("gameLevel", 1024, 512, BitmapTextureFormat.RGBA_4444, null, "gfx/MainMenu/");
         this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture((new OneAssetBitmapTexture("cloud", "cloud.png")));
 
         this.getSceneManager().getResourceManager().pushRequirement(this.animalsTexturesSet);
