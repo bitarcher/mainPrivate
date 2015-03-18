@@ -5,5 +5,5 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IResourceI
 import java.util.List;
 
 public interface IResourceInfoListGotter {
-    List<IResourceInfo> getRessourceInfoList();
+    List<IResourceInfo> getResourceInfoList();
 }

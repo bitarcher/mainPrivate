@@ -8,7 +8,7 @@ package com.bitarcher.dog;
 
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.interfaces.drawables.characters.EnumSide;
+import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
 
 /**
  * Created by michel on 16/03/15.
@@ -53,27 +53,26 @@ public class SideResourceInfos extends RIBase{
         return walk2;
     }
 
-    public SideResourceInfos(IResourceManager resourceManager, EnumSide side) {
-        super(resourceManager);
+    public SideResourceInfos(Dog dog, EnumSide side) {
+        super(dog);
         this.side = side;
-        this.run = new RunResourceInfos(resourceManager, side);
-        this.straightResourceInfos = new StraightResourceInfos(resourceManager, side);
+        this.run = new RunResourceInfos(dog, side);
+        this.straightResourceInfos = new StraightResourceInfos(dog, side);
 
         if(side == EnumSide.Left)
         {
-            this.lookPlayer = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "lookPlayer", R.drawable.dog_left_look_player);
-            this.uTurn = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "uTurn", R.drawable.dog_left_uturn);
-            this.walk1 = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "walk1", R.drawable.dog_left_walk1);
-            this.walk2 = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "walk2", R.drawable.dog_left_walk2);
+            this.lookPlayer = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("lookPlayer", R.drawable.dog_left_look_player, side);
+            this.uTurn = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("uTurn", R.drawable.dog_left_uturn, side);
+            this.walk1 = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("walk1", R.drawable.dog_left_walk1, side);
+            this.walk2 = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("walk2", R.drawable.dog_left_walk2, side);
         }
         else
         {
-            this.lookPlayer = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "lookPlayer", R.drawable.dog_right_look_player);
-            this.uTurn = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "uTurn", R.drawable.dog_right_uturn);
-            this.walk1 = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "walk1", R.drawable.dog_right_walk1);
-            this.walk2 = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("dog" + side.name() + "walk2", R.drawable.dog_right_walk2);
+            this.lookPlayer = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("lookPlayer", R.drawable.dog_right_look_player, side);
+            this.uTurn = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("uTurn", R.drawable.dog_right_uturn, side);
+            this.walk1 = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("walk1", R.drawable.dog_right_walk1, side);
+            this.walk2 = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("walk2", R.drawable.dog_right_walk2, side);
         }
-
-
     }
 }
+

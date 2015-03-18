@@ -13,8 +13,8 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.I
  */
 public class OneResBitmapTexture extends OneResTexture implements IOneResBitmapTexture {
 
-    public OneResBitmapTexture(String name, int rawResId) {
-        super(name, rawResId);
+    public OneResBitmapTexture(String name, int resId) {
+        super(name, resId);
 
     }
 

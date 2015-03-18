@@ -32,7 +32,7 @@ public class OneResBitmapTextureSV extends OneBitmapTextureSV<IOneResBitmapTextu
         Context context = textureSetFromResMapValue.getContext();
 
         retval = BitmapTextureAtlasTextureRegionFactory.createFromResource(textureSetMapValue.getTexture(),
-                    context, oneTextureResourceInfo.getRawResId());
+                    context, oneTextureResourceInfo.getResId());
 
         return retval;
     }

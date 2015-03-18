@@ -6,31 +6,23 @@ package com.bitarcher.dog;
  * bitarcher.com
  */
 
-import android.content.Context;
-
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromResIdsResourceInfo;
-import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResBitmapTexture;
-import com.bitarcher.interfaces.drawables.characters.EnumSide;
+import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
 import com.bitarcher.interfaces.drawables.characters.dog.EnumPosition;
-
-import org.andengine.opengl.texture.Texture;
-import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 
 /**
  * Created by michel on 16/03/15.
  */
 public class ResourceInfos {
-    IResourceManager resourceManager;
 
     SideResourceInfos leftSide;
     SideResourceInfos rightSide;
 
-
+    Dog dog;
 
     public IResourceManager getResourceManager() {
-        return resourceManager;
+        return dog.getResourceManager();
     }
 
     public SideResourceInfos getLeftSide() {
@@ -41,13 +33,23 @@ public class ResourceInfos {
         return rightSide;
     }
 
-    public ResourceInfos(IResourceManager resourceManager) {
-        this.resourceManager = resourceManager;
+    public SideResourceInfos getSide(EnumSide side)
+    {
+        SideResourceInfos retval = null;
 
-        this.leftSide = new SideResourceInfos(resourceManager, EnumSide.Left);
-        this.rightSide = new SideResourceInfos(resourceManager,EnumSide.Right);
-        
+        if(side == EnumSide.Left)
+            retval = this.leftSide;
+        else
+            retval = this.rightSide;
 
+        return retval;
+    }
+
+    public ResourceInfos(Dog dog) {
+        this.dog = dog;
+
+        this.leftSide = new SideResourceInfos(dog, EnumSide.Left);
+        this.rightSide = new SideResourceInfos(dog,EnumSide.Right);
     }
 
     public ITexturesSetFromResIdsResourceInfo getTextureResourceInfo(EnumSide side, EnumPosition position)

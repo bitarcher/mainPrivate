@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":dog" />
+        <option name="GRADLE_PROJECT_PATH" value=":aeFunDrawablesCharacters" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -88,10 +88,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="annotations-12.0" level="project" />
     <orderEntry type="module" module-name="aeFunResourceManagement" exported="" />
-    <orderEntry type="module" module-name="andEngine" exported="" />
-    <orderEntry type="module" module-name="aeFunDrawablesCharacters" exported="" />
     <orderEntry type="module" module-name="aeFunInterfaces" exported="" />
-    <orderEntry type="module" module-name="interfacesProtected" exported="" />
   </component>
 </module>
 

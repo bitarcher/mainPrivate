@@ -94,7 +94,7 @@ public class ResourceManager implements IResourceManager {
 
     @Override
     public void pushRequirement(IResourceInfoListGotter resourceInfoListGotter)  throws EResourceCreationError {
-        for(IResourceInfo resourceTuple : resourceInfoListGotter.getRessourceInfoList())
+        for(IResourceInfo resourceTuple : resourceInfoListGotter.getResourceInfoList())
         {
             this.pushRequirement(resourceTuple);
         }
@@ -124,7 +124,7 @@ public class ResourceManager implements IResourceManager {
 
     @Override
     public void popRequirement(IResourceInfoListGotter resourceInfoListGotter) throws EResourceNotFound {
-        ArrayList<IResourceInfo> copy = new ArrayList<>(resourceInfoListGotter.getRessourceInfoList());
+        ArrayList<IResourceInfo> copy = new ArrayList<>(resourceInfoListGotter.getResourceInfoList());
 
         Collections.reverse(copy);
 

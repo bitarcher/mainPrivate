@@ -7,9 +7,7 @@ package com.bitarcher.interfaces.drawables.characters;
  */
 
 /**
- * Created by michel on 16/03/15.
+ * Created by michel on 18/03/15.
  */
-public enum EnumSide {
-    Left,
-    Right
+public class b {
 }

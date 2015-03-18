@@ -14,15 +14,15 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.SubInfos.I
  */
 public abstract class OneResTexture extends OneTexture implements IOneResTexture {
 
-    protected int rawResId;
+    protected int resId;
 
     @Override
-    public int getRawResId() {
-        return this.rawResId;
+    public int getResId() {
+        return this.resId;
     }
 
-    public OneResTexture(String name, int rawResId) {
+    public OneResTexture(String name, int resId) {
         super(name);
-        this.rawResId = rawResId;
+        this.resId = resId;
     }
 }

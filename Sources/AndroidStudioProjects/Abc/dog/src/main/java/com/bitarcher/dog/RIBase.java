@@ -6,6 +6,8 @@ package com.bitarcher.dog;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.drawables.characters.SidedBitmapImageByResId;
+import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromResIdsResourceInfo;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResBitmapTexture;
@@ -15,24 +17,23 @@ import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 /**
  * Created by michel on 16/03/15.
  */
+
 public class RIBase {
-    IResourceManager resourceManager;
+    Dog dog;;
 
-    public IResourceManager getResourceManager() {
-        return resourceManager;
+    public Dog getDog() {
+        return dog;
     }
 
-    public RIBase(IResourceManager resourceManager) {
-        this.resourceManager = resourceManager;
+    public RIBase(Dog dog) {
+        this.dog = dog;
     }
 
-    protected BitmapTexturesSetFromResIdsResourceInfo getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName(String name, int resId)
+    protected SidedBitmapImageByResId getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName(String positionName, int resId, EnumSide side)
     {
-        BitmapTexturesSetFromResIdsResourceInfo retval = null;
+        SidedBitmapImageByResId retval = null;
 
-        retval = new BitmapTexturesSetFromResIdsResourceInfo(name, 512, 512, BitmapTextureFormat.RGBA_4444, null, this.resourceManager.getContext());
-
-        retval.addOneTexture(new OneResBitmapTexture(name, resId));
+        retval = new SidedBitmapImageByResId(this.dog, positionName, 512, 512, BitmapTextureFormat.RGBA_4444, null, resId, side);
 
         return retval;
     }

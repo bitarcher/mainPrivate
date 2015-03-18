@@ -49,7 +49,7 @@ public class OneResSvgTextureSV extends OneSvgTextureSV<IOneResSvgTexture>{
             BuildableBitmapTextureAtlas texture = textureSetMapValue.getTexture();
 
             Context context = textureSetFromResMapValue.getContext();
-            int rawResId = ((IOneResSvgTexture)oneTextureResourceInfo).getRawResId();
+            int rawResId = ((IOneResSvgTexture)oneTextureResourceInfo).getResId();
             int width = oneTextureResourceInfo.getWidth();
             int height = oneTextureResourceInfo.getHeight();
             ISVGColorMapper isvgColorMapper = oneTextureResourceInfo.getSvgColorMapper();
@@ -62,7 +62,7 @@ public class OneResSvgTextureSV extends OneSvgTextureSV<IOneResSvgTexture>{
 
 
 
-            InputStream is = context.getResources().openRawResource(((IOneResSvgTexture) oneTextureResourceInfo).getRawResId());
+            InputStream is = context.getResources().openRawResource(((IOneResSvgTexture) oneTextureResourceInfo).getResId());
             InputStreamReader isr = new InputStreamReader(is);
 
             SVG svg = SVGParser.parseSVGFromInputStream(is, isvgColorMapper);

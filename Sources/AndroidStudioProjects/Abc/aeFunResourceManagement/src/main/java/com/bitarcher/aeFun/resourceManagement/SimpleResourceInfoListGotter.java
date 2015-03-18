@@ -23,7 +23,7 @@ public class SimpleResourceInfoListGotter implements IResourceInfoListGotter {
     }
 
     @Override
-    public List<IResourceInfo> getRessourceInfoList() {
+    public List<IResourceInfo> getResourceInfoList() {
         return this._ressourceTupleList;
     }
 }
