@@ -5,5 +5,5 @@ package com.bitarcher.aeFun.interfaces.mvc;
  */
 public interface IListItem {
     String getTranslatedLabel(ITextColumn textColumn);
-    IImageTuple getImageTuple(IImageColumn imageColumn);
+    IImage getImageTuple(IImageColumn imageColumn);
 }

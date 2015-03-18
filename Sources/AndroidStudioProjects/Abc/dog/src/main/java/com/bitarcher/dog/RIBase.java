@@ -29,7 +29,7 @@ public class RIBase {
         this.dog = dog;
     }
 
-    protected SidedBitmapImageByResId getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName(String positionName, int resId, EnumSide side)
+    protected SidedBitmapImageByResId getNewSidedBitmapImageByResId(String positionName, int resId, EnumSide side)
     {
         SidedBitmapImageByResId retval = null;
 

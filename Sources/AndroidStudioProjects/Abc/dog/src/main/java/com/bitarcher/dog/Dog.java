@@ -7,6 +7,7 @@ package com.bitarcher.dog;
  */
 
 
+import com.bitarcher.aeFun.interfaces.drawables.characters.EnumMainPosition;
 import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceInfoListGotter;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
@@ -65,5 +66,10 @@ public class Dog extends com.bitarcher.aeFun.drawables.characters.Character impl
     @Override
     public void popResourceRequirements() {
         this.getResourceManager().popRequirement(this);
+    }
+
+    @Override
+    public void setMainPosition(EnumSide side, EnumMainPosition mainPosition) {
+        // TODO
     }
 }

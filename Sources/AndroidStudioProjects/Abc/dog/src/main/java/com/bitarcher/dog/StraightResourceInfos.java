@@ -6,8 +6,8 @@ package com.bitarcher.dog;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromResIdsResourceInfo;
+import com.bitarcher.aeFun.drawables.characters.SidedBitmapImageByResId;
+
 import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
 
 /**
@@ -15,39 +15,39 @@ import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
  */
 public class StraightResourceInfos extends RIBase{
     EnumSide side;
-    BitmapTexturesSetFromResIdsResourceInfo straightBackMouthOpened;
-    BitmapTexturesSetFromResIdsResourceInfo straightFrontClosedEyes;
-    BitmapTexturesSetFromResIdsResourceInfo straightFrontClosedEyesSmileTailLifted;
-    BitmapTexturesSetFromResIdsResourceInfo straightFrontMouthWideOpened;
-    BitmapTexturesSetFromResIdsResourceInfo straightMiddleMouthOpened;
-    BitmapTexturesSetFromResIdsResourceInfo straight;
+    SidedBitmapImageByResId straightBackMouthOpened;
+    SidedBitmapImageByResId straightFrontClosedEyes;
+    SidedBitmapImageByResId straightFrontClosedEyesSmileTailLifted;
+    SidedBitmapImageByResId straightFrontMouthWideOpened;
+    SidedBitmapImageByResId straightMiddleMouthOpened;
+    SidedBitmapImageByResId straight;
 
 
     public EnumSide getSide() {
         return side;
     }
 
-    public BitmapTexturesSetFromResIdsResourceInfo getStraightBackMouthOpened() {
+    public SidedBitmapImageByResId getStraightBackMouthOpened() {
         return straightBackMouthOpened;
     }
 
-    public BitmapTexturesSetFromResIdsResourceInfo getStraightFrontClosedEyes() {
+    public SidedBitmapImageByResId getStraightFrontClosedEyes() {
         return straightFrontClosedEyes;
     }
 
-    public BitmapTexturesSetFromResIdsResourceInfo getStraightFrontClosedEyesSmileTailLifted() {
+    public SidedBitmapImageByResId getStraightFrontClosedEyesSmileTailLifted() {
         return straightFrontClosedEyesSmileTailLifted;
     }
 
-    public BitmapTexturesSetFromResIdsResourceInfo getStraightFrontMouthWideOpened() {
+    public SidedBitmapImageByResId getStraightFrontMouthWideOpened() {
         return straightFrontMouthWideOpened;
     }
 
-    public BitmapTexturesSetFromResIdsResourceInfo getStraightMiddleMouthOpened() {
+    public SidedBitmapImageByResId getStraightMiddleMouthOpened() {
         return straightMiddleMouthOpened;
     }
 
-    public BitmapTexturesSetFromResIdsResourceInfo getStraight() {
+    public SidedBitmapImageByResId getStraight() {
         return straight;
     }
 
@@ -57,21 +57,21 @@ public class StraightResourceInfos extends RIBase{
 
 
         if(side == EnumSide.Left) {
-            this.straightBackMouthOpened = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straightBackMouthOpened", R.drawable.dog_left_straight_back_mouth_opened, side);
-            this.straightFrontClosedEyes = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straightFrontClosedEyes", R.drawable.dog_left_straight_front_closed_eyes, side);
-            this.straightFrontClosedEyesSmileTailLifted = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straightFrontClosedEyesSmileTailLifted", R.drawable.dog_left_straight_front_closed_eyes_smile_tail_lifted, side);
-            this.straightFrontMouthWideOpened = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straightFrontMouthWideOpened", R.drawable.dog_left_straight_front_mouth_wide_opened, side);
-            this.straightMiddleMouthOpened = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straightMiddleMouthOpened", R.drawable.dog_left_straight_middle_mouth_opened, side);
-            this.straight = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straight", R.drawable.dog_left_straight, side);
+            this.straightBackMouthOpened = this.getNewSidedBitmapImageByResId("straightBackMouthOpened", R.drawable.dog_left_straight_back_mouth_opened, side);
+            this.straightFrontClosedEyes = this.getNewSidedBitmapImageByResId("straightFrontClosedEyes", R.drawable.dog_left_straight_front_closed_eyes, side);
+            this.straightFrontClosedEyesSmileTailLifted = this.getNewSidedBitmapImageByResId("straightFrontClosedEyesSmileTailLifted", R.drawable.dog_left_straight_front_closed_eyes_smile_tail_lifted, side);
+            this.straightFrontMouthWideOpened = this.getNewSidedBitmapImageByResId("straightFrontMouthWideOpened", R.drawable.dog_left_straight_front_mouth_wide_opened, side);
+            this.straightMiddleMouthOpened = this.getNewSidedBitmapImageByResId("straightMiddleMouthOpened", R.drawable.dog_left_straight_middle_mouth_opened, side);
+            this.straight = this.getNewSidedBitmapImageByResId("straight", R.drawable.dog_left_straight, side);
         }
         else
         {
-            this.straightBackMouthOpened = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straightBackMouthOpened", R.drawable.dog_right_straight_back_mouth_opened, side);
-            this.straightFrontClosedEyes = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straightFrontClosedEyes", R.drawable.dog_right_straight_front_closed_eyes, side);
-            this.straightFrontClosedEyesSmileTailLifted = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straightFrontClosedEyesSmileTailLifted", R.drawable.dog_right_straight_front_closed_eyes_smile_tail_lifted, side);
-            this.straightFrontMouthWideOpened = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straightFrontMouthWideOpened", R.drawable.dog_right_straight_front_mouth_wide_opened, side);
-            this.straightMiddleMouthOpened = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straightMiddleMouthOpened", R.drawable.dog_right_straight_middle_mouth_opened, side);
-            this.straight = this.getNewBitmapTexturesSetFromResIdsResourceInfoFromResIdAndName("straight", R.drawable.dog_right_straight, side);
+            this.straightBackMouthOpened = this.getNewSidedBitmapImageByResId("straightBackMouthOpened", R.drawable.dog_right_straight_back_mouth_opened, side);
+            this.straightFrontClosedEyes = this.getNewSidedBitmapImageByResId("straightFrontClosedEyes", R.drawable.dog_right_straight_front_closed_eyes, side);
+            this.straightFrontClosedEyesSmileTailLifted = this.getNewSidedBitmapImageByResId("straightFrontClosedEyesSmileTailLifted", R.drawable.dog_right_straight_front_closed_eyes_smile_tail_lifted, side);
+            this.straightFrontMouthWideOpened = this.getNewSidedBitmapImageByResId("straightFrontMouthWideOpened", R.drawable.dog_right_straight_front_mouth_wide_opened, side);
+            this.straightMiddleMouthOpened = this.getNewSidedBitmapImageByResId("straightMiddleMouthOpened", R.drawable.dog_right_straight_middle_mouth_opened, side);
+            this.straight = this.getNewSidedBitmapImageByResId("straight", R.drawable.dog_right_straight, side);
         }
     }
 }

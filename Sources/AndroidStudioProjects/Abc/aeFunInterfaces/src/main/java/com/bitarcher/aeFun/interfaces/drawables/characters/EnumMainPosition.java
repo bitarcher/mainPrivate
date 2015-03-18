@@ -13,6 +13,7 @@ public enum EnumMainPosition {
     Run,
     Walk,
     Straight,
-    Talk
+    Talk,
+    Sit
 }
 

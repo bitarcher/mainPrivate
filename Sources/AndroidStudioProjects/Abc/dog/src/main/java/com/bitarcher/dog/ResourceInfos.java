@@ -6,6 +6,7 @@ package com.bitarcher.dog;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.drawables.characters.ISidedImage;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetFromResIdsResourceInfo;
 import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
@@ -52,9 +53,9 @@ public class ResourceInfos {
         this.rightSide = new SideResourceInfos(dog,EnumSide.Right);
     }
 
-    public ITexturesSetFromResIdsResourceInfo getTextureResourceInfo(EnumSide side, EnumPosition position)
+    public ISidedImage getTextureResourceInfo(EnumSide side, EnumPosition position)
     {
-        ITexturesSetFromResIdsResourceInfo retval = null;
+        ISidedImage retval = null;
 
         SideResourceInfos sideResourceInfos = null;
 
@@ -89,6 +90,7 @@ public class ResourceInfos {
                 retval = sideResourceInfos.getRun().getRuns()[4];
                 break;
             case  Sit:
+                retval = sideResourceInfos.getSit();
                 break;
             case  StraightBackMouthOpened:
                 retval = sideResourceInfos.getStraightResourceInfos().getStraightBackMouthOpened();

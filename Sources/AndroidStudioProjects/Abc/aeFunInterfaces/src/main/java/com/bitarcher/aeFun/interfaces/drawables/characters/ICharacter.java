@@ -16,4 +16,5 @@ import org.andengine.entity.IEntity;
  * Created by michel on 18/03/15.
  */
 public interface ICharacter extends IEntity, INamed, IResourceManagerLinked, IResourceRequirementsStackUser {
+    void setMainPosition(EnumSide side, EnumMainPosition mainPosition);
 }
