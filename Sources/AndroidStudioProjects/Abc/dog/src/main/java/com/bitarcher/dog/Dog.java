@@ -6,9 +6,8 @@ package com.bitarcher.dog;
  * bitarcher.com
  */
 
-
-import com.bitarcher.aeFun.interfaces.drawables.characters.EnumMainPosition;
 import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
+import com.bitarcher.aeFun.interfaces.drawables.characters.ISidedImage;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceInfoListGotter;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IResourceInfo;
@@ -69,7 +68,12 @@ public class Dog extends com.bitarcher.aeFun.drawables.characters.Character impl
     }
 
     @Override
-    public void setMainPosition(EnumSide side, EnumMainPosition mainPosition) {
-        // TODO
+    protected ISidedImage getInitialSidedImage() {
+        return this.resourceInfos.getRightSide().getStraightResourceInfos().getStraight();
+    }
+
+    @Override
+    public float getAspectRatio() {
+        return 500f/423f;
     }
 }

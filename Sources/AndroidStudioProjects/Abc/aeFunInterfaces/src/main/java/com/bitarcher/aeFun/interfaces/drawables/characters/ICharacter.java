@@ -7,6 +7,7 @@ package com.bitarcher.aeFun.interfaces.drawables.characters;
  */
 
 import com.bitarcher.aeFun.interfaces.basicioc.INamed;
+import com.bitarcher.aeFun.interfaces.basicioc.IService;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManagerLinked;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceRequirementsStackUser;
 
@@ -15,6 +16,7 @@ import org.andengine.entity.IEntity;
 /**
  * Created by michel on 18/03/15.
  */
-public interface ICharacter extends IEntity, INamed, IResourceManagerLinked, IResourceRequirementsStackUser {
+public interface ICharacter extends IEntity, INamed, IResourceManagerLinked, IResourceRequirementsStackUser, IService {
     void setMainPosition(EnumSide side, EnumMainPosition mainPosition);
+    float getAspectRatio(); // width / height
 }
