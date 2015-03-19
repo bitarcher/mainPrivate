@@ -10,6 +10,9 @@ import com.bitarcher.aeFun.drawables.characters.CharacterSidedImage;
 
 import com.bitarcher.aeFun.drawables.characters.RIBase;
 import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
+import com.bitarcher.aeFun.interfaces.drawables.characters.ICharacterSidedImage;
+
+import java.util.NoSuchElementException;
 
 /**
  * Created by michel on 16/03/15.
@@ -71,6 +74,78 @@ public class SideResourceInfos extends RIBase {
         this.walk2 = this.getNewSidedBitmapImageByResId("walk2", R.drawable.dog_right_walk2, side);
         this.sit = this.getNewSidedBitmapImageByResId("sit", R.drawable.dog_right_sit, side);
 
+    }
+
+    public ICharacterSidedImage getNextWalkSidedImage(int counter)
+    {
+        ICharacterSidedImage retval;
+
+        int modulo = counter % 3;
+
+        switch (modulo)
+        {
+            case 0:
+                retval = this.getStraightResourceInfos().getStraightMiddleMouthOpened();
+                break;
+            case 1:
+                retval = this.getWalk1();
+                break;
+            case 2:
+                retval = this.getWalk2();
+                break;
+            default:
+                throw new NoSuchElementException();
+        }
+
+        return retval;
+    }
+
+    public ICharacterSidedImage getNextTalkSidedImage(int counter)
+    {
+        ICharacterSidedImage retval;
+
+        int modulo = counter % 3;
+
+        switch (modulo)
+        {
+            case 0:
+                retval = this.getStraightResourceInfos().getStraightFrontClosedEyes();
+                break;
+            case 1:
+                retval = this.getStraightResourceInfos().getStraightFrontClosedEyesSmileTailLifted();
+                break;
+            case 2:
+                retval = this.getStraightResourceInfos().getStraightFrontMouthWideOpened();
+                break;
+            default:
+                throw new NoSuchElementException();
+        }
+
+        return retval;
+    }
+
+    public ICharacterSidedImage getNextStraightSidedImage(int counter)
+    {
+        ICharacterSidedImage retval;
+
+        int modulo = counter % 3;
+
+        switch (modulo)
+        {
+            case 0:
+                retval = this.getStraightResourceInfos().getStraightFrontClosedEyes();
+                break;
+            case 1:
+                retval = this.getStraightResourceInfos().getStraightFrontClosedEyesSmileTailLifted();
+                break;
+            case 2:
+                retval = this.getStraightResourceInfos().getStraightFrontMouthWideOpened();
+                break;
+            default:
+                throw new NoSuchElementException();
+        }
+
+        return retval;
     }
 }
 

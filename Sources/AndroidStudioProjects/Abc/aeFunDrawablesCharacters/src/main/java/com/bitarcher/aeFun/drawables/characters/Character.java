@@ -34,6 +34,7 @@ public abstract class Character extends Entity implements ICharacter {
     EnumSide currentSide;
     EnumMainPosition currentMainPosition;
     ICharacterSidedImage currentSidedImage;
+    float lastMainPositionChangedSecondsElapsed = -1; // if -1 just started
     Queue<ICharacterSidedImage> transitionImages = new LinkedBlockingQueue<>();
     Sprite sprite;
     int counter = 0;
@@ -58,6 +59,7 @@ public abstract class Character extends Entity implements ICharacter {
 
     public Character(IResourceManager resourceManager, String name)
     {
+        this.setIgnoreUpdate(true);
         this.resourceManager = resourceManager;
         this.name = name;
     }
@@ -70,12 +72,13 @@ public abstract class Character extends Entity implements ICharacter {
 
             this.currentSide = side;
             this.currentMainPosition = mainPosition;
-            this.counter = 0;
+            this.lastMainPositionChangedSecondsElapsed = -1;
         }
     }
 
     protected void onMainPositionChanged(EnumSide side, EnumMainPosition mainPosition)
     {
+
         IMainPositionSwitchIntermediatesGenerator mainPositionSwitchIntermediatesGenerator = this.getNewMainPositionSwitchIntermediatesGenerator();
 
         List<ICharacterSidedImage> transitionList = mainPositionSwitchIntermediatesGenerator.getTransitions(this.currentSidedImage, side, mainPosition);
@@ -85,12 +88,43 @@ public abstract class Character extends Entity implements ICharacter {
         this.transitionImages.addAll(transitionList);
     }
 
-    protected abstract ICharacterSidedImage getNextSidedImage(int counter, EnumSide side, EnumMainPosition mainPosition);
+    protected abstract ICharacterSidedImage getSidedImage(float secondsElapsedSinceMainPositionChanged, EnumSide side, EnumMainPosition mainPosition);
 
     @Override
     protected void onManagedUpdate(float pSecondsElapsed) {
         super.onManagedUpdate(pSecondsElapsed);
 
+        if(this.lastMainPositionChangedSecondsElapsed < 0)
+        {
+            // service just started
+            this.lastMainPositionChangedSecondsElapsed = pSecondsElapsed;
+        }
+
+        if(this.transitionImages.size() > 0)
+        {
+            ICharacterSidedImage characterSidedImage = this.transitionImages.poll();
+
+            if(this.transitionImages.size() == 0)
+            {
+                // it was the last
+                this.lastMainPositionChangedSecondsElapsed = pSecondsElapsed;
+            }
+
+            this.currentSidedImage = characterSidedImage;
+            this.setSpriteImage();
+        }
+        else
+        {
+            // normal case
+
+            ICharacterSidedImage characterSidedImage = this.getSidedImage(pSecondsElapsed - this.lastMainPositionChangedSecondsElapsed, this.currentSide, this.currentMainPosition);
+
+            if(characterSidedImage != this.currentSidedImage)
+            {
+                this.currentSidedImage = characterSidedImage;
+                this.setSpriteImage();
+            }
+        }
 
     }
 
@@ -122,7 +156,7 @@ public abstract class Character extends Entity implements ICharacter {
         this.currentSidedImage = this.getInitialSidedImage();
 
         this.setSpriteImage();
-
+        this.setIgnoreUpdate(false);
 
         this.isStarted = true;
     }
@@ -135,11 +169,15 @@ public abstract class Character extends Entity implements ICharacter {
             throw new RuntimeException("Not started");
 
 
+        this.setIgnoreUpdate(true);
         this.popResourceRequirements();
-        this.detachChild(this.sprite);
-        this.sprite.dispose();
-        this.sprite = null;
+        if(this.sprite != null) {
+            this.detachChild(this.sprite);
+            this.sprite.dispose();
+            this.sprite = null;
+        }
 
+        this.lastMainPositionChangedSecondsElapsed = -1;
         this.isStarted = false;
     }
 

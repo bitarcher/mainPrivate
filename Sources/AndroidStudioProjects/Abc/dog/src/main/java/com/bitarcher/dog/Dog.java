@@ -85,7 +85,7 @@ public class Dog extends com.bitarcher.aeFun.drawables.characters.Character impl
     }
 
     @Override
-    protected ICharacterSidedImage getNextSidedImage(int counter, EnumSide side, EnumMainPosition mainPosition) {
+    protected ICharacterSidedImage getSidedImage(float secondsElapsedSinceMainPositionChanged, EnumSide side, EnumMainPosition mainPosition) {
         ICharacterSidedImage retval = null;
 
         SideResourceInfos sideResourceInfos = this.resourceInfos.getSide(side);
@@ -93,19 +93,23 @@ public class Dog extends com.bitarcher.aeFun.drawables.characters.Character impl
         switch (mainPosition)
         {
             case Run:
-                sideResourceInfos.getRun().getNextSidedImage(counter);
+                // 6 frames / per seconds
+                sideResourceInfos.getRun().getNextSidedImage((int)(secondsElapsedSinceMainPositionChanged * 6));
                 break;
             case Sit:
-                // TODO
+                sideResourceInfos.getSit();
                 break;
             case Straight:
-                // TODO
+                // 0,2 frame per second
+                sideResourceInfos.getNextTalkSidedImage((int)(secondsElapsedSinceMainPositionChanged * 0.2f));
                 break;
             case Talk:
-                // TODO
+                // 1 frame per second
+                sideResourceInfos.getNextTalkSidedImage((int)secondsElapsedSinceMainPositionChanged);
                 break;
             case Walk:
-                // TODO
+                // 1 frame per second
+                sideResourceInfos.getNextWalkSidedImage((int)secondsElapsedSinceMainPositionChanged);
                 break;
         }
 
