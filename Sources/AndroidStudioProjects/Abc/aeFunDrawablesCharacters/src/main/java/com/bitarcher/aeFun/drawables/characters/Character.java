@@ -141,7 +141,9 @@ public abstract class Character extends Entity implements ICharacter {
 
         ITextureRegion textureRegion = this.resourceManager.getTextureRegionFromTextureSetByName(this.currentSidedImage.getTextureSetResourceInfo(), this.currentSidedImage.getTextureName());
         this.sprite = new Sprite(this.getWidth() / 2, this.getHeight() / 2, this.getWidth(), this.getHeight(), textureRegion,  this.resourceManager.getEngine().getVertexBufferObjectManager());
-        this.sprite.setFlippedHorizontal(this.currentSidedImage.getSide() == EnumSide.Left);
+        if(this.currentSidedImage.getSide() == EnumSide.Left) {
+            this.sprite.setFlippedHorizontal(true);
+        }
         this.attachChild(this.sprite);
     }
 
