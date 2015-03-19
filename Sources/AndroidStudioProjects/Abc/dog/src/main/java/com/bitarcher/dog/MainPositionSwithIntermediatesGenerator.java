@@ -9,7 +9,7 @@ package com.bitarcher.dog;
 import com.bitarcher.aeFun.interfaces.drawables.characters.EnumMainPosition;
 import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
 import com.bitarcher.aeFun.interfaces.drawables.characters.IMainPositionSwitchIntermediatesGenerator;
-import com.bitarcher.aeFun.interfaces.drawables.characters.ISidedImage;
+import com.bitarcher.aeFun.interfaces.drawables.characters.ICharacterSidedImage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +30,9 @@ public class MainPositionSwithIntermediatesGenerator implements IMainPositionSwi
     }
 
     @Override
-    public List<ISidedImage> getTransitions(ISidedImage currentImage, EnumSide newSide, EnumMainPosition newMainPosition) {
-        ArrayList<ISidedImage> retval = new ArrayList<>();
+    public List<ICharacterSidedImage> getTransitions(ICharacterSidedImage currentImage, EnumSide newSide, EnumMainPosition newMainPosition) {
+        ArrayList<ICharacterSidedImage> retval;
+        ArrayList<ICharacterSidedImage> sidedImages = new ArrayList<>();
 
         SideResourceInfos currentSideResourceInfos =this.getDog().resourceInfos.getSide(currentImage.getSide());
         RunResourceInfos runRI = currentSideResourceInfos.getRun();
@@ -44,21 +45,44 @@ public class MainPositionSwithIntermediatesGenerator implements IMainPositionSwi
 
             for(int i = runInd ; i < runRI.getRuns().length ; i++)
             {
-                retval.add(runRI.getRuns()[i]);
+                sidedImages.add(runRI.getRuns()[i]);
             }
         }
 
         if(currentImage.getSide() != newSide)
         {
             SideResourceInfos newSideResourceInfos =this.getDog().resourceInfos.getSide(newSide);
-            retval.add(currentSideResourceInfos.getUTurn());
-            retval.add(currentSideResourceInfos.getLookPlayer());
-            retval.add(newSideResourceInfos.getLookPlayer());
-            retval.add(newSideResourceInfos.getUTurn());
-
+            sidedImages.add(currentSideResourceInfos.getUTurn());
+            sidedImages.add(currentSideResourceInfos.getLookPlayer());
+            sidedImages.add(newSideResourceInfos.getLookPlayer());
+            sidedImages.add(newSideResourceInfos.getUTurn());
         }
 
-        return retval;
+
+        int maxNumOfTransitionImages = 5;
+        int sidedImagesLength = sidedImages.size();
+
+        if(sidedImagesLength > maxNumOfTransitionImages)
+        {
+            retval = new ArrayList<>();
+
+            int div = sidedImagesLength / maxNumOfTransitionImages;
+
+            for(int i = 0; i < sidedImagesLength ; i++)
+            {
+                if(i%div == 0)
+                {
+                    retval.add(sidedImages.get(i));
+                }
+            }
+        }
+        else
+        {
+            retval = sidedImages;
+        }
+
+
+        return sidedImages;
     }
 }
 

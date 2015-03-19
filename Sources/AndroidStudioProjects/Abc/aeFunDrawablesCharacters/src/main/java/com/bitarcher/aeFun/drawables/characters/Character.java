@@ -9,7 +9,8 @@ package com.bitarcher.aeFun.drawables.characters;
 import com.bitarcher.aeFun.interfaces.drawables.characters.EnumMainPosition;
 import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
 import com.bitarcher.aeFun.interfaces.drawables.characters.ICharacter;
-import com.bitarcher.aeFun.interfaces.drawables.characters.ISidedImage;
+import com.bitarcher.aeFun.interfaces.drawables.characters.IMainPositionSwitchIntermediatesGenerator;
+import com.bitarcher.aeFun.interfaces.drawables.characters.ICharacterSidedImage;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 
 
@@ -18,16 +19,22 @@ import org.andengine.entity.sprite.Sprite;
 import org.andengine.opengl.texture.region.ITextureRegion;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 
 /**
  * Created by michel on 18/03/15.
  */
 public abstract class Character extends Entity implements ICharacter {
+    boolean isStarted = false;
     String name;
     IResourceManager resourceManager;
     EnumSide currentSide;
     EnumMainPosition currentMainPosition;
+    ICharacterSidedImage currentSidedImage;
+    Queue<ICharacterSidedImage> transitionImages = new LinkedBlockingQueue<>();
     Sprite sprite;
     int counter = 0;
 
@@ -69,35 +76,80 @@ public abstract class Character extends Entity implements ICharacter {
 
     protected void onMainPositionChanged(EnumSide side, EnumMainPosition mainPosition)
     {
+        IMainPositionSwitchIntermediatesGenerator mainPositionSwitchIntermediatesGenerator = this.getNewMainPositionSwitchIntermediatesGenerator();
+
+        List<ICharacterSidedImage> transitionList = mainPositionSwitchIntermediatesGenerator.getTransitions(this.currentSidedImage, side, mainPosition);
+
+        this.transitionImages.clear();
+
+        this.transitionImages.addAll(transitionList);
+    }
+
+    protected abstract ICharacterSidedImage getNextSidedImage(int counter, EnumSide side, EnumMainPosition mainPosition);
+
+    @Override
+    protected void onManagedUpdate(float pSecondsElapsed) {
+        super.onManagedUpdate(pSecondsElapsed);
+
 
     }
 
-    void onImageQueueEmpty()
+    // precondition, isStarted = true
+    // use this.currentSidedImage
+    void setSpriteImage()
     {
+        if(this.sprite != null)
+        {
+            this.detachChild(this.sprite);
+            this.sprite.dispose();;
+            this.sprite = null;
+        }
 
+        ITextureRegion textureRegion = this.resourceManager.getTextureRegionFromTextureSetByName(this.currentSidedImage.getTextureSetResourceInfo(), this.currentSidedImage.getTextureName());
+        this.sprite = new Sprite(this.getWidth() / 2, this.getHeight() / 2, this.getWidth(), this.getHeight(), textureRegion,  this.resourceManager.getEngine().getVertexBufferObjectManager());
+        this.sprite.setFlippedHorizontal(this.currentSidedImage.getSide() == EnumSide.Left);
+        this.attachChild(this.sprite);
     }
 
     @Override
     public void start() {
+
+        if(this.isStarted)
+            throw new RuntimeException("Already started");
+
         this.pushResourceRequirements();
 
+        this.currentSidedImage = this.getInitialSidedImage();
 
-        ITextureRegion textureRegion = this.resourceManager.getTextureRegionFromTextureSetByName(this.getInitialSidedImage().getTextureSetResourceInfo(), this.getInitialSidedImage().getTextureName());
-        this.sprite = new Sprite(this.getWidth() / 2, this.getHeight() / 2, this.getWidth(), this.getHeight(), textureRegion,  this.resourceManager.getEngine().getVertexBufferObjectManager());
-        this.attachChild(this.sprite);
+        this.setSpriteImage();
+
+
+        this.isStarted = true;
     }
 
-    protected abstract ISidedImage getInitialSidedImage();
+    protected abstract ICharacterSidedImage getInitialSidedImage();
 
     @Override
     public void stop() {
+        if(!this.isStarted)
+            throw new RuntimeException("Not started");
+
+
         this.popResourceRequirements();
+        this.detachChild(this.sprite);
+        this.sprite.dispose();
+        this.sprite = null;
+
+        this.isStarted = false;
     }
 
     @Override
     public void tic(Date dateTime) {
+        // not used
 
     }
+
+    protected abstract IMainPositionSwitchIntermediatesGenerator getNewMainPositionSwitchIntermediatesGenerator();
 }
 
 

@@ -6,13 +6,11 @@ package com.bitarcher.aeFun.interfaces.drawables.characters;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.mvc.IImage;
-
 import java.util.List;
 
 /**
  * Created by michel on 18/03/15.
  */
 public interface IMainPositionSwitchIntermediatesGenerator {
-    List<ISidedImage> getTransitions(ISidedImage currentImage, EnumSide newSide, EnumMainPosition newMainPosition);
+    List<ICharacterSidedImage> getTransitions(ICharacterSidedImage currentImage, EnumSide newSide, EnumMainPosition newMainPosition);
 }

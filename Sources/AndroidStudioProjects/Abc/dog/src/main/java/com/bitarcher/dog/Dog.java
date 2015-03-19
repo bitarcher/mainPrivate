@@ -6,8 +6,10 @@ package com.bitarcher.dog;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.drawables.characters.EnumMainPosition;
 import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
-import com.bitarcher.aeFun.interfaces.drawables.characters.ISidedImage;
+import com.bitarcher.aeFun.interfaces.drawables.characters.IMainPositionSwitchIntermediatesGenerator;
+import com.bitarcher.aeFun.interfaces.drawables.characters.ICharacterSidedImage;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceInfoListGotter;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IResourceInfo;
@@ -23,6 +25,11 @@ public class Dog extends com.bitarcher.aeFun.drawables.characters.Character impl
     ResourceInfos resourceInfos;
 
     @Override
+    protected IMainPositionSwitchIntermediatesGenerator getNewMainPositionSwitchIntermediatesGenerator() {
+        return new MainPositionSwithIntermediatesGenerator(this);
+    }
+
+    @Override
     public List<IResourceInfo> getResourceInfoList() {
 
         ArrayList<IResourceInfo> retval = new ArrayList<>();
@@ -32,20 +39,20 @@ public class Dog extends com.bitarcher.aeFun.drawables.characters.Character impl
             SideResourceInfos sideResourceInfos = this.resourceInfos.getSide(side);
 
             for (int i = 0; i < 5; i++) {
-                retval.add(sideResourceInfos.getRun().runs[i]);
+                retval.add(sideResourceInfos.getRun().runs[i].getTextureSetResourceInfo());
             }
 
-            retval.add(sideResourceInfos.getStraightResourceInfos().getStraight());
-            retval.add(sideResourceInfos.getStraightResourceInfos().getStraightBackMouthOpened());
-            retval.add(sideResourceInfos.getStraightResourceInfos().getStraightFrontClosedEyes());
-            retval.add(sideResourceInfos.getStraightResourceInfos().getStraightFrontClosedEyesSmileTailLifted());
-            retval.add(sideResourceInfos.getStraightResourceInfos().getStraightFrontMouthWideOpened());
-            retval.add(sideResourceInfos.getStraightResourceInfos().getStraightMiddleMouthOpened());
+            retval.add(sideResourceInfos.getStraightResourceInfos().getStraight().getTextureSetResourceInfo());
+            retval.add(sideResourceInfos.getStraightResourceInfos().getStraightBackMouthOpened().getTextureSetResourceInfo());
+            retval.add(sideResourceInfos.getStraightResourceInfos().getStraightFrontClosedEyes().getTextureSetResourceInfo());
+            retval.add(sideResourceInfos.getStraightResourceInfos().getStraightFrontClosedEyesSmileTailLifted().getTextureSetResourceInfo());
+            retval.add(sideResourceInfos.getStraightResourceInfos().getStraightFrontMouthWideOpened().getTextureSetResourceInfo());
+            retval.add(sideResourceInfos.getStraightResourceInfos().getStraightMiddleMouthOpened().getTextureSetResourceInfo());
 
-            retval.add(sideResourceInfos.getLookPlayer());
-            retval.add(sideResourceInfos.getUTurn());
-            retval.add(sideResourceInfos.getWalk1());
-            retval.add(sideResourceInfos.getWalk2());
+            retval.add(sideResourceInfos.getLookPlayer().getTextureSetResourceInfo());
+            retval.add(sideResourceInfos.getUTurn().getTextureSetResourceInfo());
+            retval.add(sideResourceInfos.getWalk1().getTextureSetResourceInfo());
+            retval.add(sideResourceInfos.getWalk2().getTextureSetResourceInfo());
         }
 
         return retval;
@@ -68,7 +75,7 @@ public class Dog extends com.bitarcher.aeFun.drawables.characters.Character impl
     }
 
     @Override
-    protected ISidedImage getInitialSidedImage() {
+    protected ICharacterSidedImage getInitialSidedImage() {
         return this.resourceInfos.getRightSide().getStraightResourceInfos().getStraight();
     }
 
@@ -76,4 +83,33 @@ public class Dog extends com.bitarcher.aeFun.drawables.characters.Character impl
     public float getAspectRatio() {
         return 500f/423f;
     }
+
+    @Override
+    protected ICharacterSidedImage getNextSidedImage(int counter, EnumSide side, EnumMainPosition mainPosition) {
+        ICharacterSidedImage retval = null;
+
+        SideResourceInfos sideResourceInfos = this.resourceInfos.getSide(side);
+
+        switch (mainPosition)
+        {
+            case Run:
+                sideResourceInfos.getRun().getNextSidedImage(counter);
+                break;
+            case Sit:
+                // TODO
+                break;
+            case Straight:
+                // TODO
+                break;
+            case Talk:
+                // TODO
+                break;
+            case Walk:
+                // TODO
+                break;
+        }
+
+        return retval;
+    }
 }
+
