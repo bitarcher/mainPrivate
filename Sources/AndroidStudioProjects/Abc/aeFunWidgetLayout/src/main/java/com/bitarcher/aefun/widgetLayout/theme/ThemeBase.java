@@ -1,21 +1,14 @@
 package com.bitarcher.aefun.widgetLayout.theme;
 
-import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
-import com.bitarcher.aeFun.interfaces.gui.theme.IColorsSection;
-import com.bitarcher.aeFun.interfaces.gui.theme.IFontThemeSection;
-import com.bitarcher.aeFun.interfaces.gui.theme.ILayoutFactory;
-import com.bitarcher.aeFun.interfaces.gui.theme.ITextButtonSection;
-import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
-import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IWidgetSections;
-import com.bitarcher.aeFun.interfaces.resourcemanagement.EResourceNotFound;
-import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesSetResourceInfo;
-import com.bitarcher.aefun.widgetLayout.DefaultLayoutFactory;
-
-import org.andengine.opengl.font.Font;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.IColorsSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.IFontThemeSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ILayoutFactory;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.IWidgetSections;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.resourcemanagement.EResourceNotFound;
 
 import java.util.Date;
-import java.util.NoSuchElementException;
 
 /**
  * Created by michel on 21/01/15.

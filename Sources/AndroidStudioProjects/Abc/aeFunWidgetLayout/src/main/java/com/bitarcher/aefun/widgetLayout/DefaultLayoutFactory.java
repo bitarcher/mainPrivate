@@ -6,12 +6,12 @@ package com.bitarcher.aefun.widgetLayout;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.gui.theme.ILayout;
-import com.bitarcher.aeFun.interfaces.gui.theme.ILayoutFactory;
-import com.bitarcher.aeFun.interfaces.gui.theme.context.IContext;
-import com.bitarcher.aeFun.interfaces.gui.widgets.IImageButton;
-import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
-import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ILayout;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ILayoutFactory;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.context.IContext;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.IImageButton;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.ITextButton;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aefun.widgetLayout.layouts.ImageButtonLayout;
 import com.bitarcher.aefun.widgetLayout.layouts.TextButtonLayout;
 

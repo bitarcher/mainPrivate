@@ -6,8 +6,8 @@ package com.bitarcher.aefun.widgetLayout.layouts.tools;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.geometry.ISize;
-import com.bitarcher.aeFun.interfaces.gui.theme.context.ICheckableContext;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.geometry.ISize;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.context.ICheckableContext;
 
 /**
  * Created by michel on 20/03/15.

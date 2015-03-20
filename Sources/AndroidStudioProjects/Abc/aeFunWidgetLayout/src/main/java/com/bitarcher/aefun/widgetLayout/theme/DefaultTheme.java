@@ -1,14 +1,10 @@
 package com.bitarcher.aefun.widgetLayout.theme;
 
-import android.content.Context;
-import android.graphics.Typeface;
-
-import com.bitarcher.aeFun.interfaces.gui.theme.IArrows;
-import com.bitarcher.aeFun.interfaces.gui.theme.IColorsSection;
-import com.bitarcher.aeFun.interfaces.gui.theme.IFontThemeSection;
-import com.bitarcher.aeFun.interfaces.gui.theme.ILayoutFactory;
-import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
-import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IWidgetSections;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.IColorsSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.IFontThemeSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ILayoutFactory;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.IWidgetSections;
 
 import com.bitarcher.aefun.widgetLayout.DefaultLayoutFactory;
 

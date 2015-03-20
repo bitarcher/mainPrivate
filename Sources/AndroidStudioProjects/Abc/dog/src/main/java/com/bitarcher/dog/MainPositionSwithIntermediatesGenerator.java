@@ -6,10 +6,10 @@ package com.bitarcher.dog;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.drawables.characters.EnumMainPosition;
-import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
-import com.bitarcher.aeFun.interfaces.drawables.characters.IMainPositionSwitchIntermediatesGenerator;
-import com.bitarcher.aeFun.interfaces.drawables.characters.ICharacterSidedImage;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.EnumMainPosition;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.EnumSide;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.IMainPositionSwitchIntermediatesGenerator;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.ICharacterSidedImage;
 
 import java.util.ArrayList;
 import java.util.List;

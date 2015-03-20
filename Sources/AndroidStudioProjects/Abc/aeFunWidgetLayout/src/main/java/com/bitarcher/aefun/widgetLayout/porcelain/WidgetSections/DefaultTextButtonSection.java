@@ -6,9 +6,9 @@ package com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
-import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.ITextButtonSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.ITextButtonSection;
 
 import org.andengine.opengl.font.Font;
 import org.andengine.util.adt.color.Color;

@@ -6,8 +6,8 @@ package com.bitarcher.aefun.widgetLayout.porcelain;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.gui.theme.IColorsSection;
-import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.IColorsSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ITheme;
 
 import org.andengine.util.adt.color.Color;
 

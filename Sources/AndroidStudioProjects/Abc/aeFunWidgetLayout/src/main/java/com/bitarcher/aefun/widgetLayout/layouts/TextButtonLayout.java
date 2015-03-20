@@ -7,18 +7,12 @@ package com.bitarcher.aefun.widgetLayout.layouts;
  */
 
 
-import com.bitarcher.aeFun.interfaces.geometry.ISize;
-import com.bitarcher.aeFun.interfaces.gui.theme.context.ITextButtonContext;
-import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.EnumMouseEffect;
-import com.bitarcher.aeFun.interfaces.gui.theme.layout.ITextButtonLayout;
-import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IButtonSection;
-import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
-import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.context.ITextButtonContext;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.layout.ITextButtonLayout;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.IButtonSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.ITextButton;
 
 import org.andengine.entity.Entity;
-import org.andengine.entity.IEntity;
-import org.andengine.entity.primitive.Gradient;
-import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.text.Text;
 import org.andengine.opengl.font.Font;
 import org.andengine.opengl.vbo.DrawType;

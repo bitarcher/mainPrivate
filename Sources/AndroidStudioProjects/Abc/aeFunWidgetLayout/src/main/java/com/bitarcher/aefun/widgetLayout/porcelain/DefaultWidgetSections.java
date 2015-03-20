@@ -6,12 +6,12 @@ package com.bitarcher.aefun.widgetLayout.porcelain;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.ICheckButtonSection;
-import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IImageButtonSection;
-import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IRadioButtonSection;
-import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.ITextButtonSection;
-import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IWidgetSections;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.ICheckButtonSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.IImageButtonSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.IRadioButtonSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.ITextButtonSection;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.IWidgetSections;
 import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultCheckButtonSection;
 import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultImageButtonSection;
 import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultRadioButtonSection;
