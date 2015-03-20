@@ -101,4 +101,9 @@ public class TextButtonLayout extends ButtonLayout<ITextButtonContext> implement
     public void setTranslatedLabel(String translatedLabel) {
         this.setText(translatedLabel);
     }
+
+    @Override
+    protected float getBorderSize() {
+        return this.getWidget().getTheme().getWidgetSections().getTextButtonSection().getBorderSize();
+    }
 }

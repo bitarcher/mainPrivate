@@ -7,11 +7,15 @@ package com.bitarcher.aefun.widgetLayout.porcelain;
  */
 
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.ICheckButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IImageButtonSection;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IRadioButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.ITextButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IWidgetSections;
-import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultImageButtonSections;
-import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultTextButtonSections;
+import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultCheckButtonSection;
+import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultImageButtonSection;
+import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultRadioButtonSection;
+import com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections.DefaultTextButtonSection;
 
 /**
  * Created by michel on 10/03/15.
@@ -20,6 +24,8 @@ public class DefaultWidgetSections implements IWidgetSections {
     ITheme theme;
     ITextButtonSection textButtonSection;
     IImageButtonSection imageButtonSection;
+    ICheckButtonSection checkButtonSection;
+    IRadioButtonSection radioButtonSection;
 
 
     public DefaultWidgetSections(ITheme theme) {
@@ -30,7 +36,7 @@ public class DefaultWidgetSections implements IWidgetSections {
     public ITextButtonSection getTextButtonSection() {
         if(this.textButtonSection == null)
         {
-            this.textButtonSection = new DefaultTextButtonSections(this.theme);
+            this.textButtonSection = new DefaultTextButtonSection(this.theme);
         }
 
         return this.textButtonSection;
@@ -40,10 +46,30 @@ public class DefaultWidgetSections implements IWidgetSections {
     public IImageButtonSection getImageButtonSection() {
         if(this.imageButtonSection == null)
         {
-            this.imageButtonSection = new DefaultImageButtonSections(this.theme);
+            this.imageButtonSection = new DefaultImageButtonSection(this.theme);
         }
 
         return this.imageButtonSection;
+    }
+
+    @Override
+    public ICheckButtonSection getCheckButtonSection() {
+        if(this.checkButtonSection == null)
+        {
+            this.checkButtonSection = new DefaultCheckButtonSection(this.theme);
+        }
+
+        return this.checkButtonSection;
+    }
+
+    @Override
+    public IRadioButtonSection getRadioButtonSection() {
+        if(this.radioButtonSection == null)
+        {
+            this.radioButtonSection = new DefaultRadioButtonSection(this.theme);
+        }
+
+        return this.radioButtonSection;
     }
 }
 

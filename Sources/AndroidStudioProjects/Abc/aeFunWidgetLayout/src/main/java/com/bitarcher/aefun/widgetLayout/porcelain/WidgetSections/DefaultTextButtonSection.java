@@ -16,10 +16,10 @@ import org.andengine.util.adt.color.Color;
 /**
  * Created by michel on 10/03/15.
  */
-public class DefaultTextButtonSections implements ITextButtonSection{
+public class DefaultTextButtonSection implements ITextButtonSection{
     ITheme theme;
 
-    public DefaultTextButtonSections(ITheme theme) {
+    public DefaultTextButtonSection(ITheme theme) {
         this.theme = theme;
     }
 

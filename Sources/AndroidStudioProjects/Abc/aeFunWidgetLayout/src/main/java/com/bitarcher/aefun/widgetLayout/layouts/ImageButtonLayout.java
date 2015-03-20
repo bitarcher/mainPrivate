@@ -100,4 +100,9 @@ public class ImageButtonLayout extends ButtonLayout<IImageButtonContext> impleme
     public void setImage(IImage image) {
         this._setImage(image);
     }
+
+    @Override
+    protected float getBorderSize() {
+        return this.getWidget().getTheme().getWidgetSections().getImageButtonSection().getBorderSize();
+    }
 }

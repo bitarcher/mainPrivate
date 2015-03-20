@@ -70,5 +70,12 @@ public abstract class Container<TContext extends IContext> extends Widget<TConte
     {
         this.doDetachChild(widget);
     }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+
+        this.containerListenerArrayList.clear();
+    }
 }
 

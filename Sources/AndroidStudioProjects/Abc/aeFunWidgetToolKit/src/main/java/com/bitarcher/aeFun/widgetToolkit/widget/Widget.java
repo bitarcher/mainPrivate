@@ -359,4 +359,10 @@ public abstract class Widget<TContext extends IContext> extends ClipEntity imple
     }
 
 
+    @Override
+    public void dispose() {
+        super.dispose();
+
+        this.widgetListenerArrayList.clear();
+    }
 }

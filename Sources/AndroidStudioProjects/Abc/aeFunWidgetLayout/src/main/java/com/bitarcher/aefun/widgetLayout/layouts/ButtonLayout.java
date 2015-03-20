@@ -1,21 +1,14 @@
 package com.bitarcher.aefun.widgetLayout.layouts;
 
 import com.bitarcher.aeFun.interfaces.geometry.ISize;
-import com.bitarcher.aeFun.interfaces.gui.theme.ILayout;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.IButtonContext;
-import com.bitarcher.aeFun.interfaces.gui.theme.context.ITextButtonContext;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.EnumMouseEffect;
 import com.bitarcher.aeFun.interfaces.gui.theme.layout.IButtonLayout;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
-import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
 
-import org.andengine.entity.Entity;
 import org.andengine.entity.primitive.Gradient;
 import org.andengine.entity.primitive.Rectangle;
-import org.andengine.entity.text.Text;
-import org.andengine.opengl.font.Font;
-import org.andengine.opengl.vbo.DrawType;
 
 /*
  * Copyright (c) 2015.
@@ -95,6 +88,8 @@ public abstract class ButtonLayout<TButtonContext extends IButtonContext>  imple
         this.doSizeAndPadding();
     }
 
+    protected abstract float getBorderSize();
+
     protected void doSizeAndPadding()
     {
         float tw = this.button.getWidth();
@@ -106,7 +101,7 @@ public abstract class ButtonLayout<TButtonContext extends IButtonContext>  imple
         float wmp = tw - 2 * this.button.getPadding();
         float hmp = th - 2 * this.button.getPadding();
 
-        float border = 4;
+        float border = this.getBorderSize();
         float wb = wmp - 2 * border;
         float hb = hmp - 2 * border;
 

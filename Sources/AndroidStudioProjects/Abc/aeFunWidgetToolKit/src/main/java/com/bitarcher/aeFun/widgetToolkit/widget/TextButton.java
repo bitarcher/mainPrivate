@@ -72,5 +72,11 @@ public class TextButton extends Button<ITextButtonContext> implements ITextButto
     public String getTranslatedLabel() {
         return this.translatedLabel;
     }
-    
+
+    @Override
+    public void dispose() {
+        super.dispose();
+
+        this.labeledListenerArrayList.clear();
+    }
 }

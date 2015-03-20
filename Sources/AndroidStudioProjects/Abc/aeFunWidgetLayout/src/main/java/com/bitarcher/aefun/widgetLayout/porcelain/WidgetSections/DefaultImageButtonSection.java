@@ -17,10 +17,10 @@ import org.andengine.util.adt.color.Color;
 /**
  * Created by michel on 10/03/15.
  */
-public class DefaultImageButtonSections implements IImageButtonSection {
+public class DefaultImageButtonSection implements IImageButtonSection {
     ITheme theme;
 
-    public DefaultImageButtonSections(ITheme theme) {
+    public DefaultImageButtonSection(ITheme theme) {
         this.theme = theme;
     }
 

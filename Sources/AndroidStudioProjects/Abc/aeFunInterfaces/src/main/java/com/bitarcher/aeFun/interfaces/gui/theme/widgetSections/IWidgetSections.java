@@ -12,4 +12,6 @@ package com.bitarcher.aeFun.interfaces.gui.theme.widgetSections;
 public interface IWidgetSections {
     ITextButtonSection getTextButtonSection();
     IImageButtonSection getImageButtonSection();
+    ICheckButtonSection getCheckButtonSection();
+    IRadioButtonSection getRadioButtonSection();
 }

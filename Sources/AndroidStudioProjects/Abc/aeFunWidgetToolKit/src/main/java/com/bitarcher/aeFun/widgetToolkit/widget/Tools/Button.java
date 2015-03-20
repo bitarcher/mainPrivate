@@ -133,4 +133,10 @@ public abstract class Button<TContext extends IButtonContext> extends Widget<TCo
 
     }
 
+    @Override
+    public void dispose() {
+        super.dispose();
+
+        this.buttonListenerArrayList.clear();
+    }
 }
