@@ -6,13 +6,13 @@ package com.bitarcher.dog;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.EnumMainPosition;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.EnumSide;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.IMainPositionSwitchIntermediatesGenerator;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.ICharacterSidedImage;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.resourcemanagement.IResourceInfoListGotter;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.resourcemanagement.ResourceInfo.IResourceInfo;
+import com.bitarcher.aeFun.interfaces.drawables.characters.EnumMainPosition;
+import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
+import com.bitarcher.aeFun.interfaces.drawables.characters.IMainPositionSwitchIntermediatesGenerator;
+import com.bitarcher.aeFun.interfaces.drawables.characters.ICharacterSidedImage;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceInfoListGotter;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IResourceInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by michel on 18/03/15.
  */
-public class Dog extends com.bitarcher.aeFunExamplesShowRoom.drawables.characters.Character implements IResourceInfoListGotter {
+public class Dog extends com.bitarcher.aeFun.drawables.characters.Character implements IResourceInfoListGotter {
 
     ResourceInfos resourceInfos;
 

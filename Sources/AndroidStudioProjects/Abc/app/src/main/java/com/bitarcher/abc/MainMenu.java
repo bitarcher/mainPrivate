@@ -1,18 +1,18 @@
 package com.bitarcher.abc;
 
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.andEngine.IScene;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.EnumFontSize;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.IButton;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.IButtonListener;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.IMainMenu;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
-import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourcesInfos.MusicResourceInfo;
-import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
+import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
+import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IMainMenu;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.MusicResourceInfo;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
 
-import com.bitarcher.aeFunExamplesShowRoom.sceneManagement.ManagedMenuScene;
-import com.bitarcher.aeFunExamplesShowRoom.widgetToolkit.widget.TextButton;
+import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
+import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 import org.andengine.audio.music.Music;
 import org.andengine.entity.sprite.Sprite;

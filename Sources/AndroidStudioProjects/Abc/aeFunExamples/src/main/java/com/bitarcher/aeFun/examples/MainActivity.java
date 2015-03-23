@@ -2,11 +2,11 @@ package com.bitarcher.aeFun.examples;
 
 
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.IThemeManager;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.ISceneManagerConfigurator;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourceManager;
-import com.bitarcher.aeFunExamplesShowRoom.sceneManagement.SceneManagedActivity;
+import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.resourceManagement.ResourceManager;
+import com.bitarcher.aeFun.sceneManagement.SceneManagedActivity;
 import com.bitarcher.aefun.widgetLayout.theme.DefaultTheme;
 
 

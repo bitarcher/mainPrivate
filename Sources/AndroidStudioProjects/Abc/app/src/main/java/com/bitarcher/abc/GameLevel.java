@@ -1,20 +1,20 @@
 package com.bitarcher.abc;
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.IButton;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.IButtonListener;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.mvc.IImage;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
-import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourcesInfos.BitmapTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
+import com.bitarcher.aeFun.interfaces.mvc.IImage;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromResIdsResourceInfo;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
 
-import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourcesInfos.SubInfos.OneResBitmapTexture;
-import com.bitarcher.aeFunExamplesShowRoom.sceneManagement.ManagedGameScene;
-import com.bitarcher.aeFunExamplesShowRoom.widgetToolkit.WImage;
-import com.bitarcher.aeFunExamplesShowRoom.widgetToolkit.widget.ImageButton;
-import com.bitarcher.aeFunExamplesShowRoom.widgetToolkit.widget.Table;
-import com.bitarcher.aeFunExamplesShowRoom.widgetToolkit.widget.Tools.Containers.PercentSpaceUsage;
-import com.bitarcher.aeFunExamplesShowRoom.widgetToolkit.widget.TextButton;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResBitmapTexture;
+import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
+import com.bitarcher.aeFun.widgetToolkit.WImage;
+import com.bitarcher.aeFun.widgetToolkit.widget.ImageButton;
+import com.bitarcher.aeFun.widgetToolkit.widget.Table;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.PercentSpaceUsage;
+import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;

@@ -1,10 +1,10 @@
 package com.bitarcher.aefun.widgetLayout.layouts;
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.context.IImageButtonContext;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.layout.IImageButtonLayout;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.IButtonSection;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.IImageButton;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.mvc.IImage;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.IImageButtonContext;
+import com.bitarcher.aeFun.interfaces.gui.theme.layout.IImageButtonLayout;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IButtonSection;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IImageButton;
+import com.bitarcher.aeFun.interfaces.mvc.IImage;
 
 import org.andengine.entity.Entity;
 import org.andengine.entity.sprite.Sprite;

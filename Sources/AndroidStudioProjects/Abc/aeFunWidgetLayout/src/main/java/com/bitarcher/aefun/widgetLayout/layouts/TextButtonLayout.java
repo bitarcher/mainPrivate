@@ -7,10 +7,10 @@ package com.bitarcher.aefun.widgetLayout.layouts;
  */
 
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.context.ITextButtonContext;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.layout.ITextButtonLayout;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.IButtonSection;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.ITextButton;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.ITextButtonContext;
+import com.bitarcher.aeFun.interfaces.gui.theme.layout.ITextButtonLayout;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IButtonSection;
+import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
 
 import org.andengine.entity.Entity;
 import org.andengine.entity.text.Text;

@@ -6,9 +6,9 @@ package com.bitarcher.dog;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.ICharacterSidedImage;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.resourcemanagement.IResourceManager;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.EnumSide;
+import com.bitarcher.aeFun.interfaces.drawables.characters.ICharacterSidedImage;
+import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
+import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
 import com.bitarcher.interfaces.drawables.characters.dog.EnumPosition;
 
 /**

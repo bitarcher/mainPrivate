@@ -1,11 +1,11 @@
 package com.bitarcher.aefun.widgetLayout.layouts;
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.geometry.ISize;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.context.IButtonContext;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.context.setter.EnumMouseEffect;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.layout.IButtonLayout;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.IButtonSection;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.widgets.IButton;
+import com.bitarcher.aeFun.interfaces.geometry.ISize;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.IButtonContext;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.EnumMouseEffect;
+import com.bitarcher.aeFun.interfaces.gui.theme.layout.IButtonLayout;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IButtonSection;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
 
 import org.andengine.entity.primitive.Gradient;
 import org.andengine.entity.primitive.Rectangle;

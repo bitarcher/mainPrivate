@@ -1,6 +1,6 @@
 package com.bitarcher.interfaces.bll.xml.abc.ro.resources;
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.basicioc.IXmlReader;
+import com.bitarcher.aeFun.interfaces.basicioc.IXmlReader;
 
 import java.util.Map;
 import java.util.List;

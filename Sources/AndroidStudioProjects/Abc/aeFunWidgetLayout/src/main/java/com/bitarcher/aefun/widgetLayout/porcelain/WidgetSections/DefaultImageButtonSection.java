@@ -1,7 +1,7 @@
 package com.bitarcher.aefun.widgetLayout.porcelain.WidgetSections;
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.widgetSections.IImageButtonSection;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IImageButtonSection;
 
 import org.andengine.util.adt.color.Color;
 

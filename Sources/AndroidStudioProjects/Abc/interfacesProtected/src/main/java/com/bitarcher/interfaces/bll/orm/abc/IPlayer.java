@@ -6,7 +6,7 @@
 
 package com.bitarcher.interfaces.bll.orm.abc;
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.basicioc.orm.IOrmBasic;
+import com.bitarcher.aeFun.interfaces.basicioc.orm.IOrmBasic;
 import com.bitarcher.interfaces.bll.xml.abc.ro.resources.IAnimal;
 
 /**

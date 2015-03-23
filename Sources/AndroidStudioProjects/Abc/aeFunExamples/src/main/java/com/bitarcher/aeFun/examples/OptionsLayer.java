@@ -1,10 +1,10 @@
 package com.bitarcher.aeFun.examples;
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.EnumFontSize;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.IOptionsLayer;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourceManager;
-import com.bitarcher.aeFunExamplesShowRoom.sceneManagement.ManagedLayer;
+import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IOptionsLayer;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.resourceManagement.ResourceManager;
+import com.bitarcher.aeFun.sceneManagement.ManagedLayer;
 import com.bitarcher.aefun.widgetLayout.theme.DefaultTheme;
 
 import org.andengine.engine.handler.IUpdateHandler;

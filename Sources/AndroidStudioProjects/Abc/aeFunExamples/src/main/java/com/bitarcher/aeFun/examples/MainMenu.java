@@ -1,13 +1,13 @@
 package com.bitarcher.aeFun.examples;
 
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.andEngine.IScene;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.IMainMenu;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.aeFunExamplesShowRoom.sceneManagement.ManagedMenuScene;
-import com.bitarcher.aeFunExamplesShowRoom.widgetToolkit.widget.Table;
-import com.bitarcher.aeFunExamplesShowRoom.widgetToolkit.widget.TextButton;
+import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IMainMenu;
+import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
+import com.bitarcher.aeFun.widgetToolkit.widget.Table;
+import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.Background;
@@ -20,6 +20,7 @@ import org.andengine.entity.scene.background.Background;
 
 public class MainMenu extends ManagedMenuScene implements IMainMenu{
     Table table;
+    BannerCtrl bannerCtrl;
     TextButton widgetGalleryTextButton;
     TextButton resourceManagerTextButton;
     TextButton characterTextButton;
@@ -64,9 +65,12 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
         ITheme theme = this.getSceneManager().getTheme();
         Camera camera = theme.getThemeManager().getResourceManager().getEngine().getCamera();
-        this.table = new Table(theme, camera.getWidth() / 2,  camera.getHeight() / 3, camera.getWidth(), camera.getHeight() / 2);
+        this.table = new Table(theme, camera.getWidth() / 2,  camera.getHeight() / 2, camera.getWidth(), camera.getHeight());
 
-        this.table.addHomogeneousColumnsAndRows(2, 2, 5);
+        this.table.addHomogeneousColumnsAndRows(2, 3, 5);
+
+        this.bannerCtrl = new BannerCtrl(theme, 0, 0, 10, 10, "Top menu");
+        this.table.attachChild(this.bannerCtrl, 0, 0, 2, 1); // two columns span
 
         this.widgetGalleryTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Widget gallery");
         this.table.attachChild(this.widgetGalleryTextButton);
@@ -78,8 +82,6 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         this.attachChild(this.table);
 
     }
-
-
 
 
     @Override

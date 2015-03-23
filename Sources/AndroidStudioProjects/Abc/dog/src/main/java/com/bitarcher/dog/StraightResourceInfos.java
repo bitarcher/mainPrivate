@@ -6,10 +6,10 @@ package com.bitarcher.dog;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFunExamplesShowRoom.drawables.characters.CharacterSidedImage;
+import com.bitarcher.aeFun.drawables.characters.CharacterSidedImage;
 
-import com.bitarcher.aeFunExamplesShowRoom.drawables.characters.RIBase;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.drawables.characters.EnumSide;
+import com.bitarcher.aeFun.drawables.characters.RIBase;
+import com.bitarcher.aeFun.interfaces.drawables.characters.EnumSide;
 
 /**
  * Created by michel on 16/03/15.

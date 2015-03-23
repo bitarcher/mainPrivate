@@ -8,10 +8,10 @@ package com.bitarcher.aefun.widgetLayout.porcelain;
 
 import android.graphics.Typeface;
 
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.EnumFontSize;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.IFontThemeSection;
-import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourcesInfos.Font.FontCreateFromTypeFaceResourceInfo;
+import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
+import com.bitarcher.aeFun.interfaces.gui.theme.IFontThemeSection;
+import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
+import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.Font.FontCreateFromTypeFaceResourceInfo;
 
 import org.andengine.opengl.font.Font;
 import org.andengine.util.adt.color.Color;
