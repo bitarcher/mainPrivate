@@ -11,5 +11,5 @@ import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.ITranslatedLabelS
 /**
  * Created by michel on 23/03/15.
  */
-public interface ILabelContext extends IContext, ITranslatedLabelSetter {
+public interface ILabelContext extends ICommonContext, ITranslatedLabelSetter {
 }

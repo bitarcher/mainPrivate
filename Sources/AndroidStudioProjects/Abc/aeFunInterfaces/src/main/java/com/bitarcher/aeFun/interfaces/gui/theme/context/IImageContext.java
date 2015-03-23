@@ -9,5 +9,5 @@ package com.bitarcher.aeFun.interfaces.gui.theme.context;
 /**
  * Created by michel on 23/03/15.
  */
-public interface IImageContext extends IContext {
+public interface IImageContext extends ICommonContext {
 }

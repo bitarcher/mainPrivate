@@ -14,4 +14,6 @@ public interface IWidgetSections {
     IImageButtonSection getImageButtonSection();
     ICheckButtonSection getCheckButtonSection();
     IRadioButtonSection getRadioButtonSection();
+    IImageSection getImageSection();
+    ILabelSection getLabelSection();
 }

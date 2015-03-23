@@ -11,8 +11,8 @@ import org.andengine.opengl.font.Font;
 /**
  * Created by michel on 10/03/15.
  */
-public interface ILabelSection extends IButtonSection {
-    Font getTextButtonFont();
+public interface ILabelSection extends ISection {
+    Font getLabelFont();
 
 }
 

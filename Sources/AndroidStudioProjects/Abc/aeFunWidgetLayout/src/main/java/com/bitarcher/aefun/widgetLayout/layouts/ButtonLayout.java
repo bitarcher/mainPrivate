@@ -51,14 +51,12 @@ public abstract class ButtonLayout<TButtonContext extends IButtonContext>  imple
         this.doGradientColor();
     }
 
-
     @Override
     public void pushResourceRequirements() {
     }
 
     @Override
     public void popResourceRequirements() {
-
     }
 
     public ButtonLayout(IButton button) {
@@ -71,7 +69,6 @@ public abstract class ButtonLayout<TButtonContext extends IButtonContext>  imple
     }
 
     protected abstract IButtonSection getButtonSection();
-
 
     @Override
     public void setMouseEffect(EnumMouseEffect mouseEffect) {

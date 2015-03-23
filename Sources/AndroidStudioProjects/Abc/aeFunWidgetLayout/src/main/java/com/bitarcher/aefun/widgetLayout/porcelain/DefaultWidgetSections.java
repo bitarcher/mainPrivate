@@ -9,6 +9,8 @@ package com.bitarcher.aefun.widgetLayout.porcelain;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.ICheckButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IImageButtonSection;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IImageSection;
+import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.ILabelSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IRadioButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.ITextButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IWidgetSections;
@@ -26,6 +28,8 @@ public class DefaultWidgetSections implements IWidgetSections {
     IImageButtonSection imageButtonSection;
     ICheckButtonSection checkButtonSection;
     IRadioButtonSection radioButtonSection;
+    IImageSection imageSection;
+    ILabelSection labelSection;
 
 
     public DefaultWidgetSections(ITheme theme) {
@@ -70,6 +74,16 @@ public class DefaultWidgetSections implements IWidgetSections {
         }
 
         return this.radioButtonSection;
+    }
+
+    @Override
+    public IImageSection getImageSection() {
+        return imageSection;
+    }
+
+    @Override
+    public ILabelSection getLabelSection() {
+        return labelSection;
     }
 }
 
