@@ -1,4 +1,4 @@
-package com.bitarcher.aeFunExamples;
+package com.bitarcher.aeFun.examples;
 
 import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.EnumFontSize;
 import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.IOptionsLayer;

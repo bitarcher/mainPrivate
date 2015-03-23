@@ -1,39 +1,85 @@
 package com.bitarcher.aeFun.examples;
 
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 
-public class MainActivity extends ActionBarActivity {
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.gui.theme.IThemeManager;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.ISceneManagerConfigurator;
+import com.bitarcher.aeFunExamplesShowRoom.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFunExamplesShowRoom.resourceManagement.ResourceManager;
+import com.bitarcher.aeFunExamplesShowRoom.sceneManagement.SceneManagedActivity;
+import com.bitarcher.aefun.widgetLayout.theme.DefaultTheme;
+
+
+
+/*
+ * Copyright (c) 2015.
+ * Michel Strasser
+ * bitarcher.com
+ */
+
+public class MainActivity extends SceneManagedActivity<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> {
+
+    // ===========================================================
+    // Constants
+    // ===========================================================
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected ISceneManagerConfigurator<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> getSceneManagerConfigurator() {
+        return new ISceneManagerConfigurator<ResourceManager, DefaultTheme, MainMenu, OptionsLayer>() {
+            @Override
+            public ResourceManager getNewResourceManager() {
+                return new ResourceManager();
+            }
+
+            @Override
+            public DefaultTheme getNewTheme(IThemeManager themeManager) {
+                return new DefaultTheme(themeManager, "@Default");
+            }
+
+            @Override
+            public MainMenu getNewMainMenu(ITSceneManager<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> sceneManager, DefaultTheme theme, ResourceManager resourceManager) {
+                return new MainMenu(sceneManager);
+            }
+
+            @Override
+            public OptionsLayer getNewOptionsLayer(ITSceneManager<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> sceneManager, DefaultTheme theme, ResourceManager resourceManager, MainMenu mainMenu) {
+                return new OptionsLayer(sceneManager);
+            }
+        };
+    }
+
+    // ===========================================================
+
+    @Override
+    public void onCreateResources(OnCreateResourcesCallback pOnCreateResourcesCallback) {
+
+
+        //this.themeManager = new ThemeManager(resourceManager);
+        //resourceManager.setup(this.mEngine, this.getApplicationContext(), CAMERA_WIDTH, CAMERA_HEIGHT, 1f, 1f, this.themeManager);
+
+        //SceneManager.getInstance().setup(resourceManager);
+
+        //this.theme = new DefaultTheme(themeManager, "raw/theme/default");
+        //themeManager.setCurrentTheme(theme);
+
+        super.onCreateResources(pOnCreateResourcesCallback);
+
+
+    }
+
+    @Override
+    public void onCreateScene(OnCreateSceneCallback pOnCreateSceneCallback) {
+        super.onCreateScene(pOnCreateSceneCallback);
+
     }
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    protected void onDestroy() {
+        super.onDestroy();
+
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
