@@ -13,6 +13,7 @@ import com.bitarcher.aeFun.widgetToolkit.widget.ImageButton;
 import com.bitarcher.aeFun.widgetToolkit.widget.Label;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
+import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.PercentSpaceUsage;
 
 /**
  * Created by michel on 23/03/15.
@@ -32,7 +33,14 @@ public class BannerCtrl extends Table {
 
         this.sectionTitle = sectionTitle;
 
-        this.addHomogeneousColumnsAndRows(2, 2, 5);
+        this.setPadding(10);
+        this.addColumn(new PercentSpaceUsage(5, 0.5f));
+        this.addColumn(new PercentSpaceUsage(5, 0.7f));
+
+        this.addRow(new PercentSpaceUsage(5, 1));
+        this.addRow(new PercentSpaceUsage(5, 1));
+
+
         this.logoImage = new Image(theme, 0, 0, 10, 10, ResourceInfosSingleton.getInstance().getBitarcherLogoMvcImage());
         this.attachChild(this.logoImage, 0, 0, 1, 2);
 
