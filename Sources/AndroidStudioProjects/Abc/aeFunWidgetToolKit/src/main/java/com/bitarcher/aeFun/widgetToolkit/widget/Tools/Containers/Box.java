@@ -87,6 +87,11 @@ public class Box extends Container<INoneContext> implements IBox {
     }
 
     @Override
+    protected void recomputeAllContainedPositionAndSize() {
+        this.recomputeWidgetsSizeAndPositions();
+    }
+
+    @Override
     public void doDetachChild(IWidget widget) {
         WidgetAndSpaceUsageTupleForBox foundTuple = null;
         final IWidget widget2 = widget;

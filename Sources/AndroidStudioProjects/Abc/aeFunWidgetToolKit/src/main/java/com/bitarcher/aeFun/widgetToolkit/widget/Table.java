@@ -116,6 +116,14 @@ public class Table extends Container<INoneContext> implements ITable {
     }
 
     @Override
+    protected void recomputeAllContainedPositionAndSize() {
+        this.recomputeColumnsSizeAndPosition();
+        this.recomputeRowsSizeAndPosition();
+        this.recomputeCells();
+        this.recomputeChildrenWidgetsSizeAndPosition();
+    }
+
+    @Override
     public void addHomogeneousColumnsAndRows(int numOfColumns, int numOfRows) {
         this.addHomogeneousColumnsAndRows(numOfColumns, numOfRows, 0);
     }

@@ -77,5 +77,28 @@ public abstract class Container<TContext extends IContext> extends Widget<TConte
 
         this.containerListenerArrayList.clear();
     }
+
+    @Override
+    protected void onSizeChanged() {
+        super.onSizeChanged();
+
+        this.recomputeAllContainedPositionAndSize();
+    }
+
+    @Override
+    protected void onPaddingChanged() {
+        super.onPaddingChanged();
+
+        this.recomputeAllContainedPositionAndSize();
+    }
+
+    @Override
+    protected void onPositionChanged() {
+        super.onPositionChanged();
+
+        this.recomputeAllContainedPositionAndSize();
+    }
+
+    protected abstract void recomputeAllContainedPositionAndSize();
 }
 
