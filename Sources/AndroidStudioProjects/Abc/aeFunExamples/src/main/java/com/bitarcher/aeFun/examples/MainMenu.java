@@ -65,12 +65,15 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
         ITheme theme = this.getSceneManager().getTheme();
         Camera camera = theme.getThemeManager().getResourceManager().getEngine().getCamera();
-        this.table = new Table(theme, camera.getWidth() / 2,  camera.getHeight() / 2, camera.getWidth(), camera.getHeight());
+        //this.table = new Table(theme, camera.getWidth() / 2,  camera.getHeight() / 2, camera.getWidth(), camera.getHeight());
+        this.table = new Table(theme, camera.getWidth() / 2,  camera.getHeight() / 3 * 2, camera.getWidth(), camera.getHeight() / 3 * 2);
 
-        this.table.addHomogeneousColumnsAndRows(2, 3, 5);
+        //this.table.addHomogeneousColumnsAndRows(2, 3, 5);
+        this.table.addHomogeneousColumnsAndRows(2, 2, 5);
 
-        this.bannerCtrl = new BannerCtrl(theme, 0, 0, 10, 10, "Top menu");
-        this.table.attachChild(this.bannerCtrl, 0, 0, 2, 1); // two columns span
+        this.bannerCtrl = new BannerCtrl(theme, camera.getWidth() / 2,  camera.getHeight() / 6, camera.getWidth(), camera.getHeight() / 3, "Top menu");
+        this.attachChild(this.bannerCtrl); // two columns span
+        //this.table.attachChild(this.bannerCtrl, 0, 0, 2, 1); // two columns span
 
         this.widgetGalleryTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Widget gallery");
         this.table.attachChild(this.widgetGalleryTextButton);
@@ -78,9 +81,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         this.resourceManagerTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Resource manager");
         this.table.attachChild(this.resourceManagerTextButton);
 
-
         this.attachChild(this.table);
-
     }
 
 
