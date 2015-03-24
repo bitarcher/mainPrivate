@@ -20,10 +20,18 @@ import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
  */
 public class SingleBitmapTextureSetFromResIdsResourceInfo extends BitmapTexturesSetFromResIdsResourceInfo implements IImage{
 
-    public SingleBitmapTextureSetFromResIdsResourceInfo(String name, int atlasWidth, int atlasHeight, BitmapTextureFormat bitmapTextureFormat, TextureOptions textureOptions, Context context, int resId) {
+    float aspectRatio;
+
+    @Override
+    public float getAspectRatio() {
+        return aspectRatio;
+    }
+
+    public SingleBitmapTextureSetFromResIdsResourceInfo(String name, int atlasWidth, int atlasHeight, BitmapTextureFormat bitmapTextureFormat, TextureOptions textureOptions, Context context, int resId, float aspectRatio) {
         super(name, atlasWidth, atlasHeight, bitmapTextureFormat, textureOptions, context);
 
         this.addOneTexture(new OneResBitmapTexture(name, resId));
+        this.aspectRatio = aspectRatio;
     }
 
     @Override

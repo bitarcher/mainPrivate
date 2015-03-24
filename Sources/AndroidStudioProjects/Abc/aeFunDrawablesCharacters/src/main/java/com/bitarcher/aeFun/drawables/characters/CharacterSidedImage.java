@@ -40,6 +40,11 @@ public class CharacterSidedImage implements ICharacterSidedImage {
     }
 
     @Override
+    public float getAspectRatio() {
+        return this.character.getAspectRatio();
+    }
+
+    @Override
     public String getTextureName() {
         return this.image.getTextureName();
     }

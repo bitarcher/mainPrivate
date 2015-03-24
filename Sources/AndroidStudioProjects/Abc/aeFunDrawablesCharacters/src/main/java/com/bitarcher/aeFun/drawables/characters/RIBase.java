@@ -49,7 +49,7 @@ public class RIBase {
                     this.getTextureWidth(), this.getTextureHeight(), this.getBitmapTextureFormat(),
                     this.getTextureOptions(),
                     this.character.getResourceManager().getContext(),
-                    resId);
+                    resId, this.character.getAspectRatio());
 
             this.map.put(positionName, singleBitmapTextureSetFromResIdsResourceInfo);
         }

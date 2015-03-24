@@ -14,6 +14,6 @@ public enum EnumMainPosition {
     Walk,
     Straight,
     Talk,
-    Sit
+    Idle
 }
 

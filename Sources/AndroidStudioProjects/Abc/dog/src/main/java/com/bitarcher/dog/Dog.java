@@ -96,7 +96,7 @@ public class Dog extends com.bitarcher.aeFun.drawables.characters.Character impl
                 // 6 frames / per seconds
                 sideResourceInfos.getRun().getNextSidedImage((int)(secondsElapsedSinceMainPositionChanged * 6));
                 break;
-            case Sit:
+            case Idle:
                 sideResourceInfos.getSit();
                 break;
             case Straight:

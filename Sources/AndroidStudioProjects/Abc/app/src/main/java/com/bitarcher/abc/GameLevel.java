@@ -3,6 +3,7 @@ package com.bitarcher.abc;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.aeFun.interfaces.mvc.IImage;
+import com.bitarcher.aeFun.interfaces.mvc.MvcImageTuple;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromResIdsResourceInfo;
@@ -10,7 +11,7 @@ import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBi
 
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResBitmapTexture;
 import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
-import com.bitarcher.aeFun.widgetToolkit.WImage;
+
 import com.bitarcher.aeFun.widgetToolkit.widget.ImageButton;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.PercentSpaceUsage;
@@ -52,7 +53,7 @@ public class GameLevel extends ManagedGameScene {
         this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture((new OneAssetBitmapTexture("cloud", "cloud.png")));
 
         this.getSceneManager().getResourceManager().pushRequirement(this.animalsTexturesSet);
-        this.cat = new WImage(this.animalsTexturesSet,  "chat");
+        this.cat = new MvcImageTuple(this.animalsTexturesSet,  "chat", 1);
         //this.cat = new WImage(this.bitmapTexturesSetFromAssetResourceInfo,  "cloud");
 
 

@@ -14,10 +14,17 @@ import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.ITexturesS
 public class MvcImageTuple implements IImage {
     ITexturesSetResourceInfo textureSetResourceInfo;
     String textureName;
+    float aspectRatio;
 
-    public MvcImageTuple(ITexturesSetResourceInfo textureSetResourceInfo, String textureName) {
+    @Override
+    public float getAspectRatio() {
+        return aspectRatio;
+    }
+
+    public MvcImageTuple(ITexturesSetResourceInfo textureSetResourceInfo, String textureName, float aspectRatio) {
         this.textureSetResourceInfo = textureSetResourceInfo;
         this.textureName = textureName;
+        this.aspectRatio = aspectRatio;
     }
 
     @Override
