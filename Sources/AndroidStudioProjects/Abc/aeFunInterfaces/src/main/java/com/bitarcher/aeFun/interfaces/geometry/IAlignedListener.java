@@ -9,11 +9,6 @@ package com.bitarcher.aeFun.interfaces.geometry;
 /**
  * Created by michel on 25/03/15.
  */
-public enum EnumDockStyle {
-    Fill,
-    Bottom,
-    Top,
-    Left,
-    Right,
-    Center
+public interface IAlignedListener {
+    void onAlignStyleChanged(IAligned_Edit alignedEdit, EnumAlignStyle alignStyle);
 }

@@ -1,8 +1,8 @@
 package com.bitarcher.aeFun.widgetToolkit.widget;
 
 
-import com.bitarcher.aeFun.interfaces.geometry.EnumDockStyle;
-import com.bitarcher.aeFun.interfaces.geometry.IDockStyledListener;
+import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
+import com.bitarcher.aeFun.interfaces.geometry.IAlignedListener;
 import com.bitarcher.aeFun.interfaces.gui.theme.ENoLayoutFound;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.IImageContext;
@@ -24,18 +24,18 @@ import java.util.ArrayList;
 public class Image extends Widget<IImageContext> implements IImage {
     protected com.bitarcher.aeFun.interfaces.mvc.IImage currentImage;
     ArrayList<IImagedListener> imagedListenerArrayList = new ArrayList<>();
-    EnumDockStyle dockStyle = EnumDockStyle.Center;
-    ArrayList<IDockStyledListener> dockStyledListenerArrayList = new ArrayList<>();
+    EnumAlignStyle dockStyle = EnumAlignStyle.Center;
+    ArrayList<IAlignedListener> dockStyledListenerArrayList = new ArrayList<>();
 
     @Override
-    public void setDockStyle(EnumDockStyle dockStyle) {
-        this.dockStyle = dockStyle;
+    public void setAlignStyle(EnumAlignStyle alignStyle) {
+        this.dockStyle = alignStyle;
 
         this.onDockStyleChanged();
 
-        for(IDockStyledListener dockStyledListener : this.dockStyledListenerArrayList)
+        for(IAlignedListener dockStyledListener : this.dockStyledListenerArrayList)
         {
-            dockStyledListener.onDockStyleChanged(this, this.dockStyle);
+            dockStyledListener.onAlignStyleChanged(this, this.dockStyle);
         }
     }
 
@@ -56,17 +56,17 @@ public class Image extends Widget<IImageContext> implements IImage {
     }
 
     @Override
-    public void addDockStyledListener(IDockStyledListener dockStyledListener) {
-        this.dockStyledListenerArrayList.add(dockStyledListener);
+    public void addAlignStyledListener(IAlignedListener alignedListener) {
+        this.dockStyledListenerArrayList.add(alignedListener);
     }
 
     @Override
-    public void removeDockStyledListener(IDockStyledListener dockStyledListener) {
-        this.dockStyledListenerArrayList.remove(dockStyledListener);
+    public void removeAlignStyledListener(IAlignedListener alignedListener) {
+        this.dockStyledListenerArrayList.remove(alignedListener);
     }
 
     @Override
-    public EnumDockStyle getDockStyle() {
+    public EnumAlignStyle getAlignStyle() {
         return this.dockStyle;
     }
 

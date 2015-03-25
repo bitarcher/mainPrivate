@@ -9,6 +9,6 @@ package com.bitarcher.aeFun.interfaces.geometry;
 /**
  * Created by michel on 25/03/15.
  */
-public interface IDockStyledListener {
-    void onDockStyleChanged(IDockStyled_Edit dockStyled,  EnumDockStyle dockStyle);
+public interface IAligned {
+    EnumAlignStyle getAlignStyle();
 }

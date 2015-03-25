@@ -9,6 +9,11 @@ package com.bitarcher.aeFun.interfaces.geometry;
 /**
  * Created by michel on 25/03/15.
  */
-public interface IDockStyled {
-    EnumDockStyle getDockStyle();
+public enum EnumAlignStyle {
+    Fill,
+    Bottom,
+    Top,
+    Left,
+    Right,
+    Center
 }

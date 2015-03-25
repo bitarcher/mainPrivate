@@ -1,12 +1,11 @@
 package com.bitarcher.aefun.widgetLayout.layouts;
 
-import com.bitarcher.aeFun.interfaces.geometry.EnumDockStyle;
+import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
 import com.bitarcher.aeFun.interfaces.geometry.IPositionAndSizeOwner;
 import com.bitarcher.aeFun.interfaces.geometry.ISize;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.IImageContext;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.layout.IImageLayout;
-import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IImage;
 import com.bitarcher.aeFunGeometry.ContainedPositionAndSizeComputerByAspectRatio;
 
@@ -59,7 +58,7 @@ public class ImageLayout implements IImageLayout, IImageContext {
     }
 
     @Override
-    public void setDockStyle(EnumDockStyle dockStyle) {
+    public void setDockStyle(EnumAlignStyle dockStyle) {
         this._setImage(this.image.getImage());
     }
 
@@ -71,7 +70,7 @@ public class ImageLayout implements IImageLayout, IImageContext {
         {
             ContainedPositionAndSizeComputerByAspectRatio containedPositionAndSizeComputerByAspectRatio = new ContainedPositionAndSizeComputerByAspectRatio();
 
-            IPositionAndSizeOwner spritePositionAndSize = containedPositionAndSizeComputerByAspectRatio.compute(this.image, this.image.getDockStyle(), image, 0);
+            IPositionAndSizeOwner spritePositionAndSize = containedPositionAndSizeComputerByAspectRatio.compute(this.image, this.image.getAlignStyle(), image, 0);
 
             ITextureRegion textureRegion = this.getWidget().getTheme().getThemeManager().getResourceManager().getTextureRegionFromTextureSetByName(image.getTextureSetResourceInfo(), image.getTextureName());
 

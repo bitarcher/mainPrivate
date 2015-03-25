@@ -6,11 +6,11 @@ package com.bitarcher.aeFun.interfaces.gui.theme.context.setter;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.geometry.EnumDockStyle;
+import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
 
 /**
  * Created by michel on 25/03/15.
  */
 public interface IDockStyleSetter {
-    void setDockStyle(EnumDockStyle dockStyle);
+    void setDockStyle(EnumAlignStyle dockStyle);
 }

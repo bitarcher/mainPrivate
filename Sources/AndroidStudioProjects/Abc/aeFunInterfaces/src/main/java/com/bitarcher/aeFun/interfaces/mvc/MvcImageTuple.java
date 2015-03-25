@@ -22,6 +22,8 @@ public class MvcImageTuple implements IImage {
     }
 
     public MvcImageTuple(ITexturesSetResourceInfo textureSetResourceInfo, String textureName, float aspectRatio) {
+        if ((aspectRatio <= 0)) throw new AssertionError();
+
         this.textureSetResourceInfo = textureSetResourceInfo;
         this.textureName = textureName;
         this.aspectRatio = aspectRatio;

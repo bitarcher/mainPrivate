@@ -6,13 +6,11 @@ package com.bitarcher.aeFun.examples;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFun.interfaces.mvc.MvcImageTuple;
 import com.bitarcher.aeFun.widgetToolkit.widget.Image;
-import com.bitarcher.aeFun.widgetToolkit.widget.ImageButton;
 import com.bitarcher.aeFun.widgetToolkit.widget.Label;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
-import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.PercentSpaceUsage;
 
 /**
@@ -35,13 +33,14 @@ public class BannerCtrl extends Table {
 
         this.setPadding(10);
         this.addColumn(new PercentSpaceUsage(5, 0.5f));
-        this.addColumn(new PercentSpaceUsage(5, 0.7f));
+        this.addColumn(new PercentSpaceUsage(5, 0.5f));
 
         this.addRow(new PercentSpaceUsage(5, 1));
         this.addRow(new PercentSpaceUsage(5, 1));
 
 
         this.logoImage = new Image(theme, 0, 0, 10, 10, ResourceInfosSingleton.getInstance().getBitarcherLogoMvcImage());
+        this.logoImage.setAlignStyle(EnumAlignStyle.Center);
         this.attachChild(this.logoImage, 0, 0, 1, 2);
 
         this.aeFunLabel = new Label(theme, 0, 0, 10, 10, "aeFun");
