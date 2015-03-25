@@ -1,5 +1,6 @@
 package com.bitarcher.aeFun.widgetToolkit.widget;
 
+import com.bitarcher.aeFun.interfaces.geometry.IPosition;
 import com.bitarcher.aeFun.interfaces.geometry.ISize;
 import com.bitarcher.aeFun.interfaces.gui.theme.ILayout;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
@@ -362,4 +363,15 @@ public abstract class Widget<TContext extends IContext> extends ClipEntity imple
 
         this.widgetListenerArrayList.clear();
     }
+
+    @Override
+    public IPosition getPosition() {
+        return this;
+    }
+
+    @Override
+    public ISize getSize() {
+        return this;
+    }
 }
+

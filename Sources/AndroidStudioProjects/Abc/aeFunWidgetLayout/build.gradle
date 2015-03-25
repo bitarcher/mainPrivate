@@ -28,5 +28,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //compile 'com.android.support:appcompat-v7:21.0.3'
     compile project(':aeFunInterfaces')
+    compile project(':aeFunGeometry')
     compile project(':aeFunResourceManagement')
 }

@@ -1,5 +1,6 @@
 package com.bitarcher.aeFun.interfaces.gui.widgets;
 
+import com.bitarcher.aeFun.interfaces.geometry.IDockStyled_Edit;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.IImageContext;
 import com.bitarcher.aeFun.interfaces.mvc.IImaged_Edit;
 
@@ -12,5 +13,5 @@ import com.bitarcher.aeFun.interfaces.mvc.IImaged_Edit;
 /**
  * Created by michel on 22/01/15.
  */
-public interface IImage extends IWidget<IImageContext>, IImaged_Edit{
+public interface IImage extends IWidget<IImageContext>, IImaged_Edit, IDockStyled_Edit{
 }

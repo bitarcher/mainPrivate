@@ -1,6 +1,8 @@
 package com.bitarcher.aeFun.widgetToolkit.widget;
 
 
+import com.bitarcher.aeFun.interfaces.geometry.EnumDockStyle;
+import com.bitarcher.aeFun.interfaces.geometry.IDockStyledListener;
 import com.bitarcher.aeFun.interfaces.gui.theme.ENoLayoutFound;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.IImageContext;
@@ -22,8 +24,51 @@ import java.util.ArrayList;
 public class Image extends Widget<IImageContext> implements IImage {
     protected com.bitarcher.aeFun.interfaces.mvc.IImage currentImage;
     ArrayList<IImagedListener> imagedListenerArrayList = new ArrayList<>();
+    EnumDockStyle dockStyle = EnumDockStyle.Center;
+    ArrayList<IDockStyledListener> dockStyledListenerArrayList = new ArrayList<>();
 
+    @Override
+    public void setDockStyle(EnumDockStyle dockStyle) {
+        this.dockStyle = dockStyle;
 
+        this.onDockStyleChanged();
+
+        for(IDockStyledListener dockStyledListener : this.dockStyledListenerArrayList)
+        {
+            dockStyledListener.onDockStyleChanged(this, this.dockStyle);
+        }
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+
+        this.imagedListenerArrayList.clear();
+        this.dockStyledListenerArrayList.clear();
+    }
+
+    protected void onDockStyleChanged()
+    {
+        if(this.layout != null)
+        {
+            this.layout.getContext().setDockStyle(this.dockStyle);
+        }
+    }
+
+    @Override
+    public void addDockStyledListener(IDockStyledListener dockStyledListener) {
+        this.dockStyledListenerArrayList.add(dockStyledListener);
+    }
+
+    @Override
+    public void removeDockStyledListener(IDockStyledListener dockStyledListener) {
+        this.dockStyledListenerArrayList.remove(dockStyledListener);
+    }
+
+    @Override
+    public EnumDockStyle getDockStyle() {
+        return this.dockStyle;
+    }
 
     public Image(ITheme theme, float pX, float pY, float pWidth, float pHeight, com.bitarcher.aeFun.interfaces.mvc.IImage image) {
         super(theme, pX, pY, pWidth, pHeight);

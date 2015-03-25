@@ -47,7 +47,7 @@ public class ResourceInfosSingleton {
         this.bitarcherLogo = new OneAssetBitmapTexture("bitArcherLogo", "logo_bitarcher.png");
         this.textureAtlas1.addOneTexture(this.bitarcherLogo);
 
-        this.bitarcherLogoMvcImageTuple = new MvcImageTuple(this.textureAtlas1, this.bitarcherLogo.getName(), 156/162);
+        this.bitarcherLogoMvcImageTuple = new MvcImageTuple(this.textureAtlas1, this.bitarcherLogo.getName(), 156f/162f);
     }
 
 
