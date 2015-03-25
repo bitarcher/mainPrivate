@@ -6,11 +6,11 @@ package com.bitarcher.aeFun.interfaces.gui.theme.context;
  * bitarcher.com
  */
 
-import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.IDockStyleSetter;
+import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.IAlignStyleSetter;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.IImageSetter;
 
 /**
  * Created by michel on 23/03/15.
  */
-public interface IImageContext extends ICommonContext, IImageSetter, IDockStyleSetter {
+public interface IImageContext extends ICommonContext, IImageSetter, IAlignStyleSetter {
 }

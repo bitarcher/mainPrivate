@@ -1,6 +1,8 @@
 package com.bitarcher.aeFun.widgetToolkit.widget;
 
 
+import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
+import com.bitarcher.aeFun.interfaces.geometry.IAlignedListener;
 import com.bitarcher.aeFun.interfaces.gui.theme.ENoLayoutFound;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.IImageButtonContext;
@@ -23,7 +25,8 @@ import java.util.ArrayList;
 public class ImageButton extends Button<IImageButtonContext> implements IImageButton {
     protected IImage currentImage;
     ArrayList<IImagedListener> imagedListenerArrayList = new ArrayList<>();
-
+    EnumAlignStyle alignStyle = EnumAlignStyle.Center;
+    ArrayList<IAlignedListener> alignedListenerArrayList = new ArrayList<>();
 
 
     public ImageButton(ITheme theme, float pX, float pY, float pWidth, float pHeight, IImage image) {
@@ -97,6 +100,52 @@ public class ImageButton extends Button<IImageButtonContext> implements IImageBu
     public IImage getImage() {
         return this.currentImage;
     }
-    
+
+
+
+
+    @Override
+    public void setAlignStyle(EnumAlignStyle alignStyle) {
+        this.alignStyle = alignStyle;
+
+        this.onAlignStyleChanged();
+
+        for(IAlignedListener dockStyledListener : this.alignedListenerArrayList)
+        {
+            dockStyledListener.onAlignStyleChanged(this, this.alignStyle);
+        }
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+
+        this.imagedListenerArrayList.clear();
+        this.alignedListenerArrayList.clear();
+    }
+
+    protected void onAlignStyleChanged()
+    {
+        if(this.getLayout() != null)
+        {
+            this.getLayout().getContext().setAlignStyle(this.alignStyle);
+        }
+    }
+
+    @Override
+    public void addAlignStyledListener(IAlignedListener alignedListener) {
+        this.alignedListenerArrayList.add(alignedListener);
+    }
+
+    @Override
+    public void removeAlignStyledListener(IAlignedListener alignedListener) {
+        this.alignedListenerArrayList.remove(alignedListener);
+    }
+
+    @Override
+    public EnumAlignStyle getAlignStyle() {
+        return this.alignStyle;
+    }
+
 }
 

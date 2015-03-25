@@ -24,18 +24,18 @@ import java.util.ArrayList;
 public class Image extends Widget<IImageContext> implements IImage {
     protected com.bitarcher.aeFun.interfaces.mvc.IImage currentImage;
     ArrayList<IImagedListener> imagedListenerArrayList = new ArrayList<>();
-    EnumAlignStyle dockStyle = EnumAlignStyle.Center;
-    ArrayList<IAlignedListener> dockStyledListenerArrayList = new ArrayList<>();
+    EnumAlignStyle alignStyle = EnumAlignStyle.Center;
+    ArrayList<IAlignedListener> alignedListenerArrayList = new ArrayList<>();
 
     @Override
     public void setAlignStyle(EnumAlignStyle alignStyle) {
-        this.dockStyle = alignStyle;
+        this.alignStyle = alignStyle;
 
-        this.onDockStyleChanged();
+        this.onAlignStyleChanged();
 
-        for(IAlignedListener dockStyledListener : this.dockStyledListenerArrayList)
+        for(IAlignedListener dockStyledListener : this.alignedListenerArrayList)
         {
-            dockStyledListener.onAlignStyleChanged(this, this.dockStyle);
+            dockStyledListener.onAlignStyleChanged(this, this.alignStyle);
         }
     }
 
@@ -44,30 +44,30 @@ public class Image extends Widget<IImageContext> implements IImage {
         super.dispose();
 
         this.imagedListenerArrayList.clear();
-        this.dockStyledListenerArrayList.clear();
+        this.alignedListenerArrayList.clear();
     }
 
-    protected void onDockStyleChanged()
+    protected void onAlignStyleChanged()
     {
         if(this.layout != null)
         {
-            this.layout.getContext().setDockStyle(this.dockStyle);
+            this.layout.getContext().setAlignStyle(this.alignStyle);
         }
     }
 
     @Override
     public void addAlignStyledListener(IAlignedListener alignedListener) {
-        this.dockStyledListenerArrayList.add(alignedListener);
+        this.alignedListenerArrayList.add(alignedListener);
     }
 
     @Override
     public void removeAlignStyledListener(IAlignedListener alignedListener) {
-        this.dockStyledListenerArrayList.remove(alignedListener);
+        this.alignedListenerArrayList.remove(alignedListener);
     }
 
     @Override
     public EnumAlignStyle getAlignStyle() {
-        return this.dockStyle;
+        return this.alignStyle;
     }
 
     public Image(ITheme theme, float pX, float pY, float pWidth, float pHeight, com.bitarcher.aeFun.interfaces.mvc.IImage image) {

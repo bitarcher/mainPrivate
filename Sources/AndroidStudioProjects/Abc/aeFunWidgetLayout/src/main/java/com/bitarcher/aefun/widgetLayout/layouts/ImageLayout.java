@@ -58,7 +58,7 @@ public class ImageLayout implements IImageLayout, IImageContext {
     }
 
     @Override
-    public void setDockStyle(EnumAlignStyle dockStyle) {
+    public void setAlignStyle(EnumAlignStyle dockStyle) {
         this._setImage(this.image.getImage());
     }
 

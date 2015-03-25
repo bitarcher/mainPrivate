@@ -11,6 +11,6 @@ import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
 /**
  * Created by michel on 25/03/15.
  */
-public interface IDockStyleSetter {
-    void setDockStyle(EnumAlignStyle dockStyle);
+public interface IAlignStyleSetter {
+    void setAlignStyle(EnumAlignStyle dockStyle);
 }

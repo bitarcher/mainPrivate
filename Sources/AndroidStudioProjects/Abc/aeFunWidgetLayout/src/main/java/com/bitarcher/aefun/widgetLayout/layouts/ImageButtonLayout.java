@@ -1,10 +1,13 @@
 package com.bitarcher.aefun.widgetLayout.layouts;
 
+import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
+import com.bitarcher.aeFun.interfaces.geometry.IPositionAndSizeOwner;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.IImageButtonContext;
 import com.bitarcher.aeFun.interfaces.gui.theme.layout.IImageButtonLayout;
 import com.bitarcher.aeFun.interfaces.gui.theme.widgetSections.IButtonSection;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IImageButton;
 import com.bitarcher.aeFun.interfaces.mvc.IImage;
+import com.bitarcher.aeFunGeometry.ContainedPositionAndSizeComputerByAspectRatio;
 
 import org.andengine.entity.Entity;
 import org.andengine.entity.sprite.Sprite;
@@ -46,6 +49,11 @@ public class ImageButtonLayout extends ButtonLayout<IImageButtonContext> impleme
         super.onInit();
     }
 
+    @Override
+    public void setAlignStyle(EnumAlignStyle dockStyle) {
+        this._setImage(this.imageButton.getImage());
+    }
+
 
     void _setImage(IImage image) {
 
@@ -53,14 +61,20 @@ public class ImageButtonLayout extends ButtonLayout<IImageButtonContext> impleme
 
         if (image != null)
         {
-            float pictureWidth = this.getWidget().getWidth();
-            float pictureHeight = this.getWidget().getHeight();
+            ContainedPositionAndSizeComputerByAspectRatio containedPositionAndSizeComputerByAspectRatio = new ContainedPositionAndSizeComputerByAspectRatio();
+
+            IPositionAndSizeOwner spritePositionAndSize = containedPositionAndSizeComputerByAspectRatio.compute(
+                    this.imageButton, this.imageButton.getAlignStyle(),
+                    image, this.getButtonSection().getBorderSize());
 
             ITextureRegion textureRegion = this.getWidget().getTheme().getThemeManager().getResourceManager().getTextureRegionFromTextureSetByName(image.getTextureSetResourceInfo(), image.getTextureName());
 
-            Sprite sprite = new Sprite(this.getWidget().getWidth() / 2, this.getWidget().getHeight() / 2,
-                    pictureWidth, pictureHeight, textureRegion,
+            Sprite sprite = new Sprite(
+                    spritePositionAndSize.getPosition().getX(), spritePositionAndSize.getPosition().getY(),
+                    spritePositionAndSize.getSize().getWidth(), spritePositionAndSize.getSize().getHeight(),
+                    textureRegion,
                     this.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+
 
             this.imageLayer.attachChild(sprite);
         }
