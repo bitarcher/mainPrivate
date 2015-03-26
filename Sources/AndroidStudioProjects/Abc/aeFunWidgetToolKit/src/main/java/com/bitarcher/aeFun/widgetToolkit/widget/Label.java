@@ -1,6 +1,8 @@
 package com.bitarcher.aeFun.widgetToolkit.widget;
 
 
+import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
+import com.bitarcher.aeFun.interfaces.geometry.IAlignedListener;
 import com.bitarcher.aeFun.interfaces.gui.theme.ENoLayoutFound;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ILabelContext;
@@ -22,6 +24,46 @@ import java.util.ArrayList;
 public class Label extends Widget<ILabelContext> implements ILabel {
     protected String translatedLabel;
     ArrayList<ILabeledListener> labeledListenerArrayList = new ArrayList<>();
+    EnumAlignStyle alignStyle = EnumAlignStyle.Center;
+    ArrayList<IAlignedListener> alignedListenerArrayList = new ArrayList<>();
+
+    @Override
+    public void setAlignStyle(EnumAlignStyle alignStyle) {
+        this.alignStyle = alignStyle;
+
+        this.onAlignStyleChanged();
+
+        for(IAlignedListener dockStyledListener : this.alignedListenerArrayList)
+        {
+            dockStyledListener.onAlignStyleChanged(this, this.alignStyle);
+        }
+    }
+
+
+    protected void onAlignStyleChanged()
+    {
+        if(this.getLayout() != null)
+        {
+            this.getLayout().getContext().setAlignStyle(this.alignStyle);
+        }
+    }
+
+    @Override
+    public void addAlignStyledListener(IAlignedListener alignedListener) {
+        this.alignedListenerArrayList.add(alignedListener);
+    }
+
+    @Override
+    public void removeAlignStyledListener(IAlignedListener alignedListener) {
+        this.alignedListenerArrayList.remove(alignedListener);
+    }
+
+    @Override
+    public EnumAlignStyle getAlignStyle() {
+        return this.alignStyle;
+    }
+
+
 
 
 
@@ -84,5 +126,6 @@ public class Label extends Widget<ILabelContext> implements ILabel {
         super.dispose();
 
         this.labeledListenerArrayList.clear();
+        this.alignedListenerArrayList.clear();
     }
 }

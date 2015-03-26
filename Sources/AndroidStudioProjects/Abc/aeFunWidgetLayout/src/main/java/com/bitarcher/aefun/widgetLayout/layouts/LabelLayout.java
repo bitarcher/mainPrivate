@@ -1,5 +1,6 @@
 package com.bitarcher.aefun.widgetLayout.layouts;
 
+import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
 import com.bitarcher.aeFun.interfaces.geometry.ISize;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ILabelContext;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ITextButtonContext;
@@ -10,9 +11,11 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.ILabel;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
 
 import org.andengine.entity.Entity;
+import org.andengine.entity.text.AutoWrap;
 import org.andengine.entity.text.Text;
 import org.andengine.opengl.font.Font;
 import org.andengine.opengl.vbo.DrawType;
+import org.andengine.util.adt.align.HorizontalAlign;
 
 /*
  * Copyright (c) 2015. 
@@ -56,6 +59,11 @@ public class LabelLayout  implements ILabelLayout, ILabelContext {
         this.setText(this.label.getTranslatedLabel());
     }
 
+    @Override
+    public void setAlignStyle(EnumAlignStyle dockStyle) {
+        this.setText(this.label.getTranslatedLabel());
+    }
+
 
     void setText(String label) {
 
@@ -68,6 +76,24 @@ public class LabelLayout  implements ILabelLayout, ILabelContext {
 
             Font font = this.label.getTheme().getWidgetSections().getTextButtonSection().getTextButtonFont();
             Text text = new Text(midWidth, midHeight, font, label, this.label.getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager(), DrawType.DYNAMIC);
+            text.setAutoWrap(AutoWrap.WORDS);
+            text.setAutoWrapWidth(this.label.getWidth());
+
+            switch (this.label.getAlignStyle())
+            {
+                case Fill:
+                case Bottom:
+                case Top:
+                case Center:
+                    text.setHorizontalAlign(HorizontalAlign.CENTER);
+                    break;
+                case Left:
+                    text.setHorizontalAlign(HorizontalAlign.LEFT);
+                    break;
+                case Right:
+                    text.setHorizontalAlign(HorizontalAlign.RIGHT);
+                    break;
+            }
 
             this.textLayer.attachChild(text);
         }
