@@ -1,6 +1,7 @@
 package com.bitarcher.aeFun.examples;
 
 
+import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.sceneManagement.IMainMenu;
@@ -76,6 +77,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         this.table.attachChild(this.bannerCtrl, 0, 0, 2, 1); // two columns span
 
         this.widgetGalleryTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Widget gallery");
+        this.widgetGalleryTextButton.setAlignStyle(EnumAlignStyle.Right);
         this.table.attachChild(this.widgetGalleryTextButton);
 
         this.resourceManagerTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Resource manager");
