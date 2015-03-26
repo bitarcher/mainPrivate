@@ -16,19 +16,17 @@ import com.bitarcher.aeFun.interfaces.geometry.ISize;
 /**
  * Created by michel on 25/03/15.
  */
-public class ContainedPositionAndSizeComputerByAspectRatio implements IContainedPositionAndSizeComputerByAspectRatio {
+public class ContainedPositionAndSizeComputerByAspectRatio extends ContainedPositionAndSizeComputer implements IContainedPositionAndSizeComputerByAspectRatio {
     @Override
-    public IPositionAndSizeOwner compute(ISize container, EnumAlignStyle dockStyle, IAspectRatioOwner aspectRatioOwner, float layoutBorder) {
-        return this.compute(container, dockStyle, aspectRatioOwner.getAspectRatio(), layoutBorder);
+    public IPositionAndSizeOwner compute(ISize container, EnumAlignStyle alignStyle, IAspectRatioOwner aspectRatioOwner, float layoutBorder) {
+        return this.compute(container, alignStyle, aspectRatioOwner.getAspectRatio(), layoutBorder);
     }
 
     @Override
-    public IPositionAndSizeOwner compute(ISize container, EnumAlignStyle dockStyle, float containedAspectRatio, float layoutBorder) {
+    public IPositionAndSizeOwner compute(ISize container, EnumAlignStyle alignStyle, float containedAspectRatio, float layoutBorder) {
 
         float containedWidth;
         float containedHeight;
-        float containedX;
-        float containedY;
 
         float containerAspectRatio = container.getWidth() / container.getHeight();
 
@@ -44,46 +42,14 @@ public class ContainedPositionAndSizeComputerByAspectRatio implements IContained
             containedWidth = containedHeight * containedAspectRatio;
         }
 
-        switch (dockStyle)
-        {
-            case  Fill:
-                containedWidth = container.getWidth() - 2 * layoutBorder;
-                containedHeight = container.getHeight()  - 2 * layoutBorder;
-                containedX = layoutBorder;
-                containedY = layoutBorder;
-                break;
-            case  Bottom:
-                containedY = layoutBorder + containedHeight / 2;
-                containedX = container.getWidth() / 2;
-                break;
-            case  Top:
-                containedY = container.getHeight() - layoutBorder - containedHeight / 2;
-                containedX = container.getWidth() / 2;
-                break;
-            case  Left:
-                containedX = layoutBorder + containedWidth / 2;
-                containedY = container.getHeight() / 2;
-                break;
-            case  Right:
-                containedX = container.getWidth() - layoutBorder - containedWidth / 2;
-                containedY = container.getHeight() / 2;
-                break;
-            case  Center:
-                containedX = container.getWidth() / 2;
-                containedY = container.getHeight() / 2;
-                break;
-            default:
-                throw new UnsupportedOperationException();
-        }
-
-        PositionAndSizeOwner retval = new PositionAndSizeOwner(containedX, containedY, containedWidth, containedHeight);
+        IPositionAndSizeOwner retval = this.computeByContainedWidthAndHeight(container, alignStyle, layoutBorder, containedWidth, containedHeight);
 
         return retval;
     }
 
     @Override
-    public IPositionAndSizeOwner compute(ISize container, EnumAlignStyle dockStyle, float aspectRatio) {
-        return this.compute(container, dockStyle, aspectRatio, 0);
+    public IPositionAndSizeOwner compute(ISize container, EnumAlignStyle alignStyle, float aspectRatio) {
+        return this.compute(container, alignStyle, aspectRatio, 0);
     }
 
     @Override
