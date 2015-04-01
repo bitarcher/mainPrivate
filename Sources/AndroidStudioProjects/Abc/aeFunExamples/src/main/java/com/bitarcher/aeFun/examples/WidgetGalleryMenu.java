@@ -1,12 +1,12 @@
 package com.bitarcher.aeFun.examples;
 
 
-import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.aeFun.interfaces.sceneManagement.IMainMenu;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedMenuScene;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
@@ -21,23 +21,14 @@ import org.andengine.entity.scene.background.Background;
  * bitarcher.com
  */
 
-public class MainMenu extends ManagedMenuScene implements IMainMenu{
+public class WidgetGalleryMenu extends ManagedMenuScene implements IManagedMenuScene {
     Table table;
     BannerCtrl bannerCtrl;
-    TextButton widgetGalleryTextButton;
-    TextButton resourceManagerTextButton;
-    TextButton characterTextButton;
+    TextButton checkAndRadioButton;
 
 
-
-	public MainMenu(ITSceneManager sceneManager) {
+	public WidgetGalleryMenu(ITSceneManager sceneManager) {
         super(sceneManager);
-		/*this.setOnSceneTouchListenerBindingOnActionDownEnabled(true);
-		this.setTouchAreaBindingOnActionDownEnabled(true);
-		this.setTouchAreaBindingOnActionMoveEnabled(true);*/
-
-
-
 	}
 
     @Override
@@ -63,7 +54,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 	@Override
     public void onLoadScene() {
 
-        final MainMenu mainMenu = this;
+        final WidgetGalleryMenu widgetGalleryMenu = this;
         this.setBackgroundEnabled(true);
         this.setBackground(new Background(1, 1, 1));
 
@@ -75,22 +66,17 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         this.table.addHomogeneousColumnsAndRows(2, 3, 5);
         //this.table.addHomogeneousColumnsAndRows(2, 2, 5);
 
-        this.bannerCtrl = new BannerCtrl(theme, camera.getWidth() / 2,  camera.getHeight() / 6, camera.getWidth(), camera.getHeight() / 3, "Top menu");
+        this.bannerCtrl = new BannerCtrl(theme, camera.getWidth() / 2,  camera.getHeight() / 6, camera.getWidth(), camera.getHeight() / 3, "Widget gallery");
         this.table.attachChild(this.bannerCtrl, 0, 0, 2, 1); // two columns span
 
-        this.widgetGalleryTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Widget gallery");
-        this.table.attachChild(this.widgetGalleryTextButton);
-        this.widgetGalleryTextButton.addButtonListener(new IButtonListener() {
+        this.checkAndRadioButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Check and radio buttons");
+        this.table.attachChild(this.checkAndRadioButton);
+        this.checkAndRadioButton.addButtonListener(new IButtonListener() {
             @Override
             public void onClicked(IButton button) {
-                WidgetGalleryMenu widgetGalleryMenu = new WidgetGalleryMenu(mainMenu.getSceneManager());
-
-                mainMenu.getSceneManager().showScene(widgetGalleryMenu);
+                widgetGalleryMenu.getSceneManager().showScene(new CheckAndRadioButtonScene(widgetGalleryMenu.getSceneManager()));
             }
         });
-
-        this.resourceManagerTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Resource manager");
-        this.table.attachChild(this.resourceManagerTextButton);
 
         this.attachChild(this.table);
     }

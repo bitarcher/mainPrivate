@@ -1,14 +1,16 @@
 package com.bitarcher.aeFun.examples;
 
 
-import com.bitarcher.aeFun.interfaces.geometry.EnumAlignStyle;
+import android.widget.RadioButton;
+
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
-import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
-import com.bitarcher.aeFun.interfaces.sceneManagement.IMainMenu;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedMenuScene;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedScene;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
+import com.bitarcher.aeFun.sceneManagement.ManagedScene;
+import com.bitarcher.aeFun.widgetToolkit.widget.CheckButton;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
@@ -21,23 +23,23 @@ import org.andengine.entity.scene.background.Background;
  * bitarcher.com
  */
 
-public class MainMenu extends ManagedMenuScene implements IMainMenu{
+public class CheckAndRadioButtonScene extends ManagedScene implements IManagedScene {
     Table table;
     BannerCtrl bannerCtrl;
-    TextButton widgetGalleryTextButton;
-    TextButton resourceManagerTextButton;
-    TextButton characterTextButton;
+
+    CheckButton checkButton1;
+    CheckButton checkButton2;
+    CheckButton checkButton3;
+    RadioButton radioButton1a;
+    RadioButton radioButton1b;
+    RadioButton radioButton1c;
+    RadioButton radioButton2a;
+    RadioButton radioButton2b;
 
 
 
-	public MainMenu(ITSceneManager sceneManager) {
+	public CheckAndRadioButtonScene(ITSceneManager sceneManager) {
         super(sceneManager);
-		/*this.setOnSceneTouchListenerBindingOnActionDownEnabled(true);
-		this.setTouchAreaBindingOnActionDownEnabled(true);
-		this.setTouchAreaBindingOnActionMoveEnabled(true);*/
-
-
-
 	}
 
     @Override
@@ -58,12 +60,9 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 	@Override
 	public void onLoadingScreenUnloadAndHidden() {
 	}
-	
 
 	@Override
     public void onLoadScene() {
-
-        final MainMenu mainMenu = this;
         this.setBackgroundEnabled(true);
         this.setBackground(new Background(1, 1, 1));
 
@@ -75,26 +74,23 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         this.table.addHomogeneousColumnsAndRows(2, 3, 5);
         //this.table.addHomogeneousColumnsAndRows(2, 2, 5);
 
-        this.bannerCtrl = new BannerCtrl(theme, camera.getWidth() / 2,  camera.getHeight() / 6, camera.getWidth(), camera.getHeight() / 3, "Top menu");
+        this.bannerCtrl = new BannerCtrl(theme, camera.getWidth() / 2,  camera.getHeight() / 6, camera.getWidth(), camera.getHeight() / 3, "Check and radio buttons");
         this.table.attachChild(this.bannerCtrl, 0, 0, 2, 1); // two columns span
 
-        this.widgetGalleryTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Widget gallery");
-        this.table.attachChild(this.widgetGalleryTextButton);
-        this.widgetGalleryTextButton.addButtonListener(new IButtonListener() {
-            @Override
-            public void onClicked(IButton button) {
-                WidgetGalleryMenu widgetGalleryMenu = new WidgetGalleryMenu(mainMenu.getSceneManager());
+        this.checkButton1 = new CheckButton(theme, 0, 0, 10, 10);
+        this.checkButton1.setTranslatedLabel("Check button 1");
+        this.table.attachChild(this.checkButton1, 0, 0);
 
-                mainMenu.getSceneManager().showScene(widgetGalleryMenu);
-            }
-        });
+        this.checkButton2 = new CheckButton(theme, 0, 0, 10, 10);
+        this.checkButton2.setTranslatedLabel("Check button 2");
+        this.table.attachChild(this.checkButton2, 0, 1);
 
-        this.resourceManagerTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Resource manager");
-        this.table.attachChild(this.resourceManagerTextButton);
+        this.checkButton3 = new CheckButton(theme, 0, 0, 10, 10);
+        this.checkButton3.setTranslatedLabel("Check button 3");
+        this.table.attachChild(this.checkButton3, 0, 2);
 
         this.attachChild(this.table);
     }
-
 
     @Override
     public void onUnloadScene() {

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 /**-
  * Created by michel on 22/01/15.
  */
-public class Image extends Widget<IImageContext> implements IImage {
+public final class Image extends Widget<IImageContext> implements IImage {
     protected com.bitarcher.aeFun.interfaces.mvc.IImage currentImage;
     ArrayList<IImagedListener> imagedListenerArrayList = new ArrayList<>();
     EnumAlignStyle alignStyle = EnumAlignStyle.Center;

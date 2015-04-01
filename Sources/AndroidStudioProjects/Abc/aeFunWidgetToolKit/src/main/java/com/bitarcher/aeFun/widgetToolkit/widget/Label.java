@@ -21,7 +21,7 @@ import java.util.ArrayList;
 /**-
  * Created by michel on 22/01/15.
  */
-public class Label extends Widget<ILabelContext> implements ILabel {
+public final class Label extends Widget<ILabelContext> implements ILabel {
     protected String translatedLabel;
     ArrayList<ILabeledListener> labeledListenerArrayList = new ArrayList<>();
     EnumAlignStyle alignStyle = EnumAlignStyle.Center;

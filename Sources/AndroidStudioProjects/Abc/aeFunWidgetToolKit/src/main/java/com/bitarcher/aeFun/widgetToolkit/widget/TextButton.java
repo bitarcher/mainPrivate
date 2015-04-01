@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**-
  * Created by michel on 22/01/15.
  */
-public class TextButton extends Button<ITextButtonContext> implements ITextButton {
+public final class TextButton extends Button<ITextButtonContext> implements ITextButton {
     protected String translatedLabel;
     ArrayList<ILabeledListener> labeledListenerArrayList = new ArrayList<>();
     EnumAlignStyle alignStyle = EnumAlignStyle.Center;

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 /**
  * Created by michel on 20/03/15.
  */
-public class CheckButton extends Checkable<ICheckButtonContext> implements ICheckButton {
+public final class CheckButton extends Checkable<ICheckButtonContext> implements ICheckButton {
 
     String translatedLabel;
     ArrayList<ILabeledListener> labeledListenerArrayList = new ArrayList<>();
