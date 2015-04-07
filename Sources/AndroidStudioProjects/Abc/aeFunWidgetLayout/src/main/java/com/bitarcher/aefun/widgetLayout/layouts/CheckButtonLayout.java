@@ -31,10 +31,7 @@ public class CheckButtonLayout extends CheckableContext implements ICheckButtonL
     @Override
     protected void doSizeAndPadding() {
 
-        float squareSideLength = this.getWidget().getTheme().getWidgetSections().getCheckButtonSection().getCheckSquareSideLength();
-        float squareSideLength2 = squareSideLength / 2;
-        this.checkButtonClickableEntity.setX(squareSideLength2);
-        this.checkButtonClickableEntity.setY(this.getWidget().getHeight()/2 - squareSideLength2);
+        this.checkButtonClickableEntity.doSizeAndPadding();
 
         this.setText(this.checkButton.getTranslatedLabel());
     }

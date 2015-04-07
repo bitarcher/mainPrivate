@@ -261,7 +261,7 @@ public class Table extends Container<INoneContext> implements ITable {
 
         int indexTableRow = 0;
         float startX = this.getPadding();
-        float startY = this.getHeight() - this.getPadding();
+        float startY = this.getHeight() - 2 * this.getPadding();
 
 
         float currentY = startY;

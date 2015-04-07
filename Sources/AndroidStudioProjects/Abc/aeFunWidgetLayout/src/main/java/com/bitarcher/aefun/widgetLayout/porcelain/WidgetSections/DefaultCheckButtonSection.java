@@ -31,7 +31,7 @@ public class DefaultCheckButtonSection implements ICheckButtonSection {
 
     @Override
     public float getCheckSquareSideLength() {
-        return 10;
+        return 20;
     }
 
     @Override

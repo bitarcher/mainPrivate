@@ -71,6 +71,6 @@ public class Checkable<TCheckableContext extends ICheckableContext> extends Widg
 
     protected void connectToLayoutClickableEntity()
     {
-
+        //this.getLayout().getContext().getClickableEntity()
     }
 }

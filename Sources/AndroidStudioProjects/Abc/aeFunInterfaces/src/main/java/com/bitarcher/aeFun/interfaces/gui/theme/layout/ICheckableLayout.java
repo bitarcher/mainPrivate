@@ -15,5 +15,5 @@ import org.andengine.entity.IEntity;
  * Created by michel on 20/03/15.
  */
 public interface ICheckableLayout<TCheckableContext extends ICheckableContext> extends ILayout<TCheckableContext>{
-    IEntity getClickableEntity();
+
 }

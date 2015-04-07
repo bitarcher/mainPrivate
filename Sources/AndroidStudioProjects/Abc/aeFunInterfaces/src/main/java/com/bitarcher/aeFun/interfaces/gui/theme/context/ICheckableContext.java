@@ -8,8 +8,11 @@ package com.bitarcher.aeFun.interfaces.gui.theme.context;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.ICheckedSetter;
 
+import org.andengine.entity.IEntity;
+
 /**
  * Created by michel on 20/03/15.
  */
 public interface ICheckableContext extends ICommonContext, ICheckedSetter {
+    IEntity getClickableEntity();
 }
