@@ -6,6 +6,7 @@ package com.bitarcher.aeFun.widgetToolkit.widget;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.gui.theme.ENoLayoutFound;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ICheckButtonContext;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ICheckButton;
@@ -19,12 +20,20 @@ import java.util.ArrayList;
  */
 public final class CheckButton extends Checkable<ICheckButtonContext> implements ICheckButton {
 
-    String translatedLabel;
+    String translatedLabel = "";
     ArrayList<ILabeledListener> labeledListenerArrayList = new ArrayList<>();
 
     public CheckButton(ITheme theme, float pX, float pY, float pWidth, float pHeight) {
         super(theme, pX, pY, pWidth, pHeight);
 
+        if(this.getLayout() != null)
+        {
+            this.getLayout().onInit();
+        }
+        else
+        {
+            throw new ENoLayoutFound(this);
+        }
     }
 
     @Override

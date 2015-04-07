@@ -8,6 +8,7 @@ import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedMenuScene;
 import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedScene;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
+import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
 import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
 import com.bitarcher.aeFun.sceneManagement.ManagedScene;
 import com.bitarcher.aeFun.widgetToolkit.widget.CheckButton;
@@ -23,7 +24,7 @@ import org.andengine.entity.scene.background.Background;
  * bitarcher.com
  */
 
-public class CheckAndRadioButtonScene extends ManagedScene implements IManagedScene {
+public class CheckAndRadioButtonScene extends ManagedGameScene {
     Table table;
     BannerCtrl bannerCtrl;
 
@@ -39,7 +40,7 @@ public class CheckAndRadioButtonScene extends ManagedScene implements IManagedSc
 
 
 	public CheckAndRadioButtonScene(ITSceneManager sceneManager) {
-        super(sceneManager);
+        super(sceneManager, 0); // no loading screen
 	}
 
     @Override
@@ -51,6 +52,8 @@ public class CheckAndRadioButtonScene extends ManagedScene implements IManagedSc
     public void onHideScene() {
 
     }
+
+
 
     // No loading screen means no reason to use the following methods.
 	@Override
@@ -71,7 +74,7 @@ public class CheckAndRadioButtonScene extends ManagedScene implements IManagedSc
         this.table = new Table(theme, camera.getWidth() / 2,  camera.getHeight() / 2, camera.getWidth(), camera.getHeight());
         //this.table = new Table(theme, camera.getWidth() / 2,  camera.getHeight() / 3 * 2, camera.getWidth(), camera.getHeight() / 3 * 2);
 
-        this.table.addHomogeneousColumnsAndRows(2, 3, 5);
+        this.table.addHomogeneousColumnsAndRows(2, 5, 5);
         //this.table.addHomogeneousColumnsAndRows(2, 2, 5);
 
         this.bannerCtrl = new BannerCtrl(theme, camera.getWidth() / 2,  camera.getHeight() / 6, camera.getWidth(), camera.getHeight() / 3, "Check and radio buttons");
@@ -79,15 +82,15 @@ public class CheckAndRadioButtonScene extends ManagedScene implements IManagedSc
 
         this.checkButton1 = new CheckButton(theme, 0, 0, 10, 10);
         this.checkButton1.setTranslatedLabel("Check button 1");
-        this.table.attachChild(this.checkButton1, 0, 0);
+        this.table.attachChild(this.checkButton1, 0, 1);
 
         this.checkButton2 = new CheckButton(theme, 0, 0, 10, 10);
         this.checkButton2.setTranslatedLabel("Check button 2");
-        this.table.attachChild(this.checkButton2, 0, 1);
+        this.table.attachChild(this.checkButton2, 0, 2);
 
         this.checkButton3 = new CheckButton(theme, 0, 0, 10, 10);
         this.checkButton3.setTranslatedLabel("Check button 3");
-        this.table.attachChild(this.checkButton3, 0, 2);
+        this.table.attachChild(this.checkButton3, 0, 3);
 
         this.attachChild(this.table);
     }

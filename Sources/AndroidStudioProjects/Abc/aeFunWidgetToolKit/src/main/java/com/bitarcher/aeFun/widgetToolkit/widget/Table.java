@@ -245,14 +245,14 @@ public class Table extends Container<INoneContext> implements ITable {
     {
         ScalarComputerBySpaceUsage scalarComputerBySpaceUsage = new ScalarComputerBySpaceUsage();
 
-        scalarComputerBySpaceUsage.compute(this.tableColumns, this.getOriginalWidth(), this.getPadding(), this.isShouldFixedSpaceUsageBeResizedOnResize());
+        scalarComputerBySpaceUsage.compute(this.tableColumns, this.getWidth(), this.getPadding(), this.isShouldFixedSpaceUsageBeResizedOnResize());
     }
 
     private void recomputeRowsSizeAndPosition()
     {
         ScalarComputerBySpaceUsage scalarComputerBySpaceUsage = new ScalarComputerBySpaceUsage();
 
-        scalarComputerBySpaceUsage.compute(this.tableRows, this.getOriginalHeight(), this.getPadding(), this.isShouldFixedSpaceUsageBeResizedOnResize());
+        scalarComputerBySpaceUsage.compute(this.tableRows, this.getHeight(), this.getPadding(), this.isShouldFixedSpaceUsageBeResizedOnResize());
     }
 
     private void recomputeCells()

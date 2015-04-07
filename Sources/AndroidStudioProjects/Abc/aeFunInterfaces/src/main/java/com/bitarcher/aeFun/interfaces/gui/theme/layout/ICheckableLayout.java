@@ -9,8 +9,11 @@ package com.bitarcher.aeFun.interfaces.gui.theme.layout;
 import com.bitarcher.aeFun.interfaces.gui.theme.ILayout;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ICheckableContext;
 
+import org.andengine.entity.IEntity;
+
 /**
  * Created by michel on 20/03/15.
  */
 public interface ICheckableLayout<TCheckableContext extends ICheckableContext> extends ILayout<TCheckableContext>{
+    IEntity getClickableEntity();
 }

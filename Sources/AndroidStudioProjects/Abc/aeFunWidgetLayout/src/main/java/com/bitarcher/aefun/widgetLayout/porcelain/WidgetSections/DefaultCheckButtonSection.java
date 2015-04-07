@@ -30,8 +30,8 @@ public class DefaultCheckButtonSection implements ICheckButtonSection {
     }
 
     @Override
-    public Color getNormalColor1() {
-        return this.theme.getColorsSection().getNormalColor1();
+    public float getCheckSquareSideLength() {
+        return 10;
     }
 
     @Override
@@ -40,8 +40,14 @@ public class DefaultCheckButtonSection implements ICheckButtonSection {
     }
 
     @Override
-    public Color getActivatedColor2() {
-        return this.theme.getColorsSection().getActivatedColor2();
+    public Color getClickableEntityColor1() {
+        return this.theme.getColorsSection().getNormalColor1();
     }
+
+    @Override
+    public Color getClickableEntityColor2() {
+        return this.theme.getColorsSection().getNormalColor2();
+    }
+
 }
 

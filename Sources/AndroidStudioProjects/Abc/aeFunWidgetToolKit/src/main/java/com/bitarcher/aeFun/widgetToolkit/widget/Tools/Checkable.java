@@ -68,4 +68,9 @@ public class Checkable<TCheckableContext extends ICheckableContext> extends Widg
 
         this.checkableListeners.clear();
     }
+
+    protected void connectToLayoutClickableEntity()
+    {
+
+    }
 }

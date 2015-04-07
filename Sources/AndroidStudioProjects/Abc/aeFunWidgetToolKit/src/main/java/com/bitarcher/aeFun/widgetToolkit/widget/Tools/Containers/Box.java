@@ -123,11 +123,11 @@ public class Box extends Container<INoneContext> implements IBox {
 
         if(this.getOrientation() == EnumOrientation.Horizontal)
         {
-            availableSpace = this.getOriginalWidth();
+            availableSpace = this.getWidth();
         }
         else
         {
-            availableSpace =  this.getOriginalHeight();
+            availableSpace =  this.getHeight();
         }
 
         ScalarComputerBySpaceUsage scalarComputerBySpaceUsage = new ScalarComputerBySpaceUsage();

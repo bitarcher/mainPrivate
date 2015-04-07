@@ -41,6 +41,8 @@ public class WidgetGalleryMenu extends ManagedMenuScene implements IManagedMenuS
 
     }
 
+
+
     // No loading screen means no reason to use the following methods.
 	@Override
 	public IScene onLoadingScreenLoadAndShown() {

@@ -8,10 +8,14 @@ package com.bitarcher.aeFun.interfaces.gui.widgets;
 
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ICheckableContext;
 
+import org.andengine.entity.IEntity;
+
 /**
  * Created by michel on 20/03/15.
  */
 public interface ICheckable<TContext extends ICheckableContext> extends IWidget<TContext>, com.bitarcher.aeFun.interfaces.basicioc.ICheckable {
     void addCheckableListener(ICheckableListener checkableListener);
     void removeCheckableListener(ICheckableListener checkableListener);
+
+
 }
