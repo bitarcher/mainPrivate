@@ -29,6 +29,7 @@ public final class CheckButton extends Checkable<ICheckButtonContext> implements
         if(this.getLayout() != null)
         {
             this.getLayout().onInit();
+            this.connectToLayoutClickableEntity();
         }
         else
         {

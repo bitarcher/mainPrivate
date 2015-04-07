@@ -6,6 +6,7 @@ package com.bitarcher.aefun.widgetLayout.layouts;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.basicioc.IClickableEntity;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ICheckButtonContext;
 import com.bitarcher.aeFun.interfaces.gui.theme.layout.ICheckButtonLayout;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ICheckButton;
@@ -114,7 +115,7 @@ public class CheckButtonLayout extends CheckableContext implements ICheckButtonL
     }
 
     @Override
-    public IEntity getClickableEntity() {
+    public IClickableEntity getClickableEntity() {
 
         if(this.checkButtonClickableEntity == null)
         {

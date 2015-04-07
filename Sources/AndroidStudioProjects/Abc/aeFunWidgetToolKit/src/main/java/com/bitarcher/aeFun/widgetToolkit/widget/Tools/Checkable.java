@@ -6,6 +6,8 @@ package com.bitarcher.aeFun.widgetToolkit.widget.Tools;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.basicioc.IClickable;
+import com.bitarcher.aeFun.interfaces.basicioc.IClickableListener;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.ICheckableContext;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ICheckable;
@@ -71,6 +73,30 @@ public class Checkable<TCheckableContext extends ICheckableContext> extends Widg
 
     protected void connectToLayoutClickableEntity()
     {
-        //this.getLayout().getContext().getClickableEntity()
+        final Checkable<TCheckableContext> checkable = this;
+
+        this.getLayout().getContext().getClickableEntity().addClickableListener(new IClickableListener() {
+            @Override
+            public void onClick(IClickable clickable) {
+                if(checkable.checked)
+                {
+                    if(checkable.shouldReverseCheckOnClickIfAlreadyChecked())
+                    {
+                        checkable.setChecked(false);
+                    }
+                }
+                else
+                {
+                    checkable.setChecked(true);
+                }
+            }
+        });
+    }
+
+    protected boolean shouldReverseCheckOnClickIfAlreadyChecked()
+    {
+        // should return true in radio button
+
+        return true;
     }
 }

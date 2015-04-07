@@ -6,6 +6,8 @@ package com.bitarcher.aefun.widgetLayout.layouts.tools;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.basicioc.IClickableEntity;
+import com.bitarcher.aeFun.interfaces.basicioc.IClickableListener;
 import com.bitarcher.aeFun.interfaces.gui.theme.context.setter.EnumMouseEffect;
 import com.bitarcher.aefun.widgetLayout.layouts.CheckButtonLayout;
 
@@ -15,11 +17,14 @@ import org.andengine.entity.scene.Scene;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.util.adt.color.Color;
 
+import java.util.ArrayList;
+
 /**
  * Created by michel on 01/04/15.
  */
-public class CheckButtonClickableEntity extends Entity {
+public class CheckButtonClickableEntity extends Entity implements IClickableEntity{
     CheckButtonLayout checkButtonLayout;
+    ArrayList<IClickableListener> clickableListenerArrayList = new ArrayList<>();
 
     Rectangle clickableSquare;
     Rectangle clickableFrontSquare;
@@ -31,6 +36,16 @@ public class CheckButtonClickableEntity extends Entity {
         this.checkButtonLayout = checkButtonLayout;
 
         this.doSizeAndPadding();
+    }
+
+    @Override
+    public void addClickableListener(IClickableListener clickableListener) {
+        this.clickableListenerArrayList.add(clickableListener);
+    }
+
+    @Override
+    public void removeClickableListener(IClickableListener clickableListener) {
+        this.clickableListenerArrayList.remove(clickableListener);
     }
 
     static float getWidthOrHighByCheckButtonLayout(CheckButtonLayout checkButtonLayout)
@@ -111,7 +126,10 @@ public class CheckButtonClickableEntity extends Entity {
         if(this.checkButtonLayout.getWidget().isEnabled()) {
             retval = true;
 
-            // TODO
+            for(IClickableListener clickableListener : this.clickableListenerArrayList)
+            {
+                clickableListener.onClick(this);
+            }
         }
 
         return retval;
