@@ -39,7 +39,7 @@ public class CheckButtonLayout extends CheckableContext implements ICheckButtonL
 
     @Override
     public void setChecked(boolean checked) {
-
+        this.checkButtonClickableEntity.setChecked(checked);
     }
 
     @Override

@@ -14,5 +14,8 @@ import org.andengine.util.adt.color.Color;
 public interface ICheckableSection extends ISection {
     Color getClickableEntityColor1();
     Color getClickableEntityColor2();
-    Color getActivatedColor1();
+    Color getActivatedColor2();
+    Color getDisabledColor1(); // the border
+    Color getDisabledColor2(); // the check symbol
+    Color getDisabledColor3(); // the empty space
 }

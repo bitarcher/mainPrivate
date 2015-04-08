@@ -52,7 +52,8 @@ public class DefaultColorsSection implements IColorsSection {
 
     @Override
     public Color getActivatedColor2() {
-        return new Color(0.6f, 0.9f, 1f);
+        // dark red
+        return new Color(0.8f, 0, 0);
     }
 
     @Override

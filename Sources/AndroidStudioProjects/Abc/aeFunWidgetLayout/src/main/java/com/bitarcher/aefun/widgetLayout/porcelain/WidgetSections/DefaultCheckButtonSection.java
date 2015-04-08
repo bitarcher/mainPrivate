@@ -35,8 +35,8 @@ public class DefaultCheckButtonSection implements ICheckButtonSection {
     }
 
     @Override
-    public Color getActivatedColor1() {
-        return this.theme.getColorsSection().getActivatedColor1();
+    public Color getActivatedColor2() {
+        return this.theme.getColorsSection().getActivatedColor2();
     }
 
     @Override
@@ -49,5 +49,21 @@ public class DefaultCheckButtonSection implements ICheckButtonSection {
         return this.theme.getColorsSection().getNormalColor2();
     }
 
+
+    @Override
+    public Color getDisabledColor1() {
+        return this.theme.getColorsSection().getDisabledColor1();
+    }
+
+    @Override
+    public Color getDisabledColor2() {
+        return this.theme.getColorsSection().getDisabledColor2();
+    }
+
+    @Override
+    public Color getDisabledColor3() {
+        Color retval = Color.WHITE;
+        return retval;
+    }
 }
 
