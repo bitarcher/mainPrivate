@@ -16,7 +16,7 @@ import com.bitarcher.aeFun.resourceManagement.ResourceManager;
 
 import com.bitarcher.aeFun.sceneManagement.SceneManagedActivity;
 
-import com.bitarcher.aefun.widgetLayout.theme.DefaultTheme;
+import com.bitarcher.aeFun.widgetLayout.theme.DefaultTheme;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 
 

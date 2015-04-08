@@ -18,4 +18,5 @@ public interface ICheckableSection extends ISection {
     Color getDisabledColor1(); // the border
     Color getDisabledColor2(); // the check symbol
     Color getDisabledColor3(); // the empty space
+    float getSideLength();
 }

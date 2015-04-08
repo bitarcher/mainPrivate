@@ -14,5 +14,4 @@ import org.andengine.util.adt.color.Color;
  */
 public interface ICheckButtonSection extends ICheckableSection {
     Font getCheckButtonFont();
-    float getCheckSquareSideLength();
 }

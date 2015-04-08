@@ -6,7 +6,7 @@ import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.resourceManagement.ResourceManager;
 
 import com.bitarcher.aeFun.sceneManagement.ManagedLayer;
-import com.bitarcher.aefun.widgetLayout.theme.DefaultTheme;
+import com.bitarcher.aeFun.widgetLayout.theme.DefaultTheme;
 
 
 import org.andengine.engine.handler.IUpdateHandler;
