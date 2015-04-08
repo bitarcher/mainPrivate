@@ -43,7 +43,7 @@ public class RadioButtonClickableEntity extends CheckClickableEntityBase<IRadioB
 
     @Override
     protected ICheckableSection getCheckableWidgetSection() {
-        return this.checkableLayout.getWidget().getTheme().getWidgetSections().getCheckButtonSection();
+        return this.checkableLayout.getWidget().getTheme().getWidgetSections().getRadioButtonSection();
     }
 }
 

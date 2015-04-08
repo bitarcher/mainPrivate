@@ -43,9 +43,9 @@ public class Disk extends Mesh {
         for(int i= 1 ; i <= numOfFanSectors ; i++)
         {
             int i3 = i*3;
-            double angle = (i - 1) / numOfFanSectors * 2 * Math.PI;
-            retval[i3] = (float)Math.cos(angle);
-            retval[i3 + 1] = (float)Math.sin(angle);
+            double angle = (i - 1) * 2 * Math.PI / numOfFanSectors ;
+            retval[i3] = (float)Math.cos(angle) * w2 + w2;
+            retval[i3 + 1] = (float)Math.sin(angle) * h2 + h2;
             retval[i3 + 2] = UNUSED;
         }
 

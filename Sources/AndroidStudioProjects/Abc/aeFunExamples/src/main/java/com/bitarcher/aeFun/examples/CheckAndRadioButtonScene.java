@@ -1,19 +1,15 @@
 package com.bitarcher.aeFun.examples;
 
-
-import android.widget.RadioButton;
-
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
-import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedMenuScene;
-import com.bitarcher.aeFun.interfaces.sceneManagement.IManagedScene;
+
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
-import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
-import com.bitarcher.aeFun.sceneManagement.ManagedScene;
+
 import com.bitarcher.aeFun.widgetToolkit.widget.CheckButton;
+import com.bitarcher.aeFun.widgetToolkit.widget.RadioButton;
+import com.bitarcher.aeFun.widgetToolkit.widget.RadioButtonGroup;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
-import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.Background;
@@ -91,6 +87,20 @@ public class CheckAndRadioButtonScene extends ManagedGameScene {
         this.checkButton3 = new CheckButton(theme, 0, 0, 10, 10);
         this.checkButton3.setTranslatedLabel("Check button 3");
         this.table.attachChild(this.checkButton3, 0, 3);
+
+        RadioButtonGroup radioButtonGroup1 = new RadioButtonGroup();
+
+        this.radioButton1a = new RadioButton(theme, 0, 0, 10, 10, radioButtonGroup1);
+        this.radioButton1a.setTranslatedLabel("Radio button 1a");
+        this.table.attachChild(this.radioButton1a, 1, 1);
+
+        this.radioButton1b = new RadioButton(theme, 0, 0, 10, 10, radioButtonGroup1);
+        this.radioButton1b.setTranslatedLabel("Radio button 1b");
+        this.table.attachChild(this.radioButton1b, 1, 2);
+
+        this.radioButton1c = new RadioButton(theme, 0, 0, 10, 10, radioButtonGroup1);
+        this.radioButton1c.setTranslatedLabel("Radio button 1c");
+        this.table.attachChild(this.radioButton1c, 1, 3);
 
         this.attachChild(this.table);
     }

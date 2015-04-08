@@ -26,6 +26,7 @@ public final class RadioButton extends LabeledCheckable<IRadioButtonContext> imp
         super(theme, pX, pY, pWidth, pHeight);
 
         this.radioButtonGroup = radioButtonGroup;
+        this.radioButtonGroup.getRadioButtons().add(this);
 
         if(this.getLayout() != null)
         {

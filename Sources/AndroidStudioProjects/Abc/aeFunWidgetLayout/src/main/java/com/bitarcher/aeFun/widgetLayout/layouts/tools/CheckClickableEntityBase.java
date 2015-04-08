@@ -82,14 +82,18 @@ public abstract class CheckClickableEntityBase<TCheckableContext extends IChecka
     {
         float side = this.getWidthOrHighByLayout();
         float side2 = side / 2;
-        this.entity1 = new Rectangle(side2, side2, side, side, this.checkableLayout.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+        this.entity1 = this.getNewEntity1(side2, side2, side, side);
+
+                //new Rectangle(side2, side2, side, side, this.checkableLayout.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
 
         this.attachChild(this.entity1);
 
         float borderSize = 3;
         float reducedSide = side - 2 * borderSize;
 
-        this.entity2 = new Rectangle(side2, side2, reducedSide, reducedSide, this.checkableLayout.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
+        this.entity2 = this.getNewEntity2(side2, side2, reducedSide, reducedSide);
+
+                //new Rectangle(side2, side2, reducedSide, reducedSide, this.checkableLayout.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
         Color sColor = this.checkableLayout.getWidget().getTheme().getWidgetSections().getCheckButtonSection().getClickableEntityColor2();
         this.entity2.setColor(sColor);
         this.attachChild(this.entity2);
