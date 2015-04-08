@@ -24,7 +24,7 @@ public class DefaultRadioButtonSection implements IRadioButtonSection {
     }
 
     @Override
-    public Font getRadioButtonFont() {
+    public Font getFont() {
         return this.theme.getFontThemeSection().getFont(EnumFontSize.Medium);
     }
 

@@ -25,7 +25,7 @@ public class DefaultCheckButtonSection implements ICheckButtonSection {
     }
 
     @Override
-    public Font getCheckButtonFont() {
+    public Font getFont() {
         return this.theme.getFontThemeSection().getFont(EnumFontSize.Medium);
     }
 

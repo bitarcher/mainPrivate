@@ -13,5 +13,4 @@ import org.andengine.util.adt.color.Color;
  * Created by michel on 20/03/15.
  */
 public interface ICheckButtonSection extends ICheckableSection {
-    Font getCheckButtonFont();
 }

@@ -6,6 +6,7 @@ package com.bitarcher.aeFun.interfaces.gui.theme.widgetSections;
  * bitarcher.com
  */
 
+import org.andengine.opengl.font.Font;
 import org.andengine.util.adt.color.Color;
 
 /**
@@ -19,4 +20,5 @@ public interface ICheckableSection extends ISection {
     Color getDisabledColor2(); // the check symbol
     Color getDisabledColor3(); // the empty space
     float getSideLength();
+    Font getFont();
 }

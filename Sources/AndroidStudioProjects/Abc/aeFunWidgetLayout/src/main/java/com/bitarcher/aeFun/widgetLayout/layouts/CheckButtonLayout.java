@@ -12,6 +12,7 @@ import com.bitarcher.aeFun.interfaces.gui.theme.layout.ICheckButtonLayout;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ICheckButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.widgetLayout.layouts.tools.CheckButtonClickableEntity;
+import com.bitarcher.aeFun.widgetLayout.layouts.tools.CheckClickableEntityBase;
 import com.bitarcher.aeFun.widgetLayout.layouts.tools.CheckableContext;
 
 import org.andengine.entity.Entity;
@@ -22,104 +23,13 @@ import org.andengine.opengl.vbo.DrawType;
 /**
  * Created by michel on 20/03/15.
  */
-public class CheckButtonLayout extends CheckableContext implements ICheckButtonLayout, ICheckButtonContext {
-    ICheckButton checkButton;
-    Entity textLayer;
-    CheckButtonClickableEntity checkButtonClickableEntity;
-
-    @Override
-    protected void doSizeAndPadding() {
-
-        this.checkButtonClickableEntity.doSizeAndPadding();
-
-        this.setText(this.checkButton.getTranslatedLabel());
-    }
-
-    @Override
-    public void setChecked(boolean checked) {
-        this.checkButtonClickableEntity.setChecked(checked);
-    }
-
-    @Override
-    public void setEnabled(boolean enabled) {
-        this.setEnableColors();
-    }
-
+public class CheckButtonLayout extends CheckableLayout<ICheckButtonContext> implements ICheckButtonLayout, ICheckButtonContext {
     public CheckButtonLayout(ICheckButton checkButton) {
-        this.checkButton = checkButton;
-    }
-
-    void setEnableColors()
-    {
-        this.checkButtonClickableEntity.setEnableColors();
+        super(checkButton);
     }
 
     @Override
-    public IWidget<ICheckButtonContext> getWidget() {
-        return this.checkButton;
-    }
-
-    @Override
-    public void onPopulate() {
-        this.textLayer = new Entity();
-        this.checkButton.attachChild(this.textLayer);
-
-
-        this.checkButtonClickableEntity = new CheckButtonClickableEntity(this);
-        this.checkButton.attachChild(this.checkButtonClickableEntity);
-        this.checkButtonClickableEntity.onPopulate();
-    }
-
-    void setText(String label) {
-
-        this.textLayer.detachChildren();
-
-        if (!(label.isEmpty()))
-        {
-            float midWidth = this.checkButton.getWidth() / 2;
-            float midHeight = this.checkButton.getHeight() / 2;
-
-            Font font = this.checkButton.getTheme().getWidgetSections().getCheckButtonSection().getCheckButtonFont();
-            Text text = new Text(midWidth, midHeight, font, label, this.checkButton.getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager(), DrawType.DYNAMIC);
-
-            this.textLayer.attachChild(text);
-        }
-    }
-
-    @Override
-    public void onInit() {
-        this.setText(this.checkButton.getTranslatedLabel());
-        this.setEnableColors();
-    }
-
-    @Override
-    public ICheckButtonContext getContext() {
-        return this;
-    }
-
-    @Override
-    public void pushResourceRequirements() {
-
-    }
-
-    @Override
-    public void popResourceRequirements() {
-
-    }
-
-    @Override
-    public void setTranslatedLabel(String translatedLabel) {
-        this.setText(translatedLabel);
-    }
-
-    @Override
-    public IClickableEntity getClickableEntity() {
-
-        if(this.checkButtonClickableEntity == null)
-        {
-            throw new RuntimeException("Clickable rectangle not initialised yet");
-        }
-
-        return this.checkButtonClickableEntity;
+    protected CheckClickableEntityBase<ICheckButtonContext> getNewCheckClickableEntity() {
+        return new CheckButtonClickableEntity(this);
     }
 }
