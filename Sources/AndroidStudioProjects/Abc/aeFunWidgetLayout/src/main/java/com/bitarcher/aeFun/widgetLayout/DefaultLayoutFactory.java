@@ -13,12 +13,14 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.ICheckButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IImage;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IImageButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ILabel;
+import com.bitarcher.aeFun.interfaces.gui.widgets.IRadioButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.ITextButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IWidget;
 import com.bitarcher.aeFun.widgetLayout.layouts.CheckButtonLayout;
 import com.bitarcher.aeFun.widgetLayout.layouts.ImageButtonLayout;
 import com.bitarcher.aeFun.widgetLayout.layouts.ImageLayout;
 import com.bitarcher.aeFun.widgetLayout.layouts.LabelLayout;
+import com.bitarcher.aeFun.widgetLayout.layouts.RadioButtonLayout;
 import com.bitarcher.aeFun.widgetLayout.layouts.TextButtonLayout;
 
 /**
@@ -57,6 +59,12 @@ public class DefaultLayoutFactory implements ILayoutFactory {
         {
             ICheckButton keyS = (ICheckButton)key;
             CheckButtonLayout retS = new CheckButtonLayout(keyS);
+            retval = (ILayout<TContext>)retS;
+        }
+        else if(key instanceof IRadioButton)
+        {
+            IRadioButton keyS = (IRadioButton)key;
+            RadioButtonLayout retS = new RadioButtonLayout(keyS);
             retval = (ILayout<TContext>)retS;
         }
 
