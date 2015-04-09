@@ -13,10 +13,10 @@ import org.andengine.opengl.vbo.VertexBufferObjectManager;
 /**
  * Created by michel on 08/04/15.
  */
-public class Disk extends Mesh {
+public class DiskOrXGon extends Mesh {
 
-    public Disk(float x, float y, float width, float height, int numOfFanSectors, VertexBufferObjectManager pVertexBufferObjectManager) {
-        super(x, y, width, height, Disk.getCoordinates(width, height, numOfFanSectors), numOfFanSectors + 1, DrawMode.TRIANGLE_FAN, pVertexBufferObjectManager);
+    public DiskOrXGon(float x, float y, float width, float height, int numOfFanSectors, VertexBufferObjectManager pVertexBufferObjectManager) {
+        super(x, y, width, height, DiskOrXGon.getCoordinates(width, height, numOfFanSectors), numOfFanSectors + 2, DrawMode.TRIANGLE_FAN, pVertexBufferObjectManager);
 
 
         // blue by default, but the color has to be set by the container
@@ -30,7 +30,7 @@ public class Disk extends Mesh {
         assert(numOfFanSectors >= 3);
 
         // coordinates for triangle_strip
-        float[] retval = new float[(numOfFanSectors + 1) * 3];
+        float[] retval = new float[(numOfFanSectors + 2) * 3];
 
         float w2 = width / 2;
         float h2 = height / 2;
@@ -40,14 +40,21 @@ public class Disk extends Mesh {
         retval[1] = h2;
         retval[2] = UNUSED;
 
+        int i3;
         for(int i= 1 ; i <= numOfFanSectors ; i++)
         {
-            int i3 = i*3;
+            i3 = i*3;
             double angle = (i - 1) * 2 * Math.PI / numOfFanSectors ;
             retval[i3] = (float)Math.cos(angle) * w2 + w2;
             retval[i3 + 1] = (float)Math.sin(angle) * h2 + h2;
             retval[i3 + 2] = UNUSED;
         }
+
+        i3 = (numOfFanSectors+1) * 3;
+        // close the disk
+        retval[i3] = width;
+        retval[i3 + 1] = h2;
+        retval[i3 + 2] = UNUSED;
 
         return retval;
     }

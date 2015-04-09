@@ -12,5 +12,6 @@ import java.util.List;
  * Created by michel on 20/03/15.
  */
 public interface IRadioButtonGroup {
-    List<IRadioButton> getRadioButtons();
+    void addRadioButton(IRadioButton radioButton);
+    void removeRadioButton(IRadioButton radioButton);
 }

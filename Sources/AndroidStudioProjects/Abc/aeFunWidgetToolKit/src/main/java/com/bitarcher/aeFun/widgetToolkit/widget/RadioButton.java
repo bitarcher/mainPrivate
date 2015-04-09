@@ -26,7 +26,7 @@ public final class RadioButton extends LabeledCheckable<IRadioButtonContext> imp
         super(theme, pX, pY, pWidth, pHeight);
 
         this.radioButtonGroup = radioButtonGroup;
-        this.radioButtonGroup.getRadioButtons().add(this);
+        this.radioButtonGroup.addRadioButton(this);
 
         if(this.getLayout() != null)
         {
@@ -42,5 +42,10 @@ public final class RadioButton extends LabeledCheckable<IRadioButtonContext> imp
     @Override
     public IRadioButtonGroup getRadioButtonGroup() {
         return this.radioButtonGroup;
+    }
+
+    @Override
+    protected boolean shouldReverseCheckOnClickIfAlreadyChecked() {
+        return false;
     }
 }

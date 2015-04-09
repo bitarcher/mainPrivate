@@ -9,6 +9,7 @@ import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.aeFun.interfaces.sceneManagement.IMainMenu;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
+import com.bitarcher.aeFun.sceneManagement.SceneManager;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 
@@ -26,6 +27,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
     BannerCtrl bannerCtrl;
     TextButton widgetGalleryTextButton;
     TextButton resourceManagerTextButton;
+    TextButton primitivesTextButton;
     TextButton characterTextButton;
 
 
@@ -64,6 +66,8 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
     public void onLoadScene() {
 
         final MainMenu mainMenu = this;
+
+        final ITSceneManager sceneManager = mainMenu.getSceneManager();
         this.setBackgroundEnabled(true);
         this.setBackground(new Background(1, 1, 1));
 
@@ -83,14 +87,25 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         this.widgetGalleryTextButton.addButtonListener(new IButtonListener() {
             @Override
             public void onClicked(IButton button) {
-                WidgetGalleryMenu widgetGalleryMenu = new WidgetGalleryMenu(mainMenu.getSceneManager());
+                WidgetGalleryMenu widgetGalleryMenu = new WidgetGalleryMenu(sceneManager);
 
-                mainMenu.getSceneManager().showScene(widgetGalleryMenu);
+                sceneManager.showScene(widgetGalleryMenu);
             }
         });
 
         this.resourceManagerTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Resource manager");
         this.table.attachChild(this.resourceManagerTextButton);
+
+        this.primitivesTextButton = new TextButton(this.getSceneManager().getTheme(), 0, 0, 10, 10, "Primitives");
+        this.table.attachChild(this.primitivesTextButton);
+        this.primitivesTextButton.addButtonListener(new IButtonListener() {
+            @Override
+            public void onClicked(IButton button) {
+                PrimitivesScene primitivesScene = new PrimitivesScene(sceneManager);
+
+                sceneManager.showScene(primitivesScene);
+            }
+        });
 
         this.attachChild(this.table);
     }

@@ -30,7 +30,7 @@ public class DefaultRadioButtonSection implements IRadioButtonSection {
 
     @Override
     public Color getActivatedColor2() {
-        return this.theme.getColorsSection().getActivatedColor1();
+        return this.theme.getColorsSection().getActivatedColor2();
     }
 
     @Override

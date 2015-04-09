@@ -1,6 +1,6 @@
 package com.bitarcher.aeFun.widgetLayout.layouts.tools;
 
-import com.bitarcher.aeFun.geometry.primitives.Disk;
+import com.bitarcher.aeFun.geometry.primitives.DiskOrXGon;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.gui.widgets.Tools.IEnableSetterEntity;
 
@@ -19,14 +19,14 @@ import org.andengine.util.adt.color.Color;
 public class RadioSymbol extends Entity implements IEnableSetterEntity {
 
     RadioButtonClickableEntity radioButtonClickableEntity;
-    Disk radioSymbol;
+    DiskOrXGon radioSymbol;
 
     public RadioSymbol(RadioButtonClickableEntity radioButtonClickableEntity, float x, float y, float width, float height) {
         super(x, y, width, height);
 
         this.radioButtonClickableEntity = radioButtonClickableEntity;
 
-        this.radioSymbol = new Disk(width / 2, height / 2, width, height, 7,
+        this.radioSymbol = new DiskOrXGon(width / 2, height / 2, width, height, 10,
             radioButtonClickableEntity.checkableLayout.getWidget().getTheme().getThemeManager().getResourceManager().getEngine().getVertexBufferObjectManager());
         this.setColor();
         this.attachChild(this.radioSymbol);
