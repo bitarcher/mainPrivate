@@ -1,18 +1,25 @@
 package com.bitarcher.aeFun.examples;
 
+import android.widget.Toast;
+
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
+import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 
+import com.bitarcher.aeFun.interfaces.gui.widgets.ICheckable;
+import com.bitarcher.aeFun.interfaces.gui.widgets.ICheckableListener;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
 
 import com.bitarcher.aeFun.widgetToolkit.widget.CheckButton;
+import com.bitarcher.aeFun.widgetToolkit.widget.Label;
 import com.bitarcher.aeFun.widgetToolkit.widget.RadioButton;
 import com.bitarcher.aeFun.widgetToolkit.widget.RadioButtonGroup;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.Background;
+import org.andengine.entity.text.Text;
 
 /*
  * Copyright (c) 2015.
@@ -26,7 +33,7 @@ public class CheckAndRadioButtonScene extends ManagedGameScene {
 
     CheckButton checkButton1;
     CheckButton checkButton2;
-    CheckButton checkButton3;
+    Label checkButton1Label;
     RadioButton radioButton1a;
     RadioButton radioButton1b;
     RadioButton radioButton1c;
@@ -78,15 +85,27 @@ public class CheckAndRadioButtonScene extends ManagedGameScene {
 
         this.checkButton1 = new CheckButton(theme, 0, 0, 10, 10);
         this.checkButton1.setTranslatedLabel("Check button 1");
+
+        final CheckAndRadioButtonScene checkAndRadioButtonScene = this;
+
+        this.checkButton1.addCheckableListener(new ICheckableListener() {
+
+            @Override
+            public void onCheckedChanged(ICheckable checkable, boolean isChecked) {
+                checkAndRadioButtonScene.checkButton1Label.setTranslatedLabel(isChecked?"Button 1 checked":"Button 1 NOT checked");
+            }
+        });
+
         this.table.attachChild(this.checkButton1, 0, 1);
+
+        this.checkButton1Label = new Label(theme, 0, 0, 10, 10, "Not checked");
+        this.table.attachChild(this.checkButton1Label, 0, 2);
 
         this.checkButton2 = new CheckButton(theme, 0, 0, 10, 10);
         this.checkButton2.setTranslatedLabel("Check button 2");
-        this.table.attachChild(this.checkButton2, 0, 2);
+        this.table.attachChild(this.checkButton2, 0, 3);
 
-        this.checkButton3 = new CheckButton(theme, 0, 0, 10, 10);
-        this.checkButton3.setTranslatedLabel("Check button 3");
-        this.table.attachChild(this.checkButton3, 0, 3);
+
 
         RadioButtonGroup radioButtonGroup1 = new RadioButtonGroup();
 
@@ -101,6 +120,18 @@ public class CheckAndRadioButtonScene extends ManagedGameScene {
         this.radioButton1c = new RadioButton(theme, 0, 0, 10, 10, radioButtonGroup1);
         this.radioButton1c.setTranslatedLabel("Radio button 1c");
         this.table.attachChild(this.radioButton1c, 1, 3);
+
+        RadioButtonGroup radioButtonGroup2 = new RadioButtonGroup();
+
+        this.radioButton2a = new RadioButton(theme, 0, 0, 10, 10, radioButtonGroup2);
+        this.radioButton2a.setTranslatedLabel("Radio button 2a");
+        this.table.attachChild(this.radioButton2a, 0, 4);
+
+        this.radioButton2b = new RadioButton(theme, 0, 0, 10, 10, radioButtonGroup2);
+        this.radioButton2b.setTranslatedLabel("Radio button 2b");
+        this.table.attachChild(this.radioButton2b, 1, 4);
+
+
 
         this.attachChild(this.table);
     }
