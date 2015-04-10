@@ -1,0 +1,71 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="tryad_all_the_same_data" version="1.3.0" audacityversion="2.0.5" sel0="36.4071177080" sel1="36.4071177080" vpos="0" h="36.3297654749" zoom="271.4853749003" rate="44100.0">
+	<tags>
+		<tag name="COMMENTS" value="Creative Commons By-Sa - http://creativecommons.org"/>
+		<tag name="ARTIST" value="Tryad"/>
+		<tag name="Software" value="LAME v3.97"/>
+		<tag name="TRACKNUMBER" value="10"/>
+		<tag name="TITLE" value="All the same"/>
+		<tag name="ALBUM" value="Listen"/>
+		<tag name="YEAR" value="2006"/>
+	</tags>
+	<wavetrack name="tryad_all_the_same" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="524288" sampleformat="131073" numsamples="1625696">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000e93.au" len="524288" min="-0.198517" max="0.190887" rms="0.049144"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e0000e64.au" len="524288" min="-0.416626" max="0.350281" rms="0.070324"/>
+				</waveblock>
+				<waveblock start="1048576">
+					<simpleblockfile filename="e000009a.au" len="290428" min="-0.336334" max="0.356659" rms="0.064144"/>
+				</waveblock>
+				<waveblock start="1339004">
+					<simpleblockfile filename="e000063a.au" len="286692" min="-0.445404" max="0.492554" rms="0.067054"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="tryad_all_the_same" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="524288" sampleformat="131073" numsamples="1625696">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000d9a.au" len="524288" min="-0.224579" max="0.254822" rms="0.060955"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e0000264.au" len="524288" min="-0.435944" max="0.4664" rms="0.085952"/>
+				</waveblock>
+				<waveblock start="1048576">
+					<simpleblockfile filename="e00005e7.au" len="290428" min="-0.543823" max="0.577759" rms="0.104331"/>
+				</waveblock>
+				<waveblock start="1339004">
+					<simpleblockfile filename="e00004a2.au" len="286692" min="-0.816132" max="0.682465" rms="0.098718"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Piste audio" channel="0" linked="1" mute="0" solo="0" height="158" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="36.80489603">
+			<sequence maxsamples="524288" sampleformat="131073" numsamples="55229">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000b2c.au" len="55229" min="-0.152313" max="0.156464" rms="0.033921"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Piste audio" channel="1" linked="0" mute="0" solo="0" height="142" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="36.80489603">
+			<sequence maxsamples="524288" sampleformat="131073" numsamples="55229">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000093.au" len="55229" min="-0.187988" max="0.214783" rms="0.047617"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

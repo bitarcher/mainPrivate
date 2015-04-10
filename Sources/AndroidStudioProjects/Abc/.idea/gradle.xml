@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-2.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/abcBllOrm" />
+            <option value="$PROJECT_DIR$/abcBllXmlRoLevels" />
+            <option value="$PROJECT_DIR$/abcBllXmlRoResources" />
+            <option value="$PROJECT_DIR$/aeFun" />
+            <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters" />
+            <option value="$PROJECT_DIR$/aeFun/aeFunExamples" />
+            <option value="$PROJECT_DIR$/aeFun/aeFunGeometry" />
+            <option value="$PROJECT_DIR$/aeFun/aeFunInterfaces" />
+            <option value="$PROJECT_DIR$/aeFun/aeFunResourceManagement" />
+            <option value="$PROJECT_DIR$/aeFun/aeFunResourceManagementSvgEnhanced" />
+            <option value="$PROJECT_DIR$/aeFun/aeFunSceneManagement" />
+            <option value="$PROJECT_DIR$/aeFun/aeFunWidgetLayout" />
+            <option value="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit" />
+            <option value="$PROJECT_DIR$/andEngine" />
+            <option value="$PROJECT_DIR$/andEnginePhysicsBox2DExtension" />
+            <option value="$PROJECT_DIR$/andEngineSVGTextureRegionExtension" />
+            <option value="$PROJECT_DIR$/annotations" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/dog" />
+            <option value="$PROJECT_DIR$/interfacesProtected" />
+            <option value="$PROJECT_DIR$/privateExamples" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
+

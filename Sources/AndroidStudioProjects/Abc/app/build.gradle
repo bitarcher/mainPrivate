@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'java'
+apply plugin: 'maven'
+
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.bitarcher.abc"
+        minSdkVersion 10
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /*
+    sourceSets {
+
+        androidTest {
+            java.srcDirs = ['androidTest/java']
+        }
+    }
+    */
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //compile 'com.android.support:appcompat-v7:21.0.3'
+    compile project(':andEngine')
+    compile project(':andEnginePhysicsBox2DExtension')
+    compile project(':andEngineSVGTextureRegionExtension')
+    compile 'com.j256.ormlite:ormlite-core:4.48'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+    compile project(':aeFun:aeFunInterfaces')
+    compile project(':aeFun:aeFunResourceManagement')
+    compile project(':aeFun:aeFunWidgetLayout')
+    compile project(':aeFun:aeFunWidgetToolKit')
+    compile project(':aeFun:aeFunSceneManagement')
+    compile project(':interfacesProtected')
+    compile project(':abcBllXmlRoResources')
+    compile project(':abcBllXmlRoLevels')
+    compile project(':abcBllOrm')
+    compile project(':dog')
+}
+
+

@@ -1,0 +1,15 @@
+[submodule "Sources/AndroidStudioProjects/Abc/andEngine"]
+	path = Sources/AndroidStudioProjects/Abc/andEngine
+	url = https://github.com/RealMayo/AndEngine.git
+[submodule "Sources/AndroidStudioProjects/Abc/andEnginePhysicsBox2DExtension"]
+	path = Sources/AndroidStudioProjects/Abc/andEnginePhysicsBox2DExtension
+	url = https://github.com/RealMayo/andEnginePhysicsBox2DExtension.git
+[submodule "Sources/AndroidStudioProjects/Abc/andEngineSVGTextureRegionExtension"]
+	path = Sources/AndroidStudioProjects/Abc/andEngineSVGTextureRegionExtension
+	url = https://github.com/RealMayo/andEngineSVGTextureRegionExtension.git
+[submodule "Sources/AndroidStudioProjects/Abc/andEnginesExamples"]
+	path = Sources/AndroidStudioProjects/Abc/andEnginesExamples
+	url = https://github.com/RealMayo/AndEngineExamples
+[submodule "Sources/AndroidStudioProjects/Abc/greenDAO"]
+	path = Sources/AndroidStudioProjects/Abc/greenDAO
+	url = https://github.com/greenrobot/greenDAO.git

@@ -1,0 +1,186 @@
+<Levels>
+	<Node
+		name=""
+		notTranslatedLabel="Abc"
+			>
+
+		<Node
+			name="letters"
+			notTranslatedLabel="Les lettres"
+				>
+			<!-- Replicate once it is stabilised with upper/lower case, and computer/manuscript font -->
+			<Node
+				name="whereIsTheLetter"
+				notTranslatedLabel="Où se trouve la lettre ?"
+				>
+			</Node>
+
+			<Node
+				name="doesWordContainLetter"
+				notTranslatedLabel="Le mot contient-il la lettre ?"
+				>
+			</Node>
+			<Node
+				name="whichLetterTheWordBeginsWith"
+				notTranslatedLabel="Avec quel lettre commence le mot ?"
+				>
+			</Node>
+
+			<Node
+				name="whichAnimalBeginsWith"
+				notTranslatedLabel="Quel animal commence par la lettre ?"
+				>
+			</Node>
+
+			<Node
+				name="howManyLettersInTheWord"
+				notTranslatedLabel="Combien de lettres contient le mot ?"
+				>
+			</Node>
+
+			<Node
+				name="howManyTimesTheWordContainsTheLetter"
+				notTranslatedLabel="Combien de fois le mot contient-il la lettre ?"
+				>
+			</Node>
+			<Node
+				name="letterOrder"
+				notTranslatedLabel="L'ordre des lettres dans l'alphabet"
+				>
+			</Node>
+
+
+		</Node>
+		<Node
+			name="consonantAndVowel"
+			notTranslatedLabel="Consonnes et voyelles"
+				>
+			<Node
+				name="whichLetterIsAVowel"
+				notTranslatedLabel="Quelle lettre est une voyelle ?"
+				>
+			</Node>
+
+			<Node
+				name="whichLetterIsAVowelWithoutHelp"
+				notTranslatedLabel="Quelle lettre est une voyelle (sans aide) ?"
+				>
+			</Node>
+			<Node
+				name="howManyWovelsInTheWord"
+				notTranslatedLabel="Combien de voyelles contient le mot ?"
+				>
+			</Node>
+			<Node
+				name="howManyConsonantsInTheWord"
+				notTranslatedLabel="Combien de consonnes contient le mot ?"
+				>
+			</Node>
+			<Node
+				name="whichWordContainsMoreVowels"
+				notTranslatedLabel="Quel mot contient le plus de voyelles ?"
+				>
+			</Node>
+			<Node
+				name="writeTheWordOfAnAnimalByMovingTheLetters"
+				notTranslatedLabel="Ecris le nom d'un animal en déplaçant les lettres"
+				>
+			</Node>
+
+		</Node>
+		<Node
+			name="syllables"
+			notTranslatedLabel="Les syllabes"
+				>
+			<Node
+				name="whichSyllableGivesTheSound"
+				notTranslatedLabel="Quelle syllabe donne le son ?"
+				>
+			</Node>
+			<Node
+				name="whichWordContainsTheSyllable"
+				notTranslatedLabel="Quel mot contient la syllabe ?"
+				>
+			</Node>
+
+			<Node
+				name="whichWordContainsTheSyllableWithoutHelp"
+				notTranslatedLabel="Quel mot contient la syllabe ? (Sans aide)"
+				>
+			</Node>
+			<Node
+				name="whichSyllableIsMissingInTheWord"
+				notTranslatedLabel="Quelle syllabe manque-t-il pour formaer le mot ?"
+				>
+			</Node>
+		</Node>
+		<Node
+			name="words"
+			notTranslatedLabel="Les mots"
+				>
+			<Node
+				name="findWordByImage"
+				notTranslatedLabel="Quel est le mot qui est illustré ?"
+				>
+			</Node>
+			<Node
+				name="whichWordEndsWithLetter"
+				notTranslatedLabel="Quel mot finit par la lettre ?"
+				>
+			</Node>	
+			<Node
+				name="whichLetterIsMissing"
+				notTranslatedLabel="Quelle lettre est manquante ?"
+				>
+			</Node>
+			<Node
+				name="moveTheLettersToWriteTheWord"
+				notTranslatedLabel="Déplace les lettres pour écrire le mot"
+				>
+			</Node>
+			<Node
+				name="moveTheLettersToWriteTheWordBeware"
+				notTranslatedLabel="Déplace les lettres pour écrire le mot mais évite les pièges"
+				>
+			</Node>
+			<Node
+				name="whereIsTheWord"
+				notTranslatedLabel="Où se trouve le mot ?"
+				>
+			</Node>
+			<Node
+				name="whereIsYourFirstName"
+				notTranslatedLabel="Où se trouve ton prénom ?"
+				>
+			</Node>
+			<Node
+				name="moveTheLettersToWriteYourFirtName"
+				notTranslatedLabel="Déplace les lettres pour écrire ton prénom"
+				>
+			</Node>
+
+		</Node>
+		<Node
+			name="sentence"
+			notTranslatedLabel="La phrase"
+				>
+			<Node
+				name="moveTheWordsToWriteTheSentence"
+				notTranslatedLabel="Déplace les mots pour écrire la phrase"
+				>
+			</Node>
+			<Node
+				name="findTheSubject"
+				notTranslatedLabel="Trouve le sujet"
+				>
+			</Node>
+			<Node
+				name="findTheVerb"
+				notTranslatedLabel="Trouve le verbe"
+				>
+			</Node>
+
+		</Node>
+	</Node>
+</Levels>
+

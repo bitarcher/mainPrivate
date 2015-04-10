@@ -1,0 +1,3 @@
+Sous gimp :
+1300x1100
+debout début à y=200px
