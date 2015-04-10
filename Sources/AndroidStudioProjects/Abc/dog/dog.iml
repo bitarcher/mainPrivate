@@ -90,7 +90,7 @@
     <orderEntry type="module" module-name="aeFunInterfaces" exported="" />
     <orderEntry type="module" module-name="aeFunDrawablesCharacters" exported="" />
     <orderEntry type="module" module-name="aeFunResourceManagement" exported="" />
-    <orderEntry type="module" module-name="andEngine" exported="" />
+    <orderEntry type="module" module-name="AndEngine" exported="" />
     <orderEntry type="module" module-name="interfacesProtected" exported="" />
   </component>
 </module>

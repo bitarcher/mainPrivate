@@ -9,6 +9,7 @@ import com.bitarcher.aeFun.sceneManagement.ManagedLayer;
 import com.bitarcher.aeFun.widgetLayout.theme.DefaultTheme;
 
 
+import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.text.Text;
 import org.andengine.input.touch.TouchEvent;

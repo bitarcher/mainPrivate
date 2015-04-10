@@ -1,0 +1,41 @@
+Seulement dans andEngine2: andEngine.iml
+Seulement dans AndEngine/build/generated/res: generated
+Seulement dans AndEngine/build/generated/source/buildConfig: test
+Les fichiers AndEngine/build/intermediates/bundles/debug/AndroidManifest.xml et andEngine2/build/intermediates/bundles/debug/AndroidManifest.xml sont différents
+Seulement dans AndEngine/build/intermediates/bundles/debug: classes.jar
+Seulement dans AndEngine/build/intermediates/bundles/debug: jni
+Les fichiers AndEngine/build/intermediates/bundles/release/AndroidManifest.xml et andEngine2/build/intermediates/bundles/release/AndroidManifest.xml sont différents
+Les fichiers AndEngine/build/intermediates/bundles/release/classes.jar et andEngine2/build/intermediates/bundles/release/classes.jar sont différents
+Les fichiers AndEngine/build/intermediates/bundles/release/jni/armeabi/libandengine.so et andEngine2/build/intermediates/bundles/release/jni/armeabi/libandengine.so sont différents
+Les fichiers AndEngine/build/intermediates/bundles/release/jni/armeabi-v7a/libandengine.so et andEngine2/build/intermediates/bundles/release/jni/armeabi-v7a/libandengine.so sont différents
+Les fichiers AndEngine/build/intermediates/bundles/release/jni/mips/libandengine.so et andEngine2/build/intermediates/bundles/release/jni/mips/libandengine.so sont différents
+Les fichiers AndEngine/build/intermediates/bundles/release/jni/x86/libandengine.so et andEngine2/build/intermediates/bundles/release/jni/x86/libandengine.so sont différents
+Seulement dans AndEngine/build/intermediates/incremental/aidl: test
+Les fichiers AndEngine/build/intermediates/incremental/mergeAssets/debug/merger.xml et andEngine2/build/intermediates/incremental/mergeAssets/debug/merger.xml sont différents
+Les fichiers AndEngine/build/intermediates/incremental/mergeAssets/release/merger.xml et andEngine2/build/intermediates/incremental/mergeAssets/release/merger.xml sont différents
+Seulement dans AndEngine/build/intermediates/incremental/mergeAssets: test
+Seulement dans AndEngine/build/intermediates/incremental: mergeResources
+Les fichiers AndEngine/build/intermediates/incremental/packageResources/debug/merger.xml et andEngine2/build/intermediates/incremental/packageResources/debug/merger.xml sont différents
+Les fichiers AndEngine/build/intermediates/incremental/packageResources/release/merger.xml et andEngine2/build/intermediates/incremental/packageResources/release/merger.xml sont différents
+Seulement dans AndEngine/build/intermediates: manifests
+Seulement dans AndEngine/build/intermediates/res: resources-debug-test.ap_
+Seulement dans AndEngine/build/outputs/aar: AndEngine-debug.aar
+Seulement dans andEngine2/build/outputs/aar: andEngine-release.aar
+Seulement dans AndEngine/build/outputs/aar: AndEngine-release.aar
+Seulement dans AndEngine/build/tmp: packageDebugJar
+Les fichiers AndEngine/build.gradle et andEngine2/build.gradle sont différents
+Le fichier AndEngine/.git est un répertoire alors que le fichier andEngine2/.git est un fichier régulier
+Les fichiers AndEngine/jni/Application.mk et andEngine2/jni/Application.mk sont différents
+Seulement dans andEngine2/libs/armeabi: gdbserver
+Seulement dans andEngine2/libs/armeabi: gdb.setup
+Les fichiers AndEngine/libs/armeabi/libandengine.so et andEngine2/libs/armeabi/libandengine.so sont différents
+Seulement dans andEngine2/libs/armeabi-v7a: gdbserver
+Seulement dans andEngine2/libs/armeabi-v7a: gdb.setup
+Les fichiers AndEngine/libs/armeabi-v7a/libandengine.so et andEngine2/libs/armeabi-v7a/libandengine.so sont différents
+Seulement dans andEngine2/libs/mips: gdbserver
+Seulement dans andEngine2/libs/mips: gdb.setup
+Les fichiers AndEngine/libs/mips/libandengine.so et andEngine2/libs/mips/libandengine.so sont différents
+Seulement dans andEngine2/libs/x86: gdbserver
+Seulement dans andEngine2/libs/x86: gdb.setup
+Les fichiers AndEngine/libs/x86/libandengine.so et andEngine2/libs/x86/libandengine.so sont différents
+Seulement dans andEngine2: obj
