@@ -26,14 +26,14 @@
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="c4772a86ef93c841969a5d7c9b39d470725b3cce">
+        sha1="f03c4ad98bcc70080e38e6b58a371c17a19e89ff">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-5939d4c476d993440b9071505e1866a6122aa4d6.jar" />
     </item>
     <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunWidgetLayout/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="794026dbeca6db4f333f54e60384092e9a8ffae5">
+        sha1="a5b23ffc745f732ced2c5f50c464f51ee51aa800">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-f832fd81243f89cb883d758572cdbcd0c3e53059.jar" />
     </item>
     <item
@@ -44,18 +44,18 @@
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-11ddfb13c1222cf222dbc16a6df17942bc0cc8c1.jar" />
     </item>
     <item
-        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-5dc4f6071776729d4bfa99d6f7cf66b9f2d5aee2.jar" />
-    </item>
-    <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b0414e69a69b10254c1703fbdedfa1fa31764184.jar" />
+    </item>
+    <item
+        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-5dc4f6071776729d4bfa99d6f7cf66b9f2d5aee2.jar" />
     </item>
     <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunSceneManagement/unspecified/classes.jar"
@@ -72,6 +72,13 @@
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-aac792c76de8778ac185ff3cb848a9729065500c.jar" />
     </item>
     <item
+        jar="/home/michel/.gradle/caches/modules-2/files-2.1/com.intellij/annotations/12.0/bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539/annotations-12.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539">
+        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/annotations-12.0-1055e2592d1b04e27229c36c224efb595d918bde.jar" />
+    </item>
+    <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc/andEngineSVGTextureRegionExtension/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -84,13 +91,6 @@
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-234b986e1c1c2a0cf526e15a995a714ac2905fc9.jar" />
-    </item>
-    <item
-        jar="/home/michel/.gradle/caches/modules-2/files-2.1/com.intellij/annotations/12.0/bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539/annotations-12.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539">
-        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/annotations-12.0-1055e2592d1b04e27229c36c224efb595d918bde.jar" />
     </item>
 
 </items>
