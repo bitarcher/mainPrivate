@@ -45,11 +45,11 @@ dependencies {
     compile project(':andEngineSVGTextureRegionExtension')
     compile 'com.j256.ormlite:ormlite-core:4.48'
     compile 'com.j256.ormlite:ormlite-android:4.48'
-    compile project(':aeFunInterfaces')
-    compile project(':aeFunResourceManagement')
-    compile project(':aeFunWidgetLayout')
-    compile project(':aeFunWidgetToolKit')
-    compile project(':aeFunSceneManagement')
+    compile project(':aeFun:aeFunInterfaces')
+    compile project(':aeFun:aeFunResourceManagement')
+    compile project(':aeFun:aeFunWidgetLayout')
+    compile project(':aeFun:aeFunWidgetToolKit')
+    compile project(':aeFun:aeFunSceneManagement')
     compile project(':interfacesProtected')
     compile project(':abcBllXmlRoResources')
     compile project(':abcBllXmlRoLevels')

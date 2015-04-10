@@ -81,7 +81,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -90,17 +89,17 @@
     <orderEntry type="library" exported="" name="ormlite-core-4.48" level="project" />
     <orderEntry type="module" module-name="abcBllOrm" exported="" />
     <orderEntry type="module" module-name="abcBllXmlRoLevels" exported="" />
-    <orderEntry type="module" module-name="aeFunWidgetToolKit" exported="" />
-    <orderEntry type="module" module-name="aeFunWidgetLayout" exported="" />
+    <orderEntry type="module" module-name="aeFunInterfaces" exported="" />
     <orderEntry type="module" module-name="aeFunResourceManagement" exported="" />
+    <orderEntry type="module" module-name="aeFunWidgetLayout" exported="" />
     <orderEntry type="module" module-name="andEngineSVGTextureRegionExtension" exported="" />
     <orderEntry type="module" module-name="abcBllXmlRoResources" exported="" />
+    <orderEntry type="module" module-name="aeFunWidgetToolKit" exported="" />
     <orderEntry type="module" module-name="andEnginePhysicsBox2DExtension" exported="" />
     <orderEntry type="module" module-name="andEngine" exported="" />
     <orderEntry type="module" module-name="dog" exported="" />
-    <orderEntry type="module" module-name="aeFunInterfaces" exported="" />
-    <orderEntry type="module" module-name="interfacesProtected" exported="" />
     <orderEntry type="module" module-name="aeFunSceneManagement" exported="" />
+    <orderEntry type="module" module-name="interfacesProtected" exported="" />
   </component>
 </module>
 

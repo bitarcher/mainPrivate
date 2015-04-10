@@ -27,9 +27,10 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //compile 'com.android.support:appcompat-v7:21.0.3'
-    compile project(':aeFunInterfaces')
+
     compile project(':interfacesProtected')
     compile project(':andEngine')
-    compile project(':aeFunResourceManagement')
-    compile project(':aeFunDrawablesCharacters')
+    compile project(':aeFun:aeFunInterfaces')
+    compile project(':aeFun:aeFunResourceManagement')
+    compile project(':aeFun:aeFunDrawablesCharacters')
 }

@@ -7,8 +7,6 @@
 package com.bitarcher.abc.tests;
 
 
-import com.bitarcher.abc.MainMenu;
-import com.bitarcher.abc.OptionsLayer;
 import com.bitarcher.aeFun.interfaces.gui.theme.IThemeManager;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ISceneManagerConfigurator;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
