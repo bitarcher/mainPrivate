@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/abcBllXmlRoResources" />
             <option value="$PROJECT_DIR$/aeFun" />
             <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters" />
+            <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesCharactersAnimalsDog" />
             <option value="$PROJECT_DIR$/aeFun/aeFunExamples" />
             <option value="$PROJECT_DIR$/aeFun/aeFunGeometry" />
             <option value="$PROJECT_DIR$/aeFun/aeFunInterfaces" />
@@ -26,7 +27,6 @@
             <option value="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit" />
             <option value="$PROJECT_DIR$/annotations" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/dog" />
             <option value="$PROJECT_DIR$/interfacesProtected" />
             <option value="$PROJECT_DIR$/privateExamples" />
           </set>

@@ -35,8 +35,6 @@ repositories {
     mavenCentral()
 }
 
-
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //compile 'com.android.support:appcompat-v7:21.0.3'
@@ -49,11 +47,11 @@ dependencies {
     compile project(':aeFun:aeFunWidgetLayout')
     compile project(':aeFun:aeFunWidgetToolKit')
     compile project(':aeFun:aeFunSceneManagement')
+    compile project(':aeFun:aeFunDrawablesCharactersAnimalsDog')
     compile project(':interfacesProtected')
     compile project(':abcBllXmlRoResources')
     compile project(':abcBllXmlRoLevels')
     compile project(':abcBllOrm')
-    compile project(':dog')
 }
 
 

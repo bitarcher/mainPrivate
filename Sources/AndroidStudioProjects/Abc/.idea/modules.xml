@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/abcBllXmlRoResources/abcBllXmlRoResources.iml" filepath="$PROJECT_DIR$/abcBllXmlRoResources/abcBllXmlRoResources.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFun/aeFun.iml" filepath="$PROJECT_DIR$/aeFun/aeFun.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/aeFunDrawablesCharacters.iml" filepath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/aeFunDrawablesCharacters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aeFun/aeFunDrawablesCharactersAnimalsDog/aeFunDrawablesCharactersAnimalsDog.iml" filepath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharactersAnimalsDog/aeFunDrawablesCharactersAnimalsDog.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFun/aeFunExamples/aeFunExamples.iml" filepath="$PROJECT_DIR$/aeFun/aeFunExamples/aeFunExamples.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFun/aeFunGeometry/aeFunGeometry.iml" filepath="$PROJECT_DIR$/aeFun/aeFunGeometry/aeFunGeometry.iml" />
       <module fileurl="file://$PROJECT_DIR$/aeFun/aeFunInterfaces/aeFunInterfaces.iml" filepath="$PROJECT_DIR$/aeFun/aeFunInterfaces/aeFunInterfaces.iml" />
@@ -21,7 +22,6 @@
       <module fileurl="file://$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/aeFunWidgetToolKit.iml" filepath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/aeFunWidgetToolKit.iml" />
       <module fileurl="file://$PROJECT_DIR$/annotations/annotations.iml" filepath="$PROJECT_DIR$/annotations/annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dog/dog.iml" filepath="$PROJECT_DIR$/dog/dog.iml" />
       <module fileurl="file://$PROJECT_DIR$/interfacesProtected/interfacesProtected.iml" filepath="$PROJECT_DIR$/interfacesProtected/interfacesProtected.iml" />
       <module fileurl="file://$PROJECT_DIR$/privateExamples/privateExamples.iml" filepath="$PROJECT_DIR$/privateExamples/privateExamples.iml" />
     </modules>

@@ -72,6 +72,13 @@
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-94c4695d81f6dc56aec5faf30cfffcaa4ffd7844.jar" />
     </item>
     <item
+        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunDrawablesCharacters/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9fcfb8945814117ac7f72b78fe8ccbb1066da7b4">
+        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-6493f970c1517aec2ce3408859f5b2afb4f040ac.jar" />
+    </item>
+    <item
         jar="/home/michel/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -86,11 +93,25 @@
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-77c789bdfbf19ba0a6f909187ad691da60b89a84.jar" />
     </item>
     <item
+        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5e0ebba0c531071b2da5881ef31c9b40d1817584">
+        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-88e8e3ee7797afb5c454402ead0238f3d873d6b4.jar" />
+    </item>
+    <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="0e9c9ca5e6184b0c8a47173110e467be46d4eafa">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-dfcae0b1a7ca84a8f459332e31d03f6c60219cdd.jar" />
+    </item>
+    <item
+        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunDrawablesCharactersAnimalsDog/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8573dab385ec878cb320be9e0b8a52456d27fd08">
+        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-393f8b12468072c2163fb4b27869171d6b6d8291.jar" />
     </item>
     <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
@@ -142,11 +163,11 @@
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-234b986e1c1c2a0cf526e15a995a714ac2905fc9.jar" />
     </item>
     <item
-        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/exploded-aar/Abc/dog/unspecified/classes.jar"
+        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/exploded-aar/Abc.aeFun/aeFunDrawablesCharactersAnimalsDog/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="0731b1f3610858db20ef3bc45179b826c5cec7a7">
-        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-d3c3718ece19b60c8362eb1fbfa3717e67e068b0.jar" />
+        sha1="8573dab385ec878cb320be9e0b8a52456d27fd08">
+        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-94454ddfd85bf4e527b399fbfe1c0c895f2b11a8.jar" />
     </item>
     <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/classes.jar"
@@ -156,18 +177,18 @@
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-a4d5458ff30ba0bd79e124b99ab7110a86f58d05.jar" />
     </item>
     <item
-        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4e5c7488d4abed5a9c2938e3b3d17963d9eb5197">
-        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-4929e88c406d23b805d52c5ffc7794c22567abfa.jar" />
-    </item>
-    <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/exploded-aar/Abc.aeFun/aeFunDrawablesCharacters/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="9fcfb8945814117ac7f72b78fe8ccbb1066da7b4">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-7f9efe801ba61c3c342cc135344028fcd5ebde2f.jar" />
+    </item>
+    <item
+        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e5c7488d4abed5a9c2938e3b3d17963d9eb5197">
+        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-4929e88c406d23b805d52c5ffc7794c22567abfa.jar" />
     </item>
     <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar"
