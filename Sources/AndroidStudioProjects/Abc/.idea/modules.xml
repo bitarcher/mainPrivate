@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Abc.iml" filepath="$PROJECT_DIR$/Abc.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndEngine/AndEngine.iml" filepath="$PROJECT_DIR$/AndEngine/AndEngine.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AndEngine/AndEngine.iml" filepath="$PROJECT_DIR$/AndEngine/AndEngine.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndEngineSVGTextureRegionExtension/AndEngineSVGTextureRegionExtension.iml" filepath="$PROJECT_DIR$/AndEngineSVGTextureRegionExtension/AndEngineSVGTextureRegionExtension.iml" />
       <module fileurl="file://$PROJECT_DIR$/abcBllOrm/abcBllOrm.iml" filepath="$PROJECT_DIR$/abcBllOrm/abcBllOrm.iml" />
       <module fileurl="file://$PROJECT_DIR$/abcBllXmlRoLevels/abcBllXmlRoLevels.iml" filepath="$PROJECT_DIR$/abcBllXmlRoLevels/abcBllXmlRoLevels.iml" />
