@@ -40,7 +40,7 @@
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunDrawablesCharacters/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="c1a0a5d7cf9d1b9c619e5cdb9a28ccbe53c88c46">
+        sha1="918083a71b54c0d778e4dc785263d2d0710ef956">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-6493f970c1517aec2ce3408859f5b2afb4f040ac.jar" />
     </item>
     <item
@@ -61,15 +61,8 @@
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunDrawablesCharactersAnimalsDog/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="eb9aaa4c8bf3949b664ce8396a92e3e690711ea0">
+        sha1="3522b83fc9ade56ba4eec49a7b7dcdeea75517ec">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-393f8b12468072c2163fb4b27869171d6b6d8291.jar" />
-    </item>
-    <item
-        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-5dc4f6071776729d4bfa99d6f7cf66b9f2d5aee2.jar" />
     </item>
     <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
@@ -77,6 +70,13 @@
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b0414e69a69b10254c1703fbdedfa1fa31764184.jar" />
+    </item>
+    <item
+        jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-5dc4f6071776729d4bfa99d6f7cf66b9f2d5aee2.jar" />
     </item>
     <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunSceneManagement/unspecified/classes.jar"
