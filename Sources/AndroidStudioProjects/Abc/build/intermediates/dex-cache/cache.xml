@@ -5,7 +5,7 @@
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc/AndEngine/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="46740274537e742927dcff4e37acc7876f8e0010">
+        sha1="b78532b9364aa5e602f64afb97e816fd2b42bc29">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-a7fe5a712fb76495dbb0f80f6f99c603a5c8b14a.jar" />
     </item>
     <item
@@ -19,14 +19,14 @@
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="338c4a5e19907001c7837f2082b9621b55c02f94">
+        sha1="380abbec55963c72d0f736fb5d26866eb725f29a">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-7f29bf3aca8b8d925020ca2963075d3c2be4f949.jar" />
     </item>
     <item
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="cbf7cb91254ecbc2af94ddc91118354875e95e59">
+        sha1="03e22632d3340e050b396c9ea97938b9b9c85772">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-5939d4c476d993440b9071505e1866a6122aa4d6.jar" />
     </item>
     <item
@@ -61,7 +61,7 @@
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunDrawablesAnimatedMeshed/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="f212286433af21f31e91b76589375379beec9e34">
+        sha1="d8d9c44bc07a8ad2cfd091034a5771b81e108cb2">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-80e18ccfc2e406fcb53590086fee578f66c77186.jar" />
     </item>
     <item
