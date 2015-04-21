@@ -26,16 +26,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00ac2b8f-538e-4760-966c-1e3225e10f85" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/copyright/bitarcher.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/dictionaries/michel.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/gradle.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/libraries/annotations_12_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/libraries/appcompat_v7_21_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/libraries/ormlite_android_4_48.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/libraries/ormlite_core_4_48.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/libraries/support_annotations_21_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/libraries/support_v4_21_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/scopes/ClassScope_bitarcher.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.ideaOld/workspaceOld.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/BezierFilledEllipsoidHelper.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndEngine" afterPath="$PROJECT_DIR$/AndEngine" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun" afterPath="$PROJECT_DIR$/aeFun" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andEnginesExamples" afterPath="$PROJECT_DIR$/andEnginesExamples" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllOrm/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllOrm/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" />
@@ -52,18 +65,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllOrm/unspecified/classes.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllOrm/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/classes.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/classes.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfacesProtected/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/interfacesProtected/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andEnginesExamples/AndroidManifest.xml" afterPath="$PROJECT_DIR$/andEnginesExamples/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/BezierEllipsoid.java" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/BezierEllipsoid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/BezierFilledEllipsoid.java" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/BezierFilledEllipsoid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/abcBllOrm.iml" afterPath="$PROJECT_DIR$/abcBllOrm/abcBllOrm.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/abcBllXmlRoLevels.iml" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/abcBllXmlRoLevels.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/abcBllXmlRoResources.iml" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/abcBllXmlRoResources.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/aeFunDrawablesAnimatedMeshed.iml" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/aeFunDrawablesAnimatedMeshed.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/aeFunDrawablesCharacters.iml" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/aeFunDrawablesCharacters.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharactersAnimalsDog/aeFunDrawablesCharactersAnimalsDog.iml" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharactersAnimalsDog/aeFunDrawablesCharactersAnimalsDog.iml" />
@@ -76,15 +80,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/aeFunSceneManagement.iml" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/aeFunSceneManagement.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/aeFunWidgetLayout.iml" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/aeFunWidgetLayout.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/aeFunWidgetToolKit.iml" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/aeFunWidgetToolKit.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/tmp/dex/debug/inputList.txt" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/tmp/dex/debug/inputList.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfacesProtected/interfacesProtected.iml" afterPath="$PROJECT_DIR$/interfacesProtected/interfacesProtected.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privateExamples/privateExamples.iml" afterPath="$PROJECT_DIR$/privateExamples/privateExamples.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Abc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -11875,7 +11871,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1600" height="873" extended-state="0" />
+    <frame x="0" y="27" width="1600" height="873" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
