@@ -26,33 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00ac2b8f-538e-4760-966c-1e3225e10f85" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/OneColumnMeshedTexturedRectangle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/helpers/TexturedMeshHelper.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/BezierTexturedEllipsoid.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/TexturedWindElasticTree.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndEngine" afterPath="$PROJECT_DIR$/AndEngine" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun" afterPath="$PROJECT_DIR$/aeFun" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andEnginesExamples" afterPath="$PROJECT_DIR$/andEnginesExamples" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfacesProtected/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/interfacesProtected/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andEnginesExamples/AndroidManifest.xml" afterPath="$PROJECT_DIR$/andEnginesExamples/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/Tools/CompositeMeshesBase.java" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/Tools/CompositeMeshesBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/nazgees/HighPerformanceTexturedMeshVertexBufferObject.java" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/nazgees/HighPerformanceTexturedMeshVertexBufferObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/geometry/pointsTransformation/IPipeline.java" afterPath="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/geometry/pointsTransformation/IPipeline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/helpers/OneColumnMeshedRectangleHelper.java" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/helpers/OneColumnMeshedRectangleHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/pointsTransformation/Pipeline.java" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/pointsTransformation/Pipeline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/java/com/bitarcher/aeFun/drawables/cliparts/ResourceInfosSingleton.java" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/java/com/bitarcher/aeFun/drawables/cliparts/ResourceInfosSingleton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/java/com/bitarcher/aeFun/drawables/cliparts/NatureF/Trees.java" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/java/com/bitarcher/aeFun/drawables/cliparts/NatureF/Trees.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Abc.iws" />
@@ -111,14 +88,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WindElasticTreeScene.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WindElasticTreeScene.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53846157" vertical-offset="0" max-vertical-offset="1500">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
               <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
               <folding>
                 <element signature="e#3747#3748#0" expanded="true" />
                 <element signature="e#3785#3786#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WindElasticTree2.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.03846154" vertical-offset="375" max-vertical-offset="2190">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding>
+                <element signature="e#1415#1416#0" expanded="true" />
+                <element signature="e#1448#1449#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,16 +131,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="6585" max-vertical-offset="12900">
               <caret line="535" column="13" selection-start-line="535" selection-start-column="13" selection-end-line="535" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TexturedMeshHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/helpers/TexturedMeshHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -11500,7 +11480,6 @@
         <option value="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/helpers/MeshedRectangleHelper.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/helpers/OneRowMeshedRectangleHelper.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/BezierTexturedEllipsoid.java" />
-        <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/java/com/bitarcher/aeFun/drawables/cliparts/ResourceInfosSingleton.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/geometry/pointsTransformation/IPipeline.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/pointsTransformation/Pipeline.java" />
@@ -11513,6 +11492,7 @@
         <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/TexturedWindElasticTree.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/java/com/bitarcher/aeFun/drawables/cliparts/NatureF/Trees.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java" />
+        <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java" />
       </list>
     </option>
   </component>
@@ -12408,19 +12388,19 @@
       <recent name="com.bitarcher.aeFun.examples" />
       <recent name="com.bitarcher.resourcemanagement" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.bitarcher.aeFunExamples" />
-      <recent name="com.bitarcher.aeFunExamplesShowRoom" />
-      <recent name="com.bitarcher.aeFun.drawables.characters" />
-      <recent name="com.bitarcher.dog" />
-      <recent name="com.bitarcher.aeFun.sceneManagement" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/aeFun/sunflower/src/main" />
       <recent name="$PROJECT_DIR$/aeFun" />
       <recent name="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/src/main/assets/gfx" />
       <recent name="$PROJECT_DIR$/aeFunExamples/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/assets" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.bitarcher.aeFunExamples" />
+      <recent name="com.bitarcher.aeFunExamplesShowRoom" />
+      <recent name="com.bitarcher.aeFun.drawables.characters" />
+      <recent name="com.bitarcher.dog" />
+      <recent name="com.bitarcher.aeFun.sceneManagement" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.aeFunExamples">
@@ -13248,11 +13228,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53846157" vertical-offset="0" max-vertical-offset="1500">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
           <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
           <folding>
             <element signature="e#3747#3748#0" expanded="true" />
             <element signature="e#3785#3786#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03846154" vertical-offset="375" max-vertical-offset="2190">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#1415#1416#0" expanded="true" />
+            <element signature="e#1448#1449#0" expanded="true" />
           </folding>
         </state>
       </provider>
