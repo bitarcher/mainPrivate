@@ -6,4 +6,4 @@ include ':app', ':AndEngine', ':AndEngineSVGTextureRegionExtension',
         ':aeFun:aeFunResourceManagementSvgEnhanced',
         ':aeFun:aeFunDrawablesCharacters', ':aeFun:aeFunDrawablesCharactersAnimalsDog',
         ':aeFun:aeFunDrawablesAnimatedMeshed',
-        ':aeFun:aeFunDrawablesCliparts'
+        ':aeFun:aeFunDrawablesCliparts', ':aeFun:aeFunColors'
