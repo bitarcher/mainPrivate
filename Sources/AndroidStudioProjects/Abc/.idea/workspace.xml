@@ -26,31 +26,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00ac2b8f-538e-4760-966c-1e3225e10f85" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/src/main/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/src/androidTest/java/com/bitarcher/aeFun/colors/ApplicationTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/aeFunColors.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/proguard-rules.pro" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/src/main/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/ColorSpaces.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/GradientMaker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/HSB.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IColorSpaces.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IGradientMaker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IHSB.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/annotations_12_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_21_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/ormlite_android_4_48.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/ormlite_core_4_48.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_21_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_3.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndEngine" afterPath="$PROJECT_DIR$/AndEngine" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun" afterPath="$PROJECT_DIR$/aeFun" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andEnginesExamples" afterPath="$PROJECT_DIR$/andEnginesExamples" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllOrm/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfacesProtected/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/interfacesProtected/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andEnginesExamples/AndroidManifest.xml" afterPath="$PROJECT_DIR$/andEnginesExamples/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/aeFunDrawablesAnimatedMeshed.iml" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/aeFunDrawablesAnimatedMeshed.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_21_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_21_0_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/build.gradle" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunColors/aeFunColors.iml" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/aeFunColors.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunColors/build.gradle" afterPath="$PROJECT_DIR$/aeFun/aeFunColors/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/tmp/dex/debug/inputList.txt" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/tmp/dex/debug/inputList.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_3.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Abc.iws" />
@@ -79,61 +86,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TexturedWindElasticTree.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/TexturedWindElasticTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="1680">
-              <caret line="69" column="81" selection-start-line="69" selection-start-column="81" selection-end-line="69" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Trees.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/java/com/bitarcher/aeFun/drawables/cliparts/NatureF/Trees.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="990">
-              <caret line="46" column="200" selection-start-line="46" selection-start-column="200" selection-end-line="46" selection-end-column="200" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WindElasticTree1.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="2430">
-              <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WindElasticTreeScene.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1530">
-              <caret line="87" column="49" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LICENSE.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aeFun/aeFunColors/LICENSE.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2565">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.6" vertical-offset="0" max-vertical-offset="615">
-              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="615">
+              <caret line="30" column="45" selection-start-line="29" selection-start-column="4" selection-end-line="30" selection-end-column="45" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -141,11 +98,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.gradle" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aeFun/aeFunColors/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33498758" vertical-offset="0" max-vertical-offset="403">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.52" vertical-offset="137" max-vertical-offset="570">
+              <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WindElasticTreeScene.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5769231" vertical-offset="1005" max-vertical-offset="1530">
+              <caret line="97" column="102" selection-start-line="97" selection-start-column="102" selection-end-line="97" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -154,28 +123,89 @@
       <file leaf-file-name="WindElasticTree2.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1950" max-vertical-offset="2820">
-              <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1725" max-vertical-offset="2910">
+              <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompositeMeshesBase.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/Tools/CompositeMeshesBase.java">
+      <file leaf-file-name="HSB.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/HSB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4650" max-vertical-offset="5040">
-              <caret line="355" column="19" selection-start-line="355" selection-start-column="19" selection-end-line="355" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="855">
+              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+              <folding>
+                <element signature="e#319#320#0" expanded="true" />
+                <element signature="e#345#346#0" expanded="true" />
+                <element signature="e#382#383#0" expanded="true" />
+                <element signature="e#412#413#0" expanded="true" />
+                <element signature="e#448#449#0" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+                <element signature="e#532#533#0" expanded="true" />
+                <element signature="e#576#577#0" expanded="true" />
+                <element signature="e#612#613#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
+                <element signature="e#696#697#0" expanded="true" />
+                <element signature="e#740#741#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IHSB.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IHSB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OneColumnMeshedTexturedRectangle.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/primitives/OneColumnMeshedTexturedRectangle.java">
+      <file leaf-file-name="ColorSpaces.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/ColorSpaces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="202" max-vertical-offset="960">
-              <caret line="28" column="3" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1800">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IGradientMaker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IGradientMaker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+              <caret line="16" column="24" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GradientMaker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/GradientMaker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="765">
+              <caret line="36" column="90" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#383#384#0" expanded="true" />
+                <element signature="e#416#417#0" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IColorSpaces.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IColorSpaces.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -189,7 +219,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/aeFun" />
   </component>
   <component name="GradleLocalSettings">
     <option name="tasksExpandState">
@@ -3157,16 +3187,6 @@
                 <option name="name" value="dexDebugTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Extracts Android annotations for the debug variant into the archive file" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/aeFun/aeFunColors" />
-                <option name="name" value="extractDebugAnnotations" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Extracts Android annotations for the release variant into the archive file" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/aeFun/aeFunColors" />
-                <option name="name" value="extractReleaseAnnotations" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/aeFun/aeFunColors" />
                 <option name="name" value="generateDebugAssets" />
               </ExternalTaskPojo>
@@ -3343,14 +3363,19 @@
                 <option name="name" value="preReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:appcompat-v7:21.0.3" />
+                <option name="description" value="Prepare Abc.aeFun:aeFunInterfaces:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/aeFun/aeFunColors" />
-                <option name="name" value="prepareComAndroidSupportAppcompatV72103Library" />
+                <option name="name" value="prepareAbcAeFunAeFunInterfacesUnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:support-v4:21.0.3" />
+                <option name="description" value="Prepare Abc:AndEngineSVGTextureRegionExtension:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/aeFun/aeFunColors" />
-                <option name="name" value="prepareComAndroidSupportSupportV42103Library" />
+                <option name="name" value="prepareAbcAndEngineSVGTextureRegionExtensionUnspecifiedLibrary" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare Abc:AndEngine:unspecified" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/aeFun/aeFunColors" />
+                <option name="name" value="prepareAbcAndEngineUnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/aeFun/aeFunColors" />
@@ -10454,7 +10479,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="35722672943210" />
+        <entry key="$PROJECT_DIR$" value="35722676513518" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -11060,9 +11085,6 @@
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.4/commons-codec-1.4-sources.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.4/commons-codec-1.4.jar" />
-                            <option value="$USER_HOME$/android-sdk-linux/extras/android/m2repository/com/android/support/appcompat-v7/21.0.3/appcompat-v7-21.0.3.aar" />
-                            <option value="$USER_HOME$/android-sdk-linux/extras/android/m2repository/com/android/support/support-v4/21.0.3/support-v4-21.0.3.aar" />
-                            <option value="$USER_HOME$/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar" />
                           </list>
                         </option>
                         <option name="path" value="$PROJECT_DIR$/aeFun/aeFunColors" />
@@ -12479,13 +12501,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/drawables/animatedMeshed/IWindStrength.java" />
-        <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/Tools/WindElasticCompositeMeshes.java" />
-        <option value="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/geometry/IPoint.java" />
-        <option value="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/Point.java" />
-        <option value="$PROJECT_DIR$/AndEngine/src/org/andengine/entity/Entity.java" />
-        <option value="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/geometry/IVector.java" />
-        <option value="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/Vector.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunGeometry/src/main/java/com/bitarcher/aeFun/geometry/pointsTransformation/RotationFunction.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/Tools/WindMillPales.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/java/com/bitarcher/aeFun/drawables/cliparts/Architecture.java" />
@@ -12526,10 +12541,17 @@
         <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/TexturedWindElasticTree.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/java/com/bitarcher/aeFun/drawables/cliparts/NatureF/Trees.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/Tools/CompositeMeshesBase.java" />
-        <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java" />
-        <option value="$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java" />
         <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/build.gradle" />
         <option value="$PROJECT_DIR$/settings.gradle" />
+        <option value="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IHSB.java" />
+        <option value="$PROJECT_DIR$/aeFun/aeFunColors/build.gradle" />
+        <option value="$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/HSB.java" />
+        <option value="$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/ColorSpaces.java" />
+        <option value="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IColorSpaces.java" />
+        <option value="$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IGradientMaker.java" />
+        <option value="$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java" />
+        <option value="$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/GradientMaker.java" />
+        <option value="$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java" />
       </list>
     </option>
   </component>
@@ -12643,6 +12665,144 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="aeFunInterfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFunInterfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFunInterfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFunInterfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFunInterfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="aeFunDrawablesAnimatedMeshed" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -12662,6 +12822,88 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="aeFunColors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFunColors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFunColors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aeFunColors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -13037,7 +13279,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39473686" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44672656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32365146" sideWeight="0.6805913" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -13200,45 +13442,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/assets/architecture/medieval/door/wood_door_0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/geometry/ISize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3346856" vertical-offset="0" max-vertical-offset="493">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindMillScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1410">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/assets/architecture/medieval/door/wood_door_2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/assets/architecture/medieval/wall/stone.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/assets/architecture/medieval/wall/timbered0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesCliparts/src/main/assets/architecture/medieval/wall/timbered1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aeFun/aeFunResourceManagement/src/main/java/com/bitarcher/aeFun/resourceManagement/ResourcesInfos/TexturesSetFromAssetResourceInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="390">
@@ -13518,22 +13721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1950" max-vertical-offset="2820">
-          <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1530">
-          <caret line="87" column="49" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aeFun/aeFunColors/LICENSE.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2565">
@@ -13542,20 +13729,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/build.gradle">
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.6" vertical-offset="0" max-vertical-offset="615">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IHSB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunColors/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.52" vertical-offset="137" max-vertical-offset="570">
+          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IColorSpaces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33498758" vertical-offset="0" max-vertical-offset="403">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/HSB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="855">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/ColorSpaces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1800">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunInterfaces/src/main/java/com/bitarcher/aeFun/interfaces/colors/IGradientMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <caret line="16" column="24" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="615">
+          <caret line="30" column="45" selection-start-line="29" selection-start-column="4" selection-end-line="30" selection-end-column="45" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/WindElasticTree2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1725" max-vertical-offset="2910">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunColors/src/main/java/com/bitarcher/aeFun/colors/GradientMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="765">
+          <caret line="36" column="90" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunExamples/src/main/java/com/bitarcher/aeFun/examples/WindElasticTreeScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5769231" vertical-offset="1005" max-vertical-offset="1530">
+          <caret line="97" column="102" selection-start-line="97" selection-start-column="102" selection-end-line="97" selection-end-column="102" />
           <folding />
         </state>
       </provider>
