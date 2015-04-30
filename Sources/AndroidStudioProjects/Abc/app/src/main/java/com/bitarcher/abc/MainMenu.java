@@ -1,6 +1,7 @@
 package com.bitarcher.abc;
 
 
+import com.bitarcher.aeFun.drawables.animatedMeshed.nature.clouds.CloudSprite;
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
@@ -103,7 +104,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         final MainMenu mainMenu = this;
 
 		for(Sprite curCloudSprite: cloudSprites){
-			curCloudSprite = new CloudSprite(this, cloudTextureRegion);
+			curCloudSprite = new CloudSprite(this.getWidth(), this.getScaleX(), this.getHeight(), this.getScaleY(), this.getSceneManager().getResourceManager(), cloudTextureRegion);
 
 			this.attachChild(curCloudSprite);
 		}
