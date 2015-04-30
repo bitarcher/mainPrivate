@@ -1,6 +1,10 @@
 package com.bitarcher.abc;
 
 
+import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+
+import com.bitarcher.abc.SelectPlayer.ChoosePlayerMenu;
 import com.bitarcher.aeFun.drawables.animatedMeshed.nature.clouds.CloudSprite;
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
@@ -21,14 +25,21 @@ import org.andengine.entity.text.Text;
 import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 import org.andengine.opengl.texture.region.ITextureRegion;
 
-public class MainMenu extends ManagedMenuScene implements IMainMenu{
+import java.util.HashMap;
+import java.util.Locale;
 
+public class MainMenu extends ManagedMenuScene implements IMainMenu, TextToSpeech.OnInitListener{
+
+    TextToSpeech ttsEngine;
     BitmapTexturesSetFromAssetResourceInfo bitmapTexturesSetFromAssetResourceInfo;
     MusicResourceInfo musicResourceInfo;
 
 
 	public MainMenu(ITSceneManager sceneManager) {
         super(sceneManager);
+
+        this.ttsEngine = new TextToSpeech(sceneManager.getResourceManager().getContext(), this);
+
 		this.setOnSceneTouchListenerBindingOnActionDownEnabled(true);
 		this.setTouchAreaBindingOnActionDownEnabled(true);
 		this.setTouchAreaBindingOnActionMoveEnabled(true);
@@ -104,7 +115,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         final MainMenu mainMenu = this;
 
 		for(Sprite curCloudSprite: cloudSprites){
-			curCloudSprite = new CloudSprite(this.getWidth(), this.getScaleX(), this.getHeight(), this.getScaleY(), this.getSceneManager().getResourceManager(), cloudTextureRegion);
+			curCloudSprite = new CloudSprite(this, this.getSceneManager().getResourceManager(), cloudTextureRegion);
 
 			this.attachChild(curCloudSprite);
 		}
@@ -125,7 +136,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         this.playButton.addButtonListener(new IButtonListener() {
             @Override
             public void onClicked(IButton button) {
-                getSceneManager().showScene(new GameLevel(getSceneManager()));
+                getSceneManager().showScene(new ChoosePlayerMenu(getSceneManager()));
             }
         });
 
@@ -149,6 +160,8 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 		titleText.setPosition((this.getSceneManager().getResourceManager().getCameraWidth()) / 2, (this.getSceneManager().getResourceManager().getCameraHeight() * 2) / 3f);
 		titleText.setColor(0.153f, 0.290f, 0.455f);
 		this.attachChild(titleText);
+
+
 
 
     }
@@ -175,5 +188,22 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
     public void onUnloadScene() {
         this.mChildren.clear();
         this.popRequirements();
+    }
+
+    public void speak(String text)
+    {
+        this.speak(text, TextToSpeech.QUEUE_FLUSH);
+    }
+
+    public void speak(String text, int queueMode)
+    {
+        this.ttsEngine.speak(text, queueMode, new HashMap<String, String>());
+    }
+
+    @Override
+    public void onInit(int status) {
+
+        this.ttsEngine.setLanguage(Locale.FRENCH);
+        this.speak("Salut, mon ami! Appuie sur le bouton devant la maison pour commencer à jouer.");
     }
 }
