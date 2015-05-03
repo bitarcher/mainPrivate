@@ -53,6 +53,7 @@ dependencies {
     compile project(':abcBllXmlRoResources')
     compile project(':abcBllXmlRoLevels')
     compile project(':abcBllOrm')
+    compile project(':speaker')
 }
 
 

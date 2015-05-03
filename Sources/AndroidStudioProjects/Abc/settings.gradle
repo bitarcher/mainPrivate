@@ -1,4 +1,4 @@
-include ':app', ':AndEngine', ':AndEngineSVGTextureRegionExtension',
+include ':app', ':AndEngine', ':AndEngineSVGTextureRegionExtension', ':speaker',
         ':interfacesProtected', ':annotations', ':abcBllXmlRoResources', ':abcBllXmlRoLevels',
         ':abcBllOrm', ':privateExamples',
         ':aeFun:aeFunExamples', ':aeFun:aeFunGeometry', ':aeFun:aeFunSceneManagement', ':aeFun:aeFunInterfaces',

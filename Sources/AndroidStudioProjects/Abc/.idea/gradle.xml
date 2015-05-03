@@ -32,6 +32,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/interfacesProtected" />
             <option value="$PROJECT_DIR$/privateExamples" />
+            <option value="$PROJECT_DIR$/speaker" />
           </set>
         </option>
       </GradleProjectSettings>

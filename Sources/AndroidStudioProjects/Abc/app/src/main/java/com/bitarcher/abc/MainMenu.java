@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 
 import com.bitarcher.abc.SelectPlayer.ChoosePlayerMenu;
+import com.bitarcher.abcbllorm.BLL.Player;
+import com.bitarcher.abcbllorm.DAL.DatabaseHelper;
 import com.bitarcher.aeFun.drawables.animatedMeshed.nature.clouds.CloudSprite;
 import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
 import com.bitarcher.aeFun.interfaces.gui.theme.EnumFontSize;
@@ -18,6 +20,11 @@ import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBi
 
 import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
+import com.bitarcher.interfaces.speaker.ISpeaker;
+import com.bitarcher.speaker.AlternativeSpeeches;
+import com.bitarcher.speaker.Speaker;
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.j256.ormlite.dao.Dao;
 
 import org.andengine.audio.music.Music;
 import org.andengine.entity.sprite.Sprite;
@@ -25,20 +32,23 @@ import org.andengine.entity.text.Text;
 import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 import org.andengine.opengl.texture.region.ITextureRegion;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class MainMenu extends ManagedMenuScene implements IMainMenu, TextToSpeech.OnInitListener{
+public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
-    TextToSpeech ttsEngine;
+    MainActivity mainActivity;
+    ISpeaker speaker;
     BitmapTexturesSetFromAssetResourceInfo bitmapTexturesSetFromAssetResourceInfo;
     MusicResourceInfo musicResourceInfo;
 
 
-	public MainMenu(ITSceneManager sceneManager) {
+	public MainMenu(MainActivity mainActivity, ITSceneManager sceneManager) {
         super(sceneManager);
 
-        this.ttsEngine = new TextToSpeech(sceneManager.getResourceManager().getContext(), this);
+
+        this.mainActivity = mainActivity;
 
 		this.setOnSceneTouchListenerBindingOnActionDownEnabled(true);
 		this.setTouchAreaBindingOnActionDownEnabled(true);
@@ -52,6 +62,26 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu, TextToSpeec
 
 
         this.musicResourceInfo = new MusicResourceInfo("tryad_listen", "audio/tryad_listen.ogg");
+
+        AlternativeSpeeches alternativeSpeeches = new AlternativeSpeeches();
+        alternativeSpeeches.addAlternativeSpeech("Salut mon ami !");
+
+        try {
+            Dao<Player, Integer> dao = this.getDatabaseHelper().getDao(Player.class);
+
+            int num = (int)dao.countOf();
+
+            if(num > 0)
+            {
+                alternativeSpeeches.addAlternativeSpeech("Tu es de retour, tu m'a manqué !");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        alternativeSpeeches.addAlternativeSpeech("Salut, on va jouer ?");
+        this.speaker = new Speaker(sceneManager.getResourceManager().getContext(), Locale.FRENCH, alternativeSpeeches);
 	}
 
     void pushRequirements()
@@ -190,20 +220,14 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu, TextToSpeec
         this.popRequirements();
     }
 
-    public void speak(String text)
+    public ISpeaker getSpeaker()
     {
-        this.speak(text, TextToSpeech.QUEUE_FLUSH);
+        return  this.speaker;
     }
 
-    public void speak(String text, int queueMode)
+
+    public DatabaseHelper getDatabaseHelper()
     {
-        this.ttsEngine.speak(text, queueMode, new HashMap<String, String>());
-    }
-
-    @Override
-    public void onInit(int status) {
-
-        this.ttsEngine.setLanguage(Locale.FRENCH);
-        this.speak("Salut, mon ami! Appuie sur le bouton devant la maison pour commencer à jouer.");
+        return this.mainActivity.getDatabaseHelper();
     }
 }

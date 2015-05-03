@@ -13,6 +13,7 @@ import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.MusicResourceInfo;
 import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
+import com.bitarcher.speaker.AlternativeSpeeches;
 
 import org.andengine.audio.music.Music;
 import org.andengine.entity.sprite.Sprite;
@@ -140,7 +141,10 @@ public class ChooseAvatarMenu extends AbcManagedMenuScene implements IResourceIn
         titleText.setColor(0.153f, 0.290f, 0.455f);
         this.attachChild(titleText);
 
-        this.getMainMenu().speak("Choisis ton animal préféré");
+        AlternativeSpeeches alternativeSpeeches = new AlternativeSpeeches();
+        alternativeSpeeches.addAlternativeSpeech("Choisis ton animal préféré");
+        alternativeSpeeches.addAlternativeSpeech("Choisis l'animal qui doit te représenter");
+        this.getMainMenu().getSpeaker().say(alternativeSpeeches);
 
     }
 

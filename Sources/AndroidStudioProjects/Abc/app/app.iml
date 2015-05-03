@@ -94,16 +94,17 @@
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="module" module-name="abcBllOrm" exported="" />
     <orderEntry type="module" module-name="abcBllXmlRoLevels" exported="" />
-    <orderEntry type="module" module-name="aeFunInterfaces" exported="" />
     <orderEntry type="module" module-name="aeFunResourceManagement" exported="" />
     <orderEntry type="module" module-name="AndEngine" exported="" />
-    <orderEntry type="module" module-name="aeFunDrawablesCharactersAnimalsDog" exported="" />
-    <orderEntry type="module" module-name="aeFunWidgetLayout" exported="" />
-    <orderEntry type="module" module-name="abcBllXmlRoResources" exported="" />
     <orderEntry type="module" module-name="aeFunWidgetToolKit" exported="" />
     <orderEntry type="module" module-name="AndEngineSVGTextureRegionExtension" exported="" />
     <orderEntry type="module" module-name="aeFunSceneManagement" exported="" />
-    <orderEntry type="module" module-name="aeFunDrawablesAnimatedMeshed" exported="" />
     <orderEntry type="module" module-name="interfacesProtected" exported="" />
+    <orderEntry type="module" module-name="speaker" exported="" />
+    <orderEntry type="module" module-name="aeFunInterfaces" exported="" />
+    <orderEntry type="module" module-name="aeFunWidgetLayout" exported="" />
+    <orderEntry type="module" module-name="aeFunDrawablesCharactersAnimalsDog" exported="" />
+    <orderEntry type="module" module-name="abcBllXmlRoResources" exported="" />
+    <orderEntry type="module" module-name="aeFunDrawablesAnimatedMeshed" exported="" />
   </component>
 </module>

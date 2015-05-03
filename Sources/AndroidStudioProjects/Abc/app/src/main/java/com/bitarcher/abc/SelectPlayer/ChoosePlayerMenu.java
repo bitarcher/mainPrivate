@@ -16,6 +16,7 @@ import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBi
 import com.bitarcher.aeFun.sceneManagement.ManagedMenuScene;
 import com.bitarcher.aeFun.widgetToolkit.widget.Table;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
+import com.bitarcher.speaker.AlternativeSpeeches;
 
 import org.andengine.audio.music.Music;
 import org.andengine.entity.sprite.Sprite;
@@ -132,7 +133,10 @@ public class ChoosePlayerMenu extends AbcManagedMenuScene {
         titleText.setColor(0.153f, 0.290f, 0.455f);
         this.attachChild(titleText);
 
-        this.getMainMenu().speak("Choisis ton joueur ou appuie sur le bouton en bas à droite pour en créer un nouveau");
+        AlternativeSpeeches alternativeSpeeches = new AlternativeSpeeches();
+        alternativeSpeeches.addAlternativeSpeech("Choisis ton joueur ou appuie sur le bouton en bas à droite pour en créer un nouveau");
+        alternativeSpeeches.addAlternativeSpeech("Appuie sur ton animal préféré ou bien appuie sur le bouton en bas à droite s'il n'est pas là");
+        this.getMainMenu().getSpeaker().say(alternativeSpeeches);
 
     }
 

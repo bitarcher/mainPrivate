@@ -31,6 +31,8 @@ public class MainActivity extends SceneManagedActivity<ResourceManager, DefaultT
 
     @Override
     protected ISceneManagerConfigurator<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> getSceneManagerConfigurator() {
+        final MainActivity mainActivity = this;
+
         return new ISceneManagerConfigurator<ResourceManager, DefaultTheme, MainMenu, OptionsLayer>() {
             @Override
             public ResourceManager getNewResourceManager() {
@@ -44,7 +46,7 @@ public class MainActivity extends SceneManagedActivity<ResourceManager, DefaultT
 
             @Override
             public MainMenu getNewMainMenu(ITSceneManager<ResourceManager, DefaultTheme, MainMenu, OptionsLayer> sceneManager, DefaultTheme theme, ResourceManager resourceManager) {
-                return new MainMenu(sceneManager);
+                return new MainMenu(mainActivity, sceneManager);
             }
 
             @Override
