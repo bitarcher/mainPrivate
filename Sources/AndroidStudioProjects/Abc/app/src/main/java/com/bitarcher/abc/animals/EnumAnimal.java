@@ -24,7 +24,6 @@ public enum EnumAnimal {
     coccinelle,
     cochon,
     crocodile,
-    dauphin,
     dromadaire,
     ecureuil,
     elan,

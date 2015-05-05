@@ -61,9 +61,6 @@ public class ResIdAndAspectRatioTupleFactory implements ITFactory<ResIdAndAspect
             case crocodile:
                 retval = new ResIdAndAspectRatioTuple(R.drawable.svg_animal_crocodile, 240f/569f);
                 break;
-            case dauphin:
-                retval = new ResIdAndAspectRatioTuple(R.drawable.svg_animal_dauphin, 240f/192f);
-                break;
             case dromadaire:
                 retval = new ResIdAndAspectRatioTuple(R.drawable.svg_animal_dromadaire, 240f/202f);
                 break;

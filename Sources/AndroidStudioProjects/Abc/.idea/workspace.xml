@@ -26,52 +26,235 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00ac2b8f-538e-4760-966c-1e3225e10f85" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/speaker/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/speaker/src/main/java/com/bitarcher/speaker/AlternativeSpeeches.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/speaker/src/main/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/speaker/src/androidTest/java/com/bitarcher/speaker/ApplicationTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interfacesProtected/src/main/java/com/bitarcher/interfaces/speaker/IAlternativeSpeeches.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interfacesProtected/src/main/java/com/bitarcher/interfaces/speaker/ISpeaker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/speaker/src/main/java/com/bitarcher/speaker/Speaker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/speaker/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/speaker/proguard-rules.pro" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/speaker/speaker.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/speaker/src/main/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarImageButton.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerImageButton.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosersAbstractMenu.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/AndEngine/build/intermediates/manifests/tmp/manifestMerger4151256607386249477.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/tests/TextButtonActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/tests/TextButtonActivityBackup.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$anim.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$bool.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$color.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$dimen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$integer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$style.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/android/support/v7/appcompat/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/BannerCtrl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/CheckAndRadioButtonScene$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/CheckAndRadioButtonScene.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/MainActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/MainActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/MainMenu$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/MainMenu$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/MainMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/OptionsLayer$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/OptionsLayer$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/OptionsLayer$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/OptionsLayer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/PrimitivesScene.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$anim.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$bool.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$color.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$dimen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$integer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$menu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$mipmap.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$style.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R$xml.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/ResourceInfosSingleton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/WidgetGalleryMenu$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/examples/WidgetGalleryMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/interfaces/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/interfaces/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFun/interfaces/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFunGeometry/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFunGeometry/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aeFunGeometry/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aefun/widgetLayout/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aefun/widgetLayout/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/aefun/widgetLayout/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/resourcemanagement/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/resourcemanagement/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/resourcemanagement/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/scenemanagement/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/scenemanagement/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/scenemanagement/R$xml.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/scenemanagement/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/widgettoolkit/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/widgettoolkit/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/widgettoolkit/R$xml.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/classes/debug/com/bitarcher/widgettoolkit/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/dex/debug/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/annotations-12.0-1055e2592d1b04e27229c36c224efb595d918bde.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-234b986e1c1c2a0cf526e15a995a714ac2905fc9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-54e2377820bdf6469bd7a18a489914909a4ebf6e.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-5939d4c476d993440b9071505e1866a6122aa4d6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-5dc4f6071776729d4bfa99d6f7cf66b9f2d5aee2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-7f29bf3aca8b8d925020ca2963075d3c2be4f949.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-aac792c76de8778ac185ff3cb848a9729065500c.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-d51d6a8519986347ed72ae182528110104e7a0d0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/classes-f832fd81243f89cb883d758572cdbcd0c3e53059.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b0414e69a69b10254c1703fbdedfa1fa31764184.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-11ddfb13c1222cf222dbc16a6df17942bc0cc8c1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/tmp/dex/debug/inputList.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/outputs/apk/aeFunExamples-debug-unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/outputs/apk/aeFunExamples-debug.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllOrm/unspecified/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllOrm/unspecified/R.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllOrm/unspecified/classes.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllOrm/unspecified/res/drawable-hdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllOrm/unspecified/res/drawable-mdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllOrm/unspecified/res/drawable-xhdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllOrm/unspecified/res/drawable-xxhdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllOrm/unspecified/res/values/values.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/R.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/classes.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/res/drawable-hdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/res/drawable-mdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/res/drawable-xhdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/res/drawable-xxhdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoLevels/unspecified/res/values/values.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/R.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/classes.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/res/drawable-hdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/res/drawable-mdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/res/drawable-xhdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/res/drawable-xxhdpi-v4/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/abcBllXmlRoResources/unspecified/res/values/values.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/R.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/res/values/values.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable-hdpi-v4/svg_animal_dauphin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable-mdpi-v4/svg_animal_dauphin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable-xhdpi-v4/svg_animal_dauphin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_dauphin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/svg_animal_dauphin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/svg_animal_dauphin.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndEngine/build/outputs/aar/AndEngine-debug.aar" afterPath="$PROJECT_DIR$/AndEngine/build/outputs/aar/AndEngine-debug.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndEngine/build/outputs/aar/AndEngine-release.aar" afterPath="$PROJECT_DIR$/AndEngine/build/outputs/aar/AndEngine-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndEngine" afterPath="$PROJECT_DIR$/AndEngine" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/build/outputs/aar/abcBllOrm-debug.aar" afterPath="$PROJECT_DIR$/abcBllOrm/build/outputs/aar/abcBllOrm-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/build/outputs/aar/abcBllOrm-release.aar" afterPath="$PROJECT_DIR$/abcBllOrm/build/outputs/aar/abcBllOrm-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/build/outputs/aar/abcBllXmlRoLevels-debug.aar" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/build/outputs/aar/abcBllXmlRoLevels-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/build/outputs/aar/abcBllXmlRoLevels-release.aar" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/build/outputs/aar/abcBllXmlRoLevels-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/build/outputs/aar/abcBllXmlRoResources-debug.aar" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/build/outputs/aar/abcBllXmlRoResources-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/build/outputs/aar/abcBllXmlRoResources-release.aar" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/build/outputs/aar/abcBllXmlRoResources-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/build/outputs/aar/aeFunDrawablesCharacters-debug.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/build/outputs/aar/aeFunDrawablesCharacters-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/build/outputs/aar/aeFunDrawablesCharacters-release.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/build/outputs/aar/aeFunDrawablesCharacters-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/outputs/aar/aeFunGeometry-debug.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/outputs/aar/aeFunGeometry-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/outputs/aar/aeFunGeometry-release.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/outputs/aar/aeFunGeometry-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunInterfaces/build/outputs/aar/aeFunInterfaces-debug.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunInterfaces/build/outputs/aar/aeFunInterfaces-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunInterfaces/build/outputs/aar/aeFunInterfaces-release.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunInterfaces/build/outputs/aar/aeFunInterfaces-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/outputs/aar/aeFunResourceManagement-debug.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/outputs/aar/aeFunResourceManagement-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/outputs/aar/aeFunResourceManagement-release.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/outputs/aar/aeFunResourceManagement-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagementSvgEnhanced/build/outputs/aar/aeFunResourceManagementSvgEnhanced-debug.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagementSvgEnhanced/build/outputs/aar/aeFunResourceManagementSvgEnhanced-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/outputs/aar/aeFunSceneManagement-debug.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/outputs/aar/aeFunSceneManagement-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/outputs/aar/aeFunSceneManagement-release.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/outputs/aar/aeFunSceneManagement-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/outputs/aar/aeFunWidgetLayout-debug.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/outputs/aar/aeFunWidgetLayout-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/outputs/aar/aeFunWidgetLayout-release.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/outputs/aar/aeFunWidgetLayout-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/outputs/aar/aeFunWidgetToolKit-debug.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/outputs/aar/aeFunWidgetToolKit-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/outputs/aar/aeFunWidgetToolKit-release.aar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/outputs/aar/aeFunWidgetToolKit-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun" afterPath="$PROJECT_DIR$/aeFun" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andEnginesExamples" afterPath="$PROJECT_DIR$/andEnginesExamples" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndEngine/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/AndEngine/build/intermediates/bundles/debug/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndEngine/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/AndEngine/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/abcBllOrm/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/abcBllOrm/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllOrm/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllOrm/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/Abc/interfacesProtected/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunSceneManagement/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunSceneManagement/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunWidgetLayout/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunWidgetLayout/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunWidgetToolKit/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/exploded-aar/Abc.aeFun/aeFunWidgetToolKit/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunInterfaces/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunInterfaces/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunInterfaces/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunInterfaces/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagementSvgEnhanced/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagementSvgEnhanced/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunWidgetToolKit/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/exploded-aar/Abc.aeFun/aeFunWidgetToolKit/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunGeometry/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfacesProtected/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/interfacesProtected/build/intermediates/bundles/debug/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfacesProtected/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/interfacesProtected/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfacesProtected/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" afterPath="$PROJECT_DIR$/interfacesProtected/build/intermediates/exploded-aar/Abc.aeFun/aeFunInterfaces/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privateExamples/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/privateExamples/build/intermediates/bundles/debug/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfacesProtected/build/outputs/aar/interfacesProtected-debug.aar" afterPath="$PROJECT_DIR$/interfacesProtected/build/outputs/aar/interfacesProtected-debug.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfacesProtected/build/outputs/aar/interfacesProtected-release.aar" afterPath="$PROJECT_DIR$/interfacesProtected/build/outputs/aar/interfacesProtected-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privateExamples/build/outputs/aar/privateExamples-debug.aar" afterPath="$PROJECT_DIR$/privateExamples/build/outputs/aar/privateExamples-debug.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndEngine/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/AndEngine/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllOrm/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/abcBllOrm/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/abcBllXmlRoLevels/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/abcBllXmlRoResources/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/aeFun/aeFunDrawablesCharacters/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/aeFun/aeFunGeometry/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunInterfaces/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/aeFun/aeFunInterfaces/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagement/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunResourceManagementSvgEnhanced/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/aeFun/aeFunResourceManagementSvgEnhanced/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/aeFun/aeFunSceneManagement/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/aeFun/aeFunWidgetToolKit/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interfacesProtected/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/interfacesProtected/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privateExamples/build/intermediates/res/resources-debug-test.ap_" afterPath="$PROJECT_DIR$/privateExamples/build/intermediates/res/resources-debug-test.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/aeFun/aeFunExamples/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andEnginesExamples/AndroidManifest.xml" afterPath="$PROJECT_DIR$/andEnginesExamples/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarMenu.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerMenu.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/EnumAnimal.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/EnumAnimal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainMenu.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/ResIdAndAspectRatioTupleFactory.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/ResIdAndAspectRatioTupleFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/apk/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResources/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Abc.iws" />
@@ -540,62 +723,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ISpeaker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/interfacesProtected/src/main/java/com/bitarcher/interfaces/speaker/ISpeaker.java">
+      <file leaf-file-name="AnimalResourceInfos.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/AnimalResourceInfos.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+              <caret line="60" column="104" selection-start-line="60" selection-start-column="104" selection-end-line="60" selection-end-column="104" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Speaker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/speaker/src/main/java/com/bitarcher/speaker/Speaker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="71" selection-start-line="54" selection-start-column="71" selection-end-line="54" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#699#700#0" expanded="true" />
-                <element signature="e#740#741#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3317757">
-              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#8299#8300#0" expanded="true" />
-                <element signature="e#8335#8336#0" expanded="true" />
-                <element signature="e#8389#8390#0" expanded="true" />
-                <element signature="e#8449#8450#0" expanded="true" />
+                <element signature="e#4520#4521#0" expanded="false" />
+                <element signature="e#4538#4539#0" expanded="false" />
+                <element signature="e#7581#7582#0" expanded="false" />
+                <element signature="e#7654#7655#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="99" column="11" selection-start-line="89" selection-start-column="8" selection-end-line="99" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextButtonScene.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/tests/TextButtonScene.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -604,7 +752,17 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerMenu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="137" column="28" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
+              <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnumAnimal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/EnumAnimal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -614,43 +772,73 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarMenu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="146" column="42" selection-start-line="146" selection-start-column="42" selection-end-line="146" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlternativeSpeeches.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/speaker/src/main/java/com/bitarcher/speaker/AlternativeSpeeches.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+              <caret line="66" column="59" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#454#455#0" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
+                <element signature="e#1924#1925#0" expanded="true" />
+                <element signature="e#1956#1957#0" expanded="true" />
+                <element signature="e#3680#3681#0" expanded="true" />
+                <element signature="e#3731#3732#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <file leaf-file-name="ChoosersAbstractMenu.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosersAbstractMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.424">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IAlternativeSpeeches.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/interfacesProtected/src/main/java/com/bitarcher/interfaces/speaker/IAlternativeSpeeches.java">
+      <file leaf-file-name="ChooseAvatarImageButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarImageButton.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChoosePlayerImageButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerImageButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrmBasic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/abcBllOrm/src/main/java/com/bitarcher/abcbllorm/BLL/OrmBasic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#2003#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseDaoEnabled.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.j256.ormlite/ormlite-core/4.48/be29c57c0e7b7c1137e27e6048d17bda9a1174db/ormlite-core-4.48-sources.jar!/com/j256/ormlite/misc/BaseDaoEnabled.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="123" column="22" selection-start-line="123" selection-start-column="22" selection-end-line="123" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#3212#3213#0" expanded="false" />
+                <element signature="e#3233#3234#0" expanded="false" />
+                <element signature="e#3462#3463#0" expanded="false" />
+                <element signature="e#3479#3480#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -13067,18 +13255,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/ResIdAndAspectRatioTupleFactory.java" />
         <option value="$PROJECT_DIR$/speaker/build.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/interfacesProtected/src/main/java/com/bitarcher/interfaces/speaker/IAlternativeSpeech.java" />
         <option value="$PROJECT_DIR$/interfacesProtected/src/main/java/com/bitarcher/interfaces/speaker/IAlternativeSpeeches.java" />
         <option value="$PROJECT_DIR$/interfacesProtected/src/main/java/com/bitarcher/interfaces/speaker/ISpeaker.java" />
         <option value="$PROJECT_DIR$/speaker/src/main/java/com/bitarcher/speaker/AlternativeSpeeches.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerMenu.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarMenu.java" />
         <option value="$PROJECT_DIR$/speaker/src/main/java/com/bitarcher/speaker/Speaker.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/AvatarImageButton.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/EnumAnimal.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/ResIdAndAspectRatioTupleFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainMenu.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarImageButton.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerImageButton.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosersMenu.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarMenu.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerMenu.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosersAbstractMenu.java" />
       </list>
     </option>
   </component>
@@ -13086,10 +13280,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
     <option name="y" value="27" />
-    <option name="width" value="1602" />
-    <option name="height" value="874" />
+    <option name="width" value="1600" />
+    <option name="height" value="873" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -13118,8 +13311,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -13398,6 +13589,152 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xxhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-mdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-hdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -13491,9 +13828,85 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="animals" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Abc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -13572,19 +13985,19 @@
       <recent name="com.bitarcher.aeFun.examples" />
       <recent name="com.bitarcher.resourcemanagement" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.bitarcher.aeFun.drawables.animatedMeshed.architecture.medieval" />
-      <recent name="com.bitarcher.aeFunExamples" />
-      <recent name="com.bitarcher.aeFunExamplesShowRoom" />
-      <recent name="com.bitarcher.aeFun.drawables.characters" />
-      <recent name="com.bitarcher.dog" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/aeFun" />
       <recent name="$PROJECT_DIR$/aeFun/sunflower/src/main" />
       <recent name="$PROJECT_DIR$/aeFun/aeFunWidgetLayout/src/main/assets/gfx" />
       <recent name="$PROJECT_DIR$/aeFunExamples/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/assets" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.bitarcher.aeFun.drawables.animatedMeshed.architecture.medieval" />
+      <recent name="com.bitarcher.aeFunExamples" />
+      <recent name="com.bitarcher.aeFunExamplesShowRoom" />
+      <recent name="com.bitarcher.aeFun.drawables.characters" />
+      <recent name="com.bitarcher.dog" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.app">
@@ -13907,21 +14320,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1602" height="874" extended-state="7" />
+    <frame x="0" y="27" width="1600" height="873" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.4996651" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35944057" sideWeight="0.73650384" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45594406" sideWeight="0.73650384" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2603878" sideWeight="0.26349613" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26542416" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37062937" sideWeight="0.26254827" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27086008" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3146853" sideWeight="0.7095116" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43356642" sideWeight="0.8026992" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43356642" sideWeight="0.8026992" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32686982" sideWeight="0.49935815" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33891493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24935733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -13934,8 +14347,8 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24935733" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3231623" sideWeight="0.4993573" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -13949,24 +14362,25 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37062937" sideWeight="0.26254827" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27086008" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32686982" sideWeight="0.49935815" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33891493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32686982" sideWeight="0.49935815" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.338896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32365146" sideWeight="0.6805913" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27799228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32027972" sideWeight="0.6805913" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24935733" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.4996651" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32365146" sideWeight="0.4993573" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35961273" sideWeight="0.73650384" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26542416" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31673583" sideWeight="0.7095116" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40525588" sideWeight="0.8026992" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3231623" sideWeight="0.4993573" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35944057" sideWeight="0.73650384" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26542416" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3146853" sideWeight="0.7095116" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43356642" sideWeight="0.8026992" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24935733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -13995,7 +14409,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainMenu.java</url>
-          <line>218</line>
+          <line>235</line>
           <properties />
           <option name="timeStamp" value="53" />
         </line-breakpoint>
@@ -14077,10 +14491,10 @@
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainMenu.java</url>
-          <line>73</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarMenu.java</url>
+          <line>78</line>
           <properties />
-          <option name="timeStamp" value="142" />
+          <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/aeFun/aeFunDrawablesAnimatedMeshed/src/main/java/com/bitarcher/aeFun/drawables/animatedMeshed/nature/clouds/CloudSprite.java</url>
@@ -14095,66 +14509,11 @@
           <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="143" />
+      <option name="time" value="147" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_homard.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_ibis.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_jaguar.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_jaseur.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_kangourou.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_koala.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_koudou.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_lama.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_lapin.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_leopard.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_loup.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_morse.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -14280,16 +14639,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/ResIdAndAspectRatioTupleFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.08">
-          <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -14303,7 +14652,7 @@
         <state vertical-scroll-proportion="-10.0">
           <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="45" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -14313,7 +14662,7 @@
         <state vertical-scroll-proportion="-14.32">
           <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="41" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -14338,9 +14687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -14349,34 +14695,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#454#455#0" expanded="false" />
+            <element signature="e#503#504#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="28" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="146" column="42" selection-start-line="146" selection-start-column="42" selection-end-line="146" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/interfacesProtected/src/main/java/com/bitarcher/interfaces/speaker/ISpeaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -14385,9 +14707,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="71" selection-start-line="54" selection-start-column="71" selection-end-line="54" selection-end-column="71" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#699#700#0" expanded="false" />
+            <element signature="e#740#741#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -14404,21 +14726,145 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="99" column="11" selection-start-line="89" selection-start-column="8" selection-end-line="99" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aeFun/aeFunResourceManagement/src/main/java/com/bitarcher/aeFun/resourceManagement/ResourcesInfos/SingleBitmapTextureSetFromResIdsResourceInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21261682">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_crocodile.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interfacesProtected/src/main/java/com/bitarcher/interfaces/speaker/ISpeaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.576">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_ecureuil.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/svg_animal_dromadaire.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/AnimalResourceInfos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="104" selection-start-line="60" selection-start-column="104" selection-end-line="60" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/EnumAnimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/animals/ResIdAndAspectRatioTupleFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.648">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.j256.ormlite/ormlite-core/4.48/be29c57c0e7b7c1137e27e6048d17bda9a1174db/ormlite-core-4.48-sources.jar!/com/j256/ormlite/misc/BaseDaoEnabled.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="22" selection-start-line="123" selection-start-column="22" selection-end-line="123" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3212#3213#0" expanded="false" />
+            <element signature="e#3233#3234#0" expanded="false" />
+            <element signature="e#3462#3463#0" expanded="false" />
+            <element signature="e#3479#3480#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/abcBllOrm/src/main/java/com/bitarcher/abcbllorm/BLL/OrmBasic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#2003#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3317757">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <folding>
+            <element signature="e#4520#4521#0" expanded="false" />
+            <element signature="e#4538#4539#0" expanded="false" />
+            <element signature="e#7581#7582#0" expanded="false" />
+            <element signature="e#7654#7655#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarImageButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8299#8300#0" expanded="true" />
-            <element signature="e#8335#8336#0" expanded="true" />
-            <element signature="e#8389#8390#0" expanded="true" />
-            <element signature="e#8449#8450#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChooseAvatarMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="59" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
+          <folding>
+            <element signature="e#1924#1925#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
+            <element signature="e#3680#3681#0" expanded="true" />
+            <element signature="e#3731#3732#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerImageButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosePlayerMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bitarcher/abc/SelectPlayer/ChoosersAbstractMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.424">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

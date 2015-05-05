@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 
 import com.bitarcher.abc.SelectPlayer.ChoosePlayerMenu;
+import com.bitarcher.abc.animals.AnimalResourceInfos;
 import com.bitarcher.abcbllorm.BLL.Player;
 import com.bitarcher.abcbllorm.DAL.DatabaseHelper;
 import com.bitarcher.aeFun.drawables.animatedMeshed.nature.clouds.CloudSprite;
@@ -42,10 +43,24 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
     ISpeaker speaker;
     BitmapTexturesSetFromAssetResourceInfo bitmapTexturesSetFromAssetResourceInfo;
     MusicResourceInfo musicResourceInfo;
+    AnimalResourceInfos animalResourceInfos;
+    Player player;
 
+    public Player getPlayer() {
+        return player;
+    }
 
-	public MainMenu(MainActivity mainActivity, ITSceneManager sceneManager) {
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public AnimalResourceInfos getAnimalResourceInfos() {
+        return animalResourceInfos;
+    }
+
+    public MainMenu(MainActivity mainActivity, ITSceneManager sceneManager) {
         super(sceneManager);
+
 
 
         this.mainActivity = mainActivity;
@@ -73,7 +88,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
             if(num > 0)
             {
-                alternativeSpeeches.addAlternativeSpeech("Tu es de retour, tu m'a manqué !");
+                alternativeSpeeches.addAlternativeSpeech("Tu es de retour, tu m'as manqué !");
             }
 
         } catch (SQLException e) {
@@ -82,6 +97,8 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
 
         alternativeSpeeches.addAlternativeSpeech("Salut, on va jouer ?");
         this.speaker = new Speaker(sceneManager.getResourceManager().getContext(), Locale.FRENCH, alternativeSpeeches);
+
+        this.animalResourceInfos = new AnimalResourceInfos(this);
 	}
 
     void pushRequirements()
