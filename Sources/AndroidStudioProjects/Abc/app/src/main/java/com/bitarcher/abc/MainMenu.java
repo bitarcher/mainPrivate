@@ -1,10 +1,7 @@
 package com.bitarcher.abc;
 
 
-import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
-
-import com.bitarcher.abc.SelectPlayer.ChoosePlayerMenu;
+import com.bitarcher.abc.selectPlayer.ChoosePlayerMenu;
 import com.bitarcher.abc.animals.AnimalResourceInfos;
 import com.bitarcher.abcbllorm.BLL.Player;
 import com.bitarcher.abcbllorm.DAL.DatabaseHelper;
@@ -24,7 +21,6 @@ import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 import com.bitarcher.interfaces.speaker.ISpeaker;
 import com.bitarcher.speaker.AlternativeSpeeches;
 import com.bitarcher.speaker.Speaker;
-import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
 
 import org.andengine.audio.music.Music;
@@ -34,7 +30,6 @@ import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 import org.andengine.opengl.texture.region.ITextureRegion;
 
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.Locale;
 
 public class MainMenu extends ManagedMenuScene implements IMainMenu{

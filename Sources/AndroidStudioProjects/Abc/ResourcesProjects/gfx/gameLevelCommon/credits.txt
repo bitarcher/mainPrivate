@@ -1,0 +1,8 @@
+home :
+https://openclipart.org/detail/199705/primary-home
+
+listen
+https://openclipart.org/detail/183649/listenescucha
+
+diamond :
+http://www.laboratoire-francais-gemmologie.fr/files/croogoImg218x1/crop/1273/crop/720x479_diamant_2.jpg
