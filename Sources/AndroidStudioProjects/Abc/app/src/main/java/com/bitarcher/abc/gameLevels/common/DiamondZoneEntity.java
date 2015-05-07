@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class DiamondZoneEntity extends Entity implements IResourceInfoListGotter, IResourceRequirementsStackUser {
     IResourceManager resourceManager;
-    ResourceInfos resourceInfos;
+    GameLevelCommonResourceInfos gameLevelCommonResourceInfos;
 
     ArrayList<IDiamondZoneEntityListener> diamondZoneEntityListeners = new ArrayList<>();
     Sprite background;
@@ -30,18 +30,18 @@ public class DiamondZoneEntity extends Entity implements IResourceInfoListGotter
 
     int numOfDiamonds = 0;
 
-    public DiamondZoneEntity(IResourceManager resourceManager, ResourceInfos resourceInfos) {
+    public DiamondZoneEntity(IResourceManager resourceManager, GameLevelCommonResourceInfos gameLevelCommonResourceInfos) {
         super(800 - 106 /2, 480 / 2, 106, 203);
 
         this.resourceManager = resourceManager;
-        this.resourceInfos = resourceInfos;
+        this.gameLevelCommonResourceInfos = gameLevelCommonResourceInfos;
     }
 
     @Override
     public List<IResourceInfo> getResourceInfoList() {
         ArrayList<IResourceInfo> retval = new ArrayList<>();
 
-        retval.add(this.resourceInfos.bitmapTexturesSetFromAssetResourceInfo);
+        retval.add(this.gameLevelCommonResourceInfos.bitmapTexturesSetFromAssetResourceInfo);
 
         return retval;
     }
@@ -127,8 +127,8 @@ public class DiamondZoneEntity extends Entity implements IResourceInfoListGotter
 
         this.background = new Sprite(106 / 2, 203f / 2f, 106, 203,
                 this.resourceManager.getTextureRegionFromTextureSetByName(
-                        this.resourceInfos.bitmapTexturesSetFromAssetResourceInfo,
-                        this.resourceInfos.getDiamond_3places_106x203().getName()
+                        this.gameLevelCommonResourceInfos.bitmapTexturesSetFromAssetResourceInfo,
+                        this.gameLevelCommonResourceInfos.getDiamond_3places_106x203().getName()
                 ), this.resourceManager.getEngine().getVertexBufferObjectManager());
 
         this.background.setAlpha(0.7f);
@@ -139,16 +139,16 @@ public class DiamondZoneEntity extends Entity implements IResourceInfoListGotter
             // position will be set later
             this.diamonds[i] = new Sprite(106 / 2, 0, 100, 60,
                     this.resourceManager.getTextureRegionFromTextureSetByName(
-                            this.resourceInfos.bitmapTexturesSetFromAssetResourceInfo,
-                            this.resourceInfos.diamond_300x179.getName()
+                            this.gameLevelCommonResourceInfos.bitmapTexturesSetFromAssetResourceInfo,
+                            this.gameLevelCommonResourceInfos.getDiamond_300x179().getName()
                     ), this.resourceManager.getEngine().getVertexBufferObjectManager());
 
             this.attachChild(this.diamonds[i]);
         }
 
-        this.diamonds[0].setY(50);
-        this.diamonds[1].setY(this.diamonds[0].getY() + 60);
-        this.diamonds[2].setY(this.diamonds[1].getY() + 60);
+        this.diamonds[0].setY(40);
+        this.diamonds[1].setY(105);
+        this.diamonds[2].setY(170);
 
     }
 

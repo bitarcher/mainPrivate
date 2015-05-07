@@ -1,5 +1,6 @@
 package com.bitarcher.abc.selectPlayer;
 
+import com.bitarcher.abc.GameLevel;
 import com.bitarcher.abcbllorm.BLL.Player;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.mvc.IImage;
@@ -32,5 +33,7 @@ public class ChoosePlayerImageButton extends ImageButton {
         this.choosePlayerMenu.getMainMenu().setPlayer(player);
 
         // TODO
+
+        this.choosePlayerMenu.getMainMenu().getSceneManager().showScene(new GameLevel(this.choosePlayerMenu.getMainMenu()));
     }
 }

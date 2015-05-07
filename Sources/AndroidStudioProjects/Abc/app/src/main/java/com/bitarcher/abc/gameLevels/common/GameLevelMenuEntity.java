@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class GameLevelMenuEntity extends Entity implements IResourceInfoListGotter, IResourceRequirementsStackUser {
     IResourceManager resourceManager;
-    ResourceInfos resourceInfos;
+    GameLevelCommonResourceInfos gameLevelCommonResourceInfos;
     ITheme theme;
 
     ArrayList<IGameLevelMenuEntityListener> gameLevelMenuEntityListeners = new ArrayList<>();
@@ -37,19 +37,19 @@ public class GameLevelMenuEntity extends Entity implements IResourceInfoListGott
 
 
 
-    public GameLevelMenuEntity(ITheme theme, ResourceInfos resourceInfos) {
-        super(100 + 199f /2f, 108 / 2, 199f, 108);
+    public GameLevelMenuEntity(ITheme theme, GameLevelCommonResourceInfos gameLevelCommonResourceInfos) {
+        super(100 + 205f /2f, 108 / 2, 205f, 108);
 
         this.theme = theme;
         this.resourceManager = this.theme.getThemeManager().getResourceManager();
-        this.resourceInfos = resourceInfos;
+        this.gameLevelCommonResourceInfos = gameLevelCommonResourceInfos;
     }
 
     @Override
     public List<IResourceInfo> getResourceInfoList() {
         ArrayList<IResourceInfo> retval = new ArrayList<>();
 
-        retval.add(this.resourceInfos.bitmapTexturesSetFromAssetResourceInfo);
+        retval.add(this.gameLevelCommonResourceInfos.bitmapTexturesSetFromAssetResourceInfo);
 
         return retval;
     }
@@ -118,19 +118,19 @@ public class GameLevelMenuEntity extends Entity implements IResourceInfoListGott
     {
         this.clearEntities();
 
-        this.background = new Sprite(199f / 2f, 108 / 2, 188, 108,
+        this.background = new Sprite(205f / 2f, 108 / 2, 205, 108,
                 this.resourceManager.getTextureRegionFromTextureSetByName(
-                        this.resourceInfos.bitmapTexturesSetFromAssetResourceInfo,
-                        this.resourceInfos.getMenu_2places_199x108().getName()
+                        this.gameLevelCommonResourceInfos.bitmapTexturesSetFromAssetResourceInfo,
+                        this.gameLevelCommonResourceInfos.getMenu_2places_199x108().getName()
                 ), this.resourceManager.getEngine().getVertexBufferObjectManager());
 
         this.background.setAlpha(0.7f);
         this.attachChild(this.background);
 
         this.home = new NoLayoutDecorationImageButton(this.theme,
-                100 / 2f + 2, 100 / 2, 100, 100,
-                new MvcImageTuple(this.resourceInfos.bitmapTexturesSetFromAssetResourceInfo,
-                    this.resourceInfos.getHome_190x190().getName(),
+                100 / 2f, 100 / 2, 100, 100,
+                new MvcImageTuple(this.gameLevelCommonResourceInfos.bitmapTexturesSetFromAssetResourceInfo,
+                    this.gameLevelCommonResourceInfos.getHome_190x190().getName(),
                         1));
 
         this.attachChild(this.home);
@@ -147,9 +147,9 @@ public class GameLevelMenuEntity extends Entity implements IResourceInfoListGott
         });
 
         this.listen = new NoLayoutDecorationImageButton(this.theme,
-                this.home.getX() + 100 / 2f + 2, 100 / 2, 100, 100,
-                new MvcImageTuple(this.resourceInfos.bitmapTexturesSetFromAssetResourceInfo,
-                        this.resourceInfos.getListen_256x256().getName(), 1));
+                this.home.getX() + 100, 100 / 2, 100, 100,
+                new MvcImageTuple(this.gameLevelCommonResourceInfos.bitmapTexturesSetFromAssetResourceInfo,
+                        this.gameLevelCommonResourceInfos.getListen_256x256().getName(), 1));
 
         this.listen.addButtonListener(new IButtonListener() {
             @Override
@@ -161,10 +161,7 @@ public class GameLevelMenuEntity extends Entity implements IResourceInfoListGott
             }
         });
 
-        this.attachChild(this.home);
-
-
+        this.attachChild(this.listen);
     }
-
-
 }
+

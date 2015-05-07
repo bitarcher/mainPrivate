@@ -1,6 +1,7 @@
 package com.bitarcher.abc;
 
 
+import com.bitarcher.abc.gameLevels.common.GameLevelCommonResourceInfos;
 import com.bitarcher.abc.selectPlayer.ChoosePlayerMenu;
 import com.bitarcher.abc.animals.AnimalResourceInfos;
 import com.bitarcher.abcbllorm.BLL.Player;
@@ -39,6 +40,7 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
     BitmapTexturesSetFromAssetResourceInfo bitmapTexturesSetFromAssetResourceInfo;
     MusicResourceInfo musicResourceInfo;
     AnimalResourceInfos animalResourceInfos;
+    GameLevelCommonResourceInfos gameLevelCommonResourceInfos;
     Player player;
 
     public Player getPlayer() {
@@ -53,10 +55,15 @@ public class MainMenu extends ManagedMenuScene implements IMainMenu{
         return animalResourceInfos;
     }
 
+    public GameLevelCommonResourceInfos getGameLevelCommonResourceInfos() {
+        return gameLevelCommonResourceInfos;
+    }
+
     public MainMenu(MainActivity mainActivity, ITSceneManager sceneManager) {
         super(sceneManager);
 
 
+        this.gameLevelCommonResourceInfos = new GameLevelCommonResourceInfos();
 
         this.mainActivity = mainActivity;
 

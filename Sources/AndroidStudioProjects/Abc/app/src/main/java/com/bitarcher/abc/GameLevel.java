@@ -1,5 +1,6 @@
 package com.bitarcher.abc;
 
+import com.bitarcher.abc.gameLevels.common.GameLevelBase;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
 import com.bitarcher.aeFun.interfaces.mvc.IImage;
@@ -21,7 +22,7 @@ import org.andengine.entity.sprite.Sprite;
 import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 
 
-public class GameLevel extends ManagedGameScene {
+public class GameLevel extends GameLevelBase {
 
     BitmapTexturesSetFromAssetResourceInfo bitmapTexturesSetFromAssetResourceInfo;
     //SvgTexturesSetFromResIdsResourceInfo animalsTexturesSet = new SvgTexturesSetFromResIdsResourceInfo("animals", this.getSceneManager().getResourceManager().getContext(), 1024, 256);
@@ -29,9 +30,9 @@ public class GameLevel extends ManagedGameScene {
     BitmapTexturesSetFromResIdsResourceInfo animalsTexturesSet = new BitmapTexturesSetFromResIdsResourceInfo("animals", 1024, 1024, BitmapTextureFormat.RGBA_4444, null, this.getSceneManager().getResourceManager().getContext());
     IImage cat;
 
-    public GameLevel(ITSceneManager sceneManager) {
+    public GameLevel(MainMenu mainMenu) {
 
-        super(sceneManager, 0);
+        super(mainMenu, 0);
 
         int width = 240,height = 240;
 
@@ -197,9 +198,9 @@ public class GameLevel extends ManagedGameScene {
 
 
         final Table container = new Table(this.getSceneManager().getTheme(),
-                w / 2,
+                w / 3,
                 h / 2,
-                400, 400);
+                200, 200);
 
         //container.addHomogeneousColumnsAndRows(3, 3, 5);
 

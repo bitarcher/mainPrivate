@@ -61,7 +61,7 @@
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/exploded-aar/Abc.aeFun/aeFunResourceManagement/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="e7a5db50318622f1cc04e935776c1be47abeff6a">
+        sha1="3f312e2393322dc9ed40bfa85e8c6fd27f7d68c4">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-dfcae0b1a7ca84a8f459332e31d03f6c60219cdd.jar" />
     </item>
     <item
@@ -103,7 +103,7 @@
         jar="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/exploded-aar/Abc.aeFun/aeFunWidgetLayout/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="fba6080d6343fed9a83581a25d78a3d905e6b2a7">
+        sha1="cf75899a16950e425fcb0e43aa31b9f499570fd9">
         <dex dex="/home/michel/mainPrivate/Sources/AndroidStudioProjects/Abc/app/build/intermediates/pre-dexed/debug/classes-bc9bda2a446ccce3de3d1a150e57114b54f934fb.jar" />
     </item>
     <item
