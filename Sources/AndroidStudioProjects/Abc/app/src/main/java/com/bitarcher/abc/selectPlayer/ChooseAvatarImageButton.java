@@ -7,6 +7,7 @@ package com.bitarcher.abc.selectPlayer;
  */
 
 import com.bitarcher.abc.animals.EnumAnimal;
+import com.bitarcher.abc.gameLevels.NextLevelChooser;
 import com.bitarcher.abcbllorm.BLL.Player;
 import com.bitarcher.aeFun.interfaces.gui.theme.ITheme;
 import com.bitarcher.aeFun.interfaces.mvc.IImage;
@@ -41,6 +42,8 @@ public class ChooseAvatarImageButton  extends ImageButton {
             player.i_create();
 
             this.chooseAvatarMenu.getMainMenu().setPlayer(player);
+
+            new NextLevelChooser(this.chooseAvatarMenu.getMainMenu()).showNextLevel();
 
         } catch (SQLException e) {
             e.printStackTrace();

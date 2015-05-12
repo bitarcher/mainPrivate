@@ -50,8 +50,9 @@ public class GameLevelCommonResourceInfos {
 
     public GameLevelCommonResourceInfos() {
         this.bitmapTexturesSetFromAssetResourceInfo = new BitmapTexturesSetFromAssetResourceInfo("GameLevelCommon",
-                1024, 1024, BitmapTextureFormat.RGBA_8888, TextureOptions.DEFAULT, "gfx/GameLevelCommon/");
+                1024, 512, BitmapTextureFormat.RGBA_4444, TextureOptions.DEFAULT, "gfx/GameLevelCommon/");
 
+        // TODO improve it should use 512 x 512 texture atlas
         this.diamond_3places_106x203 = new OneAssetBitmapTexture("diamond_3places_106x203", "diamond_3places_106x203.png");
         this.bitmapTexturesSetFromAssetResourceInfo.addOneTexture(this.diamond_3places_106x203);
 

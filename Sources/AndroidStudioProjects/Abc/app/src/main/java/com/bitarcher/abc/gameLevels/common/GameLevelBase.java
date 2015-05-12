@@ -1,25 +1,9 @@
 package com.bitarcher.abc.gameLevels.common;
 
+import com.bitarcher.abc.GameLevel;
 import com.bitarcher.abc.MainMenu;
-import com.bitarcher.abc.R;
-import com.bitarcher.aeFun.interfaces.gui.andEngine.IScene;
-import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
-import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
-import com.bitarcher.aeFun.interfaces.mvc.IImage;
-import com.bitarcher.aeFun.interfaces.mvc.MvcImageTuple;
-import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
-import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromAssetResourceInfo;
-import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.BitmapTexturesSetFromResIdsResourceInfo;
-import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneAssetBitmapTexture;
-import com.bitarcher.aeFun.resourceManagement.ResourcesInfos.SubInfos.OneResBitmapTexture;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IGoBackSceneCapable;
 import com.bitarcher.aeFun.sceneManagement.ManagedGameScene;
-import com.bitarcher.aeFun.widgetToolkit.widget.ImageButton;
-import com.bitarcher.aeFun.widgetToolkit.widget.Table;
-import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
-import com.bitarcher.aeFun.widgetToolkit.widget.Tools.Containers.PercentSpaceUsage;
-
-import org.andengine.entity.sprite.Sprite;
-import org.andengine.opengl.texture.bitmap.BitmapTextureFormat;
 
 /*
  * Copyright (c) 2015.
@@ -50,49 +34,47 @@ public class GameLevelBase extends ManagedGameScene {
 
         this.mainMenu = mainMenu;
         this.diamondZoneEntity = new DiamondZoneEntity(mainMenu.getSceneManager().getResourceManager(), mainMenu.getGameLevelCommonResourceInfos());
-        this.gameLevelMenuEntity = new GameLevelMenuEntity(mainMenu.getSceneManager().getTheme(), mainMenu.getGameLevelCommonResourceInfos());
-    }
+        this.gameLevelMenuEntity = new GameLevelMenuEntity(this, mainMenu.getSceneManager().getTheme(), mainMenu.getGameLevelCommonResourceInfos());
 
+        final GameLevelBase gameLevelBase = this;
 
-    @Override
-    public IScene onLoadingScreenLoadAndShown() {
+        this.gameLevelMenuEntity.addGameLevelMenuEntityListener(new IGameLevelMenuEntityListener() {
+            @Override
+            public void onGoBackToMenuClicked(GameLevelMenuEntity gameLevelMenuEntity) {
+                if(gameLevelBase instanceof IGoBackSceneCapable)
+                {
+                    IGoBackSceneCapable goBackSceneCapable = (IGoBackSceneCapable)gameLevelBase;
 
-        if(this.getHasLoadingScreen()) {
-            this.attachChild(this.diamondZoneEntity);
-            this.attachChild(this.gameLevelMenuEntity);
+                    goBackSceneCapable.goBackToPreviousScene();
+                }
+                else
+                {
+                    gameLevelBase.getSceneManager().showMainMenu();
+                }
+            }
 
-        }
-        return super.onLoadingScreenLoadAndShown();
-    }
-
-    @Override
-    public void onLoadingScreenUnloadAndHidden() {
-        if(this.getHasLoadingScreen()) {
-            this.detachChild(this.diamondZoneEntity);
-            this.detachChild(this.gameLevelMenuEntity);
-        }
-
-        super.onLoadingScreenUnloadAndHidden();
-    }
-
-    @Override
-    public void onLoadScene() {
-        super.onLoadScene();
-
-        if(!this.getHasLoadingScreen()) {
-            this.attachChild(this.diamondZoneEntity);
-            this.attachChild(this.gameLevelMenuEntity);
-        }
+            @Override
+            public void onRepeatInstructionClicked(GameLevelMenuEntity gameLevelMenuEntity) {
+                // TODO
+            }
+        });
     }
 
     @Override
-    public void onUnloadScene() {
-        super.onUnloadScene();
+    public void onLoadManagedScene() {
+        super.onLoadManagedScene();
 
-        if(!this.getHasLoadingScreen()) {
-            this.detachChild(this.diamondZoneEntity);
-            this.detachChild(this.gameLevelMenuEntity);
-        }
+        this.gameHud.attachChild(this.diamondZoneEntity);
+        this.gameHud.attachChild(this.gameLevelMenuEntity);
     }
+
+    @Override
+    public void onUnloadManagedScene() {
+        super.onUnloadManagedScene();
+
+        this.gameHud.detachChild(this.diamondZoneEntity);
+        this.gameHud.detachChild(this.gameLevelMenuEntity);
+    }
+
 }
 

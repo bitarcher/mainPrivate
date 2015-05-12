@@ -3,6 +3,7 @@ package com.bitarcher.abc.selectPlayer;
 
 import com.bitarcher.abc.animals.EnumAnimal;
 import com.bitarcher.abcbllorm.BLL.Player;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IGoBackSceneCapable;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.speaker.AlternativeSpeeches;
 import com.j256.ormlite.dao.Dao;
@@ -16,7 +17,7 @@ import java.util.List;
  * bitarcher.com
  */
 
-public class ChooseAvatarMenu extends ChoosersAbstractMenu {
+public class ChooseAvatarMenu extends ChoosersAbstractMenu implements IGoBackSceneCapable {
 	public ChooseAvatarMenu(ITSceneManager sceneManager) {
         super(sceneManager);
 	}
@@ -77,5 +78,10 @@ public class ChooseAvatarMenu extends ChoosersAbstractMenu {
     @Override
     protected String getTranslatedTitle() {
         return "Choisis ton animal préféré";
+    }
+
+    @Override
+    public void goBackToPreviousScene() {
+        this.getSceneManager().showScene(new ChoosePlayerMenu(this.getSceneManager()));
     }
 }

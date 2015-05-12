@@ -32,7 +32,7 @@ public class GameLevel extends GameLevelBase {
 
     public GameLevel(MainMenu mainMenu) {
 
-        super(mainMenu, 0);
+        super(mainMenu, 0.5f);
 
         int width = 240,height = 240;
 

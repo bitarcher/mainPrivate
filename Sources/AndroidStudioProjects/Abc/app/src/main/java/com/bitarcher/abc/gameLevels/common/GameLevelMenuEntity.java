@@ -34,12 +34,13 @@ public class GameLevelMenuEntity extends Entity implements IResourceInfoListGott
     Sprite background;
     NoLayoutDecorationImageButton home;
     NoLayoutDecorationImageButton listen;
+    GameLevelBase gameLevelBase;
 
 
-
-    public GameLevelMenuEntity(ITheme theme, GameLevelCommonResourceInfos gameLevelCommonResourceInfos) {
+    public GameLevelMenuEntity(GameLevelBase gameLevelBase, ITheme theme, GameLevelCommonResourceInfos gameLevelCommonResourceInfos) {
         super(100 + 205f /2f, 108 / 2, 205f, 108);
 
+        this.gameLevelBase = gameLevelBase;
         this.theme = theme;
         this.resourceManager = this.theme.getThemeManager().getResourceManager();
         this.gameLevelCommonResourceInfos = gameLevelCommonResourceInfos;
@@ -133,6 +134,7 @@ public class GameLevelMenuEntity extends Entity implements IResourceInfoListGott
                     this.gameLevelCommonResourceInfos.getHome_190x190().getName(),
                         1));
 
+        this.home.setHud(this.gameLevelBase.gameHud);
         this.attachChild(this.home);
 
         final GameLevelMenuEntity gameLevelMenuEntity = this;
@@ -160,6 +162,8 @@ public class GameLevelMenuEntity extends Entity implements IResourceInfoListGott
                 }
             }
         });
+
+        this.listen.setHud(this.gameLevelBase.gameHud);
 
         this.attachChild(this.listen);
     }

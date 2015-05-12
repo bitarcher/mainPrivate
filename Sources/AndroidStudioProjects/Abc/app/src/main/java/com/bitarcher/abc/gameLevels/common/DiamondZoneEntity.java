@@ -150,6 +150,7 @@ public class DiamondZoneEntity extends Entity implements IResourceInfoListGotter
         this.diamonds[1].setY(105);
         this.diamonds[2].setY(170);
 
+        this.recheckVisibilityOfDiamonds();
     }
 
     public void incNumOfDiamonds()

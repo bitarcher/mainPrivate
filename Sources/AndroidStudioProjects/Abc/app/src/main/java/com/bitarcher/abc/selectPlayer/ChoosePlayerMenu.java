@@ -5,6 +5,7 @@ import com.bitarcher.abc.animals.EnumAnimal;
 import com.bitarcher.abcbllorm.BLL.Player;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButton;
 import com.bitarcher.aeFun.interfaces.gui.widgets.IButtonListener;
+import com.bitarcher.aeFun.interfaces.sceneManagement.IGoBackSceneCapable;
 import com.bitarcher.aeFun.interfaces.sceneManagement.ITSceneManager;
 import com.bitarcher.aeFun.widgetToolkit.widget.TextButton;
 import com.bitarcher.speaker.AlternativeSpeeches;
@@ -19,12 +20,16 @@ import java.util.List;
  * bitarcher.com
  */
 
-public class ChoosePlayerMenu extends ChoosersAbstractMenu {
+public class ChoosePlayerMenu extends ChoosersAbstractMenu implements IGoBackSceneCapable{
 
     TextButton newPlayerTextButton;
 
+    @Override
+    public void goBackToPreviousScene() {
+        this.getSceneManager().showMainMenu();
+    }
 
-	public ChoosePlayerMenu(ITSceneManager sceneManager) {
+    public ChoosePlayerMenu(ITSceneManager sceneManager) {
         super(sceneManager);
 	}
 
