@@ -47,13 +47,19 @@ public class Speaker implements ISpeaker, TextToSpeech.OnInitListener {
 
     @Override
     public void say(IAlternativeSpeeches alternativeSpeeches, Object... args) {
+        this.say(TextToSpeech.QUEUE_FLUSH, alternativeSpeeches, args);
+    }
+
+    @Override
+    public void say(int queueMode, IAlternativeSpeeches alternativeSpeeches, Object... args) {
 
         int ind = this.random.nextInt(alternativeSpeeches.getTranslatedFormatsList().size());
         String fmt = alternativeSpeeches.getTranslatedFormatsList().get(ind);
         String formated = String.format(fmt, args);
 
-        this.ttsEngine.speak(formated, TextToSpeech.QUEUE_FLUSH, null);
+        this.ttsEngine.speak(formated, queueMode, null);
     }
+
 
     @Override
     public void onInit(int status) {

@@ -6,12 +6,15 @@ package com.bitarcher.abc.gameLevels.common;
  * bitarcher.com
  */
 
+import com.bitarcher.aeFun.interfaces.drawables.IFadable;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceInfoListGotter;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceManager;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.IResourceRequirementsStackUser;
 import com.bitarcher.aeFun.interfaces.resourcemanagement.ResourceInfo.IResourceInfo;
 
 import org.andengine.entity.Entity;
+import org.andengine.entity.modifier.FadeInModifier;
+import org.andengine.entity.modifier.FadeOutModifier;
 import org.andengine.entity.sprite.Sprite;
 
 import java.util.ArrayList;
@@ -20,13 +23,33 @@ import java.util.List;
 /**
  * Created by michel on 07/05/15.
  */
-public class DiamondZoneEntity extends Entity implements IResourceInfoListGotter, IResourceRequirementsStackUser {
+public class DiamondZoneEntity extends Entity implements IResourceInfoListGotter, IResourceRequirementsStackUser, IFadable {
     IResourceManager resourceManager;
     GameLevelCommonResourceInfos gameLevelCommonResourceInfos;
 
     ArrayList<IDiamondZoneEntityListener> diamondZoneEntityListeners = new ArrayList<>();
     Sprite background;
     Sprite[] diamonds = new Sprite[3];
+
+    @Override
+    public void fadeIn(float numOfSeconds) {
+        for(Sprite sprite : diamonds)
+        {
+            sprite.registerEntityModifier(new FadeInModifier(numOfSeconds));
+        }
+        
+        this.background.registerEntityModifier(new FadeInModifier(numOfSeconds));
+    }
+
+    @Override
+    public void fadeOut(float numOfSeconds) {
+        for(Sprite sprite : diamonds)
+        {
+            sprite.registerEntityModifier(new FadeOutModifier(numOfSeconds));
+        }
+
+        this.background.registerEntityModifier(new FadeOutModifier(numOfSeconds));
+    }
 
     int numOfDiamonds = 0;
 
@@ -36,6 +59,8 @@ public class DiamondZoneEntity extends Entity implements IResourceInfoListGotter
         this.resourceManager = resourceManager;
         this.gameLevelCommonResourceInfos = gameLevelCommonResourceInfos;
     }
+
+
 
     @Override
     public List<IResourceInfo> getResourceInfoList() {

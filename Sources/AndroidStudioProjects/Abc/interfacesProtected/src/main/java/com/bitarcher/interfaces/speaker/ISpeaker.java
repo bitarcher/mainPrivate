@@ -11,5 +11,6 @@ package com.bitarcher.interfaces.speaker;
  */
 public interface ISpeaker {
     void say(IAlternativeSpeeches alternativeSpeeches, Object... args);
+    void say(int queueMode, IAlternativeSpeeches alternativeSpeeches, Object... args);
 
 }

@@ -55,9 +55,14 @@ public class GameLevelBase extends ManagedGameScene {
 
             @Override
             public void onRepeatInstructionClicked(GameLevelMenuEntity gameLevelMenuEntity) {
-                // TODO
+                repeatInstruction();
             }
         });
+    }
+
+    protected void repeatInstruction()
+    {
+
     }
 
     @Override
